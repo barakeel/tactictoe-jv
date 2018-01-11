@@ -244,7 +244,11 @@ solves 29\%.
 %
 %\end{example}
 %
+\vspace{100mm}
 
+\tableofcontents
+
+\vspace{100mm}
 \todo{These 2 paragraphs are copied and slightly edited}
 Many of the state-of-the-art interactive theorem provers (ITPs) such as 
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight}, 
@@ -500,11 +504,7 @@ the priority of the 11 kinds of
 commands in the priority queue based on positive and negative examples.
 
 
-A first successful use of orthogonalization techniques for theorems appeared in
-a work on lemma mining~\cite{ckju-jsc15} in \hollight. Theorems were mined from 
-proofs recorded at the kernel level. Because the number of recorded lemmas was 
-in millions, page ranking techniques was used as a filter to extract ``useful'' 
-lemmas.
+
 
 \section{Proof Recording}\label{sec:recording}
 Recording proofs in an LCF-style proof assistant can be done at different levels.
@@ -1327,7 +1327,7 @@ that is able to replicate the effect of the original tactic.
 
 
 
-\section{Tactic Abstraction}\label{sec:synthesis}
+\section{Abstraction}\label{sec:synthesis}
 One of the great weakness of the previous version of \tactictoe is that
 it could not create its own tactics. Indeed, sometimes no previous tactic is 
 adapted for a certain goal and creating a new tactic is necessary.
@@ -1519,9 +1519,9 @@ which direction.
 Our search algorithm is an advanced tree search algorithm that relies on 
 evaluation and policy functions to guide the search.
 
-The first necessary adaptation of the algorithm stems
-from the fact that a proof is in general not a
-path but a tree. This means that our search space has two branching factors: 
+(todo: missing link)
+A proof is in general not a path but a tree. This means that our search space 
+has two branching factors: 
 the choice of a tactic, and the number of goals produced by each tactic.
 The first one can be thought as a disjunction of tactics. Indeed, 
 if there exists a tactic that solves a goal then it is solved. And 
@@ -1718,27 +1718,33 @@ goal $g$ of a node $n$ is linked to a node $m$ when the list of
 \node [tcircle,left of=0l] (0ll) {$g_0^1$};
 \node [draw,fit=(0rr) (0ll)] {}; 
 \node [above of=0,node distance=2cm] (2) {.\ .\ .};
-\node [left of=2, tcircle] (2l) {$g_2^1$};
-\node [tcircle,right of=2] (2r) {$g_2^p$};
+\node [left of=2, tcircle] (2l) {$g_j^1$};
+\node [tcircle,right of=2] (2r) {$g_j^p$};
 \node [draw, fit=(2l) (2r)] (2b) {}; 
 
 
-\node [tcircle, left of=2l, node distance=2cm] (1r) {$g_1^q$};
+\node [tcircle, left of=2l, node distance=3cm] (1r) {$g_1^q$};
 \node [left of=1r] (1) {.\ .\ .};
 \node [tcircle, left of=1] (1l) {$g_1^1$};
 \node [draw, fit=(1l) (1r)] (1b) {}; 
 
-\node [right of=2r,node distance=2cm] (3l) {$\phantom{g_3^p}$};
+\node [right of=2r,node distance=3cm] (3l) {$\phantom{g_3^p}$};
 \node [right of=3l] (3) {\phantom{.\ .\ .}};
 \node [right of=3] (3r) {$\phantom{g_3^p}$};
-\node [fit=(3l) (3r)] (3b) {}; 
+\node [fit=(3l) (3r)] (3b) {};
+
+\node [fit=(1r) (2l)] (1m) {}; 
+\node [fit=(2l) (3r)] (2m) {}; 
 
 \draw[-to,thick] (0) to node[xshift=-10](t1){$t_1$} (1b);
-\draw[-to,thick] (0) to node[xshift=-10](t2){$t_2$} (2b);
+\draw[-to,thick] (0) to node[xshift=-10](t2){$t_j$} (2b);
+\draw[-to,dotted,thick] (0) to (1m);
+\draw[-to,dotted,thick] (0) to (2m);
 \draw[-to,dotted,thick] (0) to (3b);
 \end{tikzpicture}
 \end{center}
-\caption{Choice of a goal and a tactic}
+\caption{The two branching factors: choice of a goal $g_0^i$ and choice of a 
+tactic $t_j$.}
 \label{fig:choice}
 \end{figure}
 
@@ -2016,7 +2022,7 @@ $E_{productive}$ or $E_r$.
 %- Easy to link conjunction estimation   together.
 - 
 
-\section{ATP and Lemma Prediction Integration}
+\section{ATP Integration}
 
 General-purpose proof automation mechanisms which combine proof translation to
 ATPs with machine learning (``hammers'') have become quite successful in
@@ -2027,54 +2033,73 @@ power of tactics, we would like to combine the \tactictoe search with
 create a \holyhammer tactic that can be used during the proof search. Since 
 external calls to \holyhammer are computationally expensive (5 seconds at a 
 minimum), we will also 
-experiment with a ``small hammer'' tactic comprised of: a faster premise 
+experiment with a small hammer tactic comprised of: a faster premise 
 selection algorithm from previously proven theorems $\mathfrak{T}$ and
-a short call to the internal prover \metis~\cite{metis}.
+a short call (0.1 seconds) to the internal prover \metis~\cite{metis} or a
+longer call to external prover \eprover. 
 
-It is best tactic available but we do not have any data about it since it does 
-not appear in any proofs. So as a first approximation, we 
-artificially give it the best prediction scores on any goal and the best 
-coverage. 
+We construct this type of tactic manually but in the case of \metis it could be 
+rediscovered automatically as it is essentially a call to \metis where its 
+theorem list argument has been abstracted.
 
-\paragraph{Effect on orthogonalization of tactics}
-During orthogonalization, the general purpose tactic will be the first 
-competitor and if it manages to prove the goal it will subsume the original 
-tactic on this goal since the empty set of goals is a subset of any set. 
-Therefore, it will replace the original tactic in the feature vector that is 
-competed for. This is desirable since we would like to remove alternative 
-proofs.
+Since we do not always have the data to learn on which goal this general 
+tactics are succesful, we assume as a first approximation that they are the 
+strongest all around. And we try them first on each node during the proof 
+search with the advantage that if it succeeds the node is closed rapidly in the 
+case of \metis.
 
-\paragraph{Orthogonalization of theorems}
-A ``hammer'' tactic can be useful to remove parallel
-theorems. We consider a theorem to be parallel if it can be proven 
-from previous theorems using a general tactic with a timeout equal or less 
-than the one it is given during the proof search. Parallel theorems are marked 
-and removed from the set of theorems $\mathfrak{T}$ from 
-which premise selection is performed.
+To integrate a general tactic that requires a higher time out such as \eprover, 
+we make use of asynchronous calls to prevent the ATP 
+from slowing down the search.  The number of parallel threads can be capped.
+And if tactictoe or an asynchronous thread proves a goal, all descendants of 
+these goal are deactivated terminating associated threads. This frees space for 
+more pending threads associated to newly created nodes to start.
 
-\begin{remark}
-The ``smaller hammer'' is chosen to remove parallel theorems and as the first 
-try during orthogonalization of tactics. 
-\end{remark}
+%needs to be taken after each proof step to close proofs solved by \eprover
+%When the number of thread reaches a limit, a ``hammer'' tactic call 
+%should
+%wait for a thread to be freed but the proof search goes on and the feedback of 
+%the ``hammer'' tactic is delayed. 
+%
+%
+%It is best tactic available but we do not have any data about it since it does 
+%not appear in any proofs. So , we 
+%artificially try it on
+
+%\paragraph{Effect on orthogonalization of tactics}
+%During orthogonalization, the general purpose tactic will be the first 
+%competitor and if it manages to prove the goal it will subsume the original 
+%tactic on this goal since the empty set of goals is a subset of any set. 
+%Therefore, it will replace the original tactic in the feature vector that is 
+%competed for. This is desirable since we would like to remove alternative 
+%proofs.
+
+%\paragraph{Orthogonalization of theorems}
+%A ``hammer'' tactic can be useful to remove parallel
+%theorems. We consider a theorem to be parallel if it can be proven 
+%from previous theorems using a general tactic with a timeout equal or less 
+%than the one it is given during the proof search. Parallel theorems are marked 
+%and removed from the set of theorems $\mathfrak{T}$ from 
+%which premise selection is performed.
+%
+%\begin{remark}
+%The ``smaller hammer'' is chosen to remove parallel theorems and as the first 
+%try during orthogonalization of tactics. 
+%\end{remark}
 
 
-\paragraph{Effect on the proof search}
-First, before the proof search, we preselect 500 theorems 
-for the whole proof search tree using a premise selection algorithm 
-that takes into account dependencies between theorems.
-During the proof search, when a new goal is created or a fresh pending goal is 
-considered, the ``hammer'' tactic is always tried first because if it succeeds 
-the node would be closed rapidly.
+%\paragraph{Effect on the proof search}
+%First, before the proof search, we preselect 500 theorems 
+%for the whole proof search tree using a premise selection algorithm 
+%that takes into account dependencies between theorems.
+%During the proof search, when a new goal is created or a fresh pending goal is 
+%considered, the ``hammer'' tactic is always tried first because if it succeeds 
+%the node would be closed rapidly.
 
-\paragraph{Parallelization of external calls}
-It is possible to parallelize calls to external provers so that they happen 
-asynchronously during the proof search. We let the prover runs \tactictoe 
-continue its proof in parallel of a ``hammer'' tactic call. Additional care 
-needs to be taken after each proof step to close proofs solved by the general 
-tactic. When the number of thread reaches a limit, a ``hammer'' tactic call 
-should
-wait for a thread to be freed but the proof search goes on and the feedback of 
-the ``hammer'' tactic is delayed.
+%\paragraph{Parallelization of external calls}
+%It is possible to parallelize calls to external provers so that they happen 
+%asynchronously during the proof search. We let the prover runs \tactictoe 
+%continue its proof in parallel of a ``hammer'' tactic call.
 
 
 
@@ -2334,8 +2359,8 @@ tactic necessary. The two main reasons are that either a crucial tactic exceeds
 its timeout or that the human proof is too deep to be rediscovered (more than 
 10 steps long).
 
-\subsubsection{Tactic synthesis}
-Here, we test the benefit of tactic synthesis compared to the old version.
+\subsubsection{Abstraction}
+Here, we test the benefit of different kind of tactic abstraction. 
 In all those experiments orthogonalization is performed with radius 20 but not 
 orthogonalization with respect to metis.
 
@@ -2366,21 +2391,27 @@ We want to know what the optimal number of predictions for tactics different
 from \metis since \metis has a special status in our algorithm is handled 
 independently.
 
-\subsubsection{Hammer parameters}
+\subsubsection{ATP integration}
 
-The third experiment, presented in Table~\ref{tab:lh_param},
-evaluates the effect of integrating the ``small hammer'' in the \tactictoe 
-search.
-At a first glance, the increased success rate is significant for all tested 
-parameters. 
-Further analysis reveals that increasing the number of premises from 8 to 16 
-with a 
-timeout of 0.02 seconds is detrimental. The $D_{19}$ experiment  demonstrates 
-that 0.1 
-seconds is a better time limit for reasoning with 16 premises. And the $D_{18}$ 
-experiment reveals the disadvantage of unnecessarily increasing the timeout of 
-\metis. This reduces the time available for the rest of the proof search, which 
-makes the success rate drop.
+%The third experiment, presented in Table~\ref{tab:lh_param},
+%evaluates the effect of integrating the ``small hammer'' in the \tactictoe 
+%search.
+%At a first glance, the increased success rate is significant for all tested 
+%parameters. 
+%Further analysis reveals that increasing the number of premises from 8 to 16 
+%with a 
+%timeout of 0.02 seconds is detrimental. The $D_{19}$ experiment  demonstrates 
+%that 0.1 
+%seconds is a better time limit for reasoning with 16 premises. And the 
+%$D_{18}$ 
+%experiment reveals the disadvantage of unnecessarily increasing the timeout of 
+%\metis. This reduces the time available for the rest of the proof search, 
+%which 
+%makes the success rate drop.
+
+The best setting for \metis was to be in previous experiments to be 16
+theorems and
+
 
 %\begin{table*}[t]
 %\centering\ra{1.3}
@@ -2532,16 +2563,21 @@ most proofs are usually completed by rewriting tactics.
 
 \subsection{Time and space complexity}
 
+Analysing failed proof attempt can give us an idea of the behaviour of the 
+algorithm. In a proof search of 10 seconds, in average 500 (todo: real 
+estimation) tactics are applied.
+The productive tactics create an average of 100 (todo: real estimation) nodes. 
+This means that in this settings 1 out of 5 tactics are productive.
+
+Increasing the timeout to more than 10 seconds would probably be beneficial as 
+we can see that the slope of the curve is far for being flat in Fig~..
+
 \pgfplotscreateplotcyclelist{my black}{
 solid, mark repeat=100, mark phase=0, black!100\\
 dashed, mark repeat=100, mark phase=0, black!100\\
-solid, mark repeat=20, mark phase=10, black!100, mark=triangle*\\
-solid, mark repeat=20, mark phase=10, black!75, mark=square*\\
-solid, mark repeat=20, mark phase=10, black!50, mark=*\\
-solid, mark repeat=20, mark phase=10, black!50, mark=o\\
 }
 
-\begin{figure}[p]
+\begin{figure}[h]
 \centering           
 \begin{tikzpicture}[scale=1]
 \begin{axis}[
@@ -2560,7 +2596,8 @@ solid, mark repeat=20, mark phase=10, black!50, mark=o\\
 \caption{Number of problem solved in less than x seconds.}
 \end{figure}
 
-\begin{figure}[p]
+(Todo: change next figure to an histogram)
+\begin{figure}[h]
 \centering           
 \begin{tikzpicture}[scale=1]
 \begin{axis}[
@@ -2581,21 +2618,21 @@ original
 proof}
 \end{figure}
 
-\begin{table*}[t]
-\centering\ra{1.3}
-\small
-\begin{tabular}{llllll}
-\toprule
- ID & \multicolumn{2}{c}{nodes}   & \multicolumn{2}{c}{proof size} & 
- \multicolumn{1}{c}{time}\\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} 
- \cmidrule(lr){6-6}
-     & average & max & average & max & average \\
-\midrule
- \tactictoe & 94.66 & 421 & 3.34 & 39 & 0.66 \\
-\bottomrule
-\end{tabular}
- \caption{\label{tab:stats} old search statistics}
-\end{table*}
+%\begin{table*}[t]
+%\centering\ra{1.3}
+%\small
+%\begin{tabular}{llllll}
+%\toprule
+% ID & \multicolumn{2}{c}{nodes}   & \multicolumn{2}{c}{proof size} & 
+% \multicolumn{1}{c}{time}\\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} 
+% \cmidrule(lr){6-6}
+%     & average & max & average & max & average \\
+%\midrule
+% \tactictoe & 94.66 & 421 & 3.34 & 39 & 0.66 \\
+%\bottomrule
+%\end{tabular}
+% \caption{\label{tab:stats} old search statistics}
+%\end{table*}
 
 
 \section{Proof Presentation}\label{sec:proofdisplay}
@@ -2770,6 +2807,20 @@ theory \texttt{pred\_set})
 
 \section{Conclusion}\label{sec:concl}
 
+Future work:
+  Promising techniques that could not be evaluated. Orthogonalization of 
+  theorems~\cite{ckju-jsc15}. Term predictions.
+
+
+Cite in future works.
+%A first successful use of orthogonalization techniques for theorems appeared in
+%a work on lemma mining~\cite{ckju-jsc15} in \hollight. Theorems were mined 
+%from 
+%proofs recorded at the kernel level. Because the number of recorded lemmas was 
+%in millions, page ranking techniques was used as a filter to extract 
+%``useful'' 
+%lemmas.
+
 \todo{is copied (modified a bit)}
 We proposed a new proof assistant automation technique which combines 
 tactic-based proof search with machine learning tactic prediction
@@ -2787,6 +2838,8 @@ and that accurate predictions can be obtained by learning from the knowledge
 available in today's large formal proof corpora. 
 %And it seems to get us 
 %closer to the way how humans learn to do theorem proving.
+
+
 
 There is plenty of future work in the directions opened here.
 To improve the quality of the predicted tactics, 
