@@ -245,7 +245,7 @@ solves 29\%.
 %\end{example}
 %
 
-\todo{These 2 paragraphs are copied}
+\todo{These 2 paragraphs are copied and slightly edited}
 Many of the state-of-the-art interactive theorem provers (ITPs) such as 
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight}, 
   \isabelle~\cite{isabelle} 
@@ -308,9 +308,8 @@ algorithm. MCTS gives a more balanced feedback to guide proof search by
 comparing subtrees instead of leafs. (todo: A first successful evaluation 
 function.)
 \item The internal ATP \metis used during our proof search is complemented by 
-calls to \holyhammer. For efficiency reasons, those calls are run in parallel 
-and asynchronously.
-\item First evaluation of \tactictoe and \holyhammer success rates relative to 
+asynchronous calls to \eprover.
+\item First evaluation of \tactictoe and \eprover success rates relative to 
 the length of the original proofs.
 \item User interaction is enhanced by the minimization and prettification 
 applied on the generated proof.
@@ -1180,7 +1179,8 @@ Section~\ref{sec:proofsearch}.
 %refer to those normalized scores later as $tactic\_norm\_score_1$ and 
 %$tactic\_norm\_score_2$.
 
-\subsection{Dependencies}\label{sec:dependencies}
+\subsection{Preselecting feature vectors and their 
+dependencies}\label{sec:dependencies}
 We first rank feature vectors by their distance to the conjecture. But better 
 ranked vectors only contains symbols from 
 the conjecture and may not be suitable for later stages of the proof where the 
@@ -1206,13 +1206,11 @@ of the tactic $\hat{t}$ to the goal $\hat{g}$.
 \end{definition}
 
 We augment the ordered predictions by inserting after each predicted vector 
-its descendants and removing lower ranked duplicates. 
+its descendants and removing lower ranked duplicates. This contrast with 
+theorem predictions where we only select parents. This phase is only applied 
+during preselection, so is of no great consequence as long as we select enough 
+theorems and tactics.
 
-This is algorithm is used to predict tactics in the preselection
-phase of the algorithm. Similarly, dependencies between theorems are used to 
-preselect theorems.
-
-\subsection{Preselection}\label{sec:pretactic}
 Since predicting efficiently is crucial during proof 
 search, we preselect a number of tactics before the search.
 We take the first 500 vectors of the augmented ordered list. Only members of 
@@ -1254,9 +1252,14 @@ the orthogonalization algorithm.
 
 \begin{definition} (Coverage)\\ 
 Let $\mathfrak{F}$ be a recorded set of feature vectors. We can define the 
-coverage $C(t)$ of a tactic $t$ by the number of times this tactic appears in 
+coverage $\textit{\mbox{Coverage}}(t)$ of a tactic $t$ by the number of times 
+this tactic 
+appears in 
 $\mathfrak{F}$. Expressing this in a formula, we get:
-  \[C(t) =_{def} card\ \lbrace (x,g)\ |\ (x,g) \in \mathfrak{F} \wedge x = t
+  \[\textit{\mbox{Coverage}}(t) =_{def} card\ \lbrace (x,g)\ |\ (x,g) \in 
+  \mathfrak{F} 
+  \wedge x 
+  = t
   \rbrace  \]
 Intuitively, this notion estimates how general a tactic is by counting the 
 number of different goals it is useful for.
@@ -1266,19 +1269,18 @@ number of different goals it is useful for.
 
 
 \begin{definition} (Goal subsumption)\\ 
-A goal subsumption $S$ is a partial reflexive relation on a set of goals.\\
-Given two goals $g_1$ and $g_2$, we note:
-$g_1 \ge g_2 \Leftrightarrow_{def} (g_1,g_2) \in S$.\\
+A goal subsumption $S$ is a partial relation on a set of goals.\\
+Given two goals $g_1$ and $g_2$, we note $g_1 \ge g_2$ when  $(g_1,g_2) \in 
+S$.\\
 Assuming we have a way to test if a goal is a consequence of another, a 
 possibly useful subsumption definition would be: 
-$g_1 \ge g_2  \Leftrightarrow_{def} g_1\ \mbox{is a consequence of}\ g_2$\\
-In our experiments, we take the minimal subsumption defined by $g_1 \ge g_2  
-\Leftrightarrow_{def} g_1 =_{\alpha} g_2$ where $=_{\alpha}$ is 
-$\alpha$-equivalence.
+\[g_1 \ge g_2  \Leftrightarrow_{def} g_1 \mbox{ is a consequence of } g_2\]
+In our experiments, we take a minimal subsumption defined by:
+\[g_1 \ge g_2  \Leftrightarrow_{def} g_1 \mbox{ is $\alpha$-equivalent to }  
+ g_2\]
 \end{definition}
 
-We can naturally extend a goal subsumption to a set of goals in the following 
-way.
+We can naturally extend a goal subsumption to a set of goals.
 \begin{definition} (Goal set subsumption)\\
 A goal set subsumption is an partial relation on a set of goals.
 Given two sets of goals $l_1$ and $l_2$, we can define it from goal 
@@ -1307,21 +1309,21 @@ of the output of $t_2$ on $g$.
 We can now express the orthogonalization algorithm given in a single formula 
 with parameters: $P_n$ for the tactic predictor where $n$ for the number of 
 predicted
-tactics, $S$ for the tactic subsumption relation and $C$ for the coverage of 
+tactics, $S$ for the tactic subsumption relation and $\textit{\mbox{Coverage}}$ 
+for the coverage of 
 a tactic. The orthogonalization process $\mathbb{O}$ is given as input a 
 recorded feature vector $(t,g)$ where $t$ is the tactic originally applied to 
 the goal $g$. The winning tactic of the competition is given by the formula:
 
 
 \[\mathbb{O}(t,g) = \argmax_{x\ \in\ P_n(g) \cup \lbrace t \rbrace} \lbrace 
-C(x)\ 
+\textit{\mbox{Coverage}}(x)\ 
 |\ x \ge_g t\rbrace\] 
                    
 After orthogonalization, because the orthogonalized tactic is supposedly 
 better, we record the feature vector $(\mathbb{O}(t,g),g)$ instead of 
 $(t,g)$. To sum up, the winning tactic is the one with the most coverage and 
-that is able to replicate the effect of the original tactic (or do better if we 
-woudl consider more complex goal subsumptions).
+that is able to replicate the effect of the original tactic.
 
 
 
@@ -1514,8 +1516,8 @@ or even loop. For that reason, the prediction needs to be accompanied by a
 proof search mechanism that allows for backtracking and 
 can choose which proof tree to extend next and in 
 which direction.
-Our search algorithm takes inspiration from advanced tree search algorithm such 
-that
+Our search algorithm is an advanced tree search algorithm that relies on 
+evaluation and policy functions to guide the search.
 
 The first necessary adaptation of the algorithm stems
 from the fact that a proof is in general not a
@@ -1542,9 +1544,9 @@ multiple goals.
 %The proof is not finished when the current tactic solves its goal because it 
 %often leaves new pending open goals along the current path. 
 
-\subsection{Diagonalized tree search}
-(Move this section to Monte Carlo tree search and simplify it) 
-(Don't mention diagonlazied tree search)
+%\subsection{Diagonalized tree search}
+%(Move this section to Monte Carlo tree search and simplify it) 
+%(Don't mention diagonlazied tree search)
 
 
 %%
@@ -1642,12 +1644,6 @@ multiple goals.
 %%there is no more tactic to be applied to an active node.
 
 
-
-
-\subsection{Monte Carlo Tree Search}
-
-We will reuse the prediction
-
 %Search Algorithm AlphaGo Zero uses a much simpler variant of the asynchronous 
 %policy and
 %value MCTS algorithm (APV-MCTS) used in AlphaGo Fan and AlphaGo Lee.
@@ -1707,6 +1703,60 @@ We will reuse the prediction
 %We use virtual loss to ensure
 %each thread evaluates different nodes 69 .
 
+\subsection{A proof tree and solved node}
+
+A tactical proof tree is a set of nodes containing a list of goals where each 
+goal $g$ of a node $n$ is linked to a node $m$ when the list of 
+
+\begin{figure}{}
+\begin{center}
+\begin{tikzpicture}[node distance=0.7cm]
+\node [tcircle] (0) {$g_0^i$};
+\node [right of=0] (0r) {.\ .\ .};
+\node [tcircle,right of=0r] (0rr) {$g_0^n$};
+\node [left of=0] (0l) {.\ .\ .};
+\node [tcircle,left of=0l] (0ll) {$g_0^1$};
+\node [draw,fit=(0rr) (0ll)] {}; 
+\node [above of=0,node distance=2cm] (2) {.\ .\ .};
+\node [left of=2, tcircle] (2l) {$g_2^1$};
+\node [tcircle,right of=2] (2r) {$g_2^p$};
+\node [draw, fit=(2l) (2r)] (2b) {}; 
+
+
+\node [tcircle, left of=2l, node distance=2cm] (1r) {$g_1^q$};
+\node [left of=1r] (1) {.\ .\ .};
+\node [tcircle, left of=1] (1l) {$g_1^1$};
+\node [draw, fit=(1l) (1r)] (1b) {}; 
+
+\node [right of=2r,node distance=2cm] (3l) {$\phantom{g_3^p}$};
+\node [right of=3l] (3) {\phantom{.\ .\ .}};
+\node [right of=3] (3r) {$\phantom{g_3^p}$};
+\node [fit=(3l) (3r)] (3b) {}; 
+
+\draw[-to,thick] (0) to node[xshift=-10](t1){$t_1$} (1b);
+\draw[-to,thick] (0) to node[xshift=-10](t2){$t_2$} (2b);
+\draw[-to,dotted,thick] (0) to (3b);
+\end{tikzpicture}
+\end{center}
+\caption{Choice of a goal and a tactic}
+\label{fig:choice}
+\end{figure}
+
+Starting from the bottom node, we can construct descendant of this node by 
+choosing a goal $g_i^0$ on this node and choosing tactics $t1,t2,\ldots$ to 
+apply to this goal. Here the result produces new nodes each containing a list 
+of goals to be proven. If one of those list where empty, the goal $g_i^0$ would 
+be proved.
+
+
+A node is solved when every of its goal are solved.
+A goal is solved when every of its children node are solved.
+
+
+
+
+
+\subsection{Guiding the proof search}
 
 A similar trade-off between exploration and exploitation exists in algorithm 
 like Monte Carlo. However, Monte Carlo tree search metrics are based on many 
@@ -1748,6 +1798,7 @@ shape of the tree. if the prior shapes
 
 
 
+
 \subsection{Optimization}
 
 \begin{definition} (Productive tactic)
@@ -1763,15 +1814,16 @@ ancestor nodes.
 produced from the same node with the same active goal.
 \end{itemize}
 
-The third point is a partial attempt to prevent confluent branches. The general 
+
+\end{definition}
+
+The third point of the definition is a partial attempt to prevent confluent 
+branches. The general 
 case where two branches becomes parallel after $n$ steps is handle by a
 tactic cache which memorizes tactic effects on goals. Similarly there is also a 
 prediction cache, which memorize the tactic predictions for each goal. Those 
 two caches allow a fast exploration of confluent branches but they remain 
 separated in our search tree.
-\end{definition}
-
-
 
 
 \subsection{Evaluation}
@@ -2030,6 +2082,12 @@ the ``hammer'' tactic is delayed.
 
 \section{Experimental Evaluation}\label{s:experiments}
 
+Disclaimer:
+Comparing results from different tables is possible but not advisable since 
+conditions of the experiments may vary slightly because of various factors such 
+as overhead cost of additional features or the fact that they were run on 
+different machines on a local machine or on the server.
+
 \subsection{Methodology} \todo{is copied}
 The evaluation imitates the construction of the library: For each theorem only 
 the previous
@@ -2068,6 +2126,7 @@ structure increase minimally the number of problems solved. The attempted
 length penalty on the total number of features is actually slightly harmful.
 We did not turn on the top feature flag in the next experiments because they 
 are slightly more expensive too compute.
+
 
 
 %
@@ -2535,7 +2594,7 @@ proof}
  \tactictoe & 94.66 & 421 & 3.34 & 39 & 0.66 \\
 \bottomrule
 \end{tabular}
- \caption{\label{tab:stats}search statistics}
+ \caption{\label{tab:stats} old search statistics}
 \end{table*}
 
 
@@ -2619,31 +2678,32 @@ which improves readability and prevents duplication of this declarations.
 
 
 \section{Case study}
-Investigating further the different qualities of \tactictoe, we study its 
-generated proof scripts on an example in \texttt{list} theory (see 
-Example~\ref{ex:casestudy}). 
-The theorem to be proven states the equivalence 
-between the fact that a number $n$ is greater than the length of a list 
-$\mathit{ls}$ with the 
-fact that dropping $n$ elements from this list returns an empty list.
-
-The human proof proceeds by induction on $n$ followed by solving both goals 
-using rewrite steps combined with an arithmetic decision procedure. 
-Both \tactictoe proofs (NH and SH) follow the general idea of reasoning by 
-induction but solve 
-the base case and the inductive case in a different way.
-The base case only needs rewriting using the global simpset in the 
-\tactictoe(NH)
-proof, which is simulated by a call to \metis in the (SH) proof.
-The inductive case should require an arithmetic decision procedure as hinted by 
-the human 
-proof. This is achieved by rewriting using an arithmetic simpset in the second 
-proof. In the first proof however, a rewriting step and case splitting step 
-were used
-to arrive at a point where \metis calls succeed.
-The tactic proof produced by \tactictoe(NH) often looks better than the one 
-discovered by \tactictoe(SH) in that it does not involve \metis calls with a 
-large numbers of premises. 
+%Investigating further the different qualities of \tactictoe, we study its 
+%generated proof scripts on an example in \texttt{list} theory (see 
+%Example~\ref{ex:casestudy}). 
+%The theorem to be proven states the equivalence 
+%between the fact that a number $n$ is greater than the length of a list 
+%$\mathit{ls}$ with the 
+%fact that dropping $n$ elements from this list returns an empty list.
+%
+%The human proof proceeds by induction on $n$ followed by solving both goals 
+%using rewrite steps combined with an arithmetic decision procedure. 
+%Both \tactictoe proofs (NH and SH) follow the general idea of reasoning by 
+%induction but solve 
+%the base case and the inductive case in a different way.
+%The base case only needs rewriting using the global simpset in the 
+%\tactictoe(NH)
+%proof, which is simulated by a call to \metis in the (SH) proof.
+%The inductive case should require an arithmetic decision procedure as hinted 
+%by 
+%the human 
+%proof. This is achieved by rewriting using an arithmetic simpset in the second 
+%proof. In the first proof however, a rewriting step and case splitting step 
+%were used
+%to arrive at a point where \metis calls succeed.
+%The tactic proof produced by \tactictoe(NH) often looks better than the one 
+%discovered by \tactictoe(SH) in that it does not involve \metis calls with a 
+%large numbers of premises. 
 
 %In general, \tactictoe does not search for beauty, but sometimes it is 
 %discovered by accident.
