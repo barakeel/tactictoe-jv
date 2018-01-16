@@ -261,7 +261,6 @@ than 10 seconds compared to 29\% proved by the HolyHammer system using the E ATP
 %\end{example}
 %
 \vspace{100mm}
-
 \tableofcontents
 
 \vspace{100mm}
@@ -2662,17 +2661,20 @@ tactic \texttt{A THEN B} appears in the proof and has the same effect as
 \texttt{B} then we can drop \texttt{A} from the proof.
 Stronger minimization can be obtained by rerunning the prover with feature 
 vectors containing only tactics 
-from the proof. To obtain a shorter proof, the diagonalization coefficient is
-reduced to encourage exploration in the width of the proof tree. Similarly by 
-ponderating each tactic application by its time and setting the 
-diagonalization  coefficient is set to a tenth of the timeout of a tactic, we 
-can aim for faster proofs.
+from the proof. To obtain a shorter proof, the exploration coefficient should be
+increased and the policy coefficient lowered to encourage exploration in the 
+width of the proof tree. Additionally, by giving a weaker evaluation to slow 
+tactics, we can aim for faster proofs.
 
 \paragraph{Minimizing tactic arguments}
 One of the argument that may contain unnecessary information are lists.
-We test if the minimized tactic has the same effect as the original one.
+Let $t$ be a tactic applied to a goal $g$ containing a list $l$ as argument. 
+And let $t'$ be the tactic $t$ where one element $e$ of $l$ as be removed. If 
+$t$ and $t'$ have the same effect on $g$ then $t'$ can replace $t$ in the final 
+proof.
+
 This is a generalization of the simplest method used for minimizing a list of 
-theorems in ``hammers'' \cite{}. The fact that the lists are generally small 
+theorems in ``hammers'' \cite{}. The fact that lists are generally small
 make this approach feasible.
 
 \paragraph{Prettification}
