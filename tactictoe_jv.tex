@@ -125,7 +125,7 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
 %\usepackage[scaled=.95]{couriers}
 \lstdefinelanguage{SML}%
 {columns=fullflexible,
-  keywords={THEN,val,open,store_thm,fun,fn},%
+  keywords={THEN,THENL,val,open,store_thm,fun,fn},%
   frame=none,
   sensitive=true,
   keywordstyle=\fontfamily{lmss}\footnotesize\selectfont,%
@@ -137,7 +137,9 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
    {[}{{\tt\raisebox{-.15mm}{[}}}1%
    {]}{{\tt\raisebox{-.15mm}{]}}}1%
    {->}{{$\rightarrow$}}1%
-   {=>}{{$\Rightarrow$}}1%
+   {==>}{{$\Rightarrow$}}1%
+   {wedge}{{$\wedge$}}1%
+   {>=}{{$\geq$}}1%
    {'a}{{$\alpha$}}1%
    {'b}{{$\beta$}}1%
    {ldots}{$\ldots$}1%
@@ -147,7 +149,7 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
 
 \lstdefinelanguage{SMLSmall}%
 {columns=fullflexible,
-  keywords={THEN,val,open,store_thm,fun,fn},%
+  keywords={THEN,THENL,val,open,store_thm,fun,fn},%
   frame=none,
   sensitive=true,
   keywordstyle=\fontfamily{lmss}\scriptsize\selectfont,%
@@ -159,7 +161,10 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
    {[}{{\tt\raisebox{-.15mm}{[}}}1%
    {]}{{\tt\raisebox{-.15mm}{]}}}1%
    {->}{{$\rightarrow$}}1%
-   {=>}{{$\Rightarrow$}}1%
+   {==>}{{$\Rightarrow$}}1%
+   {wedge}{{$\wedge$}}1%
+   {<=}{{$\leq$}}1%
+   {>=}{{$\geq$}}1%
    {'a}{{$\alpha$}}1%
    {'b}{{$\beta$}}1%
    {ldots}{$\ldots$}1%
@@ -260,8 +265,7 @@ than 10 seconds compared to 29\% proved by the HolyHammer system using the E ATP
 %
 %\end{example}
 %
-\vspace{100mm}
-\tableofcontents
+\vspace{100mm}\tableofcontents
 
 \vspace{100mm}
 \todo{TG : comparison with hammers and advantages for the user and over hammers}
@@ -2522,7 +2526,7 @@ as
 and 
 most proofs are usually completed by rewriting tactics.
 
-\begin{table}[b!]
+\begin{table}[]
 \centering
 \setlength{\tabcolsep}{3mm}
 \begin{tabular}{@{}ccccc@{}}
@@ -2581,7 +2585,6 @@ dashed, mark repeat=100, mark phase=0, black!100\\
 \caption{Number of problem solved in less than x seconds.}
 \end{figure}
 
-(Todo: change next figure to an histogram)
 \begin{figure}[h]
 \centering           
 \begin{tikzpicture}[scale=1]
@@ -2712,12 +2715,10 @@ which improves readability and prevents duplication of this declarations.
 
 
 
-\section{Case study}\todo{TG: rerun experiment with prettification and 
-minimization + add another example. 
-  TG + RK: describe the two examples + find examples that did not appear during 
-  evaluation
+\section{Case study}\todo{
+  TG + RK: describe the two examples.
   RK: After implementation and small experiment is done (in about 1 week) 
-      Test tactictoe on new goals and manual exploration mode.
+      Test tactictoe find new examples on new goals and manual exploration mode.
       Give feedback.
 }
 %Investigating further the different qualities of \tactictoe, we study its 
@@ -2750,65 +2751,153 @@ minimization + add another example.
 %In general, \tactictoe does not search for beauty, but sometimes it is 
 %discovered by accident.
 
-%\begin{remark}
-%The additional difficulty produced by the necessary induction is such that the 
-%theorem could not be proven by \holyhammer.
-%\end{remark}
-
-%SURJ_INJ_INV
-%proof length: 7
-%proof time: 0.092014
-%Statistics
-%  infstep : 500
-%  nodes   : 132
-%  maxdepth: 7
-%Time: 9.574603
-%  inferstep time: 7.287698
-%  node_find time: 0.135171
-%  node_crea time: 1.674807
-%    pred time: 0.335816
-%    thmpred time: 0.000018
-%    mc time: 0.704148
-%    inst time: 0.0
-
-
-\newcommand{\wed}{\begin{math}\wedge\end{math}}
-
-\begin{example}\label{ex:casestudy}(
-Proof discovered by \tactictoe for theorem \texttt{SURJ\_INJ\_INV} In 
-theory \texttt{pred\_set})
-\small
-\begin{center}
-\begin{alltt}
-    SRW_TAC [] [auto] 
-  THEN 
-    POP_ASSUM (MP_TAC o 
-      CONV_RULE (DEPTH_CONV RIGHT_IMP_EXISTS_CONV 
-                 THENC SKOLEM_CONV THENC REWRITE_CONV [EXISTS_DEF] 
-                 THENC DEPTH_CONV BETA_CONV)) 
-  THEN
-    Q.SPEC_TAC (`@y. !x. x IN t ==> y x IN s \wed (f (y x) = x)`,`g`) 
-  THEN
-    SRW_TAC [] [INJ_DEF] 
-  THEN
-    Q.EXISTS_TAC `g` 
-  THEN
-    SRW_TAC [] [INJ_DEF] 
-  THEN
-    METIS_TAC [auto]
-
-\end{alltt} 
-\end{center}
-\end{example}
-
 
 %The term and the conversion rules were not synthesized but simply copied from 
 %previous 
 %proofs.
 
+%SURJ_INJ_INV
+%proof length: 2
+%proof time: 0.050853
+%Statistics
+%  infstep : 31
+%  nodes   : 11
+%  maxdepth: 3
+%Time: 1.300789
+%  inferstep time: 1.071869
+%  node_find time: 0.018046
+%  node_crea time: 0.147604
+%    pred time: 0.04263
+%    thmpred time: 0.000005
+%    mc time: 0.071282
+%    inst time: 0.0
+%Proof found: 
+%Org tac number: 15
+%Replaying proof: 0.562829
 
 
 
+
+%\begin{remark}
+%The additional difficulty produced by the necessary induction is such that the 
+%theorem could not be proven by \holyhammer.
+%\end{remark}
+
+\newcommand{\wed}{\begin{math}\wedge\end{math}}
+
+Proofs discovered by \tactictoe discovered during evaluation.
+
+
+
+
+for theorem \texttt{SURJ\_INJ\_INV} In 
+theory \texttt{pred\_set})
+
+
+
+\begin{example}\label{ex:casestudy}()
+
+
+
+%val SURJ_INJ_INV = store_thm(
+%  "SURJ_INJ_INV",
+%  ``SURJ f s t ==> ?g. INJ g t s /\ !y. y IN t ==> (f (g y) = y)``,
+\vspace{5mm}
+\small
+
+
+Goal
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+!f s t. SURJ f s t ==> ?g. INJ g t s wedge !y. y IN t ==> (f (g y) = y)
+\end{lstlisting}
+
+Original \holfour proof script
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+REWRITE_TAC [IMAGE_SURJ] THEN
+  DISCH_TAC THEN Q.EXISTS_TAC `THE o LINV_OPT f s` THEN
+  BasicProvers.VAR_EQ_TAC THEN REPEAT STRIP_TAC
+  THENL [
+  irule INJ_COMPOSE THEN Q.EXISTS_TAC `IMAGE SOME s` THEN
+    REWRITE_TAC [INJ_LINV_OPT_IMAGE] THEN REWRITE_TAC [INJ_DEF, IN_IMAGE] THEN
+    REPEAT STRIP_TAC THEN REPEAT BasicProvers.VAR_EQ_TAC THEN
+    FULL_SIMP_TAC std_ss [THE_DEF],
+  ASM_REWRITE_TAC [LINV_OPT_def, o_THM, THE_DEF] THEN
+    RULE_ASSUM_TAC (Ho_Rewrite.REWRITE_RULE
+      [IN_IMAGE', GSYM SELECT_THM, BETA_THM]) THEN ASM_REWRITE_TAC [] ]
+\end{lstlisting}
+
+\vspace{5mm}
+
+\tactictoe proof script
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+SRW_TAC [] [SURJ_DEF, INJ_DEF] THEN METIS_TAC []
+\end{lstlisting}
+
+
+
+
+Goal
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+!l1 l2 n x. LENGTH l1 <= n ==> 
+  (LUPDATE x n (l1 ++ l2) = l1 ++ (LUPDATE x (n - LENGTH l1) l2))
+\end{lstlisting}
+
+\vspace{5mm}
+
+Original \holfour proof script
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+  rw[] THEN simp[LIST_EQ_REWRITE] THEN Q.X_GEN_TAC `z` THEN
+  simp[EL_LUPDATE] THEN rw[] THEN simp[EL_APPEND2,EL_LUPDATE] THEN
+  fs[] THEN Cases_on `z < LENGTH l1` THEN
+  fs[] THEN simp[EL_APPEND1,EL_APPEND2,EL_LUPDATE]
+\end{lstlisting}
+
+%val LUPDATE_APPEND2 = Q.store_thm("LUPDATE_APPEND2",
+%   `!l1 l2 n x.
+%      LENGTH l1 <= n ==>
+%      (LUPDATE x n (l1 ++ l2) = l1 ++ (LUPDATE x (n-LENGTH l1) l2))`,
+%);
+\vspace{5mm}
+
+\tactictoe proof script
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+Induct_on `l1` THENL [SRW_TAC [] [],
+  Cases_on `n` THENL [SRW_TAC [] [],
+    FULL_SIMP_TAC (srw_ss ()) [] THEN METIS_TAC [LUPDATE_def]]]
+\end{lstlisting}
+
+
+If a discovered proof is reasonable short, fast and understandable, they could 
+replace its original in the \holfour standard library.
+
+
+%
+%LUPDATE_APPEND2
+%proof length: 6
+%proof time: 0.017156
+%Statistics
+%  infstep : 70
+%  nodes   : 27
+%  maxdepth: 4
+%Time: 3.02716
+%  inferstep time: 2.12842
+%  node_find time: 0.07146
+%  node_crea time: 0.508384
+%    pred time: 0.164047
+%    thmpred time: 0.000012
+%    mc time: 0.265314
+%    inst time: 0.0
+%Proof found: 
+%Org tac number: 10
+%Original proof time: 0.0
+%Replaying proof: 0.470118
+
+
+
+
+
+
+\end{example}
 
 \section{Conclusion}\label{sec:concl}\todo{TG + JU or CK review}
 
