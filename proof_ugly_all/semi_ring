@@ -1,0 +1,326 @@
+
+plus_sym
+proof length: 1
+proof time: 0.114366
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.112981
+  inferstep time: 0.085928
+  node_find time: 0.000027
+  node_crea time: 0.015983
+    pred time: 0.003976
+    thmpred time: 0.0
+    mc time: 0.020525
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "semi_ring_accfupds" , DB.fetch "semi_ring" "semi_ring_component_equality" , DB.fetch "semi_ring" "semi_ring_accessors" , DB.fetch "semi_ring" "semi_ring_SRP" , pred_setTheory.tactictoe_thm_23 , pred_setTheory.tactictoe_thm_25 , pred_setTheory.tactictoe_thm_26 , pred_setTheory.tactictoe_thm_44 , pred_setTheory.tactictoe_thm_49 , pred_setTheory.tactictoe_thm_45 , pred_setTheory.tactictoe_thm_46 , arithmeticTheory.tactictoe_thm_52 , pred_setTheory.tactictoe_thm_21 , pred_setTheory.tactictoe_thm_22 , pred_setTheory.tactictoe_thm_27])
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.002535
+
+plus_assoc
+proof length: 2
+proof time: 0.151137
+Statistics
+  infstep : 36
+  nodes   : 9
+  maxdepth: 2
+Time: 0.940085
+  inferstep time: 0.735408
+  node_find time: 0.001163
+  node_crea time: 0.176518
+    pred time: 0.054854
+    thmpred time: 0.000002
+    mc time: 0.100538
+    inst time: 0.0
+Proof found: simpLib.ASM_SIMP_TAC ((numLib.arith_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close listSimps.LIST_ss) hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.EQUIV_EXTRACT_ss) [DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "plus_sym", DB.fetch "semi_ring" "semi_ring_accfupds", DB.fetch "semi_ring" "semi_ring_component_equality", DB.fetch "semi_ring" "semi_ring_accessors", DB.fetch "semi_ring" "semi_ring_SRP", arithmeticTheory.tactictoe_thm_11, pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_46, arithmeticTheory.tactictoe_thm_52, pred_setTheory.tactictoe_thm_21] THEN metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "plus_sym", DB.fetch "semi_ring" "semi_ring_accfupds", DB.fetch "semi_ring" "semi_ring_component_equality", DB.fetch "semi_ring" "semi_ring_accessors", DB.fetch "semi_ring" "semi_ring_SRP", arithmeticTheory.tactictoe_thm_11, pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_46, arithmeticTheory.tactictoe_thm_52, pred_setTheory.tactictoe_thm_21]
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.003073
+
+mult_sym
+proof length: 6
+proof time: 0.191985
+Statistics
+  infstep : 132
+  nodes   : 17
+  maxdepth: 4
+Time: 2.202545
+  inferstep time: 1.655106
+  node_find time: 0.004756
+  node_crea time: 0.491356
+    pred time: 0.148517
+    thmpred time: 0.000007
+    mc time: 0.256193
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "semi_ring_accfupds", DB.fetch "semi_ring" "semi_ring_component_equality", DB.fetch "semi_ring" "semi_ring_accessors", DB.fetch "semi_ring" "semi_ring_SRM", pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_46, arithmeticTheory.tactictoe_thm_52, pred_setTheory.tactictoe_thm_21, pred_setTheory.tactictoe_thm_22, pred_setTheory.tactictoe_thm_27] THEN BasicProvers.Cases_on [HolKernel.QUOTE " (*#loc 1 40559*)EVERY (\\r'. r' v <> NONE ==> (r' v = SOME x)) rows_before"] THEN
+  simpLib.FULL_SIMP_TAC (numLib.std_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.EQUIV_EXTRACT_ss) [listTheory.EVERY_MEM, (DB.fetch "patternMatches" "PMATCH_ROW_COND_NOT_EX_OR_EQ_def")] THEN
+  metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "semi_ring_accfupds", DB.fetch "semi_ring" "semi_ring_component_equality", pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_46, pred_setTheory.tactictoe_thm_35, pred_setTheory.tactictoe_thm_37, pred_setTheory.tactictoe_thm_39, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_42, pred_setTheory.tactictoe_thm_43, pred_setTheory.tactictoe_thm_47, pred_setTheory.tactictoe_thm_48, pred_setTheory.tactictoe_thm_50]
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.002092
+
+mult_assoc
+proof length: 5
+proof time: 0.220562
+Statistics
+  infstep : 28
+  nodes   : 11
+  maxdepth: 4
+Time: 1.26536
+  inferstep time: 1.053332
+  node_find time: 0.000796
+  node_crea time: 0.163346
+    pred time: 0.061462
+    thmpred time: 0.000004
+    mc time: 0.107705
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "mult_sym", DB.fetch "semi_ring" "semi_ring_accfupds", DB.fetch "semi_ring" "semi_ring_component_equality", DB.fetch "semi_ring" "semi_ring_accessors", DB.fetch "semi_ring" "semi_ring_SRM", arithmeticTheory.tactictoe_thm_11, pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_46, arithmeticTheory.tactictoe_thm_52, pred_setTheory.tactictoe_thm_21] THEN BasicProvers.Cases_on [HolKernel.QUOTE " (*#loc 1 40559*)EVERY (\\r'. r' v <> NONE ==> (r' v = SOME x)) rows_before"] THENL
+  [simpLib.FULL_SIMP_TAC (numLib.std_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.EQUIV_EXTRACT_ss) [listTheory.EVERY_MEM, (DB.fetch "patternMatches" "PMATCH_ROW_COND_NOT_EX_OR_EQ_def")] THEN
+  metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "mult_sym", DB.fetch "semi_ring" "semi_ring_accfupds", DB.fetch "semi_ring" "semi_ring_component_equality", pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_46, pred_setTheory.tactictoe_thm_35, pred_setTheory.tactictoe_thm_37, pred_setTheory.tactictoe_thm_39, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_42, pred_setTheory.tactictoe_thm_43, pred_setTheory.tactictoe_thm_47, pred_setTheory.tactictoe_thm_48],
+  metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "mult_sym", DB.fetch "semi_ring" "semi_ring_accfupds", DB.fetch "semi_ring" "semi_ring_component_equality", relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1, relationTheory.tactictoe_thm_2, relationTheory.tactictoe_thm_3, relationTheory.tactictoe_thm_4, relationTheory.tactictoe_thm_5, relationTheory.tactictoe_thm_6, relationTheory.tactictoe_thm_7, relationTheory.tactictoe_thm_8, relationTheory.tactictoe_thm_9, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49]]
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.017532
+
+plus_zero_left
+proof length: 1
+proof time: 0.101289
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.114382
+  inferstep time: 0.09746
+  node_find time: 0.000037
+  node_crea time: 0.011594
+    pred time: 0.003064
+    thmpred time: 0.000001
+    mc time: 0.01155
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "semi_ring_accfupds" , DB.fetch "semi_ring" "semi_ring_component_equality" , DB.fetch "semi_ring" "plus_assoc" , DB.fetch "semi_ring" "plus_sym" , DB.fetch "semi_ring" "semi_ring_accessors" , DB.fetch "semi_ring" "semi_ring_SR0" , DB.fetch "semi_ring" "semi_ring_SRP" , pred_setTheory.tactictoe_thm_23 , pred_setTheory.tactictoe_thm_25 , pred_setTheory.tactictoe_thm_26 , pred_setTheory.tactictoe_thm_44 , pred_setTheory.tactictoe_thm_46 , pred_setTheory.tactictoe_thm_49 , arithmeticTheory.tactictoe_thm_52 , pred_setTheory.tactictoe_thm_21])
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.002245
+
+mult_one_left
+proof length: 1
+proof time: 0.096887
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.120985
+  inferstep time: 0.104454
+  node_find time: 0.000044
+  node_crea time: 0.011675
+    pred time: 0.003094
+    thmpred time: 0.000001
+    mc time: 0.011029
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "semi_ring_accfupds" , DB.fetch "semi_ring" "semi_ring_component_equality" , DB.fetch "semi_ring" "mult_assoc" , DB.fetch "semi_ring" "mult_sym" , DB.fetch "semi_ring" "semi_ring_accessors" , DB.fetch "semi_ring" "semi_ring_SR1" , DB.fetch "semi_ring" "semi_ring_SRM" , pred_setTheory.tactictoe_thm_23 , pred_setTheory.tactictoe_thm_25 , pred_setTheory.tactictoe_thm_26 , pred_setTheory.tactictoe_thm_44 , pred_setTheory.tactictoe_thm_46 , pred_setTheory.tactictoe_thm_49 , arithmeticTheory.tactictoe_thm_52 , pred_setTheory.tactictoe_thm_21])
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.002645
+
+mult_zero_left
+proof length: 1
+proof time: 0.089182
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.103724
+  inferstep time: 0.086809
+  node_find time: 0.000035
+  node_crea time: 0.011883
+    pred time: 0.003227
+    thmpred time: 0.0
+    mc time: 0.011482
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "semi_ring_accfupds" , DB.fetch "semi_ring" "semi_ring_component_equality" , DB.fetch "semi_ring" "plus_zero_left" , DB.fetch "semi_ring" "mult_assoc" , DB.fetch "semi_ring" "mult_one_left" , DB.fetch "semi_ring" "mult_sym" , DB.fetch "semi_ring" "semi_ring_accessors" , DB.fetch "semi_ring" "semi_ring_SR0" , DB.fetch "semi_ring" "semi_ring_SRM" , pred_setTheory.tactictoe_thm_23 , pred_setTheory.tactictoe_thm_25 , pred_setTheory.tactictoe_thm_26 , pred_setTheory.tactictoe_thm_44 , pred_setTheory.tactictoe_thm_46 , pred_setTheory.tactictoe_thm_49])
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.001928
+
+distr_left
+proof length: 3
+proof time: 0.149682
+Statistics
+  infstep : 47
+  nodes   : 10
+  maxdepth: 2
+Time: 1.19998
+  inferstep time: 1.034878
+  node_find time: 0.001235
+  node_crea time: 0.140885
+    pred time: 0.05571
+    thmpred time: 0.000002
+    mc time: 0.073055
+    inst time: 0.0
+Proof found: BasicProvers.Cases_on [HolKernel.QUOTE " (*#loc 1 40559*)EVERY (\\r'. r' v <> NONE ==> (r' v = SOME x)) rows_before"] THEN (metisTools.METIS_TAC [DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "plus_assoc", DB.fetch "semi_ring" "plus_sym", DB.fetch "semi_ring" "mult_assoc", DB.fetch "semi_ring" "mult_sym", DB.fetch "semi_ring" "semi_ring_accfupds", DB.fetch "semi_ring" "semi_ring_component_equality", DB.fetch "semi_ring" "plus_zero_left", DB.fetch "semi_ring" "mult_one_left", DB.fetch "semi_ring" "mult_zero_left", DB.fetch "semi_ring" "semi_ring_accessors", relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1, relationTheory.tactictoe_thm_2, relationTheory.tactictoe_thm_3, relationTheory.tactictoe_thm_4])
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.002018
+
+plus_zero_right
+proof length: 1
+proof time: 0.089304
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.117307
+  inferstep time: 0.100592
+  node_find time: 0.000041
+  node_crea time: 0.011829
+    pred time: 0.003228
+    thmpred time: 0.000001
+    mc time: 0.010822
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "tactictoe_thm_1" , DB.fetch "semi_ring" "tactictoe_thm_0" , DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "plus_zero_left" , DB.fetch "semi_ring" "semi_ring_accfupds" , DB.fetch "semi_ring" "semi_ring_component_equality" , DB.fetch "semi_ring" "distr_left" , DB.fetch "semi_ring" "plus_assoc" , DB.fetch "semi_ring" "plus_sym" , DB.fetch "semi_ring" "mult_zero_left" , DB.fetch "semi_ring" "semi_ring_accessors" , DB.fetch "semi_ring" "semi_ring_SR0" , DB.fetch "semi_ring" "semi_ring_SRP" , pred_setTheory.tactictoe_thm_23 , pred_setTheory.tactictoe_thm_25 , pred_setTheory.tactictoe_thm_26])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.079912
+
+mult_one_right
+proof length: 1
+proof time: 0.057257
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.128228
+  inferstep time: 0.103954
+  node_find time: 0.000061
+  node_crea time: 0.018107
+    pred time: 0.004971
+    thmpred time: 0.0
+    mc time: 0.016062
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "tactictoe_thm_3" , DB.fetch "semi_ring" "tactictoe_thm_2" , DB.fetch "semi_ring" "tactictoe_thm_0" , DB.fetch "semi_ring" "tactictoe_thm_1" , DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "mult_one_left" , DB.fetch "semi_ring" "semi_ring_accfupds" , DB.fetch "semi_ring" "semi_ring_component_equality" , DB.fetch "semi_ring" "distr_left" , DB.fetch "semi_ring" "mult_assoc" , DB.fetch "semi_ring" "mult_sym" , DB.fetch "semi_ring" "semi_ring_accessors" , DB.fetch "semi_ring" "mult_zero_left" , DB.fetch "semi_ring" "semi_ring_SR1" , DB.fetch "semi_ring" "semi_ring_SRM" , pred_setTheory.tactictoe_thm_23])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06448
+
+mult_zero_right
+proof length: 1
+proof time: 0.083991
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.119513
+  inferstep time: 0.10239
+  node_find time: 0.000038
+  node_crea time: 0.01208
+    pred time: 0.003192
+    thmpred time: 0.0
+    mc time: 0.011675
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "tactictoe_thm_5" , DB.fetch "semi_ring" "tactictoe_thm_2" , DB.fetch "semi_ring" "tactictoe_thm_4" , DB.fetch "semi_ring" "tactictoe_thm_1" , DB.fetch "semi_ring" "tactictoe_thm_3" , DB.fetch "semi_ring" "tactictoe_thm_0" , DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "mult_zero_left" , DB.fetch "semi_ring" "semi_ring_accfupds" , DB.fetch "semi_ring" "semi_ring_component_equality" , DB.fetch "semi_ring" "distr_left" , DB.fetch "semi_ring" "mult_assoc" , DB.fetch "semi_ring" "mult_one_right" , DB.fetch "semi_ring" "mult_sym" , DB.fetch "semi_ring" "plus_zero_left" , DB.fetch "semi_ring" "plus_zero_right"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.059981
+
+distr_right
+proof length: 2
+proof time: 0.00753
+Statistics
+  infstep : 51
+  nodes   : 14
+  maxdepth: 3
+Time: 1.694034
+  inferstep time: 1.372693
+  node_find time: 0.001751
+  node_crea time: 0.30273
+    pred time: 0.099619
+    thmpred time: 0.000004
+    mc time: 0.117719
+    inst time: 0.0
+Proof found: abs_tools.ONCE_REWRITE_TAC [DB.fetch "semi_ring" "tactictoe_thm_7", DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "distr_left", DB.fetch "semi_ring" "tactictoe_thm_0", DB.fetch "semi_ring" "tactictoe_thm_2", DB.fetch "semi_ring" "tactictoe_thm_4", DB.fetch "semi_ring" "tactictoe_thm_6", DB.fetch "semi_ring" "tactictoe_thm_1", DB.fetch "semi_ring" "tactictoe_thm_3", DB.fetch "semi_ring" "tactictoe_thm_5", DB.fetch "semi_ring" "plus_assoc", DB.fetch "semi_ring" "plus_sym", DB.fetch "semi_ring" "mult_assoc", DB.fetch "semi_ring" "mult_sym", DB.fetch "semi_ring" "plus_zero_right", DB.fetch "semi_ring" "semi_ring_accfupds"] THEN simpLib.ASM_SIMP_TAC ((numLib.arith_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close listSimps.LIST_ss) hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.EQUIV_EXTRACT_ss) [DB.fetch "semi_ring" "tactictoe_thm_7", DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "distr_left", DB.fetch "semi_ring" "tactictoe_thm_0", DB.fetch "semi_ring" "tactictoe_thm_2", DB.fetch "semi_ring" "tactictoe_thm_4", DB.fetch "semi_ring" "tactictoe_thm_6", DB.fetch "semi_ring" "tactictoe_thm_1", DB.fetch "semi_ring" "tactictoe_thm_3", DB.fetch "semi_ring" "tactictoe_thm_5", DB.fetch "semi_ring" "plus_assoc", DB.fetch "semi_ring" "plus_sym", DB.fetch "semi_ring" "mult_assoc", DB.fetch "semi_ring" "mult_sym", DB.fetch "semi_ring" "plus_zero_right", DB.fetch "semi_ring" "semi_ring_accfupds"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.049206
+
+plus_rotate
+proof length: 1
+proof time: 0.051851
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.12887
+  inferstep time: 0.099345
+  node_find time: 0.000104
+  node_crea time: 0.024037
+    pred time: 0.006437
+    thmpred time: 0.000001
+    mc time: 0.018767
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "tactictoe_thm_9" , DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "plus_assoc" , DB.fetch "semi_ring" "tactictoe_thm_7" , DB.fetch "semi_ring" "tactictoe_thm_0" , DB.fetch "semi_ring" "tactictoe_thm_8" , DB.fetch "semi_ring" "tactictoe_thm_1" , DB.fetch "semi_ring" "tactictoe_thm_2" , DB.fetch "semi_ring" "tactictoe_thm_4" , DB.fetch "semi_ring" "tactictoe_thm_6" , DB.fetch "semi_ring" "tactictoe_thm_3" , DB.fetch "semi_ring" "tactictoe_thm_5" , DB.fetch "semi_ring" "distr_left" , DB.fetch "semi_ring" "distr_right" , DB.fetch "semi_ring" "plus_sym" , DB.fetch "semi_ring" "plus_zero_right"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.054372
+
+plus_permute
+proof length: 2
+proof time: 0.102836
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.232577
+  inferstep time: 0.182853
+  node_find time: 0.000144
+  node_crea time: 0.025429
+    pred time: 0.006726
+    thmpred time: 0.000001
+    mc time: 0.024686
+    inst time: 0.0
+Proof found: abs_tools.REPEAT abs_tools.GEN_TAC THEN metisTools.METIS_TAC [DB.fetch "semi_ring" "tactictoe_thm_10", DB.fetch "semi_ring" "tactictoe_thm_9", DB.fetch "semi_ring" "is_semi_ring_def", DB.fetch "semi_ring" "plus_assoc", DB.fetch "semi_ring" "plus_rotate", DB.fetch "semi_ring" "tactictoe_thm_7", DB.fetch "semi_ring" "tactictoe_thm_8", DB.fetch "semi_ring" "tactictoe_thm_0", DB.fetch "semi_ring" "tactictoe_thm_11", DB.fetch "semi_ring" "tactictoe_thm_1", DB.fetch "semi_ring" "tactictoe_thm_2", DB.fetch "semi_ring" "tactictoe_thm_4", DB.fetch "semi_ring" "tactictoe_thm_6", DB.fetch "semi_ring" "tactictoe_thm_3", DB.fetch "semi_ring" "tactictoe_thm_5", DB.fetch "semi_ring" "distr_left"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.055503
+
+mult_rotate
+proof length: 1
+proof time: 0.104825
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.114244
+  inferstep time: 0.097134
+  node_find time: 0.000037
+  node_crea time: 0.011769
+    pred time: 0.002977
+    thmpred time: 0.0
+    mc time: 0.011596
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "tactictoe_thm_13" , DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "mult_assoc" , DB.fetch "semi_ring" "tactictoe_thm_7" , DB.fetch "semi_ring" "tactictoe_thm_12" , DB.fetch "semi_ring" "tactictoe_thm_2" , DB.fetch "semi_ring" "tactictoe_thm_4" , DB.fetch "semi_ring" "tactictoe_thm_6" , DB.fetch "semi_ring" "tactictoe_thm_3" , DB.fetch "semi_ring" "tactictoe_thm_5" , DB.fetch "semi_ring" "tactictoe_thm_10" , DB.fetch "semi_ring" "tactictoe_thm_9" , DB.fetch "semi_ring" "tactictoe_thm_8" , DB.fetch "semi_ring" "tactictoe_thm_0" , DB.fetch "semi_ring" "tactictoe_thm_11" , DB.fetch "semi_ring" "tactictoe_thm_1"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.102363
+
+mult_permute
+proof length: 1
+proof time: 0.068154
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.105664
+  inferstep time: 0.08883
+  node_find time: 0.000035
+  node_crea time: 0.011222
+    pred time: 0.003014
+    thmpred time: 0.0
+    mc time: 0.011536
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "semi_ring" "tactictoe_thm_13" , DB.fetch "semi_ring" "tactictoe_thm_14" , DB.fetch "semi_ring" "is_semi_ring_def" , DB.fetch "semi_ring" "mult_assoc" , DB.fetch "semi_ring" "mult_rotate" , DB.fetch "semi_ring" "tactictoe_thm_7" , DB.fetch "semi_ring" "tactictoe_thm_12" , DB.fetch "semi_ring" "tactictoe_thm_15" , DB.fetch "semi_ring" "tactictoe_thm_2" , DB.fetch "semi_ring" "tactictoe_thm_4" , DB.fetch "semi_ring" "tactictoe_thm_6" , DB.fetch "semi_ring" "tactictoe_thm_3" , DB.fetch "semi_ring" "tactictoe_thm_5" , DB.fetch "semi_ring" "tactictoe_thm_10" , DB.fetch "semi_ring" "tactictoe_thm_9" , DB.fetch "semi_ring" "tactictoe_thm_8"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.058819
+Bad stac: 1

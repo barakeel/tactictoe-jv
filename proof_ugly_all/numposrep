@@ -1,0 +1,429 @@
+
+LENGTH_n2l
+Statistics
+  infstep : 981
+  nodes   : 174
+  maxdepth: 6
+Time: 10.100164
+  inferstep time: 7.745308
+  node_find time: 0.072926
+  node_crea time: 2.13055
+    pred time: 0.393148
+    thmpred time: 0.000025
+    mc time: 1.342253
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.388628
+Replaying proof: 0.001217
+
+l2n_n2l
+Statistics
+  infstep : 371
+  nodes   : 112
+  maxdepth: 5
+Time: 10.098885
+  inferstep time: 7.472409
+  node_find time: 0.029726
+  node_crea time: 2.457969
+    pred time: 0.487288
+    thmpred time: 0.000034
+    mc time: 1.491097
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.192259
+
+l2n_lt
+Statistics
+  infstep : 433
+  nodes   : 102
+  maxdepth: 6
+Time: 10.048337
+  inferstep time: 8.115154
+  node_find time: 0.029868
+  node_crea time: 1.828704
+    pred time: 0.4074
+    thmpred time: 0.000019
+    mc time: 1.01645
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.333695
+
+LENGTH_l2n
+Statistics
+  infstep : 451
+  nodes   : 118
+  maxdepth: 6
+Time: 10.000815
+  inferstep time: 7.819903
+  node_find time: 0.031713
+  node_crea time: 2.054694
+    pred time: 0.525737
+    thmpred time: 0.00003
+    mc time: 1.055833
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 1.021949
+
+l2n_DIGIT
+Statistics
+  infstep : 454
+  nodes   : 113
+  maxdepth: 5
+Time: 10.015846
+  inferstep time: 7.772794
+  node_find time: 0.03651
+  node_crea time: 2.049162
+    pred time: 0.519661
+    thmpred time: 0.000021
+    mc time: 0.983575
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.189607
+
+DIV_0_IMP_LT
+Statistics
+  infstep : 511
+  nodes   : 137
+  maxdepth: 5
+Time: 10.005816
+  inferstep time: 7.805418
+  node_find time: 0.041538
+  node_crea time: 2.01709
+    pred time: 0.433661
+    thmpred time: 0.000027
+    mc time: 1.246642
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.402304
+Replaying proof: 0.039611
+
+EL_n2l
+Statistics
+  infstep : 361
+  nodes   : 93
+  maxdepth: 6
+Time: 10.004513
+  inferstep time: 7.784756
+  node_find time: 0.029026
+  node_crea time: 2.052074
+    pred time: 0.413734
+    thmpred time: 0.000028
+    mc time: 1.144149
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 1.24065
+Replaying proof: 0.025302
+Replaying proof: 0.017348
+
+l2n_eq_0
+proof length: 5
+proof time: 0.036811
+Statistics
+  infstep : 73
+  nodes   : 19
+  maxdepth: 4
+Time: 0.860082
+  inferstep time: 0.57894
+  node_find time: 0.003733
+  node_crea time: 0.223021
+    pred time: 0.059848
+    thmpred time: 0.000006
+    mc time: 0.155361
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [arithmeticTheory.LEFT_ADD_DISTRIB] THEN BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 2462*)l"] THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "numposrep" "l2n_def", DB.fetch "numposrep" "l2n_DIGIT", DB.fetch "numposrep" "n2l_l2n", DB.fetch "numposrep" "LENGTH_l2n", DB.fetch "numposrep" "l2n_lt", DB.fetch "numposrep" "l2n_n2l", DB.fetch "numposrep" "num_from_bin_list_def", DB.fetch "numposrep" "num_from_dec_list_def", DB.fetch "numposrep" "num_from_hex_list_def", DB.fetch "numposrep" "num_from_oct_list_def", listTheory.dropWhile_splitAtPki, listTheory.LIST_BIND_LIST_BIND, combinTheory.LET_FORALL_ELIM, combinTheory.literal_case_FORALL_ELIM, pairTheory.C_UNCURRY_L, listTheory.ITSET_eq_FOLDL_SET_TO_LIST],
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [(DB.fetch "numposrep" "l2n_def"), arithmeticTheory.GREATER_DEF] THEN
+  metisTools.METIS_TAC [listTheory.LIST_BIND_LIST_BIND, listTheory.dropWhile_splitAtPki, combinTheory.LET_FORALL_ELIM, combinTheory.literal_case_FORALL_ELIM, pairTheory.C_UNCURRY_L, listTheory.ITSET_eq_FOLDL_SET_TO_LIST, listTheory.LIST_APPLY_def, combinTheory.C_THM, combinTheory.C_DEF, combinTheory.C_ABS_L, combinTheory.GEN_LET_RATOR, combinTheory.GEN_literal_case_RATOR, DB.fetch "numposrep" "l2n_def", listTheory.NOT_EVERY, listTheory.NOT_EXISTS, rich_listTheory.ALL_EL_MAP]]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.162805
+
+l2n_SNOC_0
+proof length: 4
+proof time: 0.047855
+Statistics
+  infstep : 266
+  nodes   : 47
+  maxdepth: 4
+Time: 3.565459
+  inferstep time: 2.662459
+  node_find time: 0.018187
+  node_crea time: 0.791652
+    pred time: 0.18874
+    thmpred time: 0.000009
+    mc time: 0.486915
+    inst time: 0.0
+Proof found: boolLib.NTAC 2 boolLib.STRIP_TAC THEN BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 70195*)ls"] THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "numposrep" "l2n_def", DB.fetch "numposrep" "l2n_eq_0", DB.fetch "numposrep" "l2n_lt", DB.fetch "numposrep" "n2l_l2n", DB.fetch "numposrep" "LENGTH_l2n", DB.fetch "numposrep" "l2n_DIGIT", DB.fetch "numposrep" "l2n_n2l", DB.fetch "numposrep" "num_from_bin_list_def", DB.fetch "numposrep" "num_from_dec_list_def", DB.fetch "numposrep" "num_from_hex_list_def", DB.fetch "numposrep" "num_from_oct_list_def", rich_listTheory.ELL_SNOC, rich_listTheory.LASTN, listTheory.GENLIST, rich_listTheory.COUNT_LIST_SNOC, listTheory.SNOC_INDUCT],
+  metisTools.METIS_TAC [DB.fetch "numposrep" "l2n_def", DB.fetch "numposrep" "l2n_eq_0", DB.fetch "numposrep" "l2n_lt", DB.fetch "numposrep" "n2l_l2n", DB.fetch "numposrep" "LENGTH_l2n", DB.fetch "numposrep" "l2n_DIGIT", DB.fetch "numposrep" "l2n_n2l", DB.fetch "numposrep" "num_from_bin_list_def", DB.fetch "numposrep" "num_from_dec_list_def", DB.fetch "numposrep" "num_from_hex_list_def", DB.fetch "numposrep" "num_from_oct_list_def", rich_listTheory.TAKE_EL_SNOC, listTheory.LIST_TO_SET_SNOC, listTheory.EL_restricted, listTheory.EL_simp_restricted, listTheory.SNOC]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.083172
+Replaying proof: 0.001077
+
+LOG_l2n
+Statistics
+  infstep : 529
+  nodes   : 122
+  maxdepth: 5
+Time: 10.012351
+  inferstep time: 7.47084
+  node_find time: 0.060198
+  node_crea time: 2.210575
+    pred time: 0.499164
+    thmpred time: 0.000026
+    mc time: 1.167119
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 30
+Replaying proof: 0.099059
+
+l2n_dropWhile_0
+Statistics
+  infstep : 560
+  nodes   : 122
+  maxdepth: 5
+Time: 10.089045
+  inferstep time: 7.648597
+  node_find time: 0.076101
+  node_crea time: 2.165168
+    pred time: 0.552082
+    thmpred time: 0.000016
+    mc time: 1.093337
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.337227
+
+LOG_l2n_dropWhile
+Statistics
+  infstep : 368
+  nodes   : 100
+  maxdepth: 5
+Time: 10.075849
+  inferstep time: 7.729357
+  node_find time: 0.036123
+  node_crea time: 2.101078
+    pred time: 0.473357
+    thmpred time: 0.000016
+    mc time: 0.954818
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 23
+Original proof time: 0.0
+Replaying proof: 1.180407
+
+n2l_BOUND
+proof length: 6
+proof time: 0.096003
+Statistics
+  infstep : 464
+  nodes   : 131
+  maxdepth: 5
+Time: 9.579844
+  inferstep time: 7.001588
+  node_find time: 0.056734
+  node_crea time: 2.160871
+    pred time: 0.470477
+    thmpred time: 0.000039
+    mc time: 1.238774
+    inst time: 0.0
+Proof found: numLib.completeInduct_on [HolKernel.QUOTE " (*#loc 1 1292*)LOG b n"] THEN BasicProvers.SRW_TAC [numSimps.ARITH_ss] [boolLib.Once (DB.fetch "numposrep" "tactictoe_thm_0"), logrootTheory.LOG_RWT] THENL
+  [BasicProvers.SRW_TAC [numSimps.ARITH_ss] [arithmeticTheory.EXP, rich_listTheory.EL_CONS],
+  boolLib.ONCE_REWRITE_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "numposrep" "l2n_DIGIT", DB.fetch "numposrep" "n2l_l2n", DB.fetch "numposrep" "LENGTH_l2n", DB.fetch "numposrep" "LOG_l2n", DB.fetch "numposrep" "LOG_l2n_dropWhile", arithmeticTheory.GREATER_DEF, rich_listTheory.LIST_REL_REPLICATE_same, arithmeticTheory.SUB_LEFT_GREATER, arithmeticTheory.GREATER_OR_EQ, arithmeticTheory.NOT_GREATER, arithmeticTheory.SUB_RIGHT_GREATER, arithmeticTheory.EXISTS_GREATEST, numeralTheory.numeral_distrib, rich_listTheory.LIST_ELEM_COUNT_MEM, DB.fetch "numposrep" "tactictoe_thm_0"] THEN
+  metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, arithmeticTheory.DIVISION, arithmeticTheory.MOD_LESS, DB.fetch "numposrep" "tactictoe_thm_0", DB.fetch "numposrep" "tactictoe_thm_3", DB.fetch "numposrep" "tactictoe_thm_1", DB.fetch "numposrep" "n2l_def", DB.fetch "numposrep" "tactictoe_thm_6", DB.fetch "numposrep" "tactictoe_thm_8", arithmeticTheory.ADD_MOD, arithmeticTheory.SUC_MOD, bitTheory.MOD_LEQ, DB.fetch "numposrep" "l2n_def", arithmeticTheory.LESS_MOD, arithmeticTheory.MOD_EQ_0_DIVISOR, arithmeticTheory.MOD_TIMES],
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [(DB.fetch "numposrep" "l2n_def"), arithmeticTheory.GREATER_DEF]]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.332537
+
+l2n_pow2_compute
+proof length: 2
+proof time: 0.004934
+Statistics
+  infstep : 28
+  nodes   : 6
+  maxdepth: 2
+Time: 0.41911
+  inferstep time: 0.309185
+  node_find time: 0.001933
+  node_crea time: 0.083334
+    pred time: 0.023715
+    thmpred time: 0.000001
+    mc time: 0.064121
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [bitTheory.TIMES_2EXP_def, bitTheory.MOD_2EXP_MAX_def, bitTheory.MOD_2EXP_def, bitTheory.SLICE_def, bitTheory.DIVMOD_2EXP, bitTheory.MOD_2EXP_EQ_def, bitTheory.BITS_def, DB.fetch "numposrep" "l2n_def", DB.fetch "numposrep" "num_from_bin_list_def", DB.fetch "numposrep" "n2l_l2n", DB.fetch "numposrep" "l2n_DIGIT", DB.fetch "numposrep" "LOG_l2n", DB.fetch "numposrep" "num_from_dec_list_def", DB.fetch "numposrep" "num_from_hex_list_def", DB.fetch "numposrep" "num_from_oct_list_def", DB.fetch "numposrep" "l2n_lt"] THEN simpLib.FULL_SIMP_TAC numLib.arith_ss [arithmeticTheory.EXP_ADD]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013637
+
+n2l_pow2_compute
+Statistics
+  infstep : 320
+  nodes   : 75
+  maxdepth: 5
+Time: 10.051704
+  inferstep time: 7.829793
+  node_find time: 0.033825
+  node_crea time: 2.035985
+    pred time: 0.558694
+    thmpred time: 0.000025
+    mc time: 0.980457
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.17642
+Replaying proof: 0.00004
+Replaying proof: 0.005835
+Replaying proof: 0.005609
+Replaying proof: 0.000072
+
+BIT_num_from_bin_list
+proof length: 5
+proof time: 0.023543
+Statistics
+  infstep : 44
+  nodes   : 19
+  maxdepth: 4
+Time: 1.754389
+  inferstep time: 1.329515
+  node_find time: 0.003534
+  node_crea time: 0.361956
+    pred time: 0.095106
+    thmpred time: 0.000007
+    mc time: 0.231431
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 2462*)l"] THENL [BasicProvers.SRW_TAC [] [DB.fetch "numposrep" "num_from_bin_list_def", listTheory.LENGTH, DB.fetch "numposrep" "l2n_DIGIT", DB.fetch "numposrep" "LOG_l2n", DB.fetch "numposrep" "n2l_l2n", DB.fetch "numposrep" "LENGTH_l2n", DB.fetch "numposrep" "LOG_l2n_dropWhile", DB.fetch "numposrep" "n2l_BOUND", numeralTheory.numeral_distrib, arithmeticTheory.GREATER_DEF, rich_listTheory.LIST_REL_REPLICATE_same, rich_listTheory.LIST_ELEM_COUNT_MEM, arithmeticTheory.EXISTS_GREATEST, arithmeticTheory.SUB_LEFT_GREATER, arithmeticTheory.GREATER_OR_EQ, arithmeticTheory.NOT_GREATER], BasicProvers.SRW_TAC [numSimps.ARITH_ss] [(DB.fetch "numposrep" "l2n_def"), arithmeticTheory.GREATER_DEF] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [rich_listTheory.EL_CONS, DB.fetch "numposrep" "num_from_bin_list_def", arithmeticTheory.tactictoe_thm_11, arithmeticTheory.tactictoe_thm_53, bitTheory.BIT_SIGN_EXTEND, bitTheory.BITWISE_COR, bitTheory.BIT_REVERSE_THM, bitTheory.BIT_def, bitTheory.BIT_SHIFT_THM5, bitTheory.BIT_COMPLEMENT, bitTheory.BIT_EXP_SUB1, bitTheory.tactictoe_thm_39, bitTheory.tactictoe_thm_45, bitTheory.BIT_BITS_THM, bitTheory.BIT_OF_BITS_THM2, bitTheory.BIT_SLICE_THM4] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [rich_listTheory.EL_CONS, arithmeticTheory.tactictoe_thm_11, arithmeticTheory.tactictoe_thm_53, DB.fetch "numposrep" "num_from_bin_list_def", DB.fetch "numposrep" "l2n_DIGIT", bitTheory.BITS_ZERO4, bitTheory.BITS_LT_LOW, bitTheory.BITS_SUM, bitTheory.BITS_SUM2, bitTheory.BITS_THM, bitTheory.SLICE_THM, bitTheory.BITSLT_THM, bitTheory.BIT_def, bitTheory.NOT_BITS, bitTheory.NOT_BITS2, bitTheory.BIT_BITS_THM]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.024548
+
+EL_num_to_bin_list
+Statistics
+  infstep : 369
+  nodes   : 136
+  maxdepth: 6
+Time: 10.061402
+  inferstep time: 7.983768
+  node_find time: 0.045162
+  node_crea time: 1.931252
+    pred time: 0.603347
+    thmpred time: 0.000028
+    mc time: 0.777437
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.01293
+
+num_bin_list
+Statistics
+  infstep : 1931
+  nodes   : 298
+  maxdepth: 7
+Time: 10.000275
+  inferstep time: 6.926806
+  node_find time: 0.311275
+  node_crea time: 2.262016
+    pred time: 0.331295
+    thmpred time: 0.00002
+    mc time: 1.307196
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.004238
+
+num_oct_list
+proof length: 3
+proof time: 0.002075
+Statistics
+  infstep : 313
+  nodes   : 47
+  maxdepth: 5
+Time: 3.074109
+  inferstep time: 2.501771
+  node_find time: 0.033649
+  node_crea time: 0.425968
+    pred time: 0.119854
+    thmpred time: 0.000021
+    mc time: 0.211012
+    inst time: 0.0
+Proof found: let
+  fun simp l = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.LET_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) l
+in
+  simp [boolLib.FUN_EQ_THM]
+end THEN Q.X_GEN_TAC [HolKernel.QUOTE " (*#loc 1 80385*)z"] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "numposrep" "num_from_oct_list_def", DB.fetch "numposrep" "num_to_oct_list_def", listTheory.LAST_CONS, listTheory.FRONT_CONS, listTheory.LRC_def, arithmeticTheory.NRC, sumTheory.SUM_MAP_CASE, listTheory.DROP_splitAtPki, listTheory.splitAtPki_EQN, listTheory.DROP_LENGTH_TOO_LONG, listTheory.dropWhile_splitAtPki, listTheory.splitAtPki_def, DB.fetch "numposrep" "l2n_n2l", rich_listTheory.COUNT_LIST_GENLIST, listTheory.GENLIST, listTheory.MAP_GENLIST]
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.005529
+
+num_dec_list
+proof length: 3
+proof time: 0.002223
+Statistics
+  infstep : 161
+  nodes   : 27
+  maxdepth: 4
+Time: 1.677902
+  inferstep time: 1.386025
+  node_find time: 0.014925
+  node_crea time: 0.217115
+    pred time: 0.055957
+    thmpred time: 0.000004
+    mc time: 0.123516
+    inst time: 0.0
+Proof found: let
+  fun simp l = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.LET_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) l
+in
+  simp [boolLib.FUN_EQ_THM]
+end THEN Q.X_GEN_TAC [HolKernel.QUOTE " (*#loc 1 80385*)z"] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "numposrep" "num_from_dec_list_def", DB.fetch "numposrep" "num_to_dec_list_def", listTheory.LAST_CONS, listTheory.FRONT_CONS, listTheory.LRC_def, arithmeticTheory.NRC, sumTheory.SUM_MAP_CASE, listTheory.DROP_splitAtPki, listTheory.splitAtPki_EQN, listTheory.DROP_LENGTH_TOO_LONG, listTheory.dropWhile_splitAtPki, listTheory.splitAtPki_def, DB.fetch "numposrep" "l2n_n2l", rich_listTheory.COUNT_LIST_GENLIST, listTheory.GENLIST, listTheory.MAP_GENLIST]
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.005806
+
+num_hex_list
+proof length: 3
+proof time: 0.002141
+Statistics
+  infstep : 165
+  nodes   : 27
+  maxdepth: 4
+Time: 1.741185
+  inferstep time: 1.421549
+  node_find time: 0.016844
+  node_crea time: 0.227549
+    pred time: 0.06371
+    thmpred time: 0.000002
+    mc time: 0.125901
+    inst time: 0.0
+Proof found: let
+  fun simp l = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.LET_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) l
+in
+  simp [boolLib.FUN_EQ_THM]
+end THEN Q.X_GEN_TAC [HolKernel.QUOTE " (*#loc 1 80385*)z"] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "numposrep" "num_to_hex_list_def", DB.fetch "numposrep" "num_from_hex_list_def", listTheory.LAST_CONS, listTheory.FRONT_CONS, listTheory.LRC_def, arithmeticTheory.NRC, sumTheory.SUM_MAP_CASE, listTheory.DROP_splitAtPki, listTheory.splitAtPki_EQN, listTheory.DROP_LENGTH_TOO_LONG, listTheory.dropWhile_splitAtPki, listTheory.splitAtPki_def, DB.fetch "numposrep" "l2n_n2l", rich_listTheory.COUNT_LIST_GENLIST, listTheory.GENLIST, listTheory.MAP_GENLIST]
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.005437
+Bad stac: 1

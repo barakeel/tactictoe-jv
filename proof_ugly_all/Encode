@@ -1,0 +1,471 @@
+
+biprefix_refl
+proof length: 2
+proof time: 0.00122
+Statistics
+  infstep : 9
+  nodes   : 3
+  maxdepth: 2
+Time: 0.235194
+  inferstep time: 0.216308
+  node_find time: 0.000144
+  node_crea time: 0.013451
+    pred time: 0.006115
+    thmpred time: 0.000001
+    mc time: 0.010075
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC []) [(DB.fetch "list" "APPEND_EQ_APPEND_MID")] THEN BasicProvers.SRW_TAC [] [DB.fetch "Encode" "biprefix_def", indexedListsTheory.EL_findi, indexedListsTheory.findi_def, listTheory.MEM, indexedListsTheory.MAPi_CONG, indexedListsTheory.MAPi_CONG', indexedListsTheory.MEM_MAPi, listTheory.ALL_DISTINCT_FILTER, listTheory.tactictoe_thm_13, listTheory.ALL_DISTINCT_MAP_INJ, listTheory.MEM_MAP, listTheory.ALL_DISTINCT_SING, listTheory.ALL_DISTINCT_SNOC, listTheory.SNOC_APPEND, listTheory.APPEND_SNOC, listTheory.SNOC]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008443
+
+biprefix_sym
+proof length: 1
+proof time: 0.069158
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.108376
+  inferstep time: 0.096061
+  node_find time: 0.000024
+  node_crea time: 0.007866
+    pred time: 0.002951
+    thmpred time: 0.0
+    mc time: 0.007837
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "Encode" "biprefix_refl" , DB.fetch "Encode" "biprefix_def" , listTheory.ALL_DISTINCT_MAP_INJ , listTheory.EVERY2_cong , listTheory.EVERY2_mono , listTheory.LIST_REL_mono , listTheory.EVERY2_sym , listTheory.EVERY2_trans , listTheory.EXISTS_LIST_EQ_MAP , listTheory.LIST_REL_LENGTH , listTheory.LLEX_MONO , listTheory.MAP2_CONG , listTheory.MEM_LUPDATE_E , listTheory.SUM_MAP_PLUS_ZIP , listTheory.mem_exists_set , rich_listTheory.IS_PREFIX_ANTISYM])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004048
+
+biprefix_append
+proof length: 3
+proof time: 0.148743
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.339919
+  inferstep time: 0.288059
+  node_find time: 0.000164
+  node_crea time: 0.040264
+    pred time: 0.013515
+    thmpred time: 0.000001
+    mc time: 0.023083
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC []) [DB.fetch "Encode" "biprefix_def", DB.fetch "Encode" "biprefix_sym", DB.fetch "Encode" "biprefix_refl", rich_listTheory.ZIP_APPEND, listTheory.MEM_APPEND_lemma, rich_listTheory.MEM_SING_APPEND, combinTheory.UPDATE_COMMUTES, pairTheory.LEX_CONG, combinTheory.UPD11_SAME_BASE, pairTheory.LEX_DEF_THM, arithmeticTheory.SUB_ELIM_THM, arithmeticTheory.findq_def, arithmeticTheory.findq_thm, arithmeticTheory.DIV_LESS, pred_setTheory.SUBSET_ADD, arithmeticTheory.MOD_EQ_0_DIVISOR] THEN (metisTools.METIS_TAC [rich_listTheory.IS_PREFIX_APPEND2, rich_listTheory.IS_PREFIX_APPEND1, rich_listTheory.IS_PREFIX_APPENDS, DB.fetch "Encode" "biprefix_def", rich_listTheory.IS_SUBLIST, rich_listTheory.IS_PREFIX_REFL, rich_listTheory.IS_PREFIX, rich_listTheory.IS_PREFIX_APPEND, rich_listTheory.IS_PREFIX_APPEND3, combinTheory.UPD11_SAME_BASE, pairTheory.LEX_DEF_THM, rich_listTheory.ZIP_APPEND, listTheory.MEM_APPEND_lemma, rich_listTheory.MEM_SING_APPEND, listTheory.FOLDL2_cong, listTheory.tactictoe_thm_11])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.039252
+
+biprefix_cons
+proof length: 3
+proof time: 0.008879
+Statistics
+  infstep : 118
+  nodes   : 27
+  maxdepth: 4
+Time: 2.281477
+  inferstep time: 1.949938
+  node_find time: 0.003249
+  node_crea time: 0.308701
+    pred time: 0.103121
+    thmpred time: 0.000004
+    mc time: 0.131581
+    inst time: 0.0
+Proof found: boolLib.MAP_EVERY Q.X_GEN_TAC [[HolKernel.QUOTE " (*#loc 1 100247*)h1"], [HolKernel.QUOTE " (*#loc 1 100252*)h2"], [HolKernel.QUOTE " (*#loc 1 100257*)h3"], [HolKernel.QUOTE " (*#loc 1 100262*)h4"]] THEN BasicProvers.SRW_TAC [] [DB.fetch "Encode" "biprefix_def", DB.fetch "Encode" "biprefix_append", DB.fetch "Encode" "biprefix_refl", DB.fetch "Encode" "biprefix_sym", listTheory.LLEX_def, listTheory.LLEX_THM, listTheory.APPEND, listTheory.MEM, listTheory.LENGTH, listTheory.LIST_TO_SET, listTheory.EL_restricted, listTheory.list_11, listTheory.ZIP, listTheory.FOLDL2_def, listTheory.list_case_def, listTheory.list_size_def] THEN
+  BasicProvers.PROVE_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.034695
+
+biprefix_appends
+proof length: 2
+proof time: 0.002002
+Statistics
+  infstep : 13
+  nodes   : 4
+  maxdepth: 2
+Time: 0.339099
+  inferstep time: 0.303026
+  node_find time: 0.000264
+  node_crea time: 0.028749
+    pred time: 0.0114
+    thmpred time: 0.0
+    mc time: 0.017572
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "Encode" "biprefix_def"), rich_listTheory.IS_PREFIX] THEN boolLib.ASM_REWRITE_TAC [rich_listTheory.IS_PREFIX_APPENDS, rich_listTheory.IS_PREFIX_APPEND1, rich_listTheory.IS_PREFIX_APPEND2, rich_listTheory.IS_PREFIX_APPEND, DB.fetch "Encode" "biprefix_def", rich_listTheory.IS_SUBLIST, rich_listTheory.IS_PREFIX, rich_listTheory.IS_PREFIX_REFL, rich_listTheory.IS_PREFIX_APPEND3, rich_listTheory.ZIP_APPEND, DB.fetch "Encode" "biprefix_append", listTheory.MEM_APPEND_lemma, rich_listTheory.MEM_SING_APPEND, indexedListsTheory.FOLDRi_APPEND, listTheory.PAD_RIGHT, combinTheory.UPD11_SAME_BASE]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007171
+
+wf_encoder_alt
+proof length: 2
+proof time: 0.03513
+Statistics
+  infstep : 17
+  nodes   : 5
+  maxdepth: 2
+Time: 0.444068
+  inferstep time: 0.402185
+  node_find time: 0.000357
+  node_crea time: 0.031947
+    pred time: 0.009108
+    thmpred time: 0.000002
+    mc time: 0.024862
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "Encode" "wf_encoder_def", DB.fetch "Encode" "biprefix_sym", DB.fetch "Encode" "biprefix_cons", DB.fetch "Encode" "biprefix_refl", DB.fetch "Encode" "biprefix_append", DB.fetch "Encode" "biprefix_def", DB.fetch "Encode" "biprefix_appends", listTheory.LRC_MEM_right, listTheory.LUPDATE_SEM, listTheory.LRC_MEM, listTheory.FOLDL_ZIP_SAME, rich_listTheory.FOLDL_FILTER, rich_listTheory.FOLDL_FOLDR_REVERSE, rich_listTheory.FOLDL_MAP, rich_listTheory.FOLDL_MAP2, rich_listTheory.FOLDL_REVERSE] THEN BasicProvers.PROVE_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018675
+
+wf_encoder_eq
+proof length: 1
+proof time: 0.004252
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.135421
+  inferstep time: 0.111356
+  node_find time: 0.000046
+  node_crea time: 0.009629
+    pred time: 0.002769
+    thmpred time: 0.000003
+    mc time: 0.019583
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "Encode" "wf_encoder_def" , DB.fetch "Encode" "biprefix_sym" , DB.fetch "Encode" "biprefix_cons" , DB.fetch "Encode" "biprefix_refl" , DB.fetch "Encode" "biprefix_append" , DB.fetch "Encode" "biprefix_def" , DB.fetch "Encode" "biprefix_appends" , listTheory.LRC_MEM_right , listTheory.LUPDATE_SEM , listTheory.LRC_MEM , listTheory.FOLDL_ZIP_SAME , rich_listTheory.FOLDL_FILTER , rich_listTheory.FOLDL_FOLDR_REVERSE , rich_listTheory.FOLDL_MAP , rich_listTheory.FOLDL_MAP2 , rich_listTheory.FOLDL_REVERSE ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010604
+
+wf_encoder_total
+proof length: 1
+proof time: 0.003769
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.121832
+  inferstep time: 0.108646
+  node_find time: 0.000065
+  node_crea time: 0.009358
+    pred time: 0.003017
+    thmpred time: 0.000001
+    mc time: 0.008356
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "Encode" "wf_encoder_def" , DB.fetch "Encode" "biprefix_sym" , DB.fetch "Encode" "biprefix_cons" , DB.fetch "Encode" "biprefix_refl" , DB.fetch "Encode" "biprefix_append" , DB.fetch "Encode" "biprefix_def" , DB.fetch "Encode" "biprefix_appends" , listTheory.LRC_MEM_right , listTheory.LUPDATE_SEM , listTheory.LRC_MEM , listTheory.FOLDL_ZIP_SAME , rich_listTheory.FOLDL_FILTER , rich_listTheory.FOLDL_FOLDR_REVERSE , rich_listTheory.FOLDL_MAP , rich_listTheory.FOLDL_MAP2 , rich_listTheory.FOLDL_REVERSE ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00738
+
+wf_encode_unit
+proof length: 1
+proof time: 0.002285
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.147129
+  inferstep time: 0.132228
+  node_find time: 0.00006
+  node_crea time: 0.010284
+    pred time: 0.00286
+    thmpred time: 0.0
+    mc time: 0.010287
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "Encode" "wf_encoder_def" , DB.fetch "Encode" "biprefix_sym" , DB.fetch "Encode" "biprefix_cons" , DB.fetch "Encode" "biprefix_refl" , DB.fetch "Encode" "biprefix_append" , DB.fetch "Encode" "biprefix_def" , DB.fetch "Encode" "biprefix_appends" , listTheory.LRC_MEM_right , listTheory.LUPDATE_SEM , listTheory.LRC_MEM , listTheory.FOLDL_ZIP_SAME , rich_listTheory.FOLDL_FILTER , rich_listTheory.FOLDL_FOLDR_REVERSE , rich_listTheory.FOLDL_MAP , rich_listTheory.FOLDL_MAP2 , rich_listTheory.FOLDL_REVERSE ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006106
+
+wf_encode_bool
+proof length: 1
+proof time: 0.00238
+Statistics
+  infstep : 20
+  nodes   : 4
+  maxdepth: 2
+Time: 0.354546
+  inferstep time: 0.258376
+  node_find time: 0.000605
+  node_crea time: 0.07457
+    pred time: 0.019684
+    thmpred time: 0.000002
+    mc time: 0.050946
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "Encode" "encode_bool_def" , DB.fetch "Encode" "wf_encode_unit" , DB.fetch "Encode" "wf_encoder_def" , DB.fetch "Encode" "wf_encoder_alt" , DB.fetch "Encode" "wf_encoder_eq" , DB.fetch "Encode" "wf_encoder_total" , listTheory.LUPDATE_SEM , listTheory.MEM_ZIP , listTheory.ZIP_MAP , listTheory.splitAtPki_def , patternMatchesTheory.EL1_STRONGEST_REDUNDANT_ROWS_INFO_AUX , patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def , patternMatchesTheory.EL2_STRONGEST_REDUNDANT_ROWS_INFO_AUX , patternMatchesTheory.FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX , patternMatchesTheory.GUARDS_ELIM_THM , patternMatchesTheory.IS_REDUNDANT_ROWS_INFO_SNOC_PMATCH_ROW ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007733
+
+encode_prod_alt
+proof length: 2
+proof time: 0.060325
+Statistics
+  infstep : 73
+  nodes   : 9
+  maxdepth: 2
+Time: 0.900417
+  inferstep time: 0.76165
+  node_find time: 0.0021
+  node_crea time: 0.121182
+    pred time: 0.041848
+    thmpred time: 0.000003
+    mc time: 0.06299
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC numLib.std_ss [(DB.fetch "quantHeuristics" "GUESS_REWRITES"), pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD] THEN metisTools.METIS_TAC [DB.fetch "Encode" "encode_prod_def", pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, pairTheory.pair_induction, rich_listTheory.ZIP_APPEND, patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def, pairTheory.UNCURRY_DEF, pairTheory.LAMBDA_PROD, pairTheory.PROD_ALL_CONG, pairTheory.PROD_ALL_THM, listTheory.ZIP_MAP, listTheory.ZIP, listTheory.every_zip_snd, listTheory.MEM_ZIP, listTheory.every_zip_fst, patternMatchesTheory.APPLY_REDUNDANT_ROWS_INFO_def]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.09413
+
+wf_encode_prod
+Statistics
+  infstep : 682
+  nodes   : 100
+  maxdepth: 5
+Time: 10.008108
+  inferstep time: 7.905048
+  node_find time: 0.046087
+  node_crea time: 1.968492
+    pred time: 0.518456
+    thmpred time: 0.000029
+    mc time: 0.600183
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.196298
+
+wf_encode_sum
+Statistics
+  infstep : 435
+  nodes   : 108
+  maxdepth: 5
+Time: 10.010668
+  inferstep time: 7.743016
+  node_find time: 0.034339
+  node_crea time: 2.156964
+    pred time: 0.458469
+    thmpred time: 0.000031
+    mc time: 0.513799
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.09061
+
+wf_encode_option
+Statistics
+  infstep : 501
+  nodes   : 120
+  maxdepth: 6
+Time: 10.012869
+  inferstep time: 7.724399
+  node_find time: 0.037182
+  node_crea time: 2.09559
+    pred time: 0.478364
+    thmpred time: 0.00003
+    mc time: 0.807157
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.093677
+
+wf_encode_list
+Statistics
+  infstep : 595
+  nodes   : 133
+  maxdepth: 6
+Time: 10.045721
+  inferstep time: 7.608472
+  node_find time: 0.048003
+  node_crea time: 2.249781
+    pred time: 0.537481
+    thmpred time: 0.000051
+    mc time: 0.690842
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.566739
+
+encode_list_cong
+proof length: 4
+proof time: 0.093252
+Statistics
+  infstep : 139
+  nodes   : 49
+  maxdepth: 5
+Time: 3.441515
+  inferstep time: 2.899601
+  node_find time: 0.008473
+  node_crea time: 0.468296
+    pred time: 0.17676
+    thmpred time: 0.000011
+    mc time: 0.205406
+    inst time: 0.0
+Proof found: bossLib.Induct THENL [metisTools.METIS_TAC [DB.fetch "Encode" "encode_list_def", DB.fetch "Encode" "wf_encode_list", indexedListsTheory.MAPi_CONG, indexedListsTheory.FOLDRi_CONG, listTheory.MAP_EQ_f, listTheory.MAP_EQ_EVERY2, indexedListsTheory.FOLDRi_CONG', indexedListsTheory.MAPi_CONG', listTheory.ZIP_MAP, pred_setTheory.SUM_IMAGE_CONG, indexedListsTheory.GENLIST_CONG, optionTheory.OPTION_BIND_cong, optionTheory.OPTION_MAP2_cong, optionTheory.OPTION_MAP_CONG, listTheory.MAP_APPEND_MAP_EQ, listTheory.tactictoe_thm_16], bossLib.SIMP_TAC bossLib.std_ss [(DB.fetch "Encode" "encode_list_def"), rich_listTheory.IS_PREFIX, listTheory.EVERY_DEF] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "Encode" "encode_list_def", DB.fetch "Encode" "wf_encode_list", listTheory.MEM, rich_listTheory.MEM_FRONT, listTheory.LIST_TO_SET_DEF, listTheory.LIST_TO_SET, listTheory.LIST_TO_SET_THM, rich_listTheory.MEM_LAST, indexedListsTheory.MAPi_CONG, indexedListsTheory.FOLDRi_CONG, listTheory.MAP_EQ_f, listTheory.MAP_APPEND_MAP_EQ, indexedListsTheory.MAPi_CONG', listTheory.MAP_EQ_EVERY2, indexedListsTheory.FOLDRi_CONG', listTheory.ZIP_MAP]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.082935
+
+lift_blist_suc
+proof length: 3
+proof time: 0.005259
+Statistics
+  infstep : 9
+  nodes   : 5
+  maxdepth: 3
+Time: 0.276074
+  inferstep time: 0.229226
+  node_find time: 0.000398
+  node_crea time: 0.032387
+    pred time: 0.00967
+    thmpred time: 0.000001
+    mc time: 0.028556
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "list" "LRC_def")] THEN BasicProvers.SRW_TAC [] [DB.fetch "Encode" "lift_blist_def", listTheory.splitAtPki_def, listTheory.INDEX_FIND_def, listTheory.LRC_MEM_right, listTheory.LENGTH_CONS, listTheory.LENGTH_EQ_NUM, listTheory.LENGTH, indexedListsTheory.FOLDRi_def, indexedListsTheory.MAPi_def, listTheory.EVERYi_def, indexedListsTheory.LIST_RELi_thm, rich_listTheory.LIST_ELEM_COUNT_THM, indexedListsTheory.MAPi_ACC_def, listTheory.LRC_def, listTheory.FILTER, listTheory.EVERY_DEF] THEN
+  metisTools.METIS_TAC [listTheory.EVERY_DEF, listTheory.IMP_EVERY_LUPDATE, DB.fetch "Encode" "lift_blist_def", listTheory.EVERY_MEM, patternMatchesTheory.IS_REDUNDANT_ROWS_INFO_def, listTheory.EVERY2_EVERY, patternMatchesTheory.PMATCH_EXPAND_PRED_def, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED, listTheory.LRC_MEM_right, listTheory.splitAtPki_def, listTheory.LENGTH, listTheory.SUM_MAP_PLUS_ZIP, listTheory.LENGTH_CONS, listTheory.LENGTH_EQ_NUM, listTheory.LENGTH_EQ_NUM_compute, numpairTheory.nlistrec_thm]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012165
+
+wf_encode_blist
+Statistics
+  infstep : 387
+  nodes   : 129
+  maxdepth: 6
+Time: 10.058135
+  inferstep time: 8.196693
+  node_find time: 0.035835
+  node_crea time: 1.728258
+    pred time: 0.472817
+    thmpred time: 0.000042
+    mc time: 0.516618
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.562539
+Replaying proof: 0.108558
+
+wf_pred_bnum_total
+Statistics
+  infstep : 757
+  nodes   : 160
+  maxdepth: 6
+Time: 10.036674
+  inferstep time: 8.023332
+  node_find time: 0.074503
+  node_crea time: 1.780712
+    pred time: 0.384324
+    thmpred time: 0.000027
+    mc time: 1.056752
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.055596
+
+wf_pred_bnum
+proof length: 2
+proof time: 0.056959
+Statistics
+  infstep : 319
+  nodes   : 35
+  maxdepth: 4
+Time: 3.810009
+  inferstep time: 3.327128
+  node_find time: 0.020533
+  node_crea time: 0.370983
+    pred time: 0.11788
+    thmpred time: 0.000009
+    mc time: 0.124847
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "Encode" "collision_free_def", DB.fetch "Encode" "wf_pred_bnum_def", DB.fetch "Encode" "wf_pred_bnum_total", DB.fetch "Encode" "wf_encode_blist", arithmeticTheory.ADD_DIV_RWT, arithmeticTheory.ADD_EQ_SUB, arithmeticTheory.CANCEL_SUB, arithmeticTheory.LESS_ADD, arithmeticTheory.LESS_ADD_1, arithmeticTheory.LESS_EQUAL_ADD, arithmeticTheory.LESS_EQ_ADD_EXISTS, arithmeticTheory.LESS_EQ_LESS_EQ_MONO, arithmeticTheory.LESS_EQ_TRANS, arithmeticTheory.LESS_EQ_LESS_TRANS, arithmeticTheory.LESS_TRANS, arithmeticTheory.LESS_IMP_LESS_ADD] THEN metisTools.METIS_TAC [DB.fetch "Encode" "wf_pred_bnum_def", DB.fetch "Encode" "collision_free_def", DB.fetch "Encode" "wf_pred_def", DB.fetch "Encode" "wf_pred_bnum_total", arithmeticTheory.DOUBLE_LT, arithmeticTheory.EVEN_EXISTS, DB.fetch "Encode" "encode_num_primitive_def", arithmeticTheory.TWO, arithmeticTheory.EVEN_DOUBLE, arithmeticTheory.ODD_DOUBLE, arithmeticTheory.MOD_P, arithmeticTheory.ADD_DIV_RWT, arithmeticTheory.MOD_COMMON_FACTOR, arithmeticTheory.ADD_MOD, arithmeticTheory.MOD_UNIQUE, arithmeticTheory.LESS_MOD]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.058697
+
+encode_bnum_length
+proof length: 3
+proof time: 0.072389
+Statistics
+  infstep : 145
+  nodes   : 18
+  maxdepth: 4
+Time: 1.772979
+  inferstep time: 1.49977
+  node_find time: 0.009439
+  node_crea time: 0.206081
+    pred time: 0.09056
+    thmpred time: 0.000001
+    mc time: 0.096753
+    inst time: 0.0
+Proof found: BasicProvers.Induct THENL [metisTools.METIS_TAC [DB.fetch "Encode" "encode_bnum_def", DB.fetch "Encode" "encode_bnum_def_compute", rich_listTheory.SEG_APPEND, rich_listTheory.TAKE_SEG, listTheory.LENGTH_EQ_NUM, rich_listTheory.BUTLASTN_SEG, listTheory.LENGTH_EQ_NUM_compute, rich_listTheory.LAST_LASTN_LAST, listTheory.LENGTH, listTheory.LENGTH_NIL, rich_listTheory.SEG_0_SNOC, rich_listTheory.SEG_LENGTH_ID, listTheory.LENGTH_EQ_NIL, listTheory.LENGTH_LEN, listTheory.LENGTH_TL, listTheory.LENGTH_NIL_SYM], BasicProvers.SRW_TAC [] [DB.fetch "Encode" "encode_bnum_def", DB.fetch "Encode" "encode_bnum_def_compute", listTheory.LENGTH_EQ_NUM, listTheory.LENGTH_CONS, listTheory.LENGTH_EQ_CONS, listTheory.MEM_DROP, patternMatchesTheory.PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS, rich_listTheory.BUTLASTN_SUC_FRONT, rich_listTheory.DROP_CONS_EL, rich_listTheory.SNOC_EL_TAKE, patternMatchesTheory.PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS_EQUIV, rich_listTheory.SEG_SUC_CONS, arithmeticTheory.ADD, arithmeticTheory.MULT_CLAUSES, arithmeticTheory.NOT_LEQ, numeralTheory.numeral_distrib]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.028602
+Replaying proof: 0.005289
+Replaying proof: 0.136989
+
+wf_encode_bnum
+proof length: 1
+proof time: 0.030613
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.055711
+  inferstep time: 0.045748
+  node_find time: 0.000133
+  node_crea time: 0.007063
+    pred time: 0.002329
+    thmpred time: 0.000001
+    mc time: 0.005342
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "Encode" "wf_encode_bnum_collision_free" , DB.fetch "Encode" "wf_pred_bnum" , DB.fetch "Encode" "wf_pred_bnum_def" , DB.fetch "Encode" "wf_pred_bnum_total" , DB.fetch "Encode" "encode_bnum_inj" , DB.fetch "Encode" "encode_bnum_def" , DB.fetch "Encode" "encode_bnum_length" , DB.fetch "Encode" "encode_bnum_def_compute" , DB.fetch "Encode" "wf_encode_blist" , DB.fetch "Encode" "wf_encoder_def" , DB.fetch "Encode" "wf_encoder_alt" , DB.fetch "Encode" "wf_encode_list" , DB.fetch "Encode" "wf_encode_option" , DB.fetch "Encode" "wf_encoder_eq" , DB.fetch "Encode" "wf_encoder_total" , DB.fetch "Encode" "wf_encode_num"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006687
+
+tree_ind
+Statistics
+  infstep : 864
+  nodes   : 112
+  maxdepth: 6
+Time: 10.001427
+  inferstep time: 8.337994
+  node_find time: 0.079242
+  node_crea time: 1.391669
+    pred time: 0.427167
+    thmpred time: 0.000037
+    mc time: 0.507165
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.290104
+
+wf_encode_tree
+Statistics
+  infstep : 535
+  nodes   : 105
+  maxdepth: 6
+Time: 10.059687
+  inferstep time: 8.403139
+  node_find time: 0.057189
+  node_crea time: 1.474888
+    pred time: 0.349933
+    thmpred time: 0.00003
+    mc time: 0.551196
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 40
+Original proof time: 0.0
+Replaying proof: 1.72579
+Bad stac: 1

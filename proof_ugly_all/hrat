@@ -1,0 +1,637 @@
+
+TRAT_EQ_REFL
+proof length: 1
+proof time: 0.001269
+Statistics
+  infstep : 14
+  nodes   : 4
+  maxdepth: 2
+Time: 0.310299
+  inferstep time: 0.246566
+  node_find time: 0.000438
+  node_crea time: 0.056534
+    pred time: 0.026424
+    thmpred time: 0.000001
+    mc time: 0.024169
+    inst time: 0.0
+Proof found: (simpLib.FULL_SIMP_TAC ( numLib.arith_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close listSimps.LIST_ss ) [ DB.fetch "hrat" "trat_eq" , listTheory.MEM_ZIP , listTheory.ZIP_MAP , patternMatchesTheory.EL1_STRONGEST_REDUNDANT_ROWS_INFO_AUX , patternMatchesTheory.EL2_STRONGEST_REDUNDANT_ROWS_INFO_AUX , patternMatchesTheory.LENGTH_STRONGEST_REDUNDANT_ROWS_INFO_AUX , listTheory.MEM_ZIP_MEM_MAP , patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def , pairTheory.ABS_REP_prod , pairTheory.ELIM_PFORALL , pairTheory.FORALL_PROD , pairTheory.FST_PAIR_MAP , pairTheory.PAIR_MAP , pairTheory.LAMBDA_PROD , pairTheory.PAIR_FST_SND_EQ , pairTheory.PAIR_FUN_THM ])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.07378
+
+TRAT_EQ_SYM
+proof length: 4
+proof time: 0.00448
+Statistics
+  infstep : 486
+  nodes   : 56
+  maxdepth: 5
+Time: 5.513955
+  inferstep time: 4.574755
+  node_find time: 0.023909
+  node_crea time: 0.842334
+    pred time: 0.252039
+    thmpred time: 0.000015
+    mc time: 0.469212
+    inst time: 0.0
+Proof found: bossLib.Cases THEN bossLib.Cases THEN
+  boolLib.REWRITE_TAC [DB.fetch "hrat" "trat_eq", DB.fetch "hrat" "TRAT_EQ_REFL", patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED_PMATCH_ROWS, patternMatchesTheory.PMATCH_ROWS_DROP_REDUNDANT_PMATCH_ROWS, patternMatchesTheory.PMATCH_ROW_CONG, patternMatchesTheory.PMATCH_ROW_EQ_AUX, patternMatchesTheory.PMATCH_FLATTEN_FUN_PMATCH_ROW, pairTheory.pair_CASES, pairTheory.ABS_PAIR_THM, numeralTheory.divmod_POS, arithmeticTheory.DIVMOD_THM, arithmeticTheory.DIVMOD_DEF, patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def, arithmeticTheory.DIV_P, arithmeticTheory.DIV_UNIQUE, arithmeticTheory.MOD_TIMES] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.095397
+Replaying proof: 0.000318
+
+TRAT_EQ_AP
+proof length: 1
+proof time: 0.044496
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.066207
+  inferstep time: 0.052554
+  node_find time: 0.000034
+  node_crea time: 0.009572
+    pred time: 0.002591
+    thmpred time: 0.000001
+    mc time: 0.009641
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "TRAT_EQ_TRANS" , DB.fetch "hrat" "TRAT_EQ_SYM" , DB.fetch "hrat" "TRAT_EQ_REFL" , DB.fetch "hrat" "trat_eq" , pairTheory.PAIR_FST_SND_EQ , arithmeticTheory.DIV_P , arithmeticTheory.EXP_SUB , arithmeticTheory.MOD_COMMON_FACTOR , arithmeticTheory.MOD_P , pred_setTheory.SUM_SAME_IMAGE , arithmeticTheory.tactictoe_thm_10 , arithmeticTheory.LESS_EQ_LESS_EQ_MONO , arithmeticTheory.ONE_LT_MULT_IMP , arithmeticTheory.EXP_ADD , arithmeticTheory.DOUBLE_LT , arithmeticTheory.MULT_EXP_MONO])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.054754
+
+TRAT_ADD_SYM_EQ
+proof length: 4
+proof time: 0.088439
+Statistics
+  infstep : 196
+  nodes   : 24
+  maxdepth: 3
+Time: 1.994689
+  inferstep time: 1.729025
+  node_find time: 0.006904
+  node_crea time: 0.226009
+    pred time: 0.090587
+    thmpred time: 0.000002
+    mc time: 0.09014
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC numLib.std_ss [(DB.fetch "quantHeuristics" "GUESS_REWRITES"), pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, (DB.fetch "quantHeuristics" "tactictoe_thm_0")] THEN let
+  fun simp thl = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) thl
+in
+  BasicProvers.SRW_TAC [] [DB.fetch "hrat" "trat_add", pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "hrat" "trat_sucint", listTheory.INDEX_FIND_def, listTheory.SUM_MAP_PLUS_ZIP, pairTheory.UNCURRY_DEF, listTheory.ZIP, pairTheory.FST, pairTheory.SND, pairTheory.ABS_PAIR_THM, patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def, pairTheory.pair_case_thm, rich_listTheory.SPLITP_AUX_def, quantHeuristicsTheory.GUESS_RULES_ELIM_UNIT, pairTheory.PAIR] THENL
+  [simp [boolLib.GSYM arithmeticTheory.ADD1],
+  metisTools.METIS_TAC [DB.fetch "hrat" "trat_add", pairTheory.EXISTS_PROD, pairTheory.FORALL_PROD, arithmeticTheory.MULT_CLAUSES, arithmeticTheory.LESS_MULT_MONO, arithmeticTheory.MULT_MONO_EQ, numeralTheory.numeral_distrib, arithmeticTheory.MULT_COMM, arithmeticTheory.LESS_MONO_MULT2, arithmeticTheory.LESS_MONO_MULT, DB.fetch "hrat" "trat_sucint", prim_recTheory.num_Axiom, listTheory.INDEX_FIND_def, ind_typeTheory.FCONS, arithmeticTheory.num_CASES, listTheory.LUPDATE_def]]
+end
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.214463
+
+TRAT_MUL_SYM_EQ
+proof length: 4
+proof time: 0.147979
+Statistics
+  infstep : 97
+  nodes   : 15
+  maxdepth: 3
+Time: 1.30187
+  inferstep time: 1.119201
+  node_find time: 0.00317
+  node_crea time: 0.159581
+    pred time: 0.074979
+    thmpred time: 0.000008
+    mc time: 0.06287
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC numLib.std_ss [(DB.fetch "quantHeuristics" "GUESS_REWRITES"), pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, (DB.fetch "quantHeuristics" "tactictoe_thm_0")] THEN BasicProvers.SRW_TAC [] [DB.fetch "hrat" "trat_mul", pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "hrat" "trat_add", listTheory.INDEX_FIND_def, listTheory.SUM_MAP_PLUS_ZIP, pairTheory.UNCURRY_DEF, listTheory.ZIP, pairTheory.FST, pairTheory.SND, pairTheory.ABS_PAIR_THM, patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def, pairTheory.PAIR_EQ, pairTheory.pair_case_thm, rich_listTheory.SPLITP_AUX_def, quantHeuristicsTheory.GUESS_RULES_ELIM_UNIT] THEN
+  metisTools.METIS_TAC [DB.fetch "hrat" "trat_mul", DB.fetch "hrat" "trat_add", pairTheory.EXISTS_PROD, pairTheory.FORALL_PROD, arithmeticTheory.MULT_CLAUSES, arithmeticTheory.LESS_MULT_MONO, arithmeticTheory.MULT_MONO_EQ, numeralTheory.numeral_distrib, arithmeticTheory.MULT_SYM, arithmeticTheory.MULT_COMM, arithmeticTheory.LESS_MONO_MULT2, arithmeticTheory.LESS_MONO_MULT, listTheory.INDEX_FIND_def, ind_typeTheory.FCONS, arithmeticTheory.num_CASES, listTheory.LUPDATE_def]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.164316
+
+TRAT_INV_WELLDEFINED
+Statistics
+  infstep : 984
+  nodes   : 93
+  maxdepth: 5
+Time: 10.073513
+  inferstep time: 8.842898
+  node_find time: 0.067973
+  node_crea time: 1.039141
+    pred time: 0.29708
+    thmpred time: 0.000016
+    mc time: 0.519615
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.118005
+
+TRAT_ADD_WELLDEFINED
+Statistics
+  infstep : 836
+  nodes   : 91
+  maxdepth: 5
+Time: 10.05394
+  inferstep time: 8.7985
+  node_find time: 0.069046
+  node_crea time: 1.048834
+    pred time: 0.25634
+    thmpred time: 0.000036
+    mc time: 0.588831
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.379218
+
+TRAT_ADD_WELLDEFINED2
+Statistics
+  infstep : 672
+  nodes   : 91
+  maxdepth: 5
+Time: 10.008025
+  inferstep time: 8.43454
+  node_find time: 0.052593
+  node_crea time: 1.412442
+    pred time: 0.414797
+    thmpred time: 0.000023
+    mc time: 0.623979
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.335236
+
+TRAT_MUL_WELLDEFINED
+Statistics
+  infstep : 870
+  nodes   : 96
+  maxdepth: 5
+Time: 10.085662
+  inferstep time: 8.645973
+  node_find time: 0.074289
+  node_crea time: 1.189947
+    pred time: 0.284853
+    thmpred time: 0.000021
+    mc time: 0.66359
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.424956
+
+TRAT_MUL_WELLDEFINED2
+Statistics
+  infstep : 572
+  nodes   : 98
+  maxdepth: 6
+Time: 10.011
+  inferstep time: 8.458891
+  node_find time: 0.051858
+  node_crea time: 1.390502
+    pred time: 0.383603
+    thmpred time: 0.00002
+    mc time: 0.635223
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.30019
+
+TRAT_ADD_SYM
+proof length: 1
+proof time: 0.03897
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.047616
+  inferstep time: 0.03613
+  node_find time: 0.000063
+  node_crea time: 0.008043
+    pred time: 0.002877
+    thmpred time: 0.000001
+    mc time: 0.0065
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "TRAT_ADD_WELLDEFINED" , DB.fetch "hrat" "TRAT_ADD_WELLDEFINED2" , DB.fetch "hrat" "TRAT_ADD_SYM_EQ" , DB.fetch "hrat" "trat_add" , DB.fetch "hrat" "trat_sucint" , DB.fetch "hrat" "trat_eq" , DB.fetch "hrat" "TRAT_EQ_TRANS" , DB.fetch "hrat" "TRAT_EQ_AP" , DB.fetch "hrat" "TRAT_EQ_REFL" , DB.fetch "hrat" "TRAT_EQ_SYM" , DB.fetch "hrat" "TRAT_INV_WELLDEFINED" , DB.fetch "hrat" "TRAT_MUL_WELLDEFINED" , DB.fetch "hrat" "TRAT_MUL_WELLDEFINED2" , DB.fetch "hrat" "TRAT_MUL_SYM_EQ" , listTheory.INDEX_FIND_def , indexedListsTheory.MAPi_ACC_def])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.097568
+Replaying proof: 0.000845
+
+TRAT_MUL_SYM
+proof length: 1
+proof time: 0.026719
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.041529
+  inferstep time: 0.030298
+  node_find time: 0.000075
+  node_crea time: 0.007604
+    pred time: 0.002591
+    thmpred time: 0.000001
+    mc time: 0.006507
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "TRAT_MUL_WELLDEFINED" , DB.fetch "hrat" "TRAT_MUL_WELLDEFINED2" , DB.fetch "hrat" "TRAT_MUL_SYM_EQ" , DB.fetch "hrat" "trat_mul" , DB.fetch "hrat" "TRAT_ADD_ASSOC" , DB.fetch "hrat" "TRAT_ADD_SYM" , DB.fetch "hrat" "trat_eq" , DB.fetch "hrat" "TRAT_EQ_TRANS" , DB.fetch "hrat" "TRAT_EQ_AP" , DB.fetch "hrat" "TRAT_ADD_WELLDEFINED" , DB.fetch "hrat" "TRAT_ADD_WELLDEFINED2" , DB.fetch "hrat" "TRAT_EQ_REFL" , DB.fetch "hrat" "TRAT_EQ_SYM" , DB.fetch "hrat" "TRAT_INV_WELLDEFINED" , DB.fetch "hrat" "TRAT_ADD_SYM_EQ" , listTheory.INDEX_FIND_def])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.049691
+
+TRAT_MUL_ASSOC
+Statistics
+  infstep : 698
+  nodes   : 101
+  maxdepth: 6
+Time: 10.102236
+  inferstep time: 9.001265
+  node_find time: 0.063837
+  node_crea time: 0.864413
+    pred time: 0.279025
+    thmpred time: 0.000025
+    mc time: 0.361828
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.1111
+
+TRAT_LDISTRIB
+Statistics
+  infstep : 616
+  nodes   : 139
+  maxdepth: 6
+Time: 10.002451
+  inferstep time: 8.598152
+  node_find time: 0.069354
+  node_crea time: 1.170892
+    pred time: 0.328944
+    thmpred time: 0.000029
+    mc time: 0.512386
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.142312
+
+TRAT_MUL_LID
+proof length: 2
+proof time: 0.00353
+Statistics
+  infstep : 113
+  nodes   : 23
+  maxdepth: 3
+Time: 1.99197
+  inferstep time: 1.659837
+  node_find time: 0.008459
+  node_crea time: 0.279533
+    pred time: 0.079549
+    thmpred time: 0.000005
+    mc time: 0.16673
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC numLib.std_ss [(DB.fetch "quantHeuristics" "GUESS_REWRITES"), pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, (DB.fetch "quantHeuristics" "tactictoe_thm_0")] THEN BasicProvers.SRW_TAC [] [DB.fetch "hrat" "trat_1", DB.fetch "hrat" "trat_sucint", DB.fetch "hrat" "TRAT_LDISTRIB", DB.fetch "hrat" "TRAT_MUL_ASSOC", DB.fetch "hrat" "TRAT_MUL_SYM", DB.fetch "hrat" "TRAT_MUL_WELLDEFINED", DB.fetch "hrat" "TRAT_MUL_WELLDEFINED2", DB.fetch "hrat" "trat_mul", DB.fetch "hrat" "TRAT_MUL_SYM_EQ", DB.fetch "hrat" "trat_eq", DB.fetch "hrat" "TRAT_EQ_AP", DB.fetch "hrat" "TRAT_EQ_TRANS", DB.fetch "hrat" "TRAT_ADD_ASSOC", DB.fetch "hrat" "TRAT_ADD_SYM", DB.fetch "hrat" "TRAT_ADD_WELLDEFINED", DB.fetch "hrat" "TRAT_ADD_WELLDEFINED2"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.081213
+
+TRAT_MUL_LINV
+proof length: 4
+proof time: 0.025009
+Statistics
+  infstep : 43
+  nodes   : 18
+  maxdepth: 4
+Time: 1.515316
+  inferstep time: 1.2582
+  node_find time: 0.00321
+  node_crea time: 0.217377
+    pred time: 0.068819
+    thmpred time: 0.000006
+    mc time: 0.139809
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC numLib.std_ss [(DB.fetch "quantHeuristics" "GUESS_REWRITES"), pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, (DB.fetch "quantHeuristics" "tactictoe_thm_0")] THEN let
+  fun simp thl = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) thl
+in
+  boolLib.PURE_REWRITE_TAC [(DB.fetch "hrat" "trat_inv"), (DB.fetch "hrat" "trat_eq")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "hrat" "trat_mul", DB.fetch "hrat" "TRAT_MUL_LID", DB.fetch "hrat" "trat_1", DB.fetch "hrat" "trat_sucint", DB.fetch "hrat" "TRAT_LDISTRIB", DB.fetch "hrat" "TRAT_MUL_ASSOC", DB.fetch "hrat" "TRAT_MUL_SYM", DB.fetch "hrat" "TRAT_MUL_WELLDEFINED", DB.fetch "hrat" "TRAT_MUL_WELLDEFINED2", DB.fetch "hrat" "TRAT_MUL_SYM_EQ", DB.fetch "hrat" "trat_eq", DB.fetch "hrat" "TRAT_INV_WELLDEFINED", DB.fetch "hrat" "TRAT_EQ_AP", DB.fetch "hrat" "TRAT_EQ_TRANS", DB.fetch "hrat" "TRAT_ADD_ASSOC", DB.fetch "hrat" "TRAT_ADD_SYM"] THEN
+  simp [DB.fetch "hrat" "trat_mul", DB.fetch "hrat" "trat_add", DB.fetch "hrat" "trat_eq", arithmeticTheory.MULT_CLAUSES, numeralTheory.numeral_distrib, prim_recTheory.PRE, arithmeticTheory.MULT_SUC_EQ, arithmeticTheory.MULT_SYM, arithmeticTheory.RIGHT_ADD_DISTRIB, arithmeticTheory.LEFT_ADD_DISTRIB, arithmeticTheory.MULT_ASSOC, arithmeticTheory.MULT_LEFT_1, arithmeticTheory.MULT_COMM, arithmeticTheory.MULT_EQ_0, arithmeticTheory.X_LE_DIV, arithmeticTheory.DIVMOD_THM]
+end
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.082987
+
+TRAT_NOZERO
+Statistics
+  infstep : 1199
+  nodes   : 104
+  maxdepth: 5
+Time: 10.020678
+  inferstep time: 8.347719
+  node_find time: 0.145811
+  node_crea time: 1.19788
+    pred time: 0.341376
+    thmpred time: 0.000032
+    mc time: 0.512775
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.181755
+
+TRAT_ADD_TOTAL
+Statistics
+  infstep : 1044
+  nodes   : 128
+  maxdepth: 5
+Time: 10.002719
+  inferstep time: 8.146845
+  node_find time: 0.138707
+  node_crea time: 1.397444
+    pred time: 0.35336
+    thmpred time: 0.000044
+    mc time: 0.673886
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.516172
+
+TRAT_SUCINT_0
+Statistics
+  infstep : 841
+  nodes   : 118
+  maxdepth: 5
+Time: 10.043658
+  inferstep time: 7.980959
+  node_find time: 0.111111
+  node_crea time: 1.637017
+    pred time: 0.527003
+    thmpred time: 0.000029
+    mc time: 0.8074
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.245829
+
+TRAT_ARCH
+Statistics
+  infstep : 1620
+  nodes   : 157
+  maxdepth: 6
+Time: 10.005916
+  inferstep time: 7.400199
+  node_find time: 0.243141
+  node_crea time: 1.847521
+    pred time: 0.489644
+    thmpred time: 0.000017
+    mc time: 0.950303
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 20
+Original proof time: 0.0
+Replaying proof: 0.647908
+
+TRAT_SUCINT
+proof length: 1
+proof time: 0.072094
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.131126
+  inferstep time: 0.106035
+  node_find time: 0.000191
+  node_crea time: 0.015896
+    pred time: 0.004173
+    thmpred time: 0.0
+    mc time: 0.016837
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "trat_sucint" , DB.fetch "hrat" "TRAT_ARCH" , DB.fetch "hrat" "TRAT_SUCINT_0" , DB.fetch "hrat" "TRAT_MUL_LID" , DB.fetch "hrat" "TRAT_MUL_LINV" , DB.fetch "hrat" "trat_1" , DB.fetch "hrat" "TRAT_ADD_WELLDEFINED2" , DB.fetch "hrat" "TRAT_ADD_WELLDEFINED" , DB.fetch "hrat" "TRAT_ADD_ASSOC" , DB.fetch "hrat" "TRAT_ADD_SYM" , DB.fetch "hrat" "TRAT_ADD_TOTAL" , DB.fetch "hrat" "TRAT_LDISTRIB" , DB.fetch "hrat" "TRAT_NOZERO" , DB.fetch "hrat" "trat_add" , DB.fetch "hrat" "TRAT_ADD_SYM_EQ" , DB.fetch "hrat" "trat_eq"])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.122352
+Replaying proof: 0.000126
+
+HRAT_ADD_SYM
+proof length: 1
+proof time: 0.028665
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.044454
+  inferstep time: 0.033289
+  node_find time: 0.0001
+  node_crea time: 0.007992
+    pred time: 0.002645
+    thmpred time: 0.0
+    mc time: 0.005753
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "hrat_ABS_REP_CLASS" , DB.fetch "hrat" "hrat_bijections" , DB.fetch "hrat" "hrat_ABS_def" , DB.fetch "hrat" "hrat_REP_def" , DB.fetch "hrat" "hrat_inv" , DB.fetch "hrat" "hrat_mul" , DB.fetch "hrat" "hrat_sucint" , DB.fetch "hrat" "hrat_TY_DEF" , DB.fetch "hrat" "hrat_1" , DB.fetch "hrat" "hrat_QUOTIENT" , DB.fetch "hrat" "TRAT_ADD_SYM_EQ" , DB.fetch "hrat" "TRAT_MUL_SYM_EQ" , indexedListsTheory.MAPi_ACC_def , indexedListsTheory.delN_def])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003484
+
+HRAT_ADD_ASSOC
+proof length: 1
+proof time: 0.040651
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.062319
+  inferstep time: 0.045686
+  node_find time: 0.000137
+  node_crea time: 0.011492
+    pred time: 0.003527
+    thmpred time: 0.000001
+    mc time: 0.009573
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "hrat_ABS_REP_CLASS" , DB.fetch "hrat" "hrat_bijections" , DB.fetch "hrat" "hrat_ABS_def" , DB.fetch "hrat" "hrat_REP_def" , DB.fetch "hrat" "hrat_inv" , DB.fetch "hrat" "hrat_mul" , DB.fetch "hrat" "hrat_sucint" , DB.fetch "hrat" "hrat_TY_DEF" , DB.fetch "hrat" "hrat_1" , DB.fetch "hrat" "hrat_QUOTIENT" , DB.fetch "hrat" "TRAT_ADD_ASSOC" , DB.fetch "hrat" "TRAT_LDISTRIB"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004942
+
+HRAT_MUL_SYM
+proof length: 1
+proof time: 0.03348
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.040897
+  inferstep time: 0.030355
+  node_find time: 0.000093
+  node_crea time: 0.007389
+    pred time: 0.002407
+    thmpred time: 0.000001
+    mc time: 0.005292
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_2" , DB.fetch "hrat" "hrat_mul" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "hrat_ABS_REP_CLASS" , DB.fetch "hrat" "hrat_bijections" , DB.fetch "hrat" "hrat_ABS_def" , DB.fetch "hrat" "hrat_REP_def" , DB.fetch "hrat" "hrat_inv" , DB.fetch "hrat" "hrat_sucint" , DB.fetch "hrat" "hrat_TY_DEF" , DB.fetch "hrat" "hrat_1" , DB.fetch "hrat" "hrat_QUOTIENT"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003883
+
+HRAT_MUL_ASSOC
+proof length: 1
+proof time: 0.028252
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.055472
+  inferstep time: 0.041011
+  node_find time: 0.000175
+  node_crea time: 0.010471
+    pred time: 0.003108
+    thmpred time: 0.000001
+    mc time: 0.008036
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_3" , DB.fetch "hrat" "HRAT_MUL_SYM" , DB.fetch "hrat" "tactictoe_thm_2" , DB.fetch "hrat" "hrat_mul" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "TRAT_MUL_ASSOC" , DB.fetch "hrat" "TRAT_ADD_ASSOC" , DB.fetch "hrat" "TRAT_LDISTRIB" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "hrat_ABS_REP_CLASS" , DB.fetch "hrat" "hrat_bijections" , DB.fetch "hrat" "hrat_ABS_def" , DB.fetch "hrat" "hrat_REP_def"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004118
+
+HRAT_LDISTRIB
+proof length: 1
+proof time: 0.030665
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.040113
+  inferstep time: 0.024468
+  node_find time: 0.00012
+  node_crea time: 0.011678
+    pred time: 0.003703
+    thmpred time: 0.0
+    mc time: 0.008249
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_4" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_MUL_ASSOC" , DB.fetch "hrat" "tactictoe_thm_3" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "HRAT_MUL_SYM" , DB.fetch "hrat" "tactictoe_thm_2" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "hrat_mul" , DB.fetch "hrat" "TRAT_LDISTRIB" , DB.fetch "hrat" "TRAT_ADD_ASSOC" , DB.fetch "hrat" "TRAT_MUL_ASSOC" , DB.fetch "hrat" "hrat_ABS_REP_CLASS" , DB.fetch "hrat" "hrat_bijections"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006031
+
+HRAT_MUL_LID
+proof length: 1
+proof time: 0.026961
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.070935
+  inferstep time: 0.046561
+  node_find time: 0.000113
+  node_crea time: 0.014254
+    pred time: 0.004097
+    thmpred time: 0.000001
+    mc time: 0.015729
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_5" , DB.fetch "hrat" "hrat_1" , DB.fetch "hrat" "HRAT_LDISTRIB" , DB.fetch "hrat" "tactictoe_thm_4" , DB.fetch "hrat" "HRAT_MUL_ASSOC" , DB.fetch "hrat" "tactictoe_thm_3" , DB.fetch "hrat" "HRAT_MUL_SYM" , DB.fetch "hrat" "tactictoe_thm_2" , DB.fetch "hrat" "hrat_mul" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "hrat_ABS_REP_CLASS" , DB.fetch "hrat" "hrat_bijections"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004144
+
+HRAT_MUL_LINV
+proof length: 1
+proof time: 0.041417
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.064212
+  inferstep time: 0.051118
+  node_find time: 0.000124
+  node_crea time: 0.009111
+    pred time: 0.002927
+    thmpred time: 0.000001
+    mc time: 0.00708
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_6" , DB.fetch "hrat" "hrat_inv" , DB.fetch "hrat" "HRAT_MUL_LID" , DB.fetch "hrat" "tactictoe_thm_5" , DB.fetch "hrat" "hrat_1" , DB.fetch "hrat" "HRAT_LDISTRIB" , DB.fetch "hrat" "tactictoe_thm_4" , DB.fetch "hrat" "HRAT_MUL_ASSOC" , DB.fetch "hrat" "tactictoe_thm_3" , DB.fetch "hrat" "HRAT_MUL_SYM" , DB.fetch "hrat" "tactictoe_thm_2" , DB.fetch "hrat" "hrat_mul" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004316
+
+HRAT_NOZERO
+proof length: 1
+proof time: 0.038246
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.074429
+  inferstep time: 0.05351
+  node_find time: 0.000111
+  node_crea time: 0.011388
+    pred time: 0.002862
+    thmpred time: 0.000001
+    mc time: 0.013477
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_7" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "HRAT_LDISTRIB" , DB.fetch "hrat" "tactictoe_thm_4" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "HRAT_MUL_ASSOC" , DB.fetch "hrat" "tactictoe_thm_3" , DB.fetch "hrat" "HRAT_MUL_SYM" , DB.fetch "hrat" "tactictoe_thm_2" , DB.fetch "hrat" "HRAT_MUL_LID" , DB.fetch "hrat" "tactictoe_thm_5" , DB.fetch "hrat" "HRAT_MUL_LINV" , DB.fetch "hrat" "tactictoe_thm_6"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003744
+
+HRAT_ADD_TOTAL
+proof length: 1
+proof time: 0.000955
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.124536
+  inferstep time: 0.110902
+  node_find time: 0.000208
+  node_crea time: 0.008673
+    pred time: 0.002745
+    thmpred time: 0.0
+    mc time: 0.007249
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "hrat" "tactictoe_thm_8" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "HRAT_LDISTRIB" , DB.fetch "hrat" "tactictoe_thm_4" , DB.fetch "hrat" "HRAT_NOZERO" , DB.fetch "hrat" "tactictoe_thm_7" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "TRAT_ADD_TOTAL" , DB.fetch "hrat" "TRAT_ARCH" , combinTheory.UPD11_SAME_BASE , pairTheory.LEX_DEF_THM , arithmeticTheory.MOD_EQ_0_DIVISOR , arithmeticTheory.SUB_ELIM_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006498
+
+HRAT_ARCH
+proof length: 1
+proof time: 0.059217
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.072743
+  inferstep time: 0.058719
+  node_find time: 0.000099
+  node_crea time: 0.010025
+    pred time: 0.002835
+    thmpred time: 0.0
+    mc time: 0.007291
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_9" , DB.fetch "hrat" "hrat_sucint" , DB.fetch "hrat" "HRAT_ADD_TOTAL" , DB.fetch "hrat" "tactictoe_thm_8" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "HRAT_LDISTRIB" , DB.fetch "hrat" "tactictoe_thm_4" , DB.fetch "hrat" "HRAT_NOZERO" , DB.fetch "hrat" "tactictoe_thm_7" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "TRAT_ARCH" , DB.fetch "hrat" "TRAT_ADD_TOTAL" , arithmeticTheory.MOD_EQ_0_DIVISOR])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005249
+
+HRAT_SUCINT
+proof length: 1
+proof time: 0.075897
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.119435
+  inferstep time: 0.097575
+  node_find time: 0.000138
+  node_crea time: 0.015833
+    pred time: 0.006457
+    thmpred time: 0.0
+    mc time: 0.011713
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "hrat" "tactictoe_thm_10" , DB.fetch "hrat" "HRAT_ARCH" , DB.fetch "hrat" "tactictoe_thm_9" , DB.fetch "hrat" "hrat_sucint" , DB.fetch "hrat" "hrat_1" , DB.fetch "hrat" "HRAT_MUL_LID" , DB.fetch "hrat" "tactictoe_thm_5" , DB.fetch "hrat" "HRAT_MUL_LINV" , DB.fetch "hrat" "tactictoe_thm_6" , DB.fetch "hrat" "hrat_add" , DB.fetch "hrat" "HRAT_ADD_ASSOC" , DB.fetch "hrat" "tactictoe_thm_1" , DB.fetch "hrat" "HRAT_ADD_SYM" , DB.fetch "hrat" "tactictoe_thm_0" , DB.fetch "hrat" "HRAT_ADD_TOTAL" , DB.fetch "hrat" "tactictoe_thm_8"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003896
+Bad stac: 1

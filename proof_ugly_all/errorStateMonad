@@ -1,0 +1,541 @@
+
+BIND_LEFT_UNIT
+Statistics
+  infstep : 1692
+  nodes   : 211
+  maxdepth: 6
+Time: 10.008617
+  inferstep time: 8.04694
+  node_find time: 0.13466
+  node_crea time: 1.687133
+    pred time: 0.299504
+    thmpred time: 0.000029
+    mc time: 0.913749
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003638
+
+MCOMP_THM
+Statistics
+  infstep : 1405
+  nodes   : 221
+  maxdepth: 6
+Time: 10.030786
+  inferstep time: 8.222945
+  node_find time: 0.143683
+  node_crea time: 1.505122
+    pred time: 0.273209
+    thmpred time: 0.000034
+    mc time: 0.840234
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.093274
+
+MCOMP_ASSOC
+proof length: 1
+proof time: 0.010419
+Statistics
+  infstep : 47
+  nodes   : 17
+  maxdepth: 3
+Time: 1.269668
+  inferstep time: 1.05291
+  node_find time: 0.003025
+  node_crea time: 0.200052
+    pred time: 0.064993
+    thmpred time: 0.000004
+    mc time: 0.085313
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "errorStateMonad" "MCOMP_DEF" , DB.fetch "errorStateMonad" "MCOMP_THM" , optionTheory.OPTION_MCOMP_ASSOC , listTheory.SUM_MAP_PLUS_ZIP , DB.fetch "errorStateMonad" "FOREACH_def" , DB.fetch "errorStateMonad" "FOREACH_primitive_def" , listTheory.INDEX_FIND_def , DB.fetch "errorStateMonad" "FOREACH_ind" , combinTheory.o_ASSOC , sumTheory.sum_Axiom , sumTheory.tactictoe_thm_9 , sumTheory.sum_axiom , ind_typeTheory.ISO_FUN , pred_setTheory.BIJ_INJ_SURJ , pred_setTheory.SCHROEDER_BERNSTEIN , pred_setTheory.BIJ_TRANS ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006266
+
+UNIT_CURRY
+proof length: 1
+proof time: 0.001439
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.119144
+  inferstep time: 0.107217
+  node_find time: 0.000109
+  node_crea time: 0.007544
+    pred time: 0.002589
+    thmpred time: 0.0
+    mc time: 0.007286
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "errorStateMonad" "BIND_DEF" ) , ( DB.fetch "errorStateMonad" "UNIT_DEF" ) , boolLib.FUN_EQ_THM ])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.07887
+
+MCOMP_ID
+proof length: 1
+proof time: 0.001667
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.127648
+  inferstep time: 0.115187
+  node_find time: 0.000113
+  node_crea time: 0.007666
+    pred time: 0.002511
+    thmpred time: 0.0
+    mc time: 0.007568
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "errorStateMonad" "MCOMP_ASSOC" , DB.fetch "errorStateMonad" "MCOMP_DEF" , DB.fetch "errorStateMonad" "MCOMP_THM" , DB.fetch "errorStateMonad" "MMAP_DEF" , DB.fetch "errorStateMonad" "FOREACH_def" , DB.fetch "errorStateMonad" "FOREACH_primitive_def" , DB.fetch "errorStateMonad" "BIND_LEFT_UNIT" , DB.fetch "errorStateMonad" "UNIT_DEF" , DB.fetch "errorStateMonad" "sequence_def" , DB.fetch "errorStateMonad" "UNIT_CURRY" , DB.fetch "errorStateMonad" "BIND_DEF" , DB.fetch "errorStateMonad" "IGNORE_BIND_DEF" , DB.fetch "errorStateMonad" "EXT_DEF" , optionTheory.OPTION_MCOMP_ID , optionTheory.OPTION_MCOMP_ASSOC , optionTheory.OPTION_MCOMP_def ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007048
+
+BIND_RIGHT_UNIT
+proof length: 3
+proof time: 0.010948
+Statistics
+  infstep : 81
+  nodes   : 11
+  maxdepth: 3
+Time: 0.728785
+  inferstep time: 0.62194
+  node_find time: 0.003301
+  node_crea time: 0.076837
+    pred time: 0.020406
+    thmpred time: 0.000002
+    mc time: 0.05822
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "BIND_DEF"), (DB.fetch "errorStateMonad" "UNIT_DEF"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "UNIT_DEF", DB.fetch "errorStateMonad" "WIDEN_def", DB.fetch "errorStateMonad" "BIND_DEF", listTheory.INDEX_FIND_def, DB.fetch "errorStateMonad" "NARROW_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOR_primitive_def", pairTheory.pair_CASE_def, pairTheory.pair_case_thm, optionTheory.option_case_def, optionTheory.option_CLAUSES, optionTheory.option_case_cong, DB.fetch "errorStateMonad" "tactictoe_thm_0", listTheory.splitAtPki_EQN, optionTheory.option_case_ID, optionTheory.OPTION_MAP_CASE] THEN
+  metisLib.METIS_TAC [(DB.fetch "option" "option_nchotomy")]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.158972
+
+BIND_ASSOC
+Statistics
+  infstep : 772
+  nodes   : 145
+  maxdepth: 6
+Time: 10.02759
+  inferstep time: 8.127309
+  node_find time: 0.069175
+  node_crea time: 1.70654
+    pred time: 0.287822
+    thmpred time: 0.000027
+    mc time: 0.772724
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.167483
+
+MMAP_ID
+proof length: 2
+proof time: 0.001824
+Statistics
+  infstep : 39
+  nodes   : 9
+  maxdepth: 3
+Time: 0.595776
+  inferstep time: 0.53396
+  node_find time: 0.001882
+  node_crea time: 0.049341
+    pred time: 0.019863
+    thmpred time: 0.000001
+    mc time: 0.024166
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC numLib.std_ss [boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "MMAP_DEF", DB.fetch "errorStateMonad" "tactictoe_thm_0", DB.fetch "errorStateMonad" "tactictoe_thm_1", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOR_primitive_def", DB.fetch "errorStateMonad" "JOIN_DEF", combinTheory.I_THM, listTheory.LIST_BIND_ID, listTheory.MAP_ID, combinTheory.I_o_ID, listTheory.DROP_splitAtPki, listTheory.SET_TO_LIST_primitive_def, listTheory.dropWhile_splitAtPki, pred_setTheory.IMAGE_I, relationTheory.INVOL_DEF, combinTheory.I_DEF]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006383
+
+MMAP_COMP
+Statistics
+  infstep : 691
+  nodes   : 202
+  maxdepth: 7
+Time: 10.100328
+  inferstep time: 8.447369
+  node_find time: 0.072667
+  node_crea time: 1.454897
+    pred time: 0.313456
+    thmpred time: 0.000025
+    mc time: 0.748029
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006752
+
+MMAP_UNIT
+proof length: 1
+proof time: 0.001499
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.121895
+  inferstep time: 0.110708
+  node_find time: 0.000115
+  node_crea time: 0.007756
+    pred time: 0.002742
+    thmpred time: 0.0
+    mc time: 0.006215
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ boolLib.FUN_EQ_THM , ( DB.fetch "errorStateMonad" "MMAP_DEF" ) , combinTheory.o_DEF , boolLib.GSYM ( DB.fetch "errorStateMonad" "BIND_ASSOC" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007571
+
+MMAP_JOIN
+Statistics
+  infstep : 1218
+  nodes   : 260
+  maxdepth: 6
+Time: 10.05186
+  inferstep time: 7.501464
+  node_find time: 0.173573
+  node_crea time: 2.14381
+    pred time: 0.284881
+    thmpred time: 0.00002
+    mc time: 1.040137
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006245
+
+JOIN_UNIT
+proof length: 1
+proof time: 0.001113
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.13656
+  inferstep time: 0.122774
+  node_find time: 0.000148
+  node_crea time: 0.009585
+    pred time: 0.002962
+    thmpred time: 0.0
+    mc time: 0.00829
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "errorStateMonad" "MMAP_DEF" ) , combinTheory.o_DEF , ( DB.fetch "errorStateMonad" "JOIN_DEF" ) , boolLib.FUN_EQ_THM , boolLib.GSYM ( DB.fetch "errorStateMonad" "BIND_ASSOC" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007517
+
+JOIN_MMAP_UNIT
+proof length: 2
+proof time: 0.050362
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.2067
+  inferstep time: 0.172431
+  node_find time: 0.000283
+  node_crea time: 0.025268
+    pred time: 0.00879
+    thmpred time: 0.0
+    mc time: 0.018812
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "MMAP_DEF"), combinTheory.o_DEF, (DB.fetch "errorStateMonad" "JOIN_DEF"), boolLib.FUN_EQ_THM, boolLib.GSYM (DB.fetch "errorStateMonad" "BIND_ASSOC")] THEN metisTools.METIS_TAC [DB.fetch "errorStateMonad" "BIND_LEFT_UNIT", DB.fetch "errorStateMonad" "UNIT_DEF", DB.fetch "errorStateMonad" "sequence_def", DB.fetch "errorStateMonad" "MMAP_DEF", DB.fetch "errorStateMonad" "BIND_RIGHT_UNIT", DB.fetch "errorStateMonad" "tactictoe_thm_0", DB.fetch "errorStateMonad" "BIND_DEF", DB.fetch "errorStateMonad" "BIND_ASSOC", DB.fetch "errorStateMonad" "JOIN_DEF", DB.fetch "errorStateMonad" "EXT_DEF", DB.fetch "errorStateMonad" "IGNORE_BIND_DEF", DB.fetch "errorStateMonad" "tactictoe_thm_1", listTheory.SNOC, DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "MMAP_UNIT"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005219
+
+JOIN_MAP_JOIN
+proof length: 1
+proof time: 0.002909
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.121809
+  inferstep time: 0.11167
+  node_find time: 0.000178
+  node_crea time: 0.006846
+    pred time: 0.002291
+    thmpred time: 0.000001
+    mc time: 0.005413
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "errorStateMonad" "MMAP_DEF" ) , combinTheory.o_DEF , ( DB.fetch "errorStateMonad" "JOIN_DEF" ) , boolLib.FUN_EQ_THM , boolLib.GSYM ( DB.fetch "errorStateMonad" "BIND_ASSOC" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00799
+
+JOIN_MAP
+proof length: 2
+proof time: 0.060242
+Statistics
+  infstep : 9
+  nodes   : 7
+  maxdepth: 3
+Time: 0.677949
+  inferstep time: 0.611278
+  node_find time: 0.000558
+  node_crea time: 0.056825
+    pred time: 0.020531
+    thmpred time: 0.0
+    mc time: 0.032158
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "MMAP_DEF"), combinTheory.o_DEF, (DB.fetch "errorStateMonad" "JOIN_DEF"), boolLib.FUN_EQ_THM, boolLib.GSYM (DB.fetch "errorStateMonad" "BIND_ASSOC")] THEN metisTools.METIS_TAC [DB.fetch "errorStateMonad" "BIND_DEF", DB.fetch "errorStateMonad" "BIND_ASSOC", DB.fetch "errorStateMonad" "EXT_DEF", DB.fetch "errorStateMonad" "BIND_RIGHT_UNIT", DB.fetch "errorStateMonad" "sequence_def", DB.fetch "errorStateMonad" "MMAP_DEF", DB.fetch "errorStateMonad" "JOIN_DEF", DB.fetch "errorStateMonad" "IGNORE_BIND_DEF", DB.fetch "errorStateMonad" "BIND_LEFT_UNIT", DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOR_def", DB.fetch "errorStateMonad" "FOR_primitive_def", optionTheory.some_def, optionTheory.SOME_APPLY_PERMUTE, whileTheory.OLEAST_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005372
+
+sequence_nil
+proof length: 2
+proof time: 0.004196
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.238951
+  inferstep time: 0.222537
+  node_find time: 0.000254
+  node_crea time: 0.011314
+    pred time: 0.004712
+    thmpred time: 0.000001
+    mc time: 0.007353
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "BIND_DEF"), (DB.fetch "errorStateMonad" "UNIT_DEF"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "FOREACH_ind", DB.fetch "errorStateMonad" "sequence_def", DB.fetch "errorStateMonad" "mapM_def", listTheory.UNZIP, listTheory.UNZIP_THM, listTheory.ZIP, listTheory.INDEX_FIND_def, DB.fetch "errorStateMonad" "UNIT_DEF", DB.fetch "errorStateMonad" "NARROW_def", DB.fetch "errorStateMonad" "READ_def", DB.fetch "errorStateMonad" "WIDEN_def", DB.fetch "errorStateMonad" "WRITE_def", listTheory.OPT_MMAP_def, DB.fetch "errorStateMonad" "UNIT_CURRY", listTheory.LUPDATE_SOME_MAP]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004081
+
+mapM_nil
+proof length: 1
+proof time: 0.00417
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.125911
+  inferstep time: 0.117175
+  node_find time: 0.000131
+  node_crea time: 0.00629
+    pred time: 0.002556
+    thmpred time: 0.0
+    mc time: 0.003881
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "errorStateMonad" "mapM_def" , DB.fetch "errorStateMonad" "sequence_def" , DB.fetch "errorStateMonad" "sequence_nil" , DB.fetch "errorStateMonad" "FOREACH_def" , DB.fetch "errorStateMonad" "FOREACH_primitive_def" , DB.fetch "errorStateMonad" "MCOMP_ID" , DB.fetch "errorStateMonad" "MMAP_DEF" , DB.fetch "errorStateMonad" "MMAP_UNIT" , DB.fetch "errorStateMonad" "UNIT_DEF" , DB.fetch "errorStateMonad" "BIND_LEFT_UNIT" , DB.fetch "errorStateMonad" "BIND_RIGHT_UNIT" , DB.fetch "errorStateMonad" "UNIT_CURRY" , DB.fetch "errorStateMonad" "JOIN_MMAP_UNIT" , DB.fetch "errorStateMonad" "JOIN_UNIT" , listTheory.INDEX_FIND_def , DB.fetch "errorStateMonad" "FOREACH_ind" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003006
+
+mapM_cons
+proof length: 1
+proof time: 0.005643
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.128082
+  inferstep time: 0.115065
+  node_find time: 0.000133
+  node_crea time: 0.009644
+    pred time: 0.003643
+    thmpred time: 0.0
+    mc time: 0.006475
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "errorStateMonad" "sequence_def" , DB.fetch "errorStateMonad" "mapM_nil" , DB.fetch "errorStateMonad" "mapM_def" , DB.fetch "errorStateMonad" "FOREACH_def" , DB.fetch "errorStateMonad" "FOREACH_primitive_def" , DB.fetch "errorStateMonad" "BIND_ASSOC" , DB.fetch "errorStateMonad" "FOR_def" , DB.fetch "errorStateMonad" "FOR_primitive_def" , listTheory.EVERY2_THM , listTheory.LUPDATE_LENGTH , listTheory.LIST_LIFT2_def , listTheory.MAP_APPEND_MAP_EQ , listTheory.LUPDATE_SNOC , listTheory.EL_LUPDATE , listTheory.LENGTH_LUPDATE , DB.fetch "errorStateMonad" "MMAP_DEF" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006477
+
+ES_CHOICE_ASSOC
+proof length: 4
+proof time: 0.114748
+Statistics
+  infstep : 98
+  nodes   : 10
+  maxdepth: 4
+Time: 0.992764
+  inferstep time: 0.877749
+  node_find time: 0.005951
+  node_crea time: 0.071211
+    pred time: 0.023697
+    thmpred time: 0.000004
+    mc time: 0.038699
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "BIND_DEF"), (DB.fetch "errorStateMonad" "UNIT_DEF"), boolLib.FUN_EQ_THM] THEN boolLib.REWRITE_TAC [DB.fetch "errorStateMonad" "ES_CHOICE_DEF", optionTheory.option_nchotomy, optionTheory.option_case_def, DB.fetch "errorStateMonad" "BIND_LEFT_UNIT", DB.fetch "errorStateMonad" "UNIT_DEF", DB.fetch "errorStateMonad" "tactictoe_thm_0", optionTheory.SOME_11, optionTheory.NOT_NONE_SOME, optionTheory.OPTION_BIND_def, DB.fetch "errorStateMonad" "mapM_cons", DB.fetch "errorStateMonad" "sequence_def", listTheory.INDEX_OF_def, optionTheory.OPTION_MAP_DEF, whileTheory.OLEAST_EQNS, optionTheory.EXISTS_OPTION, optionTheory.FORALL_OPTION] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "UNIT_DEF", DB.fetch "errorStateMonad" "WIDEN_def", DB.fetch "errorStateMonad" "BIND_DEF", listTheory.INDEX_FIND_def, DB.fetch "errorStateMonad" "NARROW_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOR_primitive_def", pairTheory.pair_CASE_def, pairTheory.pair_case_thm, optionTheory.option_case_def, optionTheory.option_CLAUSES, optionTheory.option_case_cong, DB.fetch "errorStateMonad" "tactictoe_thm_0", listTheory.splitAtPki_EQN, optionTheory.option_case_ID, optionTheory.OPTION_MAP_CASE] THEN
+  metisTools.METIS_TAC [DB.fetch "errorStateMonad" "ES_CHOICE_DEF", DB.fetch "errorStateMonad" "tactictoe_thm_0", DB.fetch "errorStateMonad" "tactictoe_thm_1", DB.fetch "errorStateMonad" "FOR_primitive_def", DB.fetch "errorStateMonad" "FOREACH_ind", DB.fetch "errorStateMonad" "FOR_ind", sumTheory.INR_neq_INL, optionTheory.OPTION_BIND_EQUALS_OPTION, optionTheory.OPTREL_def, optionTheory.some_elim, optionTheory.EXISTS_OPTION, optionTheory.OPTION_IGNORE_BIND_EQUALS_OPTION, optionTheory.option_nchotomy, optionTheory.option_Axiom, optionTheory.option_case_def, optionTheory.OPTION_BIND_def]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.086188
+
+ES_CHOICE_FAIL_LID
+proof length: 2
+proof time: 0.052214
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.199845
+  inferstep time: 0.178231
+  node_find time: 0.000279
+  node_crea time: 0.01551
+    pred time: 0.005199
+    thmpred time: 0.000002
+    mc time: 0.010833
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "MMAP_DEF"), combinTheory.o_DEF, (DB.fetch "errorStateMonad" "JOIN_DEF"), boolLib.FUN_EQ_THM, boolLib.GSYM (DB.fetch "errorStateMonad" "BIND_ASSOC")] THEN metisTools.METIS_TAC [DB.fetch "errorStateMonad" "ES_CHOICE_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_ASSOC", DB.fetch "errorStateMonad" "ES_FAIL_DEF", DB.fetch "errorStateMonad" "ES_GUARD_DEF", optionTheory.option_case_def, DB.fetch "errorStateMonad" "BIND_LEFT_UNIT", DB.fetch "errorStateMonad" "tactictoe_thm_0", optionTheory.OPTION_BIND_def, DB.fetch "errorStateMonad" "mapM_cons", optionTheory.OPTION_MAP_DEF, optionTheory.EXISTS_OPTION, optionTheory.FORALL_OPTION, optionTheory.option_Axiom, optionTheory.OPTION_ALL_CONG, optionTheory.OPTION_ALL_def, optionTheory.OPTION_MAP2_THM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007703
+
+ES_CHOICE_FAIL_RID
+proof length: 3
+proof time: 0.093321
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 3
+Time: 0.3514
+  inferstep time: 0.312001
+  node_find time: 0.000525
+  node_crea time: 0.029305
+    pred time: 0.011198
+    thmpred time: 0.000001
+    mc time: 0.0191
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "MMAP_DEF"), combinTheory.o_DEF, (DB.fetch "errorStateMonad" "JOIN_DEF"), boolLib.FUN_EQ_THM, boolLib.GSYM (DB.fetch "errorStateMonad" "BIND_ASSOC")] THEN BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "ES_CHOICE_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_ASSOC", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID", DB.fetch "errorStateMonad" "ES_FAIL_DEF", DB.fetch "errorStateMonad" "ES_GUARD_DEF", optionTheory.option_case_def, DB.fetch "errorStateMonad" "BIND_LEFT_UNIT", DB.fetch "errorStateMonad" "tactictoe_thm_0", optionTheory.OPTION_BIND_def, DB.fetch "errorStateMonad" "mapM_cons", optionTheory.OPTION_MAP_DEF, optionTheory.EXISTS_OPTION, optionTheory.FORALL_OPTION, optionTheory.option_Axiom, optionTheory.OPTION_ALL_CONG, optionTheory.OPTION_ALL_def] THEN
+  metisTools.METIS_TAC [DB.fetch "errorStateMonad" "ES_CHOICE_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_ASSOC", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID", DB.fetch "errorStateMonad" "FOR_primitive_def", DB.fetch "errorStateMonad" "FOREACH_ind", DB.fetch "errorStateMonad" "FOR_ind", sumTheory.INR_neq_INL, DB.fetch "errorStateMonad" "tactictoe_thm_0", optionTheory.OPTION_BIND_EQUALS_OPTION, optionTheory.OPTREL_def, optionTheory.some_elim, optionTheory.EXISTS_OPTION, optionTheory.OPTION_IGNORE_BIND_EQUALS_OPTION, optionTheory.option_nchotomy, optionTheory.option_Axiom, optionTheory.option_case_def]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.085867
+
+BIND_FAIL_L
+proof length: 2
+proof time: 0.001083
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.290704
+  inferstep time: 0.26293
+  node_find time: 0.000458
+  node_crea time: 0.020483
+    pred time: 0.008358
+    thmpred time: 0.0
+    mc time: 0.012729
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "MMAP_DEF"), combinTheory.o_DEF, (DB.fetch "errorStateMonad" "JOIN_DEF"), boolLib.FUN_EQ_THM, boolLib.GSYM (DB.fetch "errorStateMonad" "BIND_ASSOC")] THEN BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "ES_FAIL_DEF", DB.fetch "errorStateMonad" "ES_GUARD_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_RID", DB.fetch "errorStateMonad" "BIND_LEFT_UNIT", DB.fetch "errorStateMonad" "mapM_cons", DB.fetch "errorStateMonad" "sequence_def", DB.fetch "errorStateMonad" "BIND_ASSOC", DB.fetch "errorStateMonad" "BIND_DEF", DB.fetch "errorStateMonad" "BIND_RIGHT_UNIT", DB.fetch "errorStateMonad" "EXT_DEF", DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOR_def", DB.fetch "errorStateMonad" "FOR_primitive_def", DB.fetch "errorStateMonad" "IGNORE_BIND_DEF"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00719
+
+BIND_ESGUARD
+proof length: 4
+proof time: 0.060839
+Statistics
+  infstep : 251
+  nodes   : 49
+  maxdepth: 5
+Time: 3.859185
+  inferstep time: 3.446827
+  node_find time: 0.019735
+  node_crea time: 0.292892
+    pred time: 0.079565
+    thmpred time: 0.000013
+    mc time: 0.163082
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "MMAP_DEF"), combinTheory.o_DEF, (DB.fetch "errorStateMonad" "JOIN_DEF"), boolLib.FUN_EQ_THM, boolLib.GSYM (DB.fetch "errorStateMonad" "BIND_ASSOC")] THENL [metisTools.METIS_TAC [DB.fetch "errorStateMonad" "BIND_FAIL_L", DB.fetch "errorStateMonad" "ES_GUARD_DEF", DB.fetch "errorStateMonad" "ES_FAIL_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_RID", DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOR_primitive_def", DB.fetch "errorStateMonad" "FOR_def", DB.fetch "errorStateMonad" "BIND_LEFT_UNIT", DB.fetch "errorStateMonad" "mapM_cons", DB.fetch "errorStateMonad" "sequence_def", DB.fetch "errorStateMonad" "BIND_DEF", DB.fetch "errorStateMonad" "BIND_ASSOC", DB.fetch "errorStateMonad" "BIND_RIGHT_UNIT", DB.fetch "errorStateMonad" "EXT_DEF"], boolLib.ONCE_REWRITE_TAC [DB.fetch "errorStateMonad" "ES_GUARD_DEF", DB.fetch "errorStateMonad" "BIND_FAIL_L", oneTheory.FORALL_ONE, oneTheory.one_induction, oneTheory.one_Axiom, oneTheory.one_prim_rec, DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", optionTheory.OPTION_GUARD_def, oneTheory.one_DEF, DB.fetch "errorStateMonad" "WRITE_def", optionTheory.OPTION_GUARD_EQ_THM, optionTheory.OPTION_GUARD_COND, optionTheory.NONE_DEF, oneTheory.one_case_thm, oneTheory.one] THEN
+  BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "MMAP_DEF"), combinTheory.o_DEF, (DB.fetch "errorStateMonad" "JOIN_DEF"), boolLib.FUN_EQ_THM, boolLib.GSYM (DB.fetch "errorStateMonad" "BIND_ASSOC")]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003121
+
+IGNORE_BIND_ESGUARD
+proof length: 3
+proof time: 0.071043
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.349223
+  inferstep time: 0.315331
+  node_find time: 0.000402
+  node_crea time: 0.021721
+    pred time: 0.007118
+    thmpred time: 0.000001
+    mc time: 0.020016
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "ES_GUARD_DEF")] THENL [metisTools.METIS_TAC [DB.fetch "errorStateMonad" "IGNORE_BIND_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_RID", DB.fetch "errorStateMonad" "ES_CHOICE_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_ASSOC", DB.fetch "errorStateMonad" "BIND_ESGUARD", DB.fetch "errorStateMonad" "ES_GUARD_DEF", DB.fetch "errorStateMonad" "BIND_FAIL_L", DB.fetch "errorStateMonad" "ES_FAIL_DEF", DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOR_primitive_def", DB.fetch "errorStateMonad" "FOR_def", DB.fetch "errorStateMonad" "FOR_ind", DB.fetch "errorStateMonad" "WRITE_def", DB.fetch "errorStateMonad" "FOREACH_ind"], BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "IGNORE_BIND_DEF", DB.fetch "errorStateMonad" "ES_GUARD_DEF", DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID", DB.fetch "errorStateMonad" "ES_CHOICE_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_RID", DB.fetch "errorStateMonad" "ES_CHOICE_ASSOC", DB.fetch "errorStateMonad" "BIND_ESGUARD", DB.fetch "errorStateMonad" "WRITE_def", optionTheory.OPTION_GUARD_EQ_THM, optionTheory.OPTION_GUARD_COND, optionTheory.OPTION_GUARD_def, optionTheory.NONE_DEF, oneTheory.FORALL_ONE, oneTheory.one]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003313
+
+IGNORE_BIND_FAIL
+proof length: 6
+proof time: 0.113731
+Statistics
+  infstep : 76
+  nodes   : 36
+  maxdepth: 5
+Time: 2.264863
+  inferstep time: 1.976179
+  node_find time: 0.005776
+  node_crea time: 0.223609
+    pred time: 0.081419
+    thmpred time: 0.000006
+    mc time: 0.117699
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "IGNORE_BIND_DEF", DB.fetch "errorStateMonad" "IGNORE_BIND_ESGUARD", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_RID", DB.fetch "errorStateMonad" "ES_CHOICE_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_ASSOC", DB.fetch "errorStateMonad" "BIND_ESGUARD", DB.fetch "errorStateMonad" "ES_GUARD_DEF", DB.fetch "errorStateMonad" "BIND_FAIL_L", DB.fetch "errorStateMonad" "ES_FAIL_DEF", DB.fetch "errorStateMonad" "FOREACH_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "FOR_primitive_def", DB.fetch "errorStateMonad" "MCOMP_ID", listTheory.INDEX_FIND_def, DB.fetch "errorStateMonad" "FOREACH_ind"] THEN BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "BIND_DEF"), (DB.fetch "errorStateMonad" "UNIT_DEF"), boolLib.FUN_EQ_THM] THEN
+  Q.RENAME1_TAC [HolKernel.QUOTE " (*#loc 1 4157*)option_CASE (k v) NONE _"] THEN
+  BasicProvers.Cases_on [HolKernel.QUOTE " (*#loc 1 4201*)k v"] THENL
+  [metisTools.METIS_TAC [DB.fetch "errorStateMonad" "ES_FAIL_DEF", optionTheory.option_case_def, optionTheory.option_CLAUSES, DB.fetch "errorStateMonad" "BIND_DEF", DB.fetch "errorStateMonad" "NARROW_def", DB.fetch "errorStateMonad" "WIDEN_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "tactictoe_thm_1", DB.fetch "errorStateMonad" "FOR_primitive_def", pairTheory.pair_CASE_def, pairTheory.pair_case_cong, DB.fetch "errorStateMonad" "IGNORE_BIND_ESGUARD", DB.fetch "errorStateMonad" "ES_GUARD_DEF", DB.fetch "errorStateMonad" "BIND_ESGUARD", DB.fetch "errorStateMonad" "BIND_FAIL_L", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID"],
+  BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "ES_FAIL_DEF", optionTheory.option_case_def, optionTheory.option_CLAUSES, DB.fetch "errorStateMonad" "NARROW_def", DB.fetch "errorStateMonad" "WIDEN_def", DB.fetch "errorStateMonad" "BIND_DEF", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "tactictoe_thm_1", DB.fetch "errorStateMonad" "FOR_primitive_def", pairTheory.pair_case_cong, pairTheory.pair_CASE_def, DB.fetch "errorStateMonad" "IGNORE_BIND_ESGUARD", DB.fetch "errorStateMonad" "ES_GUARD_DEF", DB.fetch "errorStateMonad" "BIND_ESGUARD", DB.fetch "errorStateMonad" "BIND_FAIL_L", DB.fetch "errorStateMonad" "ES_CHOICE_FAIL_LID"]]
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.222325
+
+APPLY_UNIT
+proof length: 3
+proof time: 0.004949
+Statistics
+  infstep : 17
+  nodes   : 9
+  maxdepth: 3
+Time: 0.629693
+  inferstep time: 0.521359
+  node_find time: 0.00146
+  node_crea time: 0.082804
+    pred time: 0.030498
+    thmpred time: 0.000002
+    mc time: 0.048839
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "MMAP_DEF"), combinTheory.o_DEF, (DB.fetch "errorStateMonad" "JOIN_DEF"), boolLib.FUN_EQ_THM, boolLib.GSYM (DB.fetch "errorStateMonad" "BIND_ASSOC")] THEN BasicProvers.SRW_TAC [] [(DB.fetch "errorStateMonad" "BIND_DEF"), (DB.fetch "errorStateMonad" "UNIT_DEF"), boolLib.FUN_EQ_THM] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "errorStateMonad" "READ_def", DB.fetch "errorStateMonad" "UNIT_DEF", DB.fetch "errorStateMonad" "WIDEN_def", DB.fetch "errorStateMonad" "BIND_DEF", DB.fetch "errorStateMonad" "ES_APPLY_DEF", DB.fetch "errorStateMonad" "ES_CHOICE_DEF", listTheory.INDEX_FIND_def, DB.fetch "errorStateMonad" "NARROW_def", DB.fetch "errorStateMonad" "FOREACH_primitive_def", DB.fetch "errorStateMonad" "tactictoe_thm_1", DB.fetch "errorStateMonad" "FOR_primitive_def", pairTheory.pair_case_cong, pairTheory.pair_CASE_def, pairTheory.PAIR_MAP_THM, pred_setTheory.IMAGE_DEF, pred_setTheory.tactictoe_thm_0]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003712
+
+APPLY_UNIT_UNIT
+proof length: 1
+proof time: 0.000558
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.128302
+  inferstep time: 0.111433
+  node_find time: 0.000227
+  node_crea time: 0.013333
+    pred time: 0.005575
+    thmpred time: 0.0
+    mc time: 0.006778
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "errorStateMonad" "ES_APPLY_DEF" ) , ( DB.fetch "errorStateMonad" "MMAP_DEF" ) , combinTheory.o_DEF ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007672
+Bad stac: 1

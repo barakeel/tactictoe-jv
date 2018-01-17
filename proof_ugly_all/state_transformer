@@ -1,0 +1,634 @@
+Replaying proof: 0.110137
+
+UNIT_CURRY
+proof length: 3
+proof time: 0.030269
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 3
+Time: 0.303408
+  inferstep time: 0.26573
+  node_find time: 0.00016
+  node_crea time: 0.028273
+    pred time: 0.009645
+    thmpred time: 0.000001
+    mc time: 0.022819
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [pairTheory.CURRY_DEF, pairTheory.CURRY_ONE_ONE_THM, pairTheory.CURRY_UNCURRY_THM, pairTheory.UNCURRY_CURRY_THM, DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "FOR_primitive_def", DB.fetch "state_transformer" "JOIN_DEF", combinTheory.I_THM, combinTheory.I_DEF, combinTheory.I_o_ID, listTheory.DROP_splitAtPki] THEN BasicProvers.SRW_TAC [] [boolLib.FUN_EQ_THM, (DB.fetch "pair" "UNCURRY_VAR"), (DB.fetch "pair" "PAIR")] THEN
+  metisTools.METIS_TAC [DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MWHILE_DEF", pairTheory.CURRY_DEF, pairTheory.UNCURRY_DEF, pairTheory.FST, pairTheory.pair_case_thm, pairTheory.CLOSED_PAIR_EQ, pairTheory.pair_CASES, pairTheory.SND, pairTheory.ABS_PAIR_THM, listTheory.FOLDL_ZIP_SAME, pairTheory.PAIR_EQ]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.053787
+
+MCOMP_ALT
+proof length: 1
+proof time: 0.071564
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.094968
+  inferstep time: 0.084034
+  node_find time: 0.000028
+  node_crea time: 0.007858
+    pred time: 0.002564
+    thmpred time: 0.0
+    mc time: 0.007044
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "MCOMP_DEF" , DB.fetch "state_transformer" "BIND_DEF" , DB.fetch "state_transformer" "EXT_DEF" , pairTheory.CURRY_UNCURRY_THM , pairTheory.UNCURRY_CURRY_THM , pairTheory.CURRY_ONE_ONE_THM , pairTheory.CURRY_DEF , DB.fetch "state_transformer" "UNIT_CURRY" , pairTheory.S_UNCURRY_R , pairTheory.o_UNCURRY_R , pairTheory.C_UNCURRY_L , pairTheory.FORALL_UNCURRY , pairTheory.UNCURRY_ONE_ONE_THM , pairTheory.UNCURRY_DEF , pairTheory.UNCURRY_VAR , pairTheory.UNCURRY])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003411
+
+MCOMP_ID
+proof length: 2
+proof time: 0.002278
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.236423
+  inferstep time: 0.21548
+  node_find time: 0.000074
+  node_crea time: 0.014348
+    pred time: 0.005301
+    thmpred time: 0.000002
+    mc time: 0.012788
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "state_transformer" "MCOMP_DEF"), pairTheory.CURRY_DEF, boolLib.FUN_EQ_THM, combinTheory.o_THM, pairTheory.UNCURRY_DEF, (DB.fetch "state_transformer" "EXT_DEF")] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "UNIT_DEF", oneTheory.tactictoe_thm_0, DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "UNIT_CURRY", DB.fetch "state_transformer" "BIND_DEF", DB.fetch "state_transformer" "MCOMP_ALT", pairTheory.S_UNCURRY_R, pairTheory.UNCURRY_ONE_ONE_THM, pairTheory.o_UNCURRY_R, pairTheory.UNCURRY_CONG, pairTheory.UNCURRY_DEF, listTheory.FOLDL_UNION_BIGUNION_paired]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006151
+
+MCOMP_ASSOC
+proof length: 2
+proof time: 0.003109
+Statistics
+  infstep : 24
+  nodes   : 9
+  maxdepth: 3
+Time: 0.662112
+  inferstep time: 0.588145
+  node_find time: 0.000577
+  node_crea time: 0.058891
+    pred time: 0.020918
+    thmpred time: 0.000001
+    mc time: 0.03995
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "state_transformer" "MCOMP_DEF"), pairTheory.CURRY_DEF, boolLib.FUN_EQ_THM, combinTheory.o_THM, pairTheory.UNCURRY_DEF, (DB.fetch "state_transformer" "EXT_DEF")] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_DEF", oneTheory.tactictoe_thm_0, DB.fetch "state_transformer" "BIND_DEF", DB.fetch "state_transformer" "MCOMP_ALT", pairTheory.S_UNCURRY_R, pairTheory.o_UNCURRY_R, pairTheory.C_UNCURRY_L, pairTheory.FORALL_UNCURRY, pairTheory.UNCURRY_ONE_ONE_THM, pairTheory.UNCURRY_DEF, listTheory.FOLDL_UNION_BIGUNION_paired, pairTheory.ELIM_UNCURRY, pairTheory.CURRY_UNCURRY_THM, pairTheory.UNCURRY_VAR, listTheory.EVERY2_EVERY]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005246
+
+EXT_UNIT
+proof length: 3
+proof time: 0.002825
+Statistics
+  infstep : 12
+  nodes   : 7
+  maxdepth: 3
+Time: 0.515358
+  inferstep time: 0.447207
+  node_find time: 0.000326
+  node_crea time: 0.05833
+    pred time: 0.027438
+    thmpred time: 0.000003
+    mc time: 0.030873
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "UNIT_CURRY", DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "MCOMP_ID", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "FOR_primitive_def", DB.fetch "state_transformer" "JOIN_DEF", combinTheory.I_THM, combinTheory.I_o_ID, combinTheory.I_DEF, listTheory.DROP_splitAtPki] THEN BasicProvers.SRW_TAC [] [boolLib.FUN_EQ_THM, (DB.fetch "pair" "UNCURRY_VAR"), (DB.fetch "pair" "PAIR")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_DEF", oneTheory.tactictoe_thm_0, DB.fetch "state_transformer" "BIND_DEF", DB.fetch "state_transformer" "MCOMP_ALT", pairTheory.S_UNCURRY_R, pairTheory.o_UNCURRY_R, pairTheory.C_UNCURRY_L, pairTheory.FORALL_UNCURRY, pairTheory.UNCURRY_ONE_ONE_THM, pairTheory.UNCURRY_DEF, listTheory.FOLDL_UNION_BIGUNION_paired, pairTheory.ELIM_UNCURRY, pairTheory.CURRY_UNCURRY_THM, pairTheory.UNCURRY_VAR, listTheory.EVERY2_EVERY]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00328
+
+EXT_MCOMP
+proof length: 2
+proof time: 0.00272
+Statistics
+  infstep : 9
+  nodes   : 5
+  maxdepth: 2
+Time: 0.495113
+  inferstep time: 0.450555
+  node_find time: 0.000184
+  node_crea time: 0.033476
+    pred time: 0.01024
+    thmpred time: 0.000001
+    mc time: 0.022807
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "state_transformer" "MCOMP_DEF"), pairTheory.CURRY_DEF, boolLib.FUN_EQ_THM, combinTheory.o_THM, pairTheory.UNCURRY_DEF, (DB.fetch "state_transformer" "EXT_DEF")] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_DEF", oneTheory.tactictoe_thm_0, DB.fetch "state_transformer" "BIND_DEF", DB.fetch "state_transformer" "MCOMP_ALT", pairTheory.S_UNCURRY_R, pairTheory.o_UNCURRY_R, pairTheory.C_UNCURRY_L, pairTheory.FORALL_UNCURRY, pairTheory.UNCURRY_ONE_ONE_THM, pairTheory.UNCURRY_DEF, listTheory.FOLDL_UNION_BIGUNION_paired, pairTheory.ELIM_UNCURRY, pairTheory.CURRY_UNCURRY_THM, pairTheory.UNCURRY_VAR, listTheory.EVERY2_EVERY]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006483
+
+EXT_o_UNIT
+proof length: 1
+proof time: 0.051626
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.060784
+  inferstep time: 0.050381
+  node_find time: 0.000025
+  node_crea time: 0.007501
+    pred time: 0.002724
+    thmpred time: 0.000001
+    mc time: 0.006477
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "EXT_MCOMP" , DB.fetch "state_transformer" "MCOMP_DEF" , DB.fetch "state_transformer" "EXT_DEF" , DB.fetch "state_transformer" "EXT_UNIT" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MCOMP_ID" , DB.fetch "state_transformer" "FOREACH_def" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "MWHILE_DEF" , DB.fetch "state_transformer" "UNIT_DEF" , DB.fetch "state_transformer" "sequence_def" , DB.fetch "state_transformer" "UNIT_CURRY" , DB.fetch "state_transformer" "MCOMP_ALT" , DB.fetch "state_transformer" "BIND_DEF" , arithmeticTheory.DIVMOD_DEF , listTheory.MAP_ZIP])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005121
+
+UNIT_o_MCOMP
+proof length: 1
+proof time: 0.043246
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.065334
+  inferstep time: 0.053449
+  node_find time: 0.000061
+  node_crea time: 0.009017
+    pred time: 0.003168
+    thmpred time: 0.0
+    mc time: 0.007208
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MCOMP_ID" , DB.fetch "state_transformer" "MCOMP_ALT" , DB.fetch "state_transformer" "EXT_MCOMP" , DB.fetch "state_transformer" "MCOMP_DEF" , DB.fetch "state_transformer" "MCOMP_ASSOC" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "MWHILE_DEF" , DB.fetch "state_transformer" "UNIT_DEF" , DB.fetch "state_transformer" "FOREACH_def" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "sequence_def" , DB.fetch "state_transformer" "UNIT_CURRY" , DB.fetch "state_transformer" "EXT_UNIT" , combinTheory.o_THM , combinTheory.o_ASSOC])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004664
+
+BIND_EXT
+proof length: 1
+proof time: 0.055415
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.098719
+  inferstep time: 0.086668
+  node_find time: 0.000037
+  node_crea time: 0.008553
+    pred time: 0.00273
+    thmpred time: 0.000001
+    mc time: 0.008047
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "EXT_DEF" , DB.fetch "state_transformer" "BIND_DEF" , DB.fetch "state_transformer" "EXT_MCOMP" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "MCOMP_DEF" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "sequence_def" , DB.fetch "state_transformer" "IGNORE_BIND_DEF" , DB.fetch "state_transformer" "JOIN_DEF" , DB.fetch "state_transformer" "MWHILE_DEF" , DB.fetch "state_transformer" "EXT_UNIT" , DB.fetch "state_transformer" "FOREACH_def" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "FOR_def" , DB.fetch "state_transformer" "FOR_primitive_def" , arithmeticTheory.DIVMOD_DEF])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00369
+
+MMAP_EXT
+proof length: 3
+proof time: 0.047137
+Statistics
+  infstep : 11
+  nodes   : 5
+  maxdepth: 3
+Time: 0.39639
+  inferstep time: 0.357112
+  node_find time: 0.000208
+  node_crea time: 0.028003
+    pred time: 0.010441
+    thmpred time: 0.000001
+    mc time: 0.022624
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "EXT_MCOMP", DB.fetch "state_transformer" "BIND_EXT", DB.fetch "state_transformer" "MCOMP_ID", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "UNIT_CURRY", DB.fetch "state_transformer" "MCOMP_ALT"] THEN boolLib.REWRITE_TAC [pairTheory.CURRY_DEF, (DB.fetch "state_transformer" "UNIT_DEF"), boolLib.FUN_EQ_THM, combinTheory.I_THM] THEN
+  metisTools.METIS_TAC [DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "UNIT_CURRY", listTheory.SNOC, DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "EXT_MCOMP", DB.fetch "state_transformer" "MCOMP_ALT", pairTheory.CURRY_DEF, pairTheory.UNCURRY_CURRY_THM, pairTheory.CURRY_UNCURRY_THM, DB.fetch "state_transformer" "BIND_EXT", pairTheory.CURRY_ONE_ONE_THM, combinTheory.I_o_ID, relationTheory.INVOL_DEF]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.002964
+
+JOIN_EXT
+proof length: 1
+proof time: 0.066218
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.054187
+  inferstep time: 0.044331
+  node_find time: 0.000033
+  node_crea time: 0.007138
+    pred time: 0.002633
+    thmpred time: 0.000001
+    mc time: 0.005998
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "JOIN_DEF" , DB.fetch "state_transformer" "EXT_UNIT" , DB.fetch "state_transformer" "EXT_DEF" , DB.fetch "state_transformer" "BIND_EXT" , DB.fetch "state_transformer" "EXT_MCOMP" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "MCOMP_DEF" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "UNIT_CURRY" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "FOR_primitive_def" , combinTheory.I_THM , combinTheory.I_DEF , combinTheory.I_o_ID , listTheory.DROP_splitAtPki , listTheory.LIST_BIND_ID])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003214
+
+EXT_JM
+proof length: 4
+proof time: 0.005247
+Statistics
+  infstep : 74
+  nodes   : 31
+  maxdepth: 4
+Time: 2.185186
+  inferstep time: 1.975128
+  node_find time: 0.002708
+  node_crea time: 0.186951
+    pred time: 0.05191
+    thmpred time: 0.000004
+    mc time: 0.111308
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "JOIN_EXT", DB.fetch "state_transformer" "JOIN_DEF", DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "EXT_MCOMP", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "BIND_EXT", DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "MCOMP_ALT", DB.fetch "state_transformer" "BIND_DEF", arithmeticTheory.DIVMOD_DEF, listTheory.MAP_ZIP, pairTheory.C_UNCURRY_L, pairTheory.FORALL_UNCURRY] THEN boolLib.REWRITE_TAC [boolLib.FUN_EQ_THM, (DB.fetch "state_transformer" "MMAP_DEF"), (DB.fetch "state_transformer" "BIND_EXT")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "JOIN_EXT", DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "BIND_EXT", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_MCOMP", listTheory.SNOC, DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "UNIT_CURRY", DB.fetch "state_transformer" "MCOMP_ID", combinTheory.I_o_ID, relationTheory.INVOL_DEF, listTheory.dropWhile_splitAtPki] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_DEF", oneTheory.tactictoe_thm_0, DB.fetch "state_transformer" "BIND_DEF", DB.fetch "state_transformer" "MCOMP_ALT", pairTheory.S_UNCURRY_R, pairTheory.o_UNCURRY_R, pairTheory.C_UNCURRY_L, pairTheory.FORALL_UNCURRY, pairTheory.UNCURRY_ONE_ONE_THM, pairTheory.UNCURRY_DEF, listTheory.FOLDL_UNION_BIGUNION_paired, pairTheory.ELIM_UNCURRY, pairTheory.CURRY_UNCURRY_THM, pairTheory.UNCURRY_VAR, listTheory.EVERY2_EVERY]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006404
+
+BIND_LEFT_UNIT
+proof length: 2
+proof time: 0.001417
+Statistics
+  infstep : 22
+  nodes   : 6
+  maxdepth: 2
+Time: 0.570612
+  inferstep time: 0.514152
+  node_find time: 0.000586
+  node_crea time: 0.045624
+    pred time: 0.016245
+    thmpred time: 0.000002
+    mc time: 0.028639
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [boolLib.FUN_EQ_THM, (DB.fetch "state_transformer" "MMAP_DEF"), (DB.fetch "state_transformer" "BIND_EXT")] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "EXT_o_UNIT", listTheory.SNOC, DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "BIND_EXT", DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "MCOMP_ID", DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "UNIT_CURRY"]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.122716
+
+UNIT_UNCURRY
+proof length: 1
+proof time: 0.001113
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.12221
+  inferstep time: 0.111538
+  node_find time: 0.000064
+  node_crea time: 0.007442
+    pred time: 0.00258
+    thmpred time: 0.000001
+    mc time: 0.006581
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "state_transformer" "UNIT_DEF" , DB.fetch "state_transformer" "BIND_LEFT_UNIT" , DB.fetch "state_transformer" "FOREACH_def" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MWHILE_DEF" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "MCOMP_ID" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "UNIT_o_MCOMP" , DB.fetch "state_transformer" "sequence_def" , DB.fetch "state_transformer" "UNIT_CURRY" , DB.fetch "state_transformer" "EXT_UNIT" , listTheory.FOLDL_UNION_BIGUNION_paired , pairTheory.LEX_DEF , pairTheory.RPROD_DEF ])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.053377
+
+BIND_RIGHT_UNIT
+proof length: 2
+proof time: 0.001651
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.239434
+  inferstep time: 0.216693
+  node_find time: 0.000104
+  node_crea time: 0.015454
+    pred time: 0.005318
+    thmpred time: 0.0
+    mc time: 0.014392
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "BIND_DEF", DB.fetch "state_transformer" "IGNORE_BIND_DEF", DB.fetch "state_transformer" "JOIN_DEF", DB.fetch "state_transformer" "BIND_EXT", DB.fetch "state_transformer" "BIND_LEFT_UNIT", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "FOR_def", DB.fetch "state_transformer" "FOR_primitive_def", DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "UNIT_UNCURRY", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "MCOMP_ID"] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "UNIT_UNCURRY", DB.fetch "state_transformer" "BIND_LEFT_UNIT", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "MCOMP_ID", DB.fetch "state_transformer" "UNIT_CURRY", DB.fetch "state_transformer" "EXT_UNIT", listTheory.splitAtPki_APPEND, listTheory.splitAtPki_def]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.11155
+
+BIND_ASSOC
+proof length: 3
+proof time: 0.009237
+Statistics
+  infstep : 52
+  nodes   : 18
+  maxdepth: 3
+Time: 1.127387
+  inferstep time: 0.924153
+  node_find time: 0.001914
+  node_crea time: 0.166801
+    pred time: 0.041047
+    thmpred time: 0.000003
+    mc time: 0.130171
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [boolLib.FUN_EQ_THM, (DB.fetch "state_transformer" "MMAP_DEF"), (DB.fetch "state_transformer" "BIND_EXT")] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "BIND_EXT", DB.fetch "state_transformer" "BIND_LEFT_UNIT", DB.fetch "state_transformer" "BIND_RIGHT_UNIT", arithmeticTheory.DIV_MOD_MOD_DIV, arithmeticTheory.LESS_EQUAL_DIFF, arithmeticTheory.tactictoe_thm_8, arithmeticTheory.tactictoe_thm_12, arithmeticTheory.DIV_P, arithmeticTheory.MOD_P, listTheory.splitAtPki_APPEND, listTheory.splitAtPki_EQN, arithmeticTheory.MOD_LIFT_PLUS, arithmeticTheory.MOD_LIFT_PLUS_IFF, arithmeticTheory.DIVISION, arithmeticTheory.LESS_MOD] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "BIND_DEF", pairTheory.UNCURRY_DEF, pairTheory.UNCURRY_VAR, listTheory.splitAtPki_APPEND, listTheory.splitAtPki_def, arithmeticTheory.DIVMOD_DEF, DB.fetch "state_transformer" "BIND_LEFT_UNIT", DB.fetch "state_transformer" "BIND_RIGHT_UNIT", arithmeticTheory.DIV_MOD_MOD_DIV, arithmeticTheory.LESS_EQUAL_DIFF, arithmeticTheory.tactictoe_thm_8, arithmeticTheory.tactictoe_thm_12, arithmeticTheory.DIV_P, arithmeticTheory.MOD_P, listTheory.splitAtPki_EQN]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.051515
+
+MMAP_ID
+proof length: 3
+proof time: 0.056804
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 3
+Time: 0.230196
+  inferstep time: 0.188014
+  node_find time: 0.00019
+  node_crea time: 0.027029
+    pred time: 0.010558
+    thmpred time: 0.000001
+    mc time: 0.026163
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "combin" "I_THM"), (DB.fetch "combin" "o_THM"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "EXT_JM", DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "FOR_primitive_def", DB.fetch "state_transformer" "JOIN_DEF", DB.fetch "state_transformer" "JOIN_EXT", DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "UNIT_CURRY", combinTheory.I_THM, listTheory.LIST_BIND_ID, listTheory.MAP_ID, combinTheory.I_o_ID, listTheory.SET_TO_LIST_primitive_def, listTheory.dropWhile_splitAtPki, relationTheory.INVOL_DEF] THEN
+  metisTools.METIS_TAC [DB.fetch "state_transformer" "UNIT_CURRY", DB.fetch "state_transformer" "JOIN_DEF", DB.fetch "state_transformer" "BIND_ASSOC", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "BIND_EXT", DB.fetch "state_transformer" "BIND_DEF", DB.fetch "state_transformer" "BIND_RIGHT_UNIT", pairTheory.CURRY_DEF, pairTheory.UNCURRY_CURRY_THM, pairTheory.CURRY_ONE_ONE_THM, pairTheory.CURRY_UNCURRY_THM, DB.fetch "state_transformer" "MCOMP_ALT", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "FOR_primitive_def", DB.fetch "state_transformer" "BIND_LEFT_UNIT", DB.fetch "state_transformer" "FOREACH_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003508
+
+MMAP_COMP
+proof length: 1
+proof time: 0.000501
+Statistics
+  infstep : 8
+  nodes   : 4
+  maxdepth: 2
+Time: 0.290043
+  inferstep time: 0.262762
+  node_find time: 0.000229
+  node_crea time: 0.02306
+    pred time: 0.008429
+    thmpred time: 0.000001
+    mc time: 0.013261
+    inst time: 0.0
+Proof found: (boolLib.REWRITE_TAC [ ( DB.fetch "state_transformer" "JOIN_EXT" ) , ( DB.fetch "state_transformer" "BIND_EXT" ) , ( DB.fetch "state_transformer" "MMAP_EXT" ) , boolLib.GSYM ( DB.fetch "state_transformer" "EXT_MCOMP" ) , ( DB.fetch "state_transformer" "MCOMP_DEF" ) , combinTheory.o_ASSOC , ( DB.fetch "state_transformer" "EXT_o_UNIT" ) , combinTheory.I_o_ID ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017199
+
+MMAP_UNIT
+proof length: 1
+proof time: 0.032759
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.075385
+  inferstep time: 0.060287
+  node_find time: 0.000048
+  node_crea time: 0.009158
+    pred time: 0.002695
+    thmpred time: 0.0
+    mc time: 0.010706
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "MMAP_COMP" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "UNIT_o_MCOMP" , DB.fetch "state_transformer" "EXT_JM" , DB.fetch "state_transformer" "MMAP_ID" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "MCOMP_ID" , DB.fetch "state_transformer" "BIND_LEFT_UNIT" , DB.fetch "state_transformer" "UNIT_DEF" , DB.fetch "state_transformer" "BIND_RIGHT_UNIT" , DB.fetch "state_transformer" "UNIT_UNCURRY" , DB.fetch "state_transformer" "FOREACH_def" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "MWHILE_DEF" , DB.fetch "state_transformer" "sequence_def"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003314
+
+EXT_o_JOIN
+proof length: 1
+proof time: 0.027627
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.040471
+  inferstep time: 0.029346
+  node_find time: 0.000052
+  node_crea time: 0.007835
+    pred time: 0.002608
+    thmpred time: 0.000001
+    mc time: 0.006996
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "MCOMP_DEF" , DB.fetch "state_transformer" "EXT_MCOMP" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "EXT_JM" , DB.fetch "state_transformer" "JOIN_EXT" , DB.fetch "state_transformer" "JOIN_DEF" , DB.fetch "state_transformer" "EXT_DEF" , DB.fetch "state_transformer" "BIND_EXT" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "EXT_UNIT" , DB.fetch "state_transformer" "BIND_DEF" , DB.fetch "state_transformer" "MMAP_DEF" , pairTheory.FORALL_UNCURRY , pred_setTheory.PREIMAGE_CROSS , DB.fetch "state_transformer" "MMAP_COMP" , DB.fetch "state_transformer" "MMAP_UNIT"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004255
+
+MMAP_JOIN
+proof length: 1
+proof time: 0.027254
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.046799
+  inferstep time: 0.035364
+  node_find time: 0.000034
+  node_crea time: 0.008381
+    pred time: 0.002787
+    thmpred time: 0.0
+    mc time: 0.006976
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "EXT_JM" , DB.fetch "state_transformer" "MMAP_COMP" , DB.fetch "state_transformer" "MMAP_UNIT" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "EXT_o_JOIN" , DB.fetch "state_transformer" "JOIN_DEF" , DB.fetch "state_transformer" "JOIN_EXT" , DB.fetch "state_transformer" "MMAP_ID" , DB.fetch "state_transformer" "MCOMP_DEF" , pairTheory.FORALL_UNCURRY , pred_setTheory.PREIMAGE_CROSS , DB.fetch "state_transformer" "BIND_DEF" , DB.fetch "state_transformer" "EXT_DEF" , DB.fetch "state_transformer" "mapM_def" , DB.fetch "state_transformer" "EXT_MCOMP"])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.024444
+
+JOIN_UNIT
+proof length: 1
+proof time: 0.032789
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.042268
+  inferstep time: 0.031842
+  node_find time: 0.000035
+  node_crea time: 0.00771
+    pred time: 0.002484
+    thmpred time: 0.0
+    mc time: 0.006386
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "EXT_JM" , DB.fetch "state_transformer" "MMAP_JOIN" , DB.fetch "state_transformer" "JOIN_EXT" , DB.fetch "state_transformer" "JOIN_DEF" , DB.fetch "state_transformer" "EXT_o_JOIN" , DB.fetch "state_transformer" "EXT_UNIT" , DB.fetch "state_transformer" "UNIT_CURRY" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MMAP_UNIT" , DB.fetch "state_transformer" "UNIT_o_MCOMP" , DB.fetch "state_transformer" "UNIT_DEF" , DB.fetch "state_transformer" "MCOMP_ID" , DB.fetch "state_transformer" "BIND_LEFT_UNIT"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003418
+
+JOIN_MMAP_UNIT
+proof length: 1
+proof time: 0.032864
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.042738
+  inferstep time: 0.032135
+  node_find time: 0.000032
+  node_crea time: 0.007874
+    pred time: 0.002645
+    thmpred time: 0.0
+    mc time: 0.006375
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "EXT_JM" , DB.fetch "state_transformer" "MMAP_JOIN" , DB.fetch "state_transformer" "JOIN_UNIT" , DB.fetch "state_transformer" "JOIN_EXT" , DB.fetch "state_transformer" "JOIN_DEF" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MMAP_UNIT" , DB.fetch "state_transformer" "MMAP_ID" , DB.fetch "state_transformer" "EXT_o_JOIN" , DB.fetch "state_transformer" "MMAP_COMP" , DB.fetch "state_transformer" "EXT_UNIT" , DB.fetch "state_transformer" "UNIT_CURRY" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "UNIT_o_MCOMP"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006734
+
+JOIN_MAP_JOIN
+proof length: 1
+proof time: 0.027469
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.035428
+  inferstep time: 0.025072
+  node_find time: 0.000044
+  node_crea time: 0.00752
+    pred time: 0.002245
+    thmpred time: 0.000001
+    mc time: 0.006624
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "state_transformer" "EXT_JM" , DB.fetch "state_transformer" "JOIN_MMAP_UNIT" , DB.fetch "state_transformer" "MMAP_JOIN" , DB.fetch "state_transformer" "JOIN_UNIT" , DB.fetch "state_transformer" "EXT_o_JOIN" , DB.fetch "state_transformer" "JOIN_EXT" , DB.fetch "state_transformer" "JOIN_DEF" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "MMAP_COMP" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MMAP_UNIT" , DB.fetch "state_transformer" "MMAP_ID" , DB.fetch "state_transformer" "MCOMP_DEF" , DB.fetch "state_transformer" "EXT_MCOMP" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "UNIT_o_MCOMP"])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.033647
+
+JOIN_MAP
+proof length: 4
+proof time: 0.004459
+Statistics
+  infstep : 88
+  nodes   : 39
+  maxdepth: 5
+Time: 2.866511
+  inferstep time: 2.455815
+  node_find time: 0.004336
+  node_crea time: 0.370152
+    pred time: 0.096315
+    thmpred time: 0.000014
+    mc time: 0.238715
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "state_transformer" "JOIN_EXT"), (DB.fetch "state_transformer" "BIND_EXT"), (DB.fetch "state_transformer" "MMAP_EXT"), boolLib.GSYM (DB.fetch "state_transformer" "EXT_MCOMP"), (DB.fetch "state_transformer" "MCOMP_DEF"), combinTheory.o_ASSOC, (DB.fetch "state_transformer" "EXT_o_UNIT"), combinTheory.I_o_ID] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "JOIN_EXT", DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "BIND_EXT", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MMAP_UNIT", DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "EXT_o_JOIN", DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_JM", DB.fetch "state_transformer" "EXT_MCOMP", DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "JOIN_MMAP_UNIT", DB.fetch "state_transformer" "JOIN_UNIT", DB.fetch "state_transformer" "FOREACH_primitive_def"] THEN
+  BasicProvers.SRW_TAC [] [boolLib.FUN_EQ_THM, (DB.fetch "pair" "UNCURRY_VAR"), (DB.fetch "pair" "PAIR")] THEN
+  BasicProvers.SRW_TAC [] [pred_setTheory.GSPEC_F_COND, DB.fetch "state_transformer" "BIND_LEFT_UNIT", DB.fetch "state_transformer" "BIND_RIGHT_UNIT", DB.fetch "state_transformer" "sequence_def", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "FOREACH_def", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "MMAP_UNIT", DB.fetch "state_transformer" "UNIT_UNCURRY", DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "JOIN_MMAP_UNIT", DB.fetch "state_transformer" "EXT_UNIT"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003318
+
+FST_o_UNIT
+proof length: 3
+proof time: 0.032788
+Statistics
+  infstep : 9
+  nodes   : 5
+  maxdepth: 3
+Time: 0.300196
+  inferstep time: 0.263993
+  node_find time: 0.000281
+  node_crea time: 0.027173
+    pred time: 0.010852
+    thmpred time: 0.000001
+    mc time: 0.018622
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "BIND_LEFT_UNIT", DB.fetch "state_transformer" "UNIT_DEF", pred_setTheory.PREIMAGE_CROSS, arithmeticTheory.DIVMOD_DEF, pred_setTheory.GSPEC_IMAGE, combinTheory.K_o_THM, combinTheory.K_THM, pred_setTheory.FUNSET_DFUNSET, pred_setTheory.K_SUBSET, pred_setTheory.PREIMAGE_K, pred_setTheory.SUBSET_K, listTheory.LIST_IGNORE_BIND_def, listTheory.PAD_LEFT, listTheory.PAD_RIGHT, optionTheory.OPTION_IGNORE_BIND_def, listTheory.dropWhile_splitAtPki] THEN BasicProvers.RW_TAC BasicProvers.bool_ss [(DB.fetch "pair" "FST"), (DB.fetch "pair" "SND"), combinTheory.o_THM, (DB.fetch "pair" "PAIR"), (DB.fetch "pair" "PAIR_EQ"), boolLib.FUN_EQ_THM, boolLib.ETA_THM] THEN
+  metisTools.METIS_TAC [combinTheory.K_THM, listTheory.SNOC, pred_setTheory.FUNSET_DFUNSET, pred_setTheory.K_SUBSET, pred_setTheory.PREIMAGE_K, pred_setTheory.SUBSET_K, combinTheory.K_o_THM, listTheory.LIST_IGNORE_BIND_def, listTheory.PAD_LEFT, listTheory.PAD_RIGHT, optionTheory.OPTION_IGNORE_BIND_def, combinTheory.K_DEF, listTheory.dropWhile_splitAtPki, listTheory.DROP_splitAtPki, listTheory.TAKE_splitAtPki, combinTheory.I_DEF]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.164463
+
+SND_o_UNIT
+proof length: 2
+proof time: 0.001355
+Statistics
+  infstep : 14
+  nodes   : 5
+  maxdepth: 2
+Time: 0.238465
+  inferstep time: 0.149976
+  node_find time: 0.00079
+  node_crea time: 0.073223
+    pred time: 0.024874
+    thmpred time: 0.000001
+    mc time: 0.048771
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [pred_setTheory.PREIMAGE_CROSS, pred_setTheory.GSPEC_IMAGE, DB.fetch "state_transformer" "FST_o_UNIT", DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "BIND_LEFT_UNIT", DB.fetch "state_transformer" "JOIN_MMAP_UNIT", DB.fetch "state_transformer" "JOIN_UNIT", DB.fetch "state_transformer" "FOREACH_primitive_def", DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "UNIT_CURRY", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MMAP_UNIT", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "sequence_def"] THEN BasicProvers.SRW_TAC [] [boolLib.FUN_EQ_THM, (DB.fetch "pair" "UNCURRY_VAR"), (DB.fetch "pair" "PAIR")]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.078948
+
+FST_o_MMAP
+proof length: 4
+proof time: 0.003558
+Statistics
+  infstep : 30
+  nodes   : 16
+  maxdepth: 4
+Time: 1.096202
+  inferstep time: 0.94104
+  node_find time: 0.001588
+  node_crea time: 0.128956
+    pred time: 0.043888
+    thmpred time: 0.000004
+    mc time: 0.080257
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "state_transformer" "JOIN_EXT"), (DB.fetch "state_transformer" "BIND_EXT"), (DB.fetch "state_transformer" "MMAP_EXT"), boolLib.GSYM (DB.fetch "state_transformer" "EXT_MCOMP"), (DB.fetch "state_transformer" "MCOMP_DEF"), combinTheory.o_ASSOC, (DB.fetch "state_transformer" "EXT_o_UNIT"), combinTheory.I_o_ID] THEN BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "MMAP_EXT", listTheory.MAP_ZIP, DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MMAP_UNIT", DB.fetch "state_transformer" "FST_o_UNIT", pred_setTheory.PREIMAGE_CROSS, pred_setTheory.GSPEC_IMAGE, arithmeticTheory.DIVMOD_DEF, DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "MCOMP_DEF", DB.fetch "state_transformer" "EXT_MCOMP", DB.fetch "state_transformer" "EXT_o_JOIN", DB.fetch "state_transformer" "EXT_DEF", DB.fetch "state_transformer" "EXT_JM"] THEN
+  BasicProvers.SRW_TAC [] [boolLib.FUN_EQ_THM, (DB.fetch "pair" "UNCURRY_VAR"), (DB.fetch "pair" "PAIR")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "state_transformer" "FST_o_UNIT", DB.fetch "state_transformer" "SND_o_UNIT", DB.fetch "state_transformer" "UNIT_o_MCOMP", DB.fetch "state_transformer" "MCOMP_ID", DB.fetch "state_transformer" "MWHILE_DEF", DB.fetch "state_transformer" "MMAP_DEF", DB.fetch "state_transformer" "MMAP_EXT", DB.fetch "state_transformer" "MMAP_UNIT", DB.fetch "state_transformer" "EXT_o_UNIT", DB.fetch "state_transformer" "UNIT_DEF", DB.fetch "state_transformer" "JOIN_MMAP_UNIT", DB.fetch "state_transformer" "EXT_UNIT", DB.fetch "state_transformer" "JOIN_UNIT", DB.fetch "state_transformer" "UNIT_CURRY", listTheory.MAP_ZIP, pairTheory.PAIR_MAP]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.082192
+
+sequence_nil
+proof length: 1
+proof time: 0.001023
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.128776
+  inferstep time: 0.115243
+  node_find time: 0.000119
+  node_crea time: 0.00923
+    pred time: 0.004183
+    thmpred time: 0.000001
+    mc time: 0.006686
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "state_transformer" "sequence_def" , DB.fetch "state_transformer" "mapM_def" , DB.fetch "state_transformer" "FOREACH_def" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "BIND_LEFT_UNIT" , DB.fetch "state_transformer" "UNIT_DEF" , DB.fetch "state_transformer" "BIND_RIGHT_UNIT" , DB.fetch "state_transformer" "UNIT_UNCURRY" , DB.fetch "state_transformer" "EXT_UNIT" , DB.fetch "state_transformer" "UNIT_CURRY" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "MCOMP_ID" , DB.fetch "state_transformer" "FST_o_UNIT" , DB.fetch "state_transformer" "JOIN_MMAP_UNIT" , DB.fetch "state_transformer" "JOIN_UNIT" , DB.fetch "state_transformer" "MMAP_DEF" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007948
+
+mapM_nil
+proof length: 1
+proof time: 0.002109
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.129206
+  inferstep time: 0.117356
+  node_find time: 0.000102
+  node_crea time: 0.007449
+    pred time: 0.002949
+    thmpred time: 0.000001
+    mc time: 0.006367
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "state_transformer" "mapM_def" , DB.fetch "state_transformer" "sequence_def" , DB.fetch "state_transformer" "sequence_nil" , DB.fetch "state_transformer" "FOREACH_def" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "EXT_o_UNIT" , DB.fetch "state_transformer" "MCOMP_ID" , DB.fetch "state_transformer" "MMAP_DEF" , DB.fetch "state_transformer" "MMAP_EXT" , DB.fetch "state_transformer" "MMAP_UNIT" , DB.fetch "state_transformer" "UNIT_o_MCOMP" , DB.fetch "state_transformer" "BIND_LEFT_UNIT" , DB.fetch "state_transformer" "UNIT_DEF" , DB.fetch "state_transformer" "BIND_RIGHT_UNIT" , DB.fetch "state_transformer" "UNIT_UNCURRY" , DB.fetch "state_transformer" "FST_o_UNIT" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006125
+
+mapM_cons
+proof length: 1
+proof time: 0.005704
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.129357
+  inferstep time: 0.116558
+  node_find time: 0.000097
+  node_crea time: 0.009082
+    pred time: 0.003246
+    thmpred time: 0.0
+    mc time: 0.007396
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "state_transformer" "sequence_def" , DB.fetch "state_transformer" "mapM_nil" , DB.fetch "state_transformer" "mapM_def" , DB.fetch "state_transformer" "FOREACH_def" , DB.fetch "state_transformer" "FOREACH_primitive_def" , DB.fetch "state_transformer" "BIND_ASSOC" , DB.fetch "state_transformer" "FOR_def" , DB.fetch "state_transformer" "FOR_primitive_def" , listTheory.EVERY2_THM , listTheory.LUPDATE_LENGTH , listTheory.LIST_LIFT2_def , listTheory.MAP_APPEND_MAP_EQ , listTheory.LUPDATE_SNOC , listTheory.EL_LUPDATE , listTheory.LENGTH_LUPDATE , DB.fetch "state_transformer" "MMAP_DEF" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007745
+Bad stac: 1

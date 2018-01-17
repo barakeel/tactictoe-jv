@@ -1,0 +1,1983 @@
+
+PERM_REFL
+proof length: 1
+proof time: 0.058534
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.07374
+  inferstep time: 0.060693
+  node_find time: 0.000033
+  node_crea time: 0.010589
+    pred time: 0.004499
+    thmpred time: 0.0
+    mc time: 0.007018
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_DEF" , listTheory.FILTER_APPEND_DISTRIB , listTheory.LENGTH_LEN , listTheory.LEN_LENGTH_LEM , listTheory.MEM_FILTER , listTheory.MEM_FLAT , listTheory.REVERSE_REV , listTheory.SUM_ACC_SUM_LEM , listTheory.SUM_SUM_ACC , listTheory.UNZIP_MAP , listTheory.APPEND , listTheory.FILTER , listTheory.list_INDUCT0 , listTheory.LENGTH , listTheory.list_INDUCT , listTheory.LEN_DEF])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005602
+
+PERM_INTRO
+proof length: 1
+proof time: 0.061648
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.083383
+  inferstep time: 0.065678
+  node_find time: 0.000032
+  node_crea time: 0.010492
+    pred time: 0.003231
+    thmpred time: 0.0
+    mc time: 0.012706
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_DEF" , DB.fetch "sorting" "PERM_REFL" , listTheory.ALL_DISTINCT_MAP_INJ , listTheory.EVERY2_cong , listTheory.EXISTS_LIST_EQ_MAP , listTheory.LIST_REL_LENGTH , listTheory.MAP2_CONG , listTheory.MEM_LUPDATE_E , listTheory.SUM_MAP_PLUS_ZIP , listTheory.mem_exists_set , rich_listTheory.IS_PREFIX_ANTISYM , rich_listTheory.LENGTH_EQ , rich_listTheory.LIST_REL_REPLICATE_same , listTheory.EVERY2_mono , listTheory.LIST_REL_mono , listTheory.EVERY2_sym])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005586
+
+PERM_transitive
+proof length: 1
+proof time: 0.050472
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.072606
+  inferstep time: 0.046827
+  node_find time: 0.000055
+  node_crea time: 0.017054
+    pred time: 0.005967
+    thmpred time: 0.000001
+    mc time: 0.017408
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_DEF" , DB.fetch "sorting" "PERM_INTRO" , DB.fetch "sorting" "PERM_REFL" , listTheory.LLEX_transitive , relationTheory.transitive_def , arithmeticTheory.transitive_LESS , relationTheory.TC_TRANSITIVE , arithmeticTheory.transitive_measure , arithmeticTheory.transitive_monotone , pairTheory.transitive_LEX , relationTheory.Order , relationTheory.PreOrder , relationTheory.RTC_TRANSITIVE , relationTheory.RTC_lifts_reflexive_transitive_relations , relationTheory.StrongOrder , relationTheory.TC_lifts_transitive_relations])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.030927
+
+PERM_TRANS
+proof length: 1
+proof time: 0.069589
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.078789
+  inferstep time: 0.065954
+  node_find time: 0.000029
+  node_crea time: 0.007803
+    pred time: 0.002263
+    thmpred time: 0.0
+    mc time: 0.009116
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_INTRO" , DB.fetch "sorting" "PERM_DEF" , DB.fetch "sorting" "PERM_REFL" , DB.fetch "sorting" "PERM_transitive" , listTheory.EVERY2_trans , listTheory.mem_exists_set , rich_listTheory.IS_PREFIX_TRANS , listTheory.LRC_MEM , listTheory.LRC_MEM_right , listTheory.LRC_def , listTheory.FRONT_CONS , listTheory.LAST_CONS , rich_listTheory.IS_PREFIX_SNOC , relationTheory.transitive_def , arithmeticTheory.DIV_EQ_X , arithmeticTheory.MODEQ_TRANS])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019277
+
+PERM_SYM
+proof length: 1
+proof time: 0.005828
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.152774
+  inferstep time: 0.121683
+  node_find time: 0.000102
+  node_crea time: 0.025493
+    pred time: 0.010671
+    thmpred time: 0.0
+    mc time: 0.01562
+    inst time: 0.0
+Proof found: (BasicProvers.PROVE_TAC [ ( DB.fetch "sorting" "PERM_DEF" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007011
+
+PERM_CONG
+proof length: 2
+proof time: 0.09838
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.231066
+  inferstep time: 0.17319
+  node_find time: 0.000103
+  node_crea time: 0.041686
+    pred time: 0.019152
+    thmpred time: 0.0
+    mc time: 0.029873
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "PERM_TRANS", DB.fetch "sorting" "PERM_INTRO", DB.fetch "sorting" "PERM_REFL", DB.fetch "sorting" "PERM_SYM", listTheory.REV_REVERSE_LEM, listTheory.UNZIP_THM, listTheory.WF_LIST_PRED, DB.fetch "sorting" "PERM_transitive", listTheory.ALL_DISTINCT_APPEND, listTheory.APPEND_11_LENGTH, listTheory.APPEND_LENGTH_EQ, listTheory.splitAtPki_APPEND, patternMatchesTheory.PMATCH_REMOVE_ARB_NO_OVERLAP, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED_PMATCH_ROWS, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED] THEN metisTools.METIS_TAC [DB.fetch "sorting" "PERM_DEF", listTheory.WF_LIST_PRED, listTheory.REV_REVERSE_LEM, listTheory.UNZIP_THM, listTheory.length_nub_append, listTheory.nub_append, listTheory.FILTER_APPEND_DISTRIB, listTheory.FILTER_EQ_APPEND, listTheory.FILTER_EQ_CONS, rich_listTheory.LIST_ELEM_COUNT_DEF, listTheory.FILTER_EQ_NIL, listTheory.tactictoe_thm_21, listTheory.tactictoe_thm_20, listTheory.FILTER, patternMatchesTheory.PMATCH_REMOVE_ARB_NO_OVERLAP, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED_PMATCH_ROWS]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017925
+
+PERM_MONO
+proof length: 3
+proof time: 0.097865
+Statistics
+  infstep : 14
+  nodes   : 5
+  maxdepth: 3
+Time: 0.534025
+  inferstep time: 0.412912
+  node_find time: 0.000482
+  node_crea time: 0.092411
+    pred time: 0.043836
+    thmpred time: 0.000002
+    mc time: 0.060426
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "transitive_def"), (DB.fetch "relation" "RC_DEF")] THEN BasicProvers.SRW_TAC [] [DB.fetch "sorting" "PERM_SYM", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "PERM_INTRO", DB.fetch "sorting" "PERM_TRANS", DB.fetch "sorting" "PERM_REFL", DB.fetch "sorting" "PERM_CONG", DB.fetch "sorting" "PERM_transitive", listTheory.MEM_SPLIT, rich_listTheory.APPEND_SNOC1, rich_listTheory.IS_PREFIX, rich_listTheory.IS_SUBLIST, rich_listTheory.tactictoe_thm_3, listTheory.APPEND, listTheory.EQ_LIST, listTheory.LIST_NOT_EQ, listTheory.NOT_EQ_LIST] THEN
+  metisTools.METIS_TAC [DB.fetch "sorting" "PERM_DEF", listTheory.LLEX_def, listTheory.SNOC, rich_listTheory.LIST_ELEM_COUNT_DEF, listTheory.EL_LUPDATE, listTheory.isPREFIX, listTheory.FILTER_EQ_CONS, listTheory.FILTER, listTheory.tactictoe_thm_20, listTheory.length_nub_append, listTheory.tactictoe_thm_21, listTheory.list_to_set_diff, listTheory.nub_append, listTheory.FILTER_EQ_APPEND, rich_listTheory.tactictoe_thm_2, listTheory.FILTER_EQ_NIL]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006793
+Replaying proof: 0.008169
+
+PERM_NIL
+proof length: 5
+proof time: 0.075224
+Statistics
+  infstep : 53
+  nodes   : 18
+  maxdepth: 4
+Time: 1.839603
+  inferstep time: 1.588213
+  node_find time: 0.002247
+  node_crea time: 0.222424
+    pred time: 0.099674
+    thmpred time: 0.000007
+    mc time: 0.083285
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "sorting" "PERM_REFL", DB.fetch "sorting" "PERM_CONG", DB.fetch "sorting" "PERM_TRANS", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "PERM_CONS_IFF", DB.fetch "sorting" "PERM_INTRO", DB.fetch "sorting" "PERM_SYM", DB.fetch "sorting" "PERM_MONO", DB.fetch "sorting" "PERM_transitive", DB.fetch "sorting" "tactictoe_thm_0", listTheory.REVERSE_REV, listTheory.MEM_FILTER, listTheory.MEM_FLAT, listTheory.FILTER_APPEND_DISTRIB, listTheory.LENGTH_LEN, listTheory.LEN_LENGTH_LEM] THEN simpLib.ASM_SIMP_TAC (boolSimps.bool_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.COND_elim_ss) [(DB.fetch "list" "ALL_DISTINCT"), (DB.fetch "list" "MEM"), (DB.fetch "list" "FILTER"), boolLib.DISJ_IMP_THM, boolLib.FORALL_AND_THM, (DB.fetch "list" "CONS_11"), boolLib.EQ_IMP_THM, (DB.fetch "list" "tactictoe_thm_13")] THEN
+  BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 16854*)L"] THENL
+  [metisTools.METIS_TAC [listTheory.MEM, listTheory.LIST_TO_SET_DEF, listTheory.LIST_TO_SET, listTheory.LIST_TO_SET_THM, listTheory.MEM_APPEND_lemma, listTheory.FILTER_NEQ_NIL, listTheory.tactictoe_thm_13, listTheory.tactictoe_thm_15, listTheory.ALL_DISTINCT, listTheory.MEM_SPLIT_APPEND_first, listTheory.MEM_SPLIT_APPEND_last, listTheory.ALL_DISTINCT_FILTER, listTheory.nub_def, listTheory.MEM_FILTER, listTheory.MEM_FLAT, listTheory.MEM_SNOC],
+  metisTools.METIS_TAC [listTheory.MEM, listTheory.LIST_TO_SET_DEF, listTheory.LIST_TO_SET, listTheory.LIST_TO_SET_THM, DB.fetch "sorting" "tactictoe_thm_0", listTheory.MEM_FILTER, listTheory.MEM_FLAT, listTheory.REVERSE_REV, listTheory.FILTER_APPEND_DISTRIB, listTheory.LENGTH_LEN, listTheory.LEN_LENGTH_LEM, listTheory.SUM_ACC_SUM_LEM, listTheory.SUM_SUM_ACC, listTheory.UNZIP_MAP, DB.fetch "sorting" "PERM_REFL", listTheory.ALL_DISTINCT]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.111758
+
+PERM_SING
+Statistics
+  infstep : 601
+  nodes   : 88
+  maxdepth: 5
+Time: 10.070529
+  inferstep time: 8.475836
+  node_find time: 0.048694
+  node_crea time: 1.4104
+    pred time: 0.481501
+    thmpred time: 0.00003
+    mc time: 0.603836
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.622167
+Replaying proof: 0.002859
+Replaying proof: 0.008342
+Replaying proof: 0.004557
+
+PERM_CONS_EQ_APPEND
+Statistics
+  infstep : 281
+  nodes   : 91
+  maxdepth: 6
+Time: 10.100315
+  inferstep time: 8.190147
+  node_find time: 0.024945
+  node_crea time: 1.828801
+    pred time: 0.597756
+    thmpred time: 0.000029
+    mc time: 0.730537
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.510282
+
+PERM_APPEND
+proof length: 7
+proof time: 0.059615
+Statistics
+  infstep : 112
+  nodes   : 34
+  maxdepth: 4
+Time: 2.553969
+  inferstep time: 2.095652
+  node_find time: 0.005318
+  node_crea time: 0.391858
+    pred time: 0.141521
+    thmpred time: 0.000005
+    mc time: 0.187644
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "sorting" "PERM_DEF"), listTheory.FILTER_APPEND_DISTRIB, boolLib.EQ_IMP_THM] THEN BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 16676*)l1"] THENL
+  [simpLib.ASM_SIMP_TAC (boolSimps.bool_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.COND_elim_ss) [(DB.fetch "list" "ALL_DISTINCT"), (DB.fetch "list" "MEM"), (DB.fetch "list" "FILTER"), boolLib.DISJ_IMP_THM, boolLib.FORALL_AND_THM, (DB.fetch "list" "CONS_11"), boolLib.EQ_IMP_THM, (DB.fetch "list" "tactictoe_thm_13")] THEN
+  metisTools.METIS_TAC [DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", listTheory.APPEND, rich_listTheory.APPEND_NIL, DB.fetch "sorting" "tactictoe_thm_1", DB.fetch "sorting" "PERM_DEF", rich_listTheory.LIST_ELEM_COUNT_DEF, listTheory.FILTER_EQ_CONS, listTheory.length_nub_append, listTheory.nub_append, listTheory.FILTER_EQ_APPEND, listTheory.FILTER_APPEND_DISTRIB, listTheory.tactictoe_thm_21, listTheory.tactictoe_thm_20, listTheory.FILTER_EQ_NIL, listTheory.FILTER],
+  BasicProvers.SRW_TAC [] [listTheory.FILTER_APPEND_DISTRIB, (DB.fetch "sorting" "tactictoe_thm_4")] THENL
+  [metisTools.METIS_TAC [DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "tactictoe_thm_1", listTheory.FILTER_EQ_CONS, listTheory.FILTER, listTheory.FILTER_EQ_APPEND, listTheory.length_nub_append, listTheory.nub_append, rich_listTheory.LIST_ELEM_COUNT_DEF, listTheory.tactictoe_thm_21, listTheory.tactictoe_thm_20, listTheory.FILTER_APPEND_DISTRIB, listTheory.FILTER_EQ_NIL, listTheory.APPEND, listTheory.LENGTH_EQ_NUM],
+  metisTools.METIS_TAC [DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "tactictoe_thm_1", listTheory.length_nub_append, listTheory.nub_append, listTheory.FILTER_EQ_APPEND, listTheory.FILTER_EQ_CONS, rich_listTheory.LIST_ELEM_COUNT_DEF, listTheory.tactictoe_thm_21, listTheory.tactictoe_thm_20, listTheory.FILTER_APPEND_DISTRIB, listTheory.FILTER_EQ_NIL, listTheory.FILTER, indexedListsTheory.LIST_RELi_def, listTheory.LLEX_def]]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.092474
+
+CONS_PERM
+proof length: 1
+proof time: 0.052003
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.08422
+  inferstep time: 0.062599
+  node_find time: 0.000043
+  node_crea time: 0.011783
+    pred time: 0.003429
+    thmpred time: 0.0
+    mc time: 0.015596
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_CONS_EQ_APPEND" , DB.fetch "sorting" "PERM_MONO" , DB.fetch "sorting" "PERM_CONS_IFF" , DB.fetch "sorting" "tactictoe_thm_2" , DB.fetch "sorting" "PERM_SING" , DB.fetch "sorting" "PERM_REFL" , DB.fetch "sorting" "PERM_NIL" , DB.fetch "sorting" "PERM_CONG" , DB.fetch "sorting" "PERM_INTRO" , DB.fetch "sorting" "PERM_TRANS" , DB.fetch "sorting" "PERM_DEF" , DB.fetch "sorting" "PERM_SYM" , DB.fetch "sorting" "tactictoe_thm_3" , DB.fetch "sorting" "tactictoe_thm_4" , listTheory.list_size_cong , pairTheory.LET2_RAND])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.028854
+
+APPEND_PERM_SYM
+proof length: 1
+proof time: 0.058773
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.074953
+  inferstep time: 0.06303
+  node_find time: 0.000044
+  node_crea time: 0.008592
+    pred time: 0.003016
+    thmpred time: 0.000001
+    mc time: 0.007135
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_CONG" , DB.fetch "sorting" "PERM_APPEND" , satTheory.AND_IMP , whileTheory.WHILE_INDUCTION , whileTheory.WHILE_RULE , whileTheory.HOARE_SPEC_DEF , DB.fetch "sorting" "CONS_PERM" , DB.fetch "sorting" "PERM_CONS_EQ_APPEND" , DB.fetch "sorting" "PERM_INTRO" , DB.fetch "sorting" "PERM_MONO" , DB.fetch "sorting" "PERM_TRANS" , DB.fetch "sorting" "PERM_DEF" , DB.fetch "sorting" "PERM_REFL" , DB.fetch "sorting" "PERM_CONS_IFF" , DB.fetch "sorting" "PERM_NIL" , DB.fetch "sorting" "PERM_SYM"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005454
+
+PERM_SPLIT_IF
+proof length: 5
+proof time: 0.032862
+Statistics
+  infstep : 402
+  nodes   : 84
+  maxdepth: 5
+Time: 7.266828
+  inferstep time: 5.886026
+  node_find time: 0.028891
+  node_crea time: 1.221626
+    pred time: 0.341181
+    thmpred time: 0.000023
+    mc time: 0.606065
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "sorting" "PERM_DEF"), listTheory.FILTER_APPEND_DISTRIB, boolLib.EQ_IMP_THM] THEN BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 11380*)l"] THENL
+  [BasicProvers.SRW_TAC [] [listTheory.EVERY_FILTER, listTheory.FILTER_COND_REWRITE, listTheory.FILTER, quantHeuristicsTheory.GUESS_RULES_IMP, listTheory.FILTER_EQ_NIL, DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", DB.fetch "sorting" "tactictoe_thm_1", listTheory.tactictoe_thm_13, listTheory.tactictoe_thm_15, listTheory.ALL_DISTINCT_FILTER, DB.fetch "sorting" "PERM_DEF", rich_listTheory.SPLITP_EVERY, listTheory.EVERY_NOT_EXISTS, listTheory.EXISTS_NOT_EVERY, quantHeuristicsTheory.GUESS_RULES_NEG],
+  BasicProvers.SRW_TAC [] [(DB.fetch "pred_set" "INJ_DEF"), (DB.fetch "pred_set" "SUBSET_DEF")] THEN
+  BasicProvers.SRW_TAC [] [listTheory.FILTER_APPEND_DISTRIB, (DB.fetch "sorting" "tactictoe_thm_4")]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.093238
+
+PERM_SPLIT
+proof length: 5
+proof time: 0.066626
+Statistics
+  infstep : 11
+  nodes   : 8
+  maxdepth: 3
+Time: 0.701852
+  inferstep time: 0.545432
+  node_find time: 0.000568
+  node_crea time: 0.118446
+    pred time: 0.048363
+    thmpred time: 0.000002
+    mc time: 0.068429
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 4381*)l"] THENL [BasicProvers.SRW_TAC [] [DB.fetch "sorting" "PERM_NIL", listTheory.FILTER_COND_REWRITE, listTheory.FILTER, rich_listTheory.LENGTH_FILTER_LESS, listTheory.dropWhile_APPEND_EXISTS, listTheory.NOT_EVERY, listTheory.NOT_EXISTS, rich_listTheory.PREFIX_DEF, rich_listTheory.SPLITR_def, listTheory.HD_dropWhile, listTheory.dropWhile_splitAtPki, rich_listTheory.SPLITL_def, whileTheory.LEAST_DEF, quantHeuristicsTheory.GUESSES_NEG_DUALITY, DB.fetch "sorting" "PERM_SPLIT_IF", listTheory.splitAtPki_APPEND], BasicProvers.RW_TAC bossLib.list_ss [listTheory.FILTER, (DB.fetch "sorting" "PERM_REFL")] THEN
+  metisTools.METIS_TAC [DB.fetch "sorting" "PERM_SPLIT_IF", listTheory.FILTER_APPEND_DISTRIB, DB.fetch "sorting" "PERM_CONS_EQ_APPEND", DB.fetch "sorting" "CONS_PERM", DB.fetch "sorting" "PERM_MONO", DB.fetch "sorting" "PERM_CONS_IFF", rich_listTheory.LENGTH_FILTER_LESS, listTheory.dropWhile_APPEND_EXISTS, listTheory.NOT_EVERY, listTheory.NOT_EXISTS, rich_listTheory.PREFIX_DEF, rich_listTheory.SPLITR_def, listTheory.HD_dropWhile, listTheory.dropWhile_splitAtPki, rich_listTheory.SPLITL_def, whileTheory.LEAST_DEF]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.069123
+
+FILTER_EQ_REP
+proof length: 4
+proof time: 0.006773
+Statistics
+  infstep : 8
+  nodes   : 6
+  maxdepth: 3
+Time: 0.464393
+  inferstep time: 0.3503
+  node_find time: 0.000462
+  node_crea time: 0.086438
+    pred time: 0.041855
+    thmpred time: 0.000002
+    mc time: 0.052528
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 11380*)l"] THENL [BasicProvers.SRW_TAC [] [listTheory.ALL_DISTINCT_FILTER, listTheory.tactictoe_thm_13, listTheory.tactictoe_thm_15, DB.fetch "sorting" "tactictoe_thm_1", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", rich_listTheory.EVERY_REPLICATE, rich_listTheory.REPLICATE, rich_listTheory.REPLICATE_NIL, rich_listTheory.REPLICATE_compute, rich_listTheory.LENGTH_REPLICATE, rich_listTheory.EL_REPLICATE, rich_listTheory.LIST_REL_REPLICATE_same, rich_listTheory.REPLICATE_GENLIST, rich_listTheory.map_replicate], BasicProvers.SRW_TAC [] [] THEN
+  metisTools.METIS_TAC [listTheory.ALL_DISTINCT_FILTER, listTheory.tactictoe_thm_13, listTheory.tactictoe_thm_15, DB.fetch "sorting" "tactictoe_thm_1", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", rich_listTheory.EVERY_REPLICATE, rich_listTheory.LENGTH_REPLICATE, rich_listTheory.REPLICATE, rich_listTheory.EL_REPLICATE, rich_listTheory.LIST_REL_REPLICATE_same, rich_listTheory.REPLICATE_GENLIST, rich_listTheory.REPLICATE_NIL, rich_listTheory.REPLICATE_compute, rich_listTheory.map_replicate]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010317
+
+FILTER_EQ_LENGTHS_EQ
+proof length: 1
+proof time: 0.052749
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.074332
+  inferstep time: 0.057288
+  node_find time: 0.000048
+  node_crea time: 0.012979
+    pred time: 0.006353
+    thmpred time: 0.000001
+    mc time: 0.008484
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "FILTER_EQ_REP" , listTheory.ALL_DISTINCT_FILTER , listTheory.tactictoe_thm_13 , listTheory.tactictoe_thm_15 , DB.fetch "sorting" "PERM_DEF" , DB.fetch "sorting" "tactictoe_thm_1" , DB.fetch "sorting" "tactictoe_thm_3" , DB.fetch "sorting" "tactictoe_thm_4" , rich_listTheory.LIST_ELEM_COUNT_DEF , rich_listTheory.MAP_SND_FILTER_NEQ , listTheory.length_nub_append , listTheory.tactictoe_thm_20 , listTheory.tactictoe_thm_21 , listTheory.list_to_set_diff , listTheory.nub_append , listTheory.FILTER_EQ_APPEND])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005889
+
+PERM_alt
+proof length: 1
+proof time: 0.073349
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.106015
+  inferstep time: 0.093458
+  node_find time: 0.000057
+  node_crea time: 0.009837
+    pred time: 0.002936
+    thmpred time: 0.000001
+    mc time: 0.007695
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_DEF" , DB.fetch "sorting" "FILTER_EQ_LENGTHS_EQ" , DB.fetch "sorting" "FILTER_EQ_REP" , DB.fetch "sorting" "PERM_CONG" , listTheory.WF_LIST_PRED , listTheory.UNZIP_THM , listTheory.REV_REVERSE_LEM , DB.fetch "sorting" "PERM_CONS_IFF" , DB.fetch "sorting" "PERM_INTRO" , DB.fetch "sorting" "PERM_MONO" , DB.fetch "sorting" "PERM_TRANS" , DB.fetch "sorting" "PERM_SYM" , DB.fetch "sorting" "PERM_REFL" , listTheory.ALL_DISTINCT_FILTER , listTheory.tactictoe_thm_13 , listTheory.tactictoe_thm_15])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.093137
+Replaying proof: 0.000393
+Replaying proof: 0.007566
+Replaying proof: 0.080372
+Replaying proof: 0.000512
+Replaying proof: 0.033213
+Replaying proof: 0.036139
+Replaying proof: 0.000742
+Replaying proof: 0.054768
+
+PERM_SWAP_AT_FRONT
+Statistics
+  infstep : 422
+  nodes   : 75
+  maxdepth: 5
+Time: 10.018552
+  inferstep time: 8.284425
+  node_find time: 0.039052
+  node_crea time: 1.616631
+    pred time: 0.662419
+    thmpred time: 0.000035
+    mc time: 0.546845
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.158636
+
+PERM_SWAP_L_AT_FRONT
+Statistics
+  infstep : 755
+  nodes   : 91
+  maxdepth: 5
+Time: 10.019566
+  inferstep time: 8.24952
+  node_find time: 0.070389
+  node_crea time: 1.524322
+    pred time: 0.524331
+    thmpred time: 0.000024
+    mc time: 0.532878
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012288
+Replaying proof: 0.000088
+
+PERM_LENGTH
+Statistics
+  infstep : 782
+  nodes   : 81
+  maxdepth: 5
+Time: 10.064116
+  inferstep time: 8.351867
+  node_find time: 0.078091
+  node_crea time: 1.422751
+    pred time: 0.511358
+    thmpred time: 0.00003
+    mc time: 0.5658
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.027203
+
+PERM_MEM_EQ
+proof length: 3
+proof time: 0.022425
+Statistics
+  infstep : 60
+  nodes   : 11
+  maxdepth: 3
+Time: 1.322208
+  inferstep time: 1.112871
+  node_find time: 0.003822
+  node_crea time: 0.17541
+    pred time: 0.085867
+    thmpred time: 0.000001
+    mc time: 0.067565
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "sorting" "PERM_IND") THEN BasicProvers.SRW_TAC [] [listTheory.MEM, rich_listTheory.MEM_FRONT, listTheory.LIST_TO_SET_DEF, listTheory.LIST_TO_SET, listTheory.LIST_TO_SET_THM, listTheory.EVERY2_cong, listTheory.MAP2_CONG, listTheory.FOLDL2_cong, listTheory.LLEX_CONG, rich_listTheory.MEM_LAST, DB.fetch "sorting" "tactictoe_thm_15", DB.fetch "sorting" "PERM_IND", DB.fetch "sorting" "PERM_STRONG_IND", DB.fetch "sorting" "tactictoe_thm_18", DB.fetch "sorting" "tactictoe_thm_10", DB.fetch "sorting" "tactictoe_thm_14"] THEN
+  BasicProvers.PROVE_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.034715
+
+PERM_LIST_TO_SET
+proof length: 3
+proof time: 0.00291
+Statistics
+  infstep : 57
+  nodes   : 13
+  maxdepth: 4
+Time: 1.392663
+  inferstep time: 1.175922
+  node_find time: 0.00352
+  node_crea time: 0.179977
+    pred time: 0.065958
+    thmpred time: 0.000005
+    mc time: 0.094702
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [] THEN (BasicProvers.SRW_TAC []) [(DB.fetch "list" "nub_def"), pred_setTheory.EXTENSION] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "sorting" "tactictoe_thm_18", DB.fetch "sorting" "PERM_MEM_EQ", indexedListsTheory.MAPi_CONG, listTheory.EVERY2_cong, listTheory.EVERY_CONG, listTheory.EXISTS_CONG, listTheory.MAP2_CONG, listTheory.MAP_CONG, listTheory.tactictoe_thm_20, listTheory.MEM_SPLIT, listTheory.length_nub_append, listTheory.tactictoe_thm_21, listTheory.list_to_set_diff, listTheory.nub_append, indexedListsTheory.FOLDRi_CONG, listTheory.ALL_DISTINCT_APPEND]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00504
+
+SORTED_EQ
+Statistics
+  infstep : 452
+  nodes   : 97
+  maxdepth: 5
+Time: 10.005302
+  inferstep time: 8.218472
+  node_find time: 0.052246
+  node_crea time: 1.444057
+    pred time: 0.403412
+    thmpred time: 0.000031
+    mc time: 0.784938
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.09458
+
+SORTED_APPEND
+Statistics
+  infstep : 916
+  nodes   : 75
+  maxdepth: 4
+Time: 10.000191
+  inferstep time: 8.105431
+  node_find time: 0.107972
+  node_crea time: 1.547383
+    pred time: 0.401903
+    thmpred time: 0.000033
+    mc time: 0.530856
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.075749
+
+PART_LENGTH
+Statistics
+  infstep : 416
+  nodes   : 83
+  maxdepth: 5
+Time: 10.193084
+  inferstep time: 8.351192
+  node_find time: 0.043938
+  node_crea time: 1.649459
+    pred time: 0.518709
+    thmpred time: 0.000025
+    mc time: 0.857885
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.14787
+
+PART_LENGTH_LEM
+proof length: 11
+proof time: 0.039768
+Statistics
+  infstep : 150
+  nodes   : 43
+  maxdepth: 4
+Time: 4.806674
+  inferstep time: 3.636804
+  node_find time: 0.013799
+  node_crea time: 0.977683
+    pred time: 0.327723
+    thmpred time: 0.000012
+    mc time: 0.555803
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 16854*)L"] THENL [BasicProvers.SRW_TAC [] [DB.fetch "sorting" "PART_DEF", DB.fetch "sorting" "PART_LENGTH", listTheory.LENGTH, rich_listTheory.ZIP_TAKE_LEQ, rich_listTheory.SEG_APPEND, rich_listTheory.SEG_APPEND2, rich_listTheory.EL_APPEND2, rich_listTheory.BUTLASTN_APPEND1, rich_listTheory.DROP_APPEND2, rich_listTheory.ELL_APPEND1, rich_listTheory.LASTN_APPEND1, rich_listTheory.LUPDATE_APPEND2, rich_listTheory.TAKE_APPEND2, quantHeuristicsTheory.LIST_LENGTH_1, quantHeuristicsTheory.LIST_LENGTH_2, quantHeuristicsTheory.LIST_LENGTH_3], BasicProvers.RW_TAC bossLib.list_ss [(DB.fetch "sorting" "PART_DEF")] THEN
+  boolLib.RES_THEN boolLib.MP_TAC THEN
+  BasicProvers.RW_TAC bossLib.list_ss [(DB.fetch "sorting" "PART_DEF")]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.061891
+Replaying proof: 0.013843
+Replaying proof: 0.047814
+
+PART_MEM
+Statistics
+  infstep : 389
+  nodes   : 117
+  maxdepth: 6
+Time: 10.006468
+  inferstep time: 7.572947
+  node_find time: 0.04499
+  node_crea time: 2.27652
+    pred time: 0.736028
+    thmpred time: 0.000044
+    mc time: 0.822554
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.04509
+
+QSORT_MEM
+Statistics
+  infstep : 478
+  nodes   : 79
+  maxdepth: 5
+Time: 10.088754
+  inferstep time: 8.566656
+  node_find time: 0.055487
+  node_crea time: 1.227322
+    pred time: 0.432775
+    thmpred time: 0.000022
+    mc time: 0.571861
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.188194
+
+QSORT_PERM
+Statistics
+  infstep : 426
+  nodes   : 106
+  maxdepth: 6
+Time: 10.007036
+  inferstep time: 8.150491
+  node_find time: 0.058089
+  node_crea time: 1.571498
+    pred time: 0.481702
+    thmpred time: 0.000033
+    mc time: 0.660472
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.398482
+Replaying proof: 0.067897
+
+QSORT_SORTS
+proof length: 1
+proof time: 0.050331
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.115631
+  inferstep time: 0.098923
+  node_find time: 0.00008
+  node_crea time: 0.009714
+    pred time: 0.002938
+    thmpred time: 0.000001
+    mc time: 0.010497
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "SORTS_DEF" , DB.fetch "sorting" "QSORT_SORTED" , relationTheory.total_inv_image , relationTheory.total_def , pairTheory.total_LEX , listTheory.LLEX_total , DB.fetch "sorting" "QSORT_MEM" , DB.fetch "sorting" "QSORT_PERM" , DB.fetch "sorting" "tactictoe_thm_21" , DB.fetch "sorting" "tactictoe_thm_22" , DB.fetch "sorting" "QSORT_DEF" , DB.fetch "sorting" "tactictoe_thm_24" , DB.fetch "sorting" "SORTED_EQ" , DB.fetch "sorting" "SORTED_APPEND" , listTheory.LLEX_transitive , relationTheory.transitive_def])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008194
+
+PERM_APPEND_IFF
+proof length: 1
+proof time: 0.007629
+Statistics
+  infstep : 6
+  nodes   : 2
+  maxdepth: 1
+Time: 0.190923
+  inferstep time: 0.168613
+  node_find time: 0.000522
+  node_crea time: 0.015954
+    pred time: 0.006262
+    thmpred time: 0.0
+    mc time: 0.009795
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "sorting" "PERM_DEF" ) , listTheory.FILTER_APPEND_DISTRIB , boolLib.EQ_IMP_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008723
+
+PERM_SINGLE_SWAP_SYM
+proof length: 5
+proof time: 0.029576
+Statistics
+  infstep : 70
+  nodes   : 23
+  maxdepth: 4
+Time: 2.098279
+  inferstep time: 1.725413
+  node_find time: 0.008521
+  node_crea time: 0.293395
+    pred time: 0.112002
+    thmpred time: 0.000009
+    mc time: 0.154408
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC []) [(DB.fetch "list" "LUPDATE_def")] THEN BasicProvers.SRW_TAC [] [DB.fetch "sorting" "PERM_SINGLE_SWAP_DEF", indexedListsTheory.FOLDRi_APPEND, listTheory.APPEND, indexedListsTheory.FOLDRi_CONG, indexedListsTheory.FOLDRi_CONG', indexedListsTheory.LIST_RELi_EL_EQN, listTheory.LENGTH_APPEND, rich_listTheory.EL_APPEND1, rich_listTheory.EL_APPEND2, indexedListsTheory.LIST_RELi_LENGTH, indexedListsTheory.LIST_RELi_cases, indexedListsTheory.LIST_RELi_def, indexedListsTheory.MAPi_APPEND, listTheory.APPEND_ASSOC, listTheory.APPEND_11, indexedListsTheory.MAPi_CONG] THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM] THEN
+  metisLib.METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017971
+
+PERM_SINGLE_SWAP_I
+proof length: 1
+proof time: 0.081585
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.068263
+  inferstep time: 0.056208
+  node_find time: 0.000089
+  node_crea time: 0.008886
+    pred time: 0.003448
+    thmpred time: 0.0
+    mc time: 0.006009
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_SINGLE_SWAP_DEF" , listTheory.APPEND_ASSOC , DB.fetch "sorting" "PERM_SWAP_L_AT_FRONT" , DB.fetch "sorting" "PERM_SINGLE_SWAP_SYM" , patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED , patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED_PMATCH_ROWS , patternMatchesTheory.GUARDS_ELIM_THM , rich_listTheory.LIST_REL_APPEND_SING , listTheory.ZIP , rich_listTheory.IS_PREFIX , rich_listTheory.IS_SUBLIST , rich_listTheory.IS_SUFFIX , rich_listTheory.SNOC_EQ_LENGTH_EQ , rich_listTheory.ZIP_SNOC , ind_typeTheory.INJ_INVERSE2 , ind_typeTheory.NUMPAIR_INJ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014514
+
+PERM_SINGLE_SWAP_CONS
+proof length: 3
+proof time: 0.034942
+Statistics
+  infstep : 40
+  nodes   : 7
+  maxdepth: 3
+Time: 0.935485
+  inferstep time: 0.792142
+  node_find time: 0.003427
+  node_crea time: 0.112193
+    pred time: 0.057641
+    thmpred time: 0.000002
+    mc time: 0.04721
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC []) [DB.fetch "sorting" "PERM_SINGLE_SWAP_DEF", DB.fetch "sorting" "PERM_SINGLE_SWAP_REFL", DB.fetch "sorting" "PERM_SINGLE_SWAP_SYM", DB.fetch "sorting" "PERM_SINGLE_SWAP_APPEND", DB.fetch "sorting" "PERM_SINGLE_SWAP_I", DB.fetch "sorting" "CONS_PERM", DB.fetch "sorting" "tactictoe_thm_15", DB.fetch "sorting" "tactictoe_thm_2", DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", DB.fetch "sorting" "tactictoe_thm_17", DB.fetch "sorting" "PERM_CONS_EQ_APPEND", listTheory.list_size_cong, pairTheory.LET2_RAND, pairTheory.LET2_RATOR, pred_setTheory.BIGUNION_IMAGE_UNIV] THEN BasicProvers.SRW_TAC [] [DB.fetch "sorting" "PERM_SINGLE_SWAP_DEF", DB.fetch "sorting" "PERM_SINGLE_SWAP_I", listTheory.APPEND_ASSOC, DB.fetch "sorting" "PERM_SINGLE_SWAP_APPEND", patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED, rich_listTheory.IS_PREFIX, rich_listTheory.IS_SUBLIST, listTheory.ZIP, DB.fetch "sorting" "PERM_CONS_EQ_APPEND", listTheory.LENGTH_EQ_NUM, listTheory.LENGTH_EQ_NUM_compute, listTheory.APPEND_EQ_CONS, listTheory.APPEND, rich_listTheory.LIST_ELEM_COUNT_THM, DB.fetch "sorting" "CONS_PERM", rich_listTheory.APPEND_ASSOC_CONS] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "sorting" "PERM_SINGLE_SWAP_DEF")]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.153719
+
+PERM_SINGLE_SWAP_TC_CONS
+Statistics
+  infstep : 808
+  nodes   : 95
+  maxdepth: 5
+Time: 10.000209
+  inferstep time: 8.374127
+  node_find time: 0.132276
+  node_crea time: 1.211818
+    pred time: 0.358875
+    thmpred time: 0.000039
+    mc time: 0.474175
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.226394
+Replaying proof: 0.002611
+Replaying proof: 0.004589
+
+PERM_TC
+proof length: 2
+proof time: 0.062993
+Statistics
+  infstep : 61
+  nodes   : 7
+  maxdepth: 2
+Time: 0.702405
+  inferstep time: 0.587151
+  node_find time: 0.006933
+  node_crea time: 0.079979
+    pred time: 0.039058
+    thmpred time: 0.0
+    mc time: 0.027697
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [boolLib.FUN_EQ_THM] THEN metisTools.METIS_TAC [DB.fetch "sorting" "tactictoe_thm_30", DB.fetch "sorting" "tactictoe_thm_29", DB.fetch "sorting" "PERM_SINGLE_SWAP_TC_CONS", DB.fetch "sorting" "PERM_SINGLE_SWAP_CONS", DB.fetch "sorting" "PERM_SINGLE_SWAP_DEF", DB.fetch "sorting" "PERM_SINGLE_SWAP_SYM", DB.fetch "sorting" "PERM_SINGLE_SWAP_APPEND", DB.fetch "sorting" "PERM_SINGLE_SWAP_REFL", DB.fetch "sorting" "PERM_SINGLE_SWAP_I", DB.fetch "sorting" "PERM_alt", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "PERM_CONS_IFF", DB.fetch "sorting" "PERM_INTRO", DB.fetch "sorting" "PERM_MEM_EQ", DB.fetch "sorting" "PERM_SWAP_AT_FRONT", DB.fetch "sorting" "PERM_SWAP_L_AT_FRONT"]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.101837
+
+PERM_RTC
+proof length: 5
+proof time: 0.149018
+Statistics
+  infstep : 353
+  nodes   : 57
+  maxdepth: 5
+Time: 5.252578
+  inferstep time: 4.393792
+  node_find time: 0.045598
+  node_crea time: 0.633695
+    pred time: 0.219967
+    thmpred time: 0.000014
+    mc time: 0.273636
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC []) [DB.fetch "sorting" "PERM_TC", DB.fetch "sorting" "tactictoe_thm_29", DB.fetch "sorting" "tactictoe_thm_30", DB.fetch "sorting" "PERM_SINGLE_SWAP_DEF", DB.fetch "sorting" "PERM_SINGLE_SWAP_SYM", DB.fetch "sorting" "PERM_SINGLE_SWAP_APPEND", DB.fetch "sorting" "PERM_SINGLE_SWAP_REFL", DB.fetch "sorting" "PERM_SINGLE_SWAP_TC_CONS", DB.fetch "sorting" "PERM_SINGLE_SWAP_I", DB.fetch "sorting" "PERM_SINGLE_SWAP_CONS", DB.fetch "sorting" "PERM_NIL", DB.fetch "sorting" "PERM_CONS_EQ_APPEND", DB.fetch "sorting" "PERM_alt", DB.fetch "sorting" "PERM_APPEND_IFF", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "PERM_CONS_IFF"] THEN BasicProvers.SRW_TAC [] [boolLib.FUN_EQ_THM] THEN
+  boolLib.EQ_TAC THEN
+  metisTools.METIS_TAC [DB.fetch "sorting" "tactictoe_thm_30", DB.fetch "sorting" "PERM_SINGLE_SWAP_TC_CONS", DB.fetch "sorting" "tactictoe_thm_29", DB.fetch "sorting" "PERM_TC", DB.fetch "sorting" "PERM_SINGLE_SWAP_CONS", DB.fetch "sorting" "PERM_SINGLE_SWAP_APPEND", DB.fetch "sorting" "PERM_SINGLE_SWAP_REFL", DB.fetch "sorting" "PERM_SINGLE_SWAP_DEF", DB.fetch "sorting" "PERM_SINGLE_SWAP_SYM", DB.fetch "sorting" "PERM_SINGLE_SWAP_I", listTheory.SNOC, relationTheory.EXTEND_RTC_TC, relationTheory.TC_RTC, relationTheory.RTC_TC_RC, relationTheory.RTC_CASES_TC, prim_recTheory.RTC_IM_TC]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.098085
+
+PERM_EQC
+Statistics
+  infstep : 694
+  nodes   : 109
+  maxdepth: 5
+Time: 10.008802
+  inferstep time: 8.193252
+  node_find time: 0.116917
+  node_crea time: 1.414681
+    pred time: 0.438649
+    thmpred time: 0.000027
+    mc time: 0.632322
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.14308
+
+PERM_lifts_monotonicities
+Statistics
+  infstep : 919
+  nodes   : 78
+  maxdepth: 4
+Time: 10.001642
+  inferstep time: 8.201515
+  node_find time: 0.12398
+  node_crea time: 1.352898
+    pred time: 0.413724
+    thmpred time: 0.000013
+    mc time: 0.492302
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.175399
+
+PERM_EQUIVALENCE
+proof length: 2
+proof time: 0.009425
+Statistics
+  infstep : 9
+  nodes   : 6
+  maxdepth: 2
+Time: 0.427721
+  inferstep time: 0.364063
+  node_find time: 0.000888
+  node_crea time: 0.052392
+    pred time: 0.020639
+    thmpred time: 0.0
+    mc time: 0.026184
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "relation" "equivalence_def"), (DB.fetch "relation" "reflexive_def"), (DB.fetch "relation" "symmetric_def"), (DB.fetch "relation" "transitive_def"), boolLib.FUN_EQ_THM, boolLib.EQ_IMP_THM] THEN BasicProvers.PROVE_TAC [(DB.fetch "sorting" "PERM_DEF")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004303
+
+PERM_EQUIVALENCE_ALT_DEF
+Statistics
+  infstep : 732
+  nodes   : 119
+  maxdepth: 5
+Time: 10.003377
+  inferstep time: 8.139736
+  node_find time: 0.111375
+  node_crea time: 1.482972
+    pred time: 0.442527
+    thmpred time: 0.000026
+    mc time: 0.535518
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004678
+
+ALL_DISTINCT_PERM
+Statistics
+  infstep : 570
+  nodes   : 89
+  maxdepth: 5
+Time: 10.000755
+  inferstep time: 8.02638
+  node_find time: 0.086022
+  node_crea time: 1.643042
+    pred time: 0.561595
+    thmpred time: 0.00003
+    mc time: 0.53011
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.075079
+
+PERM_ALL_DISTINCT
+proof length: 3
+proof time: 0.131702
+Statistics
+  infstep : 233
+  nodes   : 55
+  maxdepth: 6
+Time: 6.387252
+  inferstep time: 5.042624
+  node_find time: 0.038276
+  node_crea time: 1.109378
+    pred time: 0.367091
+    thmpred time: 0.000018
+    mc time: 0.392187
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "sorting" "ALL_DISTINCT_PERM", listTheory.ALL_DISTINCT_APPEND, listTheory.ALL_DISTINCT_MAP_INJ, listTheory.ALL_DISTINCT_SNOC, listTheory.ALL_DISTINCT_FILTER, listTheory.ALL_DISTINCT, DB.fetch "sorting" "PERM_MEM_EQ", rich_listTheory.ALL_DISTINCT_MEM_ZIP_MAP, listTheory.ALL_DISTINCT_CARD_LIST_TO_SET, listTheory.CARD_LIST_TO_SET_ALL_DISTINCT, listTheory.ALL_DISTINCT_ZIP, DB.fetch "sorting" "PERM_LIST_TO_SET", listTheory.EL_ALL_DISTINCT_EL_EQ, indexedListsTheory.findi_EL, listTheory.ALL_DISTINCT_EL_IMP, listTheory.ALL_DISTINCT_DROP] THEN BasicProvers.SRW_TAC [] [(DB.fetch "sorting" "PERM_DEF"), listTheory.FILTER_APPEND_DISTRIB, boolLib.EQ_IMP_THM] THEN
+  metisTools.METIS_TAC [DB.fetch "sorting" "tactictoe_thm_18", DB.fetch "sorting" "FILTER_EQ_LENGTHS_EQ", listTheory.ALL_DISTINCT_FILTER, listTheory.tactictoe_thm_13, DB.fetch "sorting" "PERM_alt", DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "tactictoe_thm_1", DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", listTheory.tactictoe_thm_15, DB.fetch "sorting" "tactictoe_thm_31", rich_listTheory.LIST_ELEM_COUNT_DEF, listTheory.tactictoe_thm_20, listTheory.length_nub_append, listTheory.tactictoe_thm_21, listTheory.list_to_set_diff]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.06158
+
+ALL_DISTINCT_PERM_LIST_TO_SET_TO_LIST
+Statistics
+  infstep : 467
+  nodes   : 107
+  maxdepth: 5
+Time: 10.045516
+  inferstep time: 7.844074
+  node_find time: 0.08706
+  node_crea time: 1.85133
+    pred time: 0.599849
+    thmpred time: 0.00003
+    mc time: 0.652115
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.128225
+
+PERM_MAP
+Statistics
+  infstep : 451
+  nodes   : 67
+  maxdepth: 5
+Time: 10.03053
+  inferstep time: 8.222093
+  node_find time: 0.09397
+  node_crea time: 1.493051
+    pred time: 0.514908
+    thmpred time: 0.000031
+    mc time: 0.579268
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.09511
+
+PERM_SUM
+proof length: 3
+proof time: 0.008682
+Statistics
+  infstep : 25
+  nodes   : 6
+  maxdepth: 3
+Time: 0.656552
+  inferstep time: 0.571955
+  node_find time: 0.003021
+  node_crea time: 0.057819
+    pred time: 0.01985
+    thmpred time: 0.000004
+    mc time: 0.034821
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "sorting" "PERM_IND") THEN boolLib.ASM_REWRITE_TAC [listTheory.SUM, listTheory.REVERSE_SNOC_DEF, listTheory.SUM_SNOC] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [listTheory.SUM, listTheory.SUM_APPEND, listTheory.EVERY2_cong, listTheory.MAP2_CONG, listTheory.SUM_SNOC, listTheory.SUM_ACC_SUM_LEM, rich_listTheory.SUM_FOLDL, rich_listTheory.SUM_FOLDR, listTheory.APPEND_11_LENGTH, listTheory.APPEND_LENGTH_EQ, listTheory.FOLDL2_cong, listTheory.LLEX_CONG, listTheory.SUM_eq_0, listTheory.SUM_SUM_ACC, rich_listTheory.SUM_REVERSE, listTheory.SUM_MAP_FOLDL]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.061143
+
+PERM_FILTER
+Statistics
+  infstep : 589
+  nodes   : 88
+  maxdepth: 5
+Time: 10.003209
+  inferstep time: 8.149651
+  node_find time: 0.118143
+  node_crea time: 1.410329
+    pred time: 0.428776
+    thmpred time: 0.000031
+    mc time: 0.511544
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.090626
+
+PERM_REVERSE
+proof length: 2
+proof time: 0.00237
+Statistics
+  infstep : 73
+  nodes   : 21
+  maxdepth: 4
+Time: 1.949939
+  inferstep time: 1.600629
+  node_find time: 0.012823
+  node_crea time: 0.277525
+    pred time: 0.100758
+    thmpred time: 0.000008
+    mc time: 0.119072
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "sorting" "PERM_DEF"), listTheory.FILTER_APPEND_DISTRIB, boolLib.EQ_IMP_THM] THEN BasicProvers.SRW_TAC [] [listTheory.ALL_DISTINCT_FILTER, DB.fetch "sorting" "PERM_DEF", DB.fetch "sorting" "tactictoe_thm_31", DB.fetch "sorting" "PERM_alt", DB.fetch "sorting" "tactictoe_thm_1", DB.fetch "sorting" "tactictoe_thm_3", DB.fetch "sorting" "tactictoe_thm_4", DB.fetch "sorting" "FILTER_EQ_LENGTHS_EQ", listTheory.LAST_REVERSE, listTheory.LIST_TO_SET_REVERSE, listTheory.EL_LENGTH_dropWhile_REVERSE, listTheory.FILTER_REVERSE, rich_listTheory.FOLDR_FILTER_REVERSE, rich_listTheory.MAP_SND_FILTER_NEQ, listTheory.NULL_FILTER, listTheory.LENGTH_FILTER_LEQ_MONO]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008298
+
+PERM_REVERSE_EQ
+proof length: 1
+proof time: 0.002037
+Statistics
+  infstep : 15
+  nodes   : 4
+  maxdepth: 2
+Time: 0.384403
+  inferstep time: 0.302877
+  node_find time: 0.001877
+  node_crea time: 0.064621
+    pred time: 0.027868
+    thmpred time: 0.0
+    mc time: 0.024348
+    inst time: 0.0
+Proof found: (bossLib.SIMP_TAC bossLib.list_ss [ ( DB.fetch "sorting" "PERM_alt" ) , listTheory.FILTER_REVERSE ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.073974
+
+FOLDR_PERM
+Statistics
+  infstep : 543
+  nodes   : 171
+  maxdepth: 7
+Time: 10.019353
+  inferstep time: 7.494012
+  node_find time: 0.115418
+  node_crea time: 2.137032
+    pred time: 0.433745
+    thmpred time: 0.000041
+    mc time: 0.894269
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.171869
+
+PERM_SET_TO_LIST_count_COUNT_LIST
+proof length: 2
+proof time: 0.001175
+Statistics
+  infstep : 72
+  nodes   : 19
+  maxdepth: 3
+Time: 1.484955
+  inferstep time: 1.13958
+  node_find time: 0.012195
+  node_crea time: 0.246599
+    pred time: 0.093949
+    thmpred time: 0.000004
+    mc time: 0.127181
+    inst time: 0.0
+Proof found: boolLib.MATCH_MP_TAC (DB.fetch "sorting" "PERM_ALL_DISTINCT") THEN BasicProvers.SRW_TAC [] [rich_listTheory.MEM_COUNT_LIST, rich_listTheory.all_distinct_count_list, rich_listTheory.COUNT_LIST_COUNT, rich_listTheory.COUNT_LIST_def, rich_listTheory.COUNT_LIST_SNOC, rich_listTheory.COUNT_LIST_ADD, rich_listTheory.COUNT_LIST_GENLIST, rich_listTheory.COUNT_LIST_compute, rich_listTheory.EL_COUNT_LIST, rich_listTheory.LENGTH_COUNT_LIST, rich_listTheory.count_list_sub1, rich_listTheory.el_map_count, rich_listTheory.every_count_list, rich_listTheory.ZIP_COUNT_LIST, DB.fetch "sorting" "ALL_DISTINCT_PERM_LIST_TO_SET_TO_LIST", listTheory.ALL_DISTINCT_SET_TO_LIST]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.128308
+
+SUM_IMAGE_count_SUM_GENLIST
+Statistics
+  infstep : 593
+  nodes   : 100
+  maxdepth: 6
+Time: 10.057033
+  inferstep time: 8.08695
+  node_find time: 0.119194
+  node_crea time: 1.50964
+    pred time: 0.416205
+    thmpred time: 0.000034
+    mc time: 0.768002
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.292403
+
+SUM_IMAGE_count_MULT
+Statistics
+  infstep : 534
+  nodes   : 88
+  maxdepth: 5
+Time: 10.014284
+  inferstep time: 7.218584
+  node_find time: 0.104753
+  node_crea time: 2.325843
+    pred time: 0.554904
+    thmpred time: 0.000024
+    mc time: 1.443166
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.1308
+
+sum_of_sums
+Statistics
+  infstep : 887
+  nodes   : 174
+  maxdepth: 6
+Time: 10.080166
+  inferstep time: 6.192493
+  node_find time: 0.199733
+  node_crea time: 3.22225
+    pred time: 0.539035
+    thmpred time: 0.000019
+    mc time: 2.062299
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.307334
+
+SORTED_NIL
+proof length: 1
+proof time: 0.001801
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.127661
+  inferstep time: 0.114396
+  node_find time: 0.00033
+  node_crea time: 0.008459
+    pred time: 0.00282
+    thmpred time: 0.0
+    mc time: 0.005959
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "sorting" "SORTED_DEF" , DB.fetch "sorting" "tactictoe_thm_19" , DB.fetch "sorting" "tactictoe_thm_25" , DB.fetch "sorting" "tactictoe_thm_32" , DB.fetch "sorting" "QSORT_SORTED" , DB.fetch "sorting" "SORTED_EQ" , DB.fetch "sorting" "SORTED_APPEND" , DB.fetch "sorting" "SORTS_DEF" , indexedListsTheory.LIST_RELi_cases , indexedListsTheory.LIST_RELi_def , indexedListsTheory.LIST_RELi_ind , indexedListsTheory.LIST_RELi_rules , indexedListsTheory.LIST_RELi_strongind , indexedListsTheory.tactictoe_thm_0 , indexedListsTheory.tactictoe_thm_1 , listTheory.LIST_REL_cases ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004764
+
+SORTED_SING
+proof length: 1
+proof time: 0.097075
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.123871
+  inferstep time: 0.108036
+  node_find time: 0.000176
+  node_crea time: 0.011907
+    pred time: 0.004683
+    thmpred time: 0.0
+    mc time: 0.006989
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "SORTED_DEF" , DB.fetch "sorting" "tactictoe_thm_19" , DB.fetch "sorting" "tactictoe_thm_25" , DB.fetch "sorting" "tactictoe_thm_32" , DB.fetch "sorting" "tactictoe_thm_33" , DB.fetch "sorting" "SORTED_EQ" , DB.fetch "sorting" "SORTED_NIL" , DB.fetch "sorting" "SORTED_APPEND" , DB.fetch "sorting" "QSORT_SORTED" , DB.fetch "sorting" "SORTS_DEF" , DB.fetch "sorting" "SORTED_IND" , indexedListsTheory.LIST_RELi_cases , indexedListsTheory.LIST_RELi_def , indexedListsTheory.LIST_RELi_ind , indexedListsTheory.LIST_RELi_rules , indexedListsTheory.LIST_RELi_strongind])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003278
+
+SORTED_TL
+proof length: 3
+proof time: 0.099951
+Statistics
+  infstep : 46
+  nodes   : 6
+  maxdepth: 2
+Time: 0.825362
+  inferstep time: 0.670744
+  node_find time: 0.010609
+  node_crea time: 0.086197
+    pred time: 0.03486
+    thmpred time: 0.000004
+    mc time: 0.047204
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 51042*)xs"] THENL [boolLib.REWRITE_TAC [DB.fetch "sorting" "tactictoe_thm_19", DB.fetch "sorting" "SORTED_DEF", DB.fetch "sorting" "tactictoe_thm_25", DB.fetch "sorting" "tactictoe_thm_32", DB.fetch "sorting" "tactictoe_thm_33", DB.fetch "sorting" "tactictoe_thm_34", DB.fetch "sorting" "SORTED_SING", DB.fetch "sorting" "SORTED_NIL", DB.fetch "sorting" "SORTED_EQ", DB.fetch "sorting" "SORTED_APPEND", DB.fetch "sorting" "QSORT_SORTED", DB.fetch "sorting" "SORTS_DEF", DB.fetch "sorting" "SORTED_IND", DB.fetch "sorting" "tactictoe_thm_15", listTheory.FRONT_CONS, listTheory.SINGL_LIST_APPLY_L], metisTools.METIS_TAC [DB.fetch "sorting" "tactictoe_thm_19", DB.fetch "sorting" "SORTED_DEF", DB.fetch "sorting" "tactictoe_thm_25", DB.fetch "sorting" "tactictoe_thm_32", DB.fetch "sorting" "tactictoe_thm_33", DB.fetch "sorting" "tactictoe_thm_34", DB.fetch "sorting" "tactictoe_thm_10", DB.fetch "sorting" "tactictoe_thm_14", DB.fetch "sorting" "tactictoe_thm_16", DB.fetch "sorting" "tactictoe_thm_18", DB.fetch "sorting" "tactictoe_thm_5", DB.fetch "sorting" "tactictoe_thm_6", DB.fetch "sorting" "tactictoe_thm_7", DB.fetch "sorting" "tactictoe_thm_8", DB.fetch "sorting" "tactictoe_thm_9", DB.fetch "sorting" "tactictoe_thm_17"]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.028789
+
+SORTED_EL_SUC
+Statistics
+  infstep : 1373
+  nodes   : 121
+  maxdepth: 5
+Time: 10.089673
+  inferstep time: 6.614336
+  node_find time: 0.335797
+  node_crea time: 2.348889
+    pred time: 0.514955
+    thmpred time: 0.000021
+    mc time: 1.166901
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.412451
+
+SORTED_EL_LESS
+Statistics
+  infstep : 680
+  nodes   : 133
+  maxdepth: 6
+Time: 10.010117
+  inferstep time: 6.455152
+  node_find time: 0.196406
+  node_crea time: 2.811291
+    pred time: 0.564632
+    thmpred time: 0.000045
+    mc time: 1.369929
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.51215
+
+SORTED_APPEND_IFF
+Statistics
+  infstep : 532
+  nodes   : 100
+  maxdepth: 5
+Time: 10.06667
+  inferstep time: 7.25117
+  node_find time: 0.122489
+  node_crea time: 2.30349
+    pred time: 0.685911
+    thmpred time: 0.000021
+    mc time: 0.776052
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.252731
+
+MEM_PERM
+proof length: 1
+proof time: 0.110768
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.103799
+  inferstep time: 0.088297
+  node_find time: 0.000229
+  node_crea time: 0.01089
+    pred time: 0.003447
+    thmpred time: 0.000001
+    mc time: 0.007216
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "PERM_ALL_DISTINCT" , DB.fetch "sorting" "PERM_MEM_EQ" , DB.fetch "sorting" "PERM_LIST_TO_SET" , DB.fetch "sorting" "ALL_DISTINCT_PERM" , DB.fetch "sorting" "FOLDR_PERM" , DB.fetch "sorting" "PERM_LENGTH" , DB.fetch "sorting" "PERM_SUM" , DB.fetch "sorting" "PERM_IND" , DB.fetch "sorting" "PERM_FILTER" , DB.fetch "sorting" "PERM_MAP" , DB.fetch "sorting" "PERM_MONO" , DB.fetch "sorting" "PERM_STRONG_IND" , DB.fetch "sorting" "tactictoe_thm_29" , DB.fetch "sorting" "PERM_CONS_IFF" , DB.fetch "sorting" "PERM_APPEND_IFF" , DB.fetch "sorting" "PERM_SWAP_L_AT_FRONT"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025152
+
+SORTED_PERM_EQ
+Statistics
+  infstep : 893
+  nodes   : 83
+  maxdepth: 4
+Time: 10.000339
+  inferstep time: 7.70692
+  node_find time: 0.215905
+  node_crea time: 1.497508
+    pred time: 0.288871
+    thmpred time: 0.000018
+    mc time: 0.57889
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.526265
+
+QSORT_eq_if_PERM
+Statistics
+  infstep : 746
+  nodes   : 98
+  maxdepth: 5
+Time: 10.010997
+  inferstep time: 7.270345
+  node_find time: 0.186889
+  node_crea time: 1.985755
+    pred time: 0.410979
+    thmpred time: 0.000022
+    mc time: 0.792073
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019236
+
+SORTED_FILTER
+Statistics
+  infstep : 415
+  nodes   : 110
+  maxdepth: 5
+Time: 10.085362
+  inferstep time: 7.087936
+  node_find time: 0.114946
+  node_crea time: 2.387371
+    pred time: 0.627943
+    thmpred time: 0.000042
+    mc time: 0.917793
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.420508
+
+ALL_DISTINCT_SORTED_WEAKEN
+Statistics
+  infstep : 433
+  nodes   : 110
+  maxdepth: 5
+Time: 10.014242
+  inferstep time: 7.376862
+  node_find time: 0.106239
+  node_crea time: 2.131219
+    pred time: 0.469394
+    thmpred time: 0.000029
+    mc time: 0.927171
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.282567
+
+PERM_FUN_APPEND_C
+Statistics
+  infstep : 736
+  nodes   : 74
+  maxdepth: 5
+Time: 10.0059
+  inferstep time: 7.794704
+  node_find time: 0.181058
+  node_crea time: 1.506329
+    pred time: 0.451183
+    thmpred time: 0.000029
+    mc time: 0.547239
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007239
+
+PERM_FUN_CONS
+proof length: 2
+proof time: 0.013076
+Statistics
+  infstep : 41
+  nodes   : 5
+  maxdepth: 2
+Time: 0.809098
+  inferstep time: 0.669947
+  node_find time: 0.011227
+  node_crea time: 0.082114
+    pred time: 0.029212
+    thmpred time: 0.000002
+    mc time: 0.044109
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC bossLib.std_ss [boolLib.GSYM (DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF"), (DB.fetch "sorting" "PERM_CONG")] THEN BasicProvers.PROVE_TAC [(DB.fetch "sorting" "tactictoe_thm_0"), (DB.fetch "sorting" "PERM_CONG"), (DB.fetch "sorting" "PERM_REFL")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012061
+
+PERM_FUN_APPEND_CONS
+Statistics
+  infstep : 721
+  nodes   : 112
+  maxdepth: 5
+Time: 10.088387
+  inferstep time: 6.993532
+  node_find time: 0.242077
+  node_crea time: 2.093825
+    pred time: 0.657596
+    thmpred time: 0.000022
+    mc time: 1.059768
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.045781
+
+PERM_FUN_SWAP_AT_FRONT
+proof length: 3
+proof time: 0.019481
+Statistics
+  infstep : 85
+  nodes   : 8
+  maxdepth: 3
+Time: 1.091119
+  inferstep time: 0.82795
+  node_find time: 0.023935
+  node_crea time: 0.132478
+    pred time: 0.048318
+    thmpred time: 0.000001
+    mc time: 0.078522
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM] THEN bossLib.SIMP_TAC bossLib.std_ss [boolLib.GSYM (DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF"), (DB.fetch "sorting" "PERM_CONG")] THEN
+  metisLib.METIS_TAC [remove_eq_asm (List.nth (boolLib.CONJUNCTS (DB.fetch "sorting" "tactictoe_thm_18"), 2)), (DB.fetch "sorting" "PERM_REFL"), (DB.fetch "sorting" "PERM_TRANS"), (DB.fetch "sorting" "PERM_CONS_IFF")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011489
+
+PERM_FUN_CONS_11_SWAP_AT_FRONT
+Statistics
+  infstep : 577
+  nodes   : 72
+  maxdepth: 5
+Time: 10.102573
+  inferstep time: 8.098213
+  node_find time: 0.153849
+  node_crea time: 1.399793
+    pred time: 0.450496
+    thmpred time: 0.000023
+    mc time: 0.595352
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.131705
+
+PERM_FUN_CONS_11_APPEND
+proof length: 1
+proof time: 0.037885
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.161369
+  inferstep time: 0.139629
+  node_find time: 0.000449
+  node_crea time: 0.014126
+    pred time: 0.003946
+    thmpred time: 0.0
+    mc time: 0.008887
+    inst time: 0.0
+Proof found: (metisLib.METIS_TAC [ ( DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF" ) , ( DB.fetch "sorting" "PERM_APPEND" ) , ( DB.fetch "sorting" "PERM_CONS_IFF" ) , listTheory.APPEND ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.035608
+
+PERM_FUN_CONS_APPEND_1
+proof length: 3
+proof time: 0.011066
+Statistics
+  infstep : 45
+  nodes   : 13
+  maxdepth: 3
+Time: 1.240629
+  inferstep time: 1.021483
+  node_find time: 0.01017
+  node_crea time: 0.147677
+    pred time: 0.049156
+    thmpred time: 0.000002
+    mc time: 0.0814
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC bossLib.std_ss [boolLib.GSYM (DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF"), (DB.fetch "sorting" "PERM_CONG")] THEN BasicProvers.SRW_TAC [] [(DB.fetch "sorting" "PERM_DEF"), listTheory.FILTER_APPEND_DISTRIB, boolLib.EQ_IMP_THM] THEN
+  BasicProvers.SRW_TAC [] [listTheory.FILTER_APPEND_DISTRIB, (DB.fetch "sorting" "tactictoe_thm_4")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.035692
+
+PERM_FUN_CONS_APPEND_2
+proof length: 2
+proof time: 0.008958
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 2
+Time: 0.332703
+  inferstep time: 0.265603
+  node_find time: 0.001222
+  node_crea time: 0.049129
+    pred time: 0.017631
+    thmpred time: 0.0
+    mc time: 0.029047
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC bossLib.std_ss [boolLib.GSYM (DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF"), (DB.fetch "sorting" "PERM_CONG")] THEN boolLib.EVERY [bossLib.SIMP_TAC bossLib.list_ss [boolLib.GSYM (DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF"), (DB.fetch "sorting" "PERM_alt"), listTheory.FILTER_APPEND_DISTRIB], boolLib.REPEAT boolLib.STRIP_TAC, boolLib.COND_CASES_TAC, bossLib.ASM_SIMP_TAC bossLib.list_ss []]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.024213
+
+PERM_FUN_APPEND_APPEND_1
+proof length: 1
+proof time: 0.004972
+Statistics
+  infstep : 7
+  nodes   : 3
+  maxdepth: 1
+Time: 0.270543
+  inferstep time: 0.211804
+  node_find time: 0.002322
+  node_crea time: 0.040597
+    pred time: 0.014228
+    thmpred time: 0.0
+    mc time: 0.020694
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "sorting" "tactictoe_thm_20" , DB.fetch "sorting" "tactictoe_thm_23" , rich_listTheory.EVERY2_APPEND_suff , listTheory.FILTER_EQ_APPEND , rich_listTheory.EVERY2_APPEND , listTheory.APPEND_ASSOC , DB.fetch "sorting" "PART_MEM" , rich_listTheory.IS_SUBLIST_APPEND , DB.fetch "sorting" "PERM_FUN_CONS_11_APPEND" , DB.fetch "sorting" "PERM_FUN_APPEND_C" , DB.fetch "sorting" "PERM_FUN_CONS_APPEND_1" , DB.fetch "sorting" "PERM_FUN_CONS_APPEND_2" , DB.fetch "sorting" "PERM_APPEND_IFF" , DB.fetch "sorting" "PERM_CONG" , DB.fetch "sorting" "PERM_APPEND" , DB.fetch "sorting" "APPEND_PERM_SYM" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016069
+
+PERM_FUN_APPEND_APPEND_2
+proof length: 1
+proof time: 0.009625
+Statistics
+  infstep : 33
+  nodes   : 6
+  maxdepth: 2
+Time: 0.608451
+  inferstep time: 0.463294
+  node_find time: 0.01013
+  node_crea time: 0.091198
+    pred time: 0.033383
+    thmpred time: 0.000001
+    mc time: 0.040412
+    inst time: 0.0
+Proof found: (boolLib.EVERY [ bossLib.SIMP_TAC bossLib.list_ss [ boolLib.GSYM ( DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF" ) , ( DB.fetch "sorting" "PERM_alt" ) , listTheory.FILTER_APPEND_DISTRIB ] , boolLib.REPEAT boolLib.STRIP_TAC , boolLib.COND_CASES_TAC , bossLib.ASM_SIMP_TAC bossLib.list_ss [ ] ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018527
+
+PERM_FUN_APPEND
+proof length: 1
+proof time: 0.003419
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 1
+Time: 0.169552
+  inferstep time: 0.143463
+  node_find time: 0.000713
+  node_crea time: 0.018947
+    pred time: 0.008445
+    thmpred time: 0.0
+    mc time: 0.008323
+    inst time: 0.0
+Proof found: (boolLib.EVERY [ bossLib.SIMP_TAC bossLib.list_ss [ boolLib.GSYM ( DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF" ) , ( DB.fetch "sorting" "PERM_alt" ) , listTheory.FILTER_APPEND_DISTRIB ] , boolLib.REPEAT boolLib.STRIP_TAC , boolLib.COND_CASES_TAC , bossLib.ASM_SIMP_TAC bossLib.list_ss [ ] ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014184
+
+PERM_FUN_CONS_IFF
+proof length: 1
+proof time: 0.003484
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.192227
+  inferstep time: 0.163669
+  node_find time: 0.000474
+  node_crea time: 0.014572
+    pred time: 0.00443
+    thmpred time: 0.000001
+    mc time: 0.015367
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "sorting" "PERM_FUN_CONS_11_SWAP_AT_FRONT" , DB.fetch "sorting" "PERM_FUN_CONS_APPEND_1" , DB.fetch "sorting" "PERM_FUN_CONS_APPEND_2" , DB.fetch "sorting" "PERM_MONO" , DB.fetch "sorting" "PERM_CONS_IFF" , DB.fetch "sorting" "PERM_FUN_CONS_11_APPEND" , DB.fetch "sorting" "PERM_FUN_CONS" , DB.fetch "sorting" "CONS_PERM" , DB.fetch "sorting" "PERM_CONS_EQ_APPEND" , DB.fetch "sorting" "PERM_IND" , DB.fetch "sorting" "PERM_STRONG_IND" , DB.fetch "sorting" "PERM_SWAP_AT_FRONT" , DB.fetch "sorting" "PERM_ALL_DISTINCT" , DB.fetch "sorting" "PERM_MEM_EQ" , DB.fetch "sorting" "PERM_SWAP_L_AT_FRONT" , DB.fetch "sorting" "ALL_DISTINCT_PERM" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007926
+
+PERM_FUN_APPEND_IFF
+proof length: 1
+proof time: 0.002582
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.148981
+  inferstep time: 0.124611
+  node_find time: 0.000596
+  node_crea time: 0.012593
+    pred time: 0.003808
+    thmpred time: 0.000001
+    mc time: 0.0124
+    inst time: 0.0
+Proof found: (boolLib.EVERY [ bossLib.SIMP_TAC bossLib.list_ss [ boolLib.GSYM ( DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF" ) , ( DB.fetch "sorting" "PERM_alt" ) , listTheory.FILTER_APPEND_DISTRIB ] , boolLib.REPEAT boolLib.STRIP_TAC , boolLib.COND_CASES_TAC , bossLib.ASM_SIMP_TAC bossLib.list_ss [ ] ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008542
+
+PERM_FUN_CONG
+proof length: 3
+proof time: 0.008271
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 3
+Time: 0.451173
+  inferstep time: 0.351499
+  node_find time: 0.002238
+  node_crea time: 0.067106
+    pred time: 0.019186
+    thmpred time: 0.000002
+    mc time: 0.050577
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC bossLib.std_ss [boolLib.GSYM (DB.fetch "sorting" "PERM_EQUIVALENCE_ALT_DEF"), (DB.fetch "sorting" "PERM_CONG")] THEN BasicProvers.SRW_TAC [] [] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "sorting" "PERM_DEF")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018226
+
+PERM_CONG_2
+proof length: 2
+proof time: 0.009252
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.304281
+  inferstep time: 0.241073
+  node_find time: 0.001357
+  node_crea time: 0.042613
+    pred time: 0.014715
+    thmpred time: 0.000002
+    mc time: 0.02766
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [] THEN BasicProvers.PROVE_TAC [(DB.fetch "sorting" "PERM_DEF")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016154
+
+PERM_CONG_APPEND_IFF
+proof length: 1
+proof time: 0.006644
+Statistics
+  infstep : 6
+  nodes   : 3
+  maxdepth: 1
+Time: 0.208644
+  inferstep time: 0.181411
+  node_find time: 0.000975
+  node_crea time: 0.018189
+    pred time: 0.006226
+    thmpred time: 0.0
+    mc time: 0.009513
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "sorting" "PERM_DEF" ) , listTheory.FILTER_APPEND_DISTRIB , boolLib.EQ_IMP_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.050123
+
+PERM_FUN_SPLIT
+proof length: 1
+proof time: 0.003181
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.139324
+  inferstep time: 0.11645
+  node_find time: 0.000438
+  node_crea time: 0.012477
+    pred time: 0.003909
+    thmpred time: 0.0
+    mc time: 0.011411
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "sorting" "PERM_DEF" ) , listTheory.FILTER_APPEND_DISTRIB , boolLib.EQ_IMP_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019187
+
+PERM_REWR
+proof length: 1
+proof time: 0.005208
+Statistics
+  infstep : 4
+  nodes   : 2
+  maxdepth: 1
+Time: 0.181239
+  inferstep time: 0.157597
+  node_find time: 0.001128
+  node_crea time: 0.010656
+    pred time: 0.002988
+    thmpred time: 0.000001
+    mc time: 0.010492
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "sorting" "PERM_DEF" ) , listTheory.FILTER_APPEND_DISTRIB , boolLib.EQ_IMP_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018969
+Replaying proof: 0.003029
+Replaying proof: 0.000041
+
+PART3_FILTER
+Statistics
+  infstep : 1052
+  nodes   : 101
+  maxdepth: 5
+Time: 10.000165
+  inferstep time: 7.285047
+  node_find time: 0.268675
+  node_crea time: 1.695256
+    pred time: 0.387482
+    thmpred time: 0.000021
+    mc time: 0.722627
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.096132
+
+PERM3
+proof length: 1
+proof time: 0.006663
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.306029
+  inferstep time: 0.233957
+  node_find time: 0.001457
+  node_crea time: 0.0529
+    pred time: 0.014637
+    thmpred time: 0.0
+    mc time: 0.034524
+    inst time: 0.0
+Proof found: (bossLib.SIMP_TAC bossLib.list_ss [ ( DB.fetch "sorting" "PERM_alt" ) , listTheory.FILTER_APPEND_DISTRIB ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008381
+Replaying proof: 0.009334
+
+PERM3_FILTER
+Statistics
+  infstep : 563
+  nodes   : 119
+  maxdepth: 5
+Time: 10.096859
+  inferstep time: 7.197521
+  node_find time: 0.172952
+  node_crea time: 2.106661
+    pred time: 0.45953
+    thmpred time: 0.000022
+    mc time: 0.862655
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.346256
+
+PERM_QSORT3
+Statistics
+  infstep : 476
+  nodes   : 106
+  maxdepth: 6
+Time: 10.030279
+  inferstep time: 8.100621
+  node_find time: 0.138754
+  node_crea time: 1.342123
+    pred time: 0.416835
+    thmpred time: 0.000026
+    mc time: 0.602113
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.478894
+
+SORTED_EQ_PART
+Statistics
+  infstep : 830
+  nodes   : 84
+  maxdepth: 5
+Time: 10.001206
+  inferstep time: 7.572819
+  node_find time: 0.256057
+  node_crea time: 1.393647
+    pred time: 0.358079
+    thmpred time: 0.000018
+    mc time: 0.5668
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.098631
+
+QSORT3_SORTS
+Statistics
+  infstep : 542
+  nodes   : 137
+  maxdepth: 6
+Time: 10.005694
+  inferstep time: 6.932986
+  node_find time: 0.162029
+  node_crea time: 2.41861
+    pred time: 0.623719
+    thmpred time: 0.000047
+    mc time: 0.971822
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.414677
+Replaying proof: 0.032389
+
+QSORT3_SPLIT
+Statistics
+  infstep : 759
+  nodes   : 65
+  maxdepth: 5
+Time: 10.033047
+  inferstep time: 7.709859
+  node_find time: 0.232646
+  node_crea time: 1.381069
+    pred time: 0.371055
+    thmpred time: 0.000025
+    mc time: 0.517477
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.974576
+
+QSORT3_STABLE
+Statistics
+  infstep : 520
+  nodes   : 91
+  maxdepth: 6
+Time: 10.004446
+  inferstep time: 7.629218
+  node_find time: 0.159444
+  node_crea time: 1.714686
+    pred time: 0.479024
+    thmpred time: 0.000028
+    mc time: 0.66429
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.533535
+
+QSORT3_MEM
+Statistics
+  infstep : 389
+  nodes   : 81
+  maxdepth: 6
+Time: 10.016722
+  inferstep time: 7.695115
+  node_find time: 0.132987
+  node_crea time: 1.767164
+    pred time: 0.599467
+    thmpred time: 0.00003
+    mc time: 0.686399
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.391099
+
+QSORT3_SORTED
+proof length: 2
+proof time: 0.065788
+Statistics
+  infstep : 17
+  nodes   : 9
+  maxdepth: 3
+Time: 0.86459
+  inferstep time: 0.725483
+  node_find time: 0.003902
+  node_crea time: 0.11001
+    pred time: 0.035349
+    thmpred time: 0.000001
+    mc time: 0.049941
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC bossLib.std_ss [(DB.fetch "sorting" "SORTS_DEF"), (DB.fetch "sorting" "PERM_QSORT3")] THEN metisTools.METIS_TAC [DB.fetch "sorting" "QSORT3_MEM", DB.fetch "sorting" "QSORT3_SPLIT", DB.fetch "sorting" "PERM_QSORT3", DB.fetch "sorting" "tactictoe_thm_49", DB.fetch "sorting" "tactictoe_thm_51", DB.fetch "sorting" "tactictoe_thm_46", DB.fetch "sorting" "tactictoe_thm_53", DB.fetch "sorting" "tactictoe_thm_58", DB.fetch "sorting" "QSORT3_DEF", DB.fetch "sorting" "tactictoe_thm_43", DB.fetch "sorting" "QSORT_SORTED", DB.fetch "sorting" "SORTED_EQ", DB.fetch "sorting" "QSORT3_SORTS", DB.fetch "sorting" "QSORT3_STABLE", DB.fetch "sorting" "SORTED_APPEND", DB.fetch "sorting" "SORTS_DEF"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.066408
+
+sorted_count_list
+Statistics
+  infstep : 961
+  nodes   : 155
+  maxdepth: 6
+Time: 10.063325
+  inferstep time: 7.008554
+  node_find time: 0.290062
+  node_crea time: 1.873914
+    pred time: 0.459666
+    thmpred time: 0.000019
+    mc time: 0.932659
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.177406
+
+sorted_map
+Statistics
+  infstep : 845
+  nodes   : 115
+  maxdepth: 5
+Time: 10.001424
+  inferstep time: 7.189226
+  node_find time: 0.306263
+  node_crea time: 1.653988
+    pred time: 0.40488
+    thmpred time: 0.000028
+    mc time: 0.706849
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.197395
+
+sorted_perm_count_list
+Statistics
+  infstep : 687
+  nodes   : 119
+  maxdepth: 6
+Time: 10.01609
+  inferstep time: 7.235605
+  node_find time: 0.236978
+  node_crea time: 1.806874
+    pred time: 0.418572
+    thmpred time: 0.000029
+    mc time: 0.815568
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.157119
+
+SORTED_weaken
+proof length: 4
+proof time: 0.129284
+Statistics
+  infstep : 18
+  nodes   : 9
+  maxdepth: 4
+Time: 0.882561
+  inferstep time: 0.717347
+  node_find time: 0.004707
+  node_crea time: 0.123593
+    pred time: 0.03899
+    thmpred time: 0.000003
+    mc time: 0.060338
+    inst time: 0.0
+Proof found: boolLib.STRIP_TAC THEN boolLib.ho_match_mp_tac (DB.fetch "sorting" "SORTED_IND") THEN
+  BasicProvers.SRW_TAC [] [] THEN
+  metisTools.METIS_TAC [DB.fetch "sorting" "ALL_DISTINCT_SORTED_WEAKEN", DB.fetch "sorting" "tactictoe_thm_38", DB.fetch "sorting" "tactictoe_thm_19", DB.fetch "sorting" "tactictoe_thm_35", DB.fetch "sorting" "tactictoe_thm_34", DB.fetch "sorting" "tactictoe_thm_36", DB.fetch "sorting" "tactictoe_thm_37", DB.fetch "sorting" "SORTED_DEF", DB.fetch "sorting" "tactictoe_thm_25", DB.fetch "sorting" "tactictoe_thm_32", DB.fetch "sorting" "tactictoe_thm_33", DB.fetch "sorting" "tactictoe_thm_45", DB.fetch "sorting" "tactictoe_thm_47", DB.fetch "sorting" "tactictoe_thm_59", relationTheory.EQC_MONOTONE, listTheory.LLEX_CONG]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.241397
+
+SORTED_GENLIST_PLUS
+proof length: 3
+proof time: 0.004982
+Statistics
+  infstep : 170
+  nodes   : 30
+  maxdepth: 4
+Time: 2.183602
+  inferstep time: 1.635635
+  node_find time: 0.040733
+  node_crea time: 0.34153
+    pred time: 0.081447
+    thmpred time: 0.000005
+    mc time: 0.188967
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.ETA_ss] [listTheory.DISJOINT_GENLIST_PLUS, listTheory.GENLIST_PLUS_APPEND, DB.fetch "sorting" "less_sorted_eq", listTheory.GENLIST_APPEND, indexedListsTheory.GENLIST_CONG, listTheory.ALL_DISTINCT_GENLIST, listTheory.EL_GENLIST, listTheory.EVERY_GENLIST, listTheory.EXISTS_GENLIST, listTheory.GENLIST_EL, listTheory.GENLIST_FUN_EQ, listTheory.HD_GENLIST_COR, DB.fetch "sorting" "SORTED_EL_LESS", DB.fetch "sorting" "SORTED_EL_SUC", listTheory.MEM_GENLIST, rich_listTheory.LIST_REL_GENLIST] THEN (BasicProvers.SRW_TAC []) [boolLib.Once arithmeticTheory.ADD_SYM, boolSimps.SimpRHS] THEN
+  simpLib.ASM_SIMP_TAC (boolSimps.bool_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.REDUCE_ss) [(DB.fetch "list" "LIST_EQ_REWRITE"), (DB.fetch "list" "LENGTH_GENLIST"), (DB.fetch "list" "LENGTH_ZIP"), (DB.fetch "list" "EL_ZIP"), (DB.fetch "list" "EL_GENLIST")]
+Org tac number: 4
+Replaying proof: 0.01455
+
+SORTED_ALL_DISTINCT
+Statistics
+  infstep : 527
+  nodes   : 114
+  maxdepth: 5
+Time: 10.073631
+  inferstep time: 7.56127
+  node_find time: 0.156837
+  node_crea time: 1.767692
+    pred time: 0.414531
+    thmpred time: 0.000029
+    mc time: 0.778909
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.194843
+
+sorted_filter
+proof length: 1
+proof time: 0.064645
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.104276
+  inferstep time: 0.078656
+  node_find time: 0.000239
+  node_crea time: 0.009588
+    pred time: 0.002835
+    thmpred time: 0.000001
+    mc time: 0.017129
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "sorting" "SORTED_FILTER" , DB.fetch "sorting" "SORTED_ALL_DISTINCT" , DB.fetch "sorting" "SORTED_EL_LESS" , DB.fetch "sorting" "SORTED_EQ" , DB.fetch "sorting" "SORTED_APPEND" , DB.fetch "sorting" "SORTED_PERM_EQ" , DB.fetch "sorting" "ALL_DISTINCT_SORTED_WEAKEN" , DB.fetch "sorting" "SORTED_EL_SUC" , DB.fetch "sorting" "SORTED_weaken" , DB.fetch "sorting" "SORTED_TL" , DB.fetch "sorting" "SORTED_APPEND_IFF" , DB.fetch "sorting" "SORTED_EQ_PART" , DB.fetch "sorting" "QSORT3_SORTED" , DB.fetch "sorting" "QSORT_SORTED" , DB.fetch "sorting" "sorted_map" , DB.fetch "sorting" "tactictoe_thm_55"])
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.217651
+Bad stac: 2

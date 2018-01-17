@@ -1,0 +1,682 @@
+
+tactictoe_prove_0
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.272171
+
+tactictoe_prove_1
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.160601
+
+PAIR_EQ
+proof length: 3
+proof time: 0.150376
+Statistics
+  infstep : 46
+  nodes   : 10
+  maxdepth: 3
+Time: 1.539612
+  inferstep time: 1.377527
+  node_find time: 0.002565
+  node_crea time: 0.109163
+    pred time: 0.066445
+    thmpred time: 0.000003
+    mc time: 0.033948
+    inst time: 0.0
+Proof found: EQ_TAC THENL
+  [metisTools.METIS_TAC [DB.fetch "pair" "COMMA_DEF", REP_ABS_PAIR, DB.fetch "pair" "prod_TY_DEF", DB.fetch "pair" "ABS_REP_prod", PAIR_EXISTS, combinTheory.UPDATE_APPLY, combinTheory.UPD11_SAME_BASE, combinTheory.SAME_KEY_UPDATE_DIFFER, relationTheory.INVOL_ONE_ONE, combinTheory.UPDATE_def, combinTheory.APPLY_UPDATE_THM, combinTheory.UPD11_SAME_KEY_AND_BASE, relationTheory.trichotomous],
+  METIS_TAC []]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.321665
+
+ABS_PAIR_THM
+Statistics
+  infstep : 526
+  nodes   : 59
+  maxdepth: 4
+Time: 10.06062
+  inferstep time: 9.068802
+  node_find time: 0.057738
+  node_crea time: 0.701691
+    pred time: 0.321422
+    thmpred time: 0.000023
+    mc time: 0.270737
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.65138
+
+PAIR_FST_SND_EQ
+proof length: 5
+proof time: 0.027314
+Statistics
+  infstep : 48
+  nodes   : 14
+  maxdepth: 3
+Time: 1.873168
+  inferstep time: 1.687683
+  node_find time: 0.004133
+  node_crea time: 0.151236
+    pred time: 0.067621
+    thmpred time: 0.000009
+    mc time: 0.073368
+    inst time: 0.0
+Proof found: REWRITE_TAC [satTheory.dc_conj] THEN
+  REPEAT STRIP_TAC THENL
+  [METIS_TAC [fetch "pair" "FST", fetch "pair" "SND", fetch "pair" "pair_CASES"],
+  METIS_TAC [],
+  METIS_TAC []]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.179432
+
+ELIM_UNCURRY
+proof length: 1
+proof time: 0.022095
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.110718
+  inferstep time: 0.094199
+  node_find time: 0.000146
+  node_crea time: 0.013027
+    pred time: 0.003704
+    thmpred time: 0.0
+    mc time: 0.010754
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "UNCURRY_VAR"]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.219135
+
+UNCURRY_DEF
+proof length: 1
+proof time: 0.023817
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.136487
+  inferstep time: 0.116172
+  node_find time: 0.000133
+  node_crea time: 0.01653
+    pred time: 0.004027
+    thmpred time: 0.0
+    mc time: 0.010075
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "UNCURRY_VAR", fetch "pair" "PAIR_EQ", fetch "pair" "PAIR"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025305
+
+tactictoe_prove_7
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.067074
+
+tactictoe_prove_8
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.022198
+
+pair_Axiom
+proof length: 1
+proof time: 0.083698
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.166547
+  inferstep time: 0.114468
+  node_find time: 0.000132
+  node_crea time: 0.048702
+    pred time: 0.007427
+    thmpred time: 0.0
+    mc time: 0.021379
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "FST", fetch "pair" "PAIR_EQ", fetch "pair" "PAIR", fetch "pair" "UNCURRY_VAR"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.119273
+
+UNCURRY_CONG
+proof length: 1
+proof time: 0.0202
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.074574
+  inferstep time: 0.059045
+  node_find time: 0.000145
+  node_crea time: 0.011228
+    pred time: 0.004419
+    thmpred time: 0.0
+    mc time: 0.008396
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "pair_CASES", fetch "pair" "CURRY_UNCURRY_THM", fetch "pair" "CURRY_DEF"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.112756
+
+LAMBDA_PROD
+proof length: 2
+proof time: 0.020689
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.289916
+  inferstep time: 0.253546
+  node_find time: 0.000578
+  node_crea time: 0.02848
+    pred time: 0.012995
+    thmpred time: 0.000002
+    mc time: 0.016619
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "pair" "COMMA_DEF", fetch "pair" "ELIM_UNCURRY"] THEN
+  METIS_TAC [fetch "pair" "COMMA_DEF", fetch "pair" "PAIR"]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.247345
+
+EXISTS_PROD
+proof length: 1
+proof time: 0.026527
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.108643
+  inferstep time: 0.092624
+  node_find time: 0.000124
+  node_crea time: 0.012584
+    pred time: 0.007397
+    thmpred time: 0.0
+    mc time: 0.006603
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "pair_Axiom", fetch "pair" "FST", fetch "pair" "PAIR"]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.178458
+
+FORALL_PROD
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.200276
+
+PROD_ALL_THM
+proof length: 1
+proof time: 0.009764
+Statistics
+  infstep : 6
+  nodes   : 2
+  maxdepth: 1
+Time: 0.296264
+  inferstep time: 0.284285
+  node_find time: 0.000546
+  node_crea time: 0.007569
+    pred time: 0.003328
+    thmpred time: 0.000001
+    mc time: 0.005222
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "pair" "PROD_ALL_def", fetch "pair" "FST", fetch "pair" "SND"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025551
+
+PROD_ALL_MONO
+proof length: 1
+proof time: 0.031816
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.138854
+  inferstep time: 0.126574
+  node_find time: 0.000139
+  node_crea time: 0.009161
+    pred time: 0.003882
+    thmpred time: 0.000001
+    mc time: 0.005814
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "PROD_ALL_def"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.189726
+
+PROD_ALL_CONG
+proof length: 1
+proof time: 0.008422
+Statistics
+  infstep : 33
+  nodes   : 11
+  maxdepth: 3
+Time: 1.640994
+  inferstep time: 1.486032
+  node_find time: 0.003372
+  node_crea time: 0.134949
+    pred time: 0.046455
+    thmpred time: 0.000002
+    mc time: 0.047899
+    inst time: 0.0
+Proof found: FULL_SIMP_TAC bool_ss [fetch "pair" "PROD_ALL_THM", fetch "pair" "FORALL_PROD", fetch "pair" "PAIR_EQ"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.069123
+
+ELIM_PEXISTS
+proof length: 1
+proof time: 0.003475
+Statistics
+  infstep : 11
+  nodes   : 2
+  maxdepth: 1
+Time: 0.43588
+  inferstep time: 0.417623
+  node_find time: 0.001082
+  node_crea time: 0.011544
+    pred time: 0.004962
+    thmpred time: 0.0
+    mc time: 0.007461
+    inst time: 0.0
+Proof found: FULL_SIMP_TAC bool_ss [fetch "pair" "FST", fetch "pair" "SND", fetch "pair" "EXISTS_PROD"]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.218667
+
+ELIM_PFORALL
+proof length: 3
+proof time: 0.01464
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.35253
+  inferstep time: 0.317307
+  node_find time: 0.000434
+  node_crea time: 0.025148
+    pred time: 0.01281
+    thmpred time: 0.0
+    mc time: 0.016287
+    inst time: 0.0
+Proof found: EQ_TAC THENL
+  [METIS_TAC [fetch "pair" "FST", fetch "pair" "SND"],
+  METIS_TAC []]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.19517
+
+PFORALL_THM
+proof length: 3
+proof time: 0.012677
+Statistics
+  infstep : 19
+  nodes   : 9
+  maxdepth: 4
+Time: 0.85306
+  inferstep time: 0.774355
+  node_find time: 0.001937
+  node_crea time: 0.061124
+    pred time: 0.029859
+    thmpred time: 0.000002
+    mc time: 0.030897
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "pair" "ELIM_UNCURRY", fetch "pair" "ELIM_PFORALL"] THEN
+  CONV_TAC (DEPTH_CONV BETA_CONV) THEN
+  METIS_TAC []
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.103255
+
+PEXISTS_THM
+proof length: 2
+proof time: 0.028751
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.28212
+  inferstep time: 0.253613
+  node_find time: 0.000439
+  node_crea time: 0.02074
+    pred time: 0.007311
+    thmpred time: 0.0
+    mc time: 0.016286
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "pair" "ELIM_UNCURRY", fetch "pair" "ELIM_PEXISTS"] THEN
+  METIS_TAC []
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.091208
+
+ELIM_PEXISTS_EVAL
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.09864
+
+ELIM_PFORALL_EVAL
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.049057
+
+PAIR_MAP_THM
+proof length: 1
+proof time: 0.009877
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.102029
+  inferstep time: 0.084774
+  node_find time: 0.000189
+  node_crea time: 0.012477
+    pred time: 0.00515
+    thmpred time: 0.0
+    mc time: 0.009495
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "PAIR_MAP", fetch "pair" "FST", fetch "pair" "SND"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.071225
+
+FST_PAIR_MAP
+proof length: 1
+proof time: 0.041688
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.073938
+  inferstep time: 0.060775
+  node_find time: 0.00017
+  node_crea time: 0.009676
+    pred time: 0.004087
+    thmpred time: 0.0
+    mc time: 0.006697
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "PAIR_MAP_THM", fetch "pair" "PAIR", fetch "pair" "FST"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.055154
+
+SND_PAIR_MAP
+proof length: 1
+proof time: 0.02391
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.0594
+  inferstep time: 0.043459
+  node_find time: 0.000168
+  node_crea time: 0.010472
+    pred time: 0.003496
+    thmpred time: 0.0
+    mc time: 0.008336
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "pair" "PAIR_MAP_THM", fetch "pair" "PAIR", fetch "pair" "SND"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025205
+
+LET2_RAND
+proof length: 3
+proof time: 0.008687
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 3
+Time: 0.40783
+  inferstep time: 0.351614
+  node_find time: 0.000778
+  node_crea time: 0.042388
+    pred time: 0.018299
+    thmpred time: 0.000002
+    mc time: 0.027172
+    inst time: 0.0
+Proof found: REWRITE_TAC [LET_THM] THEN
+  REWRITE_TAC [fetch "pair" "UNCURRY_VAR"] THEN
+  METIS_TAC []
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.283162
+
+LET2_RATOR
+proof length: 4
+proof time: 0.005766
+Statistics
+  infstep : 27
+  nodes   : 16
+  maxdepth: 4
+Time: 1.638161
+  inferstep time: 1.440215
+  node_find time: 0.003398
+  node_crea time: 0.16866
+    pred time: 0.069022
+    thmpred time: 0.000005
+    mc time: 0.085565
+    inst time: 0.0
+Proof found: REWRITE_TAC [LET_DEF] THEN
+  CONV_TAC (DEPTH_CONV BETA_CONV) THEN
+  REWRITE_TAC [fetch "pair" "UNCURRY_VAR"] THEN
+  METIS_TAC []
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.170569
+
+o_UNCURRY_R
+proof length: 2
+proof time: 0.004985
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.240883
+  inferstep time: 0.210553
+  node_find time: 0.000381
+  node_crea time: 0.018801
+    pred time: 0.006762
+    thmpred time: 0.000001
+    mc time: 0.014947
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "pair" "UNCURRY_VAR", fetch "pair" "ELIM_UNCURRY", combinTheory.o_THM, combinTheory.o_DEF] THEN
+  METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.03517
+
+C_UNCURRY_L
+proof length: 2
+proof time: 0.00979
+Statistics
+  infstep : 20
+  nodes   : 9
+  maxdepth: 3
+Time: 1.219488
+  inferstep time: 1.115399
+  node_find time: 0.002353
+  node_crea time: 0.082092
+    pred time: 0.039076
+    thmpred time: 0.000005
+    mc time: 0.028879
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "combin" "C_DEF")] THEN
+  SRW_TAC [] [fetch "pair" "ELIM_UNCURRY"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.029276
+
+S_UNCURRY_R
+proof length: 2
+proof time: 0.075317
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.269104
+  inferstep time: 0.238452
+  node_find time: 0.000373
+  node_crea time: 0.023873
+    pred time: 0.0069
+    thmpred time: 0.000001
+    mc time: 0.011194
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "pair" "ELIM_UNCURRY", combinTheory.S_DEF] THEN
+  METIS_TAC [fetch "pair" "PAIR_FST_SND_EQ", fetch "pair" "FST", fetch "pair" "SND"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017973
+
+tactictoe_prove_31
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.022143
+
+FORALL_UNCURRY
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.25483
+
+PAIR_FUN_THM
+Statistics
+  infstep : 367
+  nodes   : 60
+  maxdepth: 5
+Time: 10.006178
+  inferstep time: 9.116709
+  node_find time: 0.076348
+  node_crea time: 0.592873
+    pred time: 0.195984
+    thmpred time: 0.000018
+    mc time: 0.247326
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.588198
+
+datatype_pair
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.046734
+
+LEX_DEF_THM
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.194763
+
+LEX_MONO
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.219865
+
+WF_LEX
+Statistics
+  infstep : 635
+  nodes   : 106
+  maxdepth: 5
+Time: 10.002376
+  inferstep time: 8.557225
+  node_find time: 0.148274
+  node_crea time: 1.046782
+    pred time: 0.238696
+    thmpred time: 0.000022
+    mc time: 0.505904
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 27
+Original proof time: 0.0
+Replaying proof: 1.036932
+
+WF_RPROD
+Statistics
+  infstep : 445
+  nodes   : 102
+  maxdepth: 5
+Time: 10.025802
+  inferstep time: 8.316077
+  node_find time: 0.106728
+  node_crea time: 1.398689
+    pred time: 0.373843
+    thmpred time: 0.000025
+    mc time: 0.562039
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.604532
+
+total_LEX
+proof length: 4
+proof time: 0.013556
+Statistics
+  infstep : 16
+  nodes   : 9
+  maxdepth: 4
+Time: 1.185677
+  inferstep time: 0.995208
+  node_find time: 0.002887
+  node_crea time: 0.138465
+    pred time: 0.051935
+    thmpred time: 0.000005
+    mc time: 0.076463
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "relation" "total_def")] THEN
+  Q.SPEC_THEN [QUOTE " (*#loc 1 15423*)x"] FULL_STRUCT_CASES_TAC (fetch "pair" "pair_CASES") THEN
+  Q.SPEC_THEN [QUOTE " (*#loc 1 15477*)y"] FULL_STRUCT_CASES_TAC (fetch "pair" "pair_CASES") THEN
+  METIS_TAC [fetch "pair" "LEX_DEF_THM"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.082608
+
+transitive_LEX
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.137599
+
+reflexive_LEX
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.052309
+
+symmetric_LEX
+Statistics
+  infstep : 286
+  nodes   : 72
+  maxdepth: 6
+Time: 10.091303
+  inferstep time: 8.724591
+  node_find time: 0.066063
+  node_crea time: 1.134541
+    pred time: 0.351273
+    thmpred time: 0.000028
+    mc time: 0.450529
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.107049
+
+LEX_CONG
+Statistics
+  infstep : 310
+  nodes   : 79
+  maxdepth: 7
+Time: 10.042052
+  inferstep time: 8.609168
+  node_find time: 0.096328
+  node_crea time: 1.182882
+    pred time: 0.345489
+    thmpred time: 0.000029
+    mc time: 0.439927
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.216667
+Bad stac: 6

@@ -1,0 +1,422 @@
+
+align_0
+proof length: 2
+proof time: 0.008135
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.279664
+  inferstep time: 0.226018
+  node_find time: 0.000149
+  node_crea time: 0.039912
+    pred time: 0.009646
+    thmpred time: 0.000001
+    mc time: 0.035665
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "alignment" "align_def", DB.fetch "alignment" "aligned_def", DB.fetch "alignment" "byte_align_def", wordsTheory.ASR_LIMIT, wordsTheory.EXTRACT_ALL_BITS, wordsTheory.WORD_ALL_BITS, wordsTheory.EXTRACT_CONCAT, wordsTheory.LEAST_BIT_LT, wordsTheory.LOG2_w2n, wordsTheory.LOG2_w2n_lt, wordsTheory.w2n_eq_0, wordsTheory.LSL_LIMIT, wordsTheory.LSR_LIMIT, wordsTheory.NOT_0w, wordsTheory.WORD_ADD_0, wordsTheory.WORD_ADD_INV_0_EQ] THEN bossLib.SRW_TAC [fcpLib.FCP_ss, bossLib.ARITH_ss] [(DB.fetch "words" "word_asr_def"), (DB.fetch "words" "word_lsr_def"), (DB.fetch "words" "word_or_def"), (DB.fetch "words" "n2w_def"), (DB.fetch "words" "word_T"), (DB.fetch "words" "word_slice_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007239
+
+align_align
+proof length: 4
+proof time: 0.022655
+Statistics
+  infstep : 17
+  nodes   : 9
+  maxdepth: 4
+Time: 0.72783
+  inferstep time: 0.495539
+  node_find time: 0.000487
+  node_crea time: 0.16257
+    pred time: 0.034665
+    thmpred time: 0.000001
+    mc time: 0.159206
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "alignment" "align_def", DB.fetch "alignment" "aligned_def", DB.fetch "alignment" "align_0", DB.fetch "alignment" "byte_align_def", arithmeticTheory.ADD_ASSOC, arithmeticTheory.ADD_MONO_LESS_EQ, arithmeticTheory.SUB_RIGHT_LESS_EQ, arithmeticTheory.ABS_DIFF_ADD_SAME, arithmeticTheory.ADD_DIV_RWT, arithmeticTheory.RIGHT_ADD_DISTRIB, arithmeticTheory.EQ_ADD_LCANCEL, arithmeticTheory.EQ_ADD_RCANCEL, arithmeticTheory.ADD_EQ_SUB, arithmeticTheory.ADD_MOD, arithmeticTheory.LESS_EQ_MONO_ADD_EQ, arithmeticTheory.CANCEL_SUB] THEN bossLib.SRW_TAC [bossLib.ARITH_ss, fcpLib.FCP_ss] [DB.fetch "alignment" "align_def", wordsTheory.WORD_SLICE_BITS_THM, wordsTheory.WORD_ALL_BITS, DB.fetch "alignment" "byte_align_def", DB.fetch "alignment" "aligned_def", logrootTheory.iSQRT0_def, logrootTheory.iSQRT1_def, logrootTheory.iSQRT2_def, logrootTheory.iSQRT3_def, wordsTheory.tactictoe_thm_81, arithmeticTheory.DOUBLE_LT, arithmeticTheory.LESS_ADD_1, bitTheory.tactictoe_thm_33, bitTheory.tactictoe_thm_55, arithmeticTheory.tactictoe_thm_10, arithmeticTheory.ONE_LT_MULT_IMP] THEN
+  bossLib.SRW_TAC [fcpLib.FCP_ss, bossLib.ARITH_ss] [(DB.fetch "words" "word_asr_def"), (DB.fetch "words" "word_lsr_def"), (DB.fetch "words" "word_or_def"), (DB.fetch "words" "n2w_def"), (DB.fetch "words" "word_T"), (DB.fetch "words" "word_slice_def")] THEN
+  metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, arithmeticTheory.CANCEL_SUB, arithmeticTheory.EXP_SUB, arithmeticTheory.MAX_LE, arithmeticTheory.MIN_LE, arithmeticTheory.SUB_CANCEL, arithmeticTheory.SUB_LEFT_EQ, arithmeticTheory.SUB_RIGHT_EQ, sum_numTheory.GSUM_EQUAL, sum_numTheory.GSUM_FUN_EQUAL, sum_numTheory.GSUM_MONO, sum_numTheory.GSUM_ZERO, arithmeticTheory.LESS_EQ_TRANS, arithmeticTheory.LESS_EQ_LESS_EQ_MONO, arithmeticTheory.LESS_EQ_LESS_TRANS, arithmeticTheory.LESS_LESS_EQ_TRANS]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.038876
+
+aligned_align
+proof length: 1
+proof time: 0.030966
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.062234
+  inferstep time: 0.036371
+  node_find time: 0.000039
+  node_crea time: 0.013588
+    pred time: 0.002951
+    thmpred time: 0.0
+    mc time: 0.020795
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "alignment" "aligned_def" , DB.fetch "alignment" "align_align" , DB.fetch "alignment" "align_def" , DB.fetch "alignment" "byte_aligned_def" , DB.fetch "alignment" "align_0" , DB.fetch "alignment" "byte_align_def" , arithmeticTheory.LESS_EQ_TRANS , arithmeticTheory.ADD_MONO_LESS_EQ , arithmeticTheory.SUB_LEFT_LESS_EQ , arithmeticTheory.MIN_LE , arithmeticTheory.ADD_ASSOC , arithmeticTheory.SUB_RIGHT_LESS_EQ , arithmeticTheory.ABS_DIFF_ADD_SAME , arithmeticTheory.ADD_DIV_RWT , arithmeticTheory.RIGHT_ADD_DISTRIB , arithmeticTheory.EQ_ADD_LCANCEL])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006176
+
+align_aligned
+proof length: 1
+proof time: 0.035466
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.061557
+  inferstep time: 0.043224
+  node_find time: 0.000042
+  node_crea time: 0.01258
+    pred time: 0.002918
+    thmpred time: 0.000001
+    mc time: 0.013291
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "alignment" "aligned_def" , DB.fetch "alignment" "aligned_align" , DB.fetch "alignment" "align_align" , DB.fetch "alignment" "align_def" , DB.fetch "alignment" "byte_aligned_def" , DB.fetch "alignment" "align_0" , DB.fetch "alignment" "byte_align_def" , arithmeticTheory.ADD_DIV_RWT , arithmeticTheory.ADD_EQ_SUB , arithmeticTheory.ADD_MOD , arithmeticTheory.CANCEL_SUB , arithmeticTheory.DIV_P , arithmeticTheory.EXP_SUB , arithmeticTheory.LESS_ADD , arithmeticTheory.LESS_ADD_1 , arithmeticTheory.LESS_EQUAL_ADD])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.002817
+
+align_bitwise_and
+proof length: 3
+proof time: 0.015499
+Statistics
+  infstep : 55
+  nodes   : 33
+  maxdepth: 4
+Time: 2.285594
+  inferstep time: 1.646507
+  node_find time: 0.001788
+  node_crea time: 0.580011
+    pred time: 0.119301
+    thmpred time: 0.000006
+    mc time: 0.38294
+    inst time: 0.0
+Proof found: bossLib.lrw [wordsTheory.WORD_SLICE_BITS_THM, wordsTheory.WORD_ALL_BITS, (DB.fetch "alignment" "align_def")] THEN bossLib.SRW_TAC [fcpLib.FCP_ss, boolSimps.LET_ss, bossLib.ARITH_ss] [(DB.fetch "words" "bit_field_insert_def"), (DB.fetch "words" "word_modify_def"), (DB.fetch "words" "word_lsl_def"), (DB.fetch "words" "w2w"), (DB.fetch "words" "word_slice_def"), (DB.fetch "words" "word_and_def"), (DB.fetch "words" "word_or_def"), (DB.fetch "words" "word_1comp_def"), (DB.fetch "words" "WORD_NEG_1_T")] THEN
+  metisTools.METIS_TAC [wordsTheory.word_slice_def, wordsTheory.word_and_def, wordsTheory.w2w, wordsTheory.word_nand_def, wordsTheory.NOT_UINTMAXw, wordsTheory.word_or_def, wordsTheory.word_xor_def, wordsTheory.word_1comp_def, wordsTheory.word_modify_def, wordsTheory.w2n_def, wordsTheory.sw2sw, fcpTheory.CART_EQ, fcpTheory.FCP_ETA, wordsTheory.word_lsl_def, wordsTheory.bit_field_insert_def, wordsTheory.word_bits_def]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.055281
+
+align_shift
+proof length: 4
+proof time: 0.117338
+Statistics
+  infstep : 15
+  nodes   : 9
+  maxdepth: 4
+Time: 0.912151
+  inferstep time: 0.733388
+  node_find time: 0.000377
+  node_crea time: 0.143481
+    pred time: 0.031358
+    thmpred time: 0.000002
+    mc time: 0.123765
+    inst time: 0.0
+Proof found: bossLib.lrw [wordsTheory.WORD_SLICE_BITS_THM, wordsTheory.WORD_ALL_BITS, (DB.fetch "alignment" "align_def")] THEN bossLib.SRW_TAC [fcpLib.FCP_ss, boolSimps.LET_ss, bossLib.ARITH_ss] [(DB.fetch "words" "bit_field_insert_def"), (DB.fetch "words" "word_modify_def"), (DB.fetch "words" "word_lsl_def"), (DB.fetch "words" "w2w"), (DB.fetch "words" "word_slice_def"), (DB.fetch "words" "word_and_def"), (DB.fetch "words" "word_or_def"), (DB.fetch "words" "word_1comp_def"), (DB.fetch "words" "WORD_NEG_1_T")] THEN
+  bossLib.SRW_TAC [fcpLib.FCP_ss, bossLib.ARITH_ss] [wordsTheory.word_lsr_def, wordsTheory.tactictoe_thm_86, wordsTheory.word_bits_mask, wordsTheory.word_extract_mask, wordsTheory.word_extract_w2w_mask, wordsTheory.word_lsr_n2w, wordsTheory.word_asr, wordsTheory.word_asr_n2w, wordsTheory.LSR_LIMIT, wordsTheory.word_reverse_thm, wordsTheory.word_shift_bv, wordsTheory.LSR_BITWISE, wordsTheory.tactictoe_thm_173, wordsTheory.LSR_ADD, wordsTheory.w2n_lsr, wordsTheory.LSR_LESS] THEN
+  metisTools.METIS_TAC [wordsTheory.EXTRACT_JOIN_ADD_LSL, wordsTheory.EXTRACT_JOIN_LSL, arithmeticTheory.SUB_RIGHT_ADD, arithmeticTheory.SUB_ADD, wordsTheory.word_slice_def, wordsTheory.w2w, wordsTheory.sw2sw, wordsTheory.w2n_def, fcpTheory.CART_EQ, wordsTheory.word_and_def, wordsTheory.word_1comp_def, wordsTheory.word_or_def, wordsTheory.word_xor_def, wordsTheory.word_modify_def, wordsTheory.word_lsl_def, wordsTheory.bit_field_insert_def]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.089369
+
+align_w2n
+Statistics
+  infstep : 507
+  nodes   : 173
+  maxdepth: 6
+Time: 10.090095
+  inferstep time: 6.53111
+  node_find time: 0.043444
+  node_crea time: 3.438644
+    pred time: 0.541701
+    thmpred time: 0.000027
+    mc time: 1.990325
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.273839
+
+align_sub
+Statistics
+  infstep : 420
+  nodes   : 114
+  maxdepth: 6
+Time: 10.00058
+  inferstep time: 7.771964
+  node_find time: 0.031954
+  node_crea time: 2.089073
+    pred time: 0.471024
+    thmpred time: 0.000024
+    mc time: 1.104894
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.597829
+
+aligned_extract
+Statistics
+  infstep : 486
+  nodes   : 90
+  maxdepth: 4
+Time: 10.33777
+  inferstep time: 7.882337
+  node_find time: 0.034879
+  node_crea time: 2.336375
+    pred time: 0.534498
+    thmpred time: 0.000013
+    mc time: 1.259135
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.391307
+
+aligned_0
+proof length: 1
+proof time: 0.002025
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.162494
+  inferstep time: 0.111045
+  node_find time: 0.000187
+  node_crea time: 0.039624
+    pred time: 0.009061
+    thmpred time: 0.0
+    mc time: 0.035252
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "alignment" "aligned_extract" , DB.fetch "alignment" "aligned_def" , DB.fetch "alignment" "align_aligned" , DB.fetch "alignment" "aligned_align" , DB.fetch "alignment" "byte_aligned_def" , wordsTheory.NOT_0w , wordsTheory.WORD_ADD_0 , wordsTheory.WORD_DIVISION , wordsTheory.WORD_MULT_CLAUSES , wordsTheory.word_reverse_thm , wordsTheory.tactictoe_thm_175 , wordsTheory.ASR_LIMIT , wordsTheory.LEAST_BIT_LT , wordsTheory.LOG2_w2n , wordsTheory.LOG2_w2n_lt , wordsTheory.w2n_eq_0 ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.023205
+
+aligned_1_lsb
+proof length: 2
+proof time: 0.012051
+Statistics
+  infstep : 9
+  nodes   : 7
+  maxdepth: 2
+Time: 0.314638
+  inferstep time: 0.221824
+  node_find time: 0.000351
+  node_crea time: 0.074998
+    pred time: 0.022325
+    thmpred time: 0.000001
+    mc time: 0.056619
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [wordsTheory.word_rrx_def, wordsTheory.word_lsb_def, wordsTheory.word_lsb_word_T, wordsTheory.word_lsb_n2w, wordsTheory.word_lsb, DB.fetch "alignment" "aligned_extract", DB.fetch "alignment" "byte_aligned_def", DB.fetch "alignment" "aligned_def", DB.fetch "alignment" "align_aligned", DB.fetch "alignment" "aligned_0", DB.fetch "alignment" "aligned_align", wordsTheory.CONCAT_EXTRACT, wordsTheory.LOG2_w2n, wordsTheory.word_bit_def, DB.fetch "alignment" "align_def", wordsTheory.word_slice_def] THEN bossLib.srw_tac [wordsLib.WORD_BIT_EQ_ss] [(DB.fetch "alignment" "align_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012179
+
+aligned_ge_dim
+proof length: 5
+proof time: 0.016516
+Statistics
+  infstep : 27
+  nodes   : 14
+  maxdepth: 4
+Time: 1.310882
+  inferstep time: 1.044784
+  node_find time: 0.001199
+  node_crea time: 0.226147
+    pred time: 0.059041
+    thmpred time: 0.000002
+    mc time: 0.151705
+    inst time: 0.0
+Proof found: boolLib.rewrite_tac [(DB.fetch "alignment" "aligned_def")] THEN bossLib.Cases THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "alignment" "align_0", DB.fetch "alignment" "align_def", DB.fetch "alignment" "align_aligned", DB.fetch "alignment" "aligned_def", DB.fetch "alignment" "align_align", DB.fetch "alignment" "aligned_align", wordsTheory.ASR_LIMIT, wordsTheory.LSL_LIMIT, wordsTheory.LSR_LIMIT, wordsTheory.WORD_BITS_ZERO3, wordsTheory.WORD_EXTRACT_ZERO3, wordsTheory.word_concat_0_eq, wordsTheory.w2n_w2w, wordsTheory.WORD_EXTRACT_MIN_HIGH, wordsTheory.word_extract_w2w, wordsTheory.word_asr_def] THEN
+  bossLib.SRW_TAC [fcpLib.FCP_ss, bossLib.ARITH_ss] [(DB.fetch "words" "word_or_def"), (DB.fetch "words" "word_lsl_def"), (DB.fetch "words" "sw2sw"), (DB.fetch "words" "w2w"), (DB.fetch "words" "WORD_NEG_1"), (DB.fetch "words" "word_T"), (DB.fetch "words" "word_0")],
+  bossLib.srw_tac [wordsLib.WORD_BIT_EQ_ss] [(DB.fetch "alignment" "align_def")]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.047135
+
+aligned_bitwise_and
+proof length: 9
+proof time: 0.152229
+Statistics
+  infstep : 135
+  nodes   : 60
+  maxdepth: 6
+Time: 5.197323
+  inferstep time: 3.60878
+  node_find time: 0.010813
+  node_crea time: 1.399307
+    pred time: 0.285364
+    thmpred time: 0.000017
+    mc time: 1.028961
+    inst time: 0.0
+Proof found: boolLib.rewrite_tac [(DB.fetch "alignment" "aligned_def")] THEN bossLib.Cases THENL
+  [bossLib.SRW_TAC [fcpLib.FCP_ss] [bitTheory.BIT_ZERO, bitTheory.BIT_EXP_SUB1, (DB.fetch "words" "n2w_def"), (DB.fetch "words" "word_and_def")] THEN
+  metisTools.METIS_TAC [DB.fetch "alignment" "align_0", arithmeticTheory.tactictoe_thm_11, arithmeticTheory.tactictoe_thm_53, DB.fetch "alignment" "align_def", DB.fetch "alignment" "aligned_def", DB.fetch "alignment" "align_aligned", DB.fetch "alignment" "align_align", DB.fetch "alignment" "align_bitwise_and", DB.fetch "alignment" "align_w2n", DB.fetch "alignment" "align_shift", DB.fetch "alignment" "aligned_align", wordsTheory.word_and_def, wordsTheory.word_slice_def, wordsTheory.word_1comp_def, wordsTheory.word_or_def, wordsTheory.word_xor_def],
+  bossLib.SRW_TAC [fcpLib.FCP_ss] [bitTheory.BIT_ZERO, bitTheory.BIT_EXP_SUB1, (DB.fetch "words" "n2w_def"), (DB.fetch "words" "word_and_def")] THEN
+  bossLib.srw_tac [wordsLib.WORD_BIT_EQ_ss] [DB.fetch "alignment" "align_def", DB.fetch "alignment" "align_aligned", DB.fetch "alignment" "aligned_def", DB.fetch "alignment" "align_0", DB.fetch "alignment" "align_align", DB.fetch "alignment" "align_bitwise_and", DB.fetch "alignment" "align_w2n", DB.fetch "alignment" "align_shift", DB.fetch "alignment" "aligned_align", wordsTheory.w2w, fcpTheory.CART_EQ, wordsTheory.word_slice_def, wordsTheory.w2n_def, wordsTheory.word_lsl_def, wordsTheory.word_or_def, wordsTheory.word_1comp_def] THEN
+  boolLib.eq_tac THEN
+  metisTools.METIS_TAC [arithmeticTheory.NOT_NUM_EQ, arithmeticTheory.LESS_EQ, arithmeticTheory.NOT_LEQ, arithmeticTheory.NOT_SUC_LESS_EQ, bitTheory.SLICE_COMP_THM, wordsTheory.w2w, fcpTheory.CART_EQ, wordsTheory.word_slice_def, wordsTheory.w2n_def, wordsTheory.word_lsl_def, wordsTheory.word_or_def, wordsTheory.word_nand_def, wordsTheory.word_1comp_def, wordsTheory.word_xor_def, wordsTheory.word_and_def, wordsTheory.word_modify_def]]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.357439
+
+aligned_bit_count_upto
+proof length: 5
+proof time: 0.09112
+Statistics
+  infstep : 122
+  nodes   : 56
+  maxdepth: 5
+Time: 5.552559
+  inferstep time: 4.161728
+  node_find time: 0.009649
+  node_crea time: 1.300145
+    pred time: 0.356427
+    thmpred time: 0.000014
+    mc time: 0.757888
+    inst time: 0.0
+Proof found: boolLib.rewrite_tac [(DB.fetch "alignment" "aligned_def")] THEN bossLib.Cases THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "alignment" "align_0", wordsTheory.bit_count_def, wordsTheory.bit_count_upto_0, wordsTheory.bit_count_upto_def, wordsTheory.bit_count_upto_SUC, wordsTheory.bit_count_upto_is_zero, DB.fetch "alignment" "align_def", DB.fetch "alignment" "byte_align_def", DB.fetch "alignment" "aligned_def", DB.fetch "alignment" "align_bitwise_and", DB.fetch "alignment" "align_aligned", DB.fetch "alignment" "align_align", DB.fetch "alignment" "aligned_align", wordsTheory.word_bits_def, wordsTheory.word_slice_def, wordsTheory.EXTRACT_JOIN],
+  bossLib.srw_tac [wordsLib.WORD_BIT_EQ_ss] [wordsTheory.bit_count_def, wordsTheory.bit_count_upto_SUC, wordsTheory.bit_count_upto_def, wordsTheory.bit_count_upto_is_zero, wordsTheory.bit_count_upto_0, DB.fetch "alignment" "align_def", DB.fetch "alignment" "byte_align_def", DB.fetch "alignment" "align_0", DB.fetch "alignment" "aligned_def", DB.fetch "alignment" "align_bitwise_and", DB.fetch "alignment" "align_aligned", DB.fetch "alignment" "align_align", DB.fetch "alignment" "aligned_align", wordsTheory.word_sign_extend_bits, wordsTheory.EXTRACT_JOIN_ADD_LSL, wordsTheory.EXTRACT_JOIN_LSL] THEN
+  metisTools.METIS_TAC [arithmeticTheory.LESS_EQ, arithmeticTheory.NOT_LEQ, arithmeticTheory.NOT_NUM_EQ, arithmeticTheory.NOT_SUC_LESS_EQ, bitTheory.SLICE_COMP_THM, wordsTheory.NOT_0w, wordsTheory.NOT_UINTMAXw, wordsTheory.word_eq_0, wordsTheory.w2w, wordsTheory.sw2sw, wordsTheory.WORD_MODIFY_BIT, fcpTheory.CART_EQ, wordsTheory.word_bit, fcpTheory.FCP_APPLY_UPDATE_THM, wordsTheory.WORD_ADD_BIT, prim_recTheory.LESS_SUC_REFL]]
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.372011
+
+aligned_add_sub
+Statistics
+  infstep : 368
+  nodes   : 80
+  maxdepth: 5
+Time: 10.111077
+  inferstep time: 7.557881
+  node_find time: 0.03749
+  node_crea time: 2.351518
+    pred time: 0.640224
+    thmpred time: 0.000022
+    mc time: 1.066687
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.522673
+
+aligned_add_sub_cor
+proof length: 1
+proof time: 0.003763
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.140857
+  inferstep time: 0.112192
+  node_find time: 0.000136
+  node_crea time: 0.02007
+    pred time: 0.004954
+    thmpred time: 0.0
+    mc time: 0.019785
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "alignment" "aligned_add_sub" , DB.fetch "alignment" "aligned_ge_dim" , DB.fetch "alignment" "align_aligned" , DB.fetch "alignment" "aligned_extract" , DB.fetch "alignment" "aligned_def" , DB.fetch "alignment" "aligned_bit_count_upto" , DB.fetch "alignment" "aligned_bitwise_and" , DB.fetch "alignment" "aligned_0" , DB.fetch "alignment" "aligned_align" , wordsTheory.FST_ADD_WITH_CARRY , wordsTheory.WORD_ADD_EQ_SUB , wordsTheory.WORD_ADD_SUB_ASSOC , wordsTheory.WORD_ADD_SUB_SYM , wordsTheory.WORD_EQ_SUB_LADD , wordsTheory.WORD_EQ_SUB_RADD , wordsTheory.WORD_SUB_PLUS ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.040031
+
+aligned_mul_shift_1
+Statistics
+  infstep : 408
+  nodes   : 116
+  maxdepth: 5
+Time: 10.001053
+  inferstep time: 7.10274
+  node_find time: 0.042155
+  node_crea time: 2.721244
+    pred time: 0.516248
+    thmpred time: 0.000024
+    mc time: 1.681108
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.388066
+
+aligned_add_sub_prod
+proof length: 1
+proof time: 0.004489
+Statistics
+  infstep : 40
+  nodes   : 20
+  maxdepth: 4
+Time: 1.697924
+  inferstep time: 1.184902
+  node_find time: 0.002729
+  node_crea time: 0.460451
+    pred time: 0.11901
+    thmpred time: 0.000005
+    mc time: 0.264499
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "alignment" "aligned_mul_shift_1" , wordsTheory.SHIFT_1_SUB_1 , wordsTheory.word_1_lsl , DB.fetch "alignment" "aligned_add_sub" , DB.fetch "alignment" "aligned_add_sub_cor" , DB.fetch "alignment" "aligned_extract" , DB.fetch "alignment" "aligned_bitwise_and" , DB.fetch "alignment" "aligned_ge_dim" , DB.fetch "alignment" "aligned_def" , DB.fetch "alignment" "align_aligned" , DB.fetch "alignment" "aligned_bit_count_upto" , wordsTheory.tactictoe_thm_86 , DB.fetch "alignment" "aligned_0" , DB.fetch "alignment" "aligned_align" , wordsTheory.WORD_SUB_INTRO , wordsTheory.WORD_MULT_CLAUSES ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.099553
+
+aligned_imp
+Statistics
+  infstep : 277
+  nodes   : 101
+  maxdepth: 6
+Time: 10.016134
+  inferstep time: 7.026907
+  node_find time: 0.029502
+  node_crea time: 2.816894
+    pred time: 0.60462
+    thmpred time: 0.000037
+    mc time: 1.167162
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.208266
+
+align_add_aligned
+Statistics
+  infstep : 342
+  nodes   : 110
+  maxdepth: 6
+Time: 10.003106
+  inferstep time: 6.920738
+  node_find time: 0.035354
+  node_crea time: 2.936537
+    pred time: 0.679929
+    thmpred time: 0.000037
+    mc time: 1.270998
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.352037
+Replaying proof: 0.013858
+
+aligned_numeric
+Statistics
+  infstep : 291
+  nodes   : 64
+  maxdepth: 4
+Time: 10.035109
+  inferstep time: 6.005362
+  node_find time: 0.030115
+  node_crea time: 3.928286
+    pred time: 1.132862
+    thmpred time: 0.000013
+    mc time: 0.802433
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Replaying proof: 0.011189
+Bad stac: 6

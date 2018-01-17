@@ -1,0 +1,473 @@
+
+RES_FORALL_CONJ_DIST
+proof length: 3
+proof time: 0.019913
+Statistics
+  infstep : 17
+  nodes   : 7
+  maxdepth: 3
+Time: 0.682312
+  inferstep time: 0.607398
+  node_find time: 0.00111
+  node_crea time: 0.065242
+    pred time: 0.024066
+    thmpred time: 0.000004
+    mc time: 0.034617
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [] THEN BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_FORALL", quantHeuristicsTheory.GUESS_RULES_CONJ, listTheory.EVERY_CONJ, rich_listTheory.FILTER_FILTER, whileTheory.WHILE_RULE, pred_setTheory.GSPEC_AND, patternMatchesTheory.PMATCH_ROW_COND_EX_WEAKEN, rich_listTheory.EVERY_FOLDR, quantHeuristicsTheory.GUESS_RULES_EQUIV, quantHeuristicsTheory.GUESS_RULES_DISJ, quantHeuristicsTheory.GUESS_RULES_COND, quantHeuristicsTheory.GUESS_RULES_IMP, quantHeuristicsTheory.GUESSES_NEG_REWRITE, quantHeuristicsTheory.GUESS_RULES_EXISTS___NEW_FV_1, quantHeuristicsTheory.GUESS_RULES_FORALL___NEW_FV_1] THEN
+  metisLib.METIS_TAC []
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.124413
+
+RES_FORALL_DISJ_DIST
+Statistics
+  infstep : 1157
+  nodes   : 178
+  maxdepth: 6
+Time: 10.023043
+  inferstep time: 7.047635
+  node_find time: 0.129419
+  node_crea time: 2.701106
+    pred time: 0.547594
+    thmpred time: 0.000038
+    mc time: 1.21628
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.20771
+
+RES_FORALL_UNIQUE
+proof length: 2
+proof time: 0.002852
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 2
+Time: 0.458733
+  inferstep time: 0.42285
+  node_find time: 0.000218
+  node_crea time: 0.028346
+    pred time: 0.012009
+    thmpred time: 0.000001
+    mc time: 0.018091
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "res_quan" "RES_FORALL"), pred_setTheory.SPECIFICATION] THEN BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", listTheory.MEM_LUPDATE, indexedListsTheory.EL_delN_AFTER, indexedListsTheory.EL_delN_BEFORE, patternMatchesTheory.PMATCH_ROW_REDUNDANT_def, arithmeticTheory.LESS_MONO_MULT2, arithmeticTheory.MOD_PLUS, arithmeticTheory.MOD_TIMES2, arithmeticTheory.tactictoe_thm_52, quantHeuristicsTheory.GUESS_RULES_EQUIV, quantHeuristicsTheory.GUESS_RULES_EXISTS___NEW_FV_1, quantHeuristicsTheory.GUESS_RULES_FORALL___NEW_FV_1, quantHeuristicsTheory.GUESS_RULES_COND, quantHeuristicsTheory.GUESS_RULES_CONJ, quantHeuristicsTheory.GUESS_RULES_DISJ, quantHeuristicsTheory.GUESS_RULES_IMP]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.056709
+
+RES_FORALL_FORALL
+proof length: 2
+proof time: 0.00945
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.28238
+  inferstep time: 0.229187
+  node_find time: 0.000202
+  node_crea time: 0.032021
+    pred time: 0.011285
+    thmpred time: 0.000002
+    mc time: 0.03511
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [quantHeuristicsTheory.GUESS_RULES_FORALL, quantHeuristicsTheory.GUESS_RULES_FORALL___NEW_FV_1, quantHeuristicsTheory.GUESS_RULES_FORALL___NEW_FV, DB.fetch "res_quan" "RES_FORALL_CONJ_DIST", DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", DB.fetch "res_quan" "RES_FORALL", DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_FORALL_UNIQUE", quantHeuristicsTheory.GUESS_RULES_EXISTS, quantHeuristicsTheory.GUESS_RULES_EXISTS_UNIQUE, quantHeuristicsTheory.GUESS_RULES_EXISTS___NEW_FV_1, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, listTheory.LIST_REL_MAP2, pairTheory.LET2_RAND, pairTheory.LET2_RATOR] THEN BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.17217
+
+RES_FORALL_REORDER
+proof length: 2
+proof time: 0.007622
+Statistics
+  infstep : 18
+  nodes   : 7
+  maxdepth: 2
+Time: 0.448956
+  inferstep time: 0.351263
+  node_find time: 0.001704
+  node_crea time: 0.082632
+    pred time: 0.03477
+    thmpred time: 0.000001
+    mc time: 0.041583
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "res_quan" "RES_FORALL"), pred_setTheory.SPECIFICATION] THEN BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.187795
+
+RES_FORALL_EMPTY
+proof length: 2
+proof time: 0.001636
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.249042
+  inferstep time: 0.222807
+  node_find time: 0.00015
+  node_crea time: 0.017962
+    pred time: 0.006422
+    thmpred time: 0.000002
+    mc time: 0.015588
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [] THEN BasicProvers.SRW_TAC [] [pred_setTheory.EMPTY_DEF, DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_FORALL", DB.fetch "res_quan" "RES_FORALL_CONJ_DIST", DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", DB.fetch "res_quan" "RES_FORALL_FORALL", DB.fetch "res_quan" "RES_FORALL_REORDER", DB.fetch "res_quan" "RES_FORALL_UNIQUE", pred_setTheory.GSPEC_F, pred_setTheory.EMPTY_applied, pred_setTheory.SING_EMPTY, pred_setTheory.UNIV_BOOL, satTheory.AND_INV_IMP, satTheory.OR_DUAL2, satTheory.OR_DUAL3, satTheory.AND_INV2]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007828
+
+RES_FORALL_UNIV
+proof length: 4
+proof time: 0.132541
+Statistics
+  infstep : 17
+  nodes   : 10
+  maxdepth: 4
+Time: 0.608314
+  inferstep time: 0.530241
+  node_find time: 0.000527
+  node_crea time: 0.060577
+    pred time: 0.020581
+    thmpred time: 0.000003
+    mc time: 0.044243
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC numLib.std_ss [(DB.fetch "quantHeuristics" "GUESS_REWRITES"), boolLib.FORALL_THM] THEN BasicProvers.SRW_TAC [] [] THEN
+  boolLib.REWRITE_TAC [(DB.fetch "res_quan" "RES_FORALL"), pred_setTheory.SPECIFICATION] THEN
+  metisTools.METIS_TAC [pred_setTheory.UNIV_applied, patternMatchesTheory.PMATCH_FLATTEN_THM, patternMatchesTheory.PMATCH_FLATTEN_THM_SINGLE, pairTheory.LAMBDA_PROD, pairTheory.PAIR_FUN_THM, DB.fetch "res_quan" "RES_EXISTS_UNIQUE", optionTheory.some_def, patternMatchesTheory.tactictoe_thm_5, patternMatchesTheory.tactictoe_thm_8, DB.fetch "res_quan" "RES_FORALL_CONJ_DIST", DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", DB.fetch "res_quan" "RES_FORALL_UNIQUE", pred_setTheory.INFINITE_UNIV, pred_setTheory.BIGUNION_IMAGE_UNIV, pred_setTheory.BIJ_FINITE_SUBSET, pred_setTheory.NOT_IN_FINITE]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003442
+
+RES_FORALL_NULL
+proof length: 2
+proof time: 0.138059
+Statistics
+  infstep : 31
+  nodes   : 11
+  maxdepth: 3
+Time: 0.753691
+  inferstep time: 0.644542
+  node_find time: 0.001074
+  node_crea time: 0.093089
+    pred time: 0.02713
+    thmpred time: 0.000002
+    mc time: 0.047681
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", DB.fetch "res_quan" "RES_FORALL", DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_FORALL_CONJ_DIST", DB.fetch "res_quan" "RES_FORALL_FORALL", DB.fetch "res_quan" "RES_FORALL_REORDER", DB.fetch "res_quan" "RES_FORALL_EMPTY", DB.fetch "res_quan" "RES_FORALL_UNIV", DB.fetch "res_quan" "RES_FORALL_UNIQUE", quantHeuristicsTheory.GUESS_RULES_DISJ, quantHeuristicsTheory.GUESS_RULES_CONSTANT_EXISTS, quantHeuristicsTheory.GUESS_RULES_CONSTANT_FORALL, quantHeuristicsTheory.GUESS_RULES_CONJ, quantHeuristicsTheory.GUESS_RULES_IMP, listTheory.EVERY_SIMP, listTheory.EXISTS_SIMP] THEN metisTools.METIS_TAC [pred_setTheory.SET_CASES, pred_setTheory.CARD_DEF, pred_setTheory.DELETE_EQ_SING, pred_setTheory.IMAGE_EQ_SING, pred_setTheory.MAX_SET_ELIM, pred_setTheory.MIN_SET_ELIM, pred_setTheory.MIN_SET_LEM, pred_setTheory.UNIQUE_MEMBER_SING, pred_setTheory.MEMBER_NOT_EMPTY, pred_setTheory.PREIMAGE_K, pred_setTheory.tactictoe_thm_24, pred_setTheory.BIGINTER_SUBSET, pred_setTheory.DIFF_BIGINTER, pred_setTheory.MAX_SET_DEF, pred_setTheory.FINITE_INDUCT, pred_setTheory.IN_INSERT]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.056975
+
+RES_EXISTS_DISJ_DIST
+proof length: 2
+proof time: 0.005741
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.248541
+  inferstep time: 0.221299
+  node_find time: 0.000139
+  node_crea time: 0.019109
+    pred time: 0.006175
+    thmpred time: 0.000001
+    mc time: 0.016245
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_EXISTS", DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", quantHeuristicsTheory.GUESS_RULES_DISJ, rich_listTheory.EXISTS_DISJ, pred_setTheory.GSPEC_OR, rich_listTheory.EXISTS_FOLDR, DB.fetch "res_quan" "RES_FORALL_CONJ_DIST", quantHeuristicsTheory.GUESS_RULES_EQUIV, quantHeuristicsTheory.GUESS_RULES_COND, quantHeuristicsTheory.GUESS_RULES_CONJ, quantHeuristicsTheory.GUESS_RULES_IMP, quantHeuristicsTheory.SIMPLE_GUESS_EXISTS_ALT_DEF, quantHeuristicsTheory.SIMPLE_GUESS_FORALL_ALT_DEF, quantHeuristicsTheory.SIMPLE_GUESS_SELECT_THM, quantHeuristicsTheory.SIMPLE_GUESS_SOME_THM] THEN BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.150146
+
+RES_DISJ_EXISTS_DIST
+proof length: 3
+proof time: 0.010063
+Statistics
+  infstep : 11
+  nodes   : 6
+  maxdepth: 3
+Time: 0.542319
+  inferstep time: 0.465312
+  node_find time: 0.000529
+  node_crea time: 0.06347
+    pred time: 0.025093
+    thmpred time: 0.000004
+    mc time: 0.037052
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_EXISTS_DISJ_DIST", DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", quantHeuristicsTheory.GUESS_RULES_DISJ, DB.fetch "res_quan" "RES_EXISTS", rich_listTheory.EXISTS_DISJ, pred_setTheory.GSPEC_OR, rich_listTheory.EXISTS_FOLDR, DB.fetch "res_quan" "RES_FORALL_CONJ_DIST", quantHeuristicsTheory.GUESS_RULES_EQUIV, quantHeuristicsTheory.GUESS_RULES_COND, quantHeuristicsTheory.GUESS_RULES_CONJ, quantHeuristicsTheory.GUESS_RULES_IMP, quantHeuristicsTheory.SIMPLE_GUESS_EXISTS_ALT_DEF, quantHeuristicsTheory.SIMPLE_GUESS_FORALL_ALT_DEF, quantHeuristicsTheory.SIMPLE_GUESS_SELECT_THM] THEN boolLib.REWRITE_TAC [(DB.fetch "res_quan" "RES_FORALL"), pred_setTheory.SPECIFICATION] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.1387
+
+RES_EXISTS_EQUAL
+proof length: 3
+proof time: 0.002893
+Statistics
+  infstep : 13
+  nodes   : 8
+  maxdepth: 3
+Time: 0.605978
+  inferstep time: 0.476062
+  node_find time: 0.000695
+  node_crea time: 0.118333
+    pred time: 0.043951
+    thmpred time: 0.000002
+    mc time: 0.056649
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_DISJ_EXISTS_DIST", DB.fetch "res_quan" "RES_EXISTS_DISJ_DIST", DB.fetch "res_quan" "RES_EXISTS", DB.fetch "res_quan" "RES_FORALL_UNIQUE", DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", DB.fetch "res_quan" "RES_FORALL_REORDER", indexedListsTheory.EL_delN_AFTER, indexedListsTheory.EL_delN_BEFORE, listTheory.MEM_LUPDATE, patternMatchesTheory.PMATCH_ROW_REDUNDANT_def, arithmeticTheory.LESS_MONO_MULT2, arithmeticTheory.MOD_PLUS, arithmeticTheory.MOD_TIMES2, arithmeticTheory.tactictoe_thm_52, quantHeuristicsTheory.SIMPLE_GUESS_EXISTS_ALT_DEF] THEN boolLib.REWRITE_TAC [(DB.fetch "res_quan" "RES_FORALL"), pred_setTheory.SPECIFICATION] THEN
+  BasicProvers.SRW_TAC [] [listTheory.MEM_LUPDATE, patternMatchesTheory.PMATCH_ROW_REDUNDANT_def, DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", DB.fetch "res_quan" "RES_FORALL_UNIQUE", DB.fetch "res_quan" "RES_FORALL_REORDER", indexedListsTheory.EL_delN_AFTER, indexedListsTheory.EL_delN_BEFORE, arithmeticTheory.LESS_MONO_MULT2, arithmeticTheory.MOD_PLUS, arithmeticTheory.MOD_TIMES2, arithmeticTheory.tactictoe_thm_52, quantHeuristicsTheory.GUESS_REWRITES, ind_typeTheory.ZRECSPACE_def, ind_typeTheory.ZRECSPACE_cases, listTheory.EXISTS_GENLIST, quantHeuristicsTheory.GUESS_RULES_EXISTS___NEW_FV_1]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.211882
+
+RES_EXISTS_REORDER
+proof length: 2
+proof time: 0.005665
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.264431
+  inferstep time: 0.225964
+  node_find time: 0.000193
+  node_crea time: 0.026024
+    pred time: 0.010868
+    thmpred time: 0.000001
+    mc time: 0.022169
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_DISJ_EXISTS_DIST", DB.fetch "res_quan" "RES_EXISTS_DISJ_DIST", DB.fetch "res_quan" "RES_EXISTS", DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_EXISTS_EQUAL", DB.fetch "res_quan" "RES_FORALL_REORDER", DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", DB.fetch "res_quan" "RES_FORALL_UNIQUE", indexedListsTheory.EL_delN_AFTER, indexedListsTheory.EL_delN_BEFORE, listTheory.MEM_LUPDATE, patternMatchesTheory.PMATCH_ROW_REDUNDANT_def, arithmeticTheory.LESS_MONO_MULT2, arithmeticTheory.MOD_PLUS, arithmeticTheory.MOD_TIMES2, arithmeticTheory.tactictoe_thm_52] THEN BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.391796
+
+RES_EXISTS_EMPTY
+proof length: 1
+proof time: 0.049513
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.094691
+  inferstep time: 0.08228
+  node_find time: 0.000036
+  node_crea time: 0.008436
+    pred time: 0.002842
+    thmpred time: 0.0
+    mc time: 0.007925
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "res_quan" "RES_DISJ_EXISTS_DIST" , DB.fetch "res_quan" "RES_EXISTS" , DB.fetch "res_quan" "RES_EXISTS_DISJ_DIST" , DB.fetch "res_quan" "RES_EXISTS_EQUAL" , DB.fetch "res_quan" "RES_EXISTS_REORDER" , DB.fetch "res_quan" "RES_EXISTS_UNIQUE" , pred_setTheory.count_EQN , DB.fetch "res_quan" "RES_FORALL_EMPTY" , DB.fetch "res_quan" "RES_FORALL_NULL" , pred_setTheory.NOT_IN_EMPTY , listTheory.SET_TO_LIST_IND , listTheory.SET_TO_LIST_primitive_def , pred_setTheory.REST_PSUBSET , pred_setTheory.BIGINTER_SUBSET , pred_setTheory.CHOICE_DEF , pred_setTheory.CARD_REST])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003025
+
+RES_EXISTS_UNIV
+proof length: 2
+proof time: 0.002357
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.258755
+  inferstep time: 0.232434
+  node_find time: 0.000202
+  node_crea time: 0.019602
+    pred time: 0.007023
+    thmpred time: 0.000002
+    mc time: 0.014254
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC numLib.std_ss [(DB.fetch "quantHeuristics" "GUESS_EXISTS_POINT_def"), boolLib.EXISTS_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_DISJ_EXISTS_DIST", DB.fetch "res_quan" "RES_EXISTS_DISJ_DIST", DB.fetch "res_quan" "RES_EXISTS_EQUAL", DB.fetch "res_quan" "RES_EXISTS_EMPTY", DB.fetch "res_quan" "RES_EXISTS", DB.fetch "res_quan" "RES_EXISTS_REORDER", DB.fetch "res_quan" "RES_FORALL_UNIV", pairTheory.LAMBDA_PROD, pairTheory.PAIR_FUN_THM, pred_setTheory.INFINITE_UNIV, pred_setTheory.BIJ_FINITE_SUBSET, pred_setTheory.NOT_IN_FINITE, pred_setTheory.PSUBSET_UNIV, pred_setTheory.COUNTABLE_ENUM, pred_setTheory.ENUMERATE]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00653
+
+RES_EXISTS_NULL
+proof length: 2
+proof time: 0.117695
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.200483
+  inferstep time: 0.176631
+  node_find time: 0.000097
+  node_crea time: 0.015132
+    pred time: 0.005478
+    thmpred time: 0.000002
+    mc time: 0.015153
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_EXISTS", DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_DISJ_EXISTS_DIST", DB.fetch "res_quan" "RES_EXISTS_DISJ_DIST", DB.fetch "res_quan" "RES_EXISTS_REORDER", DB.fetch "res_quan" "RES_EXISTS_EMPTY", DB.fetch "res_quan" "RES_EXISTS_UNIV", DB.fetch "res_quan" "RES_EXISTS_EQUAL", DB.fetch "res_quan" "RES_FORALL_NULL", quantHeuristicsTheory.GUESS_RULES_CONJ, quantHeuristicsTheory.GUESS_RULES_DISJ, quantHeuristicsTheory.GUESS_RULES_IMP, quantHeuristicsTheory.GUESS_RULES_CONSTANT_EXISTS, quantHeuristicsTheory.GUESS_RULES_CONSTANT_FORALL, listTheory.EXISTS_SIMP, quantHeuristicsTheory.GUESS_RULES_TRIVIAL_FORALL_POINT] THEN metisTools.METIS_TAC [pred_setTheory.SET_CASES, pred_setTheory.MEMBER_NOT_EMPTY, pred_setTheory.tactictoe_thm_24, pred_setTheory.IMAGE_EQ_SING, pred_setTheory.MIN_SET_ELIM, pred_setTheory.MIN_SET_LEM, pred_setTheory.BIGINTER_SUBSET, pred_setTheory.DIFF_BIGINTER, pred_setTheory.MAX_SET_DEF, pred_setTheory.FINITE_INDUCT, pred_setTheory.CARD_DEF, pred_setTheory.MAX_SET_ELIM, pred_setTheory.UNIQUE_MEMBER_SING, pred_setTheory.DELETE_EQ_SING, pred_setTheory.PREIMAGE_K, DB.fetch "res_quan" "RES_EXISTS_EMPTY"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06257
+
+RES_EXISTS_ALT
+proof length: 2
+proof time: 0.015994
+Statistics
+  infstep : 30
+  nodes   : 8
+  maxdepth: 2
+Time: 0.71209
+  inferstep time: 0.613836
+  node_find time: 0.001158
+  node_crea time: 0.085002
+    pred time: 0.035132
+    thmpred time: 0.000003
+    mc time: 0.036808
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_SELECT", DB.fetch "res_quan" "RES_EXISTS", DB.fetch "res_quan" "RES_EXISTS_NULL", DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_DISJ_EXISTS_DIST", DB.fetch "res_quan" "RES_EXISTS_DISJ_DIST", DB.fetch "res_quan" "RES_EXISTS_REORDER", DB.fetch "res_quan" "RES_EXISTS_UNIV", DB.fetch "res_quan" "RES_EXISTS_EMPTY", DB.fetch "res_quan" "RES_EXISTS_EQUAL", DB.fetch "res_quan" "RES_ABSTRACT", listTheory.MEM_ZIP, pred_setTheory.CROSS_DEF, pred_setTheory.SUM_SAME_IMAGE, listTheory.MEM_ZIP_MEM_MAP, listTheory.LRC_MEM_right] THEN metisLib.METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004696
+
+RES_EXISTS_UNIQUE_EMPTY
+proof length: 1
+proof time: 0.045191
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.0645
+  inferstep time: 0.054224
+  node_find time: 0.000035
+  node_crea time: 0.007348
+    pred time: 0.002306
+    thmpred time: 0.000001
+    mc time: 0.006434
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "res_quan" "RES_EXISTS_UNIQUE" , DB.fetch "res_quan" "RES_EXISTS_EMPTY" , DB.fetch "res_quan" "RES_EXISTS_NULL" , pred_setTheory.count_EQN , DB.fetch "res_quan" "RES_FORALL_EMPTY" , DB.fetch "res_quan" "RES_FORALL_NULL" , pred_setTheory.NOT_IN_EMPTY , listTheory.SET_TO_LIST_IND , listTheory.SET_TO_LIST_primitive_def , pred_setTheory.REST_PSUBSET , pred_setTheory.BIGINTER_SUBSET , pred_setTheory.CHOICE_DEF , pred_setTheory.CARD_REST , pred_setTheory.CHOICE_INSERT_REST , pred_setTheory.DIFF_BIGINTER , pred_setTheory.EXPLICIT_ENUMERATE_NOT_EMPTY])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004052
+Replaying proof: 0.00467
+
+RES_EXISTS_UNIQUE_NULL
+proof length: 5
+proof time: 0.02351
+Statistics
+  infstep : 185
+  nodes   : 34
+  maxdepth: 5
+Time: 3.33971
+  inferstep time: 2.7708
+  node_find time: 0.012783
+  node_crea time: 0.49597
+    pred time: 0.131662
+    thmpred time: 0.000012
+    mc time: 0.269284
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC BasicProvers.bool_ss [(DB.fetch "res_quan" "RES_EXISTS"), pred_setTheory.EXTENSION, pred_setTheory.NOT_IN_EMPTY] THEN BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_EXISTS_UNIQUE", pred_setTheory.IN_SING, DB.fetch "res_quan" "RES_EXISTS_UNIQUE_EMPTY", DB.fetch "res_quan" "RES_EXISTS_UNIQUE_UNIV", oneTheory.tactictoe_thm_0, pred_setTheory.IN_DELETE_EQ, listTheory.SNOC, pred_setTheory.IMAGE_EQ_SING, pred_setTheory.UNIQUE_MEMBER_SING, pred_setTheory.DELETE_EQ_SING, pred_setTheory.SING_DEF, pred_setTheory.INSERT_EQ_SING, rich_listTheory.LIST_TO_SET_EQ_SING, pred_setTheory.MIN_SET_THM, pred_setTheory.MAX_SET_REWRITES, pred_setTheory.BIGUNION_SING] THEN
+  BasicProvers.RW_TAC BasicProvers.bool_ss [(DB.fetch "res_quan" "RES_EXISTS"), pred_setTheory.EXTENSION, pred_setTheory.NOT_IN_EMPTY] THEN
+  BasicProvers.RW_TAC BasicProvers.bool_ss [(DB.fetch "res_quan" "RES_FORALL"), pred_setTheory.EXTENSION, pred_setTheory.NOT_IN_EMPTY] THEN
+  metisLib.METIS_TAC []
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.093444
+
+RES_EXISTS_UNIQUE_ALT
+proof length: 4
+proof time: 0.039403
+Statistics
+  infstep : 32
+  nodes   : 13
+  maxdepth: 4
+Time: 1.19499
+  inferstep time: 1.044265
+  node_find time: 0.001463
+  node_crea time: 0.129479
+    pred time: 0.046868
+    thmpred time: 0.000007
+    mc time: 0.071042
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC BasicProvers.bool_ss [(DB.fetch "res_quan" "RES_EXISTS"), pred_setTheory.EXTENSION, pred_setTheory.NOT_IN_EMPTY] THEN BasicProvers.RW_TAC BasicProvers.bool_ss [(DB.fetch "res_quan" "RES_EXISTS_UNIQUE"), (DB.fetch "res_quan" "RES_EXISTS_NULL"), pred_setTheory.NOT_IN_EMPTY, (DB.fetch "res_quan" "RES_FORALL_NULL"), boolLib.EXISTS_UNIQUE_DEF, pred_setTheory.EXTENSION, pred_setTheory.IN_SING] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_EXISTS_UNIQUE", DB.fetch "res_quan" "RES_DISJ_EXISTS_DIST", DB.fetch "res_quan" "RES_EXISTS_DISJ_DIST", DB.fetch "res_quan" "RES_FORALL_CONJ_DIST", quantHeuristicsTheory.GUESS_RULES_IMP, listTheory.EVERY_FILTER, quantHeuristicsTheory.GUESS_RULES_CONJ, listTheory.EVERY_CONJ, pred_setTheory.GSPEC_AND, rich_listTheory.FILTER_FILTER, whileTheory.WHILE_RULE, DB.fetch "res_quan" "RES_FORALL_DISJ_DIST", DB.fetch "res_quan" "RES_EXISTS", DB.fetch "res_quan" "RES_FORALL", DB.fetch "res_quan" "RES_EXISTS_ALT", DB.fetch "res_quan" "RES_EXISTS_NULL"] THEN
+  metisLib.METIS_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.042659
+
+RES_SELECT_EMPTY
+proof length: 2
+proof time: 0.001679
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.25808
+  inferstep time: 0.217374
+  node_find time: 0.000204
+  node_crea time: 0.021871
+    pred time: 0.007251
+    thmpred time: 0.000002
+    mc time: 0.028604
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC BasicProvers.bool_ss [(DB.fetch "res_quan" "RES_EXISTS"), boolLib.EXISTS_DEF, (DB.fetch "res_quan" "RES_SELECT"), pred_setTheory.SPECIFICATION] THEN boolLib.REWRITE_TAC [quantHeuristicsTheory.SIMPLE_GUESS_SELECT_THM, pred_setTheory.EMPTY_applied, pred_setTheory.EMPTY_DEF, whileTheory.OLEAST_EQNS, quantHeuristicsTheory.GUESS_RULES_BOOL, rich_listTheory.NULL_FOLDL, rich_listTheory.NULL_FOLDR, optionTheory.some_F, listTheory.SET_TO_LIST_primitive_def, pred_setTheory.tactictoe_thm_50, pred_setTheory.tactictoe_thm_38, patternMatchesTheory.PMATCH_COND_SELECT_UNIQUE, patternMatchesTheory.PMATCH_EVAL, patternMatchesTheory.PMATCH_EVAL_MATCH, patternMatchesTheory.PMATCH_ROW_EVAL_COND_EX, DB.fetch "res_quan" "RES_SELECT"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006372
+
+RES_SELECT_UNIV
+proof length: 3
+proof time: 0.032516
+Statistics
+  infstep : 11
+  nodes   : 5
+  maxdepth: 3
+Time: 0.435365
+  inferstep time: 0.369998
+  node_find time: 0.000553
+  node_crea time: 0.037106
+    pred time: 0.015693
+    thmpred time: 0.000003
+    mc time: 0.029679
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC BasicProvers.bool_ss [(DB.fetch "res_quan" "RES_EXISTS"), boolLib.EXISTS_DEF, (DB.fetch "res_quan" "RES_SELECT"), pred_setTheory.SPECIFICATION] THEN BasicProvers.SRW_TAC [] [pred_setTheory.LINV_OPT_def, DB.fetch "patternMatches" "PMATCH_ROW_REMOVE_FUN_VAR", DB.fetch "patternMatches" "PMATCH_ROW_REMOVE_FUN", DB.fetch "patternMatches" "PMATCH_FLATTEN_FUN_PMATCH_ROW", ind_typeTheory.CONSTR_REC, ind_typeTheory.ZRECSPACE_def, combinTheory.o_DEF, combinTheory.o_ABS_L, combinTheory.o_ABS_R, optionTheory.OPTION_MAP_DEF, optionTheory.OPTION_APPLY_def, listTheory.EVERY_MAP, listTheory.EXISTS_MAP, optionTheory.OPTION_MAP_EQ_SOME, optionTheory.OPTION_MAP_EQ_NONE_both_ways, DB.fetch "patternMatches" "PMATCH_ROW_LIFT_def"] THEN
+  metisTools.METIS_TAC [pred_setTheory.tactictoe_thm_5, optionTheory.some_def, quantHeuristicsTheory.SIMPLE_GUESS_SELECT_THM, patternMatchesTheory.PMATCH_COND_SELECT_UNIQUE, patternMatchesTheory.PMATCH_EVAL, patternMatchesTheory.PMATCH_EVAL_MATCH, patternMatchesTheory.PMATCH_ROW_EVAL_COND_EX, DB.fetch "res_quan" "RES_SELECT_EMPTY", DB.fetch "res_quan" "RES_SELECT", pred_setTheory.LINV_OPT_def, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_42, pred_setTheory.tactictoe_thm_43, pred_setTheory.tactictoe_thm_47]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004241
+
+RES_ABSTRACT_IDEMPOT
+proof length: 1
+proof time: 0.026842
+Statistics
+  infstep : 4
+  nodes   : 2
+  maxdepth: 1
+Time: 0.169697
+  inferstep time: 0.158637
+  node_find time: 0.000178
+  node_crea time: 0.007245
+    pred time: 0.00291
+    thmpred time: 0.000001
+    mc time: 0.005381
+    inst time: 0.0
+Proof found: (BasicProvers.PROVE_TAC [ DB.fetch "res_quan" "RES_ABSTRACT" , DB.fetch "res_quan" "RES_ABSTRACT_EQUAL" , arithmeticTheory.ABS_DIFF_ADD_SAME , arithmeticTheory.ADD_ASSOC , arithmeticTheory.ADD_DIV_RWT , arithmeticTheory.RIGHT_ADD_DISTRIB , arithmeticTheory.EQ_ADD_LCANCEL , arithmeticTheory.EQ_ADD_RCANCEL , arithmeticTheory.ADD_EQ_SUB , arithmeticTheory.ADD_MONO_LESS_EQ , arithmeticTheory.LESS_EQ_MONO_ADD_EQ , arithmeticTheory.CANCEL_SUB , arithmeticTheory.EQ_MONO_ADD_EQ , arithmeticTheory.EQ_MULT_LCANCEL , arithmeticTheory.EQ_MULT_RCANCEL , arithmeticTheory.LEFT_ADD_DISTRIB ])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.066181
+
+RES_ABSTRACT_EQUAL_EQ
+proof length: 4
+proof time: 0.072183
+Statistics
+  infstep : 41
+  nodes   : 9
+  maxdepth: 3
+Time: 0.655618
+  inferstep time: 0.557896
+  node_find time: 0.001899
+  node_crea time: 0.075332
+    pred time: 0.029414
+    thmpred time: 0.000002
+    mc time: 0.036978
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_ABSTRACT", DB.fetch "res_quan" "RES_ABSTRACT_EQUAL", DB.fetch "res_quan" "RES_ABSTRACT_IDEMPOT", prim_recTheory.SIMP_REC_REL_UNIQUE, listTheory.ALL_DISTINCT_GENLIST, optionTheory.OPTION_IGNORE_BIND_EQUALS_OPTION, rich_listTheory.SEG_SEG, arithmeticTheory.MODEQ_NONZERO_MODEQUALITY, arithmeticTheory.MODEQ_DEF, listTheory.LIST_IGNORE_BIND_def, optionTheory.OPTION_IGNORE_BIND_def, arithmeticTheory.MODEQ_0_CONG, arithmeticTheory.MODEQ_THM, listTheory.APPEND_EQ_APPEND, listTheory.APPEND_EQ_APPEND_MID, optionTheory.OPTION_CHOICE_EQ_NONE] THEN BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM] THENL
+  [metisTools.METIS_TAC [pred_setTheory.tactictoe_thm_21, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_45, DB.fetch "res_quan" "RES_ABSTRACT", DB.fetch "res_quan" "RES_ABSTRACT_EQUAL", prim_recTheory.SIMP_REC_REL_UNIQUE, listTheory.ALL_DISTINCT_GENLIST, optionTheory.OPTION_IGNORE_BIND_EQUALS_OPTION, rich_listTheory.SEG_SEG, arithmeticTheory.MODEQ_NONZERO_MODEQUALITY, arithmeticTheory.MODEQ_DEF, listTheory.LIST_IGNORE_BIND_def, optionTheory.OPTION_IGNORE_BIND_def, arithmeticTheory.MODEQ_0_CONG],
+  BasicProvers.SRW_TAC [] [DB.fetch "res_quan" "RES_ABSTRACT", DB.fetch "res_quan" "RES_ABSTRACT_EQUAL", DB.fetch "res_quan" "RES_ABSTRACT_IDEMPOT", pred_setTheory.tactictoe_thm_21, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_45, prim_recTheory.SIMP_REC_REL_UNIQUE, listTheory.ALL_DISTINCT_GENLIST, optionTheory.OPTION_IGNORE_BIND_EQUALS_OPTION, rich_listTheory.SEG_SEG, arithmeticTheory.MODEQ_NONZERO_MODEQUALITY, arithmeticTheory.MODEQ_DEF, listTheory.LIST_IGNORE_BIND_def, optionTheory.OPTION_IGNORE_BIND_def]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.154421
+Bad stac: 0

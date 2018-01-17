@@ -1,0 +1,633 @@
+
+twotri_formula
+Statistics
+  infstep : 547
+  nodes   : 102
+  maxdepth: 5
+Time: 10.002837
+  inferstep time: 7.818118
+  node_find time: 0.057882
+  node_crea time: 1.940244
+    pred time: 0.423141
+    thmpred time: 0.000021
+    mc time: 1.398211
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.051281
+
+tri_formula
+Statistics
+  infstep : 265
+  nodes   : 89
+  maxdepth: 5
+Time: 10.017459
+  inferstep time: 7.414563
+  node_find time: 0.166648
+  node_crea time: 2.260935
+    pred time: 0.534983
+    thmpred time: 0.000022
+    mc time: 1.601126
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.103279
+
+tri_eq_0
+proof length: 3
+proof time: 0.00956
+Statistics
+  infstep : 27
+  nodes   : 12
+  maxdepth: 3
+Time: 0.953657
+  inferstep time: 0.804915
+  node_find time: 0.001633
+  node_crea time: 0.123524
+    pred time: 0.041644
+    thmpred time: 0.000003
+    mc time: 0.082008
+    inst time: 0.0
+Proof found: Induct_on [QUOTE " (*#loc 1 391*)n"] THENL
+  [REWRITE_TAC [fetch "numpair" "tri_def_compute"],
+  SRW_TAC [] [(fetch "numpair" "tri_def")]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.050618
+
+tri_LT_I
+Statistics
+  infstep : 432
+  nodes   : 92
+  maxdepth: 4
+Time: 10.002467
+  inferstep time: 8.374846
+  node_find time: 0.062516
+  node_crea time: 1.386567
+    pred time: 0.397386
+    thmpred time: 0.000024
+    mc time: 0.797391
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.192602
+
+tri_LT
+Statistics
+  infstep : 239
+  nodes   : 80
+  maxdepth: 5
+Time: 10.107043
+  inferstep time: 8.401086
+  node_find time: 0.037376
+  node_crea time: 1.440049
+    pred time: 0.472766
+    thmpred time: 0.00004
+    mc time: 0.892935
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.257942
+
+tri_11
+Statistics
+  infstep : 429
+  nodes   : 145
+  maxdepth: 6
+Time: 10.063053
+  inferstep time: 8.317802
+  node_find time: 0.073767
+  node_crea time: 1.498062
+    pred time: 0.457101
+    thmpred time: 0.000029
+    mc time: 0.785165
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.150724
+
+tri_LE
+proof length: 3
+proof time: 0.053195
+Statistics
+  infstep : 12
+  nodes   : 6
+  maxdepth: 2
+Time: 0.651753
+  inferstep time: 0.586669
+  node_find time: 0.001117
+  node_crea time: 0.049952
+    pred time: 0.022977
+    thmpred time: 0.0
+    mc time: 0.029015
+    inst time: 0.0
+Proof found: Cases_on [QUOTE " (*#loc 1 961*)m"] THENL
+  [SRW_TAC [] [fetch "numpair" "tri_formula"],
+  METIS_TAC [fetch "numpair" "tri_LT", NOT_SUC_LESS_EQ, LESS_OR, OR_LESS]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010869
+
+invtri0_thm
+Statistics
+  infstep : 834
+  nodes   : 122
+  maxdepth: 5
+Time: 10.033042
+  inferstep time: 8.002711
+  node_find time: 0.153169
+  node_crea time: 1.621701
+    pred time: 0.285786
+    thmpred time: 0.00002
+    mc time: 1.075397
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.247121
+
+SND_invtri0
+proof length: 4
+proof time: 0.019179
+Statistics
+  infstep : 86
+  nodes   : 25
+  maxdepth: 4
+Time: 2.441709
+  inferstep time: 2.000387
+  node_find time: 0.010868
+  node_crea time: 0.358031
+    pred time: 0.108252
+    thmpred time: 0.000004
+    mc time: 0.23048
+    inst time: 0.0
+Proof found: HO_MATCH_MP_TAC (theorem "invtri0_ind") THEN
+  SRW_TAC [] [] THEN
+  ONCE_REWRITE_TAC [(local_tag invtri0_def)] THEN
+  SRW_TAC [ARITH_ss] []
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.126415
+
+invtri_lower
+Statistics
+  infstep : 414
+  nodes   : 129
+  maxdepth: 6
+Time: 10.087015
+  inferstep time: 7.465743
+  node_find time: 0.079427
+  node_crea time: 2.332442
+    pred time: 0.541269
+    thmpred time: 0.00003
+    mc time: 1.291435
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.083955
+
+invtri_upper
+Statistics
+  infstep : 271
+  nodes   : 108
+  maxdepth: 6
+Time: 10.068642
+  inferstep time: 7.446219
+  node_find time: 0.051438
+  node_crea time: 2.365717
+    pred time: 0.587309
+    thmpred time: 0.000029
+    mc time: 1.539648
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.101997
+
+invtri_linverse
+Statistics
+  infstep : 325
+  nodes   : 124
+  maxdepth: 6
+Time: 10.013635
+  inferstep time: 7.661353
+  node_find time: 0.066116
+  node_crea time: 2.124147
+    pred time: 0.446949
+    thmpred time: 0.000024
+    mc time: 1.372444
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.054689
+
+invtri_unique
+Statistics
+  infstep : 253
+  nodes   : 114
+  maxdepth: 6
+Time: 10.000632
+  inferstep time: 7.292579
+  node_find time: 0.054492
+  node_crea time: 2.517968
+    pred time: 0.517042
+    thmpred time: 0.000036
+    mc time: 1.5336
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.537138
+
+invtri_linverse_r
+Statistics
+  infstep : 592
+  nodes   : 203
+  maxdepth: 6
+Time: 10.009269
+  inferstep time: 6.890736
+  node_find time: 0.147299
+  node_crea time: 2.699995
+    pred time: 0.53327
+    thmpred time: 0.000032
+    mc time: 1.44523
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.083863
+
+tri_le
+proof length: 4
+proof time: 0.066647
+Statistics
+  infstep : 25
+  nodes   : 8
+  maxdepth: 3
+Time: 0.773685
+  inferstep time: 0.62979
+  node_find time: 0.004296
+  node_crea time: 0.098935
+    pred time: 0.036745
+    thmpred time: 0.000002
+    mc time: 0.078328
+    inst time: 0.0
+Proof found: SRW_TAC [] [LESS_OR_EQ] THEN
+  Induct_on [QUOTE " (*#loc 1 391*)n"] THENL
+  [METIS_TAC [LESS_0_CASES, fetch "numpair" "tri_LT_I"],
+  SRW_TAC [ARITH_ss] [(fetch "numpair" "tri_def")]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.04208
+
+invtri_le
+Statistics
+  infstep : 273
+  nodes   : 97
+  maxdepth: 6
+Time: 10.041509
+  inferstep time: 8.300896
+  node_find time: 0.066755
+  node_crea time: 1.517183
+    pred time: 0.39349
+    thmpred time: 0.000028
+    mc time: 0.81776
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.103742
+
+nfst_npair
+Statistics
+  infstep : 470
+  nodes   : 79
+  maxdepth: 5
+Time: 10.04701
+  inferstep time: 8.644885
+  node_find time: 0.112303
+  node_crea time: 1.017917
+    pred time: 0.279799
+    thmpred time: 0.000026
+    mc time: 0.572993
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.057527
+
+nsnd_npair
+proof length: 1
+proof time: 0.006623
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.178783
+  inferstep time: 0.149442
+  node_find time: 0.000484
+  node_crea time: 0.016317
+    pred time: 0.002808
+    thmpred time: 0.000001
+    mc time: 0.022406
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "numpair" "npair_def", fetch "numpair" "nsnd_def", fetch "numpair" "invtri_linverse_r"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.061302
+
+npair_cases
+Statistics
+  infstep : 436
+  nodes   : 107
+  maxdepth: 6
+Time: 10.002555
+  inferstep time: 8.863664
+  node_find time: 0.097227
+  node_crea time: 0.799775
+    pred time: 0.247736
+    thmpred time: 0.000037
+    mc time: 0.386573
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.266503
+
+npair
+proof length: 1
+proof time: 0.031358
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.120855
+  inferstep time: 0.100588
+  node_find time: 0.000317
+  node_crea time: 0.01282
+    pred time: 0.002996
+    thmpred time: 0.000001
+    mc time: 0.013907
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "numpair" "nfst_npair", fetch "numpair" "nsnd_npair", fetch "numpair" "npair_cases"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067217
+
+npair_11
+Statistics
+  infstep : 527
+  nodes   : 99
+  maxdepth: 5
+Time: 10.008184
+  inferstep time: 8.199998
+  node_find time: 0.135921
+  node_crea time: 1.388963
+    pred time: 0.424628
+    thmpred time: 0.000028
+    mc time: 0.438594
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.129201
+
+nfst_le
+Statistics
+  infstep : 330
+  nodes   : 113
+  maxdepth: 6
+Time: 10.005595
+  inferstep time: 8.121425
+  node_find time: 0.092892
+  node_crea time: 1.560662
+    pred time: 0.39087
+    thmpred time: 0.000031
+    mc time: 0.908371
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.064755
+
+nsnd_le
+proof length: 2
+proof time: 0.015562
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 2
+Time: 0.339485
+  inferstep time: 0.285483
+  node_find time: 0.001538
+  node_crea time: 0.038436
+    pred time: 0.011741
+    thmpred time: 0.0
+    mc time: 0.029111
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "numpair" "nsnd_def", LESS_OR_EQ] THEN
+  SRW_TAC [ARITH_ss] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.027575
+
+ncons_11
+proof length: 2
+proof time: 0.001984
+Statistics
+  infstep : 90
+  nodes   : 15
+  maxdepth: 3
+Time: 1.841111
+  inferstep time: 1.619023
+  node_find time: 0.020678
+  node_crea time: 0.136539
+    pred time: 0.052318
+    thmpred time: 0.000003
+    mc time: 0.065034
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "numpair" "ncons_def"] THEN
+  SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.021173
+
+ncons_not_nnil
+proof length: 1
+proof time: 0.057367
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.131676
+  inferstep time: 0.111934
+  node_find time: 0.000322
+  node_crea time: 0.0124
+    pred time: 0.003538
+    thmpred time: 0.0
+    mc time: 0.012626
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "numpair" "ncons_def", MOD_SUC, whileTheory.LEAST_DEF, numTheory.NOT_SUC, LESS_ADD_NONZERO, numeralTheory.numeral_distrib]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019836
+
+nlistrec_thm
+Statistics
+  infstep : 1368
+  nodes   : 152
+  maxdepth: 6
+Time: 10.023169
+  inferstep time: 7.484993
+  node_find time: 0.413827
+  node_crea time: 1.42068
+    pred time: 0.344891
+    thmpred time: 0.000013
+    mc time: 0.665056
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.122976
+
+nlist_ind
+Statistics
+  infstep : 454
+  nodes   : 63
+  maxdepth: 4
+Time: 10.007339
+  inferstep time: 7.709462
+  node_find time: 0.149724
+  node_crea time: 1.819009
+    pred time: 0.442265
+    thmpred time: 0.000025
+    mc time: 0.918627
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.343018
+
+nlen_thm
+proof length: 3
+proof time: 0.009864
+Statistics
+  infstep : 68
+  nodes   : 21
+  maxdepth: 4
+Time: 2.639719
+  inferstep time: 2.14089
+  node_find time: 0.01921
+  node_crea time: 0.345052
+    pred time: 0.072824
+    thmpred time: 0.000012
+    mc time: 0.308241
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "numpair" "nlen_def", fetch "numpair" "ncons_def"] THEN
+  CONV_TAC (LAND_CONV (ONCE_REWRITE_CONV [nlistrec_def])) THEN
+  SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.01946
+
+nmap_thm
+proof length: 6
+proof time: 0.010186
+Statistics
+  infstep : 122
+  nodes   : 33
+  maxdepth: 5
+Time: 2.556533
+  inferstep time: 2.064838
+  node_find time: 0.032881
+  node_crea time: 0.331086
+    pred time: 0.071523
+    thmpred time: 0.000007
+    mc time: 0.215862
+    inst time: 0.0
+Proof found: REPEAT STRIP_TAC THENL
+  [REWRITE_TAC [fetch "numpair" "nmap_def", fetch "numpair" "nlistrec_thm"],
+  CONV_TAC (LAND_CONV (ONCE_REWRITE_CONV [fetch "numpair" "nmap_def", fetch "numpair" "ncons_def"])) THEN
+  CONV_TAC (LAND_CONV (ONCE_REWRITE_CONV [nlistrec_def])) THEN
+  SRW_TAC [] [] THEN
+  METIS_TAC [fetch "numpair" "nmap_def"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.015197
+
+nfoldl_thm
+proof length: 2
+proof time: 0.009713
+Statistics
+  infstep : 85
+  nodes   : 11
+  maxdepth: 3
+Time: 1.294037
+  inferstep time: 1.056624
+  node_find time: 0.023415
+  node_crea time: 0.145667
+    pred time: 0.041992
+    thmpred time: 0.000003
+    mc time: 0.073523
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "numpair" "nfoldl_def", fetch "numpair" "nlistrec_thm"] THEN
+  METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.01477
+
+napp_thm
+proof length: 3
+proof time: 0.006118
+Statistics
+  infstep : 10
+  nodes   : 4
+  maxdepth: 2
+Time: 0.52063
+  inferstep time: 0.432237
+  node_find time: 0.00365
+  node_crea time: 0.045828
+    pred time: 0.013831
+    thmpred time: 0.000003
+    mc time: 0.051634
+    inst time: 0.0
+Proof found: SRW_TAC [] [] THEN
+  SRW_TAC [] [fetch "numpair" "napp_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.022707
+
+nlist_cases
+proof length: 5
+proof time: 0.14224
+Statistics
+  infstep : 835
+  nodes   : 126
+  maxdepth: 5
+Time: 8.074856
+  inferstep time: 5.611802
+  node_find time: 0.300181
+  node_crea time: 1.546304
+    pred time: 0.255924
+    thmpred time: 0.000016
+    mc time: 0.976441
+    inst time: 0.0
+Proof found: let
+  fun INDUCT_TAC g = INDUCT_THEN numTheory.INDUCTION ASSUME_TAC g
+in
+  INDUCT_TAC THENL
+  [METIS_TAC [],
+  SRW_TAC [ARITH_ss] [fetch "numpair" "ncons_def", ADD1] THEN
+  METIS_TAC [fetch "numpair" "npair"]]
+end
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.136527
+Bad stac: 38

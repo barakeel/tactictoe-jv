@@ -1,0 +1,226 @@
+Replaying proof: 0.000387
+
+fixed_width_univ
+proof length: 1
+proof time: 0.09508
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.120323
+  inferstep time: 0.103813
+  node_find time: 0.000053
+  node_crea time: 0.011773
+    pred time: 0.003436
+    thmpred time: 0.0
+    mc time: 0.011189
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "EncodeVar" "fixed_width_def" , CoderTheory.wf_coder_closed , CoderTheory.wf_coder , DB.fetch "EncodeVar" "of_length_def" , CoderTheory.decoder_def , CoderTheory.domain_def , CoderTheory.wf_coder_blist , CoderTheory.wf_coder_list , CoderTheory.wf_coder_option , CoderTheory.wf_coder_tree , CoderTheory.wf_coder_prod , CoderTheory.wf_coder_sum , relationTheory.tactictoe_thm_14 , relationTheory.tactictoe_thm_15 , relationTheory.tactictoe_thm_22 , relationTheory.WF_DEF])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.060757
+
+of_length_univ_suc
+proof length: 3
+proof time: 0.02232
+Statistics
+  infstep : 80
+  nodes   : 23
+  maxdepth: 4
+Time: 1.713659
+  inferstep time: 1.469274
+  node_find time: 0.002069
+  node_crea time: 0.208934
+    pred time: 0.080219
+    thmpred time: 0.000004
+    mc time: 0.105691
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.bool_ss [boolLib.RES_FORALL_THM, (DB.fetch "EncodeVar" "fixed_width_def"), (DB.fetch "EncodeVar" "of_length_def")] THEN BasicProvers.SRW_TAC [] [DB.fetch "EncodeVar" "fixed_width_univ", relationTheory.tactictoe_thm_14, relationTheory.tactictoe_thm_15, relationTheory.tactictoe_thm_22, relationTheory.tactictoe_thm_16, relationTheory.tactictoe_thm_18, relationTheory.tactictoe_thm_19, relationTheory.WF_DEF, relationTheory.tactictoe_thm_24, listTheory.LENGTH_EQ_CONS, listTheory.splitAtPki_def, rich_listTheory.tactictoe_thm_28, rich_listTheory.tactictoe_thm_29, rich_listTheory.tactictoe_thm_30, rich_listTheory.tactictoe_thm_31, rich_listTheory.tactictoe_thm_32] THEN
+  bossLib.PROVE_TAC [CoderTheory.wf_coder, CoderTheory.wf_coder_closed]
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.185005
+
+of_length_univ_zero
+proof length: 4
+proof time: 0.058804
+Statistics
+  infstep : 16
+  nodes   : 10
+  maxdepth: 3
+Time: 0.654573
+  inferstep time: 0.592292
+  node_find time: 0.000318
+  node_crea time: 0.053003
+    pred time: 0.021591
+    thmpred time: 0.000001
+    mc time: 0.023353
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.bool_ss [boolLib.RES_FORALL_THM, (DB.fetch "EncodeVar" "fixed_width_def"), (DB.fetch "EncodeVar" "of_length_def")] THEN boolLib.REPEAT (boolLib.STRIP_TAC hhs_infixl0_open boolLib.ORELSE hhs_infixl0_close boolLib.EQ_TAC) THENL
+  [metisTools.METIS_TAC [DB.fetch "EncodeVar" "of_length_univ_suc", DB.fetch "EncodeVar" "fixed_width_univ", relationTheory.tactictoe_thm_24, listTheory.LENGTH_EQ_NIL, listTheory.list_INDUCT0, listTheory.splitAtPki_def, indexedListsTheory.LIST_RELi_ind, indexedListsTheory.LIST_RELi_strongind, EncodeTheory.tree_Axiom, listTheory.list_Axiom, listTheory.list_induction, listTheory.FORALL_LIST, listTheory.SNOC_Axiom, listTheory.tactictoe_thm_17, listTheory.list_Axiom_old, listTheory.tactictoe_thm_0],
+  simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) []]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006227
+
+fixed_width_exists
+proof length: 1
+proof time: 0.094024
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.116601
+  inferstep time: 0.100334
+  node_find time: 0.00004
+  node_crea time: 0.010925
+    pred time: 0.002985
+    thmpred time: 0.0
+    mc time: 0.011549
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "EncodeVar" "fixed_width_univ" , DB.fetch "EncodeVar" "fixed_width_def" , CoderTheory.wf_coder_closed , CoderTheory.wf_coder , DB.fetch "EncodeVar" "of_length_univ_suc" , DB.fetch "EncodeVar" "of_length_univ_zero" , DB.fetch "EncodeVar" "of_length_def" , CoderTheory.decoder_def , CoderTheory.domain_def , CoderTheory.wf_coder_blist , CoderTheory.wf_coder_list , CoderTheory.wf_coder_option , CoderTheory.wf_coder_tree , CoderTheory.wf_coder_prod , CoderTheory.wf_coder_sum , relationTheory.tactictoe_thm_14])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06282
+
+of_length_exists_suc
+proof length: 9
+proof time: 0.094083
+Statistics
+  infstep : 575
+  nodes   : 131
+  maxdepth: 6
+Time: 8.196308
+  inferstep time: 6.098319
+  node_find time: 0.048533
+  node_crea time: 1.934526
+    pred time: 0.403774
+    thmpred time: 0.000027
+    mc time: 0.879824
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.bool_ss [boolLib.RES_EXISTS_THM, (DB.fetch "EncodeVar" "fixed_width_def"), (DB.fetch "EncodeVar" "of_length_def")] THEN boolLib.REPEAT (boolLib.STRIP_TAC hhs_infixl0_open boolLib.ORELSE hhs_infixl0_close boolLib.EQ_TAC) THENL
+  [boolLib.MP_TAC (boolLib.ISPEC (Parse.Term [HolKernel.QUOTE " (*#loc 1 1331*)w : 'a list"]) listTheory.list_CASES) THEN
+  boolLib.STRIP_TAC THENL
+  [simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [],
+  simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [] THEN
+  metisTools.METIS_TAC [DB.fetch "EncodeVar" "of_length_univ_suc", DB.fetch "EncodeVar" "fixed_width_exists", DB.fetch "EncodeVar" "fixed_width_univ", DB.fetch "EncodeVar" "of_length_univ_zero", relationTheory.tactictoe_thm_24, relationTheory.tactictoe_thm_14, relationTheory.tactictoe_thm_15, relationTheory.tactictoe_thm_22, relationTheory.WF_DEF, relationTheory.tactictoe_thm_16, relationTheory.tactictoe_thm_18, relationTheory.tactictoe_thm_19, listTheory.LENGTH_EQ_CONS, EncodeTheory.tree_Axiom, listTheory.list_Axiom, listTheory.tactictoe_thm_0]],
+  BasicProvers.SRW_TAC [] [DB.fetch "EncodeVar" "of_length_univ_suc", DB.fetch "EncodeVar" "fixed_width_exists", DB.fetch "EncodeVar" "fixed_width_univ", DB.fetch "EncodeVar" "of_length_univ_zero", relationTheory.tactictoe_thm_24, relationTheory.WF_DEF, relationTheory.tactictoe_thm_14, relationTheory.tactictoe_thm_15, relationTheory.tactictoe_thm_22, relationTheory.tactictoe_thm_16, relationTheory.tactictoe_thm_18, relationTheory.tactictoe_thm_19, listTheory.LENGTH_CONS, listTheory.LENGTH_EQ_NUM, quantHeuristicsTheory.LIST_LENGTH_COMPARE_SUC, listTheory.LENGTH_EQ_CONS] THEN
+  bossLib.PROVE_TAC [CoderTheory.wf_coder, CoderTheory.wf_coder_closed]]
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.312675
+
+of_length_exists_zero
+proof length: 2
+proof time: 0.001775
+Statistics
+  infstep : 20
+  nodes   : 10
+  maxdepth: 3
+Time: 0.623364
+  inferstep time: 0.567816
+  node_find time: 0.000607
+  node_crea time: 0.048224
+    pred time: 0.016543
+    thmpred time: 0.000002
+    mc time: 0.024126
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.bool_ss [boolLib.RES_EXISTS_THM, (DB.fetch "EncodeVar" "fixed_width_def"), (DB.fetch "EncodeVar" "of_length_def")] THEN simpLib.SIMP_TAC bossLib.bool_ss [boolLib.RES_FORALL_THM, (DB.fetch "EncodeVar" "of_length_def"), listTheory.LENGTH_NIL]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007002
+
+fixed_width_unit
+proof length: 2
+proof time: 0.040779
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.20991
+  inferstep time: 0.153199
+  node_find time: 0.000145
+  node_crea time: 0.043751
+    pred time: 0.013536
+    thmpred time: 0.000002
+    mc time: 0.035123
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [CoderTheory.unit_coder_def, CoderTheory.wf_coder_unit, DB.fetch "EncodeVar" "fixed_width_def", DB.fetch "EncodeVar" "fixed_width_exists", DB.fetch "EncodeVar" "fixed_width_univ", DecodeTheory.decode_unit_def, DecodeTheory.dec2enc_decode_unit, DecodeTheory.decode_unit, DecodeTheory.wf_decode_unit, EncodeTheory.wf_encode_unit, quantHeuristicsTheory.GUESS_RULES_CONJ, quantHeuristicsTheory.GUESS_RULES_DISJ, quantHeuristicsTheory.GUESS_RULES_IMP, optionTheory.SOME_DEF, optionTheory.option_REP_ABS_DEF, optionTheory.tactictoe_thm_0] THEN metisTools.METIS_TAC [DecodeTheory.decode_unit_def, CoderTheory.unit_coder_def, CoderTheory.encoder_def, DB.fetch "EncodeVar" "fixed_width_def", CoderTheory.wf_coder, DecodeTheory.dec2enc_decode_unit, EncodeTheory.wf_encode_unit, EncodeTheory.encode_unit_def, quantHeuristicsTheory.GUESS_RULES_ELIM_UNIT, DecodeTheory.decode_unit, optionTheory.OPTION_GUARD_COND, optionTheory.OPTION_GUARD_EQ_THM, optionTheory.OPTION_GUARD_def, optionTheory.NONE_DEF, oneTheory.one, quantHeuristicsTheory.tactictoe_thm_0]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004871
+
+fixed_width_bool
+Statistics
+  infstep : 694
+  nodes   : 134
+  maxdepth: 5
+Time: 10.082649
+  inferstep time: 7.882958
+  node_find time: 0.055518
+  node_crea time: 2.027623
+    pred time: 0.374055
+    thmpred time: 0.000028
+    mc time: 1.254029
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004977
+
+fixed_width_prod
+Statistics
+  infstep : 671
+  nodes   : 202
+  maxdepth: 6
+Time: 10.016946
+  inferstep time: 6.839979
+  node_find time: 0.064573
+  node_crea time: 2.89387
+    pred time: 0.56478
+    thmpred time: 0.000029
+    mc time: 1.278237
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.300443
+
+fixed_width_sum
+Statistics
+  infstep : 617
+  nodes   : 179
+  maxdepth: 5
+Time: 10.080098
+  inferstep time: 7.093468
+  node_find time: 0.059729
+  node_crea time: 2.689008
+    pred time: 0.447482
+    thmpred time: 0.000026
+    mc time: 1.44852
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.367027
+
+fixed_width_bnum
+proof length: 2
+proof time: 0.040554
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.180738
+  inferstep time: 0.138603
+  node_find time: 0.000165
+  node_crea time: 0.028259
+    pred time: 0.009152
+    thmpred time: 0.000001
+    mc time: 0.027546
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [CoderTheory.bnum_coder_def, CoderTheory.wf_coder_bnum, DB.fetch "EncodeVar" "fixed_width_def", DB.fetch "EncodeVar" "fixed_width_exists", DB.fetch "EncodeVar" "fixed_width_prod", DB.fetch "EncodeVar" "fixed_width_sum", DB.fetch "EncodeVar" "fixed_width_univ", DB.fetch "EncodeVar" "fixed_width_bool", DB.fetch "EncodeVar" "fixed_width_unit", DecodeTheory.decode_bnum_def, CoderTheory.blist_coder_def, DecodeTheory.dec2enc_decode_blist, DecodeTheory.decode_blist_def, DecodeTheory.dec2enc_decode_bnum, DecodeTheory.encode_then_decode_blist, DecodeTheory.wf_decode_blist] THEN metisTools.METIS_TAC [DecodeTheory.decode_bnum_def, CoderTheory.bnum_coder_def, CoderTheory.encoder_def, DB.fetch "EncodeVar" "fixed_width_def", CoderTheory.wf_coder, DecodeTheory.dec_bnum_inj, DecodeTheory.dec2enc_decode_bnum, EncodeTheory.wf_encode_bnum_collision_free, EncodeTheory.wf_encode_bnum, EncodeTheory.encode_bnum_length, EncodeTheory.encode_bnum_def, DecodeTheory.encode_then_decode_blist, DecodeTheory.enc2dec_some, CoderTheory.wf_coder_op, CoderTheory.wf_coder_def, DecodeTheory.encode_then_decode_list]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004593
+Bad stac: 0

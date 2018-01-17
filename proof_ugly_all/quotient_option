@@ -1,0 +1,280 @@
+
+OPTION_MAP_I
+proof length: 2
+proof time: 0.002664
+Statistics
+  infstep : 412
+  nodes   : 104
+  maxdepth: 6
+Time: 7.904353
+  inferstep time: 6.510948
+  node_find time: 0.023697
+  node_crea time: 1.326967
+    pred time: 0.428187
+    thmpred time: 0.00002
+    mc time: 0.433244
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC numLib.std_ss [boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [listTheory.INDEX_OF_def, optionTheory.OPTION_MAP_DEF, optionTheory.IS_SOME_MAP, optionTheory.OPTION_APPLY_MAP2, optionTheory.OPTION_APPLY_def, optionTheory.OPTION_MAP_CASE, optionTheory.option_CLAUSES, optionTheory.OPTION_MAP_COMPOSE, optionTheory.OPTION_MAP_CONG, optionTheory.OPTION_MAP_EQ_NONE, optionTheory.OPTION_MAP_EQ_NONE_both_ways, optionTheory.OPTION_MAP_EQ_SOME, patternMatchesTheory.PMATCH_ROW_LIFT_def, patternMatchesTheory.tactictoe_thm_2, listTheory.FIND_def, listTheory.LUPDATE_SOME_MAP]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.095612
+
+OPTION_REL_def
+proof length: 1
+proof time: 0.004079
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.125865
+  inferstep time: 0.113544
+  node_find time: 0.000073
+  node_crea time: 0.009227
+    pred time: 0.00297
+    thmpred time: 0.000001
+    mc time: 0.007181
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ optionTheory.OPTREL_def , optionTheory.OPTREL_refl , optionTheory.OPTREL_MONO , optionTheory.option_CLAUSES , optionTheory.IS_SOME_DEF , optionTheory.IS_NONE_DEF , whileTheory.OLEAST_EQNS , optionTheory.OPTION_ALL_def , optionTheory.OPTION_GUARD_def , optionTheory.OPTION_MAP2_THM , optionTheory.OPTION_BIND_EQUALS_OPTION , patternMatchesTheory.tactictoe_thm_2 , optionTheory.IF_EQUALS_OPTION , optionTheory.OPTION_IGNORE_BIND_EQUALS_OPTION , whileTheory.tactictoe_thm_0 , optionTheory.option_case_def ])
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.281435
+
+OPTION_REL_EQ
+Statistics
+  infstep : 582
+  nodes   : 101
+  maxdepth: 6
+Time: 10.053527
+  inferstep time: 8.318778
+  node_find time: 0.036411
+  node_crea time: 1.589988
+    pred time: 0.505547
+    thmpred time: 0.000034
+    mc time: 0.524841
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.117126
+
+OPTION_EQUIV
+Statistics
+  infstep : 691
+  nodes   : 174
+  maxdepth: 6
+Time: 10.070583
+  inferstep time: 7.906934
+  node_find time: 0.06001
+  node_crea time: 1.997201
+    pred time: 0.363658
+    thmpred time: 0.000016
+    mc time: 0.982175
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.392234
+Replaying proof: 0.007711
+
+NONE_PRS
+proof length: 1
+proof time: 0.091796
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.117582
+  inferstep time: 0.107398
+  node_find time: 0.000041
+  node_crea time: 0.007447
+    pred time: 0.00285
+    thmpred time: 0.0
+    mc time: 0.00552
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [optionTheory.option_CLAUSES , optionTheory.OPTION_MAP_DEF , DB.fetch "quotient_option" "OPTION_QUOTIENT" , quotientTheory.QUOTIENT_ABS_REP , quotientTheory.QUOTIENT_REL , quotientTheory.COND_PRS , quotientTheory.COND_RSP , quotientTheory.EQUALS_PRS , quotientTheory.QUOTIENT_REL_REP , quotientTheory.EQUALS_RSP , quotientTheory.EXISTS_PRS , quotientTheory.EXISTS_UNIQUE_PRS , quotientTheory.QUOTIENT_REL_ABS_EQ , quotientTheory.FORALL_PRS , quotientTheory.I_PRS , quotientTheory.QUOTIENT_REL_ABS])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.02604
+
+NONE_RSP
+proof length: 1
+proof time: 0.05021
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.076443
+  inferstep time: 0.062833
+  node_find time: 0.000053
+  node_crea time: 0.00849
+    pred time: 0.00303
+    thmpred time: 0.0
+    mc time: 0.008264
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "quotient_option" "OPTION_REL_def" , DB.fetch "quotient_option" "OPTION_QUOTIENT" , optionTheory.OPTREL_def , optionTheory.OPTREL_refl , DB.fetch "quotient_option" "OPTION_EQUIV" , optionTheory.OPTREL_MONO , DB.fetch "quotient_option" "OPTION_REL_EQ" , DB.fetch "quotient_option" "NONE_PRS" , quotientTheory.QUOTIENT_ABS_REP , quotientTheory.QUOTIENT_REP_REFL , quotientTheory.QUOTIENT_REL , quotientTheory.COND_PRS , quotientTheory.COND_RSP , quotientTheory.EQUALS_PRS , quotientTheory.QUOTIENT_REL_REP , quotientTheory.EQUALS_RSP])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.033671
+
+SOME_PRS
+proof length: 1
+proof time: 0.082106
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.10927
+  inferstep time: 0.096699
+  node_find time: 0.000039
+  node_crea time: 0.008227
+    pred time: 0.003105
+    thmpred time: 0.0
+    mc time: 0.007368
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [optionTheory.option_CLAUSES , optionTheory.OPTION_MAP_DEF , listTheory.LUPDATE_SOME_MAP , optionTheory.SOME_SOME_APPLY , DB.fetch "quotient_option" "NONE_PRS" , DB.fetch "quotient_option" "OPTION_QUOTIENT" , DB.fetch "quotient_option" "NONE_RSP" , quotientTheory.EQUALS_PRS , quotientTheory.QUOTIENT_SYM , quotientTheory.QUOTIENT_TRANS , quotientTheory.QUOTIENT_ABS_REP , quotientTheory.QUOTIENT_REL , quotientTheory.QUOTIENT_REL_REP , quotientTheory.COND_PRS , quotientTheory.COND_RSP , quotientTheory.EQUALS_RSP])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.146091
+
+SOME_RSP
+proof length: 1
+proof time: 0.025003
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.075249
+  inferstep time: 0.063436
+  node_find time: 0.000043
+  node_crea time: 0.009432
+    pred time: 0.003897
+    thmpred time: 0.0
+    mc time: 0.005809
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "quotient_option" "OPTION_REL_def" , DB.fetch "quotient_option" "NONE_RSP" , DB.fetch "quotient_option" "OPTION_QUOTIENT" , optionTheory.OPTREL_def , optionTheory.OPTREL_refl , optionTheory.OPTREL_MONO , DB.fetch "quotient_option" "OPTION_EQUIV" , DB.fetch "quotient_option" "OPTION_REL_EQ" , DB.fetch "quotient_option" "SOME_PRS" , DB.fetch "quotient_option" "NONE_PRS" , quotientTheory.QUOTIENT_SYM , quotientTheory.QUOTIENT_TRANS , quotientTheory.QUOTIENT_REL , quotientTheory.COND_RSP , quotientTheory.EQUALS_RSP , quotientTheory.I_RSP])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.029745
+
+IS_SOME_PRS
+proof length: 2
+proof time: 0.000237
+Statistics
+  infstep : 9
+  nodes   : 3
+  maxdepth: 2
+Time: 0.257509
+  inferstep time: 0.235673
+  node_find time: 0.000354
+  node_crea time: 0.015809
+    pred time: 0.006612
+    thmpred time: 0.0
+    mc time: 0.009884
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN boolLib.REWRITE_TAC [optionTheory.IS_SOME_MAP, patternMatchesTheory.tactictoe_thm_12, patternMatchesTheory.tactictoe_thm_13, patternMatchesTheory.tactictoe_thm_16, optionTheory.option_CLAUSES, optionTheory.OPTION_MAP_CONG, optionTheory.OPTION_APPLY_def, optionTheory.OPTION_MAP_EQ_NONE, optionTheory.OPTION_MAP_EQ_SOME, optionTheory.OPTION_APPLY_MAP2, optionTheory.OPTION_MAP_CASE, optionTheory.OPTION_MAP_COMPOSE, optionTheory.OPTION_MAP_EQ_NONE_both_ways, patternMatchesTheory.tactictoe_thm_2, DB.fetch "quotient_option" "SOME_PRS", DB.fetch "quotient_option" "NONE_PRS"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.090138
+
+IS_SOME_RSP
+proof length: 4
+proof time: 0.127616
+Statistics
+  infstep : 28
+  nodes   : 14
+  maxdepth: 4
+Time: 1.191269
+  inferstep time: 1.04587
+  node_find time: 0.001161
+  node_crea time: 0.129658
+    pred time: 0.04679
+    thmpred time: 0.000001
+    mc time: 0.048274
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [optionTheory.OPTREL_def, optionTheory.OPTREL_refl, optionTheory.OPTREL_MONO, DB.fetch "quotient_option" "SOME_RSP", DB.fetch "quotient_option" "NONE_RSP", DB.fetch "quotient_option" "OPTION_QUOTIENT", DB.fetch "quotient_option" "OPTION_REL_def", DB.fetch "quotient_option" "OPTION_EQUIV", DB.fetch "quotient_option" "IS_SOME_PRS", DB.fetch "quotient_option" "OPTION_REL_EQ", DB.fetch "quotient_option" "SOME_PRS", DB.fetch "quotient_option" "NONE_PRS", quotientTheory.EQUALS_PRS, quotientTheory.QUOTIENT_SYM, quotientTheory.QUOTIENT_TRANS, quotientTheory.QUOTIENT_ABS_REP] THEN boolLib.REPEAT boolLib.STRIP_TAC THENL
+  [BasicProvers.SRW_TAC [] [optionTheory.option_CLAUSES, optionTheory.OPTION_MAP2_DEF, DB.fetch "quotient_option" "IS_SOME_PRS", optionTheory.NOT_IS_SOME_EQ_NONE, optionTheory.IF_NONE_EQUALS_OPTION, optionTheory.IS_SOME_EXISTS, quantHeuristicsTheory.IS_SOME_EQ_NOT_NONE, optionTheory.IS_SOME_MAP, optionTheory.option_case_compute, optionTheory.IS_SOME_BIND, patternMatchesTheory.tactictoe_thm_12, patternMatchesTheory.tactictoe_thm_13, patternMatchesTheory.tactictoe_thm_16, quantHeuristicsTheory.SOME_THE_EQ, quantHeuristicsTheory.SOME_THE_EQ_SYM, optionTheory.IS_SOME_DEF],
+  metisTools.METIS_TAC [optionTheory.option_CLAUSES, optionTheory.OPTION_MAP2_DEF, DB.fetch "quotient_option" "IS_SOME_PRS", optionTheory.NOT_IS_SOME_EQ_NONE, optionTheory.IF_NONE_EQUALS_OPTION, optionTheory.IS_SOME_EXISTS, quantHeuristicsTheory.IS_SOME_EQ_NOT_NONE, optionTheory.IS_SOME_MAP, optionTheory.option_case_compute, optionTheory.IS_SOME_BIND, patternMatchesTheory.tactictoe_thm_12, patternMatchesTheory.tactictoe_thm_13, patternMatchesTheory.tactictoe_thm_16, quantHeuristicsTheory.SOME_THE_EQ, quantHeuristicsTheory.SOME_THE_EQ_SYM, optionTheory.IS_SOME_DEF]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.08566
+
+IS_NONE_PRS
+proof length: 1
+proof time: 0.000276
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.118395
+  inferstep time: 0.107451
+  node_find time: 0.000072
+  node_crea time: 0.00724
+    pred time: 0.002814
+    thmpred time: 0.0
+    mc time: 0.005895
+    inst time: 0.0
+Proof found: (boolLib.REWRITE_TAC [ optionTheory.option_CLAUSES , optionTheory.IF_NONE_EQUALS_OPTION , optionTheory.IS_NONE_EQ_NONE , optionTheory.IS_NONE_DEF , DB.fetch "quotient_option" "IS_SOME_PRS" , DB.fetch "quotient_option" "SOME_PRS" , DB.fetch "quotient_option" "NONE_PRS" , DB.fetch "quotient_option" "OPTION_QUOTIENT" , optionTheory.OPTION_MAP_CONG , optionTheory.OPTION_APPLY_def , optionTheory.OPTION_MAP_EQ_NONE , optionTheory.OPTION_MAP_EQ_SOME , optionTheory.IS_SOME_MAP , optionTheory.OPTION_APPLY_MAP2 , optionTheory.OPTION_MAP_CASE , optionTheory.OPTION_MAP_COMPOSE ])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.090549
+
+IS_NONE_RSP
+proof length: 1
+proof time: 0.004378
+Statistics
+  infstep : 22
+  nodes   : 13
+  maxdepth: 4
+Time: 0.88439
+  inferstep time: 0.768123
+  node_find time: 0.000963
+  node_crea time: 0.109665
+    pred time: 0.043397
+    thmpred time: 0.000004
+    mc time: 0.033795
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "quotient_option" "IS_SOME_RSP" , optionTheory.OPTREL_def , optionTheory.OPTREL_refl , optionTheory.OPTREL_MONO , DB.fetch "quotient_option" "IS_NONE_PRS" , optionTheory.option_CLAUSES , optionTheory.IF_NONE_EQUALS_OPTION , optionTheory.IS_NONE_EQ_NONE , DB.fetch "quotient_option" "SOME_RSP" , DB.fetch "quotient_option" "NONE_RSP" , DB.fetch "quotient_option" "OPTION_QUOTIENT" , DB.fetch "quotient_option" "OPTION_REL_def" , DB.fetch "quotient_option" "OPTION_EQUIV" , optionTheory.IS_NONE_DEF , DB.fetch "quotient_option" "OPTION_REL_EQ" , DB.fetch "quotient_option" "IS_SOME_PRS" ])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.091904
+
+OPTION_MAP_PRS
+Statistics
+  infstep : 922
+  nodes   : 159
+  maxdepth: 5
+Time: 10.027831
+  inferstep time: 7.467726
+  node_find time: 0.088216
+  node_crea time: 2.307673
+    pred time: 0.34815
+    thmpred time: 0.000015
+    mc time: 0.606857
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.175341
+
+OPTION_MAP_RSP
+proof length: 4
+proof time: 0.011315
+Statistics
+  infstep : 287
+  nodes   : 84
+  maxdepth: 6
+Time: 5.096405
+  inferstep time: 4.255324
+  node_find time: 0.021148
+  node_crea time: 0.752941
+    pred time: 0.178972
+    thmpred time: 0.000016
+    mc time: 0.277802
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "quotient" "FUN_REL")] THEN boolLib.REWRITE_TAC [DB.fetch "quotient_option" "IS_NONE_RSP", DB.fetch "quotient_option" "IS_SOME_RSP", optionTheory.OPTREL_def, optionTheory.OPTREL_MONO, optionTheory.OPTREL_refl, DB.fetch "quotient_option" "OPTION_MAP_PRS", DB.fetch "quotient_option" "OPTION_QUOTIENT", indexedListsTheory.FOLDRi_CONG, indexedListsTheory.FOLDRi_CONG', quotientTheory.COND_RSP, quotientTheory.C_RSP, quotientTheory.W_RSP, quotientTheory.LAMBDA_RSP, quotientTheory.o_RSP, quotientTheory.RES_ABSTRACT_RSP, quotientTheory.APPLY_RSP] THEN
+  boolLib.REPEAT (boolLib.REPEAT boolLib.GEN_TAC hhs_infixl0_open boolLib.THEN hhs_infixl0_close boolLib.DISCH_TAC) THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.245625
+Bad stac: 1

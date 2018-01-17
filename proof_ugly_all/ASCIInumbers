@@ -1,0 +1,314 @@
+
+s2n_compute
+proof length: 1
+proof time: 0.040921
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.053039
+  inferstep time: 0.037914
+  node_find time: 0.000032
+  node_crea time: 0.009023
+    pred time: 0.002966
+    thmpred time: 0.0
+    mc time: 0.010482
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "ASCIInumbers" "s2n_def" , DB.fetch "ASCIInumbers" "num_from_bin_string_def" , DB.fetch "ASCIInumbers" "num_from_dec_string_def" , DB.fetch "ASCIInumbers" "num_from_hex_string_def" , DB.fetch "ASCIInumbers" "num_from_oct_string_def" , stringTheory.STRLEN_EXPLODE_THM , stringTheory.IMPLODE_EXPLODE_I , stringTheory.EXPLODE_DEST_STRING , stringTheory.EXPLODE_def , stringTheory.EXPLODE_EQNS , stringTheory.EXPLODE_EQ_NIL , stringTheory.EXPLODE_EQ_THM , stringTheory.IMPLODE_EXPLODE , stringTheory.EXPLODE_ONTO , stringTheory.IMPLODE_EQ_THM , stringTheory.EXPLODE_11])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003409
+
+n2s_compute
+Statistics
+  infstep : 424
+  nodes   : 106
+  maxdepth: 5
+Time: 10.104098
+  inferstep time: 7.742748
+  node_find time: 0.035397
+  node_crea time: 2.213359
+    pred time: 0.688749
+    thmpred time: 0.000027
+    mc time: 0.74294
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003923
+
+UNHEX_HEX
+Statistics
+  infstep : 280
+  nodes   : 80
+  maxdepth: 5
+Time: 10.022189
+  inferstep time: 7.249296
+  node_find time: 0.019818
+  node_crea time: 2.701323
+    pred time: 0.84582
+    thmpred time: 0.000021
+    mc time: 1.351396
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.086137
+
+HEX_UNHEX
+Statistics
+  infstep : 323
+  nodes   : 82
+  maxdepth: 5
+Time: 10.002982
+  inferstep time: 6.74762
+  node_find time: 0.024687
+  node_crea time: 3.187005
+    pred time: 1.025813
+    thmpred time: 0.000016
+    mc time: 1.400094
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 1.91812
+
+DEC_UNDEC
+Statistics
+  infstep : 371
+  nodes   : 82
+  maxdepth: 5
+Time: 10.001013
+  inferstep time: 7.283904
+  node_find time: 0.036036
+  node_crea time: 2.602196
+    pred time: 1.078412
+    thmpred time: 0.000019
+    mc time: 0.966531
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.630454
+Replaying proof: 0.001029
+
+s2n_n2s
+Statistics
+  infstep : 350
+  nodes   : 108
+  maxdepth: 5
+Time: 10.030563
+  inferstep time: 6.893956
+  node_find time: 0.034567
+  node_crea time: 3.022956
+    pred time: 0.606952
+    thmpred time: 0.000021
+    mc time: 1.575943
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.588854
+Replaying proof: 0.001249
+
+n2s_s2n
+Statistics
+  infstep : 527
+  nodes   : 83
+  maxdepth: 4
+Time: 10.000265
+  inferstep time: 6.905824
+  node_find time: 0.051867
+  node_crea time: 2.844025
+    pred time: 0.623923
+    thmpred time: 0.000021
+    mc time: 1.351549
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.811329
+
+toNum_toString
+Statistics
+  infstep : 754
+  nodes   : 150
+  maxdepth: 5
+Time: 10.01415
+  inferstep time: 7.31981
+  node_find time: 0.086061
+  node_crea time: 2.447727
+    pred time: 1.008388
+    thmpred time: 0.000026
+    mc time: 0.762826
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.646911
+
+toString_inj
+proof length: 1
+proof time: 0.113568
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.101423
+  inferstep time: 0.092756
+  node_find time: 0.000051
+  node_crea time: 0.007189
+    pred time: 0.003811
+    thmpred time: 0.000001
+    mc time: 0.002854
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "ASCIInumbers" "toNum_toString" , DB.fetch "ASCIInumbers" "toString_toNum_cancel" , DB.fetch "ASCIInumbers" "num_to_dec_string_def" , DB.fetch "ASCIInumbers" "s2n_n2s" , DB.fetch "ASCIInumbers" "n2s_def" , stringTheory.SUBSTRING_def , stringTheory.SUB_def , DB.fetch "ASCIInumbers" "n2s_compute" , stringTheory.EXTRACT_def , stringTheory.EXTRACT_primitive_def , stringTheory.EXTRACT_ind , DB.fetch "ASCIInumbers" "UNHEX_HEX" , stringTheory.ORD_CHR_COMPUTE , stringTheory.char_BIJ , stringTheory.char_nchotomy , stringTheory.ranged_char_nchotomy])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008847
+
+STRCAT_toString_inj
+proof length: 2
+proof time: 0.000834
+Statistics
+  infstep : 8
+  nodes   : 3
+  maxdepth: 2
+Time: 0.294931
+  inferstep time: 0.269857
+  node_find time: 0.000341
+  node_crea time: 0.016953
+    pred time: 0.00632
+    thmpred time: 0.0
+    mc time: 0.013377
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN bossLib.SRW_TAC [] [(DB.fetch "ASCIInumbers" "num_to_dec_string_def"), (DB.fetch "ASCIInumbers" "num_from_dec_string_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00885
+
+BIT_num_from_bin_string
+Statistics
+  infstep : 444
+  nodes   : 101
+  maxdepth: 5
+Time: 10.027267
+  inferstep time: 6.837812
+  node_find time: 0.046765
+  node_crea time: 3.007491
+    pred time: 0.76083
+    thmpred time: 0.000027
+    mc time: 1.611436
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.321813
+
+SUB_num_to_bin_string
+Statistics
+  infstep : 879
+  nodes   : 174
+  maxdepth: 6
+Time: 10.173378
+  inferstep time: 6.840797
+  node_find time: 0.113559
+  node_crea time: 3.020367
+    pred time: 0.629109
+    thmpred time: 0.000023
+    mc time: 1.429018
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.399282
+
+num_bin_string
+Statistics
+  infstep : 726
+  nodes   : 159
+  maxdepth: 6
+Time: 10.001531
+  inferstep time: 7.318286
+  node_find time: 0.099034
+  node_crea time: 2.390685
+    pred time: 0.568969
+    thmpred time: 0.000021
+    mc time: 1.315702
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.006926
+
+num_oct_string
+Statistics
+  infstep : 854
+  nodes   : 151
+  maxdepth: 5
+Time: 10.105691
+  inferstep time: 7.361616
+  node_find time: 0.121148
+  node_crea time: 2.379703
+    pred time: 0.623772
+    thmpred time: 0.000017
+    mc time: 1.174296
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.009188
+
+num_dec_string
+proof length: 2
+proof time: 0.034078
+Statistics
+  infstep : 27
+  nodes   : 5
+  maxdepth: 2
+Time: 0.470038
+  inferstep time: 0.387074
+  node_find time: 0.002442
+  node_crea time: 0.058332
+    pred time: 0.021147
+    thmpred time: 0.000003
+    mc time: 0.038519
+    inst time: 0.0
+Proof found: let
+  fun simp l = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.LET_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) l
+in
+  simp [boolLib.FUN_EQ_THM]
+end THEN metisTools.METIS_TAC [DB.fetch "ASCIInumbers" "toNum_toString", DB.fetch "ASCIInumbers" "toString_toNum_cancel", DB.fetch "ASCIInumbers" "STRCAT_toString_inj", DB.fetch "ASCIInumbers" "toString_inj", DB.fetch "ASCIInumbers" "toString_11", DB.fetch "ASCIInumbers" "fromDecString_def", DB.fetch "ASCIInumbers" "num_from_dec_string_def", DB.fetch "ASCIInumbers" "num_to_dec_string_def", DB.fetch "ASCIInumbers" "s2n_n2s", DB.fetch "ASCIInumbers" "BIT_num_from_bin_string", DB.fetch "ASCIInumbers" "SUB_num_to_bin_string", stringTheory.STRLEN_EQ_0, DB.fetch "ASCIInumbers" "s2n_def", stringTheory.SUB_def, DB.fetch "ASCIInumbers" "n2s_s2n", DB.fetch "ASCIInumbers" "n2s_def"]
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.007882
+
+num_hex_string
+proof length: 7
+proof time: 0.138547
+Statistics
+  infstep : 507
+  nodes   : 114
+  maxdepth: 7
+Time: 6.586146
+  inferstep time: 4.679285
+  node_find time: 0.067703
+  node_crea time: 1.623193
+    pred time: 0.393488
+    thmpred time: 0.000013
+    mc time: 0.867955
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "ASCIInumbers" "num_to_hex_string_def", DB.fetch "ASCIInumbers" "fromHexString_def", DB.fetch "ASCIInumbers" "num_from_hex_string_def", DB.fetch "ASCIInumbers" "num_bin_string", DB.fetch "ASCIInumbers" "num_dec_string", DB.fetch "ASCIInumbers" "num_oct_string", listTheory.DROP_splitAtPki, listTheory.dropWhile_splitAtPki, numposrepTheory.num_bin_list, numposrepTheory.num_dec_list, numposrepTheory.num_hex_list, numposrepTheory.num_oct_list, combinTheory.I_o_ID, relationTheory.INVOL_DEF, stringTheory.EXTRACT_primitive_def, stringTheory.TOCHAR_primitive_def] THEN let
+  fun simp l = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.LET_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) l
+in
+  simp [boolLib.FUN_EQ_THM] THEN
+  boolLib.MATCH_MP_TAC (DB.fetch "ASCIInumbers" "s2n_n2s") THEN
+  bossLib.EVAL_TAC THEN
+  Q.X_GEN_TAC [HolKernel.QUOTE " (*#loc 1 5586*)n"] THEN
+  boolLib.STRIP_TAC THEN
+  metisTools.METIS_TAC [DB.fetch "ASCIInumbers" "UNHEX_HEX", DB.fetch "ASCIInumbers" "DEC_UNDEC", DB.fetch "ASCIInumbers" "HEX_UNHEX", DB.fetch "ASCIInumbers" "SUB_num_to_bin_string", DB.fetch "ASCIInumbers" "HEX_primitive_def", DB.fetch "ASCIInumbers" "UNHEX_primitive_def", DB.fetch "ASCIInumbers" "BIT_num_from_bin_string", DB.fetch "ASCIInumbers" "num_to_hex_string_def", DB.fetch "ASCIInumbers" "num_from_hex_string_def", DB.fetch "ASCIInumbers" "num_from_bin_string_def", DB.fetch "ASCIInumbers" "num_to_bin_string_def", DB.fetch "ASCIInumbers" "num_from_dec_string_def", DB.fetch "ASCIInumbers" "num_to_dec_string_def", DB.fetch "ASCIInumbers" "num_from_oct_string_def", DB.fetch "ASCIInumbers" "num_to_oct_string_def", DB.fetch "ASCIInumbers" "tactictoe_thm_5"]
+end
+Org tac number: 0
+Original proof time: 0.0
+Replaying proof: 0.009562
+Bad stac: 0

@@ -1,0 +1,1055 @@
+
+fmap_to_alist_FEMPTY
+proof length: 1
+proof time: 0.001846
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.131667
+  inferstep time: 0.114712
+  node_find time: 0.000051
+  node_crea time: 0.013971
+    pred time: 0.008607
+    thmpred time: 0.0
+    mc time: 0.006741
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "alist" "fmap_to_alist_def" , finite_mapTheory.FMEQ_ENUMERATE_CASES , finite_mapTheory.fmap_to_list , finite_mapTheory.fupdate_list_map , finite_mapTheory.FMAP_MAP2_FEMPTY , finite_mapTheory.FMEQ_SINGLE_SIMPLE_DISJ_ELIM , finite_mapTheory.FMEQ_SINGLE_SIMPLE_ELIM , finite_mapTheory.FUPDATE_EQ_FUNION , finite_mapTheory.NOT_EQ_FEMPTY_FUPDATE , finite_mapTheory.RRESTRICT_DEF , finite_mapTheory.fmap_CASES , finite_mapTheory.fmap_INDUCT , finite_mapTheory.fmap_SIMPLE_INDUCT , finite_mapTheory.FEVERY_FEMPTY , finite_mapTheory.FEVERY_STRENGTHEN_THM , finite_mapTheory.IN_FDOM_FOLDR_UNION ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007939
+
+alist_to_fmap_thm
+proof length: 6
+proof time: 0.054627
+Statistics
+  infstep : 551
+  nodes   : 60
+  maxdepth: 5
+Time: 6.541391
+  inferstep time: 5.73938
+  node_find time: 0.020527
+  node_crea time: 0.664068
+    pred time: 0.239205
+    thmpred time: 0.000015
+    mc time: 0.322434
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC (bossLib.srw_ss () hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.CONJ_ss) [boolLib.GSYM (DB.fetch "finite_map" "fmap_EQ_THM"), boolLib.DISJ_IMP_THM, boolLib.FORALL_AND_THM] THEN bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")] THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "alist" "alist_to_fmap_def", finite_mapTheory.FDOM_FEMPTY, finite_mapTheory.FDOM_EQ_EMPTY, finite_mapTheory.FDOM_EQ_EMPTY_SYM, finite_mapTheory.FDOM_FUPDATE_LIST, finite_mapTheory.fupdate_list_map, DB.fetch "alist" "fmap_to_alist_def", finite_mapTheory.FDOM_FUPDATE, finite_mapTheory.FEVERY_DEF, finite_mapTheory.FCARD_SUC, finite_mapTheory.FM_PULL_APART, finite_mapTheory.FUPDATE_ELIM, finite_mapTheory.f_o_FUPDATE, finite_mapTheory.f_o_f_DEF, finite_mapTheory.f_o_DEF, finite_mapTheory.FDOM_f_o],
+  BasicProvers.SRW_TAC [] [DB.fetch "alist" "alist_to_fmap_def", listTheory.UNZIP_THM, listTheory.ZIP, finite_mapTheory.MAP_KEYS_FUPDATE, finite_mapTheory.FDOM_FUPDATE, finite_mapTheory.FEVERY_DRESTRICT_COMPL, finite_mapTheory.FRANGE_FUPDATE_DOMSUB, finite_mapTheory.FUPD11_SAME_UPDATE, finite_mapTheory.fmap_EQ_UPTO___FUPDATE_SING, finite_mapTheory.FM_PULL_APART, finite_mapTheory.FUPDATE_ELIM, finite_mapTheory.f_o_FUPDATE, finite_mapTheory.f_o_f_FUPDATE_compose, finite_mapTheory.SUBMAP_FUPDATE, finite_mapTheory.FUPD11_SAME_NEW_KEY, DB.fetch "alist" "fmap_to_alist_def"],
+  BasicProvers.SRW_TAC [] [listTheory.UNZIP_THM, DB.fetch "alist" "alist_to_fmap_def", listTheory.ZIP, finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_APPLY_MEM, finite_mapTheory.FUPDATE_ELIM, DB.fetch "alist" "fmap_to_alist_def", finite_mapTheory.tactictoe_thm_24, finite_mapTheory.FUPDATE_LIST_APPLY_MEM, finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM_matchable, finite_mapTheory.IN_FRANGE, finite_mapTheory.FAPPLY_FUPDATE, finite_mapTheory.FAPPLY_FUPDATE_THM, finite_mapTheory.NOT_EQ_FAPPLY, finite_mapTheory.SUBMAP_FUPDATE_EQN, finite_mapTheory.tactictoe_thm_18, finite_mapTheory.tactictoe_thm_21],
+  bossLib.SRW_TAC [] [DB.fetch "alist" "alist_to_fmap_def", listTheory.UNZIP_THM, listTheory.ZIP, finite_mapTheory.FUPDATE_ELIM, finite_mapTheory.FAPPLY_FUPDATE, finite_mapTheory.FAPPLY_FUPDATE_THM, finite_mapTheory.NOT_EQ_FAPPLY, finite_mapTheory.SUBMAP_FUPDATE_EQN, finite_mapTheory.tactictoe_thm_18, finite_mapTheory.tactictoe_thm_21, finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_APPLY_MEM, finite_mapTheory.FUPDATE_SAME_APPLY, DB.fetch "alist" "fmap_to_alist_def", finite_mapTheory.tactictoe_thm_24, finite_mapTheory.FUPDATE_LIST_APPLY_MEM, finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM_matchable]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005139
+Replaying proof: 0.002209
+
+ALOOKUP_FAILS
+Statistics
+  infstep : 1043
+  nodes   : 170
+  maxdepth: 6
+Time: 10.017535
+  inferstep time: 7.587344
+  node_find time: 0.080116
+  node_crea time: 2.243381
+    pred time: 0.530218
+    thmpred time: 0.000023
+    mc time: 1.043052
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.132255
+
+ALOOKUP_NONE
+proof length: 4
+proof time: 0.007545
+Statistics
+  infstep : 9
+  nodes   : 6
+  maxdepth: 3
+Time: 0.592979
+  inferstep time: 0.442171
+  node_find time: 0.000445
+  node_crea time: 0.113013
+    pred time: 0.035815
+    thmpred time: 0.000002
+    mc time: 0.095313
+    inst time: 0.0
+Proof found: bossLib.Induct_on [HolKernel.QUOTE " (*#loc 1 1363*)l"] THENL [BasicProvers.SRW_TAC [] [DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "ALOOKUP_FAILS", finite_mapTheory.FUPDATE_LIST_APPLY_HO_THM, finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM, finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM_matchable, finite_mapTheory.FUPDATE_FUPDATE_LIST_COMMUTES, finite_mapTheory.FUPDATE_SAME_LIST_APPLY, finite_mapTheory.FUPDATE_LIST_CANCEL, finite_mapTheory.FUPDATE_FUPDATE_LIST_MEM, finite_mapTheory.tactictoe_thm_24, finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_APPLY_MEM, finite_mapTheory.FDOM_FUPDATE_LIST, finite_mapTheory.FUPDATE_LIST_APPEND_COMMUTES, finite_mapTheory.FUPDATE_LIST_SAME_UPDATE, finite_mapTheory.fdom_fupdate_list2, finite_mapTheory.FEVERY_FUPDATE_LIST], bossLib.Cases_on [HolKernel.QUOTE " (*#loc 1 1401*)h"] THEN
+  bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005391
+
+ALOOKUP_TABULATE
+proof length: 4
+proof time: 0.071782
+Statistics
+  infstep : 66
+  nodes   : 9
+  maxdepth: 3
+Time: 0.716224
+  inferstep time: 0.600561
+  node_find time: 0.001948
+  node_crea time: 0.087337
+    pred time: 0.035954
+    thmpred time: 0.000001
+    mc time: 0.054381
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN bossLib.Induct_on [HolKernel.QUOTE " (*#loc 1 1363*)l"] THENL
+  [metisTools.METIS_TAC [listTheory.MEM, finite_mapTheory.fupdate_list_map, listTheory.LIST_TO_SET_FILTER, pred_setTheory.IN_GSPEC_IFF, pred_setTheory.GSPEC_ETA, pred_setTheory.GSPEC_AND, pred_setTheory.GSPEC_OR, DB.fetch "alist" "ALOOKUP_FAILS", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "ALOOKUP_NONE", listTheory.LIST_TO_SET, listTheory.LIST_TO_SET_THM, finite_mapTheory.FLOOKUP_FUN_FMAP, finite_mapTheory.FLOOKUP_o_f, listTheory.LUPDATE_SOME_MAP, optionTheory.option_CLAUSES],
+  bossLib.rw []]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.047157
+
+ALOOKUP_EQ_FLOOKUP
+Statistics
+  infstep : 1699
+  nodes   : 148
+  maxdepth: 5
+Time: 10.014696
+  inferstep time: 7.659018
+  node_find time: 0.129039
+  node_crea time: 2.004158
+    pred time: 0.478782
+    thmpred time: 0.000019
+    mc time: 0.947108
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.261402
+
+MEM_fmap_to_alist
+proof length: 3
+proof time: 0.011374
+Statistics
+  infstep : 27
+  nodes   : 7
+  maxdepth: 3
+Time: 0.623168
+  inferstep time: 0.532638
+  node_find time: 0.001122
+  node_crea time: 0.071383
+    pred time: 0.024796
+    thmpred time: 0.000002
+    mc time: 0.047638
+    inst time: 0.0
+Proof found: bossLib.SRW_TAC [] [(DB.fetch "alist" "fmap_to_alist_def")] THEN bossLib.SRW_TAC [] [(DB.fetch "alist" "ALOOKUP_FAILS"), listTheory.MEM_MAP] THEN
+  metisLib.METIS_TAC [(DB.fetch "finite_map" "o_f_FAPPLY")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.040429
+
+MEM_fmap_to_alist_FLOOKUP
+proof length: 3
+proof time: 0.130721
+Statistics
+  infstep : 89
+  nodes   : 34
+  maxdepth: 4
+Time: 2.028238
+  inferstep time: 1.610717
+  node_find time: 0.004915
+  node_crea time: 0.373943
+    pred time: 0.10561
+    thmpred time: 0.000006
+    mc time: 0.20167
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "alist" "MEM_fmap_to_alist", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "fmap_to_alist_def", DB.fetch "alist" "fmap_to_alist_FEMPTY", finite_mapTheory.FLOOKUP_UPDATE, finite_mapTheory.FLOOKUP_o_f, finite_mapTheory.FLOOKUP_DRESTRICT, finite_mapTheory.DOMSUB_FLOOKUP_NEQ, finite_mapTheory.DOMSUB_FLOOKUP_THM, finite_mapTheory.FLOOKUP_DEF, finite_mapTheory.IN_FRANGE_FLOOKUP, finite_mapTheory.flookup_thm, finite_mapTheory.fmap_inverse_def, finite_mapTheory.FRANGE_FLOOKUP, finite_mapTheory.FEVERY_ALL_FLOOKUP, finite_mapTheory.FEVERY_FLOOKUP] THEN BasicProvers.Cases_on [HolKernel.QUOTE " (*#loc 1 110081*)p"] THEN
+  metisTools.METIS_TAC [DB.fetch "alist" "fmap_to_alist_def", pairTheory.SND, pairTheory.FST, finite_mapTheory.FEVERY_DEF, DB.fetch "alist" "MEM_fmap_to_alist", finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_APPLY_MEM, listTheory.mem_exists_set, DB.fetch "alist" "ALOOKUP_FAILS", finite_mapTheory.FUPDATE_LIST_APPLY_HO_THM, finite_mapTheory.fmap_size_def, listTheory.MEM_SET_TO_LIST, finite_mapTheory.MAP_KEYS_def, finite_mapTheory.MAP_KEYS_witness, listTheory.SET_TO_LIST_EMPTY, finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM_matchable, finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.029298
+
+MEM_pair_fmap_to_alist_FLOOKUP
+proof length: 1
+proof time: 0.006175
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.124261
+  inferstep time: 0.11044
+  node_find time: 0.000093
+  node_crea time: 0.009636
+    pred time: 0.003362
+    thmpred time: 0.0
+    mc time: 0.00795
+    inst time: 0.0
+Proof found: (bossLib.rw [ ( DB.fetch "alist" "MEM_fmap_to_alist" ) , finite_mapTheory.FLOOKUP_DEF ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006568
+
+LENGTH_fmap_to_alist
+proof length: 2
+proof time: 0.002398
+Statistics
+  infstep : 14
+  nodes   : 5
+  maxdepth: 2
+Time: 0.442798
+  inferstep time: 0.366506
+  node_find time: 0.000776
+  node_crea time: 0.060247
+    pred time: 0.012551
+    thmpred time: 0.000002
+    mc time: 0.045184
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [finite_mapTheory.FCARD_DEF, DB.fetch "alist" "MEM_fmap_to_alist", DB.fetch "alist" "fmap_to_alist_def", DB.fetch "alist" "MEM_fmap_to_alist_FLOOKUP", DB.fetch "alist" "MEM_pair_fmap_to_alist_FLOOKUP", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "fmap_to_alist_FEMPTY", finite_mapTheory.FDOM_FUPDATE_LIST, finite_mapTheory.fdom_fupdate_list2, finite_mapTheory.FCARD_FUPDATE, finite_mapTheory.FM_PULL_APART, finite_mapTheory.MAP_KEYS_FUPDATE, finite_mapTheory.f_o_FUPDATE, finite_mapTheory.FDOM_FOLDR_DOMSUB, finite_mapTheory.fmap_size_def, finite_mapTheory.MAP_KEYS_def] THEN BasicProvers.SRW_TAC [] [DB.fetch "alist" "fmap_to_alist_def", finite_mapTheory.FCARD_DEF, listTheory.SET_TO_LIST_CARD, listTheory.MEM_SET_TO_LIST, listTheory.SET_TO_LIST_THM, listTheory.SET_TO_LIST_EMPTY, DB.fetch "alist" "MEM_fmap_to_alist", finite_mapTheory.FDOM_FUPDATE_LIST, finite_mapTheory.fdom_fupdate_list2, finite_mapTheory.FDOM_FOLDR_DOMSUB, finite_mapTheory.FCARD_FUPDATE, finite_mapTheory.fmap_size_def, finite_mapTheory.FM_PULL_APART, finite_mapTheory.MAP_KEYS_FUPDATE, finite_mapTheory.MAP_KEYS_def, finite_mapTheory.f_o_FUPDATE]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00911
+
+fmap_to_alist_to_fmap
+Statistics
+  infstep : 828
+  nodes   : 167
+  maxdepth: 6
+Time: 10.041148
+  inferstep time: 7.454133
+  node_find time: 0.085431
+  node_crea time: 2.357355
+    pred time: 0.476592
+    thmpred time: 0.000027
+    mc time: 1.234679
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.002992
+
+ALOOKUP_MEM
+proof length: 2
+proof time: 0.007357
+Statistics
+  infstep : 15
+  nodes   : 5
+  maxdepth: 2
+Time: 0.508088
+  inferstep time: 0.460286
+  node_find time: 0.000703
+  node_crea time: 0.036513
+    pred time: 0.012306
+    thmpred time: 0.0
+    mc time: 0.022413
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "alist" "ALOOKUP_ind") THEN bossLib.SRW_TAC [] [(DB.fetch "alist" "alist_to_fmap_def"), (DB.fetch "alist" "tactictoe_thm_0"), finite_mapTheory.FLOOKUP_UPDATE]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.121797
+
+ALOOKUP_SOME_FAPPLY_alist_to_fmap
+proof length: 1
+proof time: 0.079324
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.076082
+  inferstep time: 0.064495
+  node_find time: 0.000054
+  node_crea time: 0.008389
+    pred time: 0.003015
+    thmpred time: 0.000001
+    mc time: 0.006395
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP" , DB.fetch "alist" "ALOOKUP_MEM" , DB.fetch "alist" "alist_to_fmap_def" , DB.fetch "alist" "alist_to_fmap_thm" , DB.fetch "alist" "tactictoe_thm_0" , DB.fetch "alist" "ALOOKUP_def" , DB.fetch "alist" "ALOOKUP_FAILS" , DB.fetch "alist" "ALOOKUP_NONE" , DB.fetch "alist" "fmap_to_alist_to_fmap" , DB.fetch "alist" "ALOOKUP_TABULATE" , finite_mapTheory.flookup_thm , finite_mapTheory.FUPDATE_LIST_APPLY_MEM , finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM_matchable , finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_APPLY_MEM , finite_mapTheory.FUPDATE_ELIM , finite_mapTheory.FLOOKUP_DEF])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.104497
+
+alist_to_fmap_FAPPLY_MEM
+proof length: 3
+proof time: 0.089698
+Statistics
+  infstep : 86
+  nodes   : 28
+  maxdepth: 4
+Time: 2.193988
+  inferstep time: 1.767981
+  node_find time: 0.005609
+  node_crea time: 0.375532
+    pred time: 0.141858
+    thmpred time: 0.000007
+    mc time: 0.137043
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "alist" "ALOOKUP_ind") THEN bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")] THEN
+  metisTools.METIS_TAC [DB.fetch "alist" "alist_to_fmap_thm", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "ALOOKUP_MEM", DB.fetch "alist" "fmap_to_alist_to_fmap", finite_mapTheory.SUBMAP_FUPDATE_EQN, finite_mapTheory.tactictoe_thm_18, finite_mapTheory.tactictoe_thm_21, finite_mapTheory.FUPDATE_ELIM, finite_mapTheory.FAPPLY_FUPDATE, finite_mapTheory.NOT_EQ_FAPPLY, finite_mapTheory.FAPPLY_FUPDATE_THM, finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_APPLY_MEM, finite_mapTheory.FUPDATE_SAME_APPLY, finite_mapTheory.tactictoe_thm_24]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.119247
+
+ALOOKUP_MAP
+Statistics
+  infstep : 1231
+  nodes   : 214
+  maxdepth: 6
+Time: 10.004304
+  inferstep time: 7.652761
+  node_find time: 0.127643
+  node_crea time: 1.923361
+    pred time: 0.394072
+    thmpred time: 0.000031
+    mc time: 1.081682
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.157347
+
+FDOM_alist_to_fmap
+proof length: 5
+proof time: 0.002909
+Statistics
+  infstep : 613
+  nodes   : 100
+  maxdepth: 5
+Time: 5.649738
+  inferstep time: 4.352507
+  node_find time: 0.055775
+  node_crea time: 1.032845
+    pred time: 0.253246
+    thmpred time: 0.000008
+    mc time: 0.603909
+    inst time: 0.0
+Proof found: bossLib.Induct THENL [bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")], bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")] THEN
+  bossLib.Cases_on [HolKernel.QUOTE " (*#loc 1 45190*)h"] THEN
+  simpLib.FULL_SIMP_TAC (bossLib.srw_ss ()) []]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.088046
+
+alist_to_fmap_prefix
+Statistics
+  infstep : 542
+  nodes   : 117
+  maxdepth: 5
+Time: 10.113331
+  inferstep time: 8.430158
+  node_find time: 0.055707
+  node_crea time: 1.487906
+    pred time: 0.434562
+    thmpred time: 0.000025
+    mc time: 0.575287
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.18225
+
+alist_to_fmap_APPEND
+proof length: 5
+proof time: 0.043756
+Statistics
+  infstep : 37
+  nodes   : 15
+  maxdepth: 4
+Time: 1.403369
+  inferstep time: 1.2404
+  node_find time: 0.002542
+  node_crea time: 0.134144
+    pred time: 0.050607
+    thmpred time: 0.000004
+    mc time: 0.061283
+    inst time: 0.0
+Proof found: bossLib.Induct THENL [bossLib.SRW_TAC [] [(DB.fetch "alist" "alist_to_fmap_def"), (DB.fetch "alist" "tactictoe_thm_0"), finite_mapTheory.FLOOKUP_UPDATE], bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")] THEN
+  bossLib.Cases_on [HolKernel.QUOTE " (*#loc 1 45190*)h"] THEN
+  metisTools.METIS_TAC [DB.fetch "alist" "alist_to_fmap_thm", DB.fetch "alist" "ALOOKUP_ind", DB.fetch "alist" "tactictoe_thm_0", sortingTheory.tactictoe_thm_17, DB.fetch "alist" "alist_to_fmap_prefix", DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "alist_to_fmap_FAPPLY_MEM", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "FDOM_alist_to_fmap", listTheory.ZIP, DB.fetch "alist" "fmap_to_alist_to_fmap", finite_mapTheory.DRESTRICT_FUNION, finite_mapTheory.FUNION_FUPDATE_1, finite_mapTheory.FUNION_FUPDATE_2, finite_mapTheory.FUPDATE_EQ_FUNION]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.098831
+
+ALOOKUP_prefix
+proof length: 2
+proof time: 0.014925
+Statistics
+  infstep : 14
+  nodes   : 6
+  maxdepth: 2
+Time: 0.417612
+  inferstep time: 0.347555
+  node_find time: 0.000949
+  node_crea time: 0.056775
+    pred time: 0.021102
+    thmpred time: 0.000002
+    mc time: 0.028023
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "alist" "ALOOKUP_ind") THEN bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.045064
+
+ALOOKUP_APPEND
+proof length: 3
+proof time: 0.078333
+Statistics
+  infstep : 24
+  nodes   : 9
+  maxdepth: 3
+Time: 0.665771
+  inferstep time: 0.553532
+  node_find time: 0.001784
+  node_crea time: 0.088678
+    pred time: 0.03759
+    thmpred time: 0.000003
+    mc time: 0.046491
+    inst time: 0.0
+Proof found: bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")] THEN boolLib.ONCE_REWRITE_TAC [HolKernel.SYM (HolKernel.CONJUNCT1 (DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP"))] THEN
+  metisTools.METIS_TAC [DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", finite_mapTheory.FLOOKUP_FUNION, DB.fetch "alist" "alist_to_fmap_APPEND", DB.fetch "alist" "alist_to_fmap_prefix", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "alist_to_fmap_thm", finite_mapTheory.FLOOKUP_o_f, optionTheory.option_case_def, optionTheory.option_CLAUSES, optionTheory.option_case_cong, optionTheory.option_case_ID, optionTheory.option_case_SOME_ID, optionTheory.OPTION_MAP_CASE, listTheory.splitAtPki_EQN, patternMatchesTheory.PMATCH_def]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067836
+
+FUPDATE_LIST_EQ_APPEND_REVERSE
+Statistics
+  infstep : 684
+  nodes   : 129
+  maxdepth: 5
+Time: 10.068547
+  inferstep time: 8.241309
+  node_find time: 0.089996
+  node_crea time: 1.545344
+    pred time: 0.430467
+    thmpred time: 0.000068
+    mc time: 0.782659
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.127789
+
+FLOOKUP_FUPDATE_LIST_ALOOKUP_SOME
+proof length: 2
+proof time: 0.009513
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.306903
+  inferstep time: 0.246125
+  node_find time: 0.000478
+  node_crea time: 0.040944
+    pred time: 0.01066
+    thmpred time: 0.0
+    mc time: 0.039827
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_REVERSE, finite_mapTheory.fupdate_list_foldr, DB.fetch "alist" "ALOOKUP_prefix", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_MEM", DB.fetch "alist" "ALOOKUP_APPEND", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "tactictoe_thm_0", DB.fetch "alist" "ALOOKUP_FAILS", DB.fetch "alist" "ALOOKUP_NONE", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "ALOOKUP_MAP", DB.fetch "alist" "ALOOKUP_TABULATE", DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE", finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_APPLY_MEM, finite_mapTheory.FOLDL_FUPDATE_LIST] THEN BasicProvers.SRW_TAC [] [DB.fetch "alist" "alist_to_fmap_APPEND", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "alist_to_fmap_thm", DB.fetch "alist" "FDOM_alist_to_fmap", DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE", DB.fetch "alist" "fmap_to_alist_to_fmap", finite_mapTheory.FLOOKUP_FUNION, finite_mapTheory.FLOOKUP_UPDATE, DB.fetch "alist" "MEM_pair_fmap_to_alist_FLOOKUP", finite_mapTheory.FLOOKUP_o_f, finite_mapTheory.FEVERY_ALL_FLOOKUP, finite_mapTheory.FEVERY_FLOOKUP, finite_mapTheory.FRANGE_FLOOKUP, finite_mapTheory.FLOOKUP_SUBMAP]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.067994
+
+FLOOKUP_FUPDATE_LIST_ALOOKUP_NONE
+proof length: 2
+proof time: 0.007476
+Statistics
+  infstep : 59
+  nodes   : 24
+  maxdepth: 4
+Time: 2.026135
+  inferstep time: 1.615528
+  node_find time: 0.004833
+  node_crea time: 0.376887
+    pred time: 0.122477
+    thmpred time: 0.000005
+    mc time: 0.149578
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_SOME", finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_REVERSE, finite_mapTheory.fupdate_list_foldr, DB.fetch "alist" "ALOOKUP_prefix", DB.fetch "alist" "ALOOKUP_FAILS", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "ALOOKUP_NONE", DB.fetch "alist" "tactictoe_thm_0", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_MEM", DB.fetch "alist" "ALOOKUP_APPEND", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "ALOOKUP_MAP", finite_mapTheory.FLOOKUP_DRESTRICT, finite_mapTheory.FLOOKUP_o_f, finite_mapTheory.DOMSUB_FLOOKUP_THM] THEN bossLib.SRW_TAC [] [(DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE"), finite_mapTheory.FLOOKUP_DEF, finite_mapTheory.FUNION_DEF, (DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap"), listTheory.MEM_MAP, pairTheory.EXISTS_PROD]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011873
+
+FUNION_alist_to_fmap
+proof length: 1
+proof time: 0.003039
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.14014
+  inferstep time: 0.125684
+  node_find time: 0.000202
+  node_crea time: 0.00954
+    pred time: 0.003008
+    thmpred time: 0.0
+    mc time: 0.00844
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "alist" "alist_to_fmap_APPEND" , DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP" , DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap" , DB.fetch "alist" "alist_to_fmap_def" , DB.fetch "alist" "alist_to_fmap_thm" , DB.fetch "alist" "FDOM_alist_to_fmap" , DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE" , DB.fetch "alist" "fmap_to_alist_to_fmap" , finite_mapTheory.FLOOKUP_FUNION , finite_mapTheory.FLOOKUP_UPDATE , DB.fetch "alist" "MEM_pair_fmap_to_alist_FLOOKUP" , finite_mapTheory.FLOOKUP_o_f , finite_mapTheory.FEVERY_ALL_FLOOKUP , finite_mapTheory.FEVERY_FLOOKUP , finite_mapTheory.FRANGE_FLOOKUP , finite_mapTheory.FLOOKUP_SUBMAP ])
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.157227
+
+alist_to_fmap_MAP
+Statistics
+  infstep : 828
+  nodes   : 128
+  maxdepth: 5
+Time: 10.011007
+  inferstep time: 7.521054
+  node_find time: 0.110566
+  node_crea time: 2.117518
+    pred time: 0.395283
+    thmpred time: 0.000029
+    mc time: 1.067093
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.386646
+
+alist_to_fmap_to_alist
+Statistics
+  infstep : 823
+  nodes   : 195
+  maxdepth: 7
+Time: 10.001025
+  inferstep time: 7.45682
+  node_find time: 0.11612
+  node_crea time: 2.147861
+    pred time: 0.447235
+    thmpred time: 0.000033
+    mc time: 1.220303
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.168014
+
+alist_to_fmap_to_alist_PERM
+Statistics
+  infstep : 612
+  nodes   : 139
+  maxdepth: 6
+Time: 10.019838
+  inferstep time: 7.672833
+  node_find time: 0.080915
+  node_crea time: 2.053296
+    pred time: 0.498213
+    thmpred time: 0.00003
+    mc time: 0.901492
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 23
+Original proof time: 0.0
+Replaying proof: 0.81383
+
+ALOOKUP_LEAST_EL
+Statistics
+  infstep : 765
+  nodes   : 114
+  maxdepth: 5
+Time: 10.076647
+  inferstep time: 7.586081
+  node_find time: 0.103158
+  node_crea time: 2.126362
+    pred time: 0.581153
+    thmpred time: 0.000022
+    mc time: 0.953225
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 45
+Original proof time: 0.0
+Replaying proof: 2.315968
+
+ALOOKUP_ALL_DISTINCT_MEM
+Statistics
+  infstep : 355
+  nodes   : 132
+  maxdepth: 7
+Time: 10.024179
+  inferstep time: 7.56972
+  node_find time: 0.04947
+  node_crea time: 2.187552
+    pred time: 0.514552
+    thmpred time: 0.000028
+    mc time: 0.997708
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 23
+Original proof time: 0.0
+Replaying proof: 1.315842
+
+ALL_DISTINCT_fmap_to_alist_keys
+Statistics
+  infstep : 925
+  nodes   : 142
+  maxdepth: 6
+Time: 10.007992
+  inferstep time: 7.741203
+  node_find time: 0.135634
+  node_crea time: 1.804867
+    pred time: 0.43321
+    thmpred time: 0.000025
+    mc time: 0.820939
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.572824
+
+fmap_to_alist_inj
+proof length: 1
+proof time: 0.038712
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.062061
+  inferstep time: 0.047015
+  node_find time: 0.000181
+  node_crea time: 0.010512
+    pred time: 0.003494
+    thmpred time: 0.000001
+    mc time: 0.008065
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE" , DB.fetch "alist" "LENGTH_fmap_to_alist" , DB.fetch "alist" "fmap_to_alist_def" , DB.fetch "alist" "MEM_fmap_to_alist_FLOOKUP" , DB.fetch "alist" "MEM_pair_fmap_to_alist_FLOOKUP" , DB.fetch "alist" "fmap_to_alist_to_fmap" , DB.fetch "alist" "MEM_fmap_to_alist" , DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP" , DB.fetch "alist" "ALL_DISTINCT_fmap_to_alist_keys" , DB.fetch "alist" "alist_to_fmap_to_alist_PERM" , DB.fetch "alist" "alist_to_fmap_to_alist" , DB.fetch "alist" "fmap_to_alist_FEMPTY" , DB.fetch "alist" "alist_to_fmap_MAP" , finite_mapTheory.FOLDL2_FUPDATE_LIST , finite_mapTheory.FOLDL2_FUPDATE_LIST_paired , finite_mapTheory.FUPDATE_LIST_SAME_KEYS_UNWIND])
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.149527
+
+fmap_to_alist_preserves_FDOM
+Statistics
+  infstep : 532
+  nodes   : 159
+  maxdepth: 5
+Time: 10.084909
+  inferstep time: 7.318032
+  node_find time: 0.082502
+  node_crea time: 2.441445
+    pred time: 0.571758
+    thmpred time: 0.00002
+    mc time: 1.033451
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.715464
+
+PERM_fmap_to_alist
+Statistics
+  infstep : 535
+  nodes   : 162
+  maxdepth: 6
+Time: 10.065306
+  inferstep time: 7.49278
+  node_find time: 0.087558
+  node_crea time: 2.235822
+    pred time: 0.558019
+    thmpred time: 0.000024
+    mc time: 0.777985
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 31
+Original proof time: 0.0
+Replaying proof: 1.390733
+
+alist_to_fmap_PERM
+Statistics
+  infstep : 622
+  nodes   : 147
+  maxdepth: 6
+Time: 10.012032
+  inferstep time: 7.358089
+  node_find time: 0.105277
+  node_crea time: 2.238108
+    pred time: 0.404008
+    thmpred time: 0.000026
+    mc time: 1.020725
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.126998
+
+ALOOKUP_ALL_DISTINCT_EL
+Statistics
+  infstep : 579
+  nodes   : 124
+  maxdepth: 6
+Time: 10.004066
+  inferstep time: 7.224887
+  node_find time: 0.093416
+  node_crea time: 2.296819
+    pred time: 0.528509
+    thmpred time: 0.000023
+    mc time: 1.069805
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.296122
+
+ALOOKUP_ZIP_MAP_SND
+proof length: 8
+proof time: 0.079002
+Statistics
+  infstep : 274
+  nodes   : 93
+  maxdepth: 6
+Time: 7.397618
+  inferstep time: 5.756915
+  node_find time: 0.044478
+  node_crea time: 1.300405
+    pred time: 0.334877
+    thmpred time: 0.000029
+    mc time: 0.687998
+    inst time: 0.0
+Proof found: bossLib.Induct THENL [BasicProvers.SRW_TAC [] [DB.fetch "alist" "ALOOKUP_MAP", listTheory.LENGTH, listTheory.ZIP, listTheory.UNZIP, optionTheory.OPTION_MAP_CASE, optionTheory.OPTION_MAP_COMPOSE, listTheory.LUPDATE_SOME_MAP, optionTheory.option_CLAUSES, optionTheory.OPTION_MAP_DEF, optionTheory.OPTION_MAP_EQ_SOME, optionTheory.OPTION_APPLY_def, optionTheory.OPTION_MAP_EQ_NONE, patternMatchesTheory.PMATCH_ROW_LIFT_def, patternMatchesTheory.tactictoe_thm_12, patternMatchesTheory.tactictoe_thm_13, patternMatchesTheory.tactictoe_thm_16] THEN
+  bossLib.rw [boolLib.FUN_EQ_THM], bossLib.rw [boolLib.FUN_EQ_THM] THEN
+  Q.SUBGOAL_THEN [HolKernel.QUOTE " (*#loc 1 44485*)?l2h l2t. (l2 = l2h::l2t) /\\ (LENGTH l2t = LENGTH l1)"] boolLib.STRIP_ASSUME_TAC THENL
+  [metisTools.METIS_TAC [listTheory.ZIP, listTheory.APPEND, sortingTheory.PART_DEF, listTheory.MEM_ZIP, listTheory.LENGTH_CONS, listTheory.ZIP_MAP, listTheory.MAP_ZIP, listTheory.EVERY2_EVERY, listTheory.ALL_DISTINCT_ZIP, listTheory.LENGTH_ZIP, listTheory.EL_ZIP, listTheory.ALL_DISTINCT_ZIP_SWAP, listTheory.ZIP_EQ_NIL, listTheory.LIST_REL_EVERY_ZIP, listTheory.LIST_REL_EL_EQN, listTheory.LIST_EQ_REWRITE],
+  simpLib.ASM_SIMP_TAC boolSimps.bool_ss [(DB.fetch "list" "ZIP"), (DB.fetch "list" "MAP"), pairTheory.FST, pairTheory.SND] THEN
+  bossLib.rw [boolLib.FUN_EQ_THM]]]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.215521
+
+ALOOKUP_FILTER
+proof length: 6
+proof time: 0.069418
+Statistics
+  infstep : 147
+  nodes   : 45
+  maxdepth: 5
+Time: 3.053402
+  inferstep time: 2.116685
+  node_find time: 0.021461
+  node_crea time: 0.799093
+    pred time: 0.180262
+    thmpred time: 0.000011
+    mc time: 0.297781
+    inst time: 0.0
+Proof found: Prim_rec.INDUCT_THEN ((DB.fetch "list" "list_INDUCT")) boolLib.ASSUME_TAC THENL [bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")], bossLib.Cases_on [HolKernel.QUOTE " (*#loc 1 45190*)h"] THEN
+  bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")] THENL
+  [metisTools.METIS_TAC [DB.fetch "alist" "ALOOKUP_ind", satTheory.dc_eq, satTheory.dc_conj, satTheory.dc_disj, satTheory.dc_imp, satTheory.dc_neg, satTheory.dc_cond, satTheory.pth_ni1, satTheory.pth_ni2, satTheory.pth_no1, satTheory.pth_no2, DB.fetch "alist" "ALOOKUP_def", pairTheory.ABS_PAIR_THM, DB.fetch "alist" "tactictoe_thm_0", pairTheory.pair_CASES, quantHeuristicsTheory.GUESS_RULES_CONJ],
+  metisTools.METIS_TAC [DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "tactictoe_thm_0", DB.fetch "alist" "ALOOKUP_prefix", DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_SOME", DB.fetch "alist" "ALOOKUP_LEAST_EL", DB.fetch "alist" "ALOOKUP_MEM", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_APPEND", DB.fetch "alist" "ALOOKUP_ALL_DISTINCT_MEM", DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_NONE", DB.fetch "alist" "ALOOKUP_FAILS", DB.fetch "alist" "ALOOKUP_NONE", DB.fetch "alist" "alist_to_fmap_to_alist", DB.fetch "alist" "ALOOKUP_ALL_DISTINCT_EL", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "ALOOKUP_MAP"]]]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.344321
+
+ALOOKUP_APPEND_same
+proof length: 3
+proof time: 0.051861
+Statistics
+  infstep : 77
+  nodes   : 25
+  maxdepth: 4
+Time: 2.117133
+  inferstep time: 1.706533
+  node_find time: 0.01194
+  node_crea time: 0.334307
+    pred time: 0.109547
+    thmpred time: 0.000017
+    mc time: 0.153081
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN bossLib.rw [boolLib.FUN_EQ_THM] THEN
+  metisTools.METIS_TAC [DB.fetch "alist" "ALOOKUP_APPEND", DB.fetch "alist" "ALOOKUP_prefix", sortingTheory.tactictoe_thm_17, DB.fetch "alist" "ALOOKUP_ZIP_MAP_SND", DB.fetch "alist" "ALOOKUP_FAILS", DB.fetch "alist" "ALOOKUP_NONE", DB.fetch "alist" "ALOOKUP_TABULATE", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "ALOOKUP_FILTER", DB.fetch "alist" "ALOOKUP_MAP", DB.fetch "alist" "tactictoe_thm_0", DB.fetch "alist" "ALOOKUP_ALL_DISTINCT_EL", DB.fetch "alist" "ALOOKUP_MEM", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "ALOOKUP_ALL_DISTINCT_MEM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007841
+
+ALOOKUP_IN_FRANGE
+proof length: 2
+proof time: 0.048727
+Statistics
+  infstep : 12
+  nodes   : 7
+  maxdepth: 2
+Time: 0.414265
+  inferstep time: 0.312857
+  node_find time: 0.001731
+  node_crea time: 0.081148
+    pred time: 0.028468
+    thmpred time: 0.000002
+    mc time: 0.043861
+    inst time: 0.0
+Proof found: boolLib.ONCE_REWRITE_TAC [HolKernel.SYM (HolKernel.CONJUNCT1 (DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP"))] THEN metisTools.METIS_TAC [DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_prefix", DB.fetch "alist" "FUNION_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "alist_to_fmap_thm", DB.fetch "alist" "alist_to_fmap_to_alist", DB.fetch "alist" "alist_to_fmap_FAPPLY_MEM", DB.fetch "alist" "alist_to_fmap_MAP", DB.fetch "alist" "alist_to_fmap_PERM", DB.fetch "alist" "alist_to_fmap_to_alist_PERM", DB.fetch "alist" "FDOM_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_APPEND", finite_mapTheory.IN_FRANGE_FLOOKUP, finite_mapTheory.FRANGE_FLOOKUP, DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE"]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.301239
+
+FRANGE_alist_to_fmap_SUBSET
+Statistics
+  infstep : 703
+  nodes   : 107
+  maxdepth: 5
+Time: 10.093277
+  inferstep time: 7.945186
+  node_find time: 0.128093
+  node_crea time: 1.658522
+    pred time: 0.464073
+    thmpred time: 0.000032
+    mc time: 0.732901
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.134477
+
+IN_FRANGE_alist_to_fmap_suff
+Statistics
+  infstep : 549
+  nodes   : 101
+  maxdepth: 5
+Time: 10.0019
+  inferstep time: 8.081123
+  node_find time: 0.098785
+  node_crea time: 1.532167
+    pred time: 0.39795
+    thmpred time: 0.000036
+    mc time: 0.731214
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.194594
+
+alist_to_fmap_MAP_matchable
+proof length: 1
+proof time: 0.061503
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.08055
+  inferstep time: 0.056594
+  node_find time: 0.000274
+  node_crea time: 0.015579
+    pred time: 0.004516
+    thmpred time: 0.0
+    mc time: 0.013889
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "alist" "alist_to_fmap_MAP" , finite_mapTheory.FOLDL_FUPDATE_LIST , pred_setTheory.IN_GSPEC , finite_mapTheory.MAP_KEYS_FUPDATE , pairTheory.PAIR_MAP_THM , DB.fetch "alist" "alist_to_fmap_to_alist" , DB.fetch "alist" "FDOM_alist_to_fmap" , DB.fetch "alist" "alist_to_fmap_to_alist_PERM" , finite_mapTheory.MAP_KEYS_def , finite_mapTheory.FLOOKUP_MAP_KEYS , finite_mapTheory.FLOOKUP_MAP_KEYS_MAPPED , finite_mapTheory.MAP_KEYS_using_LINV , finite_mapTheory.DRESTRICT_MAP_KEYS_IMAGE , DB.fetch "alist" "alist_to_fmap_FAPPLY_MEM" , DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap" , DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.021005
+
+MAP_values_fmap_to_alist
+Statistics
+  infstep : 1220
+  nodes   : 115
+  maxdepth: 5
+Time: 10.061921
+  inferstep time: 7.680417
+  node_find time: 0.229768
+  node_crea time: 1.480837
+    pred time: 0.293459
+    thmpred time: 0.000027
+    mc time: 0.789951
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012039
+Replaying proof: 0.001003
+
+MAP_KEYS_I
+Statistics
+  infstep : 813
+  nodes   : 125
+  maxdepth: 5
+Time: 10.006801
+  inferstep time: 7.463718
+  node_find time: 0.158069
+  node_crea time: 1.95616
+    pred time: 0.453399
+    thmpred time: 0.000026
+    mc time: 0.915737
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.05309
+
+alist_to_fmap_MAP_values
+proof length: 5
+proof time: 0.008091
+Statistics
+  infstep : 61
+  nodes   : 12
+  maxdepth: 4
+Time: 1.039216
+  inferstep time: 0.836103
+  node_find time: 0.008925
+  node_crea time: 0.125431
+    pred time: 0.035052
+    thmpred time: 0.000002
+    mc time: 0.092593
+    inst time: 0.0
+Proof found: boolLib.gen_tac THEN bossLib.Induct THENL
+  [bossLib.rw [boolLib.FUN_EQ_THM],
+  bossLib.Cases_on [HolKernel.QUOTE " (*#loc 1 45190*)h"] THEN
+  bossLib.rw [boolLib.FUN_EQ_THM]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.088736
+
+set_MAP_FST_fmap_to_alist
+Statistics
+  infstep : 546
+  nodes   : 168
+  maxdepth: 5
+Time: 10.016725
+  inferstep time: 6.87189
+  node_find time: 0.118172
+  node_crea time: 2.652705
+    pred time: 0.524282
+    thmpred time: 0.000025
+    mc time: 1.346561
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012528
+
+alookup_distinct_reverse
+Statistics
+  infstep : 282
+  nodes   : 106
+  maxdepth: 7
+Time: 10.007488
+  inferstep time: 7.389251
+  node_find time: 0.059906
+  node_crea time: 2.344986
+    pred time: 0.626393
+    thmpred time: 0.000029
+    mc time: 0.954488
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.344815
+
+flookup_fupdate_list
+proof length: 9
+proof time: 0.348061
+Statistics
+  infstep : 193
+  nodes   : 64
+  maxdepth: 5
+Time: 6.140809
+  inferstep time: 4.770696
+  node_find time: 0.035201
+  node_crea time: 1.094513
+    pred time: 0.323265
+    thmpred time: 0.000019
+    mc time: 0.504595
+    inst time: 0.0
+Proof found: boolLib.ONCE_REWRITE_TAC [HolKernel.SYM (HolKernel.CONJUNCT1 (DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP"))] THEN BasicProvers.SRW_TAC [] [finite_mapTheory.FLOOKUP_FUNION, DB.fetch "alist" "ALOOKUP_APPEND", finite_mapTheory.FLOOKUP_o_f, DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_NONE", DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE", finite_mapTheory.FEVERY_ALL_FLOOKUP, finite_mapTheory.FEVERY_FLOOKUP, finite_mapTheory.IN_FRANGE_FLOOKUP, finite_mapTheory.fmap_inverse_def, finite_mapTheory.FLOOKUP_SUBMAP, finite_mapTheory.FRANGE_FLOOKUP, finite_mapTheory.FLOOKUP_UPDATE, finite_mapTheory.flookup_thm, DB.fetch "alist" "MEM_pair_fmap_to_alist_FLOOKUP", finite_mapTheory.SUBMAP_FUPDATE_FLOOKUP, finite_mapTheory.FLOOKUP_DEF] THENL
+  [metisTools.METIS_TAC [DB.fetch "alist" "FUNION_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_APPEND", DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "alist_to_fmap_thm", DB.fetch "alist" "ALOOKUP_IN_FRANGE", DB.fetch "alist" "alist_to_fmap_to_alist", DB.fetch "alist" "fmap_to_alist_to_fmap", DB.fetch "alist" "FDOM_alist_to_fmap", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", finite_mapTheory.FUNION_DEF, finite_mapTheory.FLOOKUP_FUNION, finite_mapTheory.FUNION_FUPDATE_1, finite_mapTheory.FUNION_FUPDATE_2, finite_mapTheory.FUNION_FEMPTY_1],
+  metisTools.METIS_TAC [DB.fetch "alist" "FUNION_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_APPEND", DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "alist_to_fmap_thm", DB.fetch "alist" "ALOOKUP_IN_FRANGE", DB.fetch "alist" "alist_to_fmap_to_alist", DB.fetch "alist" "fmap_to_alist_to_fmap", DB.fetch "alist" "FDOM_alist_to_fmap", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", finite_mapTheory.FUNION_DEF, finite_mapTheory.FLOOKUP_FUNION, finite_mapTheory.FUNION_FUPDATE_1, finite_mapTheory.FUNION_FUPDATE_2, finite_mapTheory.FUNION_FEMPTY_1],
+  metisTools.METIS_TAC [DB.fetch "alist" "FUNION_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_APPEND", DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "alist_to_fmap_thm", DB.fetch "alist" "ALOOKUP_IN_FRANGE", DB.fetch "alist" "alist_to_fmap_to_alist", DB.fetch "alist" "fmap_to_alist_to_fmap", DB.fetch "alist" "FDOM_alist_to_fmap", DB.fetch "alist" "ALOOKUP_EQ_FLOOKUP", finite_mapTheory.FUNION_DEF, finite_mapTheory.FLOOKUP_FUNION, finite_mapTheory.FUNION_FUPDATE_1, finite_mapTheory.FUNION_FUPDATE_2, finite_mapTheory.FUNION_FEMPTY_1],
+  BasicProvers.SRW_TAC [] [DB.fetch "alist" "FUNION_alist_to_fmap", finite_mapTheory.FUNION_DEF, DB.fetch "alist" "alist_to_fmap_APPEND", DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", finite_mapTheory.FUPDATE_LIST_APPLY_HO_THM, DB.fetch "alist" "fmap_to_alist_def", finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM, finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM_matchable, finite_mapTheory.IN_FRANGE, DB.fetch "alist" "alist_to_fmap_def", DB.fetch "alist" "alist_to_fmap_thm", DB.fetch "alist" "ALOOKUP_IN_FRANGE", DB.fetch "alist" "alist_to_fmap_to_alist", DB.fetch "alist" "MEM_fmap_to_alist", finite_mapTheory.FEVERY_DEF],
+  metisTools.METIS_TAC [satTheory.AND_INV_IMP, satTheory.OR_DUAL2, satTheory.OR_DUAL3, satTheory.AND_INV2, optionTheory.option_CLAUSES, optionTheory.IS_SOME_DEF, optionTheory.IS_NONE_DEF, numeralTheory.numeral_distrib, numeralTheory.numeral_lte, listTheory.MEM, whileTheory.OLEAST_EQNS, numeralTheory.numeral_lt, listTheory.EXISTS_DEF, DB.fetch "alist" "alookup_distinct_reverse", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "ALOOKUP_MEM"],
+  metisTools.METIS_TAC [satTheory.AND_INV_IMP, satTheory.OR_DUAL2, satTheory.OR_DUAL3, satTheory.AND_INV2, optionTheory.option_CLAUSES, optionTheory.IS_SOME_DEF, optionTheory.IS_NONE_DEF, numeralTheory.numeral_distrib, numeralTheory.numeral_lte, listTheory.MEM, whileTheory.OLEAST_EQNS, numeralTheory.numeral_lt, listTheory.EXISTS_DEF, DB.fetch "alist" "alookup_distinct_reverse", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "ALOOKUP_MEM"],
+  metisTools.METIS_TAC [satTheory.AND_INV_IMP, satTheory.OR_DUAL2, satTheory.OR_DUAL3, satTheory.AND_INV2, optionTheory.option_CLAUSES, optionTheory.IS_SOME_DEF, optionTheory.IS_NONE_DEF, numeralTheory.numeral_distrib, numeralTheory.numeral_lte, listTheory.MEM, whileTheory.OLEAST_EQNS, numeralTheory.numeral_lt, listTheory.EXISTS_DEF, DB.fetch "alist" "alookup_distinct_reverse", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "ALOOKUP_MEM"]]
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.313509
+
+fupdate_list_funion
+proof length: 1
+proof time: 0.003467
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.154832
+  inferstep time: 0.133028
+  node_find time: 0.000443
+  node_crea time: 0.01217
+    pred time: 0.003505
+    thmpred time: 0.0
+    mc time: 0.012006
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ finite_mapTheory.fmap_to_list , finite_mapTheory.fupdate_list_map , finite_mapTheory.FMEQ_ENUMERATE_CASES , DB.fetch "alist" "flookup_fupdate_list" , finite_mapTheory.fupdate_list_foldl , finite_mapTheory.FUPDATE_LIST_APPLY_HO_THM , finite_mapTheory.FUPDATE_LIST_APPLY_MEM , finite_mapTheory.FDOM_FUPDATE_LIST , finite_mapTheory.FUPDATE_LIST_SNOC , finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM , DB.fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE" , finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_PERM , finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_REVERSE , finite_mapTheory.FUPDATE_LIST_APPEND_COMMUTES , finite_mapTheory.FUPDATE_LIST_APPLY_NOT_MEM_matchable , finite_mapTheory.FUPDATE_LIST_CANCEL ])
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.394552
+
+mem_to_flookup
+proof length: 9
+proof time: 0.159503
+Statistics
+  infstep : 472
+  nodes   : 87
+  maxdepth: 6
+Time: 8.216172
+  inferstep time: 6.21198
+  node_find time: 0.09216
+  node_crea time: 1.499596
+    pred time: 0.393977
+    thmpred time: 0.000028
+    mc time: 0.773606
+    inst time: 0.0
+Proof found: bossLib.Induct_on [HolKernel.QUOTE " (*#loc 1 1363*)l"] THENL [metisTools.METIS_TAC [finite_mapTheory.fmap_to_list, finite_mapTheory.fupdate_list_map, finite_mapTheory.FMEQ_ENUMERATE_CASES, DB.fetch "alist" "fupdate_list_funion", listTheory.MEM, listTheory.LIST_TO_SET, finite_mapTheory.FUPDATE_LIST_ALL_DISTINCT_APPLY_MEM, DB.fetch "alist" "ALOOKUP_ALL_DISTINCT_MEM", DB.fetch "alist" "MEM_pair_fmap_to_alist_FLOOKUP", DB.fetch "alist" "ALOOKUP_MEM", listTheory.mem_exists_set, DB.fetch "alist" "ALOOKUP_FAILS", DB.fetch "alist" "MEM_fmap_to_alist", pred_setTheory.PAIR_IN_GSPEC_1, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF], bossLib.fs [finite_mapTheory.FLOOKUP_UPDATE, (DB.fetch "alist" "flookup_fupdate_list")] THEN
+  bossLib.Cases_on [HolKernel.QUOTE " (*#loc 1 45190*)h"] THEN
+  bossLib.fs [(DB.fetch "alist" "ALOOKUP_APPEND")] THEN
+  bossLib.SRW_TAC [] [(DB.fetch "finite_map" "FUPDATE_LIST_THM")] THENL
+  [metisTools.METIS_TAC [DB.fetch "alist" "flookup_fupdate_list", DB.fetch "alist" "alookup_distinct_reverse", DB.fetch "alist" "ALOOKUP_APPEND", finite_mapTheory.FLOOKUP_FUNION, optionTheory.option_case_def, finite_mapTheory.FLOOKUP_o_f, DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_SOME", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "tactictoe_thm_2", DB.fetch "alist" "tactictoe_thm_0", DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_NONE", DB.fetch "alist" "ALOOKUP_ALL_DISTINCT_MEM", DB.fetch "alist" "ALOOKUP_MEM", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_LEAST_EL", DB.fetch "alist" "ALOOKUP_FAILS"],
+  metisTools.METIS_TAC [DB.fetch "alist" "flookup_fupdate_list", DB.fetch "alist" "alookup_distinct_reverse", DB.fetch "alist" "ALOOKUP_APPEND", finite_mapTheory.FLOOKUP_FUNION, optionTheory.option_case_def, finite_mapTheory.FLOOKUP_o_f, DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_SOME", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "tactictoe_thm_2", DB.fetch "alist" "tactictoe_thm_0", DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_NONE", DB.fetch "alist" "ALOOKUP_ALL_DISTINCT_MEM", DB.fetch "alist" "ALOOKUP_MEM", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_LEAST_EL", DB.fetch "alist" "ALOOKUP_FAILS"],
+  metisTools.METIS_TAC [DB.fetch "alist" "flookup_fupdate_list", DB.fetch "alist" "alookup_distinct_reverse", DB.fetch "alist" "ALOOKUP_APPEND", finite_mapTheory.FLOOKUP_FUNION, optionTheory.option_case_def, finite_mapTheory.FLOOKUP_o_f, DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_SOME", DB.fetch "alist" "FLOOKUP_FUPDATE_LIST_ALOOKUP_NONE", DB.fetch "alist" "ALOOKUP_def", DB.fetch "alist" "tactictoe_thm_2", DB.fetch "alist" "tactictoe_thm_0", DB.fetch "alist" "ALOOKUP_ALL_DISTINCT_MEM", DB.fetch "alist" "ALOOKUP_MEM", DB.fetch "alist" "ALOOKUP_SOME_FAPPLY_alist_to_fmap", DB.fetch "alist" "ALOOKUP_LEAST_EL", DB.fetch "alist" "ALOOKUP_FAILS"]]]
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.531698
+
+alookup_filter
+proof length: 1
+proof time: 0.001569
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.131992
+  inferstep time: 0.111467
+  node_find time: 0.000458
+  node_crea time: 0.013673
+    pred time: 0.004401
+    thmpred time: 0.000001
+    mc time: 0.01027
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ind_typeTheory.INJA , ind_typeTheory.INJN , rich_listTheory.LIST_ELEM_COUNT_DEF , DB.fetch "alist" "ALOOKUP_FILTER" , DB.fetch "alist" "ALOOKUP_def" , DB.fetch "alist" "tactictoe_thm_0" , DB.fetch "alist" "tactictoe_thm_2" , DB.fetch "alist" "tactictoe_thm_3" , optionTheory.some_EQ , whileTheory.OLEAST_EQNS , quantHeuristicsTheory.GUESS_RULES_EQUATION_EXISTS_GAP , quantHeuristicsTheory.GUESS_RULES_TWO_CASES , whileTheory.LEAST_EQ , DB.fetch "alist" "ALOOKUP_FAILS" , DB.fetch "alist" "ALOOKUP_NONE" , DB.fetch "alist" "alookup_distinct_reverse" ])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.112735
+
+alookup_stable_sorted
+Statistics
+  infstep : 346
+  nodes   : 98
+  maxdepth: 6
+Time: 10.001075
+  inferstep time: 7.382891
+  node_find time: 0.075045
+  node_crea time: 2.303099
+    pred time: 0.497122
+    thmpred time: 0.000038
+    mc time: 0.738652
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.367157
+
+ALOOKUP_ALL_DISTINCT_PERM_same
+Statistics
+  infstep : 563
+  nodes   : 112
+  maxdepth: 6
+Time: 10.004388
+  inferstep time: 7.554099
+  node_find time: 0.119756
+  node_crea time: 1.938733
+    pred time: 0.460645
+    thmpred time: 0.000027
+    mc time: 0.83397
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.544136
+Bad stac: 8

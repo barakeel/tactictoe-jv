@@ -1,0 +1,816 @@
+
+enc2dec_none
+proof length: 3
+proof time: 0.009736
+Statistics
+  infstep : 24
+  nodes   : 8
+  maxdepth: 3
+Time: 0.557257
+  inferstep time: 0.47807
+  node_find time: 0.000452
+  node_crea time: 0.067607
+    pred time: 0.01865
+    thmpred time: 0.0
+    mc time: 0.04696
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN BasicProvers.SRW_TAC [] [DB.fetch "Decode" "enc2dec_def", EncodeTheory.encode_tree_def, EncodeTheory.encode_prod_def, listTheory.LIST_BIND_THM, EncodeTheory.encode_list_def, optionTheory.option_CLAUSES, optionTheory.option_Axiom, patternMatchesTheory.PMATCH_REMOVE_ARB_NO_OVERLAP, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED_PMATCH_ROWS, patternMatchesTheory.PMATCH_ROW_REDUNDANT_APPEND_GE, patternMatchesTheory.EL2_STRONGEST_REDUNDANT_ROWS_INFO_AUX, patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def, patternMatchesTheory.FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED, listTheory.INDEX_FIND_def, patternMatchesTheory.PMATCH_EVAL_MATCH] THEN
+  bossLib.PROVE_TAC [(DB.fetch "Encode" "biprefix_sym")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.019526
+
+enc2dec_some
+Statistics
+  infstep : 788
+  nodes   : 111
+  maxdepth: 5
+Time: 10.107804
+  inferstep time: 8.643661
+  node_find time: 0.048822
+  node_crea time: 1.338637
+    pred time: 0.32962
+    thmpred time: 0.000024
+    mc time: 0.672812
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 20
+Original proof time: 0.0
+Replaying proof: 0.780738
+
+enc2dec_some_alt
+proof length: 3
+proof time: 0.003691
+Statistics
+  infstep : 43
+  nodes   : 18
+  maxdepth: 4
+Time: 1.557201
+  inferstep time: 1.330557
+  node_find time: 0.001581
+  node_crea time: 0.203692
+    pred time: 0.074568
+    thmpred time: 0.000011
+    mc time: 0.092369
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC numLib.std_ss [(DB.fetch "quantHeuristics" "GUESS_REWRITES"), pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD] THEN boolLib.REPEAT boolLib.STRIP_TAC THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_none", pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "Decode" "wf_decoder_def", listTheory.INDEX_FIND_def, EncodeTheory.encode_prod_def, EncodeTheory.encode_tree_def, EncodeTheory.encode_list_def, patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def, listTheory.ZIP_MAP, listTheory.MEM_ZIP, DB.fetch "Decode" "dec2enc_def", listTheory.mem_exists_set, pairTheory.UNCURRY_DEF]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.1157
+
+wf_enc2dec
+proof length: 2
+proof time: 0.07925
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.198475
+  inferstep time: 0.167296
+  node_find time: 0.000093
+  node_crea time: 0.021187
+    pred time: 0.00628
+    thmpred time: 0.0
+    mc time: 0.020186
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "enc2dec_none", DB.fetch "Decode" "enc2dec_def", EncodeTheory.wf_encode_option, EncodeTheory.wf_encoder_def, EncodeTheory.wf_encode_blist, EncodeTheory.wf_encoder_alt, EncodeTheory.wf_encode_list, EncodeTheory.wf_encode_tree, EncodeTheory.wf_encoder_eq, EncodeTheory.wf_encoder_total, EncodeTheory.wf_encode_prod, EncodeTheory.wf_encode_sum, EncodeTheory.wf_encode_bnum] THEN metisTools.METIS_TAC [DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "enc2dec_none", EncodeTheory.encode_tree_def, EncodeTheory.encode_list_def, DB.fetch "Decode" "wf_decoder_def", EncodeTheory.biprefix_appends, rich_listTheory.IS_PREFIX_APPENDS, rich_listTheory.IS_PREFIX_APPEND1, rich_listTheory.IS_PREFIX_APPEND2, EncodeTheory.biprefix_append, rich_listTheory.tactictoe_thm_19, rich_listTheory.tactictoe_thm_18, rich_listTheory.tactictoe_thm_17, rich_listTheory.tactictoe_thm_20, rich_listTheory.tactictoe_thm_23]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.034235
+
+dec2enc_some
+Statistics
+  infstep : 711
+  nodes   : 112
+  maxdepth: 5
+Time: 10.014086
+  inferstep time: 8.296081
+  node_find time: 0.04758
+  node_crea time: 1.514137
+    pred time: 0.440911
+    thmpred time: 0.000018
+    mc time: 0.556379
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 20
+Original proof time: 0.0
+Replaying proof: 0.665815
+
+decode_dec2enc
+proof length: 4
+proof time: 0.009167
+Statistics
+  infstep : 27
+  nodes   : 10
+  maxdepth: 4
+Time: 0.745167
+  inferstep time: 0.614216
+  node_find time: 0.00112
+  node_crea time: 0.10706
+    pred time: 0.027121
+    thmpred time: 0.000001
+    mc time: 0.069739
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "Decode" "dec2enc_def")] THEN normalForms.SELECT_TAC THEN
+  bossLib.FULL_SIMP_TAC bossLib.std_ss [(DB.fetch "Decode" "wf_decoder_def")] THEN
+  bossLib.PROVE_TAC [rich_listTheory.APPEND_NIL]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007327
+
+decode_dec2enc_append
+proof length: 5
+proof time: 0.015453
+Statistics
+  infstep : 180
+  nodes   : 46
+  maxdepth: 5
+Time: 4.319765
+  inferstep time: 2.647168
+  node_find time: 0.010775
+  node_crea time: 1.583638
+    pred time: 0.355475
+    thmpred time: 0.000013
+    mc time: 0.845741
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "Decode" "dec2enc_def")] THEN normalForms.SELECT_TAC THEN
+  bossLib.FULL_SIMP_TAC bossLib.std_ss [(DB.fetch "Decode" "wf_decoder_def")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "enc2dec_some", listTheory.INDEX_FIND_def, rich_listTheory.SPLITP_AUX_def, rich_listTheory.SPLITP_EVERY, rich_listTheory.ZIP_APPEND, pairTheory.LEX_CONG, pairTheory.LEX_DEF_THM, arithmeticTheory.findq_def, arithmeticTheory.findq_thm, EncodeTheory.biprefix_append, listTheory.MEM_APPEND_lemma, rich_listTheory.MEM_SING_APPEND] THEN
+  bossLib.PROVE_TAC [rich_listTheory.APPEND_NIL]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.230806
+Replaying proof: 0.011411
+
+dec2enc_enc2dec
+proof length: 2
+proof time: 0.003335
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.246305
+  inferstep time: 0.213141
+  node_find time: 0.000174
+  node_crea time: 0.022333
+    pred time: 0.006621
+    thmpred time: 0.000001
+    mc time: 0.021001
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN BasicProvers.SRW_TAC [] [DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_none", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "wf_enc2dec", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "dec2enc_def", EncodeTheory.wf_encode_option, EncodeTheory.wf_encoder_def, EncodeTheory.wf_encoder_alt, EncodeTheory.wf_encoder_eq, listTheory.LRC_MEM_right, listTheory.LUPDATE_SEM]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.126697
+
+enc2dec_dec2enc
+Statistics
+  infstep : 950
+  nodes   : 166
+  maxdepth: 6
+Time: 10.055747
+  inferstep time: 7.711762
+  node_find time: 0.080871
+  node_crea time: 2.125616
+    pred time: 0.392796
+    thmpred time: 0.000023
+    mc time: 1.155724
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 25
+Original proof time: 0.0
+Replaying proof: 0.771453
+
+wf_decode_unit
+proof length: 1
+proof time: 0.085086
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.118114
+  inferstep time: 0.10359
+  node_find time: 0.000081
+  node_crea time: 0.010877
+    pred time: 0.003344
+    thmpred time: 0.000001
+    mc time: 0.009113
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "Decode" "decode_unit_def" , DB.fetch "Decode" "dec2enc_some" , DB.fetch "Decode" "wf_decoder_def" , DB.fetch "Decode" "decode_dec2enc" , DB.fetch "Decode" "decode_dec2enc_append" , DB.fetch "Decode" "enc2dec_dec2enc" , DB.fetch "Decode" "wf_dec2enc" , DB.fetch "Decode" "wf_enc2dec" , EncodeTheory.wf_encode_unit , quantHeuristicsTheory.GUESS_RULES_CONJ , quantHeuristicsTheory.GUESS_RULES_DISJ , quantHeuristicsTheory.GUESS_RULES_IMP , optionTheory.OPTION_GUARD_COND , optionTheory.OPTION_GUARD_EQ_THM , optionTheory.SOME_DEF , optionTheory.option_REP_ABS_DEF])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003342
+
+dec2enc_decode_unit
+proof length: 1
+proof time: 0.062396
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.13821
+  inferstep time: 0.121455
+  node_find time: 0.000051
+  node_crea time: 0.010079
+    pred time: 0.002758
+    thmpred time: 0.0
+    mc time: 0.011763
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "Decode" "decode_unit_def" , EncodeTheory.encode_unit_def , DB.fetch "Decode" "wf_decode_unit" , EncodeTheory.wf_encode_unit , DB.fetch "Decode" "dec2enc_enc2dec" , DB.fetch "Decode" "dec2enc_some" , DB.fetch "Decode" "decode_dec2enc" , DB.fetch "Decode" "decode_dec2enc_append" , DB.fetch "Decode" "enc2dec_dec2enc" , DB.fetch "Decode" "wf_dec2enc" , DB.fetch "Decode" "dec2enc_def" , quantHeuristicsTheory.GUESS_RULES_CONJ , quantHeuristicsTheory.GUESS_RULES_DISJ , quantHeuristicsTheory.GUESS_RULES_IMP , optionTheory.SOME_DEF , optionTheory.option_REP_ABS_DEF])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003831
+
+decode_unit
+proof length: 3
+proof time: 0.004024
+Statistics
+  infstep : 41
+  nodes   : 11
+  maxdepth: 3
+Time: 0.98657
+  inferstep time: 0.859453
+  node_find time: 0.001936
+  node_crea time: 0.1066
+    pred time: 0.035293
+    thmpred time: 0.000001
+    mc time: 0.0498
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "Decode" "decode_unit_def"), (DB.fetch "Decode" "dec2enc_enc2dec"), EncodeTheory.wf_encode_unit] THENL [BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_unit_def", DB.fetch "Decode" "dec2enc_decode_unit", DB.fetch "Decode" "enc2dec_some", EncodeTheory.wf_encode_unit, EncodeTheory.encode_unit_def, DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "enc2dec_none", DB.fetch "Decode" "dec2enc_enc2dec", DB.fetch "Decode" "wf_enc2dec", optionTheory.OPTION_GUARD_COND, optionTheory.OPTION_GUARD_EQ_THM, optionTheory.OPTION_GUARD_def, quantHeuristicsTheory.GUESS_RULES_ELIM_UNIT, optionTheory.NONE_DEF, oneTheory.FORALL_ONE], BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_unit_def", DB.fetch "Decode" "dec2enc_decode_unit", EncodeTheory.wf_encode_unit, EncodeTheory.encode_unit_def, DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_none", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "dec2enc_enc2dec", DB.fetch "Decode" "wf_enc2dec", optionTheory.OPTION_GUARD_COND, optionTheory.OPTION_GUARD_EQ_THM, optionTheory.OPTION_GUARD_def, optionTheory.NONE_DEF, DB.fetch "Decode" "wf_decode_unit", quantHeuristicsTheory.GUESS_RULES_CONJ]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005523
+
+wf_decode_bool
+proof length: 6
+proof time: 0.155964
+Statistics
+  infstep : 179
+  nodes   : 55
+  maxdepth: 5
+Time: 3.842608
+  inferstep time: 3.018767
+  node_find time: 0.011505
+  node_crea time: 0.745504
+    pred time: 0.176765
+    thmpred time: 0.000014
+    mc time: 0.405086
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "enc2dec_none", DB.fetch "Decode" "enc2dec_def", EncodeTheory.wf_encode_option, EncodeTheory.wf_encoder_def, EncodeTheory.wf_encode_blist, EncodeTheory.wf_encoder_alt, EncodeTheory.wf_encode_list, EncodeTheory.wf_encode_tree, EncodeTheory.wf_encoder_eq, EncodeTheory.wf_encoder_total, EncodeTheory.wf_encode_prod, EncodeTheory.wf_encode_sum, EncodeTheory.wf_encode_bnum] THEN BasicProvers.SRW_TAC [] [(DB.fetch "pred_set" "INJ_DEF"), (DB.fetch "pred_set" "SUBSET_DEF")] THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_bool_def", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_some", listTheory.INDEX_FIND_def, EncodeTheory.biprefix_appends, rich_listTheory.IS_PREFIX_APPENDS, rich_listTheory.IS_PREFIX_APPEND1, rich_listTheory.IS_PREFIX_APPEND2, EncodeTheory.biprefix_append, pairTheory.CLOSED_PAIR_EQ, pairTheory.PAIR_EQ, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED, patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def, EncodeTheory.encode_prod_def, listTheory.MEM_ZIP] THEN
+  metisTools.METIS_TAC [DB.fetch "Decode" "decode_bool_def", DB.fetch "Decode" "enc2dec_some", EncodeTheory.wf_encode_bool, EncodeTheory.encode_bool_def, DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "decode_dec2enc_append", listTheory.INDEX_FIND_def, DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "enc2dec_none", DB.fetch "Decode" "dec2enc_enc2dec", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "decode_unit_def", DB.fetch "Decode" "wf_enc2dec", EncodeTheory.biprefix_appends, rich_listTheory.IS_PREFIX_APPENDS],
+  BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_bool_def", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_some", listTheory.INDEX_FIND_def, pairTheory.CLOSED_PAIR_EQ, pairTheory.PAIR_EQ, patternMatchesTheory.STRONGEST_REDUNDANT_ROWS_INFO_AUX_def, listTheory.MEM_ZIP, listTheory.ZIP_MAP, pairTheory.PROD_ALL_CONG, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.EXISTS_PROD, pairTheory.pair_induction, DB.fetch "Decode" "dec2enc_some"] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_bool_def", DB.fetch "Decode" "enc2dec_some", EncodeTheory.wf_encode_bool, EncodeTheory.encode_bool_def, DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "decode_dec2enc_append", listTheory.INDEX_FIND_def, DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "enc2dec_none", DB.fetch "Decode" "dec2enc_enc2dec", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "decode_unit_def", DB.fetch "Decode" "wf_enc2dec", pairTheory.CLOSED_PAIR_EQ, pairTheory.PAIR_EQ]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003931
+
+dec2enc_decode_bool
+proof length: 1
+proof time: 0.092217
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.120986
+  inferstep time: 0.102991
+  node_find time: 0.00007
+  node_crea time: 0.011465
+    pred time: 0.003279
+    thmpred time: 0.0
+    mc time: 0.012151
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "Decode" "decode_bool_def" , EncodeTheory.encode_bool_def , DB.fetch "Decode" "wf_decode_bool" , EncodeTheory.wf_encode_bool , DB.fetch "Decode" "dec2enc_decode_unit" , DB.fetch "Decode" "dec2enc_enc2dec" , DB.fetch "Decode" "dec2enc_some" , DB.fetch "Decode" "decode_dec2enc" , DB.fetch "Decode" "decode_dec2enc_append" , DB.fetch "Decode" "enc2dec_dec2enc" , DB.fetch "Decode" "wf_dec2enc" , DB.fetch "Decode" "dec2enc_def" , DB.fetch "Decode" "enc2dec_some" , DB.fetch "Decode" "enc2dec_none" , DB.fetch "Decode" "wf_decoder_def" , DB.fetch "Decode" "enc2dec_def"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004934
+
+decode_bool
+Statistics
+  infstep : 508
+  nodes   : 101
+  maxdepth: 6
+Time: 10.020115
+  inferstep time: 8.28754
+  node_find time: 0.041501
+  node_crea time: 1.592541
+    pred time: 0.481195
+    thmpred time: 0.000032
+    mc time: 0.549551
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.036464
+
+wf_decode_prod
+proof length: 5
+proof time: 0.090096
+Statistics
+  infstep : 315
+  nodes   : 75
+  maxdepth: 5
+Time: 5.585878
+  inferstep time: 4.218277
+  node_find time: 0.022728
+  node_crea time: 1.246802
+    pred time: 0.239738
+    thmpred time: 0.00001
+    mc time: 0.579883
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "enc2dec_none", DB.fetch "Decode" "enc2dec_def", EncodeTheory.wf_encode_option, EncodeTheory.wf_encoder_def, EncodeTheory.wf_encode_blist, EncodeTheory.wf_encoder_alt, EncodeTheory.wf_encode_list, EncodeTheory.wf_encode_tree, EncodeTheory.wf_encoder_eq, EncodeTheory.wf_encoder_total, EncodeTheory.wf_encode_prod, EncodeTheory.wf_encode_sum, EncodeTheory.wf_encode_bnum] THEN BasicProvers.SRW_TAC [] [EncodeTheory.lift_prod_def, DB.fetch "Decode" "decode_prod_def", EncodeTheory.wf_encode_prod, DB.fetch "Decode" "wf_decoder_def", listTheory.INDEX_FIND_def, DB.fetch "Decode" "decode_bool", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_some", pairTheory.LAMBDA_PROD, patternMatchesTheory.PMATCH_ROW_REMOVE_DOUBLE_BINDS_THM, pairTheory.ELIM_PEXISTS, pairTheory.ELIM_PFORALL, EncodeTheory.wf_encode_sum, EncodeTheory.lift_sum_def, quantHeuristicsTheory.SND_PAIR_EQ, quantHeuristicsTheory.SND_PAIR_EQ_SYM] THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_prod_def", EncodeTheory.wf_encode_prod, EncodeTheory.lift_prod_def, DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "wf_dec2enc", EncodeTheory.encode_prod_alt, DB.fetch "Decode" "wf_decoder_def", listTheory.INDEX_FIND_def, DB.fetch "Decode" "decode_bool", pairTheory.LAMBDA_PROD, DB.fetch "Decode" "dec2enc_enc2dec"] THEN
+  metisTools.METIS_TAC [DB.fetch "Decode" "decode_prod_def", quantHeuristicsTheory.FST_PAIR_EQ, quantHeuristicsTheory.FST_PAIR_EQ_SYM, DB.fetch "Decode" "dec2enc_def", pred_setTheory.LINV_OPT_def, DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "wf_decoder_def", quantHeuristicsTheory.SND_PAIR_EQ, quantHeuristicsTheory.SND_PAIR_EQ_SYM, EncodeTheory.encode_prod_alt, pairTheory.ELIM_PEXISTS, pairTheory.ELIM_PFORALL, EncodeTheory.lift_prod_def, pairTheory.ELIM_UNCURRY, pairTheory.UNCURRY_VAR, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED],
+  BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_prod_def", EncodeTheory.wf_encode_prod, EncodeTheory.lift_prod_def, DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "wf_dec2enc", EncodeTheory.encode_prod_alt, DB.fetch "Decode" "wf_decoder_def", listTheory.INDEX_FIND_def, DB.fetch "Decode" "decode_bool", pairTheory.LAMBDA_PROD, DB.fetch "Decode" "dec2enc_enc2dec"]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.037851
+
+dec2enc_decode_prod
+proof length: 2
+proof time: 0.006674
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.311678
+  inferstep time: 0.245587
+  node_find time: 0.000285
+  node_crea time: 0.053759
+    pred time: 0.014674
+    thmpred time: 0.000001
+    mc time: 0.033176
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [EncodeTheory.lift_prod_def, DB.fetch "Decode" "decode_prod_def", EncodeTheory.wf_encode_prod, DB.fetch "Decode" "wf_decoder_def", listTheory.INDEX_FIND_def, DB.fetch "Decode" "decode_bool", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_some", pairTheory.LAMBDA_PROD, patternMatchesTheory.PMATCH_ROW_REMOVE_DOUBLE_BINDS_THM, pairTheory.ELIM_PEXISTS, pairTheory.ELIM_PFORALL, EncodeTheory.wf_encode_sum, EncodeTheory.lift_sum_def, quantHeuristicsTheory.SND_PAIR_EQ, quantHeuristicsTheory.SND_PAIR_EQ_SYM] THEN BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_prod_def", EncodeTheory.wf_encode_prod, EncodeTheory.lift_prod_def, DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "wf_dec2enc", EncodeTheory.encode_prod_alt, DB.fetch "Decode" "wf_decoder_def", listTheory.INDEX_FIND_def, DB.fetch "Decode" "decode_bool", pairTheory.LAMBDA_PROD, DB.fetch "Decode" "dec2enc_enc2dec"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007527
+
+encode_then_decode_prod
+Statistics
+  infstep : 850
+  nodes   : 133
+  maxdepth: 5
+Time: 10.02163
+  inferstep time: 7.431931
+  node_find time: 0.08191
+  node_crea time: 2.348268
+    pred time: 0.452321
+    thmpred time: 0.00003
+    mc time: 0.924732
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.35531
+
+decode_prod
+Statistics
+  infstep : 467
+  nodes   : 128
+  maxdepth: 6
+Time: 10.031126
+  inferstep time: 7.076688
+  node_find time: 0.050253
+  node_crea time: 2.775935
+    pred time: 0.53977
+    thmpred time: 0.000023
+    mc time: 1.35169
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 58
+Original proof time: 0.0
+Replaying proof: 2.055425
+
+wf_decode_sum
+proof length: 2
+proof time: 0.100047
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.25475
+  inferstep time: 0.203829
+  node_find time: 0.000281
+  node_crea time: 0.039125
+    pred time: 0.010253
+    thmpred time: 0.0
+    mc time: 0.029379
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "Encode" "wf_encoder_def"), (DB.fetch "Encode" "lift_sum_def")] THEN metisTools.METIS_TAC [EncodeTheory.wf_encode_sum, EncodeTheory.lift_sum_def, DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "dec2enc_decode_prod", DB.fetch "Decode" "wf_decode_prod", DB.fetch "Decode" "decode_prod", DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "encode_then_decode_prod", patternMatchesTheory.PMATCH_ROW_REMOVE_DOUBLE_BINDS_THM, EncodeTheory.wf_encode_prod, EncodeTheory.lift_prod_def, pairTheory.ELIM_PFORALL, pairTheory.LAMBDA_PROD, pairTheory.ELIM_PEXISTS, DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "wf_enc2dec"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.030921
+
+dec2enc_decode_sum
+proof length: 4
+proof time: 0.06788
+Statistics
+  infstep : 63
+  nodes   : 19
+  maxdepth: 3
+Time: 1.531271
+  inferstep time: 1.179547
+  node_find time: 0.004526
+  node_crea time: 0.300572
+    pred time: 0.070879
+    thmpred time: 0.000004
+    mc time: 0.160502
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "Decode" "decode_sum_def")] THEN (boolLib.Q_TAC boolLib.KNOW_TAC) [HolKernel.QUOTE " (*#loc 1 10192*)wf_encoder (lift_prod p1 p2) (encode_prod (dec2enc d1) (dec2enc d2))"] THENL
+  [metisTools.METIS_TAC [DB.fetch "Decode" "dec2enc_decode_prod", EncodeTheory.wf_encode_prod, DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "decode_prod", DB.fetch "Decode" "wf_decode_prod", DB.fetch "Decode" "encode_then_decode_prod", EncodeTheory.lift_prod_def, DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "wf_decode_sum", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "enc2dec_dec2enc", EncodeTheory.wf_encode_sum],
+  BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "dec2enc_decode_prod", DB.fetch "Decode" "decode_prod_def", EncodeTheory.wf_encode_prod, EncodeTheory.wf_encode_sum, DB.fetch "Decode" "wf_decode_sum", EncodeTheory.lift_sum_def, DB.fetch "Decode" "decode_prod", DB.fetch "Decode" "wf_decode_prod", DB.fetch "Decode" "encode_then_decode_prod", EncodeTheory.lift_prod_def, EncodeTheory.encode_sum_def, DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "dec2enc_enc2dec", DB.fetch "Decode" "dec2enc_some"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006812
+
+encode_then_decode_sum
+Statistics
+  infstep : 564
+  nodes   : 141
+  maxdepth: 6
+Time: 10.061483
+  inferstep time: 7.228649
+  node_find time: 0.062344
+  node_crea time: 2.630014
+    pred time: 0.52923
+    thmpred time: 0.000024
+    mc time: 1.111289
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.291562
+
+decode_sum
+Statistics
+  infstep : 529
+  nodes   : 179
+  maxdepth: 6
+Time: 10.027109
+  inferstep time: 7.158682
+  node_find time: 0.065564
+  node_crea time: 2.462122
+    pred time: 0.478991
+    thmpred time: 0.000022
+    mc time: 1.282249
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 70
+Original proof time: 0.0
+Replaying proof: 2.684403
+
+wf_decode_option
+proof length: 1
+proof time: 0.037012
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.098125
+  inferstep time: 0.077254
+  node_find time: 0.000119
+  node_crea time: 0.015515
+    pred time: 0.004725
+    thmpred time: 0.0
+    mc time: 0.01214
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [EncodeTheory.wf_encode_option , EncodeTheory.lift_option_def , DB.fetch "Decode" "decode_option_def" , DB.fetch "Decode" "dec2enc_some" , DB.fetch "Decode" "decode_dec2enc" , DB.fetch "Decode" "decode_dec2enc_append" , DB.fetch "Decode" "enc2dec_dec2enc" , DB.fetch "Decode" "wf_dec2enc" , DB.fetch "Decode" "wf_decoder_def" , DB.fetch "Decode" "dec2enc_decode_prod" , DB.fetch "Decode" "dec2enc_decode_sum" , DB.fetch "Decode" "wf_decode_prod" , DB.fetch "Decode" "wf_decode_sum" , DB.fetch "Decode" "decode_prod" , DB.fetch "Decode" "decode_sum" , DB.fetch "Decode" "wf_enc2dec"])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.03426
+
+dec2enc_decode_option
+proof length: 2
+proof time: 0.086112
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.257042
+  inferstep time: 0.193866
+  node_find time: 0.000302
+  node_crea time: 0.04765
+    pred time: 0.012615
+    thmpred time: 0.000002
+    mc time: 0.040636
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "Decode" "decode_option_def")] THEN metisTools.METIS_TAC [DB.fetch "Decode" "decode_option_def", EncodeTheory.wf_encode_option, DB.fetch "Decode" "wf_decode_option", EncodeTheory.lift_option_def, EncodeTheory.encode_option_def, DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "dec2enc_decode_prod", DB.fetch "Decode" "dec2enc_decode_sum", DB.fetch "Decode" "dec2enc_enc2dec"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005966
+
+encode_then_decode_option
+Statistics
+  infstep : 515
+  nodes   : 120
+  maxdepth: 6
+Time: 10.006877
+  inferstep time: 7.327956
+  node_find time: 0.061926
+  node_crea time: 2.466593
+    pred time: 0.560527
+    thmpred time: 0.000024
+    mc time: 1.256579
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.31745
+
+decode_option
+Statistics
+  infstep : 666
+  nodes   : 144
+  maxdepth: 7
+Time: 10.096189
+  inferstep time: 7.484759
+  node_find time: 0.084462
+  node_crea time: 2.336749
+    pred time: 0.555547
+    thmpred time: 0.000022
+    mc time: 1.158557
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 44
+Original proof time: 0.0
+Replaying proof: 1.421257
+
+wf_decode_list
+proof length: 5
+proof time: 0.043427
+Statistics
+  infstep : 93
+  nodes   : 21
+  maxdepth: 4
+Time: 1.93544
+  inferstep time: 1.483746
+  node_find time: 0.008997
+  node_crea time: 0.36814
+    pred time: 0.097427
+    thmpred time: 0.000006
+    mc time: 0.222748
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_list_def", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "wf_decode_option", DB.fetch "Decode" "decode_option", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "dec2enc_decode_prod", DB.fetch "Decode" "dec2enc_decode_sum", DB.fetch "Decode" "wf_decode_prod", DB.fetch "Decode" "wf_decode_sum", DB.fetch "Decode" "decode_prod", DB.fetch "Decode" "decode_sum"] THEN BasicProvers.SRW_TAC [] [EncodeTheory.lift_prod_def, DB.fetch "Decode" "decode_prod_def", EncodeTheory.wf_encode_prod, DB.fetch "Decode" "wf_decoder_def", listTheory.INDEX_FIND_def, DB.fetch "Decode" "decode_bool", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_some", pairTheory.LAMBDA_PROD, patternMatchesTheory.PMATCH_ROW_REMOVE_DOUBLE_BINDS_THM, pairTheory.ELIM_PEXISTS, pairTheory.ELIM_PFORALL, EncodeTheory.wf_encode_sum, EncodeTheory.lift_sum_def, quantHeuristicsTheory.SND_PAIR_EQ, quantHeuristicsTheory.SND_PAIR_EQ_SYM] THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_list_def", DB.fetch "Decode" "decode_dec2enc_append", EncodeTheory.wf_encode_list, DB.fetch "Decode" "decode_option_def", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "encode_then_decode_option", EncodeTheory.encode_list_def, DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "wf_dec2enc"] THEN
+  metisTools.METIS_TAC [DB.fetch "Decode" "decode_list_def", EncodeTheory.encode_list_def, EncodeTheory.wf_encode_list, DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "decode_option_def", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "dec2enc_decode_prod", DB.fetch "Decode" "dec2enc_decode_sum", DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "dec2enc_enc2dec"],
+  BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_list_def", DB.fetch "Decode" "decode_dec2enc_append", EncodeTheory.wf_encode_list, DB.fetch "Decode" "decode_option_def", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "encode_then_decode_option", DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "decode_sum_def", EncodeTheory.encode_list_def, DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "wf_dec2enc"]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.042167
+
+dec2enc_decode_list
+proof length: 2
+proof time: 0.008224
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.307019
+  inferstep time: 0.256732
+  node_find time: 0.000459
+  node_crea time: 0.032099
+    pred time: 0.008323
+    thmpred time: 0.000001
+    mc time: 0.032343
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "Decode" "wf_decode_list", DB.fetch "Decode" "decode_list_def", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "dec2enc_decode_prod", DB.fetch "Decode" "dec2enc_decode_sum", EncodeTheory.wf_encode_list, EncodeTheory.encode_list_cong, EncodeTheory.encode_list_def, EncodeTheory.encode_tree_def, DB.fetch "Decode" "decode_option", DB.fetch "Decode" "wf_decoder_def"] THEN BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_list_def", DB.fetch "Decode" "decode_dec2enc_append", EncodeTheory.wf_encode_list, DB.fetch "Decode" "decode_option_def", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "encode_then_decode_option", EncodeTheory.encode_list_def, DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "wf_dec2enc"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005028
+
+encode_then_decode_list
+Statistics
+  infstep : 558
+  nodes   : 132
+  maxdepth: 6
+Time: 10.000285
+  inferstep time: 7.496835
+  node_find time: 0.07588
+  node_crea time: 2.219576
+    pred time: 0.489734
+    thmpred time: 0.000021
+    mc time: 1.134852
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.313766
+
+decode_list
+Statistics
+  infstep : 639
+  nodes   : 135
+  maxdepth: 6
+Time: 10.009516
+  inferstep time: 7.215361
+  node_find time: 0.090247
+  node_crea time: 2.372084
+    pred time: 0.547435
+    thmpred time: 0.000022
+    mc time: 1.26385
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 74
+Original proof time: 0.0
+Replaying proof: 2.429376
+
+wf_decode_blist
+Statistics
+  infstep : 551
+  nodes   : 112
+  maxdepth: 5
+Time: 10.011985
+  inferstep time: 7.316755
+  node_find time: 0.075079
+  node_crea time: 2.391779
+    pred time: 0.461867
+    thmpred time: 0.000018
+    mc time: 1.378577
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.03426
+
+dec2enc_decode_blist
+proof length: 4
+proof time: 0.03599
+Statistics
+  infstep : 133
+  nodes   : 27
+  maxdepth: 4
+Time: 2.950477
+  inferstep time: 2.374654
+  node_find time: 0.01484
+  node_crea time: 0.452665
+    pred time: 0.120016
+    thmpred time: 0.000023
+    mc time: 0.286467
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "Decode" "wf_decode_blist", DB.fetch "Decode" "decode_blist_def", EncodeTheory.wf_encode_blist, EncodeTheory.lift_blist_def, EncodeTheory.lift_blist_suc, EncodeTheory.encode_blist_def, DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "dec2enc_decode_list", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "dec2enc_decode_prod", DB.fetch "Decode" "dec2enc_decode_sum", EncodeTheory.encode_blist_def_compute] THEN (boolLib.Q_TAC boolLib.KNOW_TAC) [HolKernel.QUOTE " (*#loc 1 22329*)wf_encoder p (dec2enc d)"] THENL
+  [metisTools.METIS_TAC [DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "decode_blist_def", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "dec2enc_decode_list", DB.fetch "Decode" "decode_list_def", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "decode_option_def", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "dec2enc_def", DB.fetch "Decode" "dec2enc_enc2dec", DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "dec2enc_decode_prod", DB.fetch "Decode" "dec2enc_decode_sum"],
+  BasicProvers.SRW_TAC [] [DB.fetch "Decode" "wf_dec2enc", EncodeTheory.wf_encode_blist, DB.fetch "Decode" "decode_blist_def", DB.fetch "Decode" "wf_decode_blist", EncodeTheory.lift_blist_def, EncodeTheory.lift_blist_suc, EncodeTheory.encode_blist_def, EncodeTheory.encode_blist_def_compute, DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "decode_list_def", DB.fetch "Decode" "decode_option_def", DB.fetch "Decode" "dec2enc_enc2dec", DB.fetch "Decode" "decode_prod_def", DB.fetch "Decode" "decode_sum_def", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "dec2enc_decode_list"]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.043889
+
+encode_then_decode_blist
+Statistics
+  infstep : 492
+  nodes   : 112
+  maxdepth: 6
+Time: 10.127008
+  inferstep time: 7.339289
+  node_find time: 0.079352
+  node_crea time: 2.453623
+    pred time: 0.53904
+    thmpred time: 0.000034
+    mc time: 1.310947
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.650765
+Replaying proof: 0.139818
+
+wf_decode_num
+proof length: 4
+proof time: 0.144318
+Statistics
+  infstep : 64
+  nodes   : 17
+  maxdepth: 4
+Time: 1.689595
+  inferstep time: 1.313792
+  node_find time: 0.007888
+  node_crea time: 0.297449
+    pred time: 0.08393
+    thmpred time: 0.000006
+    mc time: 0.195707
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_num_def", DB.fetch "Decode" "dec2enc_decode_blist", DB.fetch "Decode" "wf_decode_blist", DB.fetch "Decode" "decode_blist", DB.fetch "Decode" "wf_dec2enc", DB.fetch "Decode" "wf_enc2dec", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "dec2enc_some", DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_dec2enc", DB.fetch "Decode" "dec2enc_decode_list", DB.fetch "Decode" "dec2enc_decode_option", DB.fetch "Decode" "decode_dec2enc", DB.fetch "Decode" "wf_decode_bool", DB.fetch "Decode" "wf_decode_list", DB.fetch "Decode" "wf_decode_option"] THEN Tactical.REVERSE (bossLib.Cases_on [HolKernel.QUOTE " (*#loc 1 2967*)p x"]) THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "Decode" "decode_num_def", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "encode_then_decode_blist", DB.fetch "Decode" "encode_then_decode_list", DB.fetch "Decode" "encode_then_decode_option", DB.fetch "Decode" "encode_then_decode_prod", DB.fetch "Decode" "encode_then_decode_sum", DB.fetch "Decode" "decode_bool", listTheory.INDEX_FIND_def, EncodeTheory.encode_num_primitive_def, EncodeTheory.wf_encode_num, DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "enc2dec_none"],
+  metisTools.METIS_TAC [DB.fetch "Decode" "decode_num_def", DB.fetch "Decode" "wf_decoder_def", DB.fetch "Decode" "enc2dec_some", DB.fetch "Decode" "encode_then_decode_blist", DB.fetch "Decode" "encode_then_decode_list", DB.fetch "Decode" "encode_then_decode_option", DB.fetch "Decode" "encode_then_decode_prod", DB.fetch "Decode" "encode_then_decode_sum", DB.fetch "Decode" "decode_bool", listTheory.INDEX_FIND_def, EncodeTheory.encode_num_primitive_def, EncodeTheory.wf_encode_num, DB.fetch "Decode" "decode_dec2enc_append", DB.fetch "Decode" "enc2dec_def", DB.fetch "Decode" "enc2dec_some_alt", DB.fetch "Decode" "enc2dec_none"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003871
+
+dec2enc_decode_num
+proof length: 1
+proof time: 0.054432
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.096364
+  inferstep time: 0.075129
+  node_find time: 0.000189
+  node_crea time: 0.014203
+    pred time: 0.004478
+    thmpred time: 0.000001
+    mc time: 0.013237
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "Decode" "decode_num_def" , DB.fetch "Decode" "wf_decode_num" , EncodeTheory.encode_num_def , EncodeTheory.tactictoe_thm_1 , EncodeTheory.tactictoe_thm_2 , EncodeTheory.tactictoe_thm_3 , EncodeTheory.tactictoe_thm_5 , EncodeTheory.wf_encode_num , EncodeTheory.encode_num_primitive_def , DB.fetch "Decode" "dec2enc_decode_bool" , DB.fetch "Decode" "dec2enc_enc2dec" , DB.fetch "Decode" "dec2enc_decode_unit" , DB.fetch "Decode" "dec2enc_some" , DB.fetch "Decode" "decode_dec2enc" , DB.fetch "Decode" "decode_dec2enc_append" , DB.fetch "Decode" "dec2enc_decode_list"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004065
+
+decode_num_total
+Statistics
+  infstep : 1053
+  nodes   : 188
+  maxdepth: 6
+Time: 10.000693
+  inferstep time: 6.15105
+  node_find time: 0.187907
+  node_crea time: 3.214399
+    pred time: 0.64476
+    thmpred time: 0.000018
+    mc time: 1.755325
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 23
+Original proof time: 0.0
+Replaying proof: 0.587987
+Replaying proof: 0.105304
+
+dec_bnum_lt
+Statistics
+  infstep : 395
+  nodes   : 108
+  maxdepth: 5
+Time: 10.015366
+  inferstep time: 7.836155
+  node_find time: 0.0621
+  node_crea time: 1.872849
+    pred time: 0.484877
+    thmpred time: 0.000019
+    mc time: 1.035977
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.241826
+Replaying proof: 0.040215
+
+wf_decode_bnum
+proof length: 1
+proof time: 0.04753
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.090011
+  inferstep time: 0.06741
+  node_find time: 0.000495
+  node_crea time: 0.01607
+    pred time: 0.003871
+    thmpred time: 0.0
+    mc time: 0.014209
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "Decode" "decode_bnum_def" , EncodeTheory.wf_encode_bnum , EncodeTheory.wf_pred_bnum , EncodeTheory.wf_pred_bnum_def , EncodeTheory.wf_pred_bnum_total , DB.fetch "Decode" "dec2enc_decode_blist" , DB.fetch "Decode" "wf_decode_blist" , DB.fetch "Decode" "decode_blist" , DB.fetch "Decode" "wf_dec2enc" , DB.fetch "Decode" "wf_enc2dec" , DB.fetch "Decode" "dec2enc_some" , DB.fetch "Decode" "decode_dec2enc_append" , DB.fetch "Decode" "enc2dec_dec2enc" , DB.fetch "Decode" "dec2enc_decode_list" , DB.fetch "Decode" "dec2enc_decode_option" , DB.fetch "Decode" "decode_dec2enc"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008511
+
+dec2enc_decode_bnum
+proof length: 1
+proof time: 0.09274
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.125122
+  inferstep time: 0.094171
+  node_find time: 0.000205
+  node_crea time: 0.015308
+    pred time: 0.003653
+    thmpred time: 0.0
+    mc time: 0.022011
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "Decode" "wf_decode_bnum" , DB.fetch "Decode" "decode_bnum_def" , EncodeTheory.wf_encode_bnum , EncodeTheory.wf_pred_bnum_def , EncodeTheory.wf_pred_bnum , DB.fetch "Decode" "dec_bnum_inj" , EncodeTheory.encode_bnum_inj , EncodeTheory.encode_bnum_length , EncodeTheory.wf_pred_bnum_total , EncodeTheory.wf_encode_bnum_collision_free , EncodeTheory.encode_bnum_def , EncodeTheory.encode_bnum_def_compute , DB.fetch "Decode" "dec2enc_decode_blist" , DB.fetch "Decode" "decode_blist_def" , DB.fetch "Decode" "dec2enc_enc2dec" , DB.fetch "Decode" "dec2enc_some"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004264
+Replaying proof: 0.147544
+
+wf_decode_tree
+Statistics
+  infstep : 1065
+  nodes   : 140
+  maxdepth: 6
+Time: 10.058164
+  inferstep time: 7.528027
+  node_find time: 0.179214
+  node_crea time: 1.895719
+    pred time: 0.351161
+    thmpred time: 0.000023
+    mc time: 1.172648
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.032064
+Replaying proof: 0.051122
+Bad stac: 1

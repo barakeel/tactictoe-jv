@@ -1,0 +1,1571 @@
+
+POSITIVE_PROB
+proof length: 2
+proof time: 0.005047
+Statistics
+  infstep : 8
+  nodes   : 4
+  maxdepth: 2
+Time: 0.560882
+  inferstep time: 0.470901
+  node_find time: 0.000189
+  node_crea time: 0.066388
+    pred time: 0.014942
+    thmpred time: 0.0
+    mc time: 0.067719
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [pred_setTheory.GSPECIFICATION, util_probTheory.SUMS_EQ, pred_setTheory.IN_FUNSET, pred_setTheory.IN_UNIV, (DB.fetch "measure" "positive_def")] THEN BasicProvers.SRW_TAC [] [DB.fetch "probability" "possibly_def", DB.fetch "probability" "probably_def", DB.fetch "probability" "indep_def", measureTheory.positive_def, DB.fetch "probability" "random_variable_def", DB.fetch "probability" "real_random_variable_def", DB.fetch "probability" "distribution_def", DB.fetch "probability" "indep_function_def", DB.fetch "probability" "joint_distribution3_def", DB.fetch "probability" "joint_distribution_def", DB.fetch "probability" "prob_def", DB.fetch "probability" "events_def", lebesgueTheory.pos_fn_integral_cmul_indicator, lebesgueTheory.RN_lemma2, lebesgueTheory.RN_lemma1, measureTheory.increasing_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004633
+
+INCREASING_PROB
+proof length: 2
+proof time: 0.003969
+Statistics
+  infstep : 11
+  nodes   : 5
+  maxdepth: 2
+Time: 0.352878
+  inferstep time: 0.276093
+  node_find time: 0.000232
+  node_crea time: 0.060133
+    pred time: 0.01779
+    thmpred time: 0.0
+    mc time: 0.048965
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [measureTheory.positive_def, (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def")] THEN bossLib.RW_TAC bossLib.std_ss [(DB.fetch "measure" "increasing_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007024
+
+ADDITIVE_PROB
+proof length: 2
+proof time: 0.137478
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.292403
+  inferstep time: 0.2315
+  node_find time: 0.00012
+  node_crea time: 0.042906
+    pred time: 0.011248
+    thmpred time: 0.000002
+    mc time: 0.042845
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [measureTheory.increasing_def, (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def")] THEN metisTools.METIS_TAC [measureTheory.additive_def, measureTheory.subadditive_def, measureTheory.ADDITIVE, measureTheory.MEASURE_ADDITIVE, measureTheory.SUBADDITIVE, measureTheory.ADDITIVE_SUM, measureTheory.INCREASING_ADDITIVE_SUMMABLE, measureTheory.ADDITIVE_INCREASING, measureTheory.ALGEBRA_SUBSET_LAMBDA_SYSTEM, measureTheory.COUNTABLY_ADDITIVE_ADDITIVE, measureTheory.finite_additivity_sufficient_for_finite_spaces2, measureTheory.MEASURE_SPACE_ADDITIVE, lebesgueTheory.pos_fn_integral_disjoint_sets, measureTheory.CLOSED_CDI_DUNION, measureTheory.LAMBDA_SYSTEM_STRONG_ADDITIVE, real_sigmaTheory.REAL_SUM_IMAGE_DISJOINT_UNION]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004783
+
+COUNTABLY_ADDITIVE_PROB
+proof length: 2
+proof time: 0.005456
+Statistics
+  infstep : 12
+  nodes   : 4
+  maxdepth: 2
+Time: 0.367267
+  inferstep time: 0.294403
+  node_find time: 0.000269
+  node_crea time: 0.050629
+    pred time: 0.012417
+    thmpred time: 0.000001
+    mc time: 0.05216
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [measureTheory.additive_def, (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def")] THEN bossLib.RW_TAC bossLib.std_ss [(DB.fetch "measure" "additive_def"), (DB.fetch "measure" "positive_def"), (DB.fetch "measure" "countably_additive_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006632
+
+PROB_SPACE
+Statistics
+  infstep : 648
+  nodes   : 100
+  maxdepth: 5
+Time: 10.001435
+  inferstep time: 6.60911
+  node_find time: 0.040092
+  node_crea time: 3.267234
+    pred time: 0.541023
+    thmpred time: 0.000027
+    mc time: 2.246795
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.043708
+
+EVENTS_SIGMA_ALGEBRA
+proof length: 1
+proof time: 0.073656
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.109639
+  inferstep time: 0.075383
+  node_find time: 0.000039
+  node_crea time: 0.025001
+    pred time: 0.005718
+    thmpred time: 0.000001
+    mc time: 0.026013
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "PROB_SPACE" , DB.fetch "probability" "real_random_variable_def" , DB.fetch "probability" "random_variable_def" , DB.fetch "probability" "prob_space_def" , DB.fetch "probability" "joint_distribution3_def" , DB.fetch "probability" "joint_distribution_def" , DB.fetch "probability" "distribution_def" , DB.fetch "probability" "rv_conditional_expectation_def" , DB.fetch "probability" "indep_function_def" , DB.fetch "probability" "ADDITIVE_PROB" , DB.fetch "probability" "COUNTABLY_ADDITIVE_PROB" , DB.fetch "probability" "INCREASING_PROB" , DB.fetch "probability" "POSITIVE_PROB" , DB.fetch "probability" "indep_def" , DB.fetch "probability" "possibly_def" , DB.fetch "probability" "probably_def"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005402
+
+EVENTS_ALGEBRA
+proof length: 2
+proof time: 0.009859
+Statistics
+  infstep : 46
+  nodes   : 14
+  maxdepth: 3
+Time: 1.185105
+  inferstep time: 0.681082
+  node_find time: 0.001222
+  node_crea time: 0.462259
+    pred time: 0.110159
+    thmpred time: 0.000004
+    mc time: 0.244515
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "probability" "EVENTS_SIGMA_ALGEBRA", DB.fetch "probability" "real_random_variable_def", DB.fetch "probability" "PROB_SPACE", DB.fetch "probability" "random_variable_def", DB.fetch "probability" "prob_space_def", DB.fetch "probability" "joint_distribution3_def", DB.fetch "probability" "joint_distribution_def", DB.fetch "probability" "distribution_def", DB.fetch "probability" "rv_conditional_expectation_def", DB.fetch "probability" "indep_function_def", DB.fetch "probability" "ADDITIVE_PROB", DB.fetch "probability" "COUNTABLY_ADDITIVE_PROB", DB.fetch "probability" "INCREASING_PROB", DB.fetch "probability" "POSITIVE_PROB", DB.fetch "probability" "indep_def", DB.fetch "probability" "possibly_def"] THEN bossLib.RW_TAC bossLib.std_ss [(DB.fetch "measure" "SIGMA_ALGEBRA_ALGEBRA"), (DB.fetch "measure" "OUTER_MEASURE_SPACE_POSITIVE")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003311
+
+PROB_EMPTY
+proof length: 1
+proof time: 0.064268
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.105484
+  inferstep time: 0.07426
+  node_find time: 0.000078
+  node_crea time: 0.020472
+    pred time: 0.004833
+    thmpred time: 0.0
+    mc time: 0.024258
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "POSITIVE_PROB" , DB.fetch "probability" "PROB_SPACE" , DB.fetch "probability" "prob_space_def" , DB.fetch "probability" "real_random_variable_def" , DB.fetch "probability" "EVENTS_ALGEBRA" , DB.fetch "probability" "EVENTS_SIGMA_ALGEBRA" , DB.fetch "probability" "random_variable_def" , DB.fetch "probability" "possibly_def" , DB.fetch "probability" "probably_def" , DB.fetch "probability" "COUNTABLY_ADDITIVE_PROB" , DB.fetch "probability" "ADDITIVE_PROB" , DB.fetch "probability" "INCREASING_PROB" , DB.fetch "probability" "distribution_def" , DB.fetch "probability" "indep_def" , DB.fetch "probability" "joint_distribution3_def" , DB.fetch "probability" "joint_distribution_def"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009625
+
+PROB_UNIV
+proof length: 1
+proof time: 0.055249
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.094153
+  inferstep time: 0.06992
+  node_find time: 0.000055
+  node_crea time: 0.016352
+    pred time: 0.004217
+    thmpred time: 0.000001
+    mc time: 0.01783
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "PROB_SPACE" , DB.fetch "probability" "prob_space_def" , DB.fetch "probability" "real_random_variable_def" , DB.fetch "probability" "EVENTS_ALGEBRA" , DB.fetch "probability" "EVENTS_SIGMA_ALGEBRA" , DB.fetch "probability" "random_variable_def" , DB.fetch "probability" "PROB_EMPTY" , DB.fetch "probability" "distribution_def" , DB.fetch "probability" "joint_distribution3_def" , DB.fetch "probability" "joint_distribution_def" , DB.fetch "probability" "rv_conditional_expectation_def" , DB.fetch "probability" "probably_def" , DB.fetch "probability" "POSITIVE_PROB" , DB.fetch "probability" "possibly_def" , DB.fetch "probability" "COUNTABLY_ADDITIVE_PROB" , DB.fetch "probability" "ADDITIVE_PROB"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003681
+
+PROB_SPACE_POSITIVE
+proof length: 1
+proof time: 0.068983
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.099531
+  inferstep time: 0.068437
+  node_find time: 0.000067
+  node_crea time: 0.020721
+    pred time: 0.004437
+    thmpred time: 0.0
+    mc time: 0.024437
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "PROB_SPACE" , DB.fetch "probability" "EVENTS_ALGEBRA" , DB.fetch "probability" "EVENTS_SIGMA_ALGEBRA" , DB.fetch "probability" "PROB_EMPTY" , DB.fetch "probability" "PROB_UNIV" , DB.fetch "probability" "real_random_variable_def" , DB.fetch "probability" "prob_space_def" , DB.fetch "probability" "random_variable_def" , DB.fetch "probability" "POSITIVE_PROB" , measureTheory.positive_def , measureTheory.ADDITIVE_INCREASING , measureTheory.ADDITIVE_SUM , measureTheory.ALGEBRA_SUBSET_LAMBDA_SYSTEM , measureTheory.COUNTABLY_SUBADDITIVE_SUBADDITIVE , measureTheory.INF_MEASURE_POS0 , measureTheory.INF_MEASURE_POSITIVE])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004766
+
+PROB_SPACE_COUNTABLY_ADDITIVE
+proof length: 1
+proof time: 0.065955
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.131859
+  inferstep time: 0.104228
+  node_find time: 0.000048
+  node_crea time: 0.015877
+    pred time: 0.003835
+    thmpred time: 0.000001
+    mc time: 0.021437
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "PROB_SPACE" , DB.fetch "probability" "COUNTABLY_ADDITIVE_PROB" , DB.fetch "probability" "EVENTS_ALGEBRA" , DB.fetch "probability" "EVENTS_SIGMA_ALGEBRA" , DB.fetch "probability" "PROB_EMPTY" , DB.fetch "probability" "PROB_SPACE_POSITIVE" , DB.fetch "probability" "PROB_UNIV" , DB.fetch "probability" "real_random_variable_def" , DB.fetch "probability" "prob_space_def" , DB.fetch "probability" "random_variable_def" , measureTheory.countably_additive_def , measureTheory.CARATHEODORY , measureTheory.COUNTABLY_ADDITIVE_ADDITIVE , measureTheory.INF_MEASURE_AGREES , measureTheory.COUNTABLY_ADDITIVE , measureTheory.measure_space_def])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004937
+
+PROB_SPACE_ADDITIVE
+Statistics
+  infstep : 337
+  nodes   : 78
+  maxdepth: 5
+Time: 10.000949
+  inferstep time: 6.806198
+  node_find time: 0.021353
+  node_crea time: 3.089063
+    pred time: 0.613257
+    thmpred time: 0.00003
+    mc time: 1.250558
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00877
+
+PROB_SPACE_INCREASING
+proof length: 4
+proof time: 0.078778
+Statistics
+  infstep : 387
+  nodes   : 84
+  maxdepth: 5
+Time: 8.279784
+  inferstep time: 5.536727
+  node_find time: 0.023726
+  node_crea time: 2.556798
+    pred time: 0.531417
+    thmpred time: 0.000024
+    mc time: 1.246066
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def"), measureTheory.measure_space_def, (DB.fetch "probability" "p_space_def")] THEN bossLib.FULL_SIMP_TAC realLib.real_ss [(DB.fetch "measure" "measure_space_def"), (DB.fetch "measure" "sigma_algebra_def"), (DB.fetch "measure" "ADDITIVE_INCREASING")] THEN
+  boolLib.MATCH_MP_TAC (DB.fetch "measure" "ADDITIVE_INCREASING") THEN
+  metisTools.METIS_TAC [measureTheory.COUNTABLY_ADDITIVE_ADDITIVE, measureTheory.ADDITIVE_INCREASING, measureTheory.ALGEBRA_SUBSET_LAMBDA_SYSTEM, measureTheory.INCREASING_ADDITIVE_SUMMABLE, measureTheory.ADDITIVE_SUM, measureTheory.COUNTABLY_SUBADDITIVE_SUBADDITIVE, measureTheory.INF_MEASURE_POS0, measureTheory.INF_MEASURE_POSITIVE, measureTheory.INF_MEASURE_CLOSE, measureTheory.INF_MEASURE_COUNTABLY_SUBADDITIVE, measureTheory.INF_MEASURE_LE, measureTheory.INF_MEASURE_OUTER, measureTheory.INF_MEASURE_INCREASING, measureTheory.INF_MEASURE_NONEMPTY, measureTheory.ADDITIVE, measureTheory.additive_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007384
+
+PROB_POSITIVE
+proof length: 1
+proof time: 0.061398
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.117508
+  inferstep time: 0.074945
+  node_find time: 0.000097
+  node_crea time: 0.02341
+    pred time: 0.00575
+    thmpred time: 0.000001
+    mc time: 0.033913
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "POSITIVE_PROB" , DB.fetch "probability" "INCREASING_PROB" , DB.fetch "probability" "possibly_def" , DB.fetch "probability" "ADDITIVE_PROB" , DB.fetch "probability" "probably_def" , DB.fetch "probability" "indep_def" , DB.fetch "probability" "PROB_SPACE" , DB.fetch "probability" "random_variable_def" , DB.fetch "probability" "real_random_variable_def" , DB.fetch "probability" "PROB_EMPTY" , DB.fetch "probability" "PROB_UNIV" , DB.fetch "probability" "EVENTS_ALGEBRA" , DB.fetch "probability" "EVENTS_SIGMA_ALGEBRA" , DB.fetch "probability" "COUNTABLY_ADDITIVE_PROB" , DB.fetch "probability" "prob_space_def" , DB.fetch "probability" "PROB_SPACE_ADDITIVE"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006079
+
+PROB_INCREASING
+Statistics
+  infstep : 450
+  nodes   : 104
+  maxdepth: 5
+Time: 10.011951
+  inferstep time: 7.181754
+  node_find time: 0.033969
+  node_crea time: 2.688156
+    pred time: 0.556438
+    thmpred time: 0.000031
+    mc time: 1.069576
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010425
+
+PROB_ADDITIVE
+proof length: 4
+proof time: 0.053413
+Statistics
+  infstep : 21
+  nodes   : 10
+  maxdepth: 4
+Time: 0.879334
+  inferstep time: 0.665256
+  node_find time: 0.000826
+  node_crea time: 0.180686
+    pred time: 0.043872
+    thmpred time: 0.000003
+    mc time: 0.103365
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [measureTheory.additive_def, (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def")] THEN boolLib.MATCH_MP_TAC (DB.fetch "measure" "ADDITIVE") THEN
+  bossLib.RW_TAC bossLib.std_ss [(DB.fetch "measure" "MEASURE_SPACE_ADDITIVE")] THEN
+  metisTools.METIS_TAC [DB.fetch "probability" "ADDITIVE_PROB", DB.fetch "probability" "PROB_SPACE_ADDITIVE", measureTheory.additive_def, measureTheory.COUNTABLY_ADDITIVE_ADDITIVE, measureTheory.ADDITIVE_INCREASING, measureTheory.ADDITIVE, measureTheory.MEASURE_SPACE_ADDITIVE, measureTheory.ADDITIVE_SUM, measureTheory.INCREASING_ADDITIVE_SUMMABLE, measureTheory.LAMBDA_SYSTEM_ADDITIVE, DB.fetch "probability" "PROB_INCREASING", DB.fetch "probability" "INCREASING_PROB", DB.fetch "probability" "PROB_SPACE_INCREASING", DB.fetch "probability" "PROB_POSITIVE", DB.fetch "probability" "POSITIVE_PROB", DB.fetch "probability" "PROB_SPACE_POSITIVE"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010553
+
+PROB_COUNTABLY_ADDITIVE
+Statistics
+  infstep : 474
+  nodes   : 71
+  maxdepth: 6
+Time: 10.051924
+  inferstep time: 6.879852
+  node_find time: 0.033378
+  node_crea time: 2.898807
+    pred time: 0.640247
+    thmpred time: 0.000024
+    mc time: 1.686357
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.156375
+
+PROB_COMPL
+Statistics
+  infstep : 536
+  nodes   : 97
+  maxdepth: 5
+Time: 10.002318
+  inferstep time: 6.898414
+  node_find time: 0.0425
+  node_crea time: 2.937975
+    pred time: 0.549352
+    thmpred time: 0.000032
+    mc time: 1.405761
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.024468
+
+PROB_INDEP
+proof length: 1
+proof time: 0.070279
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.126597
+  inferstep time: 0.094848
+  node_find time: 0.000092
+  node_crea time: 0.02154
+    pred time: 0.005618
+    thmpred time: 0.000001
+    mc time: 0.022514
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "indep_def" , DB.fetch "probability" "indep_families_def" , DB.fetch "probability" "indep_rv_def" , DB.fetch "probability" "PROB_ADDITIVE" , DB.fetch "probability" "ADDITIVE_PROB" , DB.fetch "probability" "INCREASING_PROB" , DB.fetch "probability" "PROB_INCREASING" , DB.fetch "probability" "POSITIVE_PROB" , DB.fetch "probability" "PROB_COMPL" , DB.fetch "probability" "PROB_COUNTABLY_ADDITIVE" , DB.fetch "probability" "PROB_POSITIVE" , DB.fetch "probability" "possibly_def" , DB.fetch "probability" "probably_def" , DB.fetch "probability" "distribution_def" , DB.fetch "probability" "joint_distribution3_def" , DB.fetch "probability" "joint_distribution_def"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005501
+
+PSPACE
+proof length: 2
+proof time: 0.163578
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.275826
+  inferstep time: 0.230624
+  node_find time: 0.000165
+  node_crea time: 0.031065
+    pred time: 0.007742
+    thmpred time: 0.000002
+    mc time: 0.032115
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def"), measureTheory.measure_space_def, (DB.fetch "probability" "p_space_def")] THEN metisTools.METIS_TAC [measureTheory.m_space_def, lebesgueTheory.psfs_def, arithmeticTheory.DIVMOD_CORRECT, arithmeticTheory.findq_eq_0, arithmeticTheory.DIVMOD_THM, arithmeticTheory.findq_thm, numeralTheory.divmod_POS, arithmeticTheory.findq_divisor, measureTheory.measurable_sets_def, measureTheory.measure_def, lebesgueTheory.pos_simple_fn_integral_present, measureTheory.measure_split, transcTheory.tactictoe_thm_10, transcTheory.tactictoe_thm_11, transcTheory.tactictoe_thm_9, seqTheory.BOLZANO_LEMMA]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004078
+
+EVENTS
+proof length: 2
+proof time: 0.005221
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.290457
+  inferstep time: 0.230136
+  node_find time: 0.000234
+  node_crea time: 0.038912
+    pred time: 0.009282
+    thmpred time: 0.000002
+    mc time: 0.045272
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def"), measureTheory.measure_space_def, (DB.fetch "probability" "p_space_def")] THEN BasicProvers.SRW_TAC [] [measureTheory.measurable_sets_def, DB.fetch "probability" "PSPACE", lebesgueTheory.psfs_def, arithmeticTheory.DIVMOD_CORRECT, arithmeticTheory.findq_eq_0, arithmeticTheory.DIVMOD_THM, arithmeticTheory.findq_thm, numeralTheory.divmod_POS, arithmeticTheory.findq_divisor, measureTheory.m_space_def, measureTheory.measure_def, lebesgueTheory.pos_simple_fn_integral_present, transcTheory.tactictoe_thm_10, transcTheory.tactictoe_thm_11, transcTheory.tactictoe_thm_9, seqTheory.BOLZANO_LEMMA]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003807
+
+PROB
+proof length: 2
+proof time: 0.039749
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.242635
+  inferstep time: 0.178779
+  node_find time: 0.000205
+  node_crea time: 0.043711
+    pred time: 0.011962
+    thmpred time: 0.000002
+    mc time: 0.044306
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def"), measureTheory.measure_space_def, (DB.fetch "probability" "p_space_def")] THEN metisTools.METIS_TAC [measureTheory.measure_def, DB.fetch "probability" "EVENTS", DB.fetch "probability" "PSPACE", lebesgueTheory.psfs_def, arithmeticTheory.DIVMOD_CORRECT, arithmeticTheory.findq_eq_0, arithmeticTheory.DIVMOD_THM, arithmeticTheory.findq_thm, numeralTheory.divmod_POS, arithmeticTheory.findq_divisor, measureTheory.measurable_sets_def, measureTheory.m_space_def, lebesgueTheory.pos_simple_fn_integral_def, DB.fetch "probability" "prob_space_def", measureTheory.additive_def, measureTheory.countably_additive_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004262
+
+EVENTS_INTER
+Statistics
+  infstep : 536
+  nodes   : 80
+  maxdepth: 5
+Time: 10.012171
+  inferstep time: 7.679636
+  node_find time: 0.044557
+  node_crea time: 2.154241
+    pred time: 0.453471
+    thmpred time: 0.000032
+    mc time: 0.905314
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.061154
+
+EVENTS_EMPTY
+proof length: 2
+proof time: 0.016644
+Statistics
+  infstep : 83
+  nodes   : 14
+  maxdepth: 3
+Time: 1.585095
+  inferstep time: 1.311878
+  node_find time: 0.004393
+  node_crea time: 0.233039
+    pred time: 0.061752
+    thmpred time: 0.000002
+    mc time: 0.118975
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def"), measureTheory.measure_space_def, (DB.fetch "probability" "p_space_def")] THEN bossLib.PROVE_TAC [(DB.fetch "measure" "SIGMA_ALGEBRA"), (DB.fetch "measure" "space_def"), (DB.fetch "measure" "subsets_def")]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.056956
+
+EVENTS_SPACE
+Statistics
+  infstep : 480
+  nodes   : 91
+  maxdepth: 5
+Time: 10.069742
+  inferstep time: 7.409328
+  node_find time: 0.040907
+  node_crea time: 2.480938
+    pred time: 0.518045
+    thmpred time: 0.000047
+    mc time: 1.164322
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067575
+
+EVENTS_UNION
+proof length: 3
+proof time: 0.009739
+Statistics
+  infstep : 315
+  nodes   : 59
+  maxdepth: 4
+Time: 6.151542
+  inferstep time: 4.616859
+  node_find time: 0.021867
+  node_crea time: 1.360368
+    pred time: 0.327296
+    thmpred time: 0.000017
+    mc time: 0.574061
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "events_def"), measureTheory.measure_space_def, (DB.fetch "probability" "p_space_def")] THEN bossLib.FULL_SIMP_TAC realLib.real_ss [(DB.fetch "measure" "measure_space_def"), (DB.fetch "measure" "sigma_algebra_def"), (DB.fetch "measure" "ADDITIVE_INCREASING")] THEN
+  bossLib.FULL_SIMP_TAC bossLib.std_ss [(DB.fetch "measure" "algebra_def"), (DB.fetch "measure" "SIGMA_ALGEBRA_SIGMA"), (DB.fetch "measure" "space_def"), (DB.fetch "measure" "subsets_def")]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.063634
+
+INDEP_EMPTY
+proof length: 2
+proof time: 0.004236
+Statistics
+  infstep : 12
+  nodes   : 6
+  maxdepth: 2
+Time: 0.574224
+  inferstep time: 0.424031
+  node_find time: 0.000659
+  node_crea time: 0.133594
+    pred time: 0.037151
+    thmpred time: 0.000002
+    mc time: 0.057593
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [] THEN BasicProvers.SRW_TAC [] [DB.fetch "probability" "indep_families_def", DB.fetch "probability" "indep_rv_def", DB.fetch "probability" "PROB_INDEP", DB.fetch "probability" "indep_def", pred_setTheory.tactictoe_thm_50, pred_setTheory.tactictoe_thm_38, DB.fetch "probability" "POSITIVE_PROB", measureTheory.CLOSED_CDI_DUNION, measureTheory.closed_cdi_def, measureTheory.SIGMA_ALGEBRA, measureTheory.SIGMA_PROPERTY, measureTheory.SIGMA_PROPERTY_ALT, measureTheory.SIGMA_PROPERTY_DISJOINT, measureTheory.SIGMA_PROPERTY_DISJOINT_WEAK, DB.fetch "probability" "EVENTS_EMPTY", DB.fetch "probability" "PROB_EMPTY"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007162
+
+INTER_PSPACE
+Statistics
+  infstep : 490
+  nodes   : 92
+  maxdepth: 5
+Time: 10.089673
+  inferstep time: 7.134969
+  node_find time: 0.043205
+  node_crea time: 2.742516
+    pred time: 0.533645
+    thmpred time: 0.000026
+    mc time: 1.470409
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.080623
+
+INDEP_SPACE
+proof length: 3
+proof time: 0.066987
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 2
+Time: 0.360139
+  inferstep time: 0.264578
+  node_find time: 0.000473
+  node_crea time: 0.065976
+    pred time: 0.017433
+    thmpred time: 0.000002
+    mc time: 0.057948
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "probability" "indep_families_def", DB.fetch "probability" "indep_rv_def", DB.fetch "probability" "PROB_INDEP", DB.fetch "probability" "indep_def", pred_setTheory.tactictoe_thm_50, pred_setTheory.tactictoe_thm_38, DB.fetch "probability" "POSITIVE_PROB", measureTheory.CLOSED_CDI_DUNION, measureTheory.closed_cdi_def, measureTheory.SIGMA_ALGEBRA, measureTheory.SIGMA_PROPERTY, measureTheory.SIGMA_PROPERTY_ALT, measureTheory.SIGMA_PROPERTY_DISJOINT, measureTheory.SIGMA_PROPERTY_DISJOINT_WEAK, DB.fetch "probability" "EVENTS_EMPTY", DB.fetch "probability" "PROB_EMPTY"] THENL [metisTools.METIS_TAC [DB.fetch "probability" "EVENTS_SPACE", DB.fetch "probability" "INTER_PSPACE", DB.fetch "probability" "PROB_COMPL", DB.fetch "probability" "random_variable_def", DB.fetch "probability" "real_random_variable_def", DB.fetch "probability" "PROB_SPACE", DB.fetch "probability" "EVENTS_ALGEBRA", DB.fetch "probability" "EVENTS_SIGMA_ALGEBRA", DB.fetch "probability" "prob_space_def", DB.fetch "probability" "PROB_UNIV", DB.fetch "probability" "distribution_def", DB.fetch "probability" "rv_conditional_expectation_def", DB.fetch "probability" "joint_distribution3_def", DB.fetch "probability" "joint_distribution_def", DB.fetch "probability" "INDEP_EMPTY", DB.fetch "probability" "indep_def"], BasicProvers.SRW_TAC [] [DB.fetch "probability" "INTER_PSPACE", DB.fetch "probability" "PROB_SPACE", DB.fetch "probability" "PROB_UNIV", DB.fetch "probability" "PROB_COMPL", DB.fetch "probability" "distribution_def", DB.fetch "probability" "joint_distribution3_def", DB.fetch "probability" "joint_distribution_def", DB.fetch "probability" "PROB_INDEP", DB.fetch "probability" "indep_def", DB.fetch "probability" "PROB_ADDITIVE", DB.fetch "probability" "ADDITIVE_PROB", DB.fetch "probability" "INCREASING_PROB", DB.fetch "probability" "POSITIVE_PROB", DB.fetch "probability" "PROB_COUNTABLY_ADDITIVE", DB.fetch "probability" "PROB_INCREASING", DB.fetch "probability" "PROB_POSITIVE"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006961
+
+EVENTS_DIFF
+Statistics
+  infstep : 580
+  nodes   : 83
+  maxdepth: 5
+Time: 10.104029
+  inferstep time: 7.979518
+  node_find time: 0.051523
+  node_crea time: 1.876801
+    pred time: 0.420098
+    thmpred time: 0.000024
+    mc time: 0.836995
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06141
+
+EVENTS_COMPL
+proof length: 1
+proof time: 0.043436
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.075248
+  inferstep time: 0.05005
+  node_find time: 0.000083
+  node_crea time: 0.016139
+    pred time: 0.00383
+    thmpred time: 0.000001
+    mc time: 0.018405
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "PROB_COMPL" , DB.fetch "probability" "INDEP_SPACE" , DB.fetch "probability" "INTER_PSPACE" , DB.fetch "probability" "random_variable_def" , DB.fetch "probability" "real_random_variable_def" , DB.fetch "probability" "EVENTS_SPACE" , DB.fetch "probability" "PROB_SPACE" , DB.fetch "probability" "EVENTS_ALGEBRA" , DB.fetch "probability" "EVENTS_SIGMA_ALGEBRA" , DB.fetch "probability" "EVENTS_DIFF" , DB.fetch "probability" "EVENTS_INTER" , DB.fetch "probability" "EVENTS_UNION" , DB.fetch "probability" "INDEP_EMPTY" , DB.fetch "probability" "PROB_ADDITIVE" , DB.fetch "probability" "PROB_INCREASING" , DB.fetch "probability" "PROB_POSITIVE"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.087903
+
+EVENTS_COUNTABLE_UNION
+proof length: 1
+proof time: 0.005353
+Statistics
+  infstep : 17
+  nodes   : 4
+  maxdepth: 2
+Time: 0.35646
+  inferstep time: 0.291143
+  node_find time: 0.001051
+  node_crea time: 0.054107
+    pred time: 0.014094
+    thmpred time: 0.000001
+    mc time: 0.02397
+    inst time: 0.0
+Proof found: (bossLib.RW_TAC bossLib.std_ss [ ( DB.fetch "probability" "PROB_SPACE" ) , measureTheory.SIGMA_ALGEBRA , measureTheory.space_def , measureTheory.subsets_def , measureTheory.subset_class_def , pred_setTheory.SUBSET_DEF ])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.060872
+
+PROB_ZERO_UNION
+Statistics
+  infstep : 427
+  nodes   : 80
+  maxdepth: 5
+Time: 10.015929
+  inferstep time: 7.357713
+  node_find time: 0.038796
+  node_crea time: 2.427153
+    pred time: 0.541463
+    thmpred time: 0.000022
+    mc time: 0.908663
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.565545
+
+PROB_EQ_COMPL
+Statistics
+  infstep : 396
+  nodes   : 87
+  maxdepth: 5
+Time: 10.043732
+  inferstep time: 7.401288
+  node_find time: 0.038957
+  node_crea time: 2.423401
+    pred time: 0.488308
+    thmpred time: 0.000023
+    mc time: 0.894449
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.135324
+
+PROB_ONE_INTER
+Statistics
+  infstep : 329
+  nodes   : 103
+  maxdepth: 6
+Time: 10.101323
+  inferstep time: 6.756478
+  node_find time: 0.035333
+  node_crea time: 3.171351
+    pred time: 0.588507
+    thmpred time: 0.000033
+    mc time: 1.301708
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.350175
+
+EVENTS_COUNTABLE_INTER
+Statistics
+  infstep : 454
+  nodes   : 103
+  maxdepth: 5
+Time: 10.012167
+  inferstep time: 7.159023
+  node_find time: 0.050742
+  node_crea time: 2.651157
+    pred time: 0.504983
+    thmpred time: 0.000024
+    mc time: 0.842341
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 32
+Original proof time: 0.0
+Replaying proof: 1.062403
+
+ABS_PROB
+Statistics
+  infstep : 373
+  nodes   : 100
+  maxdepth: 6
+Time: 10.027184
+  inferstep time: 7.511058
+  node_find time: 0.041347
+  node_crea time: 2.296226
+    pred time: 0.545173
+    thmpred time: 0.00004
+    mc time: 0.934185
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004693
+
+PROB_COMPL_LE1
+proof length: 2
+proof time: 0.003885
+Statistics
+  infstep : 12
+  nodes   : 6
+  maxdepth: 2
+Time: 0.479084
+  inferstep time: 0.372276
+  node_find time: 0.001023
+  node_crea time: 0.083937
+    pred time: 0.021812
+    thmpred time: 0.000002
+    mc time: 0.057091
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "probability" "PROB_COMPL", DB.fetch "probability" "PROB_EQ_COMPL", DB.fetch "probability" "EVENTS_COMPL", realTheory.REAL_LIN_LE_MAX, realTheory.REAL_MIN_LE_LIN, seqTheory.GP, DB.fetch "probability" "PROB_SPACE", DB.fetch "probability" "PROB_ONE_INTER", DB.fetch "probability" "PROB_POSITIVE", DB.fetch "probability" "PROB_INCREASING", DB.fetch "probability" "PROB_ZERO_UNION", DB.fetch "probability" "PROB_ADDITIVE", DB.fetch "probability" "ABS_PROB", DB.fetch "probability" "INTER_PSPACE", DB.fetch "probability" "INDEP_SPACE", DB.fetch "probability" "PROB_COUNTABLY_ADDITIVE"] THEN realLib.REAL_ARITH_TAC
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.026879
+
+PROB_LE_1
+Statistics
+  infstep : 502
+  nodes   : 110
+  maxdepth: 6
+Time: 10.06633
+  inferstep time: 7.188284
+  node_find time: 0.059512
+  node_crea time: 2.572286
+    pred time: 0.637282
+    thmpred time: 0.000031
+    mc time: 1.147575
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.136749
+
+PROB_EQ_BIGUNION_IMAGE
+Statistics
+  infstep : 345
+  nodes   : 62
+  maxdepth: 5
+Time: 10.056022
+  inferstep time: 6.810167
+  node_find time: 0.039504
+  node_crea time: 3.060029
+    pred time: 0.614113
+    thmpred time: 0.000025
+    mc time: 1.410335
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.149732
+
+PROB_FINITELY_ADDITIVE
+Statistics
+  infstep : 277
+  nodes   : 83
+  maxdepth: 6
+Time: 10.103147
+  inferstep time: 6.869585
+  node_find time: 0.033505
+  node_crea time: 2.956656
+    pred time: 0.710778
+    thmpred time: 0.000025
+    mc time: 1.559324
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.587882
+
+ABS_1_MINUS_PROB
+Statistics
+  infstep : 518
+  nodes   : 152
+  maxdepth: 6
+Time: 10.005414
+  inferstep time: 6.488566
+  node_find time: 0.072888
+  node_crea time: 3.157208
+    pred time: 0.560292
+    thmpred time: 0.000021
+    mc time: 1.472397
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.232593
+
+PROB_INCREASING_UNION
+Statistics
+  infstep : 286
+  nodes   : 80
+  maxdepth: 6
+Time: 10.077082
+  inferstep time: 7.069436
+  node_find time: 0.035753
+  node_crea time: 2.718625
+    pred time: 0.683715
+    thmpred time: 0.000021
+    mc time: 1.264943
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008911
+
+PROB_SUBADDITIVE
+Statistics
+  infstep : 337
+  nodes   : 108
+  maxdepth: 6
+Time: 10.05559
+  inferstep time: 6.885448
+  node_find time: 0.044278
+  node_crea time: 2.880955
+    pred time: 0.692386
+    thmpred time: 0.000026
+    mc time: 1.299017
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.525111
+
+PROB_COUNTABLY_SUBADDITIVE
+Statistics
+  infstep : 399
+  nodes   : 77
+  maxdepth: 5
+Time: 10.106529
+  inferstep time: 6.978071
+  node_find time: 0.052331
+  node_crea time: 2.855875
+    pred time: 0.673885
+    thmpred time: 0.000026
+    mc time: 1.458396
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 40
+Original proof time: 0.0
+Replaying proof: 1.396636
+
+PROB_COUNTABLY_ZERO
+Statistics
+  infstep : 397
+  nodes   : 121
+  maxdepth: 6
+Time: 10.098728
+  inferstep time: 6.593598
+  node_find time: 0.060645
+  node_crea time: 3.074267
+    pred time: 0.50112
+    thmpred time: 0.000029
+    mc time: 1.277183
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 25
+Original proof time: 0.0
+Replaying proof: 0.803434
+
+INDEP_SYM
+Statistics
+  infstep : 333
+  nodes   : 99
+  maxdepth: 6
+Time: 10.027899
+  inferstep time: 6.922772
+  node_find time: 0.046382
+  node_crea time: 2.684453
+    pred time: 0.676654
+    thmpred time: 0.000027
+    mc time: 1.346393
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.029075
+
+INDEP_REFL
+proof length: 4
+proof time: 0.05073
+Statistics
+  infstep : 354
+  nodes   : 84
+  maxdepth: 5
+Time: 6.947145
+  inferstep time: 4.922906
+  node_find time: 0.052653
+  node_crea time: 1.707106
+    pred time: 0.37238
+    thmpred time: 0.000018
+    mc time: 0.832535
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "probability" "indep_def", DB.fetch "probability" "PROB_INDEP", DB.fetch "probability" "INDEP_SYM", DB.fetch "probability" "indep_families_def", DB.fetch "probability" "INDEP_EMPTY", DB.fetch "probability" "INDEP_SPACE", DB.fetch "probability" "indep_rv_def", DB.fetch "probability" "ABS_1_MINUS_PROB", DB.fetch "probability" "PROB_COMPL", DB.fetch "probability" "PROB_COMPL_LE1", DB.fetch "probability" "PROB_ONE_INTER", DB.fetch "probability" "PROB_LE_1", DB.fetch "probability" "PROB_ZERO_UNION", DB.fetch "probability" "PROB_POSITIVE", DB.fetch "probability" "PROB_EQ_COMPL", DB.fetch "probability" "PROB_ADDITIVE"] THEN boolLib.REPEAT (boolLib.POP_ASSUM boolLib.MP_TAC) THEN
+  bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "events_def"), (DB.fetch "probability" "prob_def"), measureTheory.MONOTONE_CONVERGENCE] THEN
+  BasicProvers.SRW_TAC [] [measureTheory.positive_def, measureTheory.MONOTONE_CONVERGENCE, measureTheory.MEASURE_COMPL, measureTheory.additive_def, measureTheory.increasing_def, DB.fetch "probability" "prob_space_def", measureTheory.countably_additive_def, measureTheory.measure_def, DB.fetch "probability" "prob_def", util_probTheory.REAL_MUL_IDEMPOT, realTheory.REAL_MUL_LINV, transcTheory.TAN_ADD, transcTheory.TAN_DOUBLE, realTheory.REAL_MUL_RINV, extrealTheory.REAL_LE_MUL_EPSILON, realTheory.REAL_LIN_LE_MAX]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.042338
+
+PROB_REAL_SUM_IMAGE
+proof length: 2
+proof time: 0.012819
+Statistics
+  infstep : 36
+  nodes   : 10
+  maxdepth: 4
+Time: 1.103032
+  inferstep time: 0.848409
+  node_find time: 0.004207
+  node_crea time: 0.213287
+    pred time: 0.05419
+    thmpred time: 0.000003
+    mc time: 0.110379
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "events_def"), (DB.fetch "probability" "prob_def"), measureTheory.MONOTONE_CONVERGENCE] THEN BasicProvers.SRW_TAC [] [measureTheory.MEASURE_REAL_SUM_IMAGE, lebesgueTheory.finite_space_POW_integral_reduce, measureTheory.measure_split, lebesgueTheory.finite_space_integral_def, real_sigmaTheory.REAL_SUM_IMAGE_SING, measureTheory.positive_def, measureTheory.MEASURE_ADDITIVE, measureTheory.MEASURE_COMPL, measureTheory.MONOTONE_CONVERGENCE, measureTheory.additive_def, measureTheory.increasing_def, lebesgueTheory.psfis_indicator, lebesgueTheory.pos_simple_fn_integral_def, lebesgueTheory.pos_fn_integral_sum_cmul_indicator, lebesgueTheory.psfis_intro, res_quanTheory.RES_EXISTS_UNIQUE_NULL]
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.592782
+
+PROB_EQUIPROBABLE_FINITE_UNIONS
+Statistics
+  infstep : 402
+  nodes   : 93
+  maxdepth: 6
+Time: 10.031952
+  inferstep time: 6.912426
+  node_find time: 0.061047
+  node_crea time: 2.861353
+    pred time: 0.481132
+    thmpred time: 0.00004
+    mc time: 1.240125
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.420841
+
+PROB_REAL_SUM_IMAGE_FN
+Statistics
+  infstep : 284
+  nodes   : 69
+  maxdepth: 5
+Time: 10.0575
+  inferstep time: 6.695261
+  node_find time: 0.042723
+  node_crea time: 2.908354
+    pred time: 0.586166
+    thmpred time: 0.000021
+    mc time: 1.460283
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 80
+Original proof time: 0.0
+Replaying proof: 4.263962
+
+PROB_REAL_SUM_IMAGE_SPACE
+Statistics
+  infstep : 334
+  nodes   : 83
+  maxdepth: 5
+Time: 10.001007
+  inferstep time: 7.196148
+  node_find time: 0.051757
+  node_crea time: 2.53864
+    pred time: 0.629844
+    thmpred time: 0.000024
+    mc time: 1.156796
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.068372
+
+PROB_DISCRETE_EVENTS
+Statistics
+  infstep : 281
+  nodes   : 93
+  maxdepth: 6
+Time: 10.111343
+  inferstep time: 6.682091
+  node_find time: 0.05781
+  node_crea time: 3.152347
+    pred time: 0.680589
+    thmpred time: 0.000029
+    mc time: 1.421929
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.531678
+
+PROB_DISCRETE_EVENTS_COUNTABLE
+Statistics
+  infstep : 348
+  nodes   : 92
+  maxdepth: 5
+Time: 10.018474
+  inferstep time: 7.001672
+  node_find time: 0.060149
+  node_crea time: 2.663755
+    pred time: 0.553786
+    thmpred time: 0.00003
+    mc time: 1.171489
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.539338
+
+marginal_joint_zero
+Statistics
+  infstep : 352
+  nodes   : 91
+  maxdepth: 6
+Time: 10.027013
+  inferstep time: 6.984595
+  node_find time: 0.064449
+  node_crea time: 2.664574
+    pred time: 0.528019
+    thmpred time: 0.000026
+    mc time: 1.167814
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.650864
+
+marginal_joint_zero3
+proof length: 7
+proof time: 0.226083
+Statistics
+  infstep : 127
+  nodes   : 21
+  maxdepth: 3
+Time: 2.24747
+  inferstep time: 1.567181
+  node_find time: 0.018474
+  node_crea time: 0.538178
+    pred time: 0.190469
+    thmpred time: 0.000007
+    mc time: 0.216438
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [pred_setTheory.IN_POW, pred_setTheory.SUBSET_DEF, pred_setTheory.IN_CROSS, measureTheory.POW_SIGMA_ALGEBRA] THEN (BasicProvers.SRW_TAC [] [DB.fetch "probability" "joint_distribution3_def", lebesgueTheory.prod_sets3_def, lebesgueTheory.finite_prod_measure_space_POW3, lebesgueTheory.finite_POW_prod_measure_reduce3, hrealTheory.HREAL_ADD_ASSOC, hrealTheory.HREAL_LDISTRIB, hrealTheory.HREAL_MUL_ASSOC, relationTheory.Order, relationTheory.StrongOrder, relationTheory.WeakOrder, DB.fetch "probability" "marginal_joint_zero", DB.fetch "probability" "conditional_distribution_def", util_probTheory.IN_PROD_SETS, lebesgueTheory.finite_prod_measure_space_POW, util_probTheory.prod_sets_def, pred_setTheory.cross_countable_IFF] THEN
+  metisTools.METIS_TAC [DB.fetch "probability" "joint_distribution3_def", DB.fetch "probability" "joint_distribution_def", lebesgueTheory.prod_sets3_def, lebesgueTheory.finite_prod_measure_space_POW3, lebesgueTheory.finite_POW_prod_measure_reduce3, DB.fetch "probability" "marginal_joint_zero", hrealTheory.HREAL_ADD_ASSOC, hrealTheory.HREAL_LDISTRIB, hrealTheory.HREAL_MUL_ASSOC, DB.fetch "probability" "distribution_def", DB.fetch "probability" "rv_conditional_expectation_def", DB.fetch "probability" "PROB_REAL_SUM_IMAGE_FN", relationTheory.Order, relationTheory.StrongOrder, relationTheory.WeakOrder, DB.fetch "probability" "PROB_EQ_COMPL"])
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.851132
+
+distribution_prob_space
+Statistics
+  infstep : 652
+  nodes   : 82
+  maxdepth: 5
+Time: 10.011577
+  inferstep time: 6.638045
+  node_find time: 0.105542
+  node_crea time: 2.883319
+    pred time: 0.657638
+    thmpred time: 0.000027
+    mc time: 1.439946
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 22
+Original proof time: 0.0
+Replaying proof: 1.04441
+
+uniform_distribution_prob_space
+Statistics
+  infstep : 292
+  nodes   : 86
+  maxdepth: 6
+Time: 10.107219
+  inferstep time: 5.224489
+  node_find time: 0.051261
+  node_crea time: 4.625012
+    pred time: 0.807541
+    thmpred time: 0.000015
+    mc time: 1.996025
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 24
+Original proof time: 0.0
+Replaying proof: 1.413519
+
+distribution_partition
+Statistics
+  infstep : 249
+  nodes   : 93
+  maxdepth: 6
+Time: 10.008967
+  inferstep time: 5.157917
+  node_find time: 0.044832
+  node_crea time: 4.644383
+    pred time: 0.752745
+    thmpred time: 0.000026
+    mc time: 1.924174
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.699126
+
+distribution_lebesgue_thm1
+Statistics
+  infstep : 278
+  nodes   : 98
+  maxdepth: 5
+Time: 10.041099
+  inferstep time: 6.101434
+  node_find time: 0.051956
+  node_crea time: 3.710674
+    pred time: 0.677199
+    thmpred time: 0.000019
+    mc time: 1.550592
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013563
+
+distribution_lebesgue_thm2
+Statistics
+  infstep : 286
+  nodes   : 88
+  maxdepth: 6
+Time: 10.084451
+  inferstep time: 5.65069
+  node_find time: 0.052487
+  node_crea time: 4.205863
+    pred time: 0.615146
+    thmpred time: 0.000025
+    mc time: 2.079219
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.343143
+
+finite_expectation1
+Statistics
+  infstep : 378
+  nodes   : 114
+  maxdepth: 6
+Time: 10.004313
+  inferstep time: 5.938791
+  node_find time: 0.073192
+  node_crea time: 3.730208
+    pred time: 0.813669
+    thmpred time: 0.000021
+    mc time: 1.991403
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.059141
+
+finite_expectation2
+Statistics
+  infstep : 379
+  nodes   : 108
+  maxdepth: 6
+Time: 10.042086
+  inferstep time: 5.539356
+  node_find time: 0.076303
+  node_crea time: 4.131722
+    pred time: 0.87101
+    thmpred time: 0.000031
+    mc time: 2.215607
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06242
+
+finite_expectation
+proof length: 3
+proof time: 0.011572
+Statistics
+  infstep : 14
+  nodes   : 8
+  maxdepth: 3
+Time: 0.697036
+  inferstep time: 0.472837
+  node_find time: 0.002519
+  node_crea time: 0.178475
+    pred time: 0.048952
+    thmpred time: 0.000002
+    mc time: 0.102023
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "expectation_def"), (DB.fetch "probability" "p_space_def"), (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "real_random_variable_def"), (DB.fetch "probability" "events_def")] THEN BasicProvers.SRW_TAC [] [DB.fetch "probability" "distribution_partition", DB.fetch "probability" "distribution_lebesgue_thm1", DB.fetch "probability" "distribution_lebesgue_thm2", lebesgueTheory.finite_support_integral_reduce, DB.fetch "probability" "distribution_def", DB.fetch "probability" "marginal_joint_zero", DB.fetch "probability" "marginal_joint_zero3", DB.fetch "probability" "conditional_distribution_def", DB.fetch "probability" "distribution_prob_space", lebesgueTheory.finite_space_integral_def, lebesgueTheory.finite_space_POW_integral_reduce, lebesgueTheory.finite_space_integral_reduce, lebesgueTheory.integral_def, DB.fetch "probability" "conditional_expectation_def", lebesgueTheory.integral_indicator, DB.fetch "probability" "finite_expectation1"] THEN
+  bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "expectation_def"), (DB.fetch "probability" "p_space_def"), (DB.fetch "probability" "prob_def"), (DB.fetch "probability" "prob_space_def"), (DB.fetch "probability" "real_random_variable_def"), (DB.fetch "probability" "events_def")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.049686
+
+finite_support_expectation
+proof length: 1
+proof time: 0.008123
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.149498
+  inferstep time: 0.127739
+  node_find time: 0.000314
+  node_crea time: 0.013872
+    pred time: 0.004248
+    thmpred time: 0.000001
+    mc time: 0.011762
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "probability" "finite_expectation" , DB.fetch "probability" "finite_expectation2" , DB.fetch "probability" "finite_expectation1" , DB.fetch "probability" "distribution_partition" , DB.fetch "probability" "real_random_variable_def" , DB.fetch "probability" "conditional_expectation_def" , DB.fetch "probability" "distribution_lebesgue_thm1" , DB.fetch "probability" "marginal_joint_zero" , DB.fetch "probability" "marginal_joint_zero3" , DB.fetch "probability" "distribution_def" , DB.fetch "probability" "distribution_lebesgue_thm2" , DB.fetch "probability" "distribution_prob_space" , DB.fetch "probability" "conditional_distribution_def" , DB.fetch "probability" "expectation_def" , DB.fetch "probability" "PROB_REAL_SUM_IMAGE_SPACE" , DB.fetch "probability" "PROB_DISCRETE_EVENTS" ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.049534
+
+finite_marginal_product_space_POW
+Statistics
+  infstep : 358
+  nodes   : 89
+  maxdepth: 5
+Time: 10.016598
+  inferstep time: 6.426429
+  node_find time: 0.069522
+  node_crea time: 3.286579
+    pred time: 0.587237
+    thmpred time: 0.000013
+    mc time: 1.390208
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.71287
+
+finite_marginal_product_space_POW2
+Statistics
+  infstep : 434
+  nodes   : 99
+  maxdepth: 5
+Time: 10.016231
+  inferstep time: 5.911101
+  node_find time: 0.092986
+  node_crea time: 3.691459
+    pred time: 0.684935
+    thmpred time: 0.000035
+    mc time: 1.419808
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.717546
+
+finite_marginal_product_space_POW3
+Statistics
+  infstep : 414
+  nodes   : 71
+  maxdepth: 5
+Time: 10.067125
+  inferstep time: 6.783287
+  node_find time: 0.085035
+  node_crea time: 2.860215
+    pred time: 0.465683
+    thmpred time: 0.00001
+    mc time: 1.025506
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.74351
+
+prob_x_eq_1_imp_prob_y_eq_0
+Statistics
+  infstep : 330
+  nodes   : 80
+  maxdepth: 5
+Time: 10.023915
+  inferstep time: 7.068507
+  node_find time: 0.067537
+  node_crea time: 2.648985
+    pred time: 0.562653
+    thmpred time: 0.000019
+    mc time: 1.118956
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.184969
+
+distribution_x_eq_1_imp_distribution_y_eq_0
+Statistics
+  infstep : 296
+  nodes   : 94
+  maxdepth: 5
+Time: 10.01051
+  inferstep time: 5.978082
+  node_find time: 0.061697
+  node_crea time: 3.712685
+    pred time: 0.730183
+    thmpred time: 0.000029
+    mc time: 1.713774
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 20
+Original proof time: 0.0
+Replaying proof: 0.809998
+
+joint_distribution_sym
+Statistics
+  infstep : 538
+  nodes   : 89
+  maxdepth: 6
+Time: 10.090429
+  inferstep time: 7.012837
+  node_find time: 0.119636
+  node_crea time: 2.489423
+    pred time: 0.588246
+    thmpred time: 0.000024
+    mc time: 1.413725
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.158282
+
+joint_distribution_pos
+proof length: 2
+proof time: 0.035973
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.368422
+  inferstep time: 0.251177
+  node_find time: 0.000984
+  node_crea time: 0.081241
+    pred time: 0.021852
+    thmpred time: 0.0
+    mc time: 0.072153
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "joint_distribution_def"), (DB.fetch "probability" "distribution_def")] THEN bossLib.METIS_TAC [(DB.fetch "probability" "PROB_POSITIVE"), pred_setTheory.SUBSET_DEF, pred_setTheory.IN_POW, pred_setTheory.IN_INTER, (DB.fetch "probability" "random_variable_def")]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.059831
+
+joint_distribution_le_1
+Statistics
+  infstep : 579
+  nodes   : 83
+  maxdepth: 4
+Time: 10.020166
+  inferstep time: 6.77883
+  node_find time: 0.136271
+  node_crea time: 2.685486
+    pred time: 0.614098
+    thmpred time: 0.000022
+    mc time: 1.337717
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.061149
+
+joint_distribution_le
+Statistics
+  infstep : 446
+  nodes   : 109
+  maxdepth: 5
+Time: 10.018958
+  inferstep time: 6.488761
+  node_find time: 0.113571
+  node_crea time: 3.005605
+    pred time: 0.531301
+    thmpred time: 0.000022
+    mc time: 1.608401
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.108147
+
+joint_distribution_le2
+proof length: 1
+proof time: 0.073999
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.142997
+  inferstep time: 0.101209
+  node_find time: 0.000287
+  node_crea time: 0.021451
+    pred time: 0.005427
+    thmpred time: 0.000001
+    mc time: 0.028976
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "probability" "joint_distribution_le" , DB.fetch "probability" "marginal_joint_zero" , DB.fetch "probability" "conditional_distribution_def" , DB.fetch "probability" "joint_distribution_sym" , DB.fetch "probability" "finite_marginal_product_space_POW2" , DB.fetch "probability" "joint_distribution_le_1" , DB.fetch "probability" "joint_distribution_pos" , DB.fetch "probability" "marginal_joint_zero3" , DB.fetch "probability" "joint_distribution_def" , DB.fetch "probability" "distribution_lebesgue_thm1" , DB.fetch "probability" "distribution_lebesgue_thm2" , DB.fetch "probability" "distribution_partition" , DB.fetch "probability" "distribution_x_eq_1_imp_distribution_y_eq_0" , DB.fetch "probability" "finite_marginal_product_space_POW3" , DB.fetch "probability" "finite_expectation" , DB.fetch "probability" "finite_support_expectation"])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.098184
+
+joint_conditional
+Statistics
+  infstep : 503
+  nodes   : 110
+  maxdepth: 5
+Time: 10.046821
+  inferstep time: 6.965794
+  node_find time: 0.118013
+  node_crea time: 2.600265
+    pred time: 0.467469
+    thmpred time: 0.000024
+    mc time: 1.327555
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.193357
+
+distribution_pos
+proof length: 3
+proof time: 0.004107
+Statistics
+  infstep : 161
+  nodes   : 30
+  maxdepth: 3
+Time: 2.82601
+  inferstep time: 2.06031
+  node_find time: 0.030856
+  node_crea time: 0.560489
+    pred time: 0.13354
+    thmpred time: 0.000007
+    mc time: 0.30652
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "joint_distribution_def"), (DB.fetch "probability" "distribution_def")] THEN boolLib.MATCH_MP_TAC (DB.fetch "probability" "PROB_POSITIVE") THEN
+  bossLib.FULL_SIMP_TAC bossLib.std_ss [pred_setTheory.IN_POW, pred_setTheory.SUBSET_DEF, pred_setTheory.IN_PREIMAGE, pred_setTheory.IN_CROSS, pred_setTheory.IN_DISJOINT, (DB.fetch "probability" "random_variable_def"), pred_setTheory.IN_INTER]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.054412
+
+conditional_distribution_pos
+Statistics
+  infstep : 357
+  nodes   : 98
+  maxdepth: 5
+Time: 10.019795
+  inferstep time: 6.245528
+  node_find time: 0.086303
+  node_crea time: 3.389154
+    pred time: 0.736455
+    thmpred time: 0.000024
+    mc time: 1.519379
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007778
+
+conditional_distribution_le_1
+Statistics
+  infstep : 364
+  nodes   : 99
+  maxdepth: 5
+Time: 10.054753
+  inferstep time: 6.541054
+  node_find time: 0.086197
+  node_crea time: 3.145013
+    pred time: 0.66798
+    thmpred time: 0.000012
+    mc time: 1.460953
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.213416
+
+marginal_distribution1
+Statistics
+  infstep : 345
+  nodes   : 85
+  maxdepth: 5
+Time: 10.001763
+  inferstep time: 6.755395
+  node_find time: 0.082779
+  node_crea time: 2.794918
+    pred time: 0.681564
+    thmpred time: 0.000021
+    mc time: 1.171722
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.633346
+
+marginal_distribution2
+proof length: 2
+proof time: 0.048213
+Statistics
+  infstep : 14
+  nodes   : 7
+  maxdepth: 2
+Time: 0.583413
+  inferstep time: 0.36941
+  node_find time: 0.00271
+  node_crea time: 0.172133
+    pred time: 0.042124
+    thmpred time: 0.000002
+    mc time: 0.111378
+    inst time: 0.0
+Proof found: bossLib.RW_TAC bossLib.std_ss [(DB.fetch "probability" "conditional_distribution_def"), boolLib.Once (DB.fetch "probability" "joint_distribution_sym")] THEN metisTools.METIS_TAC [DB.fetch "probability" "marginal_distribution1", DB.fetch "probability" "joint_conditional", DB.fetch "probability" "joint_distribution_le", DB.fetch "probability" "joint_distribution_le2", DB.fetch "probability" "marginal_joint_zero", DB.fetch "probability" "conditional_distribution_def", DB.fetch "probability" "finite_marginal_product_space_POW2", pred_setTheory.CROSS_INSERT_RIGHT, DB.fetch "probability" "joint_distribution_def", DB.fetch "probability" "joint_distribution_pos", DB.fetch "probability" "joint_distribution_le_1", DB.fetch "probability" "joint_distribution_sym", DB.fetch "probability" "distribution_partition", DB.fetch "probability" "distribution_x_eq_1_imp_distribution_y_eq_0", DB.fetch "probability" "finite_expectation", DB.fetch "probability" "finite_support_expectation"]
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.653493
+
+joint_distribution_sums_1
+Statistics
+  infstep : 629
+  nodes   : 106
+  maxdepth: 5
+Time: 10.049518
+  inferstep time: 6.082703
+  node_find time: 0.158727
+  node_crea time: 3.329523
+    pred time: 0.665022
+    thmpred time: 0.000023
+    mc time: 1.5376
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 20
+Original proof time: 0.0
+Replaying proof: 1.263946
+
+joint_distribution_sum_mul1
+Statistics
+  infstep : 463
+  nodes   : 113
+  maxdepth: 5
+Time: 10.018675
+  inferstep time: 6.155807
+  node_find time: 0.125088
+  node_crea time: 3.318609
+    pred time: 0.538029
+    thmpred time: 0.000026
+    mc time: 1.86703
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.863346
+Bad stac: 11

@@ -1,0 +1,246 @@
+
+SUM_REL_EQ
+proof length: 2
+proof time: 0.00434
+Statistics
+  infstep : 180
+  nodes   : 27
+  maxdepth: 3
+Time: 2.981565
+  inferstep time: 2.483773
+  node_find time: 0.005504
+  node_crea time: 0.464614
+    pred time: 0.134976
+    thmpred time: 0.000004
+    mc time: 0.178394
+    inst time: 0.0
+Proof found: boolLib.CONV_TAC (boolLib.REDEPTH_CONV (boolLib.FUN_EQ_CONV hhs_infixl0_open boolLib.ORELSEC hhs_infixl0_close HolKernel.BETA_CONV)) THEN simpLib.SIMP_TAC (BasicProvers.srw_ss ()) [DB.fetch "quotient_sum" "tactictoe_thm_0", DB.fetch "quotient_sum" "SUM_REL_def", sumTheory.SUM_ALL_CONG, sumTheory.EXISTS_SUM, sumTheory.FORALL_SUM, pred_setTheory.INJ_INL, pred_setTheory.INJ_INR, sumTheory.sum_INDUCT, sumTheory.SUM_ALL_MONO, sumTheory.sum_case_def, optionTheory.SOME_DEF, optionTheory.option_REP_ABS_DEF, optionTheory.tactictoe_thm_0, optionTheory.tactictoe_thm_1, sumTheory.sum_CASES, sumTheory.INR_INL_11]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.097369
+
+SUM_EQUIV
+proof length: 8
+proof time: 0.111954
+Statistics
+  infstep : 625
+  nodes   : 107
+  maxdepth: 5
+Time: 9.473312
+  inferstep time: 8.106795
+  node_find time: 0.042389
+  node_crea time: 1.22156
+    pred time: 0.366301
+    thmpred time: 0.00002
+    mc time: 0.381753
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "quotient" "EQUIV_def")] THEN simpLib.SIMP_TAC (BasicProvers.srw_ss ()) [DB.fetch "quotient_sum" "tactictoe_thm_0", DB.fetch "quotient_sum" "SUM_REL_def", sumTheory.SUM_ALL_CONG, sumTheory.EXISTS_SUM, sumTheory.FORALL_SUM, pred_setTheory.INJ_INL, pred_setTheory.INJ_INR, sumTheory.sum_INDUCT, sumTheory.SUM_ALL_MONO, sumTheory.sum_case_def, optionTheory.SOME_DEF, optionTheory.option_REP_ABS_DEF, optionTheory.tactictoe_thm_0, optionTheory.tactictoe_thm_1, sumTheory.sum_CASES, sumTheory.INR_INL_11] THEN
+  boolLib.CONV_TAC (boolLib.REDEPTH_CONV (boolLib.FUN_EQ_CONV hhs_infixl0_open boolLib.ORELSEC hhs_infixl0_close HolKernel.BETA_CONV)) THEN
+  boolLib.REPEAT boolLib.STRIP_TAC THENL
+  [simpLib.SIMP_TAC (BasicProvers.srw_ss ()) [DB.fetch "quotient_sum" "tactictoe_thm_0", DB.fetch "quotient_sum" "tactictoe_thm_1", DB.fetch "quotient_sum" "tactictoe_thm_2", DB.fetch "quotient_sum" "tactictoe_thm_3", DB.fetch "quotient_sum" "tactictoe_thm_4", DB.fetch "quotient_sum" "tactictoe_thm_5", DB.fetch "quotient_sum" "tactictoe_thm_6", DB.fetch "quotient_sum" "tactictoe_thm_7", DB.fetch "quotient_sum" "SUM_REL_def", DB.fetch "quotient_sum" "SUM_REL_EQ", arithmeticTheory.tactictoe_thm_11, DB.fetch "quotient_sum" "SUM_REL_ind", sumTheory.FORALL_SUM, sumTheory.EXISTS_SUM, sumTheory.sum_INDUCT, sumTheory.SUM_ALL_CONG],
+  metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "quotient_sum" "tactictoe_thm_0", DB.fetch "quotient_sum" "tactictoe_thm_1", DB.fetch "quotient_sum" "tactictoe_thm_2", DB.fetch "quotient_sum" "tactictoe_thm_3", DB.fetch "quotient_sum" "tactictoe_thm_4", DB.fetch "quotient_sum" "tactictoe_thm_5", DB.fetch "quotient_sum" "tactictoe_thm_6", DB.fetch "quotient_sum" "tactictoe_thm_7", DB.fetch "quotient_sum" "SUM_REL_def", satTheory.AND_INV_IMP, satTheory.OR_DUAL2, satTheory.OR_DUAL3, satTheory.AND_INV2, ConseqConvTheory.IMP_CLAUSES_FX, ConseqConvTheory.IMP_CLAUSES_XF],
+  metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "quotient_sum" "tactictoe_thm_0", DB.fetch "quotient_sum" "tactictoe_thm_1", DB.fetch "quotient_sum" "tactictoe_thm_2", DB.fetch "quotient_sum" "tactictoe_thm_3", DB.fetch "quotient_sum" "tactictoe_thm_4", DB.fetch "quotient_sum" "tactictoe_thm_5", DB.fetch "quotient_sum" "tactictoe_thm_6", DB.fetch "quotient_sum" "tactictoe_thm_7", DB.fetch "quotient_sum" "SUM_REL_def", satTheory.AND_INV_IMP, satTheory.OR_DUAL2, satTheory.OR_DUAL3, satTheory.AND_INV2, ConseqConvTheory.IMP_CLAUSES_FX, ConseqConvTheory.IMP_CLAUSES_XF],
+  simpLib.SIMP_TAC (BasicProvers.srw_ss ()) [DB.fetch "quotient_sum" "tactictoe_thm_0", DB.fetch "quotient_sum" "SUM_REL_def", sumTheory.SUM_ALL_CONG, sumTheory.EXISTS_SUM, sumTheory.FORALL_SUM, pred_setTheory.INJ_INL, pred_setTheory.INJ_INR, sumTheory.sum_INDUCT, sumTheory.SUM_ALL_MONO, sumTheory.sum_case_def, optionTheory.SOME_DEF, optionTheory.option_REP_ABS_DEF, optionTheory.tactictoe_thm_0, optionTheory.tactictoe_thm_1, sumTheory.sum_CASES, sumTheory.INR_INL_11]]
+Org tac number: 23
+Original proof time: 0.0
+Replaying proof: 0.522618
+Replaying proof: 0.01039
+
+INL_PRS
+proof length: 3
+proof time: 0.032556
+Statistics
+  infstep : 9
+  nodes   : 6
+  maxdepth: 3
+Time: 0.53591
+  inferstep time: 0.492633
+  node_find time: 0.000253
+  node_crea time: 0.035404
+    pred time: 0.012193
+    thmpred time: 0.0
+    mc time: 0.019581
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "sum" "FORALL_SUM")] THEN BasicProvers.SRW_TAC [] [quotientTheory.FUN_REL_EQUALS, quotientTheory.LAMBDA_PRS, quotientTheory.APPLY_RSP, quotientTheory.FUN_REL_MP, quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.K_PRS, quotientTheory.LAMBDA_PRS1, quotientTheory.LET_PRS, quotientTheory.W_PRS, quotientTheory.literal_case_PRS, quotientTheory.C_RSP, quotientTheory.K_RSP, quotientTheory.LAMBDA_RSP, quotientTheory.LET_RSP, quotientTheory.W_RSP] THEN
+  boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.080255
+
+INL_RSP
+proof length: 1
+proof time: 0.066703
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.093147
+  inferstep time: 0.069596
+  node_find time: 0.000035
+  node_crea time: 0.020987
+    pred time: 0.003005
+    thmpred time: 0.0
+    mc time: 0.005375
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "quotient_sum" "tactictoe_thm_0" , DB.fetch "quotient_sum" "tactictoe_thm_1" , DB.fetch "quotient_sum" "tactictoe_thm_10" , DB.fetch "quotient_sum" "tactictoe_thm_2" , DB.fetch "quotient_sum" "tactictoe_thm_3" , DB.fetch "quotient_sum" "tactictoe_thm_4" , DB.fetch "quotient_sum" "tactictoe_thm_5" , DB.fetch "quotient_sum" "tactictoe_thm_6" , DB.fetch "quotient_sum" "tactictoe_thm_7" , DB.fetch "quotient_sum" "tactictoe_thm_8" , DB.fetch "quotient_sum" "tactictoe_thm_9" , DB.fetch "quotient_sum" "SUM_REL_def" , DB.fetch "quotient_sum" "SUM_QUOTIENT" , DB.fetch "quotient_sum" "INL_PRS" , DB.fetch "quotient_sum" "SUM_EQUIV" , quotientTheory.APPLY_RSP])
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.138971
+
+INR_PRS
+proof length: 3
+proof time: 0.007894
+Statistics
+  infstep : 9
+  nodes   : 6
+  maxdepth: 3
+Time: 0.50359
+  inferstep time: 0.455045
+  node_find time: 0.000275
+  node_crea time: 0.039815
+    pred time: 0.015389
+    thmpred time: 0.0
+    mc time: 0.020568
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN simpLib.SIMP_TAC boolSimps.bool_ss [sumTheory.SUM_MAP_def, DB.fetch "quotient_sum" "INL_PRS", DB.fetch "quotient_sum" "SUM_QUOTIENT", sumTheory.SUM_MAP, sumTheory.SUM_MAP_CASE, sumTheory.SUM_MAP_I, DB.fetch "quotient_sum" "INL_RSP", quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.FUN_REL_EQUALS, quotientTheory.K_PRS, quotientTheory.LAMBDA_PRS, quotientTheory.LAMBDA_PRS1, quotientTheory.LET_PRS, quotientTheory.W_PRS, quotientTheory.literal_case_PRS] THEN
+  boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.098622
+
+INR_RSP
+proof length: 1
+proof time: 0.070673
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.097175
+  inferstep time: 0.084519
+  node_find time: 0.000045
+  node_crea time: 0.010237
+    pred time: 0.004251
+    thmpred time: 0.0
+    mc time: 0.005926
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "quotient_sum" "tactictoe_thm_0" , DB.fetch "quotient_sum" "tactictoe_thm_1" , DB.fetch "quotient_sum" "tactictoe_thm_10" , DB.fetch "quotient_sum" "tactictoe_thm_11" , DB.fetch "quotient_sum" "tactictoe_thm_2" , DB.fetch "quotient_sum" "tactictoe_thm_3" , DB.fetch "quotient_sum" "tactictoe_thm_4" , DB.fetch "quotient_sum" "tactictoe_thm_5" , DB.fetch "quotient_sum" "tactictoe_thm_6" , DB.fetch "quotient_sum" "tactictoe_thm_7" , DB.fetch "quotient_sum" "tactictoe_thm_8" , DB.fetch "quotient_sum" "tactictoe_thm_9" , DB.fetch "quotient_sum" "SUM_REL_def" , DB.fetch "quotient_sum" "INL_RSP" , DB.fetch "quotient_sum" "SUM_QUOTIENT" , DB.fetch "quotient_sum" "INR_PRS"])
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.136392
+
+ISL_PRS
+proof length: 1
+proof time: 0.076865
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.107797
+  inferstep time: 0.098076
+  node_find time: 0.000032
+  node_crea time: 0.007472
+    pred time: 0.003178
+    thmpred time: 0.000001
+    mc time: 0.004597
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [sumTheory.SUM_MAP , sumTheory.SUM_MAP_CASE , DB.fetch "quotient_sum" "INL_PRS" , DB.fetch "quotient_sum" "INR_PRS" , DB.fetch "quotient_sum" "SUM_QUOTIENT" , sumTheory.SUM_MAP_def , sumTheory.INL , quantHeuristicsTheory.INR_NEQ_ELIM , sumTheory.NOT_ISL_ISR , sumTheory.NOT_ISR_ISL , quantHeuristicsTheory.ISL_exists , sumTheory.ISL_OR_ISR , DB.fetch "quotient_sum" "INL_RSP" , DB.fetch "quotient_sum" "INR_RSP" , quotientTheory.ABSTRACT_PRS , quotientTheory.APPLY_PRS])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.093309
+
+ISL_RSP
+proof length: 1
+proof time: 0.005813
+Statistics
+  infstep : 3
+  nodes   : 2
+  maxdepth: 1
+Time: 0.121502
+  inferstep time: 0.110458
+  node_find time: 0.000092
+  node_crea time: 0.008249
+    pred time: 0.003516
+    thmpred time: 0.0
+    mc time: 0.005216
+    inst time: 0.0
+Proof found: (simpLib.SIMP_TAC ( BasicProvers.srw_ss ( ) ) [ DB.fetch "quotient_sum" "tactictoe_thm_0" , DB.fetch "quotient_sum" "SUM_REL_def" , sumTheory.SUM_ALL_CONG , sumTheory.EXISTS_SUM , sumTheory.FORALL_SUM , pred_setTheory.INJ_INL , pred_setTheory.INJ_INR , sumTheory.sum_INDUCT , sumTheory.SUM_ALL_MONO , sumTheory.sum_case_def , optionTheory.SOME_DEF , optionTheory.option_REP_ABS_DEF , optionTheory.tactictoe_thm_0 , optionTheory.tactictoe_thm_1 , sumTheory.sum_CASES , sumTheory.INR_INL_11 ])
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.162673
+
+ISR_PRS
+proof length: 1
+proof time: 0.068274
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.102321
+  inferstep time: 0.084984
+  node_find time: 0.000056
+  node_crea time: 0.014732
+    pred time: 0.009885
+    thmpred time: 0.000001
+    mc time: 0.005196
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "quotient_sum" "ISL_PRS" , sumTheory.SUM_MAP , sumTheory.SUM_MAP_CASE , DB.fetch "quotient_sum" "INL_PRS" , DB.fetch "quotient_sum" "INR_PRS" , DB.fetch "quotient_sum" "SUM_QUOTIENT" , sumTheory.SUM_MAP_def , sumTheory.INR , quantHeuristicsTheory.INL_NEQ_ELIM , sumTheory.NOT_ISL_ISR , sumTheory.NOT_ISR_ISL , quantHeuristicsTheory.ISR_exists , sumTheory.ISL_OR_ISR , DB.fetch "quotient_sum" "ISL_RSP" , DB.fetch "quotient_sum" "INL_RSP" , DB.fetch "quotient_sum" "INR_RSP"])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.089428
+
+ISR_RSP
+proof length: 2
+proof time: 0.104397
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.202705
+  inferstep time: 0.184049
+  node_find time: 0.000152
+  node_crea time: 0.013804
+    pred time: 0.006096
+    thmpred time: 0.0
+    mc time: 0.008421
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.GEN_TAC THEN metisTools.METIS_TAC [DB.fetch "quotient_sum" "ISL_RSP", DB.fetch "quotient_sum" "ISR_PRS", DB.fetch "quotient_sum" "INL_RSP", DB.fetch "quotient_sum" "INR_RSP", DB.fetch "quotient_sum" "SUM_QUOTIENT", sumTheory.INR, quantHeuristicsTheory.INL_NEQ_ELIM, sumTheory.NOT_ISL_ISR, sumTheory.NOT_ISR_ISL, quantHeuristicsTheory.ISR_exists, sumTheory.ISL_OR_ISR, DB.fetch "quotient_sum" "tactictoe_thm_12", DB.fetch "quotient_sum" "tactictoe_thm_10", DB.fetch "quotient_sum" "tactictoe_thm_11", DB.fetch "quotient_sum" "tactictoe_thm_0", DB.fetch "quotient_sum" "tactictoe_thm_1"]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.163432
+
+SUM_MAP_PRS
+Statistics
+  infstep : 757
+  nodes   : 120
+  maxdepth: 6
+Time: 10.014481
+  inferstep time: 7.975583
+  node_find time: 0.063281
+  node_crea time: 1.879917
+    pred time: 0.400407
+    thmpred time: 0.000054
+    mc time: 0.495507
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.154612
+
+SUM_MAP_RSP
+Statistics
+  infstep : 506
+  nodes   : 64
+  maxdepth: 5
+Time: 10.000262
+  inferstep time: 5.115535
+  node_find time: 0.033312
+  node_crea time: 1.865669
+    pred time: 0.269478
+    thmpred time: 0.000013
+    mc time: 0.296711
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.181303
+Bad stac: 1

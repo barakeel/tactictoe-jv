@@ -1,0 +1,488 @@
+Replaying proof: 0.022043
+Replaying proof: 0.001939
+Replaying proof: 0.00207
+Replaying proof: 0.003793
+
+LT_EXP_ISO
+proof length: 2
+proof time: 0.024331
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.347958
+  inferstep time: 0.263975
+  node_find time: 0.000189
+  node_crea time: 0.062092
+    pred time: 0.021206
+    thmpred time: 0.0
+    mc time: 0.057025
+    inst time: 0.0
+Proof found: boolLib.STRIP_TAC THEN metisLib.METIS_TAC [(DB.fetch "arithmetic" "tactictoe_thm_27"), (DB.fetch "arithmetic" "tactictoe_thm_28"), (DB.fetch "arithmetic" "NOT_LESS_EQUAL")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007873
+
+LE_EXP_ISO
+proof length: 1
+proof time: 0.025904
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.135282
+  inferstep time: 0.118036
+  node_find time: 0.000044
+  node_crea time: 0.011454
+    pred time: 0.002913
+    thmpred time: 0.000001
+    mc time: 0.012967
+    inst time: 0.0
+Proof found: (metisLib.METIS_TAC [ ( DB.fetch "arithmetic" "tactictoe_thm_27" ) , ( DB.fetch "arithmetic" "tactictoe_thm_28" ) , ( DB.fetch "arithmetic" "NOT_LESS_EQUAL" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008144
+
+EXP_LT_ISO
+proof length: 1
+proof time: 0.002273
+Statistics
+  infstep : 3
+  nodes   : 2
+  maxdepth: 1
+Time: 0.151398
+  inferstep time: 0.127858
+  node_find time: 0.000075
+  node_crea time: 0.017081
+    pred time: 0.00277
+    thmpred time: 0.0
+    mc time: 0.019389
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "logroot" "tactictoe_thm_7" , arithmeticTheory.tactictoe_thm_33 , arithmeticTheory.tactictoe_thm_36 , arithmeticTheory.EXP_EXP_LT_MONO , DB.fetch "logroot" "LT_EXP_ISO" , DB.fetch "logroot" "tactictoe_thm_2" , DB.fetch "logroot" "tactictoe_thm_4" , arithmeticTheory.EXP_BASE_LT_MONO , arithmeticTheory.tactictoe_thm_29 , arithmeticTheory.tactictoe_thm_27 , DB.fetch "logroot" "tactictoe_thm_6" , arithmeticTheory.tactictoe_thm_34 , arithmeticTheory.tactictoe_thm_35 , arithmeticTheory.EXP_BASE_LEQ_MONO_IMP , arithmeticTheory.EXP_BASE_LE_IFF , arithmeticTheory.EXP_EXP_LE_MONO ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013152
+
+EXP_LE_ISO
+proof length: 3
+proof time: 0.029033
+Statistics
+  infstep : 188
+  nodes   : 47
+  maxdepth: 4
+Time: 2.833363
+  inferstep time: 2.272325
+  node_find time: 0.006586
+  node_crea time: 0.489002
+    pred time: 0.127266
+    thmpred time: 0.000004
+    mc time: 0.334568
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC boolSimps.bool_ss [arithmeticTheory.NUMERAL_DEF, arithmeticTheory.GREATER_DEF, (DB.fetch "numeral" "iZ"), arithmeticTheory.GREATER_OR_EQ, arithmeticTheory.LESS_OR_EQ, boolLib.EQ_IMP_THM, boolLib.DISJ_IMP_THM, arithmeticTheory.ADD_CLAUSES, arithmeticTheory.ALT_ZERO, arithmeticTheory.MULT_CLAUSES, arithmeticTheory.EXP, prim_recTheory.PRE, prim_recTheory.NOT_LESS_0, arithmeticTheory.SUB_0, arithmeticTheory.BIT1, arithmeticTheory.BIT2, arithmeticTheory.ODD, arithmeticTheory.EVEN] THEN BasicProvers.SRW_TAC [] [DB.fetch "logroot" "EXP_LT_ISO", DB.fetch "logroot" "tactictoe_thm_7", DB.fetch "logroot" "tactictoe_thm_9", arithmeticTheory.EXP_EXP_LT_MONO, arithmeticTheory.tactictoe_thm_36, arithmeticTheory.tactictoe_thm_33, DB.fetch "logroot" "LT_EXP_ISO", DB.fetch "logroot" "tactictoe_thm_4", DB.fetch "logroot" "tactictoe_thm_2", arithmeticTheory.tactictoe_thm_27, arithmeticTheory.tactictoe_thm_29, arithmeticTheory.EXP_BASE_LT_MONO, DB.fetch "logroot" "tactictoe_thm_6", DB.fetch "logroot" "tactictoe_thm_8", arithmeticTheory.tactictoe_thm_34, arithmeticTheory.tactictoe_thm_35] THEN
+  metisLib.METIS_TAC [(DB.fetch "arithmetic" "tactictoe_thm_33"), (DB.fetch "arithmetic" "NOT_LESS"), (DB.fetch "arithmetic" "tactictoe_thm_34"), (DB.fetch "arithmetic" "EXP"), prim_recTheory.LESS_REFL, (DB.fetch "arithmetic" "NOT_ZERO_LT_ZERO")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00819
+
+ROOT_exists
+Statistics
+  infstep : 760
+  nodes   : 126
+  maxdepth: 6
+Time: 10.037342
+  inferstep time: 8.047583
+  node_find time: 0.064704
+  node_crea time: 1.82798
+    pred time: 0.413085
+    thmpred time: 0.000028
+    mc time: 1.144374
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.509129
+
+ROOT_UNIQUE
+Statistics
+  infstep : 607
+  nodes   : 100
+  maxdepth: 5
+Time: 10.006251
+  inferstep time: 7.040131
+  node_find time: 0.054298
+  node_crea time: 2.786845
+    pred time: 0.762293
+    thmpred time: 0.000026
+    mc time: 1.562728
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.487322
+Replaying proof: 0.029362
+
+LOG_UNIQUE
+Statistics
+  infstep : 613
+  nodes   : 153
+  maxdepth: 6
+Time: 10.017567
+  inferstep time: 7.573283
+  node_find time: 0.056335
+  node_crea time: 2.279723
+    pred time: 0.505791
+    thmpred time: 0.000015
+    mc time: 1.226
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.951725
+
+LOG_ADD1
+Statistics
+  infstep : 423
+  nodes   : 127
+  maxdepth: 6
+Time: 10.001117
+  inferstep time: 7.72471
+  node_find time: 0.034377
+  node_crea time: 1.866229
+    pred time: 0.443776
+    thmpred time: 0.000023
+    mc time: 1.323015
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.29579
+Replaying proof: 0.000072
+
+LOG_BASE
+Statistics
+  infstep : 410
+  nodes   : 140
+  maxdepth: 5
+Time: 10.037059
+  inferstep time: 7.835502
+  node_find time: 0.045943
+  node_crea time: 2.077642
+    pred time: 0.542503
+    thmpred time: 0.000026
+    mc time: 1.167965
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.102639
+
+LOG_EXP
+Statistics
+  infstep : 540
+  nodes   : 123
+  maxdepth: 6
+Time: 10.102147
+  inferstep time: 7.956895
+  node_find time: 0.050289
+  node_crea time: 1.938074
+    pred time: 0.455919
+    thmpred time: 0.000031
+    mc time: 1.17072
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.268039
+
+LOG_1
+proof length: 2
+proof time: 0.003206
+Statistics
+  infstep : 99
+  nodes   : 33
+  maxdepth: 4
+Time: 3.00469
+  inferstep time: 2.509942
+  node_find time: 0.006281
+  node_crea time: 0.42755
+    pred time: 0.116283
+    thmpred time: 0.000008
+    mc time: 0.285478
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [boolLib.GSYM arithmeticTheory.EXP] THEN BasicProvers.SRW_TAC [] [numeralTheory.numeral_distrib, arithmeticTheory.EXP, DB.fetch "logroot" "LOG_ADD1", DB.fetch "logroot" "LOG_EXP", DB.fetch "logroot" "LOG", DB.fetch "logroot" "LOG_UNIQUE", DB.fetch "logroot" "LOG_BASE", DB.fetch "logroot" "EXP_LE_ISO", DB.fetch "logroot" "EXP_LT_ISO", DB.fetch "logroot" "LOG_exists", DB.fetch "logroot" "tactictoe_thm_8", DB.fetch "logroot" "tactictoe_thm_9", DB.fetch "logroot" "tactictoe_thm_6", DB.fetch "logroot" "tactictoe_thm_7", arithmeticTheory.tactictoe_thm_33, arithmeticTheory.tactictoe_thm_34]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.097422
+
+LOG_DIV
+Statistics
+  infstep : 568
+  nodes   : 187
+  maxdepth: 6
+Time: 10.07216
+  inferstep time: 7.056413
+  node_find time: 0.066121
+  node_crea time: 2.821378
+    pred time: 0.479312
+    thmpred time: 0.000032
+    mc time: 1.867255
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.282555
+
+LOG_ADD
+Statistics
+  infstep : 574
+  nodes   : 119
+  maxdepth: 6
+Time: 10.004074
+  inferstep time: 7.904971
+  node_find time: 0.057626
+  node_crea time: 1.817556
+    pred time: 0.485639
+    thmpred time: 0.000033
+    mc time: 0.969322
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.37311
+
+LOG_LE_MONO
+Statistics
+  infstep : 390
+  nodes   : 115
+  maxdepth: 6
+Time: 10.091952
+  inferstep time: 8.0897
+  node_find time: 0.043934
+  node_crea time: 1.835414
+    pred time: 0.465914
+    thmpred time: 0.000026
+    mc time: 0.978952
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.188928
+
+LOG_RWT
+proof length: 5
+proof time: 0.040149
+Statistics
+  infstep : 237
+  nodes   : 70
+  maxdepth: 5
+Time: 5.535886
+  inferstep time: 4.15535
+  node_find time: 0.022247
+  node_crea time: 1.254554
+    pred time: 0.362121
+    thmpred time: 0.000011
+    mc time: 0.685438
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC BasicProvers.bool_ss [boolLib.GSYM (HolKernel.SPEC (Parse.Term [HolKernel.QUOTE " (*#loc 1 7148*)a:num ** b"]) arithmeticTheory.MULT_COMM), boolLib.GSYM arithmeticTheory.X_LE_DIV, boolLib.GSYM arithmeticTheory.DIV_LT_X, (boolLib.EQT_ELIM o Arith.ARITH_CONV) (Parse.Term [HolKernel.QUOTE " (*#loc 1 7236*)1 < a ==> 0n < a"]), (DB.fetch "logroot" "LOG")] THENL [simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss () hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.old_ARITH_ss) [arithmeticTheory.tactictoe_thm_11, DB.fetch "logroot" "LOG_EXP", DB.fetch "logroot" "LOG", DB.fetch "logroot" "LOG_LE_MONO", DB.fetch "logroot" "LOG_UNIQUE", DB.fetch "logroot" "LOG_DIV", DB.fetch "logroot" "LOG_BASE", DB.fetch "logroot" "LOG_ADD1", DB.fetch "logroot" "LOG_1", DB.fetch "logroot" "LOG_ADD", arithmeticTheory.ADD_CLAUSES, arithmeticTheory.MULT_CLAUSES, numeralTheory.numeral_distrib, arithmeticTheory.SUB, arithmeticTheory.EXP, arithmeticTheory.LE_MULT_LCANCEL], boolLib.CCONTR_TAC THEN
+  boolLib.POP_ASSUM boolLib.MP_TAC THEN
+  simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss () hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.old_ARITH_ss) [arithmeticTheory.tactictoe_thm_11, DB.fetch "logroot" "LOG_DIV", DB.fetch "logroot" "LOG_UNIQUE", DB.fetch "logroot" "LOG", DB.fetch "logroot" "LOG_EXP", DB.fetch "logroot" "LOG_BASE", DB.fetch "logroot" "LOG_LE_MONO", DB.fetch "logroot" "LOG_ADD1", DB.fetch "logroot" "LOG_ADD", DB.fetch "logroot" "LOG_1", arithmeticTheory.MOD_SUC, arithmeticTheory.MOD_SUC_IFF, arithmeticTheory.DIV_EQ_X, arithmeticTheory.tactictoe_thm_59, arithmeticTheory.tactictoe_thm_60, arithmeticTheory.DIV_P_UNIV]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.045131
+
+LOG_EQ_0
+proof length: 1
+proof time: 0.003474
+Statistics
+  infstep : 8
+  nodes   : 4
+  maxdepth: 2
+Time: 0.307162
+  inferstep time: 0.237826
+  node_find time: 0.000569
+  node_crea time: 0.05938
+    pred time: 0.013755
+    thmpred time: 0.000001
+    mc time: 0.044017
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "logroot" "LOG_EXP" , DB.fetch "logroot" "LOG" , DB.fetch "logroot" "LOG_RWT" , DB.fetch "logroot" "LOG_LE_MONO" , DB.fetch "logroot" "LOG_DIV" , DB.fetch "logroot" "LOG_BASE" , DB.fetch "logroot" "LOG_UNIQUE" , DB.fetch "logroot" "LOG_ADD1" , DB.fetch "logroot" "LOG_ADD" , DB.fetch "logroot" "LOG_1" , DB.fetch "logroot" "tactictoe_thm_1" , DB.fetch "logroot" "LT_EXP_ISO" , DB.fetch "logroot" "tactictoe_thm_2" , DB.fetch "logroot" "tactictoe_thm_4" , DB.fetch "logroot" "LOG_exists" , arithmeticTheory.EXP_BASE_LE_IFF ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006619
+
+LOG_MULT
+Statistics
+  infstep : 369
+  nodes   : 120
+  maxdepth: 5
+Time: 10.077168
+  inferstep time: 7.757581
+  node_find time: 0.043698
+  node_crea time: 2.097743
+    pred time: 0.497355
+    thmpred time: 0.000025
+    mc time: 1.302097
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.337071
+
+LOG_add_digit
+Statistics
+  infstep : 469
+  nodes   : 105
+  maxdepth: 6
+Time: 10.100964
+  inferstep time: 8.05915
+  node_find time: 0.054477
+  node_crea time: 1.860007
+    pred time: 0.444239
+    thmpred time: 0.000029
+    mc time: 1.072597
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.71062
+Replaying proof: 0.000873
+Replaying proof: 0.030718
+Replaying proof: 0.015416
+
+ROOT_DIV
+Statistics
+  infstep : 452
+  nodes   : 141
+  maxdepth: 6
+Time: 10.019657
+  inferstep time: 6.843694
+  node_find time: 0.072346
+  node_crea time: 2.923252
+    pred time: 0.686346
+    thmpred time: 0.000027
+    mc time: 1.62511
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 20
+Original proof time: 0.0
+Replaying proof: 0.631871
+
+ROOT_LE_MONO
+Statistics
+  infstep : 746
+  nodes   : 143
+  maxdepth: 6
+Time: 10.021914
+  inferstep time: 8.033931
+  node_find time: 0.089148
+  node_crea time: 1.656335
+    pred time: 0.4835
+    thmpred time: 0.000028
+    mc time: 0.82086
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.187458
+
+EXP_MUL
+proof length: 1
+proof time: 0.034619
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.049446
+  inferstep time: 0.03306
+  node_find time: 0.000101
+  node_crea time: 0.010817
+    pred time: 0.002947
+    thmpred time: 0.0
+    mc time: 0.011086
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [arithmeticTheory.EXP_EXP_MULT , DB.fetch "logroot" "LOG_ADD" , DB.fetch "logroot" "tactictoe_thm_14" , DB.fetch "logroot" "tactictoe_thm_0" , DB.fetch "logroot" "tactictoe_thm_13" , arithmeticTheory.LESS_EQ_ADD_SUB , arithmeticTheory.LESS_EQ_SUB_LESS , arithmeticTheory.SUB_PLUS , arithmeticTheory.SUB_SUB , combinTheory.APPLY_UPDATE_THM , combinTheory.UPDATE_def , combinTheory.SAME_KEY_UPDATE_DIFFER , combinTheory.UPD11_SAME_BASE , combinTheory.UPD11_SAME_KEY_AND_BASE , combinTheory.UPDATE_COMMUTES , combinTheory.UPDATE_EQ])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.052692
+
+LOG_ROOT
+Statistics
+  infstep : 575
+  nodes   : 126
+  maxdepth: 5
+Time: 10.012037
+  inferstep time: 7.480305
+  node_find time: 0.074503
+  node_crea time: 2.236065
+    pred time: 0.543035
+    thmpred time: 0.000034
+    mc time: 1.246614
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 22
+Original proof time: 0.0
+Replaying proof: 0.66116
+Replaying proof: 0.001054
+Replaying proof: 0.075743
+Replaying proof: 0.000832
+
+ROOT_COMPUTE
+Statistics
+  infstep : 876
+  nodes   : 167
+  maxdepth: 6
+Time: 10.01478
+  inferstep time: 6.596812
+  node_find time: 0.127907
+  node_crea time: 2.892076
+    pred time: 0.497491
+    thmpred time: 0.000022
+    mc time: 1.889945
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.381383
+Replaying proof: 0.000594
+Replaying proof: 0.509716
+Replaying proof: 0.335687
+
+numeral_sqrt
+Statistics
+  infstep : 669
+  nodes   : 145
+  maxdepth: 6
+Time: 10.062848
+  inferstep time: 7.263874
+  node_find time: 0.106766
+  node_crea time: 2.403543
+    pred time: 0.593861
+    thmpred time: 0.00002
+    mc time: 1.234082
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.419511
+
+numeral_root2
+proof length: 3
+proof time: 0.001233
+Statistics
+  infstep : 334
+  nodes   : 63
+  maxdepth: 4
+Time: 4.649389
+  inferstep time: 3.746968
+  node_find time: 0.043265
+  node_crea time: 0.702409
+    pred time: 0.161053
+    thmpred time: 0.00001
+    mc time: 0.450149
+    inst time: 0.0
+Proof found: simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [arithmeticTheory.ALT_ZERO, prim_recTheory.LESS_REFL] THEN boolLib.REWRITE_TAC [DB.fetch "logroot" "SQRTd_def", DB.fetch "logroot" "iSQRT0_def", DB.fetch "logroot" "iSQRT1_def", DB.fetch "logroot" "iSQRT2_def", DB.fetch "logroot" "iSQRT3_def", DB.fetch "logroot" "iSQRTd_def", DB.fetch "logroot" "tactictoe_thm_23", numeralTheory.numeral_distrib, numeralTheory.numeral_div2, arithmeticTheory.NUMERAL_MULT_EQ_DIV, arithmeticTheory.MODEQ_NUMERAL, numeralTheory.numeral_MAX, numeralTheory.numeral_MIN, arithmeticTheory.NUMERAL_DEF, DB.fetch "logroot" "tactictoe_thm_27", DB.fetch "logroot" "numeral_sqrt"] THEN
+  simpLib.SIMP_TAC BasicProvers.bool_ss [(DB.fetch "arithmetic" "NUMERAL_DEF"), (DB.fetch "arithmetic" "BIT1"), (DB.fetch "arithmetic" "BIT2"), (DB.fetch "arithmetic" "ALT_ZERO"), (DB.fetch "arithmetic" "ADD_CLAUSES"), (DB.fetch "arithmetic" "SUB_MONO_EQ"), (DB.fetch "arithmetic" "SUB_0")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006135
+Bad stac: 0

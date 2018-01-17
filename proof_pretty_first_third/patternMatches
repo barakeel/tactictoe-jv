@@ -1,0 +1,1631 @@
+
+tactictoe_prove_0
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.04223
+
+tactictoe_prove_1
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.08228
+
+some_var_bool_T
+proof length: 2
+proof time: 0.002781
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.188454
+  inferstep time: 0.154905
+  node_find time: 0.00022
+  node_crea time: 0.026699
+    pred time: 0.011472
+    thmpred time: 0.0
+    mc time: 0.016366
+    inst time: 0.0
+Proof found: SIMP_TAC std_ss [some_def] THEN
+  METIS_TAC []
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.16307
+
+some_var_bool_F
+proof length: 1
+proof time: 0.010839
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.152711
+  inferstep time: 0.137977
+  node_find time: 0.000124
+  node_crea time: 0.011531
+    pred time: 0.00447
+    thmpred time: 0.0
+    mc time: 0.007782
+    inst time: 0.0
+Proof found: SRW_TAC [] [some_def, some_eq_SOME]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.198138
+
+tactictoe_prove_4
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003546
+
+tactictoe_prove_5
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00467
+
+tactictoe_prove_6
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.19207
+
+tactictoe_prove_7
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.073103
+
+PMATCH_ROW_CONG
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.141503
+
+PMATCH_CONG
+proof length: 3
+proof time: 0.053916
+Statistics
+  infstep : 12
+  nodes   : 9
+  maxdepth: 3
+Time: 0.763647
+  inferstep time: 0.620938
+  node_find time: 0.000615
+  node_crea time: 0.109664
+    pred time: 0.036539
+    thmpred time: 0.000001
+    mc time: 0.076288
+    inst time: 0.0
+Proof found: Cases_on [QUOTE " (*#loc 1 3361*)some x. (p' x = v') /\\ (g' x)"] THENL
+  [SRW_TAC [] [fetch "patternMatches" "PMATCH_def"],
+  METIS_TAC [fetch "patternMatches" "PMATCH_def", fetch "patternMatches" "PMATCH_ROW_CONG", list_case_cong, option_REP_ABS_DEF, satTheory.dc_eq]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.01197
+
+PMATCH_ROW_EQ_AUX
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.40774
+
+PMATCH_ROW_EQ_NONE
+proof length: 4
+proof time: 0.008733
+Statistics
+  infstep : 47
+  nodes   : 14
+  maxdepth: 3
+Time: 1.002181
+  inferstep time: 0.819294
+  node_find time: 0.004602
+  node_crea time: 0.149418
+    pred time: 0.054493
+    thmpred time: 0.0
+    mc time: 0.079429
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC (std_ss ++ boolSimps.CONJ_ss) [(fetch "patternMatches" "PMATCH_ROW_def"), (fetch "patternMatches" "PMATCH_ROW_COND_def")] THEN
+  Cases_on [QUOTE " (*#loc 1 3361*)some x. (p' x = v') /\\ (g' x)"] THEN
+  SRW_TAC [] [some_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010639
+
+PMATCH_ROW_EQ_SOME
+proof length: 3
+proof time: 0.012603
+Statistics
+  infstep : 6
+  nodes   : 5
+  maxdepth: 3
+Time: 0.372007
+  inferstep time: 0.304212
+  node_find time: 0.000352
+  node_crea time: 0.053236
+    pred time: 0.017568
+    thmpred time: 0.000002
+    mc time: 0.030908
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_def", fetch "patternMatches" "PMATCH_ROW_COND_def"] THEN
+  POP_ASSUM (fn thm => MP_TAC (HO_MATCH_MP (SPEC_ALL (local_tag some_eq_SOME)) thm)) THEN
+  METIS_TAC [ind_typeTheory.ISO_USAGE, pred_setTheory.LINV_OPT_def]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.148799
+
+PMATCH_COND_SELECT_UNIQUE
+proof length: 4
+proof time: 0.016901
+Statistics
+  infstep : 13
+  nodes   : 7
+  maxdepth: 3
+Time: 0.599282
+  inferstep time: 0.482858
+  node_find time: 0.000616
+  node_crea time: 0.084885
+    pred time: 0.028482
+    thmpred time: 0.000002
+    mc time: 0.06462
+    inst time: 0.0
+Proof found: REPEAT STRIP_TAC THEN
+  REVERSE (Cases_on [QUOTE " (*#loc 1 4380*)?x. PMATCH_ROW_COND p g i x"]) THENL
+  [METIS_TAC [],
+  METIS_TAC [fetch "patternMatches" "PMATCH_ROW_def", fetch "patternMatches" "PMATCH_ROW_COND_def"]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.043849
+
+PMATCH_ROW_COND_DEF_GSYM
+proof length: 6
+proof time: 0.003691
+Statistics
+  infstep : 32
+  nodes   : 12
+  maxdepth: 3
+Time: 0.728891
+  inferstep time: 0.584365
+  node_find time: 0.001571
+  node_crea time: 0.110476
+    pred time: 0.044104
+    thmpred time: 0.000001
+    mc time: 0.061389
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_COND_def"] THEN
+  REPEAT (STRIP_TAC ORELSE EQ_TAC) THENL
+  [SRW_TAC [] [],
+  METIS_TAC [],
+  METIS_TAC [],
+  METIS_TAC []]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.041112
+
+PMATCH_EVAL
+proof length: 1
+proof time: 0.00476
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.138395
+  inferstep time: 0.117466
+  node_find time: 0.000135
+  node_crea time: 0.014513
+    pred time: 0.003374
+    thmpred time: 0.0
+    mc time: 0.01497
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_def", fetch "patternMatches" "PMATCH_ROW_def", some_def]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.118746
+
+PMATCH_EVAL_MATCH
+proof length: 1
+proof time: 0.004349
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.131456
+  inferstep time: 0.114712
+  node_find time: 0.000159
+  node_crea time: 0.011917
+    pred time: 0.003826
+    thmpred time: 0.000001
+    mc time: 0.010361
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_def", fetch "patternMatches" "PMATCH_def", some_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005841
+
+PMATCH_EXTEND_BASE
+proof length: 1
+proof time: 0.007473
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.057086
+  inferstep time: 0.046814
+  node_find time: 0.000072
+  node_crea time: 0.007434
+    pred time: 0.002494
+    thmpred time: 0.000001
+    mc time: 0.006054
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "patternMatches" "PMATCH_EVAL"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008063
+
+PMATCH_EXTEND_BOTH
+proof length: 1
+proof time: 0.017052
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.122896
+  inferstep time: 0.104634
+  node_find time: 0.000086
+  node_crea time: 0.011665
+    pred time: 0.003809
+    thmpred time: 0.0
+    mc time: 0.012073
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "patternMatches" "PMATCH_CONG", fetch "patternMatches" "PMATCH_EXTEND_BASE", fetch "patternMatches" "PMATCH_def", fetch "patternMatches" "PMATCH_EVAL", fetch "patternMatches" "PMATCH_EVAL_MATCH"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005926
+
+PMATCH_EXTEND_BOTH_ID
+proof length: 1
+proof time: 0.004872
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.106516
+  inferstep time: 0.085963
+  node_find time: 0.000144
+  node_crea time: 0.016376
+    pred time: 0.00425
+    thmpred time: 0.000001
+    mc time: 0.013194
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "patternMatches" "PMATCH_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005692
+
+PMATCH_EXTEND_OLD
+proof length: 1
+proof time: 0.001187
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.151633
+  inferstep time: 0.134903
+  node_find time: 0.000134
+  node_crea time: 0.011732
+    pred time: 0.003663
+    thmpred time: 0.0
+    mc time: 0.010408
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010975
+
+PMATCH_ROW_REMOVE_FUN
+Statistics
+  infstep : 469
+  nodes   : 156
+  maxdepth: 6
+Time: 10.047773
+  inferstep time: 7.091865
+  node_find time: 0.061822
+  node_crea time: 2.805288
+    pred time: 0.670376
+    thmpred time: 0.00003
+    mc time: 1.163361
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.137171
+
+PMATCH_ROW_EXTEND_INPUT
+Statistics
+  infstep : 362
+  nodes   : 119
+  maxdepth: 5
+Time: 10.009654
+  inferstep time: 6.885693
+  node_find time: 0.051551
+  node_crea time: 2.973566
+    pred time: 0.762631
+    thmpred time: 0.000023
+    mc time: 1.098403
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.362119
+
+PMATCH_ROW_REMOVE_FUN_VAR
+Statistics
+  infstep : 394
+  nodes   : 137
+  maxdepth: 6
+Time: 10.09301
+  inferstep time: 6.612794
+  node_find time: 0.059643
+  node_crea time: 3.333262
+    pred time: 0.797413
+    thmpred time: 0.000023
+    mc time: 1.333109
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.36368
+
+PMATCH_EQUIV_ROWS_EQUIV_EXPAND
+Statistics
+  infstep : 446
+  nodes   : 136
+  maxdepth: 6
+Time: 10.013621
+  inferstep time: 7.193412
+  node_find time: 0.072975
+  node_crea time: 2.625691
+    pred time: 0.762958
+    thmpred time: 0.000035
+    mc time: 0.994679
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.183233
+
+PMATCH_EQUIV_ROWS_is_equiv_1
+proof length: 1
+proof time: 0.097125
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.108999
+  inferstep time: 0.096957
+  node_find time: 0.000128
+  node_crea time: 0.008498
+    pred time: 0.002643
+    thmpred time: 0.0
+    mc time: 0.007139
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "patternMatches" "PMATCH_EQUIV_ROWS_def", fetch "patternMatches" "PMATCH_EQUIV_ROWS_EQUIV_EXPAND", fetch "patternMatches" "PMATCH_CONG", fetch "patternMatches" "PMATCH_EXTEND_BOTH_ID", fetch "patternMatches" "PMATCH_EVAL", option_case_def, fetch "patternMatches" "PMATCH_ROW_def", fetch "patternMatches" "PMATCH_ROW_EXTEND_INPUT", fetch "patternMatches" "PMATCH_ROW_REMOVE_FUN_VAR"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012957
+
+PMATCH_EQUIV_ROWS_is_equiv_2
+proof length: 2
+proof time: 0.02836
+Statistics
+  infstep : 21
+  nodes   : 8
+  maxdepth: 2
+Time: 0.663255
+  inferstep time: 0.559813
+  node_find time: 0.002145
+  node_crea time: 0.087735
+    pred time: 0.029244
+    thmpred time: 0.000002
+    mc time: 0.042213
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_EQUIV_ROWS_def"] THEN
+  PROVE_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.099135
+
+PMATCH_EQUIV_ROWS_is_equiv_3
+proof length: 1
+proof time: 0.063411
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.116265
+  inferstep time: 0.101867
+  node_find time: 0.000141
+  node_crea time: 0.010453
+    pred time: 0.003336
+    thmpred time: 0.0
+    mc time: 0.008476
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [DB.fetch "patternMatches" "PMATCH_EQUIV_ROWS_def", DB.fetch "patternMatches" "PMATCH_EQUIV_ROWS_is_equiv_2", DB.fetch "patternMatches" "PMATCH_EQUIV_ROWS_EQUIV_EXPAND", DB.fetch "patternMatches" "PMATCH_EQUIV_ROWS_is_equiv_1", DB.fetch "patternMatches" "PMATCH_CONG", DB.fetch "patternMatches" "PMATCH_EXTEND_BOTH_ID", DB.fetch "patternMatches" "PMATCH_EVAL_MATCH", DB.fetch "patternMatches" "PMATCH_def", DB.fetch "patternMatches" "PMATCH_EVAL", DB.fetch "patternMatches" "PMATCH_ROW_EXTEND_INPUT", DB.fetch "patternMatches" "PMATCH_ROW_REMOVE_FUN_VAR", quantHeuristicsTheory.SIMPLE_GUESS_SOME_THM, DB.fetch "patternMatches" "PMATCH_ROW_REMOVE_FUN", DB.fetch "patternMatches" "PMATCH_ROW_CONG"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009618
+
+PMATCH_EQUIV_ROWS_MATCH
+proof length: 1
+proof time: 0.01401
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.124859
+  inferstep time: 0.110165
+  node_find time: 0.000135
+  node_crea time: 0.010376
+    pred time: 0.003484
+    thmpred time: 0.000001
+    mc time: 0.008755
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "patternMatches" "PMATCH_EQUIV_ROWS_def", fetch "patternMatches" "PMATCH_EQUIV_ROWS_is_equiv_1"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009679
+
+PMATCH_APPEND_SEM
+Statistics
+  infstep : 502
+  nodes   : 98
+  maxdepth: 5
+Time: 10.005966
+  inferstep time: 7.89405
+  node_find time: 0.074641
+  node_crea time: 1.892927
+    pred time: 0.589748
+    thmpred time: 0.000033
+    mc time: 0.628028
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.206315
+
+PMATCH_EQUIV_APPEND
+proof length: 5
+proof time: 0.012379
+Statistics
+  infstep : 189
+  nodes   : 46
+  maxdepth: 5
+Time: 3.791295
+  inferstep time: 3.069826
+  node_find time: 0.0242
+  node_crea time: 0.615035
+    pred time: 0.172526
+    thmpred time: 0.000012
+    mc time: 0.276611
+    inst time: 0.0
+Proof found: SIMP_TAC std_ss [(fetch "patternMatches" "PMATCH_EQUIV_ROWS_def")] THEN
+  REPEAT GEN_TAC THEN
+  ASM_SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [RIGHT_AND_OVER_OR, EXISTS_OR_THM] THEN
+  REWRITE_TAC [fetch "patternMatches" "PMATCH_APPEND_SEM"] THEN
+  SRW_TAC [] []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.046747
+
+PMATCH_EQUIV_ROWS_CONS_NONE
+proof length: 2
+proof time: 0.005728
+Statistics
+  infstep : 79
+  nodes   : 15
+  maxdepth: 3
+Time: 1.363115
+  inferstep time: 1.086472
+  node_find time: 0.009811
+  node_crea time: 0.222937
+    pred time: 0.0807
+    thmpred time: 0.000006
+    mc time: 0.09039
+    inst time: 0.0
+Proof found: SIMP_TAC std_ss [(fetch "patternMatches" "PMATCH_EQUIV_ROWS_def"), FUN_EQ_THM] THEN
+  ASM_SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [(fetch "patternMatches" "PMATCH_def"), RIGHT_AND_OVER_OR, EXISTS_OR_THM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017038
+
+PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS_EQUIV
+Statistics
+  infstep : 1273
+  nodes   : 161
+  maxdepth: 6
+Time: 10.037004
+  inferstep time: 6.784204
+  node_find time: 0.238698
+  node_crea time: 2.624985
+    pred time: 0.487928
+    thmpred time: 0.000013
+    mc time: 1.218995
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.348314
+
+PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS
+proof length: 1
+proof time: 0.001227
+Statistics
+  infstep : 9
+  nodes   : 3
+  maxdepth: 2
+Time: 0.386929
+  inferstep time: 0.319381
+  node_find time: 0.001703
+  node_crea time: 0.042925
+    pred time: 0.014212
+    thmpred time: 0.000001
+    mc time: 0.038642
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS_EQUIV", fetch "patternMatches" "PMATCH_EQUIV_ROWS_MATCH"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.084707
+
+PMATCH_ROWS_DROP_REDUNDANT
+proof length: 5
+proof time: 0.057129
+Statistics
+  infstep : 532
+  nodes   : 124
+  maxdepth: 5
+Time: 8.885266
+  inferstep time: 7.049324
+  node_find time: 0.098684
+  node_crea time: 1.503395
+    pred time: 0.360927
+    thmpred time: 0.000028
+    mc time: 0.701535
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "patternMatches" "PMATCH_APPEND_SEM", fetch "patternMatches" "PMATCH_def"] THEN
+  SRW_TAC [] [MEM_SPLIT] THENL
+  [POP_ASSUM (MP_TAC o REWRITE_RULE []) THEN
+  PROVE_TAC [],
+  METIS_TAC [option_CLAUSES]]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.260819
+
+PMATCH_ROWS_DROP_REDUNDANT_PMATCH_ROWS
+Statistics
+  infstep : 362
+  nodes   : 103
+  maxdepth: 5
+Time: 10.123294
+  inferstep time: 7.491399
+  node_find time: 0.07558
+  node_crea time: 2.379454
+    pred time: 0.749199
+    thmpred time: 0.000037
+    mc time: 0.805407
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.191541
+
+PMATCH_ROWS_DROP_SUBSUMED
+Statistics
+  infstep : 386
+  nodes   : 127
+  maxdepth: 5
+Time: 10.090329
+  inferstep time: 6.955294
+  node_find time: 0.086655
+  node_crea time: 2.779096
+    pred time: 0.670498
+    thmpred time: 0.00002
+    mc time: 0.951585
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.394659
+
+PMATCH_ROWS_DROP_SUBSUMED_PMATCH_ROWS
+Statistics
+  infstep : 304
+  nodes   : 98
+  maxdepth: 5
+Time: 10.009832
+  inferstep time: 6.872601
+  node_find time: 0.07487
+  node_crea time: 2.775312
+    pred time: 0.768626
+    thmpred time: 0.000029
+    mc time: 0.955602
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.430651
+
+PMATCH_REMOVE_ARB
+Statistics
+  infstep : 533
+  nodes   : 123
+  maxdepth: 6
+Time: 10.023444
+  inferstep time: 6.951555
+  node_find time: 0.130147
+  node_crea time: 2.699205
+    pred time: 0.810443
+    thmpred time: 0.00003
+    mc time: 1.04978
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067464
+
+PMATCH_INTRO_CATCHALL
+proof length: 1
+proof time: 0.000928
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.384093
+  inferstep time: 0.367643
+  node_find time: 0.000425
+  node_crea time: 0.011011
+    pred time: 0.00384
+    thmpred time: 0.000001
+    mc time: 0.008278
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_REMOVE_ARB"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010714
+
+PMATCH_REMOVE_ARB_NO_OVERLAP
+Statistics
+  infstep : 410
+  nodes   : 101
+  maxdepth: 6
+Time: 10.090361
+  inferstep time: 7.617272
+  node_find time: 0.094093
+  node_crea time: 2.175156
+    pred time: 0.55447
+    thmpred time: 0.000028
+    mc time: 0.767952
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.129991
+
+PMATCH_ROW_REDUNDANT_NIL
+proof length: 2
+proof time: 0.001495
+Statistics
+  infstep : 7
+  nodes   : 3
+  maxdepth: 2
+Time: 0.377861
+  inferstep time: 0.343711
+  node_find time: 0.001521
+  node_crea time: 0.02037
+    pred time: 0.006779
+    thmpred time: 0.000001
+    mc time: 0.016913
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "patternMatches" "PMATCH_ROW_REDUNDANT_def"] THEN
+  SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.021696
+
+PMATCH_ROW_REDUNDANT_0
+proof length: 1
+proof time: 0.002239
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.333687
+  inferstep time: 0.314632
+  node_find time: 0.000507
+  node_crea time: 0.01131
+    pred time: 0.003718
+    thmpred time: 0.0
+    mc time: 0.01065
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_REDUNDANT_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012116
+
+PMATCH_ROW_REDUNDANT_SUC
+Statistics
+  infstep : 419
+  nodes   : 120
+  maxdepth: 6
+Time: 10.015403
+  inferstep time: 6.870169
+  node_find time: 0.113123
+  node_crea time: 2.808971
+    pred time: 0.882562
+    thmpred time: 0.000022
+    mc time: 1.221174
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.444903
+
+PMATCH_ROW_REDUNDANT_APPEND_LT
+Statistics
+  infstep : 509
+  nodes   : 114
+  maxdepth: 6
+Time: 10.00498
+  inferstep time: 7.463519
+  node_find time: 0.129511
+  node_crea time: 2.068327
+    pred time: 0.57475
+    thmpred time: 0.000029
+    mc time: 1.016645
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067648
+
+PMATCH_ROW_REDUNDANT_APPEND_GE
+Statistics
+  infstep : 805
+  nodes   : 168
+  maxdepth: 6
+Time: 10.032317
+  inferstep time: 5.585428
+  node_find time: 0.255748
+  node_crea time: 3.721218
+    pred time: 0.567863
+    thmpred time: 0.000017
+    mc time: 2.101855
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.545903
+
+IS_REDUNDANT_ROWS_INFO_NIL
+proof length: 1
+proof time: 0.001276
+Statistics
+  infstep : 3
+  nodes   : 2
+  maxdepth: 1
+Time: 0.241771
+  inferstep time: 0.221159
+  node_find time: 0.000817
+  node_crea time: 0.011874
+    pred time: 0.00388
+    thmpred time: 0.000001
+    mc time: 0.010714
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "IS_REDUNDANT_ROWS_INFO_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017735
+
+IS_REDUNDANT_ROWS_INFO_SNOC
+Statistics
+  infstep : 381
+  nodes   : 111
+  maxdepth: 5
+Time: 10.010979
+  inferstep time: 6.711344
+  node_find time: 0.110082
+  node_crea time: 2.859519
+    pred time: 0.746678
+    thmpred time: 0.000029
+    mc time: 0.940951
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.307998
+
+IS_REDUNDANT_ROWS_INFO_SNOC_PMATCH_ROW
+Statistics
+  infstep : 253
+  nodes   : 99
+  maxdepth: 5
+Time: 10.017531
+  inferstep time: 6.642938
+  node_find time: 0.07783
+  node_crea time: 3.06884
+    pred time: 0.849259
+    thmpred time: 0.000028
+    mc time: 1.082799
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.132687
+
+IS_REDUNDANT_ROWS_INFO_CONS
+Statistics
+  infstep : 383
+  nodes   : 126
+  maxdepth: 6
+Time: 10.029754
+  inferstep time: 6.752177
+  node_find time: 0.123716
+  node_crea time: 2.884158
+    pred time: 0.694537
+    thmpred time: 0.000023
+    mc time: 1.210796
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.388951
+
+APPLY_REDUNDANT_ROWS_INFO_THMS
+proof length: 1
+proof time: 0.004752
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.255357
+  inferstep time: 0.21073
+  node_find time: 0.000994
+  node_crea time: 0.035337
+    pred time: 0.015419
+    thmpred time: 0.000001
+    mc time: 0.015898
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "APPLY_REDUNDANT_ROWS_INFO_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.023689
+
+PMATCH_ROWS_DROP_REDUNDANT_ROWS_INFO_EQUIV
+Statistics
+  infstep : 397
+  nodes   : 107
+  maxdepth: 5
+Time: 10.015908
+  inferstep time: 7.052587
+  node_find time: 0.14399
+  node_crea time: 2.486417
+    pred time: 0.587796
+    thmpred time: 0.000026
+    mc time: 1.007624
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.522225
+
+REDUNDANT_ROWS_INFO_TO_PMATCH_EQ
+proof length: 1
+proof time: 0.039414
+Statistics
+  infstep : 10
+  nodes   : 8
+  maxdepth: 2
+Time: 0.543458
+  inferstep time: 0.430347
+  node_find time: 0.002783
+  node_crea time: 0.085129
+    pred time: 0.028875
+    thmpred time: 0.000001
+    mc time: 0.051477
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "patternMatches" "PMATCH_ROWS_DROP_REDUNDANT_ROWS_INFO_EQUIV", fetch "patternMatches" "IS_REDUNDANT_ROWS_INFO_def", fetch "patternMatches" "IS_REDUNDANT_ROWS_INFO_SNOC_PMATCH_ROW", fetch "patternMatches" "IS_REDUNDANT_ROWS_INFO_CONS", fetch "patternMatches" "APPLY_REDUNDANT_ROWS_INFO_def", fetch "patternMatches" "PMATCH_EQUIV_ROWS_def"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.078175
+
+PMATCH_IS_EXHAUSTIVE_REWRITES
+proof length: 4
+proof time: 0.003523
+Statistics
+  infstep : 21
+  nodes   : 8
+  maxdepth: 3
+Time: 0.832251
+  inferstep time: 0.694864
+  node_find time: 0.005953
+  node_crea time: 0.094254
+    pred time: 0.033531
+    thmpred time: 0.000005
+    mc time: 0.052329
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_IS_EXHAUSTIVE_def"] THEN
+  Cases_on [QUOTE " (*#loc 1 18007*)r v"] THENL
+  [FULL_SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [],
+  SRW_TAC [] []]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018105
+
+IS_REDUNDANT_ROWS_INFO_EXTRACT_IS_EXHAUSTIVE
+proof length: 4
+proof time: 0.0094
+Statistics
+  infstep : 125
+  nodes   : 35
+  maxdepth: 4
+Time: 3.392714
+  inferstep time: 2.679419
+  node_find time: 0.038458
+  node_crea time: 0.529754
+    pred time: 0.143347
+    thmpred time: 0.000008
+    mc time: 0.242024
+    inst time: 0.0
+Proof found: SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [(fetch "patternMatches" "PMATCH_IS_EXHAUSTIVE_def"), quantHeuristicsTheory.IS_SOME_EQ_NOT_NONE] THEN
+  REPEAT STRIP_TAC THEN
+  FULL_SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [(fetch "patternMatches" "IS_REDUNDANT_ROWS_INFO_def")] THEN
+  METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.022869
+
+REDUNDANT_ROWS_INFOS_CONJ_REWRITE
+proof length: 1
+proof time: 0.002124
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.193536
+  inferstep time: 0.17624
+  node_find time: 0.000621
+  node_crea time: 0.010371
+    pred time: 0.003639
+    thmpred time: 0.000001
+    mc time: 0.007877
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "REDUNDANT_ROWS_INFOS_CONJ_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013131
+
+REDUNDANT_ROWS_INFOS_CONJ_THM
+Statistics
+  infstep : 314
+  nodes   : 119
+  maxdepth: 6
+Time: 10.012525
+  inferstep time: 6.503869
+  node_find time: 0.109859
+  node_crea time: 2.979753
+    pred time: 0.689815
+    thmpred time: 0.000028
+    mc time: 1.122536
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016385
+
+REDUNDANT_ROWS_INFOS_DISJ_THM
+proof length: 3
+proof time: 0.075215
+Statistics
+  infstep : 34
+  nodes   : 14
+  maxdepth: 3
+Time: 1.532417
+  inferstep time: 1.071344
+  node_find time: 0.010559
+  node_crea time: 0.406264
+    pred time: 0.104035
+    thmpred time: 0.000005
+    mc time: 0.153831
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC (std_ss ++ boolSimps.CONJ_ss) [fetch "patternMatches" "REDUNDANT_ROWS_INFOS_DISJ_def", fetch "patternMatches" "IS_REDUNDANT_ROWS_INFO_def", rich_listTheory.EVERY_FOLDL] THEN
+  SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [MAP2_MAP, EL_MAP, EL_ZIP] THEN
+  METIS_TAC [fetch "patternMatches" "IS_REDUNDANT_ROWS_INFO_def", fetch "patternMatches" "REDUNDANT_ROWS_INFOS_CONJ_THM", fetch "patternMatches" "PMATCH_ROW_REDUNDANT_SUC"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.06889
+
+LENGTH_STRONGEST_REDUNDANT_ROWS_INFO_AUX
+proof length: 4
+proof time: 0.004324
+Statistics
+  infstep : 684
+  nodes   : 98
+  maxdepth: 5
+Time: 9.068099
+  inferstep time: 6.797274
+  node_find time: 0.229267
+  node_crea time: 1.438986
+    pred time: 0.376824
+    thmpred time: 0.000027
+    mc time: 0.827384
+    inst time: 0.0
+Proof found: Induct_on [QUOTE " (*#loc 1 23000*)rows"] THENL
+  [SRW_TAC [] [fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_AUX_def"],
+  SRW_TAC [] [fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_AUX_def"] THEN
+  SRW_TAC [] [arithmeticTheory.ADD_CLAUSES]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.039672
+
+FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX
+proof length: 4
+proof time: 0.003132
+Statistics
+  infstep : 8
+  nodes   : 6
+  maxdepth: 3
+Time: 0.547562
+  inferstep time: 0.442718
+  node_find time: 0.002351
+  node_crea time: 0.059493
+    pred time: 0.019626
+    thmpred time: 0.000002
+    mc time: 0.060465
+    inst time: 0.0
+Proof found: Induct_on [QUOTE " (*#loc 1 23000*)rows"] THENL
+  [SRW_TAC [] [fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_AUX_def"],
+  SRW_TAC [] [fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_AUX_def"] THEN
+  METIS_TAC []]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.038432
+
+EL1_STRONGEST_REDUNDANT_ROWS_INFO_AUX
+proof length: 5
+proof time: 0.006007
+Statistics
+  infstep : 358
+  nodes   : 83
+  maxdepth: 5
+Time: 7.45852
+  inferstep time: 5.569583
+  node_find time: 0.122952
+  node_crea time: 1.343453
+    pred time: 0.333213
+    thmpred time: 0.000022
+    mc time: 0.803559
+    inst time: 0.0
+Proof found: Induct_on [QUOTE " (*#loc 1 23000*)rows"] THENL
+  [SRW_TAC [] [fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_AUX_def"],
+  SRW_TAC [] [fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_AUX_def"] THEN
+  FULL_SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [SNOC_APPEND] THEN
+  FULL_SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [rich_listTheory.EL_APPEND1]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.056671
+
+EL2_STRONGEST_REDUNDANT_ROWS_INFO_AUX
+Statistics
+  infstep : 389
+  nodes   : 92
+  maxdepth: 5
+Time: 10.013176
+  inferstep time: 6.999344
+  node_find time: 0.149252
+  node_crea time: 2.459698
+    pred time: 0.599271
+    thmpred time: 0.000025
+    mc time: 1.262213
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.502676
+
+LENGTH_STRONGEST_REDUNDANT_ROWS_INFO
+proof length: 1
+proof time: 0.000766
+Statistics
+  infstep : 3
+  nodes   : 2
+  maxdepth: 1
+Time: 0.159626
+  inferstep time: 0.123787
+  node_find time: 0.001511
+  node_crea time: 0.015933
+    pred time: 0.00374
+    thmpred time: 0.0
+    mc time: 0.022414
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC ((arith_ss ++ listSimps.LIST_ss) ++ boolSimps.EQUIV_EXTRACT_ss) [fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_def", fetch "patternMatches" "LENGTH_STRONGEST_REDUNDANT_ROWS_INFO_AUX"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018824
+
+FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX
+proof length: 3
+proof time: 0.003711
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.501064
+  inferstep time: 0.41889
+  node_find time: 0.002135
+  node_crea time: 0.042881
+    pred time: 0.014607
+    thmpred time: 0.000001
+    mc time: 0.038949
+    inst time: 0.0
+Proof found: Induct_on [QUOTE " (*#loc 1 23000*)rows"] THEN
+  SRW_TAC [] [fetch "patternMatches" "FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.043898
+
+EL_STRONGEST_REDUNDANT_ROWS_INFO
+proof length: 1
+proof time: 0.002941
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.201938
+  inferstep time: 0.175485
+  node_find time: 0.000801
+  node_crea time: 0.016074
+    pred time: 0.004373
+    thmpred time: 0.000001
+    mc time: 0.015222
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_def", fetch "patternMatches" "EL2_STRONGEST_REDUNDANT_ROWS_INFO_AUX"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012103
+
+STRONGEST_REDUNDANT_ROWS_INFO_OK
+Statistics
+  infstep : 462
+  nodes   : 127
+  maxdepth: 6
+Time: 10.019814
+  inferstep time: 6.928694
+  node_find time: 0.18788
+  node_crea time: 2.436407
+    pred time: 0.496775
+    thmpred time: 0.000028
+    mc time: 1.17557
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.451333
+
+PMATCH_ROW_COND_EX_FULL_DEF
+proof length: 2
+proof time: 0.001706
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.374296
+  inferstep time: 0.325881
+  node_find time: 0.002473
+  node_crea time: 0.031403
+    pred time: 0.010881
+    thmpred time: 0.000001
+    mc time: 0.02108
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC (std_ss ++ boolSimps.CONJ_ss) [fetch "patternMatches" "PMATCH_ROW_COND_EX_def"] THEN
+  SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_COND_DEF_GSYM"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.040572
+
+PMATCH_ROW_COND_EX_WEAKEN
+proof length: 2
+proof time: 0.020054
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.329116
+  inferstep time: 0.282632
+  node_find time: 0.001405
+  node_crea time: 0.030265
+    pred time: 0.00909
+    thmpred time: 0.000002
+    mc time: 0.02375
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC (std_ss ++ boolSimps.CONJ_ss) [fetch "patternMatches" "PMATCH_ROW_COND_EX_FULL_DEF"] THEN
+  METIS_TAC []
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.12682
+
+PMATCH_ROW_COND_EX_FALSE
+proof length: 1
+proof time: 0.000805
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.140032
+  inferstep time: 0.118768
+  node_find time: 0.000771
+  node_crea time: 0.012101
+    pred time: 0.003391
+    thmpred time: 0.000001
+    mc time: 0.011612
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC (std_ss ++ boolSimps.CONJ_ss) [fetch "patternMatches" "PMATCH_ROW_COND_EX_FULL_DEF"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014875
+
+PMATCH_ROW_COND_EX_IMP_REWRITE
+proof length: 2
+proof time: 0.012365
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.390625
+  inferstep time: 0.337269
+  node_find time: 0.002412
+  node_crea time: 0.034679
+    pred time: 0.010624
+    thmpred time: 0.000001
+    mc time: 0.023192
+    inst time: 0.0
+Proof found: SIMP_TAC std_ss [(fetch "patternMatches" "PMATCH_ROW_COND_EX_def"), (fetch "patternMatches" "PMATCH_ROW_COND_def")] THEN
+  PROVE_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017664
+
+PMATCH_IS_EXHAUSTIVE_CONTRADICT
+proof length: 1
+proof time: 0.009885
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.192907
+  inferstep time: 0.164487
+  node_find time: 0.0005
+  node_crea time: 0.015325
+    pred time: 0.003959
+    thmpred time: 0.000001
+    mc time: 0.016714
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "patternMatches" "IS_REDUNDANT_ROWS_INFO_EXTRACT_IS_EXHAUSTIVE", fetch "patternMatches" "STRONGEST_REDUNDANT_ROWS_INFO_OK"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.036418
+
+PMATCH_ROW_EVAL_COND_EX
+proof length: 2
+proof time: 0.006591
+Statistics
+  infstep : 10
+  nodes   : 6
+  maxdepth: 2
+Time: 0.511784
+  inferstep time: 0.373591
+  node_find time: 0.003828
+  node_crea time: 0.096452
+    pred time: 0.028296
+    thmpred time: 0.000002
+    mc time: 0.058309
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC (std_ss ++ boolSimps.CONJ_ss) [fetch "patternMatches" "PMATCH_ROW_def", fetch "patternMatches" "PMATCH_ROW_COND_EX_def", fetch "patternMatches" "PMATCH_ROW_COND_def"] THEN
+  SIMP_TAC std_ss [some_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011232
+
+PMATCH_ROW_NEQ_NONE
+proof length: 1
+proof time: 0.000768
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.159427
+  inferstep time: 0.124179
+  node_find time: 0.00087
+  node_crea time: 0.011576
+    pred time: 0.003075
+    thmpred time: 0.000001
+    mc time: 0.0116
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC (std_ss ++ boolSimps.CONJ_ss) [fetch "patternMatches" "PMATCH_ROW_EQ_NONE", fetch "patternMatches" "PMATCH_ROW_COND_EX_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009316
+
+PMATCH_ROW_REMOVE_DOUBLE_BINDS_THM
+Statistics
+  infstep : 529
+  nodes   : 131
+  maxdepth: 6
+Time: 10.080756
+  inferstep time: 6.885823
+  node_find time: 0.221565
+  node_crea time: 2.534624
+    pred time: 0.468496
+    thmpred time: 0.000022
+    mc time: 0.927796
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.263591
+
+GUARDS_ELIM_THM
+Statistics
+  infstep : 638
+  nodes   : 112
+  maxdepth: 5
+Time: 10.000808
+  inferstep time: 7.069039
+  node_find time: 0.259816
+  node_crea time: 2.118297
+    pred time: 0.516223
+    thmpred time: 0.000024
+    mc time: 0.957588
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.367644
+
+tactictoe_prove_75
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.257995
+
+PMATCH_FLATTEN_THM_SINGLE
+Statistics
+  infstep : 359
+  nodes   : 110
+  maxdepth: 5
+Time: 10.010377
+  inferstep time: 7.00656
+  node_find time: 0.155114
+  node_crea time: 2.479326
+    pred time: 0.690899
+    thmpred time: 0.000029
+    mc time: 1.121355
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.185748
+
+PMATCH_FLATTEN_THM
+Statistics
+  infstep : 415
+  nodes   : 81
+  maxdepth: 5
+Time: 10.023627
+  inferstep time: 7.749803
+  node_find time: 0.174881
+  node_crea time: 1.689244
+    pred time: 0.463587
+    thmpred time: 0.000024
+    mc time: 0.801543
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.25769
+
+PMATCH_FLATTEN_FUN_PMATCH_ROW
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.521538
+
+PMATCH_ROW_COND_NOT_EX_OR_EQ_FIRST_ROW
+Statistics
+  infstep : 401
+  nodes   : 104
+  maxdepth: 6
+Time: 10.022365
+  inferstep time: 7.304029
+  node_find time: 0.183236
+  node_crea time: 2.127809
+    pred time: 0.52562
+    thmpred time: 0.000047
+    mc time: 0.977872
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.133065
+
+PMATCH_ROW_COND_NOT_EX_OR_EQ_NIL
+proof length: 1
+proof time: 0.001516
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.227004
+  inferstep time: 0.192773
+  node_find time: 0.001346
+  node_crea time: 0.018383
+    pred time: 0.004997
+    thmpred time: 0.000001
+    mc time: 0.018159
+    inst time: 0.0
+Proof found: SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [(fetch "patternMatches" "PMATCH_ROW_COND_NOT_EX_OR_EQ_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018795
+
+PMATCH_ROW_COND_NOT_EX_OR_EQ_NOT_FIRST_ROW
+proof length: 6
+proof time: 0.012398
+Statistics
+  infstep : 41
+  nodes   : 19
+  maxdepth: 4
+Time: 2.366062
+  inferstep time: 1.826483
+  node_find time: 0.016367
+  node_crea time: 0.388802
+    pred time: 0.12127
+    thmpred time: 0.000004
+    mc time: 0.236744
+    inst time: 0.0
+Proof found: SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [(fetch "patternMatches" "PMATCH_ROW_COND_NOT_EX_OR_EQ_def"), (fetch "patternMatches" "PMATCH_def")] THEN
+  Cases_on [QUOTE " (*#loc 1 37820*)r' i"] THENL
+  [SRW_TAC [] [],
+  Cases_on [QUOTE " (*#loc 1 37841*)r i"] THEN
+  SRW_TAC [] []]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.125952
+
+PMATCH_PRED_UNROLL_NIL
+proof length: 1
+proof time: 0.008853
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.136405
+  inferstep time: 0.112401
+  node_find time: 0.000591
+  node_crea time: 0.015168
+    pred time: 0.004005
+    thmpred time: 0.000001
+    mc time: 0.013498
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "patternMatches" "PMATCH_EVAL", fetch "patternMatches" "PMATCH_INCOMPLETE_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018327
+
+PMATCH_PRED_UNROLL_CONS
+Statistics
+  infstep : 451
+  nodes   : 98
+  maxdepth: 5
+Time: 10.016482
+  inferstep time: 7.129251
+  node_find time: 0.21175
+  node_crea time: 2.214441
+    pred time: 0.602433
+    thmpred time: 0.000023
+    mc time: 1.041508
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.126541
+
+PMATCH_EXPAND_PRED_THM_GEN
+Statistics
+  infstep : 651
+  nodes   : 127
+  maxdepth: 6
+Time: 10.030726
+  inferstep time: 6.479041
+  node_find time: 0.317115
+  node_crea time: 2.595078
+    pred time: 0.603764
+    thmpred time: 0.000027
+    mc time: 1.148251
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 26
+Original proof time: 0.0
+Replaying proof: 0.814006
+
+PMATCH_EXPAND_PRED_THM
+Statistics
+  infstep : 469
+  nodes   : 92
+  maxdepth: 5
+Time: 10.018758
+  inferstep time: 7.311975
+  node_find time: 0.222661
+  node_crea time: 1.999022
+    pred time: 0.664348
+    thmpred time: 0.000023
+    mc time: 0.860771
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011517
+
+PMATCH_LIFT_THM
+Statistics
+  infstep : 455
+  nodes   : 92
+  maxdepth: 5
+Time: 10.064597
+  inferstep time: 7.026129
+  node_find time: 0.228046
+  node_crea time: 2.283259
+    pred time: 0.677842
+    thmpred time: 0.000025
+    mc time: 1.020455
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.209071
+
+PMATCH_ROW_LIFT_THM
+proof length: 3
+proof time: 0.039188
+Statistics
+  infstep : 292
+  nodes   : 113
+  maxdepth: 6
+Time: 6.955905
+  inferstep time: 4.713071
+  node_find time: 0.146276
+  node_crea time: 1.719844
+    pred time: 0.343628
+    thmpred time: 0.000017
+    mc time: 0.879981
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_LIFT_def"] THEN
+  SIMP_TAC (std_ss ++ boolSimps.CONJ_ss) [(fetch "patternMatches" "PMATCH_ROW_def"), FUN_EQ_THM, some_def, (fetch "patternMatches" "PMATCH_ROW_COND_def")] THEN
+  METIS_TAC [fetch "patternMatches" "PMATCH_ROW_REMOVE_FUN_VAR", OPTION_MAP_COMPOSE]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.083813
+
+PMATCH_IS_EXHAUSTIVE_LIFT
+proof length: 6
+proof time: 0.013861
+Statistics
+  infstep : 246
+  nodes   : 116
+  maxdepth: 6
+Time: 8.129717
+  inferstep time: 5.006327
+  node_find time: 0.134631
+  node_crea time: 2.375942
+    pred time: 0.418039
+    thmpred time: 0.000027
+    mc time: 1.613866
+    inst time: 0.0
+Proof found: Induct_on [QUOTE " (*#loc 1 41591*)rows"] THENL
+  [METIS_TAC [fetch "patternMatches" "PMATCH_IS_EXHAUSTIVE_REWRITES"],
+  SRW_TAC [] [fetch "patternMatches" "PMATCH_IS_EXHAUSTIVE_REWRITES", fetch "patternMatches" "PMATCH_ROW_LIFT_def", fetch "patternMatches" "PMATCH_IS_EXHAUSTIVE_def"] THENL
+  [SRW_TAC [] [IS_SOME_OPTION_MAP] THEN
+  SRW_TAC [] [quantHeuristicsTheory.IS_SOME_EQ_NOT_NONE],
+  METIS_TAC [fetch "patternMatches" "PMATCH_IS_EXHAUSTIVE_def"]]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.0184
+Bad stac: 29

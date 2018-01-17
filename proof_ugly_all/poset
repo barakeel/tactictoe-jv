@@ -1,0 +1,322 @@
+
+poset_nonempty
+proof length: 2
+proof time: 0.002595
+Statistics
+  infstep : 20
+  nodes   : 6
+  maxdepth: 2
+Time: 0.43047
+  inferstep time: 0.366233
+  node_find time: 0.000381
+  node_crea time: 0.057541
+    pred time: 0.027985
+    thmpred time: 0.000001
+    mc time: 0.027874
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "poset" "poset_def", DB.fetch "poset" "bottom_def", DB.fetch "poset" "chain_def", DB.fetch "poset" "glb_def", DB.fetch "poset" "lub_def", DB.fetch "poset" "top_def", DB.fetch "poset" "carrier_def", DB.fetch "poset" "relation_def", satTheory.dc_cond, pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, pairTheory.LEX_DEF, pairTheory.RPROD_DEF, relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, pairTheory.ABS_REP_prod] THEN BasicProvers.SRW_TAC [] [(DB.fetch "relation" "SC_DEF")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005292
+
+poset_refl
+proof length: 2
+proof time: 0.004148
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.255748
+  inferstep time: 0.239928
+  node_find time: 0.000091
+  node_crea time: 0.011315
+    pred time: 0.004966
+    thmpred time: 0.0
+    mc time: 0.008302
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "poset" "poset_def", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "bottom_def", DB.fetch "poset" "chain_def", DB.fetch "poset" "glb_def", DB.fetch "poset" "lub_def", DB.fetch "poset" "top_def", DB.fetch "poset" "carrier_def", DB.fetch "poset" "relation_def", satTheory.dc_cond, pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, pairTheory.LEX_DEF, pairTheory.RPROD_DEF, relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT] THEN BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004318
+
+poset_antisym
+proof length: 1
+proof time: 0.002923
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.11566
+  inferstep time: 0.107454
+  node_find time: 0.00005
+  node_crea time: 0.006035
+    pred time: 0.002532
+    thmpred time: 0.000001
+    mc time: 0.004569
+    inst time: 0.0
+Proof found: (BasicProvers.RW_TAC boolSimps.bool_ss [ ( DB.fetch "poset" "poset_def" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.024322
+
+poset_trans
+proof length: 2
+proof time: 0.014411
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.262482
+  inferstep time: 0.242458
+  node_find time: 0.000126
+  node_crea time: 0.015586
+    pred time: 0.006702
+    thmpred time: 0.0
+    mc time: 0.009586
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "poset" "poset_def", DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "glb_def", DB.fetch "poset" "lub_def", DB.fetch "poset" "bottom_def", DB.fetch "poset" "chain_def", DB.fetch "poset" "top_def", DB.fetch "poset" "carrier_def", DB.fetch "poset" "relation_def", satTheory.dc_cond, pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, pairTheory.LEX_DEF, pairTheory.RPROD_DEF] THEN BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.079976
+
+lub_pred
+proof length: 2
+proof time: 0.022154
+Statistics
+  infstep : 9
+  nodes   : 5
+  maxdepth: 2
+Time: 0.475211
+  inferstep time: 0.44646
+  node_find time: 0.000183
+  node_crea time: 0.023935
+    pred time: 0.010551
+    thmpred time: 0.000001
+    mc time: 0.012717
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "poset" "lub_def", DB.fetch "poset" "complete_def", DB.fetch "poset" "glb_def", DB.fetch "poset" "bottom_def", DB.fetch "poset" "chain_def", DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_def", DB.fetch "poset" "top_def", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_trans", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "carrier_def", DB.fetch "poset" "relation_def", satTheory.dc_cond, pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES] THEN BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.041703
+
+glb_pred
+proof length: 3
+proof time: 0.015849
+Statistics
+  infstep : 11
+  nodes   : 6
+  maxdepth: 3
+Time: 0.497636
+  inferstep time: 0.45965
+  node_find time: 0.000245
+  node_crea time: 0.030627
+    pred time: 0.012813
+    thmpred time: 0.000001
+    mc time: 0.017632
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC boolSimps.bool_ss [(DB.fetch "poset" "lub_def")] THEN boolLib.REWRITE_TAC [DB.fetch "poset" "lub_pred", DB.fetch "poset" "glb_def", DB.fetch "poset" "complete_def", DB.fetch "poset" "lub_def", DB.fetch "poset" "bottom_def", DB.fetch "poset" "chain_def", DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_def", DB.fetch "poset" "top_def", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_trans", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "carrier_def", DB.fetch "poset" "relation_def", satTheory.dc_cond, pairTheory.ABS_PAIR_THM] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.040476
+
+complete_up
+proof length: 1
+proof time: 0.106724
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.097445
+  inferstep time: 0.089644
+  node_find time: 0.000025
+  node_crea time: 0.005843
+    pred time: 0.002483
+    thmpred time: 0.0
+    mc time: 0.004348
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "poset" "complete_def" , DB.fetch "poset" "lub_def" , DB.fetch "poset" "lub_pred" , DB.fetch "poset" "chain_def" , pairTheory.LEX_CONG , pairTheory.LEX_DEF_THM , combinTheory.SAME_KEY_UPDATE_DIFFER , combinTheory.UPDATE_COMMUTES , combinTheory.UPD_SAME_KEY_UNWIND , combinTheory.UPDATE_def , combinTheory.APPLY_UPDATE_THM , combinTheory.UPD11_SAME_BASE , combinTheory.UPD11_SAME_KEY_AND_BASE , combinTheory.UPDATE_EQ , pairTheory.ABS_REP_prod , pairTheory.prod_TY_DEF])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008226
+
+complete_down
+proof length: 1
+proof time: 0.108813
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.10693
+  inferstep time: 0.099363
+  node_find time: 0.000026
+  node_crea time: 0.00566
+    pred time: 0.002358
+    thmpred time: 0.0
+    mc time: 0.00426
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "poset" "complete_def" , DB.fetch "poset" "complete_up" , DB.fetch "poset" "glb_def" , DB.fetch "poset" "glb_pred" , DB.fetch "poset" "chain_def" , pairTheory.LEX_CONG , pairTheory.LEX_DEF_THM , combinTheory.SAME_KEY_UPDATE_DIFFER , combinTheory.UPDATE_COMMUTES , combinTheory.UPD_SAME_KEY_UNWIND , combinTheory.UPDATE_def , combinTheory.APPLY_UPDATE_THM , combinTheory.UPD11_SAME_BASE , combinTheory.UPD11_SAME_KEY_AND_BASE , combinTheory.UPDATE_EQ , pairTheory.ABS_REP_prod])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00686
+
+complete_top
+proof length: 4
+proof time: 0.111008
+Statistics
+  infstep : 327
+  nodes   : 68
+  maxdepth: 5
+Time: 5.834392
+  inferstep time: 5.23297
+  node_find time: 0.016908
+  node_crea time: 0.529208
+    pred time: 0.195071
+    thmpred time: 0.000015
+    mc time: 0.205695
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "poset" "top_def", DB.fetch "poset" "complete_def", DB.fetch "poset" "complete_down", DB.fetch "poset" "complete_up", DB.fetch "poset" "poset_def", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_trans", pairTheory.ABS_REP_prod, pairTheory.prod_TY_DEF, pairTheory.ELIM_PEXISTS, pairTheory.EXISTS_PROD, pairTheory.ABS_PAIR_THM, pairTheory.PEXISTS_THM, pairTheory.pair_Axiom] THEN Ho_Rewrite.REWRITE_TAC [(DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "PAIR_EQ")] THEN
+  boolLib.REWRITE_TAC [DB.fetch "poset" "top_def", DB.fetch "poset" "glb_def", DB.fetch "poset" "lub_def", DB.fetch "poset" "glb_pred", DB.fetch "poset" "lub_pred", pairTheory.EXISTS_PROD, pairTheory.pair_induction, pairTheory.FORALL_PROD, DB.fetch "poset" "complete_def", DB.fetch "poset" "poset_def", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_trans", DB.fetch "poset" "complete_down", DB.fetch "poset" "complete_up"] THEN
+  metisTools.METIS_TAC [pairTheory.EXISTS_PROD, pairTheory.pair_induction, pairTheory.FORALL_PROD, DB.fetch "poset" "complete_def", DB.fetch "poset" "complete_down", DB.fetch "poset" "complete_up", DB.fetch "poset" "chain_def", pairTheory.LEX_CONG, pairTheory.LEX_DEF_THM, combinTheory.UPD_SAME_KEY_UNWIND, combinTheory.UPD11_SAME_BASE, combinTheory.SAME_KEY_UPDATE_DIFFER, combinTheory.UPDATE_COMMUTES, combinTheory.UPDATE_def, combinTheory.APPLY_UPDATE_THM, combinTheory.UPD11_SAME_KEY_AND_BASE]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.273237
+
+complete_bottom
+proof length: 4
+proof time: 0.078813
+Statistics
+  infstep : 28
+  nodes   : 17
+  maxdepth: 4
+Time: 1.017529
+  inferstep time: 0.911281
+  node_find time: 0.000882
+  node_crea time: 0.093543
+    pred time: 0.038091
+    thmpred time: 0.000002
+    mc time: 0.043367
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "poset" "complete_top", DB.fetch "poset" "bottom_def", DB.fetch "poset" "complete_def", DB.fetch "poset" "complete_down", DB.fetch "poset" "complete_up", DB.fetch "poset" "poset_def", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_trans", pairTheory.ABS_REP_prod, pairTheory.prod_TY_DEF, pairTheory.ELIM_PEXISTS, pairTheory.EXISTS_PROD, pairTheory.ABS_PAIR_THM, pairTheory.PEXISTS_THM] THEN simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss ()) [relationTheory.total_def, (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "UNCURRY_DEF")] THEN
+  boolLib.REWRITE_TAC [DB.fetch "poset" "bottom_def", DB.fetch "poset" "lub_def", DB.fetch "poset" "glb_def", DB.fetch "poset" "glb_pred", DB.fetch "poset" "lub_pred", pairTheory.EXISTS_PROD, pairTheory.pair_induction, pairTheory.FORALL_PROD, DB.fetch "poset" "complete_def", DB.fetch "poset" "poset_def", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_trans", DB.fetch "poset" "complete_down", DB.fetch "poset" "complete_up"] THEN
+  metisTools.METIS_TAC [pairTheory.EXISTS_PROD, pairTheory.pair_induction, pairTheory.FORALL_PROD, DB.fetch "poset" "complete_def", DB.fetch "poset" "complete_down", DB.fetch "poset" "complete_up", DB.fetch "poset" "chain_def", pairTheory.LEX_CONG, pairTheory.LEX_DEF_THM, combinTheory.UPD_SAME_KEY_UNWIND, combinTheory.UPD11_SAME_BASE, combinTheory.SAME_KEY_UPDATE_DIFFER, combinTheory.UPDATE_COMMUTES, combinTheory.UPDATE_def, combinTheory.APPLY_UPDATE_THM, combinTheory.UPD11_SAME_KEY_AND_BASE]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.255518
+
+complete_pointwise
+Statistics
+  infstep : 785
+  nodes   : 161
+  maxdepth: 5
+Time: 10.018662
+  inferstep time: 8.600631
+  node_find time: 0.071678
+  node_crea time: 1.254315
+    pred time: 0.395681
+    thmpred time: 0.000038
+    mc time: 0.488819
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 49
+Original proof time: 0.0
+Replaying proof: 1.975458
+
+lfp_unique
+proof length: 3
+proof time: 0.028824
+Statistics
+  infstep : 20
+  nodes   : 10
+  maxdepth: 4
+Time: 0.733028
+  inferstep time: 0.666503
+  node_find time: 0.000708
+  node_crea time: 0.049701
+    pred time: 0.019883
+    thmpred time: 0.000003
+    mc time: 0.032882
+    inst time: 0.0
+Proof found: simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss ()) [relationTheory.total_def, (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "UNCURRY_DEF")] THEN boolLib.REWRITE_TAC [DB.fetch "poset" "lfp_def", pairTheory.pair_induction, pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_def", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_trans", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "complete_bottom", DB.fetch "poset" "complete_top", pairTheory.UNCURRY_CONG, pairTheory.pair_case_cong, DB.fetch "poset" "down_continuous_def", DB.fetch "poset" "gfp_def", DB.fetch "poset" "monotonic_def"] THEN
+  BasicProvers.RW_TAC boolSimps.bool_ss [(DB.fetch "poset" "glb_def")]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.171005
+
+gfp_unique
+proof length: 3
+proof time: 0.022051
+Statistics
+  infstep : 136
+  nodes   : 20
+  maxdepth: 3
+Time: 1.835433
+  inferstep time: 1.674955
+  node_find time: 0.0054
+  node_crea time: 0.127575
+    pred time: 0.051711
+    thmpred time: 0.000005
+    mc time: 0.054346
+    inst time: 0.0
+Proof found: simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss ()) [relationTheory.total_def, (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "UNCURRY_DEF")] THEN boolLib.REWRITE_TAC [DB.fetch "poset" "gfp_def", DB.fetch "poset" "lfp_unique", pairTheory.pair_induction, pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "poset" "poset_def", DB.fetch "poset" "poset_antisym", DB.fetch "poset" "poset_refl", DB.fetch "poset" "poset_trans", DB.fetch "poset" "poset_nonempty", DB.fetch "poset" "complete_bottom", DB.fetch "poset" "complete_top", DB.fetch "poset" "lfp_def", pairTheory.UNCURRY_CONG, pairTheory.pair_case_cong, DB.fetch "poset" "down_continuous_def"] THEN
+  BasicProvers.RW_TAC boolSimps.bool_ss [(DB.fetch "poset" "glb_def")]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.161168
+
+knaster_tarski_lfp
+Statistics
+  infstep : 635
+  nodes   : 203
+  maxdepth: 6
+Time: 10.003893
+  inferstep time: 8.451244
+  node_find time: 0.063646
+  node_crea time: 1.366658
+    pred time: 0.347937
+    thmpred time: 0.000025
+    mc time: 0.564698
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 42
+Original proof time: 0.0
+Replaying proof: 1.422277
+
+knaster_tarski_gfp
+Statistics
+  infstep : 439
+  nodes   : 175
+  maxdepth: 7
+Time: 10.033572
+  inferstep time: 8.470019
+  node_find time: 0.047551
+  node_crea time: 1.345065
+    pred time: 0.342487
+    thmpred time: 0.000031
+    mc time: 0.639625
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 42
+Original proof time: 0.0
+Replaying proof: 1.422972
+
+knaster_tarski
+proof length: 3
+proof time: 0.011145
+Statistics
+  infstep : 83
+  nodes   : 41
+  maxdepth: 4
+Time: 3.122816
+  inferstep time: 2.651585
+  node_find time: 0.006334
+  node_crea time: 0.387731
+    pred time: 0.137915
+    thmpred time: 0.00001
+    mc time: 0.187709
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC boolSimps.bool_ss [(DB.fetch "poset" "poset_def"), (DB.fetch "poset" "lfp_def")] THENL [BasicProvers.RW_TAC boolSimps.bool_ss [DB.fetch "poset" "knaster_tarski_lfp", DB.fetch "poset" "lfp_unique", DB.fetch "poset" "lfp_def", relationTheory.tactictoe_thm_24, relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1, relationTheory.tactictoe_thm_2, relationTheory.tactictoe_thm_3, relationTheory.tactictoe_thm_4, relationTheory.tactictoe_thm_6, relationTheory.tactictoe_thm_7, relationTheory.tactictoe_thm_9, relationTheory.tactictoe_thm_5, relationTheory.tactictoe_thm_8, DB.fetch "poset" "knaster_tarski_gfp", DB.fetch "poset" "complete_def"], BasicProvers.RW_TAC boolSimps.bool_ss [DB.fetch "poset" "knaster_tarski_gfp", DB.fetch "poset" "gfp_unique", DB.fetch "poset" "gfp_def", relationTheory.tactictoe_thm_24, relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1, relationTheory.tactictoe_thm_2, relationTheory.tactictoe_thm_3, relationTheory.tactictoe_thm_4, relationTheory.tactictoe_thm_6, relationTheory.tactictoe_thm_7, relationTheory.tactictoe_thm_9, relationTheory.tactictoe_thm_5, relationTheory.tactictoe_thm_8, DB.fetch "poset" "knaster_tarski_lfp", DB.fetch "poset" "complete_def"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.027615
+Bad stac: 0

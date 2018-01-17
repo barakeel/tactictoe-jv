@@ -1,0 +1,375 @@
+Replaying proof: 0.068585
+
+numeral_imod_2exp
+Statistics
+  infstep : 682
+  nodes   : 176
+  maxdepth: 6
+Time: 10.008516
+  inferstep time: 7.191788
+  node_find time: 0.051687
+  node_crea time: 2.497593
+    pred time: 0.574715
+    thmpred time: 0.000023
+    mc time: 1.693733
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.179467
+Replaying proof: 0.007019
+
+numeral_mod2
+proof length: 7
+proof time: 0.00775
+Statistics
+  infstep : 670
+  nodes   : 140
+  maxdepth: 5
+Time: 7.179689
+  inferstep time: 5.349445
+  node_find time: 0.042595
+  node_crea time: 1.598344
+    pred time: 0.249449
+    thmpred time: 0.00001
+    mc time: 1.291164
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "numeral" "texp_help0"), arithmeticTheory.EXP, arithmeticTheory.ALT_ZERO] THENL [simpLib.SIMP_TAC boolSimps.bool_ss [arithmeticTheory.NUMERAL_DEF, arithmeticTheory.GREATER_DEF, (DB.fetch "numeral" "iZ"), arithmeticTheory.GREATER_OR_EQ, arithmeticTheory.LESS_OR_EQ, boolLib.EQ_IMP_THM, boolLib.DISJ_IMP_THM, arithmeticTheory.ADD_CLAUSES, arithmeticTheory.ALT_ZERO, arithmeticTheory.MULT_CLAUSES, arithmeticTheory.EXP, prim_recTheory.PRE, prim_recTheory.NOT_LESS_0, arithmeticTheory.SUB_0, arithmeticTheory.BIT1, arithmeticTheory.BIT2, arithmeticTheory.ODD, arithmeticTheory.EVEN] THEN
+  boolLib.REWRITE_TAC [arithmeticTheory.DIV2_def, arithmeticTheory.ADD_ASSOC, boolLib.GSYM arithmeticTheory.TIMES2] THEN
+  BasicProvers.SRW_TAC [] [simpLib.AC (DB.fetch "arithmetic" "MULT_COMM") (DB.fetch "arithmetic" "MULT_ASSOC")], simpLib.SIMP_TAC BasicProvers.bool_ss [(DB.fetch "arithmetic" "NUMERAL_DEF"), (DB.fetch "arithmetic" "BIT1"), (DB.fetch "arithmetic" "BIT2"), (DB.fetch "arithmetic" "ALT_ZERO"), (DB.fetch "arithmetic" "ADD_CLAUSES"), (DB.fetch "arithmetic" "SUB_MONO_EQ"), (DB.fetch "arithmetic" "SUB_0")] THEN
+  boolLib.REWRITE_TAC [arithmeticTheory.DIV2_def, arithmeticTheory.ADD_ASSOC, boolLib.GSYM arithmeticTheory.TIMES2] THEN
+  BasicProvers.SRW_TAC [] [simpLib.AC (DB.fetch "arithmetic" "MULT_COMM") (DB.fetch "arithmetic" "MULT_ASSOC")]]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.294236
+
+iDUB_NUMERAL
+proof length: 1
+proof time: 0.107425
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.122873
+  inferstep time: 0.104295
+  node_find time: 0.000046
+  node_crea time: 0.012762
+    pred time: 0.002997
+    thmpred time: 0.0
+    mc time: 0.014231
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [numeralTheory.iDUB , numeralTheory.iDUB_removal , numeralTheory.iSUB_DEF , numeralTheory.iSUB_THM , arithmeticTheory.NUMERAL_DEF , arithmeticTheory.NUMERAL_MULT_EQ_DIV , logrootTheory.numeral_root2 , numeralTheory.numeral_MAX , numeralTheory.numeral_MIN , numeralTheory.numeral_distrib , numeralTheory.numeral_div2 , DB.fetch "numeral_bit" "MOD_2EXP" , DB.fetch "numeral_bit" "numeral_imod_2exp" , arithmeticTheory.MODEQ_NUMERAL , DB.fetch "numeral_bit" "tactictoe_thm_14" , DB.fetch "numeral_bit" "tactictoe_thm_16"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.002512
+Replaying proof: 0.009148
+Replaying proof: 0.001955
+Replaying proof: 0.002571
+Replaying proof: 0.032366
+Replaying proof: 0.003061
+Replaying proof: 0.011037
+Replaying proof: 0.004209
+
+NUMERAL_BITWISE
+proof length: 5
+proof time: 0.167839
+Statistics
+  infstep : 332
+  nodes   : 56
+  maxdepth: 5
+Time: 3.319205
+  inferstep time: 2.639464
+  node_find time: 0.01537
+  node_crea time: 0.588573
+    pred time: 0.153418
+    thmpred time: 0.000009
+    mc time: 0.31875
+    inst time: 0.0
+Proof found: BasicProvers.RW_TAC boolSimps.bool_ss [arithmeticTheory.ALT_ZERO, arithmeticTheory.NUMERAL_DEF, arithmeticTheory.BIT1, arithmeticTheory.BIT2] THENL [metisTools.METIS_TAC [DB.fetch "numeral_bit" "iBITWISE_def", DB.fetch "numeral_bit" "iBITWISE", bitTheory.BITWISE_def, bitTheory.BITWISE_NOT_COR, bitTheory.BITWISE_EVAL, bitTheory.tactictoe_thm_45, bitTheory.tactictoe_thm_47, bitTheory.tactictoe_thm_48, bitTheory.tactictoe_thm_43, bitTheory.BITWISE_THM, bitTheory.BITWISE_COR, bitTheory.BITWISE_LT_2EXP, bitTheory.NOT_BIT_GT_BITWISE, bitTheory.BITWISE_ONE_COMP_LEM, bitTheory.BITWISE_BITS, bitTheory.tactictoe_thm_38], metisTools.METIS_TAC [DB.fetch "numeral_bit" "iBITWISE_def", DB.fetch "numeral_bit" "iBITWISE", bitTheory.BITWISE_NOT_COR, bitTheory.tactictoe_thm_45, bitTheory.tactictoe_thm_47, bitTheory.tactictoe_thm_48, bitTheory.tactictoe_thm_43, bitTheory.BITWISE_THM, bitTheory.BITWISE_COR, bitTheory.BITWISE_LT_2EXP, bitTheory.NOT_BIT_GT_BITWISE, bitTheory.BITWISE_def, bitTheory.BITWISE_EVAL, bitTheory.BITWISE_ONE_COMP_LEM, bitTheory.BITWISE_BITS, bitTheory.tactictoe_thm_38], metisTools.METIS_TAC [DB.fetch "numeral_bit" "iBITWISE_def", DB.fetch "numeral_bit" "iBITWISE", bitTheory.BITWISE_NOT_COR, bitTheory.BITWISE_EVAL, bitTheory.tactictoe_thm_45, bitTheory.tactictoe_thm_47, bitTheory.tactictoe_thm_48, bitTheory.tactictoe_thm_43, bitTheory.BITWISE_THM, bitTheory.BITWISE_COR, bitTheory.BITWISE_LT_2EXP, bitTheory.NOT_BIT_GT_BITWISE, bitTheory.BITWISE_def, bitTheory.BITWISE_ONE_COMP_LEM, bitTheory.BITWISE_BITS, bitTheory.tactictoe_thm_38], metisTools.METIS_TAC [DB.fetch "numeral_bit" "iBITWISE_def", DB.fetch "numeral_bit" "iBITWISE", bitTheory.BITWISE_NOT_COR, bitTheory.BITWISE_THM, bitTheory.BITWISE_COR, bitTheory.tactictoe_thm_45, bitTheory.tactictoe_thm_47, bitTheory.tactictoe_thm_48, bitTheory.tactictoe_thm_43, bitTheory.BITWISE_LT_2EXP, bitTheory.NOT_BIT_GT_BITWISE, bitTheory.BITWISE_def, bitTheory.BITWISE_EVAL, bitTheory.BITWISE_ONE_COMP_LEM, bitTheory.tactictoe_thm_38, bitTheory.tactictoe_thm_32]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003153
+Replaying proof: 0.007434
+
+NUMERAL_BIT_REVERSE
+proof length: 2
+proof time: 0.000819
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.272151
+  inferstep time: 0.219186
+  node_find time: 0.000176
+  node_crea time: 0.039848
+    pred time: 0.011629
+    thmpred time: 0.000001
+    mc time: 0.033795
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "numeral_bit" "BIT_REVERSE_EVAL", DB.fetch "numeral_bit" "NUMERAL_BIT_REV", bitTheory.BIT_REVERSE_def, DB.fetch "numeral_bit" "BIT_REV_def", bitTheory.BIT_REVERSE_THM, numeralTheory.numeral_distrib, logrootTheory.numeral_root2, arithmeticTheory.MODEQ_NUMERAL, numeralTheory.numeral_div2, DB.fetch "numeral_bit" "MOD_2EXP", DB.fetch "numeral_bit" "NUMERAL_BITWISE", arithmeticTheory.NUMERAL_MULT_EQ_DIV, numeralTheory.numeral_MAX, numeralTheory.numeral_MIN, arithmeticTheory.NUMERAL_DEF, DB.fetch "numeral_bit" "iDUB_NUMERAL"] THEN simpLib.SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "arithmetic" "MODEQ_NONZERO_MODEQUALITY"), (DB.fetch "arithmetic" "BIT1"), (DB.fetch "arithmetic" "BIT2"), (DB.fetch "arithmetic" "ADD_CLAUSES"), (DB.fetch "arithmetic" "ALT_ZERO"), (DB.fetch "arithmetic" "NUMERAL_DEF"), (DB.fetch "arithmetic" "MOD_MOD"), prim_recTheory.LESS_0]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006126
+Replaying proof: 0.008716
+
+NUMERAL_BIT_MODIFY
+proof length: 1
+proof time: 0.000346
+Statistics
+  infstep : 9
+  nodes   : 2
+  maxdepth: 1
+Time: 0.134839
+  inferstep time: 0.113795
+  node_find time: 0.000277
+  node_crea time: 0.012773
+    pred time: 0.003053
+    thmpred time: 0.0
+    mc time: 0.015047
+    inst time: 0.0
+Proof found: (boolLib.REWRITE_TAC [ DB.fetch "numeral_bit" "BIT_MODIFY_EVAL" , DB.fetch "numeral_bit" "NUMERAL_BIT_MODF" , DB.fetch "numeral_bit" "BIT_MODF_def" , bitTheory.tactictoe_thm_52 , bitTheory.tactictoe_thm_53 , bitTheory.BIT_MODIFY_def , bitTheory.BIT_MODIFY_THM , bitTheory.tactictoe_thm_54 , numeralTheory.numeral_distrib , DB.fetch "numeral_bit" "NUMERAL_BIT_REV" , arithmeticTheory.MODEQ_NUMERAL , numeralTheory.numeral_div2 , arithmeticTheory.NUMERAL_MULT_EQ_DIV , DB.fetch "numeral_bit" "NUMERAL_BITWISE" , DB.fetch "numeral_bit" "NUMERAL_BIT_REVERSE" , logrootTheory.numeral_root2 ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007897
+Replaying proof: 0.000158
+Replaying proof: 0.000103
+Replaying proof: 0.010331
+Replaying proof: 0.002026
+Replaying proof: 0.000824
+
+NUMERAL_TIMES_2EXP
+Statistics
+  infstep : 829
+  nodes   : 171
+  maxdepth: 6
+Time: 10.091778
+  inferstep time: 7.649524
+  node_find time: 0.073918
+  node_crea time: 2.107524
+    pred time: 0.466476
+    thmpred time: 0.000024
+    mc time: 1.513382
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.21633
+
+NUMERAL_iDIV2
+proof length: 3
+proof time: 0.100563
+Statistics
+  infstep : 28
+  nodes   : 15
+  maxdepth: 3
+Time: 1.115524
+  inferstep time: 0.870447
+  node_find time: 0.00123
+  node_crea time: 0.184315
+    pred time: 0.076423
+    thmpred time: 0.000002
+    mc time: 0.132102
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "numeral_bit" "iSUC", DB.fetch "numeral_bit" "iDIV2", numeralTheory.numeral_distrib, numeralTheory.numeral_div2, arithmeticTheory.SUC_ELIM_NUMERALS, logrootTheory.numeral_sqrt, DB.fetch "numeral_bit" "numeral_imod_2exp", numeralTheory.numeral_suc, numeralTheory.numeral_add, numeralTheory.onecount_def, DB.fetch "numeral_bit" "tactictoe_thm_14", DB.fetch "numeral_bit" "tactictoe_thm_16", numeralTheory.numeral_iisuc, numeralTheory.texp_help_def, arithmeticTheory.EXP_SUB_NUMERAL, numeralTheory.TWO_EXP_THM] THEN BasicProvers.SRW_TAC [] [boolLib.REWRITE_RULE [arithmeticTheory.NUMERAL_DEF] (DB.fetch "numeral" "numeral_div2")] THEN
+  metisTools.METIS_TAC [arithmeticTheory.DIV2_def, numeralTheory.enumeral_mult, DB.fetch "numeral_bit" "NUMERAL_BIT_MODF", DB.fetch "numeral_bit" "NUMERAL_BIT_REV", DB.fetch "numeral_bit" "iBITWISE", DB.fetch "numeral_bit" "iDIV2", numeralTheory.numeral_div2, numeralTheory.DIV2_BIT1, numeralTheory.numeral_distrib, arithmeticTheory.ALT_ZERO, arithmeticTheory.EXP, arithmeticTheory.MULT_CLAUSES, arithmeticTheory.TIMES2, arithmeticTheory.DIVMOD_ID, numeralTheory.numeral_suc, numeralTheory.numeral_lt]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.240407
+
+NUMERAL_DIV_2EXP
+Statistics
+  infstep : 1307
+  nodes   : 231
+  maxdepth: 6
+Time: 10.034977
+  inferstep time: 7.218262
+  node_find time: 0.143934
+  node_crea time: 2.347729
+    pred time: 0.365295
+    thmpred time: 0.000031
+    mc time: 1.76676
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.312226
+Replaying proof: 0.000574
+Replaying proof: 0.000413
+
+FDUB_iDIV2
+proof length: 1
+proof time: 0.072825
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.093763
+  inferstep time: 0.079117
+  node_find time: 0.000051
+  node_crea time: 0.010103
+    pred time: 0.002824
+    thmpred time: 0.0
+    mc time: 0.010152
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_iDIV2" , DB.fetch "numeral_bit" "NUMERAL_DIV_2EXP" , DB.fetch "numeral_bit" "NUMERAL_iDIV2" , DB.fetch "numeral_bit" "iDIV2" , DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_FDUB" , DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_iDUB" , DB.fetch "numeral_bit" "tactictoe_thm_25" , DB.fetch "numeral_bit" "tactictoe_thm_26" , DB.fetch "numeral_bit" "tactictoe_thm_27" , DB.fetch "numeral_bit" "tactictoe_thm_29" , DB.fetch "numeral_bit" "tactictoe_thm_30" , DB.fetch "numeral_bit" "FDUB_def" , arithmeticTheory.NUMERAL_DEF , DB.fetch "numeral_bit" "SFUNPOW_def" , arithmeticTheory.DIV_DIV_DIV_MULT , bitTheory.DIV_2EXP_def])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.037532
+
+FDUB_iDUB
+proof length: 1
+proof time: 0.00324
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.15446
+  inferstep time: 0.140376
+  node_find time: 0.00013
+  node_crea time: 0.009595
+    pred time: 0.002781
+    thmpred time: 0.0
+    mc time: 0.009343
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_iDUB" , numeralTheory.iDUB , numeralTheory.iSUB_DEF , numeralTheory.iSUB_THM , DB.fetch "numeral_bit" "NUMERAL_BIT_MODF" , DB.fetch "numeral_bit" "NUMERAL_BIT_REV" , DB.fetch "numeral_bit" "iBITWISE" , numeralTheory.iDUB_removal , DB.fetch "numeral_bit" "iDUB_NUMERAL" , DB.fetch "numeral_bit" "FDUB_iDIV2" , DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_FDUB" , DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_iDIV2" , DB.fetch "numeral_bit" "tactictoe_thm_25" , DB.fetch "numeral_bit" "tactictoe_thm_26" , DB.fetch "numeral_bit" "tactictoe_thm_27" , DB.fetch "numeral_bit" "tactictoe_thm_29" ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.027346
+
+FDUB_FDUB
+proof length: 2
+proof time: 0.000722
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.28821
+  inferstep time: 0.225537
+  node_find time: 0.000257
+  node_crea time: 0.037294
+    pred time: 0.009482
+    thmpred time: 0.000002
+    mc time: 0.045548
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [arithmeticTheory.ALT_ZERO, arithmeticTheory.BIT1, arithmeticTheory.BIT2, (DB.fetch "numeral_bit" "iDIV2"), (DB.fetch "numeral_bit" "iSUC"), arithmeticTheory.ADD_CLAUSES] THEN boolLib.REWRITE_TAC [DB.fetch "numeral_bit" "FDUB_def", DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_FDUB", DB.fetch "numeral_bit" "tactictoe_thm_30", DB.fetch "numeral_bit" "tactictoe_thm_27", DB.fetch "numeral_bit" "tactictoe_thm_29", DB.fetch "numeral_bit" "tactictoe_thm_25", DB.fetch "numeral_bit" "tactictoe_thm_26", numeralTheory.tactictoe_thm_2, numeralTheory.tactictoe_thm_3, DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_iDIV2", DB.fetch "numeral_bit" "NUMERAL_SFUNPOW_iDUB", DB.fetch "numeral_bit" "FDUB_iDIV2", DB.fetch "numeral_bit" "FDUB_iDUB", arithmeticTheory.ADD, arithmeticTheory.ADD_CLAUSES, numeralTheory.numeral_add]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005225
+
+LOG_compute
+proof length: 5
+proof time: 0.043123
+Statistics
+  infstep : 76
+  nodes   : 30
+  maxdepth: 4
+Time: 2.227874
+  inferstep time: 1.775908
+  node_find time: 0.004311
+  node_crea time: 0.368916
+    pred time: 0.092428
+    thmpred time: 0.000009
+    mc time: 0.275797
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [logrootTheory.LOG_RWT, logrootTheory.LOG_DIV, arithmeticTheory.SUB, combinTheory.FAIL_DEF, combinTheory.FAIL_THM, logrootTheory.LOG_ROOT, logrootTheory.LOG_add_digit, logrootTheory.LOG_EQ_0, logrootTheory.LOG, logrootTheory.LOG_UNIQUE, logrootTheory.LOG_MULT, logrootTheory.LOG_EXP, logrootTheory.LOG_LE_MONO, logrootTheory.LOG_BASE, arithmeticTheory.findq_def, arithmeticTheory.findq_thm] THENL [simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss () hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss) [(DB.fetch "logroot" "LOG_RWT"), boolSimps.SimpLHS], boolLib.CCONTR_TAC THEN
+  boolLib.POP_ASSUM boolLib.MP_TAC THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [(DB.fetch "logroot" "LOG_DIV"), arithmeticTheory.ADD1, (DB.fetch "logroot" "LOG_UNIQUE"), arithmeticTheory.EXP]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014544
+
+numeral_ilog2
+Statistics
+  infstep : 698
+  nodes   : 166
+  maxdepth: 7
+Time: 10.026701
+  inferstep time: 7.402814
+  node_find time: 0.071914
+  node_crea time: 2.409332
+    pred time: 0.583289
+    thmpred time: 0.000033
+    mc time: 1.414167
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.302405
+
+numeral_log2
+proof length: 4
+proof time: 0.174422
+Statistics
+  infstep : 53
+  nodes   : 24
+  maxdepth: 4
+Time: 1.888062
+  inferstep time: 1.587625
+  node_find time: 0.003242
+  node_crea time: 0.24335
+    pred time: 0.072145
+    thmpred time: 0.000008
+    mc time: 0.182933
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC boolSimps.bool_ss [(DB.fetch "numeral" "iDUB"), arithmeticTheory.BIT2, arithmeticTheory.BIT1, arithmeticTheory.PRE_SUB1, arithmeticTheory.ADD_CLAUSES, arithmeticTheory.ALT_ZERO] THEN BasicProvers.RW_TAC BasicProvers.bool_ss [arithmeticTheory.ALT_ZERO, arithmeticTheory.NUMERAL_DEF, arithmeticTheory.BIT1, arithmeticTheory.BIT2, (DB.fetch "numeral_bit" "iLOG2_def")] THENL
+  [metisTools.METIS_TAC [arithmeticTheory.ADD_ASSOC, numeralTheory.numeral_distrib, arithmeticTheory.ADD_CLAUSES, arithmeticTheory.ADD, DB.fetch "numeral_bit" "iLOG2_def", bitTheory.LOG2_UNIQUE, bitTheory.LT_TWOEXP, bitTheory.BITS_LOG2_ZERO_ID, bitTheory.BIT_LOG2, DB.fetch "numeral_bit" "tactictoe_thm_35", bitTheory.TWOEXP_LE_IMP_LE_LOG2, bitTheory.LOG2_LE_MONO, bitTheory.LOG2_TWOEXP, bitTheory.NOT_BIT_GT_LOG2, bitTheory.LOG2_def, arithmeticTheory.BIT1],
+  metisTools.METIS_TAC [numeralTheory.numeral_distrib, arithmeticTheory.ADD_CLAUSES, arithmeticTheory.ADD, numeralTheory.tactictoe_thm_2, numeralTheory.tactictoe_thm_3, DB.fetch "numeral_bit" "iLOG2_def", bitTheory.LOG2_UNIQUE, bitTheory.LT_TWOEXP, bitTheory.BITS_LOG2_ZERO_ID, bitTheory.BIT_LOG2, DB.fetch "numeral_bit" "tactictoe_thm_35", bitTheory.TWOEXP_LE_IMP_LE_LOG2, bitTheory.LOG2_LE_MONO, bitTheory.LOG2_TWOEXP, bitTheory.NOT_BIT_GT_LOG2, bitTheory.LOG2_def]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.037912
+
+MOD_2EXP_EQ
+Statistics
+  infstep : 668
+  nodes   : 201
+  maxdepth: 7
+Time: 10.022887
+  inferstep time: 7.42415
+  node_find time: 0.100044
+  node_crea time: 2.365115
+    pred time: 0.652314
+    thmpred time: 0.00004
+    mc time: 1.006429
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.350351
+Replaying proof: 0.000258
+
+MOD_2EXP_MAX
+Statistics
+  infstep : 556
+  nodes   : 167
+  maxdepth: 6
+Time: 10.012544
+  inferstep time: 6.610723
+  node_find time: 0.086458
+  node_crea time: 3.104584
+    pred time: 0.615486
+    thmpred time: 0.00002
+    mc time: 2.061662
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.294661
+
+LOWEST_SET_BIT
+Statistics
+  infstep : 502
+  nodes   : 177
+  maxdepth: 6
+Time: 10.068863
+  inferstep time: 7.680163
+  node_find time: 0.064393
+  node_crea time: 2.167394
+    pred time: 0.544414
+    thmpred time: 0.000021
+    mc time: 1.175304
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.566795
+Bad stac: 0

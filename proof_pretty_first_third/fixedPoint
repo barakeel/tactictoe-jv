@@ -1,0 +1,307 @@
+
+lfp_least_closed
+Statistics
+  infstep : 458
+  nodes   : 87
+  maxdepth: 5
+Time: 10.130762
+  inferstep time: 8.481458
+  node_find time: 0.059823
+  node_crea time: 1.509369
+    pred time: 0.400706
+    thmpred time: 0.000026
+    mc time: 0.697686
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.623426
+
+gfp_greatest_dense
+Statistics
+  infstep : 399
+  nodes   : 144
+  maxdepth: 6
+Time: 10.024776
+  inferstep time: 7.557608
+  node_find time: 0.068435
+  node_crea time: 2.304088
+    pred time: 0.470197
+    thmpred time: 0.000045
+    mc time: 1.207754
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.575462
+
+lfp_fixedpoint
+Statistics
+  infstep : 471
+  nodes   : 112
+  maxdepth: 5
+Time: 10.010624
+  inferstep time: 7.544717
+  node_find time: 0.072463
+  node_crea time: 2.185169
+    pred time: 0.460711
+    thmpred time: 0.000025
+    mc time: 1.210964
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.659001
+
+gfp_greatest_fixedpoint
+Statistics
+  infstep : 734
+  nodes   : 143
+  maxdepth: 6
+Time: 10.052968
+  inferstep time: 7.526955
+  node_find time: 0.134551
+  node_crea time: 2.209389
+    pred time: 0.40185
+    thmpred time: 0.000026
+    mc time: 1.204256
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.629087
+
+lfp_induction
+proof length: 1
+proof time: 0.003922
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.090526
+  inferstep time: 0.070558
+  node_find time: 0.000153
+  node_crea time: 0.010186
+    pred time: 0.002545
+    thmpred time: 0.0
+    mc time: 0.011529
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "fixedPoint" "lfp_least_closed", fetch "fixedPoint" "closed_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013777
+
+gfp_coinduction
+proof length: 1
+proof time: 0.005202
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.123187
+  inferstep time: 0.102104
+  node_find time: 0.000208
+  node_crea time: 0.014795
+    pred time: 0.00413
+    thmpred time: 0.0
+    mc time: 0.013756
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "fixedPoint" "gfp_greatest_dense", fetch "fixedPoint" "dense_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.02067
+
+tactictoe_prove_6
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.020259
+
+tactictoe_prove_7
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016909
+
+fnsum_monotone
+Statistics
+  infstep : 491
+  nodes   : 124
+  maxdepth: 5
+Time: 10.015325
+  inferstep time: 7.388461
+  node_find time: 0.084473
+  node_crea time: 2.332027
+    pred time: 0.493557
+    thmpred time: 0.000032
+    mc time: 1.054063
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.353254
+
+empty_monotone
+proof length: 1
+proof time: 0.001067
+Statistics
+  infstep : 4
+  nodes   : 2
+  maxdepth: 1
+Time: 0.177878
+  inferstep time: 0.158831
+  node_find time: 0.000602
+  node_crea time: 0.012592
+    pred time: 0.00361
+    thmpred time: 0.000001
+    mc time: 0.011173
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "fixedPoint" "empty_def", fetch "fixedPoint" "monotone_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00917
+
+fnsum_empty
+proof length: 5
+proof time: 0.011555
+Statistics
+  infstep : 659
+  nodes   : 123
+  maxdepth: 5
+Time: 8.96362
+  inferstep time: 6.746052
+  node_find time: 0.138854
+  node_crea time: 1.724125
+    pred time: 0.37911
+    thmpred time: 0.000027
+    mc time: 0.990236
+    inst time: 0.0
+Proof found: SRW_TAC [] [FUN_EQ_THM] THEN
+  REWRITE_TAC [fetch "fixedPoint" "fnsum_def", fetch "fixedPoint" "empty_def"] THEN
+  metisTools.METIS_TAC [UNION_EMPTY]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017452
+
+fnsum_ASSOC
+proof length: 2
+proof time: 0.012966
+Statistics
+  infstep : 30
+  nodes   : 5
+  maxdepth: 2
+Time: 0.437695
+  inferstep time: 0.335819
+  node_find time: 0.004101
+  node_crea time: 0.077902
+    pred time: 0.033973
+    thmpred time: 0.0
+    mc time: 0.035645
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "fixedPoint" "fnsum_def"), FUN_EQ_THM] THEN
+  metisLib.METIS_TAC []
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.060655
+
+fnsum_COMM
+proof length: 2
+proof time: 0.00728
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.394047
+  inferstep time: 0.344458
+  node_find time: 0.001037
+  node_crea time: 0.03484
+    pred time: 0.011117
+    thmpred time: 0.000002
+    mc time: 0.028087
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "fixedPoint" "fnsum_def"), FUN_EQ_THM] THEN
+  metisLib.METIS_TAC []
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.103104
+
+fnsum_SUBSET
+proof length: 1
+proof time: 0.003465
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.482406
+  inferstep time: 0.393117
+  node_find time: 0.001011
+  node_crea time: 0.072918
+    pred time: 0.02281
+    thmpred time: 0.000002
+    mc time: 0.052435
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "fixedPoint" "fnsum_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019353
+
+lfp_fnsum
+proof length: 7
+proof time: 0.014335
+Statistics
+  infstep : 152
+  nodes   : 41
+  maxdepth: 4
+Time: 4.365272
+  inferstep time: 3.626667
+  node_find time: 0.02764
+  node_crea time: 0.580191
+    pred time: 0.144204
+    thmpred time: 0.000011
+    mc time: 0.312037
+    inst time: 0.0
+Proof found: REPEAT STRIP_TAC THEN
+  REWRITE_TAC [(fetch "fixedPoint" "lfp_def")] THEN
+  ONCE_REWRITE_TAC [SUBSET_DEF] THEN
+  FULL_SIMP_TAC (srw_ss ()) [fetch "fixedPoint" "fnsum_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.024906
+
+lfp_rule_applied
+proof length: 2
+proof time: 0.003794
+Statistics
+  infstep : 14
+  nodes   : 7
+  maxdepth: 2
+Time: 0.711116
+  inferstep time: 0.587231
+  node_find time: 0.002432
+  node_crea time: 0.099005
+    pred time: 0.028294
+    thmpred time: 0.000001
+    mc time: 0.061867
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "fixedPoint" "lfp_def", fetch "fixedPoint" "monotone_def", SUBSET_BIGINTER] THEN
+  PROVE_TAC [SUBSET_DEF]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.118113
+
+lfp_empty
+Statistics
+  infstep : 372
+  nodes   : 78
+  maxdepth: 5
+Time: 10.098277
+  inferstep time: 8.445526
+  node_find time: 0.091163
+  node_crea time: 1.371528
+    pred time: 0.35018
+    thmpred time: 0.00003
+    mc time: 0.638866
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025717
+Bad stac: 24

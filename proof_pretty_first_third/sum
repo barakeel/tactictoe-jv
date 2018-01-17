@@ -1,0 +1,433 @@
+
+tactictoe_prove_0
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.153025
+
+tactictoe_prove_1
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.068904
+
+tactictoe_prove_2
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.115864
+
+INL_11
+proof length: 3
+proof time: 0.009121
+Statistics
+  infstep : 40
+  nodes   : 8
+  maxdepth: 2
+Time: 0.991475
+  inferstep time: 0.945666
+  node_find time: 0.002154
+  node_crea time: 0.027534
+    pred time: 0.012137
+    thmpred time: 0.000005
+    mc time: 0.010035
+    inst time: 0.0
+Proof found: EQ_TAC THENL
+  [metisTools.METIS_TAC [REP_INL],
+  metisTools.METIS_TAC []]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.165516
+
+INR_11
+proof length: 3
+proof time: 0.010241
+Statistics
+  infstep : 15
+  nodes   : 6
+  maxdepth: 2
+Time: 0.721633
+  inferstep time: 0.700564
+  node_find time: 0.000736
+  node_crea time: 0.015527
+    pred time: 0.006912
+    thmpred time: 0.000003
+    mc time: 0.006922
+    inst time: 0.0
+Proof found: EQ_TAC THENL
+  [metisTools.METIS_TAC [fetch "sum" "INR_DEF", REP_INR],
+  metisTools.METIS_TAC []]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.205306
+
+INR_neq_INL
+proof length: 1
+proof time: 0.014121
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.063096
+  inferstep time: 0.058785
+  node_find time: 0.000048
+  node_crea time: 0.003165
+    pred time: 0.001048
+    thmpred time: 0.000001
+    mc time: 0.00184
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [REP_INR, REP_INL]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.103076
+
+sum_axiom
+Statistics
+  infstep : 749
+  nodes   : 100
+  maxdepth: 4
+Time: 10.000268
+  inferstep time: 7.086835
+  node_find time: 0.096523
+  node_crea time: 0.435064
+    pred time: 0.117694
+    thmpred time: 0.000015
+    mc time: 0.165498
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.369665
+
+tactictoe_prove_7
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.028316
+
+FORALL_SUM
+proof length: 3
+proof time: 0.009546
+Statistics
+  infstep : 71
+  nodes   : 12
+  maxdepth: 3
+Time: 1.303997
+  inferstep time: 1.176481
+  node_find time: 0.012691
+  node_crea time: 0.082347
+    pred time: 0.025194
+    thmpred time: 0.000003
+    mc time: 0.031855
+    inst time: 0.0
+Proof found: EQ_TAC THEN
+  metisTools.METIS_TAC [fetch "sum" "sum_INDUCT"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.082589
+
+sum_Axiom
+proof length: 3
+proof time: 0.002256
+Statistics
+  infstep : 41
+  nodes   : 8
+  maxdepth: 3
+Time: 0.73262
+  inferstep time: 0.662022
+  node_find time: 0.007991
+  node_crea time: 0.037914
+    pred time: 0.011704
+    thmpred time: 0.000001
+    mc time: 0.018866
+    inst time: 0.0
+Proof found: REPEAT (FILTER_STRIP_TAC (-- [QUOTE " (*#loc 1 3367*)x:('a,'b)sum->'c"] --)) THEN
+  EXISTS_TAC (-- [QUOTE " (*#loc 1 3411*)\\(x:('a,'b)sum). if (?v1. x = INL v1)                                  then f(@v1.x = INL v1)                                  else g(@v2.x = INR v2):'c"] --) THEN
+  SIMP_TAC bool_ss [(fetch "sum" "INL_11"), (fetch "sum" "INR_11"), (fetch "sum" "INR_neq_INL")]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.123109
+
+sum_distinct
+proof length: 1
+proof time: 0.010018
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.07633
+  inferstep time: 0.070228
+  node_find time: 0.000189
+  node_crea time: 0.004351
+    pred time: 0.001571
+    thmpred time: 0.000001
+    mc time: 0.002173
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [REP_INR, REP_INL]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.112771
+
+tactictoe_prove_11
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.077076
+
+tactictoe_prove_12
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.066731
+
+tactictoe_prove_13
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.071964
+
+tactictoe_prove_14
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06246
+
+ISL_OR_ISR
+proof length: 3
+proof time: 0.02207
+Statistics
+  infstep : 6
+  nodes   : 5
+  maxdepth: 2
+Time: 0.330671
+  inferstep time: 0.308959
+  node_find time: 0.001083
+  node_crea time: 0.014324
+    pred time: 0.005794
+    thmpred time: 0.000001
+    mc time: 0.006905
+    inst time: 0.0
+Proof found: ASM_CASES_TAC (Term [QUOTE " (*#loc 1 6016*)a = b"]) THEN
+  metisTools.METIS_TAC [fetch "sum" "ISL", fetch "sum" "ISR", fetch "sum" "sum_CASES"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.07481
+
+INL
+proof length: 1
+proof time: 0.010805
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.08961
+  inferstep time: 0.080285
+  node_find time: 0.000205
+  node_crea time: 0.005456
+    pred time: 0.001708
+    thmpred time: 0.0
+    mc time: 0.004709
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "sum" "OUTL", fetch "sum" "ISL", fetch "sum" "sum_CASES"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.065911
+
+INR
+proof length: 5
+proof time: 0.123607
+Statistics
+  infstep : 12
+  nodes   : 7
+  maxdepth: 3
+Time: 0.547237
+  inferstep time: 0.502813
+  node_find time: 0.002497
+  node_crea time: 0.026886
+    pred time: 0.010425
+    thmpred time: 0.000003
+    mc time: 0.01476
+    inst time: 0.0
+Proof found: ASM_CASES_TAC (Term [QUOTE " (*#loc 1 6016*)a = b"]) THENL
+  [metisTools.METIS_TAC [LEAVE_LETS, fetch "sum" "ISL_OR_ISR", fetch "sum" "OUTR", fetch "sum" "ISR", sum_UNIQUE, fetch "sum" "sum_INDUCT", fetch "sum" "sum_CASES", fetch "sum" "sum_distinct", fetch "sum" "sum_Axiom", sum_Axiom0, fetch "sum" "EXISTS_SUM", fetch "sum" "FORALL_SUM", OUTR_DEF, fetch "sum" "INR_INL_11"],
+  ASM_CASES_TAC (Term [QUOTE " (*#loc 1 6016*)a = b"]) THENL
+  [metisTools.METIS_TAC [],
+  metisTools.METIS_TAC [LEAVE_LETS, fetch "sum" "ISL_OR_ISR", fetch "sum" "OUTR", fetch "sum" "ISR", sum_UNIQUE, fetch "sum" "sum_INDUCT", fetch "sum" "sum_CASES", fetch "sum" "sum_distinct"]]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.082714
+
+SUM_MAP
+Statistics
+  infstep : 674
+  nodes   : 128
+  maxdepth: 6
+Time: 10.055273
+  inferstep time: 8.44048
+  node_find time: 0.179273
+  node_crea time: 1.1069
+    pred time: 0.337864
+    thmpred time: 0.000026
+    mc time: 0.296627
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.015896
+
+SUM_MAP_CASE
+proof length: 1
+proof time: 0.004868
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.130597
+  inferstep time: 0.123352
+  node_find time: 0.000337
+  node_crea time: 0.004383
+    pred time: 0.001443
+    thmpred time: 0.0
+    mc time: 0.002797
+    inst time: 0.0
+Proof found: SIMP_TAC (srw_ss ()) [(fetch "sum" "FORALL_SUM")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.020987
+
+SUM_MAP_I
+proof length: 2
+proof time: 0.000906
+Statistics
+  infstep : 11
+  nodes   : 5
+  maxdepth: 2
+Time: 0.509902
+  inferstep time: 0.483552
+  node_find time: 0.00219
+  node_crea time: 0.015843
+    pred time: 0.006108
+    thmpred time: 0.000002
+    mc time: 0.007137
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "combin" "I_THM"), FUN_EQ_THM] THEN
+  SIMP_TAC (srw_ss ()) [(fetch "sum" "FORALL_SUM")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012596
+
+cond_sum_expand
+Statistics
+  infstep : 603
+  nodes   : 109
+  maxdepth: 6
+Time: 10.033532
+  inferstep time: 8.138501
+  node_find time: 0.164345
+  node_crea time: 1.411704
+    pred time: 0.418844
+    thmpred time: 0.00002
+    mc time: 0.317669
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.068027
+
+NOT_ISL_ISR
+proof length: 3
+proof time: 0.024891
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.383532
+  inferstep time: 0.361223
+  node_find time: 0.000996
+  node_crea time: 0.014137
+    pred time: 0.005646
+    thmpred time: 0.000003
+    mc time: 0.007946
+    inst time: 0.0
+Proof found: ASM_CASES_TAC (Term [QUOTE " (*#loc 1 6016*)a = b"]) THENL
+  [metisTools.METIS_TAC [LEAVE_LETS, fetch "sum" "ISL_OR_ISR", fetch "sum" "INL", fetch "sum" "ISR", fetch "sum" "ISL", fetch "sum" "sum_distinct"],
+  metisTools.METIS_TAC [LEAVE_LETS, fetch "sum" "ISL_OR_ISR", fetch "sum" "INR", fetch "sum" "ISL"]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.066709
+
+NOT_ISR_ISL
+proof length: 1
+proof time: 0.047539
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.105413
+  inferstep time: 0.097039
+  node_find time: 0.000206
+  node_crea time: 0.005
+    pred time: 0.001489
+    thmpred time: 0.0
+    mc time: 0.0036
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "sum" "ISL_OR_ISR", fetch "sum" "INL", fetch "sum" "SUM_MAP", fetch "sum" "ISR", fetch "sum" "ISL", fetch "sum" "sum_distinct"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.076399
+
+SUM_ALL_MONO
+proof length: 5
+proof time: 0.018564
+Statistics
+  infstep : 94
+  nodes   : 24
+  maxdepth: 4
+Time: 2.133848
+  inferstep time: 1.86917
+  node_find time: 0.021329
+  node_crea time: 0.164207
+    pred time: 0.053941
+    thmpred time: 0.00001
+    mc time: 0.066367
+    inst time: 0.0
+Proof found: STRIP_ASSUME_TAC (SPEC (-- [QUOTE " (*#loc 1 3827*)s:('a,'b)sum"] --) (local_tag A_ONTO)) THENL
+  [ASM_REWRITE_TAC (map (SYM o SPEC_ALL) [(fetch "sum" "INL_DEF")]) THEN
+  metisTools.METIS_TAC [fetch "sum" "SUM_ALL_def"],
+  ASM_REWRITE_TAC (map (SYM o SPEC_ALL) [(fetch "sum" "INR_DEF")]) THEN
+  metisTools.METIS_TAC [fetch "sum" "SUM_ALL_def"]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.10745
+
+SUM_ALL_CONG
+proof length: 2
+proof time: 0.00743
+Statistics
+  infstep : 10
+  nodes   : 4
+  maxdepth: 2
+Time: 0.331376
+  inferstep time: 0.292865
+  node_find time: 0.002381
+  node_crea time: 0.026308
+    pred time: 0.009684
+    thmpred time: 0.000001
+    mc time: 0.010308
+    inst time: 0.0
+Proof found: SIMP_TAC bool_ss [] THEN
+  SIMP_TAC bool_ss [fetch "sum" "SUM_ALL_def", fetch "sum" "FORALL_SUM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.045833
+
+datatype_sum
+Statistics
+  infstep : 513
+  nodes   : 88
+  maxdepth: 5
+Time: 10.018898
+  inferstep time: 8.686043
+  node_find time: 0.140946
+  node_crea time: 0.872724
+    pred time: 0.297051
+    thmpred time: 0.00002
+    mc time: 0.220812
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.023017
+Bad stac: 0

@@ -1,0 +1,1303 @@
+Replaying proof: 0.002404
+Replaying proof: 0.001134
+Replaying proof: 0.002313
+Replaying proof: 0.03747
+
+DIVISION_APPEND_STRONG
+Statistics
+  infstep : 1192
+  nodes   : 184
+  maxdepth: 7
+Time: 10.051915
+  inferstep time: 6.721282
+  node_find time: 0.090248
+  node_crea time: 3.139193
+    pred time: 0.47872
+    thmpred time: 0.000019
+    mc time: 1.289434
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.090834
+
+DIVISION_APPEND
+proof length: 1
+proof time: 0.000287
+Statistics
+  infstep : 81
+  nodes   : 14
+  maxdepth: 3
+Time: 0.803885
+  inferstep time: 0.57982
+  node_find time: 0.002561
+  node_crea time: 0.204081
+    pred time: 0.041756
+    thmpred time: 0.000003
+    mc time: 0.101316
+    inst time: 0.0
+Proof found: (boolLib.REWRITE_TAC [ DB.fetch "integral" "DIVISION_APPEND_STRONG" , transcTheory.DIVISION_APPEND , DB.fetch "integral" "DIVISION_APPEND_EXPLICIT" , transcTheory.DIVISION_EXISTS , transcTheory.Dint , transcTheory.tdiv , transcTheory.fine , transcTheory.FINE_MIN , DB.fetch "integral" "tactictoe_thm_0" , DB.fetch "integral" "tactictoe_thm_1" , DB.fetch "integral" "tactictoe_thm_2" , DB.fetch "integral" "tactictoe_thm_3" , transcTheory.tactictoe_thm_10 , transcTheory.tactictoe_thm_11 , transcTheory.tactictoe_thm_9 , pairTheory.LAMBDA_PROD ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.031625
+
+INTEGRABLE_DINT
+Statistics
+  infstep : 977
+  nodes   : 143
+  maxdepth: 6
+Time: 10.061217
+  inferstep time: 6.992024
+  node_find time: 0.067345
+  node_crea time: 2.888787
+    pred time: 0.561449
+    thmpred time: 0.000019
+    mc time: 1.531034
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.079976
+
+DIVISION_BOUNDS
+proof length: 4
+proof time: 0.174262
+Statistics
+  infstep : 61
+  nodes   : 16
+  maxdepth: 4
+Time: 1.373199
+  inferstep time: 1.135906
+  node_find time: 0.002332
+  node_crea time: 0.198493
+    pred time: 0.057965
+    thmpred time: 0.000001
+    mc time: 0.119276
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THENL [boolLib.SPEC_TAC (Parse.Term [HolKernel.QUOTE " (*#loc 1 104762*)d:num"], Parse.Term [HolKernel.QUOTE " (*#loc 1 104774*)d:num"]) THEN
+  metisTools.METIS_TAC [transcTheory.DIVISION_LBOUND, limTheory.CONT_ATTAINS_ALL, limTheory.IVT, limTheory.IVT2, limTheory.CONT_ATTAINS2, seqTheory.SEQ_BOUNDED_2, seqTheory.NEST_LEMMA, seqTheory.NEST_LEMMA_UNIQ, seqTheory.LE_SEQ_IMP_LE_LIM, seqTheory.SEQ_LE_MONO, seqTheory.BOLZANO_LEMMA, limTheory.INTERVAL_LEMMA, limTheory.INTERVAL_ABS, limTheory.INTERVAL_CLEMMA, limTheory.CONT_INJ_LEMMA, limTheory.CONT_INJ_LEMMA2], metisTools.METIS_TAC [transcTheory.DIVISION_UBOUND, limTheory.CONT_ATTAINS_ALL, limTheory.IVT, limTheory.IVT2, limTheory.CONT_ATTAINS, limTheory.CONT_BOUNDED, limTheory.CONT_HASSUP, seqTheory.SEQ_BOUNDED_2, seqTheory.NEST_LEMMA, seqTheory.NEST_LEMMA_UNIQ, realTheory.SUM_BOUND, seqTheory.SEQ_LE_IMP_LIM_LE, seqTheory.SEQ_MONO_LE, limTheory.CONT_INJ_LEMMA, limTheory.CONT_INJ_LEMMA2, limTheory.DIFF_LMAX]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006825
+
+TDIV_BOUNDS
+Statistics
+  infstep : 782
+  nodes   : 161
+  maxdepth: 6
+Time: 10.001965
+  inferstep time: 6.950347
+  node_find time: 0.063269
+  node_crea time: 2.685964
+    pred time: 0.562121
+    thmpred time: 0.000034
+    mc time: 1.568608
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.051486
+
+TDIV_LE
+proof length: 2
+proof time: 0.062938
+Statistics
+  infstep : 8
+  nodes   : 3
+  maxdepth: 2
+Time: 0.189131
+  inferstep time: 0.155058
+  node_find time: 0.000305
+  node_crea time: 0.022617
+    pred time: 0.007878
+    thmpred time: 0.0
+    mc time: 0.020624
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "integral" "TDIV_BOUNDS", transcTheory.DIVISION_EXISTS, transcTheory.Dint, transcTheory.tdiv, transcTheory.DIVISION_APPEND, DB.fetch "integral" "DIVISION_APPEND", DB.fetch "integral" "DIVISION_APPEND_STRONG", DB.fetch "integral" "DIVISION_APPEND_EXPLICIT", seqTheory.BOLZANO_LEMMA, limTheory.INTERVAL_LEMMA, DB.fetch "integral" "DIVISION_BOUNDS", transcTheory.DIVISION_SINGLE, transcTheory.DIVISION_LE, transcTheory.DINT_UNIQ, transcTheory.FTC1, rich_listTheory.ZIP_APPEND] THEN metisTools.METIS_TAC [transcTheory.tdiv, DB.fetch "integral" "DIVISION_BOUNDS", transcTheory.DIVISION_UBOUND, transcTheory.DIVISION_THM, transcTheory.division, transcTheory.DIVISION_LT, transcTheory.DIVISION_LE, seqTheory.NEST_LEMMA_UNIQ, transcTheory.DIVISION_LBOUND, transcTheory.DIVISION_LT_GEN, transcTheory.DIVISION_UBOUND_LT, transcTheory.DIVISION_LHS, transcTheory.DIVISION_RHS, transcTheory.DIVISION_EQ, limTheory.DIFF_LMAX, limTheory.DIFF_LMIN]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005308
+
+DINT_WRONG
+Statistics
+  infstep : 900
+  nodes   : 183
+  maxdepth: 7
+Time: 10.053661
+  inferstep time: 6.831219
+  node_find time: 0.092076
+  node_crea time: 2.907788
+    pred time: 0.448223
+    thmpred time: 0.000018
+    mc time: 1.731683
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.132278
+
+DINT_INTEGRAL
+proof length: 2
+proof time: 0.088768
+Statistics
+  infstep : 10
+  nodes   : 7
+  maxdepth: 2
+Time: 0.429833
+  inferstep time: 0.306602
+  node_find time: 0.00048
+  node_crea time: 0.110086
+    pred time: 0.031965
+    thmpred time: 0.000002
+    mc time: 0.072519
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "integral" "integrable_def"), (DB.fetch "integral" "integral_def")] THEN metisTools.METIS_TAC [DB.fetch "integral" "integral_def", transcTheory.DINT_UNIQ, transcTheory.Dint, DB.fetch "integral" "DINT_WRONG", DB.fetch "integral" "integrable_def", transcTheory.FTC1, DB.fetch "integral" "INTEGRABLE_DINT", transcTheory.INTEGRAL_NULL, transcTheory.dsize, transcTheory.DIVISION_EXISTS, seqTheory.BOLZANO_LEMMA, transcTheory.DIVISION_SINGLE, DB.fetch "integral" "TDIV_LE", transcTheory.DIVISION_LE, limTheory.CONT_ATTAINS, limTheory.CONT_ATTAINS2]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.089537
+
+DINT_NEG
+Statistics
+  infstep : 720
+  nodes   : 155
+  maxdepth: 5
+Time: 10.002811
+  inferstep time: 6.938565
+  node_find time: 0.068768
+  node_crea time: 2.843773
+    pred time: 0.543973
+    thmpred time: 0.00002
+    mc time: 1.518335
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.08933
+
+DINT_0
+Statistics
+  infstep : 644
+  nodes   : 170
+  maxdepth: 6
+Time: 10.003982
+  inferstep time: 7.376791
+  node_find time: 0.060555
+  node_crea time: 2.436106
+    pred time: 0.460483
+    thmpred time: 0.000025
+    mc time: 1.447361
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.253717
+
+DINT_ADD
+Statistics
+  infstep : 716
+  nodes   : 138
+  maxdepth: 6
+Time: 10.067746
+  inferstep time: 7.167772
+  node_find time: 0.067721
+  node_crea time: 2.657441
+    pred time: 0.542581
+    thmpred time: 0.000021
+    mc time: 1.320318
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 27
+Original proof time: 0.0
+Replaying proof: 0.786192
+
+DINT_SUB
+proof length: 2
+proof time: 0.006118
+Statistics
+  infstep : 145
+  nodes   : 50
+  maxdepth: 5
+Time: 4.212097
+  inferstep time: 3.098451
+  node_find time: 0.011887
+  node_crea time: 1.040303
+    pred time: 0.240045
+    thmpred time: 0.000015
+    mc time: 0.575623
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "real" "REAL_SUB_0", DB.fetch "real" "REAL_SUB_REFL", DB.fetch "real" "REAL_SUB_ADD", DB.fetch "real" "real_sub", DB.fetch "real" "REAL_NEG_SUB", DB.fetch "real" "REAL_SUB_ADD2", DB.fetch "real" "REAL_SUP_ALLPOS", DB.fetch "real" "REAL_NEG_GT0", DB.fetch "real" "REAL_LT_ADD", DB.fetch "real" "REAL_LT_MUL", DB.fetch "real" "REAL_NEG_LT0", DB.fetch "real" "REAL_LT_NEGTOTAL", DB.fetch "real" "REAL_LT_01", realaxTheory.REAL_SUP_ALLPOS, DB.fetch "real" "REAL_LT_TOTAL", DB.fetch "real" "REAL_LT_RADD"] THEN BasicProvers.SRW_TAC [] [DB.fetch "integral" "DINT_ADD", DB.fetch "integral" "DINT_NEG", realTheory.real_sub, realTheory.REAL_ADD_RINV, transcTheory.DIFF_COMPOSITE, DB.fetch "integral" "DINT_INTEGRAL", DB.fetch "integral" "integral_def", DB.fetch "integral" "DINT_WRONG", DB.fetch "integral" "integrable_def", transcTheory.Dint, transcTheory.FTC1, transcTheory.DINT_UNIQ, DB.fetch "integral" "INTEGRABLE_DINT", DB.fetch "integral" "DINT_0", transcTheory.INTEGRAL_NULL, arithmeticTheory.tactictoe_thm_52]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010311
+
+DSIZE_EQ
+proof length: 2
+proof time: 0.003641
+Statistics
+  infstep : 253
+  nodes   : 56
+  maxdepth: 4
+Time: 3.676773
+  inferstep time: 2.724121
+  node_find time: 0.0208
+  node_crea time: 0.851663
+    pred time: 0.158849
+    thmpred time: 0.000007
+    mc time: 0.537192
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [transcTheory.rsum, realTheory.SUM_CANCEL, transcTheory.fine, transcTheory.DIVISION_THM, transcTheory.DIVISION_LBOUND_LT, transcTheory.DIVISION_LT, transcTheory.DIVISION_EQ, transcTheory.DIVISION_GT, transcTheory.DIVISION_LT_GEN, transcTheory.DIVISION_UBOUND_LT, transcTheory.DIVISION_RHS, DB.fetch "integral" "tactictoe_thm_2", transcTheory.tactictoe_thm_11, DB.fetch "integral" "tactictoe_thm_0", DB.fetch "integral" "tactictoe_thm_1", DB.fetch "integral" "tactictoe_thm_3"] THEN BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.175141
+
+DINT_CONST
+Statistics
+  infstep : 693
+  nodes   : 152
+  maxdepth: 5
+Time: 10.000296
+  inferstep time: 7.298049
+  node_find time: 0.081919
+  node_crea time: 2.401456
+    pred time: 0.493048
+    thmpred time: 0.000026
+    mc time: 1.321479
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.488346
+Replaying proof: 0.016099
+
+DINT_LINEAR
+proof length: 2
+proof time: 0.004255
+Statistics
+  infstep : 18
+  nodes   : 9
+  maxdepth: 3
+Time: 0.904992
+  inferstep time: 0.705229
+  node_find time: 0.001382
+  node_crea time: 0.165965
+    pred time: 0.046792
+    thmpred time: 0.000003
+    mc time: 0.103145
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "real" "REAL_SUB_0", DB.fetch "real" "REAL_SUB_REFL", DB.fetch "real" "REAL_SUB_ADD", DB.fetch "real" "real_sub", DB.fetch "real" "REAL_NEG_SUB", DB.fetch "real" "REAL_SUB_ADD2", DB.fetch "real" "REAL_SUP_ALLPOS", DB.fetch "real" "REAL_NEG_GT0", DB.fetch "real" "REAL_LT_ADD", DB.fetch "real" "REAL_LT_MUL", DB.fetch "real" "REAL_NEG_LT0", DB.fetch "real" "REAL_LT_NEGTOTAL", DB.fetch "real" "REAL_LT_01", realaxTheory.REAL_SUP_ALLPOS, DB.fetch "real" "REAL_LT_TOTAL", DB.fetch "real" "REAL_LT_RADD"] THEN BasicProvers.SRW_TAC [] [transcTheory.DIFF_COMPOSITE, limTheory.DIFF_MUL, DB.fetch "integral" "DINT_CMUL", realTheory.REAL_ADD_RAT, realTheory.REAL_RDISTRIB, realTheory.REAL_ADD_RDISTRIB, realTheory.REAL_SUMSQ, realTheory.REAL_ADD_LDISTRIB, realTheory.REAL_LDISTRIB, realaxTheory.REAL_LDISTRIB, realTheory.add_rat, DB.fetch "integral" "DINT_ADD", DB.fetch "integral" "DINT_SUB", DB.fetch "integral" "DINT_CONST", DB.fetch "integral" "DINT_NEG", DB.fetch "integral" "DINT_INTEGRAL"]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.117976
+
+LT
+proof length: 2
+proof time: 0.003084
+Statistics
+  infstep : 13
+  nodes   : 9
+  maxdepth: 3
+Time: 0.684795
+  inferstep time: 0.560194
+  node_find time: 0.001014
+  node_crea time: 0.103491
+    pred time: 0.033254
+    thmpred time: 0.000003
+    mc time: 0.049559
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC boolSimps.bool_ss [arithmeticTheory.NUMERAL_DEF, arithmeticTheory.GREATER_DEF, (DB.fetch "numeral" "iZ"), arithmeticTheory.GREATER_OR_EQ, arithmeticTheory.LESS_OR_EQ, boolLib.EQ_IMP_THM, boolLib.DISJ_IMP_THM, arithmeticTheory.ADD_CLAUSES, arithmeticTheory.ALT_ZERO, arithmeticTheory.MULT_CLAUSES, arithmeticTheory.EXP, prim_recTheory.PRE, prim_recTheory.NOT_LESS_0, arithmeticTheory.SUB_0, arithmeticTheory.BIT1, arithmeticTheory.BIT2, arithmeticTheory.ODD, arithmeticTheory.EVEN] THEN let
+  fun simp thl = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) thl
+in
+  simp [boolLib.EQ_IMP_THM]
+end
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007164
+
+LE_0
+proof length: 1
+proof time: 0.000729
+Statistics
+  infstep : 3
+  nodes   : 2
+  maxdepth: 1
+Time: 0.15929
+  inferstep time: 0.14339
+  node_find time: 0.00033
+  node_crea time: 0.009294
+    pred time: 0.003356
+    thmpred time: 0.000001
+    mc time: 0.007723
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ arithmeticTheory.ZERO_LESS_EQ , numeralTheory.numeral_distrib , arithmeticTheory.DIV_LESS_EQ , arithmeticTheory.DIV_LE_MONOTONE , arithmeticTheory.LE_MULT_RCANCEL , arithmeticTheory.EXP_BASE_LEQ_MONO_IMP , arithmeticTheory.LE_MULT_LCANCEL , arithmeticTheory.EXP_EXP_LE_MONO , arithmeticTheory.tactictoe_thm_35 , arithmeticTheory.EXP_SUB , arithmeticTheory.INV_PRE_LESS_EQ , arithmeticTheory.LE , arithmeticTheory.LESS_EQ_0 , arithmeticTheory.MOD_TIMES_SUB , arithmeticTheory.MULT_INCREASES , arithmeticTheory.NOT_SUC_LESS_EQ_0 ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.035758
+
+LT_0
+proof length: 1
+proof time: 0.000957
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.15516
+  inferstep time: 0.109493
+  node_find time: 0.00023
+  node_crea time: 0.036663
+    pred time: 0.012545
+    thmpred time: 0.0
+    mc time: 0.025166
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ prim_recTheory.LESS_0 , arithmeticTheory.MULT_INCREASES , arithmeticTheory.PRE_SUC_EQ , arithmeticTheory.SUC_ELIM_THM , arithmeticTheory.SUC_MOD , arithmeticTheory.ZERO_LESS_EXP , numeralTheory.numeral_distrib , numeralTheory.tactictoe_thm_30 , transcTheory.MCLAURIN , transcTheory.MCLAURIN_ALL_LT , transcTheory.MCLAURIN_NEG , arithmeticTheory.tactictoe_thm_54 , arithmeticTheory.DIV_EQ_X , arithmeticTheory.MOD_SUC , arithmeticTheory.MOD_SUC_IFF , arithmeticTheory.SUC_PRE ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008326
+
+EQ_SUC
+proof length: 1
+proof time: 0.087572
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.091876
+  inferstep time: 0.073918
+  node_find time: 0.000104
+  node_crea time: 0.012744
+    pred time: 0.003178
+    thmpred time: 0.0
+    mc time: 0.011685
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [arithmeticTheory.ABS_DIFF_SUC , arithmeticTheory.LESS_MONO_EQ , arithmeticTheory.SUB_MONO_EQ , arithmeticTheory.ADD , arithmeticTheory.ADD_SUC , arithmeticTheory.EXISTS_NUM , arithmeticTheory.num_CASES , arithmeticTheory.EXP , arithmeticTheory.EXP2_LT , arithmeticTheory.LESS_MULT_MONO , arithmeticTheory.LE , arithmeticTheory.LESS_EQ_IFF_LESS_SUC , arithmeticTheory.LESS_EQ , prim_recTheory.TC_IM_RTC_SUC , arithmeticTheory.LESS_EQ_MONO , prim_recTheory.INV_SUC_EQ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005331
+
+LE_LT
+proof length: 2
+proof time: 0.001218
+Statistics
+  infstep : 13
+  nodes   : 3
+  maxdepth: 2
+Time: 0.332732
+  inferstep time: 0.304203
+  node_find time: 0.000866
+  node_crea time: 0.01709
+    pred time: 0.005816
+    thmpred time: 0.000001
+    mc time: 0.014027
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.DNF_ss] [] THEN boolLib.REWRITE_TAC [arithmeticTheory.LESS_OR_EQ, arithmeticTheory.LESS_CASES, transcTheory.tactictoe_thm_13, arithmeticTheory.NOT_LESS, arithmeticTheory.NOT_LESS_EQUAL, numeralTheory.numeral_distrib, numeralTheory.tactictoe_thm_1, numeralTheory.tactictoe_thm_11, numeralTheory.tactictoe_thm_12, numeralTheory.tactictoe_thm_15, numeralTheory.tactictoe_thm_16, numeralTheory.tactictoe_thm_2, numeralTheory.tactictoe_thm_21, numeralTheory.tactictoe_thm_24, numeralTheory.tactictoe_thm_27, numeralTheory.tactictoe_thm_3]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.073977
+
+LT_LE
+proof length: 4
+proof time: 0.002094
+Statistics
+  infstep : 21
+  nodes   : 7
+  maxdepth: 2
+Time: 0.53679
+  inferstep time: 0.460466
+  node_find time: 0.0016
+  node_crea time: 0.052105
+    pred time: 0.018885
+    thmpred time: 0.000001
+    mc time: 0.033941
+    inst time: 0.0
+Proof found: bossLib.SRW_TAC [] [(DB.fetch "real" "tactictoe_thm_27"), (DB.fetch "real" "real_gt"), (DB.fetch "real" "REAL_NOT_LT"), boolLib.EQ_IMP_THM] THENL [boolLib.ASM_REWRITE_TAC [(DB.fetch "arithmetic" "LESS_OR_EQ")], bossLib.FULL_SIMP_TAC (bossLib.srw_ss () hhs_infixl0_open bossLib.++ hhs_infixl0_close bossLib.old_ARITH_ss) [], simpLib.FULL_SIMP_TAC (boolSimps.bool_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss) [(DB.fetch "pred_set" "SPECIFICATION")]]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.152545
+
+REAL_LT_MIN
+proof length: 5
+proof time: 0.007486
+Statistics
+  infstep : 631
+  nodes   : 122
+  maxdepth: 6
+Time: 9.020484
+  inferstep time: 7.068454
+  node_find time: 0.078461
+  node_crea time: 1.598979
+    pred time: 0.409695
+    thmpred time: 0.000031
+    mc time: 0.790325
+    inst time: 0.0
+Proof found: bossLib.RW_TAC boolSimps.bool_ss [boolLib.GSYM (DB.fetch "real" "REAL_DIV_ADD"), (DB.fetch "real" "REAL_DIV_RMUL_CANCEL"), (DB.fetch "real" "REAL_DIV_LMUL_CANCEL")] THEN boolLib.MP_TAC (Q.SPECL [[HolKernel.QUOTE " (*#loc 1 108989*)x"], [HolKernel.QUOTE " (*#loc 1 108994*)y"]] (DB.fetch "real" "REAL_LE_TOTAL")) THEN
+  bossLib.RW_TAC boolSimps.bool_ss [(DB.fetch "real" "min_def")] THEN
+  bossLib.PROVE_TAC [(DB.fetch "real" "REAL_LTE_TRANS")]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.087565
+
+REAL_LE_RMUL1
+proof length: 1
+proof time: 0.067008
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.078652
+  inferstep time: 0.062129
+  node_find time: 0.000113
+  node_crea time: 0.011674
+    pred time: 0.003483
+    thmpred time: 0.0
+    mc time: 0.010067
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [realTheory.REAL_LE_LMUL_IMP , realTheory.REAL_LE_RMUL_IMP , realTheory.REAL_LE_MUL2 , realTheory.REAL_LE_LMUL , realTheory.REAL_LE_RMUL , realTheory.REAL_LE_RDIV , realTheory.REAL_LE_RDIV_EQ , realTheory.REAL_LIN_LE_MAX , realTheory.REAL_MIN_LE_LIN , realTheory.REAL_LE_MUL , transcTheory.ROOT_MUL , transcTheory.SQRT_MUL , realTheory.REAL_LT_MUL2 , transcTheory.MCLAURIN , realTheory.POW_LE , transcTheory.ROOT_MONO_LE])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.061308
+
+REAL_LE_LMUL1
+proof length: 1
+proof time: 0.068229
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.119248
+  inferstep time: 0.076933
+  node_find time: 0.000261
+  node_crea time: 0.032608
+    pred time: 0.010118
+    thmpred time: 0.000001
+    mc time: 0.025789
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "integral" "REAL_LE_RMUL1" , realTheory.REAL_LE_LMUL_IMP , realTheory.REAL_LE_RMUL_IMP , realTheory.REAL_LE_MUL2 , realTheory.REAL_LE_LMUL , realTheory.REAL_LE_RMUL , realTheory.REAL_LE_RDIV , realTheory.REAL_LE_RDIV_EQ , realTheory.REAL_LIN_LE_MAX , realTheory.REAL_MIN_LE_LIN , realTheory.REAL_LE_MUL , transcTheory.ROOT_MUL , transcTheory.SQRT_MUL , realTheory.REAL_LT_MUL2 , transcTheory.MCLAURIN , realTheory.POW_LE])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067417
+
+INTEGRAL_LE
+Statistics
+  infstep : 650
+  nodes   : 124
+  maxdepth: 6
+Time: 10.011886
+  inferstep time: 6.972511
+  node_find time: 0.084069
+  node_crea time: 2.740802
+    pred time: 0.448196
+    thmpred time: 0.000028
+    mc time: 1.439202
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 51
+Original proof time: 0.0
+Replaying proof: 1.52803
+
+DINT_LE
+Statistics
+  infstep : 426
+  nodes   : 113
+  maxdepth: 6
+Time: 10.037649
+  inferstep time: 7.219648
+  node_find time: 0.050085
+  node_crea time: 2.629221
+    pred time: 0.528161
+    thmpred time: 0.000023
+    mc time: 1.383397
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.074348
+
+DINT_TRIANGLE
+Statistics
+  infstep : 438
+  nodes   : 119
+  maxdepth: 7
+Time: 10.011328
+  inferstep time: 7.474948
+  node_find time: 0.056309
+  node_crea time: 2.328599
+    pred time: 0.521339
+    thmpred time: 0.000022
+    mc time: 1.071068
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.227582
+
+DINT_EQ
+Statistics
+  infstep : 554
+  nodes   : 109
+  maxdepth: 5
+Time: 10.081723
+  inferstep time: 7.076902
+  node_find time: 0.072875
+  node_crea time: 2.714137
+    pred time: 0.596347
+    thmpred time: 0.000024
+    mc time: 1.356463
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.059288
+Replaying proof: 0.033582
+
+INTEGRATION_BY_PARTS
+Statistics
+  infstep : 701
+  nodes   : 95
+  maxdepth: 5
+Time: 10.057827
+  inferstep time: 7.112501
+  node_find time: 0.099039
+  node_crea time: 2.57812
+    pred time: 0.5287
+    thmpred time: 0.000027
+    mc time: 1.341556
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.126819
+
+DIVISION_LE_SUC
+Statistics
+  infstep : 662
+  nodes   : 132
+  maxdepth: 5
+Time: 10.002793
+  inferstep time: 6.875358
+  node_find time: 0.111214
+  node_crea time: 2.73673
+    pred time: 0.563448
+    thmpred time: 0.000025
+    mc time: 1.501386
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.046506
+
+DIVISION_MONO_LE
+Statistics
+  infstep : 594
+  nodes   : 130
+  maxdepth: 6
+Time: 10.08849
+  inferstep time: 7.202289
+  node_find time: 0.085066
+  node_crea time: 2.546302
+    pred time: 0.497003
+    thmpred time: 0.000021
+    mc time: 1.409041
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.292137
+
+DIVISION_MONO_LE_SUC
+proof length: 1
+proof time: 0.082727
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.112817
+  inferstep time: 0.090536
+  node_find time: 0.000188
+  node_crea time: 0.014676
+    pred time: 0.003807
+    thmpred time: 0.0
+    mc time: 0.014617
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "integral" "DIVISION_LE_SUC" , transcTheory.tdiv , DB.fetch "integral" "DIVISION_BOUNDS" , DB.fetch "integral" "DIVISION_MONO_LE" , transcTheory.DIVISION_UBOUND , transcTheory.DIVISION_THM , DB.fetch "integral" "DSIZE_EQ" , transcTheory.division , transcTheory.DIVISION_LBOUND_LT , transcTheory.DIVISION_LT , DB.fetch "integral" "tactictoe_thm_2" , transcTheory.tactictoe_thm_11 , transcTheory.DIVISION_LBOUND , transcTheory.DIVISION_LE , transcTheory.DIVISION_GT , transcTheory.DIVISION_UBOUND_LT])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007906
+
+DIVISION_DSIZE_LE
+Statistics
+  infstep : 862
+  nodes   : 118
+  maxdepth: 5
+Time: 10.083571
+  inferstep time: 7.035344
+  node_find time: 0.138631
+  node_crea time: 2.551735
+    pred time: 0.477771
+    thmpred time: 0.000025
+    mc time: 1.426458
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.032237
+
+DIVISION_DSIZE_GE
+Statistics
+  infstep : 717
+  nodes   : 114
+  maxdepth: 5
+Time: 10.016407
+  inferstep time: 7.094743
+  node_find time: 0.118923
+  node_crea time: 2.491973
+    pred time: 0.460746
+    thmpred time: 0.000023
+    mc time: 1.446806
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.037348
+
+DIVISION_DSIZE_EQ
+proof length: 3
+proof time: 0.039459
+Statistics
+  infstep : 188
+  nodes   : 35
+  maxdepth: 4
+Time: 3.63648
+  inferstep time: 2.737861
+  node_find time: 0.02704
+  node_crea time: 0.728789
+    pred time: 0.162273
+    thmpred time: 0.00001
+    mc time: 0.407481
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.GEN_TAC THEN boolLib.REWRITE_TAC [transcTheory.DIVISION_THM, boolLib.GSYM arithmeticTheory.LESS_EQ, arithmeticTheory.GREATER_EQ] THEN
+  mesonLib.MESON_TAC [realTheory.REAL_LT_REFL, arithmeticTheory.LE, arithmeticTheory.NOT_LESS]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.045681
+
+DIVISION_DSIZE_EQ_ALT
+Statistics
+  infstep : 588
+  nodes   : 126
+  maxdepth: 5
+Time: 10.013427
+  inferstep time: 7.172686
+  node_find time: 0.101091
+  node_crea time: 2.422767
+    pred time: 0.494485
+    thmpred time: 0.000028
+    mc time: 1.279836
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.284638
+Replaying proof: 0.000852
+
+DIVISION_INTERMEDIATE
+Statistics
+  infstep : 503
+  nodes   : 88
+  maxdepth: 5
+Time: 10.004846
+  inferstep time: 7.163909
+  node_find time: 0.088355
+  node_crea time: 2.48947
+    pred time: 0.657876
+    thmpred time: 0.000021
+    mc time: 1.039472
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 38
+Original proof time: 0.0
+Replaying proof: 1.076035
+Replaying proof: 0.549883
+
+SUM_EQ_0
+proof length: 5
+proof time: 0.113045
+Statistics
+  infstep : 609
+  nodes   : 60
+  maxdepth: 5
+Time: 5.39081
+  inferstep time: 3.965851
+  node_find time: 0.093708
+  node_crea time: 0.966908
+    pred time: 0.3031
+    thmpred time: 0.000029
+    mc time: 0.470596
+    inst time: 0.0
+Proof found: boolLib.SPEC_TAC ((Parse.-- [HolKernel.QUOTE " (*#loc 1 28132*)n:num"] Parse.--), (Parse.-- [HolKernel.QUOTE " (*#loc 1 28146*)n:num"] Parse.--)) THEN let
+  fun INDUCT_TAC g = Prim_rec.INDUCT_THEN numTheory.INDUCTION boolLib.ASSUME_TAC g
+in
+  boolLib.REPEAT INDUCT_TAC THENL
+  [metisTools.METIS_TAC [numeralTheory.numeral_distrib, arithmeticTheory.ADD_CLAUSES, arithmeticTheory.ADD_0, realTheory.tactictoe_thm_3, realTheory.tactictoe_thm_13, realTheory.tactictoe_thm_11, realTheory.sum, realTheory.tactictoe_thm_5, realTheory.tactictoe_thm_1, realTheory.tactictoe_thm_10, realTheory.tactictoe_thm_12, realTheory.tactictoe_thm_14, realTheory.tactictoe_thm_15, realTheory.tactictoe_thm_16, realTheory.tactictoe_thm_17, realTheory.tactictoe_thm_18],
+  BasicProvers.SRW_TAC [] [arithmeticTheory.LESS_ADD_SUC, arithmeticTheory.tactictoe_thm_11, DB.fetch "real" "tactictoe_thm_3", DB.fetch "real" "tactictoe_thm_5", DB.fetch "real" "tactictoe_thm_1", DB.fetch "real" "sum", DB.fetch "real" "tactictoe_thm_10", DB.fetch "real" "tactictoe_thm_11", DB.fetch "real" "tactictoe_thm_2", DB.fetch "real" "tactictoe_thm_4", DB.fetch "real" "tactictoe_thm_6", DB.fetch "real" "tactictoe_thm_7", DB.fetch "real" "tactictoe_thm_8", DB.fetch "real" "tactictoe_thm_9", DB.fetch "real" "sum_ind", arithmeticTheory.ADD_CLAUSES] THEN
+  simpLib.ASM_SIMP_TAC (boolSimps.bool_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.REDUCE_ss) [(DB.fetch "list" "GENLIST"), (DB.fetch "list" "APPEND_SNOC"), (DB.fetch "list" "APPEND_NIL"), arithmeticTheory.ADD_CLAUSES]]
+end
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.27109
+
+DINT_DELTA_LEFT
+Statistics
+  infstep : 597
+  nodes   : 146
+  maxdepth: 6
+Time: 10.090295
+  inferstep time: 7.442978
+  node_find time: 0.106411
+  node_crea time: 2.215129
+    pred time: 0.451979
+    thmpred time: 0.000035
+    mc time: 1.244017
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 49
+Original proof time: 0.0
+Replaying proof: 1.538381
+
+DINT_DELTA_RIGHT
+Statistics
+  infstep : 457
+  nodes   : 127
+  maxdepth: 6
+Time: 10.059562
+  inferstep time: 7.511135
+  node_find time: 0.08702
+  node_crea time: 2.185594
+    pred time: 0.492162
+    thmpred time: 0.000036
+    mc time: 1.195953
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 52
+Original proof time: 0.0
+Replaying proof: 1.386554
+
+DINT_DELTA
+Statistics
+  infstep : 373
+  nodes   : 121
+  maxdepth: 6
+Time: 10.001021
+  inferstep time: 7.073442
+  node_find time: 0.077433
+  node_crea time: 2.585223
+    pred time: 0.581406
+    thmpred time: 0.000034
+    mc time: 1.465148
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.360883
+
+DINT_POINT_SPIKE
+Statistics
+  infstep : 454
+  nodes   : 99
+  maxdepth: 5
+Time: 10.059126
+  inferstep time: 7.03222
+  node_find time: 0.087305
+  node_crea time: 2.677046
+    pred time: 0.638192
+    thmpred time: 0.00002
+    mc time: 1.469624
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.494553
+Replaying proof: 0.013487
+
+REAL_POW_LBOUND
+Statistics
+  infstep : 910
+  nodes   : 169
+  maxdepth: 6
+Time: 10.104098
+  inferstep time: 6.257316
+  node_find time: 0.1955
+  node_crea time: 3.093047
+    pred time: 0.62891
+    thmpred time: 0.000026
+    mc time: 1.802692
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.316985
+
+REAL_ARCH_POW
+Statistics
+  infstep : 1025
+  nodes   : 165
+  maxdepth: 6
+Time: 10.064317
+  inferstep time: 6.648622
+  node_find time: 0.225599
+  node_crea time: 2.575442
+    pred time: 0.458627
+    thmpred time: 0.000023
+    mc time: 1.567642
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.294306
+
+REAL_ARCH_POW2
+Statistics
+  infstep : 1314
+  nodes   : 95
+  maxdepth: 5
+Time: 10.032934
+  inferstep time: 6.878881
+  node_find time: 0.264639
+  node_crea time: 2.140387
+    pred time: 0.499167
+    thmpred time: 0.000026
+    mc time: 1.210788
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006576
+
+REAL_POW_LE_1
+proof length: 6
+proof time: 0.048684
+Statistics
+  infstep : 373
+  nodes   : 52
+  maxdepth: 5
+Time: 4.539384
+  inferstep time: 3.42661
+  node_find time: 0.073963
+  node_crea time: 0.720807
+    pred time: 0.172607
+    thmpred time: 0.000031
+    mc time: 0.440634
+    inst time: 0.0
+Proof found: numLib.INDUCT_TAC THENL [metisTools.METIS_TAC [realTheory.REAL_LE1_POW2, transcTheory.EXP_TOTAL_LEMMA, transcTheory.LN_POS, realTheory.pow, realTheory.pow_rat, realTheory.POW_2_LE1, seqTheory.GP_FINITE, transcTheory.COS_CONVERGES, transcTheory.cos, transcTheory.SIN_CONVERGES, transcTheory.sin, transcTheory.SIN_NEGLEMMA, seqTheory.SEQ_POWER, transcTheory.RPOW_SUC_N, DB.fetch "integral" "REAL_ARCH_POW", realTheory.REAL_POW_MONO_LT], BasicProvers.SRW_TAC [] [realTheory.REAL_LE1_POW2, transcTheory.EXP_TOTAL_LEMMA, transcTheory.LN_POS, realTheory.POW_2_LE1, realTheory.pow, transcTheory.RPOW_SUC_N, transcTheory.ROOT_POS_UNIQ, transcTheory.POW_ROOT_POS, realTheory.POW_EQ, realTheory.POW_LT, realTheory.POW_POS_LT, realTheory.POW_ZERO_EQ, powserTheory.POWDIFF, DB.fetch "integral" "REAL_ARCH_POW", realTheory.REAL_POW_MONO_LT, seqTheory.GP] THEN
+  jrhUtils.GEN_REWR_TAC boolLib.LAND_CONV [boolLib.GSYM (DB.fetch "real" "REAL_MUL_LID")] THEN
+  boolLib.MATCH_MP_TAC (DB.fetch "real" "REAL_LE_MUL2") THEN
+  BasicProvers.SRW_TAC [] [realTheory.REAL_LE_01, realTheory.REAL_LE1_POW2, transcTheory.EXP_TOTAL_LEMMA, transcTheory.LN_POS, realTheory.POW_2_LE1, realTheory.pow_rat, transcTheory.COS_CONVERGES, transcTheory.cos, transcTheory.SIN_CONVERGES, transcTheory.sin, transcTheory.SIN_NEGLEMMA, seqTheory.SEQ_POWER, realTheory.pow, seqTheory.GP_FINITE, realTheory.REAL_POW_MONO_LT, DB.fetch "integral" "REAL_ARCH_POW"]]
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.264957
+
+REAL_POW_MONO
+Statistics
+  infstep : 633
+  nodes   : 109
+  maxdepth: 5
+Time: 10.001394
+  inferstep time: 7.320991
+  node_find time: 0.143535
+  node_crea time: 2.050212
+    pred time: 0.485346
+    thmpred time: 0.000042
+    mc time: 1.051178
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.377544
+
+REAL_LE_INV2
+proof length: 2
+proof time: 0.100928
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.24028
+  inferstep time: 0.196479
+  node_find time: 0.000723
+  node_crea time: 0.028096
+    pred time: 0.008725
+    thmpred time: 0.000002
+    mc time: 0.024253
+    inst time: 0.0
+Proof found: Ho_Rewrite.REWRITE_TAC [(DB.fetch "real" "REAL_LE_LT")] THEN metisTools.METIS_TAC [realTheory.REAL_INV_LT_ANTIMONO, realTheory.REAL_LT_INV, limTheory.DIFF_INVERSE_OPEN, realTheory.REAL_INV_LT1, limTheory.DIFF_INVERSE, limTheory.DIFF_INVERSE_LT, transcTheory.LN_INV, realTheory.REAL_INV_POS, transcTheory.DIFF_LN, realTheory.REAL_LT_INV_EQ, transcTheory.RPOW_INV, realTheory.REAL_INV_MUL, realTheory.REAL_SUB_INV2, limTheory.LIM_INV, netsTheory.NET_INV, seqTheory.SEQ_INV]
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.242369
+
+GAUGE_MIN_FINITE
+Statistics
+  infstep : 650
+  nodes   : 111
+  maxdepth: 6
+Time: 10.068285
+  inferstep time: 5.977086
+  node_find time: 0.186629
+  node_crea time: 3.371983
+    pred time: 0.665311
+    thmpred time: 0.000021
+    mc time: 1.890825
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.506177
+Replaying proof: 0.02976
+Replaying proof: 0.002259
+
+RSUM_BOUND
+Statistics
+  infstep : 746
+  nodes   : 127
+  maxdepth: 5
+Time: 10.039212
+  inferstep time: 6.729444
+  node_find time: 0.170287
+  node_crea time: 2.570062
+    pred time: 0.475696
+    thmpred time: 0.00003
+    mc time: 1.438571
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 28
+Original proof time: 0.0
+Replaying proof: 0.787077
+
+RSUM_DIFF_BOUND
+Statistics
+  infstep : 448
+  nodes   : 99
+  maxdepth: 6
+Time: 10.015683
+  inferstep time: 6.961724
+  node_find time: 0.100145
+  node_crea time: 2.631369
+    pred time: 0.638111
+    thmpred time: 0.000039
+    mc time: 1.414385
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.085184
+Replaying proof: 0.041014
+
+INTEGRABLE_CONST
+proof length: 3
+proof time: 0.034187
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 3
+Time: 0.384354
+  inferstep time: 0.298442
+  node_find time: 0.00159
+  node_crea time: 0.062578
+    pred time: 0.013069
+    thmpred time: 0.000002
+    mc time: 0.033086
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.GEN_TAC THEN boolLib.REWRITE_TAC [(DB.fetch "integral" "integrable_def"), (DB.fetch "integral" "integral_def")] THEN
+  metisTools.METIS_TAC [DB.fetch "integral" "DINT_CONST", DB.fetch "integral" "DINT_CMUL", DB.fetch "integral" "DINT_COMBINE", DB.fetch "integral" "DINT_POINT_SPIKE", DB.fetch "integral" "DINT_DELTA", DB.fetch "integral" "integrable_def", DB.fetch "integral" "DINT_WRONG", DB.fetch "integral" "integral_def", DB.fetch "integral" "INTEGRAL_EQ", DB.fetch "integral" "DINT_ADD", transcTheory.Dint, DB.fetch "integral" "INTEGRABLE_DINT", transcTheory.DINT_UNIQ, DB.fetch "integral" "DINT_0", DB.fetch "integral" "DINT_DELTA_LEFT", DB.fetch "integral" "DINT_DELTA_RIGHT"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.097178
+
+INTEGRABLE_ADD
+proof length: 3
+proof time: 0.116905
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 3
+Time: 0.449997
+  inferstep time: 0.335491
+  node_find time: 0.001443
+  node_crea time: 0.081205
+    pred time: 0.021795
+    thmpred time: 0.0
+    mc time: 0.065205
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN boolLib.REPEAT (boolLib.FIRST_X_ASSUM (boolLib.ASSUME_TAC o boolLib.MATCH_MP (DB.fetch "integral" "INTEGRABLE_DINT"))) THEN
+  metisTools.METIS_TAC [DB.fetch "integral" "INTEGRABLE_LIMIT", DB.fetch "integral" "INTEGRAL_LE", DB.fetch "integral" "INTEGRABLE_CAUCHY", DB.fetch "integral" "integrable_def", DB.fetch "integral" "INTEGRABLE_DINT", DB.fetch "integral" "INTEGRABLE_CONST", DB.fetch "integral" "DINT_ADD", realTheory.SUM_ADD, netsTheory.NET_ADD, netsTheory.NET_NULL_ADD, limTheory.CONT_ADD, limTheory.LIM_ADD, limTheory.DIFF_ADD, transcTheory.DIFF_COMPOSITE, seqTheory.SEQ_ADD, seqTheory.SER_ADD]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.175774
+
+INTEGRABLE_CMUL
+proof length: 1
+proof time: 0.097528
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.140344
+  inferstep time: 0.107411
+  node_find time: 0.000434
+  node_crea time: 0.019113
+    pred time: 0.004639
+    thmpred time: 0.0
+    mc time: 0.021322
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "integral" "INTEGRABLE_ADD" , DB.fetch "integral" "INTEGRABLE_LIMIT" , DB.fetch "integral" "INTEGRAL_LE" , DB.fetch "integral" "INTEGRABLE_CAUCHY" , DB.fetch "integral" "INTEGRABLE_DINT" , DB.fetch "integral" "integrable_def" , DB.fetch "integral" "DINT_CMUL" , realTheory.SUM_CMUL , limTheory.DIFF_CMUL , seqTheory.SER_CMUL , netsTheory.NET_NULL_CMUL , DB.fetch "integral" "INTEGRABLE_CONST" , DB.fetch "integral" "DINT_LINEAR" , limTheory.DIFF_MUL , limTheory.DIFF_DIV , transcTheory.DIFF_COMPOSITE])
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.161564
+
+INTEGRABLE_COMBINE
+Statistics
+  infstep : 446
+  nodes   : 92
+  maxdepth: 5
+Time: 10.039523
+  inferstep time: 6.637786
+  node_find time: 0.117845
+  node_crea time: 2.904642
+    pred time: 0.661401
+    thmpred time: 0.000021
+    mc time: 1.257221
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.046629
+
+INTEGRABLE_POINT_SPIKE
+Statistics
+  infstep : 420
+  nodes   : 104
+  maxdepth: 6
+Time: 10.067898
+  inferstep time: 7.064811
+  node_find time: 0.101123
+  node_crea time: 2.558372
+    pred time: 0.53989
+    thmpred time: 0.00002
+    mc time: 1.377791
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.049376
+
+SUP_INTERVAL
+Statistics
+  infstep : 597
+  nodes   : 131
+  maxdepth: 5
+Time: 10.074412
+  inferstep time: 7.294034
+  node_find time: 0.143561
+  node_crea time: 2.200391
+    pred time: 0.461357
+    thmpred time: 0.000027
+    mc time: 0.785896
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.536485
+
+BOLZANO_LEMMA_ALT
+Statistics
+  infstep : 665
+  nodes   : 111
+  maxdepth: 6
+Time: 10.024399
+  inferstep time: 6.881978
+  node_find time: 0.165731
+  node_crea time: 2.486902
+    pred time: 0.567174
+    thmpred time: 0.000018
+    mc time: 1.21667
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.112435
+Replaying proof: 0.104786
+Replaying proof: 0.012393
+
+INTEGRABLE_SPLIT_SIDES
+Statistics
+  infstep : 601
+  nodes   : 127
+  maxdepth: 6
+Time: 10.004306
+  inferstep time: 5.917125
+  node_find time: 0.155544
+  node_crea time: 3.470722
+    pred time: 0.589355
+    thmpred time: 0.00002
+    mc time: 1.928388
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.386001
+Replaying proof: 0.017129
+Replaying proof: 0.010619
+
+INTEGRABLE_SUBINTERVAL
+Statistics
+  infstep : 458
+  nodes   : 119
+  maxdepth: 6
+Time: 10.0379
+  inferstep time: 6.247805
+  node_find time: 0.122067
+  node_crea time: 3.291855
+    pred time: 0.654975
+    thmpred time: 0.000021
+    mc time: 1.654033
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009125
+
+INTEGRAL_0
+proof length: 2
+proof time: 0.123112
+Statistics
+  infstep : 6
+  nodes   : 3
+  maxdepth: 2
+Time: 0.265267
+  inferstep time: 0.211131
+  node_find time: 0.001626
+  node_crea time: 0.031157
+    pred time: 0.008532
+    thmpred time: 0.0
+    mc time: 0.030293
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN metisTools.METIS_TAC [DB.fetch "integral" "DINT_INTEGRAL", DB.fetch "integral" "integral_def", DB.fetch "integral" "INTEGRAL_LE", DB.fetch "integral" "INTEGRABLE_DINT", DB.fetch "integral" "DINT_0", realTheory.SUM_0, transcTheory.Dint, DB.fetch "integral" "INTEGRABLE_CAUCHY", DB.fetch "integral" "DINT_DELTA", DB.fetch "integral" "INTEGRABLE_LIMIT", DB.fetch "integral" "INTEGRABLE_SPLIT_SIDES", seqTheory.BOLZANO_LEMMA, transcTheory.DIVISION_THM, transcTheory.DIVISION_SINGLE, transcTheory.division, transcTheory.DIVISION_LHS]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.060667
+
+INTEGRAL_CONST
+proof length: 2
+proof time: 0.002488
+Statistics
+  infstep : 8
+  nodes   : 3
+  maxdepth: 2
+Time: 0.339051
+  inferstep time: 0.259229
+  node_find time: 0.002667
+  node_crea time: 0.049955
+    pred time: 0.014648
+    thmpred time: 0.000001
+    mc time: 0.040695
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN BasicProvers.SRW_TAC [] [DB.fetch "integral" "DINT_INTEGRAL", DB.fetch "integral" "integral_def", DB.fetch "integral" "INTEGRAL_0", DB.fetch "integral" "INTEGRAL_LE", DB.fetch "integral" "INTEGRABLE_DINT", DB.fetch "integral" "DINT_CONST", DB.fetch "integral" "RSUM_BOUND", DB.fetch "integral" "RSUM_DIFF_BOUND", transcTheory.tactictoe_thm_12, realTheory.REAL_SUB_LDISTRIB, realTheory.REAL_MUL_SUB1_CANCEL, seqTheory.BOLZANO_LEMMA, DB.fetch "integral" "INTEGRABLE_CONST", realTheory.REAL_SUB_RDISTRIB, realTheory.REAL_SUB_INV2, transcTheory.DIFF_COMPOSITE]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.065115
+
+INTEGRAL_CMUL
+proof length: 2
+proof time: 0.084387
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.293759
+  inferstep time: 0.236387
+  node_find time: 0.001007
+  node_crea time: 0.035559
+    pred time: 0.009586
+    thmpred time: 0.0
+    mc time: 0.032212
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN metisTools.METIS_TAC [DB.fetch "integral" "INTEGRAL_LE", DB.fetch "integral" "integral_def", DB.fetch "integral" "DINT_INTEGRAL", DB.fetch "integral" "INTEGRABLE_DINT", DB.fetch "integral" "INTEGRAL_CONST", DB.fetch "integral" "INTEGRAL_0", DB.fetch "integral" "INTEGRABLE_CMUL", DB.fetch "integral" "DINT_CMUL", realTheory.SUM_CMUL, limTheory.DIFF_CMUL, seqTheory.SER_CMUL, netsTheory.NET_NULL_CMUL, DB.fetch "integral" "DINT_LINEAR", limTheory.DIFF_DIV, transcTheory.DIFF_COMPOSITE, limTheory.DIFF_MUL]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.058334
+
+INTEGRAL_ADD
+proof length: 3
+proof time: 0.096008
+Statistics
+  infstep : 44
+  nodes   : 12
+  maxdepth: 3
+Time: 1.193901
+  inferstep time: 0.858123
+  node_find time: 0.00932
+  node_crea time: 0.256597
+    pred time: 0.060481
+    thmpred time: 0.000001
+    mc time: 0.164145
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN boolLib.MATCH_MP_TAC (DB.fetch "integral" "DINT_INTEGRAL") THEN
+  metisTools.METIS_TAC [DB.fetch "integral" "DINT_ADD", DB.fetch "integral" "DINT_INTEGRAL", DB.fetch "integral" "INTEGRABLE_DINT", DB.fetch "integral" "integral_def", DB.fetch "integral" "INTEGRAL_LE", DB.fetch "integral" "INTEGRAL_CMUL", DB.fetch "integral" "INTEGRAL_0", DB.fetch "integral" "INTEGRAL_CONST", DB.fetch "integral" "INTEGRABLE_ADD", realTheory.SUM_ADD, netsTheory.NET_ADD, netsTheory.NET_NULL_ADD, transcTheory.DIFF_COMPOSITE, limTheory.DIFF_ADD, limTheory.CONT_ADD, limTheory.LIM_ADD]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.073864
+
+INTEGRAL_SUB
+proof length: 2
+proof time: 0.002132
+Statistics
+  infstep : 53
+  nodes   : 23
+  maxdepth: 4
+Time: 2.375367
+  inferstep time: 1.680024
+  node_find time: 0.014072
+  node_crea time: 0.589721
+    pred time: 0.137305
+    thmpred time: 0.000005
+    mc time: 0.313056
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN BasicProvers.SRW_TAC [] [DB.fetch "integral" "INTEGRAL_ADD", DB.fetch "integral" "INTEGRAL_LE", DB.fetch "integral" "INTEGRAL_CMUL", DB.fetch "integral" "DINT_INTEGRAL", DB.fetch "integral" "integral_def", DB.fetch "integral" "INTEGRABLE_DINT", DB.fetch "integral" "INTEGRAL_CONST", DB.fetch "integral" "INTEGRAL_0", DB.fetch "integral" "DINT_SUB", realTheory.SUM_SUB, netsTheory.NET_SUB, transcTheory.DIFF_COMPOSITE, limTheory.DIFF_SUB, limTheory.CONT_SUB, limTheory.LIM_SUB, limTheory.LIM_TRANSFORM]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.063047
+Replaying proof: 0.00376
+
+INTEGRAL_COMBINE
+Statistics
+  infstep : 549
+  nodes   : 103
+  maxdepth: 5
+Time: 10.060346
+  inferstep time: 6.806534
+  node_find time: 0.161355
+  node_crea time: 2.610172
+    pred time: 0.526442
+    thmpred time: 0.000019
+    mc time: 1.347902
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 28
+Original proof time: 0.0
+Replaying proof: 0.742092
+
+INTEGRAL_MVT1
+Statistics
+  infstep : 956
+  nodes   : 131
+  maxdepth: 5
+Time: 10.018156
+  inferstep time: 6.225059
+  node_find time: 0.263092
+  node_crea time: 2.793235
+    pred time: 0.544337
+    thmpred time: 0.000013
+    mc time: 1.271928
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 52
+Original proof time: 0.0
+Replaying proof: 1.404701
+Bad stac: 8

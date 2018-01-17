@@ -1,0 +1,677 @@
+
+IS_GCD_UNIQUE
+Statistics
+  infstep : 498
+  nodes   : 101
+  maxdepth: 5
+Time: 10.016403
+  inferstep time: 8.28215
+  node_find time: 0.052909
+  node_crea time: 1.604195
+    pred time: 0.549875
+    thmpred time: 0.000032
+    mc time: 0.631262
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025164
+
+IS_GCD_REF
+proof length: 4
+proof time: 0.001421
+Statistics
+  infstep : 91
+  nodes   : 16
+  maxdepth: 4
+Time: 1.834641
+  inferstep time: 1.6292
+  node_find time: 0.005089
+  node_crea time: 0.16914
+    pred time: 0.057049
+    thmpred time: 0.000005
+    mc time: 0.108222
+    inst time: 0.0
+Proof found: Cases_on [QUOTE " (*#loc 1 1969*)a"] THENL
+  [REWRITE_TAC [fetch "gcd" "is_gcd_def"] THEN
+  SRW_TAC [] [],
+  SRW_TAC [] [fetch "gcd" "is_gcd_def"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.032334
+
+IS_GCD_SYM
+proof length: 2
+proof time: 0.011825
+Statistics
+  infstep : 72
+  nodes   : 25
+  maxdepth: 4
+Time: 2.915038
+  inferstep time: 2.414292
+  node_find time: 0.005358
+  node_crea time: 0.458541
+    pred time: 0.190455
+    thmpred time: 0.000009
+    mc time: 0.175448
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "gcd" "is_gcd_def"] THEN
+  metisLib.METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.034514
+
+IS_GCD_0R
+proof length: 1
+proof time: 0.05677
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.086659
+  inferstep time: 0.068379
+  node_find time: 0.000085
+  node_crea time: 0.009384
+    pred time: 0.002707
+    thmpred time: 0.0
+    mc time: 0.014195
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "is_gcd_def", fetch "gcd" "IS_GCD_REF", compute_divides, DIVIDES_LE]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016025
+
+IS_GCD_0L
+proof length: 1
+proof time: 0.090594
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.075751
+  inferstep time: 0.044564
+  node_find time: 0.00011
+  node_crea time: 0.019472
+    pred time: 0.004699
+    thmpred time: 0.0
+    mc time: 0.024314
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "is_gcd_def", fetch "gcd" "IS_GCD_REF", ALL_DIVIDES_0]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.026302
+
+PRIME_IS_GCD
+proof length: 3
+proof time: 0.014773
+Statistics
+  infstep : 123
+  nodes   : 27
+  maxdepth: 4
+Time: 3.726375
+  inferstep time: 3.199365
+  node_find time: 0.009803
+  node_crea time: 0.439262
+    pred time: 0.138279
+    thmpred time: 0.000008
+    mc time: 0.278525
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "gcd" "is_gcd_def", prime_def] THEN
+  (RW_TAC numLib.arith_ss) [(fetch "divides" "divides_def")] THEN
+  metisLib.METIS_TAC []
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.250637
+
+IS_GCD_MINUS_L
+Statistics
+  infstep : 278
+  nodes   : 82
+  maxdepth: 5
+Time: 10.037832
+  inferstep time: 8.404602
+  node_find time: 0.039627
+  node_crea time: 1.419649
+    pred time: 0.557565
+    thmpred time: 0.00003
+    mc time: 0.508117
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.063752
+
+IS_GCD_MINUS_R
+proof length: 1
+proof time: 0.01327
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.107152
+  inferstep time: 0.078047
+  node_find time: 0.000178
+  node_crea time: 0.023966
+    pred time: 0.00665
+    thmpred time: 0.000001
+    mc time: 0.019271
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "IS_GCD_MINUS_L", fetch "gcd" "IS_GCD_SYM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007437
+
+GCD_IS_GCD
+Statistics
+  infstep : 425
+  nodes   : 89
+  maxdepth: 5
+Time: 10.059691
+  inferstep time: 8.60286
+  node_find time: 0.061223
+  node_crea time: 1.260953
+    pred time: 0.41574
+    thmpred time: 0.000025
+    mc time: 0.60902
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.150827
+
+GCD_REF
+proof length: 1
+proof time: 0.004144
+Statistics
+  infstep : 31
+  nodes   : 4
+  maxdepth: 2
+Time: 0.467459
+  inferstep time: 0.406453
+  node_find time: 0.002844
+  node_crea time: 0.035357
+    pred time: 0.013359
+    thmpred time: 0.0
+    mc time: 0.029125
+    inst time: 0.0
+Proof found: FULL_SIMP_TAC (srw_ss ()) [GCD_THM, DIVIDES_ANTISYM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009104
+
+GCD_SYM
+proof length: 1
+proof time: 0.046608
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.267821
+  inferstep time: 0.229377
+  node_find time: 0.00029
+  node_crea time: 0.029604
+    pred time: 0.018777
+    thmpred time: 0.000001
+    mc time: 0.016075
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "GCD_REF", fetch "gcd" "GCD_IS_GCD", fetch "gcd" "GCD_IS_GREATEST_COMMON_DIVISOR", GCD_THM, fetch "gcd" "gcd_def_compute", fetch "gcd" "IS_GCD_UNIQUE", fetch "gcd" "IS_GCD_SYM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012442
+
+GCD_0R
+proof length: 1
+proof time: 0.014075
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.056654
+  inferstep time: 0.043562
+  node_find time: 0.000127
+  node_crea time: 0.008911
+    pred time: 0.002642
+    thmpred time: 0.0
+    mc time: 0.00876
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "GCD_SYM", fetch "gcd" "GCD_IS_GREATEST_COMMON_DIVISOR", fetch "gcd" "gcd_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017595
+
+GCD_0L
+proof length: 1
+proof time: 0.018317
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.077004
+  inferstep time: 0.062285
+  node_find time: 0.000148
+  node_crea time: 0.009718
+    pred time: 0.002785
+    thmpred time: 0.0
+    mc time: 0.0099
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "GCD_0R", fetch "gcd" "GCD_SYM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.028881
+
+GCD_ADD_R
+Statistics
+  infstep : 436
+  nodes   : 64
+  maxdepth: 4
+Time: 10.001697
+  inferstep time: 8.864948
+  node_find time: 0.062528
+  node_crea time: 0.923973
+    pred time: 0.305302
+    thmpred time: 0.000015
+    mc time: 0.449291
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.077798
+
+GCD_ADD_L
+proof length: 1
+proof time: 0.048144
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.072342
+  inferstep time: 0.059347
+  node_find time: 0.000136
+  node_crea time: 0.008553
+    pred time: 0.002641
+    thmpred time: 0.000001
+    mc time: 0.008507
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "GCD_ADD_R_THM", fetch "gcd" "GCD_SYM", fetch "gcd" "GCD_IS_GCD", fetch "gcd" "GCD_IS_GREATEST_COMMON_DIVISOR", GCD_THM, LESS_EQ_ADD_SUB]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.023022
+
+GCD_EQ_0
+Statistics
+  infstep : 541
+  nodes   : 92
+  maxdepth: 5
+Time: 10.02189
+  inferstep time: 8.377533
+  node_find time: 0.0975
+  node_crea time: 1.283538
+    pred time: 0.310877
+    thmpred time: 0.000026
+    mc time: 0.796721
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.086857
+
+GCD_1
+Statistics
+  infstep : 509
+  nodes   : 70
+  maxdepth: 5
+Time: 10.014753
+  inferstep time: 8.203135
+  node_find time: 0.095828
+  node_crea time: 1.408526
+    pred time: 0.260249
+    thmpred time: 0.000018
+    mc time: 0.96796
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.12569
+
+PRIME_GCD
+proof length: 3
+proof time: 0.036577
+Statistics
+  infstep : 47
+  nodes   : 14
+  maxdepth: 3
+Time: 2.384989
+  inferstep time: 1.939275
+  node_find time: 0.007153
+  node_crea time: 0.36267
+    pred time: 0.098795
+    thmpred time: 0.000006
+    mc time: 0.231834
+    inst time: 0.0
+Proof found: Q_TAC SUFF_TAC [QUOTE " (*#loc 1 4734*)!m n. (m = 1) ==> (gcd m n = 1)"] THENL
+  [PROVE_TAC [prime_def, GCD_THM],
+  metisTools.METIS_TAC [fetch "gcd" "GCD_ADD_L", fetch "gcd" "GCD_1"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010189
+
+tactictoe_prove_18
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.637722
+
+L_EUCLIDES
+Statistics
+  infstep : 288
+  nodes   : 42
+  maxdepth: 5
+Time: 10.019998
+  inferstep time: 8.749755
+  node_find time: 0.054959
+  node_crea time: 1.063893
+    pred time: 0.303725
+    thmpred time: 0.000013
+    mc time: 0.528902
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.194459
+
+P_EUCLIDES
+Statistics
+  infstep : 280
+  nodes   : 63
+  maxdepth: 4
+Time: 10.03425
+  inferstep time: 8.569481
+  node_find time: 0.0537
+  node_crea time: 1.14323
+    pred time: 0.325428
+    thmpred time: 0.000033
+    mc time: 0.697966
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.203096
+
+FACTOR_OUT_GCD
+Statistics
+  infstep : 370
+  nodes   : 59
+  maxdepth: 4
+Time: 10.123844
+  inferstep time: 8.577475
+  node_find time: 0.069993
+  node_crea time: 1.263332
+    pred time: 0.341471
+    thmpred time: 0.000013
+    mc time: 0.710093
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 1.434872
+
+GCD_SUCfree_ind
+Statistics
+  infstep : 478
+  nodes   : 70
+  maxdepth: 5
+Time: 10.114569
+  inferstep time: 8.058545
+  node_find time: 0.117304
+  node_crea time: 1.706462
+    pred time: 0.468465
+    thmpred time: 0.00002
+    mc time: 0.807065
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.717458
+
+tactictoe_prove_23
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 1.011947
+
+LINEAR_GCD
+Statistics
+  infstep : 466
+  nodes   : 83
+  maxdepth: 5
+Time: 10.005906
+  inferstep time: 7.828609
+  node_find time: 0.121094
+  node_crea time: 1.751175
+    pred time: 0.340563
+    thmpred time: 0.000019
+    mc time: 1.08639
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.176009
+
+tactictoe_prove_25
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.231464
+
+tactictoe_prove_26
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.363647
+
+GCD_EFFICIENTLY
+Statistics
+  infstep : 344
+  nodes   : 69
+  maxdepth: 5
+Time: 10.012444
+  inferstep time: 8.000773
+  node_find time: 0.087909
+  node_crea time: 1.601615
+    pred time: 0.352158
+    thmpred time: 0.000026
+    mc time: 1.012753
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.674308
+
+LCM_IS_LEAST_COMMON_MULTIPLE
+Statistics
+  infstep : 314
+  nodes   : 73
+  maxdepth: 5
+Time: 10.062754
+  inferstep time: 8.512191
+  node_find time: 0.080528
+  node_crea time: 1.23079
+    pred time: 0.465563
+    thmpred time: 0.000023
+    mc time: 0.451146
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 36
+Original proof time: 0.0
+Replaying proof: 1.841844
+
+LCM_0
+proof length: 1
+proof time: 0.00071
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.149574
+  inferstep time: 0.122755
+  node_find time: 0.000502
+  node_crea time: 0.019292
+    pred time: 0.003139
+    thmpred time: 0.000001
+    mc time: 0.019416
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "gcd" "lcm_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009516
+
+LCM_1
+proof length: 4
+proof time: 0.199928
+Statistics
+  infstep : 17
+  nodes   : 9
+  maxdepth: 3
+Time: 0.773848
+  inferstep time: 0.56994
+  node_find time: 0.003957
+  node_crea time: 0.139565
+    pred time: 0.03693
+    thmpred time: 0.000001
+    mc time: 0.130615
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "gcd" "lcm_def", fetch "gcd" "GCD_1", MULT_CLAUSES, numeralTheory.numeral_distrib] THEN
+  (RW_TAC numLib.arith_ss) [] THENL
+  [METIS_TAC [LESS_0_CASES, numeralTheory.numeral_distrib, fetch "gcd" "LCM_0", ONE_LT_MULT, EXP_SUB_NUMERAL, X_LT_EXP_X_IFF],
+  METIS_TAC [LESS_0_CASES, numeralTheory.numeral_distrib, fetch "gcd" "LCM_0", ONE_LT_EXP, ZERO_LT_EXP, EXP_SUB_NUMERAL, DIV_LE_X]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.027737
+
+LCM_COMM
+proof length: 3
+proof time: 0.024726
+Statistics
+  infstep : 15
+  nodes   : 5
+  maxdepth: 3
+Time: 0.517373
+  inferstep time: 0.445206
+  node_find time: 0.003057
+  node_crea time: 0.046836
+    pred time: 0.015984
+    thmpred time: 0.000003
+    mc time: 0.034628
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "gcd" "lcm_def"] THEN
+  (RW_TAC numLib.arith_ss) [] THEN
+  METIS_TAC [fetch "gcd" "GCD_SYM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.027231
+
+LCM_LE
+Statistics
+  infstep : 254
+  nodes   : 105
+  maxdepth: 6
+Time: 10.038792
+  inferstep time: 7.431112
+  node_find time: 0.070075
+  node_crea time: 2.176407
+    pred time: 0.493848
+    thmpred time: 0.000038
+    mc time: 1.270314
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.827173
+
+LCM_LEAST
+proof length: 3
+proof time: 0.069662
+Statistics
+  infstep : 91
+  nodes   : 26
+  maxdepth: 4
+Time: 3.65767
+  inferstep time: 2.971706
+  node_find time: 0.022934
+  node_crea time: 0.557192
+    pred time: 0.162178
+    thmpred time: 0.000012
+    mc time: 0.286026
+    inst time: 0.0
+Proof found: Cases_on [QUOTE " (*#loc 1 11037*)n = 0"] THENL
+  [metisTools.METIS_TAC [DB.fetch "gcd" "LCM_IS_LEAST_COMMON_MULTIPLE", DB.fetch "gcd" "LCM_1", dividesTheory.NOT_LT_DIVIDES, DB.fetch "gcd" "PRIME_IS_GCD"],
+  METIS_TAC [fetch "gcd" "LCM_IS_LEAST_COMMON_MULTIPLE", fetch "gcd" "LCM_LE", fetch "gcd" "lcm_def", NOT_LT_DIVIDES, fetch "gcd" "P_EUCLIDES", fetch "gcd" "PRIME_GCD", PRIME_FACTOR, prime_def, prime_divides_only_self]]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.291418
+
+GCD_COMMON_FACTOR
+Statistics
+  infstep : 336
+  nodes   : 66
+  maxdepth: 5
+Time: 10.11574
+  inferstep time: 8.370342
+  node_find time: 0.095688
+  node_crea time: 1.381385
+    pred time: 0.363382
+    thmpred time: 0.00002
+    mc time: 0.794212
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.709859
+
+tactictoe_prove_35
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.109194
+
+tactictoe_prove_36
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.109024
+
+GCD_CANCEL_MULT
+Statistics
+  infstep : 300
+  nodes   : 68
+  maxdepth: 5
+Time: 10.014592
+  inferstep time: 7.811226
+  node_find time: 0.103201
+  node_crea time: 1.800928
+    pred time: 0.446379
+    thmpred time: 0.000026
+    mc time: 1.092878
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.472955
+
+tactictoe_prove_38
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.349333
+
+BINARY_GCD
+Statistics
+  infstep : 276
+  nodes   : 92
+  maxdepth: 5
+Time: 10.015156
+  inferstep time: 7.429566
+  node_find time: 0.081098
+  node_crea time: 2.275598
+    pred time: 0.521382
+    thmpred time: 0.000027
+    mc time: 1.371112
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.193308
+Bad stac: 33

@@ -1,0 +1,767 @@
+
+IN_SET_MAP
+proof length: 1
+proof time: 0.000216
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.117324
+  inferstep time: 0.106749
+  node_find time: 0.000047
+  node_crea time: 0.007699
+    pred time: 0.002847
+    thmpred time: 0.0
+    mc time: 0.006177
+    inst time: 0.0
+Proof found: (boolLib.REWRITE_TAC [ pred_setTheory.SPECIFICATION , ( DB.fetch "quotient" "FUN_MAP_THM" ) , combinTheory.I_THM ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.037498
+
+SET_REL
+Statistics
+  infstep : 1045
+  nodes   : 144
+  maxdepth: 5
+Time: 10.003876
+  inferstep time: 8.593401
+  node_find time: 0.068597
+  node_crea time: 1.270728
+    pred time: 0.324988
+    thmpred time: 0.000016
+    mc time: 0.516519
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.02993
+
+SET_REL_MP
+proof length: 2
+proof time: 0.119468
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 2
+Time: 0.452669
+  inferstep time: 0.412858
+  node_find time: 0.000228
+  node_crea time: 0.034149
+    pred time: 0.015333
+    thmpred time: 0.0
+    mc time: 0.015253
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [quotientTheory.RES_EXISTS_EQUIV_RSP, quotientTheory.RES_EXISTS_RSP, quotientTheory.RES_FORALL_RSP, DB.fetch "quotient_pred_set" "SET_REL", quotientTheory.RES_EXISTS_UNIQUE_REGULAR_SAME, quotientTheory.QUOTIENT_TRANS, quotientTheory.QUOTIENT_SYM, quotientTheory.QUOTIENT_REL, quotientTheory.QUOTIENT_def, quotientTheory.QUOTIENT_REL_ABS, quotientTheory.QUOTIENT_REL_ABS_EQ, quotientTheory.COND_RSP, quotientTheory.EQUALS_RSP, quotientTheory.I_RSP, quotientTheory.QUOTIENT_REP_ABS, quotientTheory.EQUALS_PRS] THEN metisTools.METIS_TAC [quotientTheory.QUOTIENT_def, quotientTheory.QUOTIENT_REL_REP, quotientTheory.QUOTIENT_REP_REFL, quotientTheory.EQUALS_PRS, quotientTheory.QUOTIENT_REP_ABS, quotientTheory.QUOTIENT_ABS_REP, quotientTheory.REP_ABS_RSP, quotientTheory.QUOTIENT_REL, quotientTheory.QUOTIENT_REL_ABS, quotientTheory.QUOTIENT_REL_ABS_EQ, quotientTheory.COND_PRS, quotientTheory.QUOTIENT_TRANS, quotientTheory.QUOTIENT_SYM, quotientTheory.COND_RSP, quotientTheory.EQUALS_RSP, quotientTheory.I_RSP]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.143115
+
+IN_PRS
+proof length: 2
+proof time: 0.007675
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.252737
+  inferstep time: 0.223045
+  node_find time: 0.000169
+  node_crea time: 0.022349
+    pred time: 0.009581
+    thmpred time: 0.000011
+    mc time: 0.013801
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "IN_SET_MAP", quotientTheory.I_PRS, quotientTheory.I_RSP, quotientTheory.IN_FUN, quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.FUN_REL_EQUALS, quotientTheory.LAMBDA_PRS, quotientTheory.LAMBDA_PRS1, quotientTheory.LET_PRS, quotientTheory.W_PRS] THEN boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.050181
+
+IN_RSP
+proof length: 3
+proof time: 0.104321
+Statistics
+  infstep : 22
+  nodes   : 13
+  maxdepth: 3
+Time: 0.848536
+  inferstep time: 0.742861
+  node_find time: 0.000642
+  node_crea time: 0.095638
+    pred time: 0.038405
+    thmpred time: 0.000002
+    mc time: 0.042318
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "quotient_pred_set" "SET_REL_MP", quotientTheory.RES_EXISTS_EQUIV_RSP, quotientTheory.RES_EXISTS_RSP, quotientTheory.RES_FORALL_RSP, DB.fetch "quotient_pred_set" "SET_REL", quotientTheory.RES_EXISTS_UNIQUE_REGULAR_SAME, quotientTheory.EQUALS_RSP, quotientTheory.REP_ABS_RSP, quotientTheory.C_RSP, quotientTheory.W_RSP, pred_setTheory.pairwise_UNION, pred_setTheory.SUM_IMAGE_CONG, whileTheory.OWHILE_IND, pred_setTheory.REL_RESTRICT_SUBSET, pred_setTheory.IMAGE_11, pred_setTheory.CROSS_EQNS] THEN boolLib.STRIP_TAC THEN
+  metisTools.METIS_TAC [quotientTheory.EQUALS_RSP, quotientTheory.REP_ABS_RSP, pred_setTheory.pairwise_UNION, pred_setTheory.SUM_IMAGE_CONG, whileTheory.OWHILE_IND, pred_setTheory.REL_RESTRICT_SUBSET, pred_setTheory.IMAGE_11, pred_setTheory.CROSS_EQNS, pred_setTheory.SUBSET_DELETE_BOTH, pred_setTheory.PSUBSET_EQN, pred_setTheory.SET_EQ_SUBSET, pred_setTheory.SUBSET_DIFF, pred_setTheory.FINITE_INTER, pred_setTheory.SUBSET_INSERT_RIGHT, pred_setTheory.SUBSET_POW, pred_setTheory.BIGINTER_UNION]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.039387
+
+IN_GSPECR
+proof length: 4
+proof time: 0.012561
+Statistics
+  infstep : 80
+  nodes   : 28
+  maxdepth: 4
+Time: 1.769553
+  inferstep time: 1.499798
+  node_find time: 0.002968
+  node_crea time: 0.234608
+    pred time: 0.085394
+    thmpred time: 0.000003
+    mc time: 0.115804
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN BasicProvers.Cases_on [HolKernel.QUOTE " (*#loc 1 50625*)f x'"] THEN
+  simpLib.FULL_SIMP_TAC boolSimps.bool_ss [(DB.fetch "pred_set" "EXTENSION"), (DB.fetch "pred_set" "SPECIFICATION"), combinTheory.o_THM, pairTheory.FST, pairTheory.SND, pairTheory.PAIR_EQ] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "quotient_pred_set" "GSPECR_def", quotientTheory.EXISTS_PRS, quotientTheory.RES_EXISTS_RSP, quotientTheory.RES_EXISTS_EQUIV, quotientTheory.RES_EXISTS_EQUIV_DEF, quotientTheory.EQUIV_RES_EXISTS, pred_setTheory.GSPECIFICATION, pred_setTheory.GSPECIFICATION_applied, pred_setTheory.GSPEC_T, quotient_pairTheory.PAIR_REL_THM, quotient_pairTheory.COMMA_RSP, quotient_pairTheory.PAIR_REL_REFL, quotient_pairTheory.PAIR_REL, quotient_pairTheory.CURRY_RSP, quotient_pairTheory.FST_RSP, quotient_pairTheory.PAIR_EQUIV]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005791
+
+GSPEC_PRS
+Statistics
+  infstep : 794
+  nodes   : 253
+  maxdepth: 7
+Time: 10.106295
+  inferstep time: 7.48542
+  node_find time: 0.087878
+  node_crea time: 2.441378
+    pred time: 0.441175
+    thmpred time: 0.000021
+    mc time: 0.962794
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.553434
+
+GSPECR_RSP
+Statistics
+  infstep : 268
+  nodes   : 39
+  maxdepth: 4
+Time: 10.001519
+  inferstep time: 2.441535
+  node_find time: 0.013025
+  node_crea time: 0.56745
+    pred time: 0.141874
+    thmpred time: 0.000005
+    mc time: 0.143973
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.532122
+
+EMPTY_PRS
+proof length: 2
+proof time: 0.006331
+Statistics
+  infstep : 156
+  nodes   : 25
+  maxdepth: 4
+Time: 2.03158
+  inferstep time: 1.647129
+  node_find time: 0.023529
+  node_crea time: 0.276917
+    pred time: 0.075509
+    thmpred time: 0.000003
+    mc time: 0.08624
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [pred_setTheory.EXTENSION] THEN BasicProvers.SRW_TAC [] [pred_setTheory.NOT_IN_EMPTY, DB.fetch "quotient_pred_set" "IN_PRS", quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "GSPEC_PRS", DB.fetch "quotient_pred_set" "IN_SET_MAP", quotientTheory.I_PRS, quotientTheory.I_RSP, quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.FUN_REL_EQUALS, quotientTheory.LAMBDA_PRS, quotientTheory.LAMBDA_PRS1]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.053174
+
+EMPTY_RSP
+proof length: 4
+proof time: 0.050294
+Statistics
+  infstep : 28
+  nodes   : 12
+  maxdepth: 4
+Time: 0.888942
+  inferstep time: 0.742676
+  node_find time: 0.003809
+  node_crea time: 0.113076
+    pred time: 0.045252
+    thmpred time: 0.000001
+    mc time: 0.05244
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [boolLib.FORALL_DEF, res_quanTheory.RES_FORALL] THEN boolLib.BETA_TAC THEN
+  boolLib.REWRITE_TAC [(DB.fetch "quotient" "FUN_REL")] THEN
+  metisTools.METIS_TAC [pred_setTheory.EMPTY_applied, optionTheory.option_TY_DEF, DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "SET_REL_MP", quotientTheory.QUOTIENT_SYM, quotientTheory.QUOTIENT_TRANS, DB.fetch "quotient_pred_set" "IN_RSP", quotientTheory.COND_RSP, quotientTheory.EQUALS_RSP, quotientTheory.QUOTIENT_REL, quotientTheory.QUOTIENT_REL_ABS_EQ, quotientTheory.QUOTIENT_REL_ABS, quotientTheory.I_RSP, quotientTheory.QUOTIENT_REP_ABS, quotientTheory.QUOTIENT_def, quotientTheory.EQUALS_PRS]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.060061
+
+UNIV_PRS
+proof length: 3
+proof time: 0.010867
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 3
+Time: 0.384834
+  inferstep time: 0.33692
+  node_find time: 0.001022
+  node_crea time: 0.033567
+    pred time: 0.013746
+    thmpred time: 0.000002
+    mc time: 0.018238
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "IN_PRS", DB.fetch "quotient_pred_set" "GSPEC_PRS", DB.fetch "quotient_pred_set" "IN_SET_MAP", quotientTheory.I_PRS, quotientTheory.I_RSP, quotientTheory.ABSTRACT_PRS, quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.FUN_REL_EQUALS, quotientTheory.FUN_REL_EQ_REL] THEN boolLib.REWRITE_TAC [pred_setTheory.EXTENSION] THEN
+  BasicProvers.SRW_TAC [] [pred_setTheory.IN_UNIV, DB.fetch "quotient_pred_set" "IN_PRS", quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "IN_SET_MAP", DB.fetch "quotient_pred_set" "GSPEC_PRS", pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, quotientTheory.IN_FUN, quotientTheory.FUN_MAP_THM, quotientTheory.APPLY_PRS]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.055054
+
+UNIV_RSP
+proof length: 4
+proof time: 0.056544
+Statistics
+  infstep : 28
+  nodes   : 12
+  maxdepth: 4
+Time: 0.804141
+  inferstep time: 0.691254
+  node_find time: 0.006084
+  node_crea time: 0.081399
+    pred time: 0.033657
+    thmpred time: 0.000003
+    mc time: 0.03629
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [boolLib.FORALL_DEF, res_quanTheory.RES_FORALL] THEN boolLib.BETA_TAC THEN
+  boolLib.REWRITE_TAC [(DB.fetch "quotient" "FUN_REL")] THEN
+  metisTools.METIS_TAC [pred_setTheory.UNIV_applied, optionTheory.option_TY_DEF, pred_setTheory.UNIV_DEF, DB.fetch "quotient_pred_set" "UNIV_PRS", DB.fetch "quotient_pred_set" "SET_REL_MP", quotientTheory.QUOTIENT_SYM, quotientTheory.QUOTIENT_TRANS, DB.fetch "quotient_pred_set" "IN_RSP", quotientTheory.QUOTIENT_REL_ABS_EQ, quotientTheory.QUOTIENT_REL, quotientTheory.QUOTIENT_REL_ABS, quotientTheory.COND_RSP, quotientTheory.EQUALS_RSP, quotientTheory.QUOTIENT_REP_ABS, quotientTheory.I_RSP, quotientTheory.QUOTIENT_def]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.05356
+
+UNION_PRS
+proof length: 4
+proof time: 0.011949
+Statistics
+  infstep : 170
+  nodes   : 37
+  maxdepth: 4
+Time: 2.453312
+  inferstep time: 1.923996
+  node_find time: 0.025815
+  node_crea time: 0.406452
+    pred time: 0.103716
+    thmpred time: 0.000004
+    mc time: 0.145523
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "quotient_pred_set" "IN_PRS", quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "IN_SET_MAP", DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "UNIV_PRS", DB.fetch "quotient_pred_set" "GSPEC_PRS", quotientTheory.I_PRS, quotientTheory.I_RSP, quotientTheory.ABSTRACT_PRS, quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.FUN_REL_EQUALS] THEN boolLib.REWRITE_TAC [pred_setTheory.EXTENSION] THEN
+  BasicProvers.SRW_TAC [] [pred_setTheory.IN_UNION, DB.fetch "quotient_pred_set" "IN_PRS", quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "IN_SET_MAP", DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "UNIV_PRS", DB.fetch "quotient_pred_set" "GSPEC_PRS", quotientTheory.I_PRS, quotientTheory.I_RSP, quotientTheory.IN_FUN, quotientTheory.FUN_MAP_THM, quotientTheory.APPLY_PRS] THEN
+  boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.136317
+
+UNION_RSP
+proof length: 2
+proof time: 0.116879
+Statistics
+  infstep : 12
+  nodes   : 6
+  maxdepth: 2
+Time: 0.456263
+  inferstep time: 0.348078
+  node_find time: 0.002226
+  node_crea time: 0.090322
+    pred time: 0.028939
+    thmpred time: 0.000002
+    mc time: 0.031069
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "quotient_pred_set" "IN_RSP", DB.fetch "quotient_pred_set" "SET_REL_MP", quotientTheory.RES_EXISTS_EQUIV_RSP, quotientTheory.RES_EXISTS_RSP, quotientTheory.RES_FORALL_RSP, quotientTheory.RES_EXISTS_UNIQUE_REGULAR_SAME, DB.fetch "quotient_pred_set" "SET_REL", DB.fetch "quotient_pred_set" "EMPTY_RSP", DB.fetch "quotient_pred_set" "UNIV_RSP", DB.fetch "quotient_pred_set" "GSPECR_RSP", pred_setTheory.pairwise_UNION, pred_setTheory.BIGINTER_UNION, pred_setTheory.BIGUNION_UNION, pred_setTheory.CROSS_EQNS, pred_setTheory.REL_RESTRICT_SUBSET, DB.fetch "quotient_pred_set" "UNION_PRS"] THEN metisTools.METIS_TAC [pred_setTheory.IN_UNION, DB.fetch "quotient_pred_set" "IN_RSP", pred_setTheory.pairwise_UNION, pred_setTheory.BIGINTER_UNION, pred_setTheory.BIGUNION_UNION, pred_setTheory.CROSS_EQNS, pred_setTheory.SUM_IMAGE_CONG, whileTheory.OWHILE_IND, pred_setTheory.REL_RESTRICT_SUBSET, DB.fetch "quotient_pred_set" "UNION_PRS", pred_setTheory.IMAGE_11, pred_setTheory.SUBSET_DELETE_BOTH, pred_setTheory.PSUBSET_EQN, pred_setTheory.SET_EQ_SUBSET, pred_setTheory.SUBSET_DIFF, pred_setTheory.FINITE_INTER]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.160634
+
+INTER_PRS
+proof length: 4
+proof time: 0.012611
+Statistics
+  infstep : 174
+  nodes   : 48
+  maxdepth: 5
+Time: 2.744747
+  inferstep time: 2.180329
+  node_find time: 0.027022
+  node_crea time: 0.431668
+    pred time: 0.104313
+    thmpred time: 0.000011
+    mc time: 0.188994
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "quotient_pred_set" "UNION_PRS", DB.fetch "quotient_pred_set" "IN_PRS", quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "IN_SET_MAP", DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "UNIV_PRS", DB.fetch "quotient_pred_set" "GSPEC_PRS", quotientTheory.I_PRS, quotientTheory.I_RSP, quotientTheory.ABSTRACT_PRS, quotientTheory.APPLY_PRS, quotientTheory.C_PRS] THEN boolLib.REWRITE_TAC [pred_setTheory.EXTENSION] THEN
+  BasicProvers.SRW_TAC [] [pred_setTheory.IN_INTER, DB.fetch "quotient_pred_set" "IN_PRS", DB.fetch "quotient_pred_set" "UNION_PRS", quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "IN_SET_MAP", DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "UNIV_PRS", DB.fetch "quotient_pred_set" "GSPEC_PRS", pred_setTheory.tactictoe_thm_33, quotientTheory.I_PRS, quotientTheory.I_RSP, quotientTheory.IN_FUN] THEN
+  boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.149264
+
+INTER_RSP
+proof length: 2
+proof time: 0.121051
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 2
+Time: 0.480153
+  inferstep time: 0.413937
+  node_find time: 0.001139
+  node_crea time: 0.053547
+    pred time: 0.017907
+    thmpred time: 0.000001
+    mc time: 0.023396
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "quotient_pred_set" "UNION_RSP", DB.fetch "quotient_pred_set" "IN_RSP", DB.fetch "quotient_pred_set" "SET_REL_MP", quotientTheory.RES_EXISTS_EQUIV_RSP, quotientTheory.RES_EXISTS_RSP, quotientTheory.RES_FORALL_RSP, DB.fetch "quotient_pred_set" "SET_REL", quotientTheory.RES_EXISTS_UNIQUE_REGULAR_SAME, DB.fetch "quotient_pred_set" "EMPTY_RSP", DB.fetch "quotient_pred_set" "UNIV_RSP", DB.fetch "quotient_pred_set" "GSPECR_RSP", pred_setTheory.FINITE_INTER, DB.fetch "quotient_pred_set" "INTER_PRS", pred_setTheory.BIGINTER_UNION, pred_setTheory.pairwise_UNION, pred_setTheory.REL_RESTRICT_SUBSET] THEN metisTools.METIS_TAC [pred_setTheory.IN_INTER, DB.fetch "quotient_pred_set" "UNION_RSP", DB.fetch "quotient_pred_set" "IN_RSP", pred_setTheory.FINITE_INTER, DB.fetch "quotient_pred_set" "INTER_PRS", pred_setTheory.BIGINTER_UNION, pred_setTheory.pairwise_UNION, pred_setTheory.SUM_IMAGE_CONG, whileTheory.OWHILE_IND, pred_setTheory.REL_RESTRICT_SUBSET, pred_setTheory.IMAGE_11, pred_setTheory.CROSS_EQNS, pred_setTheory.SUBSET_DELETE_BOTH, pred_setTheory.PSUBSET_EQN, pred_setTheory.SET_EQ_SUBSET, pred_setTheory.SUBSET_DIFF]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.133268
+
+SUBSET_PRS
+Statistics
+  infstep : 760
+  nodes   : 198
+  maxdepth: 6
+Time: 10.00368
+  inferstep time: 7.486137
+  node_find time: 0.142708
+  node_crea time: 2.038004
+    pred time: 0.39379
+    thmpred time: 0.000026
+    mc time: 0.704917
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.408766
+
+SUBSETR_RSP
+Statistics
+  infstep : 423
+  nodes   : 120
+  maxdepth: 5
+Time: 10.008642
+  inferstep time: 7.327201
+  node_find time: 0.082934
+  node_crea time: 2.364544
+    pred time: 0.390866
+    thmpred time: 0.000023
+    mc time: 0.623096
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.43615
+
+PSUBSET_PRS
+Statistics
+  infstep : 413
+  nodes   : 193
+  maxdepth: 7
+Time: 10.007998
+  inferstep time: 7.908161
+  node_find time: 0.087664
+  node_crea time: 1.789922
+    pred time: 0.436315
+    thmpred time: 0.000017
+    mc time: 0.708073
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.473552
+
+PSUBSETR_RSP
+Statistics
+  infstep : 472
+  nodes   : 143
+  maxdepth: 6
+Time: 10.062615
+  inferstep time: 7.677878
+  node_find time: 0.095973
+  node_crea time: 2.04571
+    pred time: 0.35232
+    thmpred time: 0.00002
+    mc time: 0.575835
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.297226
+
+IN_INSERTR
+proof length: 1
+proof time: 0.002559
+Statistics
+  infstep : 8
+  nodes   : 4
+  maxdepth: 2
+Time: 0.257289
+  inferstep time: 0.224594
+  node_find time: 0.00116
+  node_crea time: 0.023771
+    pred time: 0.0097
+    thmpred time: 0.000001
+    mc time: 0.010068
+    inst time: 0.0
+Proof found: (simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.DNF_ss ) [ DB.fetch "quotient_pred_set" "INSERTR_def" , pred_setTheory.tactictoe_thm_61 , pred_setTheory.tactictoe_thm_71 , pred_setTheory.INSERT_DEF , pred_setTheory.INSERT_applied , pred_setTheory.IN_INSERT , pred_setTheory.BIJ_INSERT , pred_setTheory.IN_INSERT_EXPAND , pred_setTheory.IN_UNION , pred_setTheory.UNION_DEF , pred_setTheory.SET_CASES , pred_setTheory.UNION_applied , pred_setTheory.REL_RESTRICT_DEF , pred_setTheory.equiv_on_def , pred_setTheory.partition_def , DB.fetch "quotient_pred_set" "SET_REL" ])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.084923
+
+INSERT_PRS
+Statistics
+  infstep : 835
+  nodes   : 189
+  maxdepth: 6
+Time: 10.005362
+  inferstep time: 7.55504
+  node_find time: 0.171028
+  node_crea time: 1.844851
+    pred time: 0.365676
+    thmpred time: 0.000016
+    mc time: 0.654556
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.166369
+
+INSERTR_RSP
+Statistics
+  infstep : 463
+  nodes   : 118
+  maxdepth: 6
+Time: 10.01278
+  inferstep time: 7.974061
+  node_find time: 0.098304
+  node_crea time: 1.669186
+    pred time: 0.352182
+    thmpred time: 0.000017
+    mc time: 0.471785
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.178068
+
+IN_DELETER
+proof length: 3
+proof time: 0.001229
+Statistics
+  infstep : 108
+  nodes   : 19
+  maxdepth: 3
+Time: 2.013173
+  inferstep time: 1.73418
+  node_find time: 0.018958
+  node_crea time: 0.179196
+    pred time: 0.061033
+    thmpred time: 0.000003
+    mc time: 0.081491
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.GEN_TAC THEN boolLib.REWRITE_TAC [DB.fetch "quotient_pred_set" "DELETER_def", pred_setTheory.REL_RESTRICT_DEF, pred_setTheory.equiv_on_def, pred_setTheory.partition_def, pred_setTheory.tactictoe_thm_61, pred_setTheory.tactictoe_thm_71, DB.fetch "quotient_pred_set" "SET_REL_MP", relationTheory.RRESTRICT_DEF, pred_setTheory.partition_elements_interrelate, DB.fetch "quotient_pred_set" "INSERTR_def", DB.fetch "quotient_pred_set" "IN_INSERTR", DB.fetch "quotient_pred_set" "SET_REL", pred_setTheory.pairwise_UNION, DB.fetch "quotient_pred_set" "IN_RSP", pred_setTheory.pairwise_def, pred_setTheory.tactictoe_thm_57] THEN
+  simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [relationTheory.irreflexive_def]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.07735
+
+DELETE_PRS
+Statistics
+  infstep : 974
+  nodes   : 257
+  maxdepth: 7
+Time: 10.061862
+  inferstep time: 6.626993
+  node_find time: 0.23645
+  node_crea time: 2.641276
+    pred time: 0.36378
+    thmpred time: 0.000017
+    mc time: 1.183014
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.179651
+
+DELETER_RSP
+proof length: 4
+proof time: 0.009521
+Statistics
+  infstep : 53
+  nodes   : 22
+  maxdepth: 4
+Time: 1.721349
+  inferstep time: 1.404927
+  node_find time: 0.009422
+  node_crea time: 0.249842
+    pred time: 0.061498
+    thmpred time: 0.000005
+    mc time: 0.103079
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.GEN_TAC THEN boolLib.PURE_REWRITE_TAC [DB.fetch "quotient_pred_set" "DELETER_def", DB.fetch "quotient_pred_set" "IN_DELETER", DB.fetch "quotient_pred_set" "DELETE_PRS", DB.fetch "quotient_pred_set" "INSERTR_RSP", DB.fetch "quotient_pred_set" "IN_RSP", DB.fetch "quotient_pred_set" "INTER_RSP", DB.fetch "quotient_pred_set" "PSUBSETR_RSP", DB.fetch "quotient_pred_set" "SUBSETR_RSP", DB.fetch "quotient_pred_set" "UNION_RSP", DB.fetch "quotient_pred_set" "SET_REL_MP", quotientTheory.RES_EXISTS_EQUIV_RSP, quotientTheory.RES_EXISTS_RSP, quotientTheory.RES_FORALL_RSP, DB.fetch "quotient_pred_set" "SET_REL", DB.fetch "quotient_pred_set" "PSUBSETR_def", quotientTheory.RES_EXISTS_UNIQUE_REGULAR_SAME] THEN
+  boolLib.REPEAT boolLib.STRIP_TAC THEN
+  bossLib.PROVE_TAC [quotientTheory.QUOTIENT_SYM, quotientTheory.QUOTIENT_TRANS]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.205793
+
+DIFF_PRS
+proof length: 4
+proof time: 0.009484
+Statistics
+  infstep : 28
+  nodes   : 12
+  maxdepth: 4
+Time: 0.9622
+  inferstep time: 0.803323
+  node_find time: 0.004907
+  node_crea time: 0.119301
+    pred time: 0.038817
+    thmpred time: 0.000003
+    mc time: 0.059698
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "quotient_pred_set" "INTER_PRS", DB.fetch "quotient_pred_set" "PSUBSET_PRS", DB.fetch "quotient_pred_set" "SUBSET_PRS", DB.fetch "quotient_pred_set" "UNION_PRS", DB.fetch "quotient_pred_set" "DELETE_PRS", DB.fetch "quotient_pred_set" "INSERT_PRS", DB.fetch "quotient_pred_set" "IN_PRS", quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "IN_SET_MAP", DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "UNIV_PRS", DB.fetch "quotient_pred_set" "GSPEC_PRS"] THEN boolLib.REWRITE_TAC [pred_setTheory.EXTENSION] THEN
+  BasicProvers.SRW_TAC [] [pred_setTheory.IN_DIFF, DB.fetch "quotient_pred_set" "IN_PRS", DB.fetch "quotient_pred_set" "INTER_PRS", DB.fetch "quotient_pred_set" "PSUBSET_PRS", DB.fetch "quotient_pred_set" "SUBSET_PRS", DB.fetch "quotient_pred_set" "UNION_PRS", DB.fetch "quotient_pred_set" "DELETE_PRS", DB.fetch "quotient_pred_set" "INSERT_PRS", quotientTheory.EXISTS_PRS, quotientTheory.EXISTS_UNIQUE_PRS, quotientTheory.FORALL_PRS, quotientTheory.RES_EXISTS_PRS, quotientTheory.RES_FORALL_PRS, DB.fetch "quotient_pred_set" "IN_SET_MAP", DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "UNIV_PRS"] THEN
+  boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.162199
+
+DIFF_RSP
+proof length: 3
+proof time: 0.138569
+Statistics
+  infstep : 164
+  nodes   : 55
+  maxdepth: 5
+Time: 3.983905
+  inferstep time: 3.011367
+  node_find time: 0.037581
+  node_crea time: 0.793696
+    pred time: 0.172053
+    thmpred time: 0.000009
+    mc time: 0.324465
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "quotient_pred_set" "INTER_RSP", DB.fetch "quotient_pred_set" "PSUBSETR_RSP", DB.fetch "quotient_pred_set" "SUBSETR_RSP", DB.fetch "quotient_pred_set" "UNION_RSP", DB.fetch "quotient_pred_set" "DELETER_RSP", DB.fetch "quotient_pred_set" "INSERTR_RSP", DB.fetch "quotient_pred_set" "IN_RSP", DB.fetch "quotient_pred_set" "SET_REL_MP", quotientTheory.RES_EXISTS_EQUIV_RSP, quotientTheory.RES_EXISTS_RSP, quotientTheory.RES_FORALL_RSP, DB.fetch "quotient_pred_set" "PSUBSETR_def", DB.fetch "quotient_pred_set" "SET_REL", quotientTheory.RES_EXISTS_UNIQUE_REGULAR_SAME, pred_setTheory.SUBSET_DIFF, DB.fetch "quotient_pred_set" "EMPTY_RSP"] THEN boolLib.REPEAT boolLib.STRIP_TAC THEN
+  metisTools.METIS_TAC [pred_setTheory.IN_DIFF, pred_setTheory.SUBSET_DIFF, DB.fetch "quotient_pred_set" "INTER_RSP", DB.fetch "quotient_pred_set" "PSUBSETR_RSP", DB.fetch "quotient_pred_set" "SUBSETR_RSP", DB.fetch "quotient_pred_set" "UNION_RSP", pred_setTheory.pairwise_UNION, pred_setTheory.SUM_IMAGE_CONG, DB.fetch "quotient_pred_set" "IN_RSP", pred_setTheory.IMAGE_11, pred_setTheory.CROSS_EQNS, pred_setTheory.SUBSET_DELETE_BOTH, DB.fetch "quotient_pred_set" "DELETER_RSP", DB.fetch "quotient_pred_set" "INSERTR_RSP", whileTheory.OWHILE_IND, pred_setTheory.PSUBSET_EQN]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.188015
+
+DISJOINT_PRS
+Statistics
+  infstep : 589
+  nodes   : 186
+  maxdepth: 7
+Time: 10.000077
+  inferstep time: 6.876536
+  node_find time: 0.152017
+  node_crea time: 2.569145
+    pred time: 0.469754
+    thmpred time: 0.000022
+    mc time: 0.957132
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.341632
+
+DISJOINTR_RSP
+Statistics
+  infstep : 439
+  nodes   : 149
+  maxdepth: 6
+Time: 10.033766
+  inferstep time: 7.27702
+  node_find time: 0.104746
+  node_crea time: 2.365824
+    pred time: 0.459084
+    thmpred time: 0.000013
+    mc time: 0.750327
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 1.059419
+
+FINITE_PRS
+Statistics
+  infstep : 793
+  nodes   : 133
+  maxdepth: 6
+Time: 10.052338
+  inferstep time: 7.530164
+  node_find time: 0.18894
+  node_crea time: 1.831957
+    pred time: 0.467024
+    thmpred time: 0.000014
+    mc time: 0.60971
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 68
+Original proof time: 0.0
+Replaying proof: 2.042933
+
+FINITER_EQ
+Statistics
+  infstep : 671
+  nodes   : 188
+  maxdepth: 6
+Time: 10.015846
+  inferstep time: 7.210802
+  node_find time: 0.170591
+  node_crea time: 2.180069
+    pred time: 0.485514
+    thmpred time: 0.000034
+    mc time: 0.922905
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.454093
+
+FINITER_RSP
+proof length: 2
+proof time: 0.031612
+Statistics
+  infstep : 19
+  nodes   : 13
+  maxdepth: 4
+Time: 0.674028
+  inferstep time: 0.488264
+  node_find time: 0.004138
+  node_crea time: 0.147449
+    pred time: 0.040652
+    thmpred time: 0.000003
+    mc time: 0.062075
+    inst time: 0.0
+Proof found: boolLib.PURE_REWRITE_TAC [DB.fetch "quotient_pred_set" "FINITER_EQ", DB.fetch "quotient_pred_set" "FINITER_def", DB.fetch "quotient_pred_set" "FINITE_PRS", DB.fetch "quotient_pred_set" "DELETER_RSP", DB.fetch "quotient_pred_set" "DIFF_RSP", DB.fetch "quotient_pred_set" "DISJOINTR_RSP", DB.fetch "quotient_pred_set" "INSERTR_RSP", DB.fetch "quotient_pred_set" "INTER_RSP", DB.fetch "quotient_pred_set" "IN_RSP", DB.fetch "quotient_pred_set" "PSUBSETR_RSP", DB.fetch "quotient_pred_set" "SUBSETR_RSP", DB.fetch "quotient_pred_set" "UNION_RSP", DB.fetch "quotient_pred_set" "SET_REL_MP", quotientTheory.RES_EXISTS_EQUIV_RSP, quotientTheory.RES_EXISTS_RSP, quotientTheory.RES_FORALL_RSP] THEN metisTools.METIS_TAC [DB.fetch "quotient_pred_set" "FINITE_PRS", quotientTheory.QUOTIENT_ABS_REP, quotientTheory.QUOTIENT_REP_REFL, quotientTheory.QUOTIENT_REL, quotientTheory.QUOTIENT_REL_ABS, DB.fetch "quotient_pred_set" "EMPTY_PRS", DB.fetch "quotient_pred_set" "DELETER_RSP", quotientTheory.QUOTIENT_SYM, quotientTheory.QUOTIENT_TRANS, DB.fetch "quotient_pred_set" "DIFF_RSP", DB.fetch "quotient_pred_set" "DISJOINTR_RSP", DB.fetch "quotient_pred_set" "INSERTR_RSP", DB.fetch "quotient_pred_set" "INTER_RSP", DB.fetch "quotient_pred_set" "SET_REL_MP", DB.fetch "quotient_pred_set" "IN_RSP", DB.fetch "quotient_pred_set" "PSUBSETR_RSP"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004213
+
+FINITER_EMPTY
+proof length: 1
+proof time: 0.053094
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.072882
+  inferstep time: 0.058549
+  node_find time: 0.000217
+  node_crea time: 0.00958
+    pred time: 0.002668
+    thmpred time: 0.000001
+    mc time: 0.006696
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "quotient_pred_set" "FINITER_def" , DB.fetch "quotient_pred_set" "FINITER_EQ" , DB.fetch "quotient_pred_set" "FINITER_RSP" , DB.fetch "quotient_pred_set" "FINITE_PRS" , DB.fetch "quotient_pred_set" "EMPTY_PRS" , listTheory.SET_TO_LIST_primitive_def , pred_setTheory.tactictoe_thm_24 , DB.fetch "quotient_pred_set" "EMPTY_RSP" , pred_setTheory.EMPTY_NOT_IN_partition , pred_setTheory.REL_RESTRICT_EMPTY , pred_setTheory.NOT_IN_EMPTY , pred_setTheory.FINITE_DEF , listTheory.SET_TO_LIST_IND , pred_setTheory.REST_PSUBSET , pred_setTheory.BIGINTER_INTER , pred_setTheory.BIGINTER_SING])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.082703
+
+FINITER_INSERTR
+Statistics
+  infstep : 396
+  nodes   : 150
+  maxdepth: 7
+Time: 10.094175
+  inferstep time: 7.778777
+  node_find time: 0.107805
+  node_crea time: 1.916443
+    pred time: 0.4839
+    thmpred time: 0.000017
+    mc time: 0.764872
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.359838
+Replaying proof: 0.000502
+Replaying proof: 0.000195
+Replaying proof: 0.000467
+
+ABSORPTIONR
+Statistics
+  infstep : 526
+  nodes   : 207
+  maxdepth: 7
+Time: 10.010237
+  inferstep time: 7.695984
+  node_find time: 0.140645
+  node_crea time: 1.802422
+    pred time: 0.365363
+    thmpred time: 0.000019
+    mc time: 0.823789
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.152822
+
+FINITER_INDUCT
+Statistics
+  infstep : 430
+  nodes   : 148
+  maxdepth: 6
+Time: 10.04998
+  inferstep time: 7.675674
+  node_find time: 0.111401
+  node_crea time: 1.925927
+    pred time: 0.41215
+    thmpred time: 0.000031
+    mc time: 0.705297
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 22
+Original proof time: 0.0
+Replaying proof: 0.635692
+
+IN_IMAGER
+proof length: 2
+proof time: 0.01371
+Statistics
+  infstep : 10
+  nodes   : 5
+  maxdepth: 2
+Time: 0.27971
+  inferstep time: 0.224859
+  node_find time: 0.002143
+  node_crea time: 0.035581
+    pred time: 0.012106
+    thmpred time: 0.000001
+    mc time: 0.020969
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN BasicProvers.SRW_TAC [] [DB.fetch "quotient_pred_set" "IMAGER_def", DB.fetch "quotient_pred_set" "IN_GSPECR", DB.fetch "quotient_pred_set" "GSPECR_def", DB.fetch "quotient_pred_set" "DISJOINTR_def", quotientTheory.RES_EXISTS_EQUIV, quotientTheory.RES_EXISTS_EQUIV_DEF, quotientTheory.EXISTS_PRS, quotientTheory.RES_EXISTS_RSP, quotientTheory.EQUIV_RES_EXISTS, quotientTheory.ABSTRACT_PRS, quotientTheory.ABSTRACT_RES_ABSTRACT, quotientTheory.RES_ABSTRACT_ABSTRACT, quotientTheory.EQUIV_RES_ABSTRACT_LEFT, quotientTheory.EQUIV_RES_ABSTRACT_RIGHT, quotientTheory.RES_ABSTRACT_RSP, relationTheory.INDUCTIVE_INVARIANT_ON_DEF]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.082429
+Replaying proof: 0.00087
+
+IMAGER_RSP
+Statistics
+  infstep : 368
+  nodes   : 133
+  maxdepth: 6
+Time: 10.019202
+  inferstep time: 7.248819
+  node_find time: 0.096914
+  node_crea time: 2.393247
+    pred time: 0.470027
+    thmpred time: 0.000014
+    mc time: 0.750517
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.637903
+Bad stac: 0

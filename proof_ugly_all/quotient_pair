@@ -1,0 +1,356 @@
+
+PAIR_MAP_I
+proof length: 3
+proof time: 0.001127
+Statistics
+  infstep : 25
+  nodes   : 7
+  maxdepth: 3
+Time: 0.531418
+  inferstep time: 0.458229
+  node_find time: 0.000435
+  node_crea time: 0.06195
+    pred time: 0.019941
+    thmpred time: 0.000001
+    mc time: 0.040382
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [pairTheory.FST_PAIR_MAP, pairTheory.PAIR_MAP, pairTheory.PAIR_MAP_THM, pairTheory.SND_PAIR_MAP, combinTheory.I_DEF, combinTheory.I_THM, combinTheory.I_o_ID, listTheory.DROP_splitAtPki, listTheory.LIST_BIND_ID, listTheory.MAP_ID, listTheory.SET_TO_LIST_primitive_def, listTheory.dropWhile_splitAtPki, patternMatchesTheory.PMATCH_def, pred_setTheory.IMAGE_I, pred_setTheory.IMAGE_II, pred_setTheory.PREIMAGE_I] THEN let
+  fun simp thl = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) thl
+in
+  simp [boolLib.FUN_EQ_THM] THEN
+  boolLib.REWRITE_TAC [combinTheory.I_DEF, pairTheory.PAIR_MAP_THM, pairTheory.FST_PAIR_MAP, pairTheory.PAIR_MAP, pairTheory.SND_PAIR_MAP, pairTheory.S_UNCURRY_R, combinTheory.S_THM, combinTheory.S_ABS_R, combinTheory.S_DEF, combinTheory.LET_FORALL_ELIM, combinTheory.K_THM, listTheory.dropWhile_splitAtPki, listTheory.DROP_splitAtPki, pairTheory.FST, pairTheory.SND, pairTheory.CLOSED_PAIR_EQ]
+end
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.050392
+
+PAIR_REL_THM
+proof length: 3
+proof time: 0.000593
+Statistics
+  infstep : 12
+  nodes   : 5
+  maxdepth: 3
+Time: 0.272824
+  inferstep time: 0.220239
+  node_find time: 0.000212
+  node_crea time: 0.040427
+    pred time: 0.012943
+    thmpred time: 0.000001
+    mc time: 0.032922
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "quotient_pair" "PAIR_REL", pairTheory.LEX_CONG, pairTheory.LEX_DEF_THM, rich_listTheory.ZIP_APPEND, arithmeticTheory.findq_def, arithmeticTheory.findq_thm, combinTheory.UPD11_SAME_BASE, listTheory.MEM_APPEND_lemma, combinTheory.UPDATE_COMMUTES, rich_listTheory.MEM_SING_APPEND, arithmeticTheory.SUB_ELIM_THM, pred_setTheory.SUBSET_ADD, arithmeticTheory.DIV_LESS, arithmeticTheory.MOD_EQ_0_DIVISOR, pairTheory.LEX_DEF, pairTheory.RPROD_DEF] THEN boolLib.NTAC 2 (boolLib.REWRITE_TAC [(DB.fetch "pair" "UNCURRY_VAR"), (DB.fetch "pair" "FST"), (DB.fetch "pair" "SND")] hhs_infixl0_open boolLib.THEN hhs_infixl0_close boolLib.BETA_TAC) THEN
+  metisTools.METIS_TAC [DB.fetch "quotient_pair" "PAIR_REL", pairTheory.LEX_CONG, pairTheory.LEX_DEF_THM, rich_listTheory.ZIP_APPEND, combinTheory.UPD11_SAME_BASE, listTheory.MEM_APPEND_lemma, combinTheory.UPDATE_COMMUTES, rich_listTheory.MEM_SING_APPEND, arithmeticTheory.SUB_ELIM_THM, arithmeticTheory.findq_def, arithmeticTheory.findq_thm, pred_setTheory.SUBSET_ADD, arithmeticTheory.DIV_LESS, arithmeticTheory.MOD_EQ_0_DIVISOR, pairTheory.LEX_DEF, pairTheory.RPROD_DEF]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.092263
+
+PAIR_REL_EQ
+proof length: 2
+proof time: 0.005623
+Statistics
+  infstep : 17
+  nodes   : 3
+  maxdepth: 2
+Time: 0.263912
+  inferstep time: 0.235634
+  node_find time: 0.000479
+  node_crea time: 0.016011
+    pred time: 0.005469
+    thmpred time: 0.0
+    mc time: 0.017812
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "quotient_pair" "PAIR_REL", DB.fetch "quotient_pair" "PAIR_REL_THM", pairTheory.UNCURRY_DEF, arithmeticTheory.DIVMOD_CALC, arithmeticTheory.DIVMOD_CORRECT, pairTheory.FST, pairTheory.SND, arithmeticTheory.findq_eq_0, arithmeticTheory.DIVMOD_THM, pairTheory.CLOSED_PAIR_EQ, arithmeticTheory.DIVMOD_DEF, arithmeticTheory.findq_def, arithmeticTheory.findq_thm, arithmeticTheory.tactictoe_thm_58, listTheory.ALL_DISTINCT_ZIP, listTheory.ZIP] THEN (simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss () hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.LET_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss)) [boolLib.FUN_EQ_THM, pairTheory.FORALL_PROD, boolLib.EQ_IMP_THM]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.116865
+
+PAIR_REL_REFL
+proof length: 2
+proof time: 0.004197
+Statistics
+  infstep : 39
+  nodes   : 10
+  maxdepth: 3
+Time: 0.820107
+  inferstep time: 0.730731
+  node_find time: 0.000765
+  node_crea time: 0.072711
+    pred time: 0.025551
+    thmpred time: 0.000002
+    mc time: 0.04264
+    inst time: 0.0
+Proof found: Ho_Rewrite.REWRITE_TAC [(DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "PAIR_EQ")] THEN BasicProvers.SRW_TAC [] [DB.fetch "quotient_pair" "PAIR_REL_THM", DB.fetch "quotient_pair" "PAIR_REL", pairTheory.pair_induction, pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "quotient_pair" "PAIR_REL_EQ", pairTheory.LEX_CONG, pairTheory.LEX_DEF_THM, pairTheory.LEX_MONO, pairTheory.LEX_DEF, pairTheory.RPROD_DEF, pairTheory.symmetric_LEX, pairTheory.total_LEX, pairTheory.transitive_LEX, pairTheory.reflexive_LEX, quotientTheory.FUN_REL_EQUALS]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.132786
+
+PAIR_EQUIV
+proof length: 4
+proof time: 0.059228
+Statistics
+  infstep : 72
+  nodes   : 27
+  maxdepth: 4
+Time: 1.868763
+  inferstep time: 1.659758
+  node_find time: 0.002019
+  node_crea time: 0.189917
+    pred time: 0.055923
+    thmpred time: 0.000005
+    mc time: 0.082748
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "quotient" "EQUIV_def")] THEN Ho_Rewrite.REWRITE_TAC [(DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "PAIR_EQ")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "quotient_pair" "PAIR_REL_THM", DB.fetch "quotient_pair" "PAIR_REL_REFL", DB.fetch "quotient_pair" "PAIR_REL", pairTheory.pair_induction, pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "quotient_pair" "PAIR_REL_EQ", pairTheory.LEX_CONG, pairTheory.LEX_DEF_THM, pairTheory.LEX_MONO, pairTheory.LEX_DEF, pairTheory.RPROD_DEF, pairTheory.symmetric_LEX, pairTheory.total_LEX, pairTheory.transitive_LEX, pairTheory.reflexive_LEX] THEN
+  metisLib.METIS_TAC []
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.448308
+Replaying proof: 0.010541
+
+FST_PRS
+proof length: 2
+proof time: 0.008174
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 2
+Time: 0.366703
+  inferstep time: 0.333581
+  node_find time: 0.00019
+  node_crea time: 0.027659
+    pred time: 0.008973
+    thmpred time: 0.000001
+    mc time: 0.014646
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [pairTheory.FST_PAIR_MAP, pairTheory.PAIR_MAP, pairTheory.SND_PAIR_MAP, DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.PAIR_MAP_THM, quotientTheory.ABSTRACT_PRS, quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.FUN_REL_EQUALS, quotientTheory.FUN_REL_EQ_REL, quotientTheory.K_PRS, quotientTheory.LAMBDA_PRS, quotientTheory.LAMBDA_PRS1, quotientTheory.LET_PRS, quotientTheory.W_PRS, quotientTheory.literal_case_PRS] THEN boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.203534
+
+FST_RSP
+proof length: 2
+proof time: 0.073861
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.216383
+  inferstep time: 0.185257
+  node_find time: 0.000107
+  node_crea time: 0.023985
+    pred time: 0.010308
+    thmpred time: 0.0
+    mc time: 0.014746
+    inst time: 0.0
+Proof found: Ho_Rewrite.REWRITE_TAC [(DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "PAIR_EQ")] THEN metisTools.METIS_TAC [DB.fetch "quotient_pair" "PAIR_REL_THM", pairTheory.FST, DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.pair_induction, pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "quotient_pair" "PAIR_REL_REFL", DB.fetch "quotient_pair" "PAIR_EQUIV", DB.fetch "quotient_pair" "PAIR_REL", DB.fetch "quotient_pair" "FST_PRS", quotientTheory.ABSTRACT_PRS, quotientTheory.APPLY_PRS, quotientTheory.APPLY_RSP, quotientTheory.FUN_REL_MP, quotientTheory.C_PRS, quotientTheory.C_RSP]
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.21221
+
+SND_PRS
+proof length: 2
+proof time: 0.009331
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 2
+Time: 0.381305
+  inferstep time: 0.341758
+  node_find time: 0.000182
+  node_crea time: 0.033967
+    pred time: 0.01079
+    thmpred time: 0.0
+    mc time: 0.017539
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [pairTheory.SND_PAIR_MAP, DB.fetch "quotient_pair" "FST_PRS", pairTheory.PAIR_MAP, pairTheory.FST_PAIR_MAP, DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.PAIR_MAP_THM, DB.fetch "quotient_pair" "FST_RSP", quotientTheory.ABSTRACT_PRS, quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.FUN_REL_EQUALS, quotientTheory.FUN_REL_EQ_REL, quotientTheory.K_PRS, quotientTheory.LAMBDA_PRS, quotientTheory.LAMBDA_PRS1, quotientTheory.LET_PRS] THEN boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.157101
+
+SND_RSP
+proof length: 2
+proof time: 0.062135
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.203105
+  inferstep time: 0.158895
+  node_find time: 0.000126
+  node_crea time: 0.037765
+    pred time: 0.02264
+    thmpred time: 0.0
+    mc time: 0.015267
+    inst time: 0.0
+Proof found: Ho_Rewrite.REWRITE_TAC [(DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "PAIR_EQ")] THEN metisTools.METIS_TAC [DB.fetch "quotient_pair" "PAIR_REL_THM", pairTheory.SND, DB.fetch "quotient_pair" "FST_RSP", DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.pair_induction, pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "quotient_pair" "PAIR_REL_REFL", DB.fetch "quotient_pair" "PAIR_EQUIV", DB.fetch "quotient_pair" "PAIR_REL", DB.fetch "quotient_pair" "SND_PRS", DB.fetch "quotient_pair" "FST_PRS", quotientTheory.ABSTRACT_PRS, quotientTheory.APPLY_PRS, quotientTheory.APPLY_RSP, quotientTheory.FUN_REL_MP]
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.196525
+
+COMMA_PRS
+proof length: 3
+proof time: 0.009917
+Statistics
+  infstep : 12
+  nodes   : 6
+  maxdepth: 2
+Time: 0.539913
+  inferstep time: 0.48501
+  node_find time: 0.00031
+  node_crea time: 0.046519
+    pred time: 0.022509
+    thmpred time: 0.000002
+    mc time: 0.017357
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [pairTheory.PAIR_MAP_THM, pred_setTheory.IN_GSPEC, DB.fetch "quotient_pair" "FST_PRS", DB.fetch "quotient_pair" "SND_PRS", DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.PAIR_MAP, pairTheory.FST_PAIR_MAP, pairTheory.SND_PAIR_MAP, pred_setTheory.FINITE_ISO_NUM, pred_setTheory.tactictoe_thm_0, pred_setTheory.IMAGE_DEF, DB.fetch "quotient_pair" "FST_RSP", DB.fetch "quotient_pair" "SND_RSP", quotientTheory.APPLY_PRS, quotientTheory.C_PRS, quotientTheory.FUN_REL_EQUALS] THEN (boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP"))
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.085801
+
+COMMA_RSP
+proof length: 1
+proof time: 0.000444
+Statistics
+  infstep : 5
+  nodes   : 2
+  maxdepth: 1
+Time: 0.190722
+  inferstep time: 0.176472
+  node_find time: 0.000131
+  node_crea time: 0.009149
+    pred time: 0.003773
+    thmpred time: 0.0
+    mc time: 0.007681
+    inst time: 0.0
+Proof found: (boolLib.REWRITE_TAC [ DB.fetch "quotient_pair" "PAIR_REL_THM" , DB.fetch "quotient_pair" "FST_RSP" , DB.fetch "quotient_pair" "PAIR_QUOTIENT" , DB.fetch "quotient_pair" "SND_RSP" , quotientTheory.COND_RSP , quotientTheory.EQUALS_EQUIV_IMPLIES , DB.fetch "quotient_pair" "PAIR_REL_REFL" , DB.fetch "quotient_pair" "PAIR_REL" , DB.fetch "quotient_pair" "PAIR_EQUIV" , indexedListsTheory.FOLDRi_CONG , indexedListsTheory.FOLDRi_CONG' , ind_typeTheory.INJA_INJ , ind_typeTheory.NUMSUM_INJ , markerTheory.AC_DEF , arithmeticTheory.EXP_EXP_INJECTIVE , numeralTheory.tactictoe_thm_19 ])
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.13045
+
+CURRY_PRS
+proof length: 4
+proof time: 0.01589
+Statistics
+  infstep : 35
+  nodes   : 12
+  maxdepth: 4
+Time: 0.918107
+  inferstep time: 0.802598
+  node_find time: 0.001135
+  node_crea time: 0.100189
+    pred time: 0.033253
+    thmpred time: 0.000003
+    mc time: 0.03994
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [pairTheory.CURRY_DEF, quotientTheory.C_PRS, quotientTheory.o_PRS, quotientTheory.C_RSP, quotientTheory.o_RSP, pairTheory.UNCURRY_CURRY_THM, pairTheory.CURRY_ONE_ONE_THM, DB.fetch "quotient_pair" "COMMA_PRS", DB.fetch "quotient_pair" "FST_PRS", DB.fetch "quotient_pair" "SND_PRS", DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.PAIR_MAP_THM, pairTheory.PAIR_MAP, pairTheory.FST_PAIR_MAP, pairTheory.SND_PAIR_MAP, pairTheory.CURRY_UNCURRY_THM] THEN boolLib.REWRITE_TAC [(DB.fetch "quotient" "FUN_MAP_THM")] THEN
+  boolLib.REWRITE_TAC [DB.fetch "quotient_pair" "COMMA_PRS", pairTheory.PAIR_MAP_THM, quotientTheory.C_PRS, quotientTheory.o_PRS, quotientTheory.C_RSP, quotientTheory.o_RSP, DB.fetch "quotient_pair" "FST_PRS", DB.fetch "quotient_pair" "SND_PRS", DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.PAIR_MAP, pairTheory.FST_PAIR_MAP, pairTheory.SND_PAIR_MAP, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, DB.fetch "quotient_pair" "COMMA_RSP", DB.fetch "quotient_pair" "PAIR_MAP_I"] THEN
+  boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.273252
+
+CURRY_RSP
+proof length: 2
+proof time: 0.028513
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.258974
+  inferstep time: 0.234104
+  node_find time: 0.000123
+  node_crea time: 0.019132
+    pred time: 0.008482
+    thmpred time: 0.000001
+    mc time: 0.010513
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "quotient" "FUN_REL")] THEN BasicProvers.SRW_TAC [] [DB.fetch "quotient_pair" "CURRY_PRS", pairTheory.CURRY_DEF, DB.fetch "quotient_pair" "FST_RSP", DB.fetch "quotient_pair" "SND_RSP", DB.fetch "quotient_pair" "PAIR_REL_REFL", quotientTheory.C_RSP, quotientTheory.o_RSP, quotientTheory.C_PRS, quotientTheory.o_PRS, DB.fetch "quotient_pair" "COMMA_RSP", DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.UNCURRY_CURRY_THM, pairTheory.CURRY_ONE_ONE_THM, DB.fetch "quotient_pair" "PAIR_REL_THM", DB.fetch "quotient_pair" "PAIR_REL", DB.fetch "quotient_pair" "PAIR_EQUIV"]
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.400575
+
+UNCURRY_PRS
+proof length: 4
+proof time: 0.070566
+Statistics
+  infstep : 64
+  nodes   : 25
+  maxdepth: 4
+Time: 1.253243
+  inferstep time: 0.994696
+  node_find time: 0.002268
+  node_crea time: 0.239397
+    pred time: 0.052549
+    thmpred time: 0.000002
+    mc time: 0.099746
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [quotientTheory.C_PRS, quotientTheory.W_PRS, DB.fetch "quotient_pair" "CURRY_PRS", quotientTheory.o_PRS, DB.fetch "quotient_pair" "FST_PRS", DB.fetch "quotient_pair" "SND_PRS", DB.fetch "quotient_pair" "CURRY_RSP", quotientTheory.C_RSP, quotientTheory.o_RSP, pairTheory.FST_PAIR_MAP, pairTheory.PAIR_MAP, pairTheory.SND_PAIR_MAP, DB.fetch "quotient_pair" "COMMA_PRS", DB.fetch "quotient_pair" "PAIR_QUOTIENT", pairTheory.PAIR_MAP_THM, pairTheory.UNCURRY_CONG] THEN boolLib.REWRITE_TAC [(DB.fetch "quotient" "FUN_MAP_THM")] THEN
+  boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP") THEN
+  metisTools.METIS_TAC [pairTheory.UNCURRY, pairTheory.UNCURRY_VAR, pairTheory.tactictoe_thm_1, pairTheory.ELIM_UNCURRY, pairTheory.UNCURRY_CONG, listTheory.EVERY2_MEM_MONO, pairTheory.pair_CASE_def, pairTheory.ELIM_PEXISTS, pairTheory.ELIM_PFORALL, pairTheory.PAIR_MAP, listTheory.ZIP_MAP, pairTheory.PROD_ALL_def, pairTheory.FST_PAIR_MAP, DB.fetch "quotient_pair" "FST_RSP", pairTheory.PAIR_FUN_THM, listTheory.MEM_ZIP_MEM_MAP]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.190817
+
+UNCURRY_RSP
+proof length: 3
+proof time: 0.110344
+Statistics
+  infstep : 47
+  nodes   : 23
+  maxdepth: 4
+Time: 1.772856
+  inferstep time: 1.504827
+  node_find time: 0.001876
+  node_crea time: 0.248661
+    pred time: 0.074326
+    thmpred time: 0.000005
+    mc time: 0.08883
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "quotient" "FUN_REL")] THEN Ho_Rewrite.REWRITE_TAC [(DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "PAIR_EQ")] THEN
+  metisTools.METIS_TAC [DB.fetch "quotient_pair" "COMMA_RSP", DB.fetch "quotient_pair" "PAIR_REL_THM", DB.fetch "quotient_pair" "CURRY_RSP", pairTheory.UNCURRY_DEF, pairTheory.pair_induction, pairTheory.FORALL_PROD, DB.fetch "quotient_pair" "UNCURRY_PRS", quotientTheory.C_RSP, quotientTheory.o_RSP, DB.fetch "quotient_pair" "CURRY_PRS", quotientTheory.C_PRS, quotientTheory.o_PRS, DB.fetch "quotient_pair" "FST_RSP", DB.fetch "quotient_pair" "PAIR_QUOTIENT", DB.fetch "quotient_pair" "SND_RSP", DB.fetch "quotient_pair" "PAIR_REL"]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.250624
+
+PAIR_MAP_PRS
+proof length: 5
+proof time: 0.055045
+Statistics
+  infstep : 163
+  nodes   : 27
+  maxdepth: 5
+Time: 2.413026
+  inferstep time: 2.111203
+  node_find time: 0.006285
+  node_crea time: 0.259842
+    pred time: 0.086169
+    thmpred time: 0.000005
+    mc time: 0.085807
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "quotient_pair" "CURRY_PRS", DB.fetch "quotient_pair" "UNCURRY_PRS", pairTheory.LEX_MONO, quotientTheory.o_PRS, quotientTheory.C_PRS, DB.fetch "quotient_pair" "CURRY_RSP", DB.fetch "quotient_pair" "UNCURRY_RSP", quotientTheory.C_RSP, quotientTheory.o_RSP, DB.fetch "quotient_pair" "COMMA_PRS", DB.fetch "quotient_pair" "FST_PRS", DB.fetch "quotient_pair" "SND_PRS", DB.fetch "quotient_pair" "PAIR_QUOTIENT", quotientTheory.FUN_REL_EQUALS, quotientTheory.FUN_REL_EQ_REL, quotientTheory.ABSTRACT_PRS] THEN boolLib.REWRITE_TAC [(DB.fetch "quotient" "FUN_MAP")] THEN
+  BasicProvers.SRW_TAC [] [quotientTheory.FUN_MAP, ind_typeTheory.ISO_FUN, DB.fetch "quotient_pair" "UNCURRY_PRS", DB.fetch "quotient_pair" "CURRY_PRS", quotientTheory.LAMBDA_PRS, DB.fetch "quotient_pair" "FST_PRS", DB.fetch "quotient_pair" "SND_PRS", pairTheory.FST_PAIR_MAP, pairTheory.PAIR_MAP, pairTheory.SND_PAIR_MAP, DB.fetch "quotient_pair" "COMMA_PRS", DB.fetch "quotient_pair" "PAIR_QUOTIENT", quotientTheory.o_PRS, DB.fetch "quotient_pair" "CURRY_RSP", DB.fetch "quotient_pair" "UNCURRY_RSP", quotientTheory.C_PRS] THEN
+  boolLib.IMP_RES_THEN (fn th => boolLib.REWRITE_TAC [th]) (DB.fetch "quotient" "QUOTIENT_ABS_REP") THEN
+  metisTools.METIS_TAC [pairTheory.PAIR_MAP, listTheory.ZIP_MAP, pairTheory.SND_PAIR_MAP, pairTheory.FST_PAIR_MAP, DB.fetch "quotient_pair" "SND_PRS", DB.fetch "quotient_pair" "FST_PRS", pairTheory.PAIR_MAP_THM, DB.fetch "quotient_pair" "COMMA_PRS", DB.fetch "quotient_pair" "CURRY_PRS", DB.fetch "quotient_pair" "UNCURRY_PRS", DB.fetch "quotient_pair" "PAIR_QUOTIENT", DB.fetch "quotient_pair" "SND_RSP", pairTheory.UNCURRY_VAR, DB.fetch "quotient_pair" "FST_RSP", DB.fetch "quotient_pair" "PAIR_MAP_I", pairTheory.PAIR]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.15468
+
+PAIR_MAP_RSP
+Statistics
+  infstep : 494
+  nodes   : 88
+  maxdepth: 6
+Time: 10.000222
+  inferstep time: 6.428969
+  node_find time: 0.032781
+  node_crea time: 2.497128
+    pred time: 0.326034
+    thmpred time: 0.000021
+    mc time: 0.421739
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.296652
+Bad stac: 1

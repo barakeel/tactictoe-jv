@@ -1,0 +1,4083 @@
+
+EMPTY_BAG_alt
+Statistics
+  infstep : 921
+  nodes   : 152
+  maxdepth: 6
+Time: 10.0198
+  inferstep time: 8.025474
+  node_find time: 0.071867
+  node_crea time: 1.802907
+    pred time: 0.455008
+    thmpred time: 0.000023
+    mc time: 0.943186
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003278
+
+BAG_cases
+Statistics
+  infstep : 818
+  nodes   : 230
+  maxdepth: 7
+Time: 10.072448
+  inferstep time: 7.612024
+  node_find time: 0.070099
+  node_crea time: 2.320611
+    pred time: 0.445519
+    thmpred time: 0.000028
+    mc time: 1.228166
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.182628
+
+BAG_MERGE_IDEM
+proof length: 2
+proof time: 0.087174
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.184969
+  inferstep time: 0.157353
+  node_find time: 0.000147
+  node_crea time: 0.020409
+    pred time: 0.007249
+    thmpred time: 0.000001
+    mc time: 0.016062
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_MERGE", arithmeticTheory.ADD_MOD, arithmeticTheory.SUC_MOD, arithmeticTheory.EXP_BASE_INJECTIVE, arithmeticTheory.EXP_BASE_LE_MONO, arithmeticTheory.EXP_BASE_LT_MONO, arithmeticTheory.EXP_EXP_LE_MONO, arithmeticTheory.EXP_EXP_LT_MONO, arithmeticTheory.LESS_EQ_ADD_SUB, arithmeticTheory.LESS_EQ_SUB_LESS, arithmeticTheory.MODEQ_DEF, arithmeticTheory.SUB_ELIM_THM, arithmeticTheory.SUB_PLUS, arithmeticTheory.SUB_SUB, DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_INN"] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_UNION", arithmeticTheory.ONE_ONE_INV_IMAGE_BOUNDED, combinTheory.UPDATE_APPLY, ind_typeTheory.ISO_USAGE, listTheory.FOLDL_CONG, listTheory.FOLDR_CONG, numeralTheory.tactictoe_thm_13, numeralTheory.tactictoe_thm_18, numeralTheory.tactictoe_thm_22, numeralTheory.tactictoe_thm_25, numeralTheory.tactictoe_thm_28, oneTheory.tactictoe_thm_0, pairTheory.LET2_RATOR, pred_setTheory.COMMUTING_ITSET_INSERT, pred_setTheory.COMMUTING_ITSET_RECURSES]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003665
+
+BAG_INN_0
+proof length: 2
+proof time: 0.094197
+Statistics
+  infstep : 46
+  nodes   : 10
+  maxdepth: 3
+Time: 0.83266
+  inferstep time: 0.739899
+  node_find time: 0.001435
+  node_crea time: 0.078394
+    pred time: 0.028668
+    thmpred time: 0.000004
+    mc time: 0.040941
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC boolSimps.bool_ss [DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_cases", pred_setTheory.FINITE_WEAK_ENUMERATE, pred_setTheory.COMMUTING_ITSET_RECURSES, rich_listTheory.FOLDR_FILTER_REVERSE, rich_listTheory.tactictoe_thm_19, rich_listTheory.FOLDR_MAP_REVERSE, rich_listTheory.tactictoe_thm_18, rich_listTheory.tactictoe_thm_17, rich_listTheory.tactictoe_thm_20, rich_listTheory.tactictoe_thm_21, rich_listTheory.tactictoe_thm_23, sumTheory.INL_DEF] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_INN", numeralTheory.numeral_distrib, DB.fetch "bag" "BAG_INSERT", pred_setTheory.FINITE_WEAK_ENUMERATE, pred_setTheory.COMMUTING_ITSET_RECURSES, rich_listTheory.FOLDR_FILTER_REVERSE, rich_listTheory.tactictoe_thm_19, rich_listTheory.FOLDR_MAP_REVERSE, rich_listTheory.tactictoe_thm_18, rich_listTheory.tactictoe_thm_17, rich_listTheory.tactictoe_thm_20, rich_listTheory.tactictoe_thm_21, rich_listTheory.tactictoe_thm_23, DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_cases", sumTheory.INL_DEF]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004223
+
+BAG_INN_LESS
+proof length: 1
+proof time: 0.004425
+Statistics
+  infstep : 73
+  nodes   : 18
+  maxdepth: 3
+Time: 1.584638
+  inferstep time: 1.406879
+  node_find time: 0.002811
+  node_crea time: 0.160768
+    pred time: 0.047788
+    thmpred time: 0.000006
+    mc time: 0.080132
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ numSimps.ARITH_ss ] [ DB.fetch "bag" "BAG_INN" , DB.fetch "bag" "SUB_BAG" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_INN_0" , pred_setTheory.FINITE_WEAK_ENUMERATE , pred_setTheory.COMMUTING_ITSET_RECURSES , sumTheory.INL_DEF , sumTheory.INR_DEF , rich_listTheory.FOLDR_FILTER_REVERSE , rich_listTheory.tactictoe_thm_19 , rich_listTheory.FOLDR_MAP_REVERSE , rich_listTheory.tactictoe_thm_18 , rich_listTheory.tactictoe_thm_17 , rich_listTheory.tactictoe_thm_20 , rich_listTheory.tactictoe_thm_21 , rich_listTheory.tactictoe_thm_23 ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006124
+
+BAG_IN_BAG_INSERT
+proof length: 2
+proof time: 0.010355
+Statistics
+  infstep : 64
+  nodes   : 16
+  maxdepth: 4
+Time: 1.281403
+  inferstep time: 1.093097
+  node_find time: 0.002621
+  node_crea time: 0.153377
+    pred time: 0.050288
+    thmpred time: 0.000003
+    mc time: 0.092364
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_INSERT", pred_setTheory.CARD_BIGUNION_SAME_SIZED_SETS, pred_setTheory.MIN_SET_THM, quantHeuristicsTheory.LIST_LENGTH_2, quantHeuristicsTheory.LIST_LENGTH_3, quantHeuristicsTheory.LIST_LENGTH_4, pred_setTheory.pairwise_def, arithmeticTheory.MODEQ_INTRO_CONG, quantHeuristicsTheory.LIST_LENGTH_1, quantHeuristicsTheory.LIST_LENGTH_COMPARE_SUC, arithmeticTheory.EXP_EXP_LE_MONO, dividesTheory.prime_def, arithmeticTheory.EXP_BASE_LE_IFF, arithmeticTheory.X_LT_EXP_X_IFF] THEN BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_0", DB.fetch "bag" "BAG_INN_LESS", quantHeuristicsTheory.LIST_LENGTH_2, quantHeuristicsTheory.LIST_LENGTH_3, quantHeuristicsTheory.LIST_LENGTH_4, pred_setTheory.pairwise_def, pred_setTheory.CARD_BIGUNION_SAME_SIZED_SETS, pred_setTheory.MIN_SET_THM, combinTheory.UPDATE_def, combinTheory.APPLY_UPDATE_THM, listTheory.LLEX_def, pred_setTheory.DELETE_INSERT, listTheory.list_size_def]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.089511
+
+BAG_INN_BAG_INSERT
+proof length: 2
+proof time: 0.02055
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.340427
+  inferstep time: 0.300096
+  node_find time: 0.0002
+  node_crea time: 0.026707
+    pred time: 0.00731
+    thmpred time: 0.0
+    mc time: 0.028244
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "BAG_INN_LESS", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_INN_0", quantHeuristicsTheory.LIST_LENGTH_2, quantHeuristicsTheory.LIST_LENGTH_3, quantHeuristicsTheory.LIST_LENGTH_4, pred_setTheory.CARD_BIGUNION_SAME_SIZED_SETS, pred_setTheory.MIN_SET_THM, pred_setTheory.pairwise_def, quantHeuristicsTheory.LIST_LENGTH_1, arithmeticTheory.MODEQ_INTRO_CONG] THEN BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INSERT", listTheory.list_size_def, quantHeuristicsTheory.LIST_LENGTH_2, quantHeuristicsTheory.LIST_LENGTH_3, quantHeuristicsTheory.LIST_LENGTH_4, quantHeuristicsTheory.LIST_LENGTH_1, quantHeuristicsTheory.LIST_LENGTH_COMPARE_SUC, DB.fetch "bag" "BAG_IN_BAG_INSERT", pred_setTheory.pairwise_def, pred_setTheory.CARD_BIGUNION_SAME_SIZED_SETS, arithmeticTheory.MODEQ_INTRO_CONG, pred_setTheory.MIN_SET_THM, arithmeticTheory.BOUNDED_EXISTS_THM, arithmeticTheory.BOUNDED_FORALL_THM, arithmeticTheory.SUC_ELIM_THM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011871
+
+BAG_INN_BAG_INSERT_STRONG
+proof length: 2
+proof time: 0.010714
+Statistics
+  infstep : 29
+  nodes   : 6
+  maxdepth: 2
+Time: 0.736386
+  inferstep time: 0.647418
+  node_find time: 0.001284
+  node_crea time: 0.07168
+    pred time: 0.022241
+    thmpred time: 0.0
+    mc time: 0.048841
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_INSERT")] THEN BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_BAG_INSERT", quantHeuristicsTheory.LIST_LENGTH_2, quantHeuristicsTheory.LIST_LENGTH_3, quantHeuristicsTheory.LIST_LENGTH_4, DB.fetch "bag" "BAG_IN_BAG_INSERT", pred_setTheory.CARD_BIGUNION_SAME_SIZED_SETS, pred_setTheory.pairwise_def, pred_setTheory.MIN_SET_THM, indexedListsTheory.findi_def, pred_setTheory.DELETE_INSERT, listTheory.list_size_def, quantHeuristicsTheory.LIST_LENGTH_1, quantHeuristicsTheory.LIST_LENGTH_COMPARE_SUC, arithmeticTheory.MODEQ_INTRO_CONG]
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.341499
+
+BAG_UNION_EQ_LCANCEL1
+Statistics
+  infstep : 884
+  nodes   : 117
+  maxdepth: 5
+Time: 10.067422
+  inferstep time: 8.414311
+  node_find time: 0.072024
+  node_crea time: 1.430774
+    pred time: 0.449587
+    thmpred time: 0.000027
+    mc time: 0.631262
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014589
+
+BAG_UNION_EQ_RCANCEL1
+proof length: 1
+proof time: 0.005197
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.125326
+  inferstep time: 0.113926
+  node_find time: 0.000086
+  node_crea time: 0.007892
+    pred time: 0.002582
+    thmpred time: 0.0
+    mc time: 0.006908
+    inst time: 0.0
+Proof found: (bossLib.rw [ ( DB.fetch "bag" "BAG_UNION" ) , ( DB.fetch "bag" "EMPTY_BAG" ) , boolLib.FUN_EQ_THM , numLib.DECIDE ( Parse.Term [ HolKernel.QUOTE " (*#loc 1 4792*)(x:num = x + y) <=> (y = 0)" ] ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010678
+
+BAG_IN_BAG_UNION
+proof length: 2
+proof time: 0.006016
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.265726
+  inferstep time: 0.220054
+  node_find time: 0.00016
+  node_crea time: 0.029781
+    pred time: 0.006453
+    thmpred time: 0.0
+    mc time: 0.035323
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_UNION_EQ_LCANCEL1", DB.fetch "bag" "BAG_UNION_EQ_RCANCEL1", arithmeticTheory.EXP_EXP_INJECTIVE, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "PSUB_BAG", DB.fetch "bag" "SUB_BAG", ind_typeTheory.NUMSUM_INJ] THEN BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_0", DB.fetch "bag" "BAG_INN_LESS", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "PSUB_BAG", ind_typeTheory.NUMSUM_INJ]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.047921
+
+BAG_INN_BAG_UNION
+Statistics
+  infstep : 651
+  nodes   : 110
+  maxdepth: 5
+Time: 10.083874
+  inferstep time: 7.971511
+  node_find time: 0.063749
+  node_crea time: 1.926091
+    pred time: 0.569445
+    thmpred time: 0.000051
+    mc time: 0.916195
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.466671
+
+BAG_INN_BAG_MERGE
+proof length: 3
+proof time: 0.011899
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.396735
+  inferstep time: 0.351895
+  node_find time: 0.000291
+  node_crea time: 0.027234
+    pred time: 0.009492
+    thmpred time: 0.000002
+    mc time: 0.027772
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_MERGE_IDEM", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_LESS", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_INN_0", DB.fetch "bag" "BAG_IN_BAG_UNION", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, arithmeticTheory.EXP_EXP_INJECTIVE] THEN (BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_UNION", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "PSUB_BAG", ind_typeTheory.NUMSUM_INJ, markerTheory.AC_DEF, arithmeticTheory.GREATER_OR_EQ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014868
+
+BAG_IN_BAG_MERGE
+proof length: 1
+proof time: 0.001778
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.129546
+  inferstep time: 0.110054
+  node_find time: 0.000138
+  node_crea time: 0.010542
+    pred time: 0.002751
+    thmpred time: 0.000001
+    mc time: 0.013921
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "bag" "BAG_INN_BAG_MERGE" , DB.fetch "bag" "BAG_IN_BAG_UNION" , DB.fetch "bag" "BAG_MERGE" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , DB.fetch "bag" "BAG_MERGE_IDEM" , DB.fetch "bag" "BAG_INN_BAG_UNION" , arithmeticTheory.EXP_EXP_INJECTIVE , numeralTheory.tactictoe_thm_19 , numeralTheory.tactictoe_thm_5 , numeralTheory.tactictoe_thm_6 , numeralTheory.tactictoe_thm_9 , DB.fetch "bag" "BAG_DIFF" , DB.fetch "bag" "BAG_INTER" , DB.fetch "bag" "PSUB_BAG" , DB.fetch "bag" "SUB_BAG" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.015001
+
+BAG_EXTENSION
+proof length: 2
+proof time: 0.026722
+Statistics
+  infstep : 20
+  nodes   : 5
+  maxdepth: 2
+Time: 0.532722
+  inferstep time: 0.479324
+  node_find time: 0.000932
+  node_crea time: 0.035938
+    pred time: 0.011669
+    thmpred time: 0.000001
+    mc time: 0.030445
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [bossLib.ARITH_ss] [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_UNION"), arithmeticTheory.GREATER_EQ, boolLib.EQ_IMP_THM] THEN metisLib.METIS_TAC [(DB.fetch "arithmetic" "EXP_EXP_LE_MONO"), (DB.fetch "arithmetic" "LESS_EQUAL_ANTISYM"), (DB.fetch "arithmetic" "LESS_EQ_REFL")]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.131385
+
+BAG_UNION_INSERT
+proof length: 6
+proof time: 0.027801
+Statistics
+  infstep : 33
+  nodes   : 17
+  maxdepth: 4
+Time: 1.474592
+  inferstep time: 1.26849
+  node_find time: 0.00181
+  node_crea time: 0.162053
+    pred time: 0.058431
+    thmpred time: 0.000005
+    mc time: 0.109719
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [bossLib.ARITH_ss] [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_UNION"), arithmeticTheory.GREATER_EQ, boolLib.EQ_IMP_THM] THENL [BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_IN_BAG_INSERT", pred_setTheory.SUM_IMAGE_THM, pred_setTheory.SUM_IMAGE_DEF, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_EXTENSION", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_INTER"] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_EXTENSION", rich_listTheory.COMM_MONOID_FOLDL, rich_listTheory.COMM_MONOID_FOLDR, DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_LESS", DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_INN_0", listTheory.LUPDATE_SEM, pred_setTheory.DELETE_INSERT], bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), boolLib.FUN_EQ_THM] THEN
+  BasicProvers.SRW_TAC [] [] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_UNION", pred_setTheory.SUM_IMAGE_THM, pred_setTheory.SUM_IMAGE_DEF, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_EXTENSION", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_IN_BAG_MERGE", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_INTER"]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.051451
+
+BAG_INSERT_DIFF
+Statistics
+  infstep : 1256
+  nodes   : 226
+  maxdepth: 7
+Time: 10.02118
+  inferstep time: 7.04898
+  node_find time: 0.16205
+  node_crea time: 2.577791
+    pred time: 0.50224
+    thmpred time: 0.000031
+    mc time: 1.297978
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008491
+
+BAG_INSERT_NOT_EMPTY
+proof length: 3
+proof time: 0.105997
+Statistics
+  infstep : 25
+  nodes   : 11
+  maxdepth: 3
+Time: 0.892621
+  inferstep time: 0.760365
+  node_find time: 0.001571
+  node_crea time: 0.101595
+    pred time: 0.038356
+    thmpred time: 0.000004
+    mc time: 0.060036
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.COND_elim_ss] [boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_INSERT")] THEN bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), boolLib.FUN_EQ_THM] THEN
+  metisTools.METIS_TAC [oneTheory.tactictoe_thm_0, sumTheory.IS_SUM_REP, sumTheory.tactictoe_thm_8, DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", dividesTheory.prime_def, combinTheory.UPD11_SAME_BASE, arithmeticTheory.X_LT_EXP_X_IFF, arithmeticTheory.EXP_BASE_LE_IFF, arithmeticTheory.EXP_EXP_LE_MONO, relationTheory.WeakLinearOrder_dichotomy, relationTheory.trichotomous, DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_IN_BAG_INSERT", relationTheory.WF_DEF, listTheory.LLEX_not_WF]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011738
+
+BAG_INSERT_ONE_ONE
+proof length: 2
+proof time: 0.128303
+Statistics
+  infstep : 81
+  nodes   : 21
+  maxdepth: 3
+Time: 2.271651
+  inferstep time: 1.96181
+  node_find time: 0.005204
+  node_crea time: 0.279614
+    pred time: 0.118351
+    thmpred time: 0.000005
+    mc time: 0.091548
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.COND_elim_ss] [boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.EXISTS_OR_THM] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT", listTheory.SUM_MAP_PLUS_ZIP, DB.fetch "bag" "BAG_UNION", listTheory.SUM_MAP_PLUS, pred_setTheory.SUM_IMAGE_THM, pred_setTheory.SUM_IMAGE_DEF, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "PSUB_BAG"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.073393
+
+C_BAG_INSERT_ONE_ONE
+proof length: 3
+proof time: 0.055345
+Statistics
+  infstep : 28
+  nodes   : 9
+  maxdepth: 3
+Time: 0.883178
+  inferstep time: 0.769854
+  node_find time: 0.001678
+  node_crea time: 0.08684
+    pred time: 0.032406
+    thmpred time: 0.000005
+    mc time: 0.051053
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.COND_elim_ss] [boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.EXISTS_OR_THM] THEN simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss () hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.DNF_ss) [(DB.fetch "pred_set" "INJ_DEF")] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT", listTheory.list_size_def, DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", dividesTheory.prime_def, arithmeticTheory.X_LT_EXP_X_IFF, DB.fetch "bag" "BAG_INN_BAG_INSERT", arithmeticTheory.EXP_BASE_LE_IFF, arithmeticTheory.X_LT_EXP_X, arithmeticTheory.tactictoe_thm_27, arithmeticTheory.tactictoe_thm_28, arithmeticTheory.tactictoe_thm_29, arithmeticTheory.tactictoe_thm_30, DB.fetch "bag" "BAG_IN", arithmeticTheory.EXP_BASE_INJECTIVE, arithmeticTheory.EXP_BASE_LE_MONO]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.07625
+
+BAG_INSERT_commutes
+Statistics
+  infstep : 660
+  nodes   : 91
+  maxdepth: 5
+Time: 10.018625
+  inferstep time: 8.732049
+  node_find time: 0.064442
+  node_crea time: 1.053752
+    pred time: 0.270347
+    thmpred time: 0.00003
+    mc time: 0.492792
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.103145
+
+BAG_DECOMPOSE
+Statistics
+  infstep : 762
+  nodes   : 118
+  maxdepth: 5
+Time: 10.007063
+  inferstep time: 8.120639
+  node_find time: 0.083317
+  node_crea time: 1.589743
+    pred time: 0.449504
+    thmpred time: 0.00004
+    mc time: 0.733877
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.116759
+
+BAG_UNION_LEFT_CANCEL
+proof length: 1
+proof time: 0.003474
+Statistics
+  infstep : 20
+  nodes   : 9
+  maxdepth: 3
+Time: 0.802422
+  inferstep time: 0.710244
+  node_find time: 0.001372
+  node_crea time: 0.081091
+    pred time: 0.027851
+    thmpred time: 0.000002
+    mc time: 0.040845
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ bossLib.ARITH_ss ] [ boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_INSERT" ) , ( DB.fetch "bag" "BAG_UNION" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007505
+
+COMM_BAG_UNION
+proof length: 1
+proof time: 0.002657
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.278808
+  inferstep time: 0.238037
+  node_find time: 0.000372
+  node_crea time: 0.035431
+    pred time: 0.014223
+    thmpred time: 0.000002
+    mc time: 0.015753
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ bossLib.ARITH_ss ] [ ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_UNION" ) , ( DB.fetch "bag" "BAG_INN" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007071
+
+BAG_UNION_RIGHT_CANCEL
+proof length: 1
+proof time: 0.00329
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.12646
+  inferstep time: 0.11074
+  node_find time: 0.000159
+  node_crea time: 0.010877
+    pred time: 0.00365
+    thmpred time: 0.000001
+    mc time: 0.008757
+    inst time: 0.0
+Proof found: (bossLib.rw [ ( DB.fetch "bag" "BAG_UNION" ) , ( DB.fetch "bag" "EMPTY_BAG" ) , boolLib.FUN_EQ_THM , numLib.DECIDE ( Parse.Term [ HolKernel.QUOTE " (*#loc 1 4792*)(x:num = x + y) <=> (y = 0)" ] ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025673
+
+ASSOC_BAG_UNION
+proof length: 1
+proof time: 0.005332
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.158026
+  inferstep time: 0.133348
+  node_find time: 0.000209
+  node_crea time: 0.018383
+    pred time: 0.006501
+    thmpred time: 0.0
+    mc time: 0.012343
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ bossLib.ARITH_ss ] [ ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_UNION" ) , ( DB.fetch "bag" "BAG_INN" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009196
+
+BAG_UNION_EMPTY
+proof length: 2
+proof time: 0.012271
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.33953
+  inferstep time: 0.274109
+  node_find time: 0.000519
+  node_crea time: 0.052622
+    pred time: 0.025037
+    thmpred time: 0.000001
+    mc time: 0.025503
+    inst time: 0.0
+Proof found: bossLib.rw [(DB.fetch "bag" "BAG_UNION"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM, numLib.DECIDE (Parse.Term [HolKernel.QUOTE " (*#loc 1 4792*)(x:num = x + y) <=> (y = 0)"])] THEN BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.049215
+
+BAG_DELETE_EMPTY
+proof length: 1
+proof time: 0.036628
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.052105
+  inferstep time: 0.040084
+  node_find time: 0.000076
+  node_crea time: 0.008302
+    pred time: 0.00251
+    thmpred time: 0.000001
+    mc time: 0.007184
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_DELETE" , DB.fetch "bag" "BAG_cases" , DB.fetch "bag" "BAG_INSERT_NOT_EMPTY" , DB.fetch "bag" "BAG_UNION_EMPTY" , DB.fetch "bag" "BAG_UNION_EQ_LCANCEL1" , DB.fetch "bag" "BAG_UNION_EQ_RCANCEL1" , DB.fetch "bag" "EMPTY_BAG" , DB.fetch "bag" "EMPTY_BAG_alt" , sumTheory.INR_DEF , DB.fetch "bag" "BAG_INSERT" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_INN" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_INN_0" , DB.fetch "bag" "BAG_INN_LESS" , pred_setTheory.FINITE_WEAK_ENUMERATE])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.030729
+
+BAG_DELETE_commutes
+proof length: 1
+proof time: 0.007975
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.130465
+  inferstep time: 0.116484
+  node_find time: 0.000199
+  node_crea time: 0.009479
+    pred time: 0.002914
+    thmpred time: 0.000001
+    mc time: 0.007987
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ numSimps.ARITH_ss ] [ DB.fetch "bag" "BAG_DELETE" , DB.fetch "bag" "BAG_cases" , DB.fetch "bag" "BAG_DELETE_EMPTY" , DB.fetch "bag" "BAG_DECOMPOSE" , listTheory.FOLDL_CONG , listTheory.FOLDR_CONG , quantHeuristicsTheory.LIST_LENGTH_2 , quantHeuristicsTheory.LIST_LENGTH_3 , quantHeuristicsTheory.LIST_LENGTH_4 , pred_setTheory.CARD_BIGUNION_SAME_SIZED_SETS , pred_setTheory.pairwise_def , DB.fetch "bag" "BAG_INN_BAG_INSERT" , DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG" , pred_setTheory.MIN_SET_THM , DB.fetch "bag" "BAG_INSERT_commutes" , DB.fetch "bag" "BAG_IN_BAG_INSERT" ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.031371
+
+BAG_DELETE_11
+proof length: 4
+proof time: 0.05216
+Statistics
+  infstep : 121
+  nodes   : 25
+  maxdepth: 4
+Time: 2.438734
+  inferstep time: 2.088457
+  node_find time: 0.009063
+  node_crea time: 0.280435
+    pred time: 0.088272
+    thmpred time: 0.000012
+    mc time: 0.148433
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_DELETE_commutes", DB.fetch "bag" "BAG_DELETE", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_DELETE_EMPTY", pred_setTheory.CARD_BIGUNION_SAME_SIZED_SETS, pred_setTheory.pairwise_def, DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", pred_setTheory.MIN_SET_THM, quantHeuristicsTheory.LIST_LENGTH_2, quantHeuristicsTheory.LIST_LENGTH_3, quantHeuristicsTheory.LIST_LENGTH_4, DB.fetch "bag" "BAG_INSERT_commutes", DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_UNION_EMPTY"] THEN BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM] THENL
+  [metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "PSUB_BAG", ind_typeTheory.NUMSUM_INJ, DB.fetch "bag" "SUB_BAG", arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_EXTENSION", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "BAG_IN_BAG_MERGE"],
+  bossLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) []]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.026971
+
+BAG_INN_BAG_DELETE
+Statistics
+  infstep : 532
+  nodes   : 106
+  maxdepth: 5
+Time: 10.024798
+  inferstep time: 8.271903
+  node_find time: 0.068365
+  node_crea time: 1.529879
+    pred time: 0.419322
+    thmpred time: 0.00003
+    mc time: 0.673679
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.186349
+
+BAG_IN_BAG_DELETE
+proof length: 1
+proof time: 0.062742
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.083856
+  inferstep time: 0.06803
+  node_find time: 0.000147
+  node_crea time: 0.01068
+    pred time: 0.003074
+    thmpred time: 0.0
+    mc time: 0.009672
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_INN_BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_commutes" , DB.fetch "bag" "BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_11" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_IN_BAG_MERGE" , DB.fetch "bag" "BAG_IN_BAG_UNION" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , DB.fetch "bag" "BAG_DELETE_EMPTY" , listTheory.FOLDL_CONG , listTheory.FOLDR_CONG , DB.fetch "bag" "BAG_cases" , pred_setTheory.FINITE_WEAK_ENUMERATE , DB.fetch "bag" "BAG_INN_LESS" , pred_setTheory.COMMUTING_ITSET_RECURSES])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013613
+
+BAG_DELETE_INSERT
+Statistics
+  infstep : 599
+  nodes   : 87
+  maxdepth: 5
+Time: 10.004035
+  inferstep time: 8.379642
+  node_find time: 0.083016
+  node_crea time: 1.356053
+    pred time: 0.443529
+    thmpred time: 0.00003
+    mc time: 0.49348
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.358024
+
+BAG_DELETE_BAG_IN_up
+proof length: 1
+proof time: 0.044948
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.065387
+  inferstep time: 0.049992
+  node_find time: 0.000143
+  node_crea time: 0.010735
+    pred time: 0.00332
+    thmpred time: 0.0
+    mc time: 0.009107
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_IN_BAG_DELETE" , DB.fetch "bag" "BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_11" , DB.fetch "bag" "BAG_DELETE_commutes" , DB.fetch "bag" "BAG_INN_BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_INSERT" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_IN_BAG_MERGE" , DB.fetch "bag" "BAG_IN_BAG_UNION" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , rich_listTheory.COMM_MONOID_FOLDL , rich_listTheory.COMM_MONOID_FOLDR , DB.fetch "bag" "BAG_cases" , DB.fetch "bag" "BAG_DELETE_EMPTY" , DB.fetch "bag" "BAG_INN_LESS"])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.074269
+
+BAG_DELETE_BAG_IN_down
+proof length: 2
+proof time: 0.002417
+Statistics
+  infstep : 14
+  nodes   : 8
+  maxdepth: 3
+Time: 0.651841
+  inferstep time: 0.575062
+  node_find time: 0.001142
+  node_crea time: 0.063147
+    pred time: 0.02058
+    thmpred time: 0.000003
+    mc time: 0.032953
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_DELETE"), boolLib.EQ_IMP_THM] THEN mesonLib.ASM_MESON_TAC [(DB.fetch "bag" "BAG_IN_BAG_INSERT")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009855
+
+BAG_DELETE_BAG_IN
+proof length: 1
+proof time: 0.035275
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.052436
+  inferstep time: 0.039465
+  node_find time: 0.000139
+  node_crea time: 0.008781
+    pred time: 0.002628
+    thmpred time: 0.0
+    mc time: 0.007689
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_DELETE_BAG_IN_up" , DB.fetch "bag" "BAG_DELETE_BAG_IN_down" , DB.fetch "bag" "BAG_IN_BAG_DELETE" , DB.fetch "bag" "BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_11" , DB.fetch "bag" "BAG_DELETE_commutes" , DB.fetch "bag" "BAG_INN_BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_INSERT" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_IN_BAG_MERGE" , DB.fetch "bag" "BAG_IN_BAG_UNION" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , DB.fetch "bag" "BAG_cases" , DB.fetch "bag" "BAG_DELETE_EMPTY" , DB.fetch "bag" "BAG_INN_LESS"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005462
+
+BAG_DELETE_concrete
+proof length: 6
+proof time: 0.095255
+Statistics
+  infstep : 45
+  nodes   : 19
+  maxdepth: 3
+Time: 1.439714
+  inferstep time: 1.208411
+  node_find time: 0.003826
+  node_crea time: 0.165469
+    pred time: 0.054323
+    thmpred time: 0.000003
+    mc time: 0.123178
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_DELETE"), boolLib.EQ_IMP_THM] THENL [BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_DELETE", DB.fetch "bag" "BAG_DECOMPOSE", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "C_BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_INSERT_commutes", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "BAG_INN_BAG_DELETE", rich_listTheory.LIST_ELEM_COUNT_MEM, numeralTheory.numeral_distrib, quantHeuristicsTheory.LIST_LENGTH_1], BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_DELETE", DB.fetch "bag" "BAG_DECOMPOSE", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "C_BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "BAG_INSERT_commutes", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_DELETE_INSERT", indexedListsTheory.findi_def, listTheory.LUPDATE_SEM, combinTheory.APPLY_UPDATE_THM, combinTheory.UPDATE_def] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT", listTheory.LUPDATE_SEM, combinTheory.APPLY_UPDATE_THM, combinTheory.UPDATE_def, listTheory.LLEX_def, indexedListsTheory.findi_def, pred_setTheory.DELETE_INSERT, sumTheory.INL_DEF, sumTheory.INR_DEF, rich_listTheory.LIST_ELEM_COUNT_DEF, listTheory.EL_LUPDATE, pairTheory.ABS_REP_prod, pairTheory.prod_TY_DEF, pairTheory.COMMA_DEF, pairTheory.tactictoe_thm_0, sumTheory.IS_SUM_REP], bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), boolLib.FUN_EQ_THM] THEN
+  BasicProvers.SRW_TAC [bossLib.ARITH_ss] []]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.050461
+Replaying proof: 0.055857
+Replaying proof: 0.009446
+
+BAG_UNION_DIFF_eliminate
+proof length: 3
+proof time: 0.010928
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 2
+Time: 0.40049
+  inferstep time: 0.354325
+  node_find time: 0.000667
+  node_crea time: 0.032189
+    pred time: 0.011771
+    thmpred time: 0.000001
+    mc time: 0.023619
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [bossLib.ARITH_ss, boolSimps.COND_elim_ss] [(DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN")] THEN (bossLib.rw [(DB.fetch "bag" "BAG_UNION"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM, numLib.DECIDE (Parse.Term [HolKernel.QUOTE " (*#loc 1 4792*)(x:num = x + y) <=> (y = 0)"])])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006299
+Replaying proof: 0.018689
+
+BAG_DELETE_TWICE
+proof length: 3
+proof time: 0.066862
+Statistics
+  infstep : 13
+  nodes   : 7
+  maxdepth: 3
+Time: 0.653558
+  inferstep time: 0.559692
+  node_find time: 0.001221
+  node_crea time: 0.075187
+    pred time: 0.024182
+    thmpred time: 0.000001
+    mc time: 0.040983
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "BAG_DELETE"), (DB.fetch "bag" "BAG_IN_BAG_INSERT"), boolLib.LEFT_AND_OVER_OR, boolLib.DISJ_IMP_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INSERT_commutes", DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_DELETE_commutes", DB.fetch "bag" "BAG_DELETE_11", DB.fetch "bag" "BAG_INSERT_EQUAL", DB.fetch "bag" "BAG_DECOMPOSE", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "BAG_INSERT_DIFF", DB.fetch "bag" "BAG_DELETE", DB.fetch "bag" "C_BAG_INSERT_ONE_ONE"] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INSERT_commutes", DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "BAG_INSERT_EQUAL", DB.fetch "bag" "BAG_DECOMPOSE", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_DELETE", DB.fetch "bag" "C_BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "BAG_INSERT_DIFF", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_DELETE_BAG_IN_down"]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.170282
+
+SING_BAG_THM
+proof length: 1
+proof time: 0.046928
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.065048
+  inferstep time: 0.051438
+  node_find time: 0.000096
+  node_crea time: 0.009591
+    pred time: 0.002752
+    thmpred time: 0.000001
+    mc time: 0.007911
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "SING_BAG" , DB.fetch "bag" "tactictoe_thm_2" , DB.fetch "bag" "tactictoe_thm_3" , DB.fetch "bag" "tactictoe_thm_4" , DB.fetch "bag" "tactictoe_thm_5" , DB.fetch "bag" "BAG_cases" , DB.fetch "bag" "BAG_INSERT_NOT_EMPTY" , DB.fetch "bag" "BAG_INSERT" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_DELETE" , DB.fetch "bag" "BAG_UNION_INSERT" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , DB.fetch "bag" "BAG_DELETE_INSERT" , DB.fetch "bag" "BAG_INSERT_ONE_ONE" , DB.fetch "bag" "BAG_INN_BAG_INSERT" , DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00598
+
+EL_BAG_11
+proof length: 1
+proof time: 0.001547
+Statistics
+  infstep : 17
+  nodes   : 6
+  maxdepth: 2
+Time: 0.409659
+  inferstep time: 0.337605
+  node_find time: 0.001371
+  node_crea time: 0.061997
+    pred time: 0.024704
+    thmpred time: 0.000002
+    mc time: 0.024991
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "bag" "EL_BAG" , arithmeticTheory.DIV_EQ_X , arithmeticTheory.X_LE_DIV , arithmeticTheory.DIV_LE_X , arithmeticTheory.X_LT_DIV , arithmeticTheory.DIV_LT_X , arithmeticTheory.EXISTS_GREATEST , arithmeticTheory.X_MOD_Y_EQ_X , arithmeticTheory.tactictoe_thm_13 , arithmeticTheory.tactictoe_thm_14 , DB.fetch "bag" "BAG_DELETE_INSERT" , ind_typeTheory.MK_REC_INJ , listTheory.LIST_REL_LENGTH , listTheory.MEM_LUPDATE_E , listTheory.SUM_MAP_PLUS_ZIP , pred_setTheory.CARD_INJ_IMAGE ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018592
+
+EL_BAG_INSERT_squeeze
+Statistics
+  infstep : 557
+  nodes   : 147
+  maxdepth: 6
+Time: 10.091367
+  inferstep time: 7.895193
+  node_find time: 0.075668
+  node_crea time: 1.88645
+    pred time: 0.499013
+    thmpred time: 0.000031
+    mc time: 0.706219
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006012
+
+SING_EL_BAG
+proof length: 1
+proof time: 0.032962
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.052648
+  inferstep time: 0.0395
+  node_find time: 0.000138
+  node_crea time: 0.009019
+    pred time: 0.002721
+    thmpred time: 0.0
+    mc time: 0.007875
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "EL_BAG" , DB.fetch "bag" "EL_BAG_11" , DB.fetch "bag" "EL_BAG_INSERT_squeeze" , DB.fetch "bag" "SING_BAG_THM" , DB.fetch "bag" "SING_BAG" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_INN" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_INSERT" , DB.fetch "bag" "BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_BAG_IN" , DB.fetch "bag" "BAG_DELETE_BAG_IN_up" , DB.fetch "bag" "BAG_DELETE_EMPTY" , DB.fetch "bag" "BAG_DELETE_concrete" , DB.fetch "bag" "BAG_EXTENSION" , DB.fetch "bag" "BAG_INN_0"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005401
+
+BAG_INSERT_UNION
+proof length: 2
+proof time: 0.001515
+Statistics
+  infstep : 9
+  nodes   : 4
+  maxdepth: 2
+Time: 0.327115
+  inferstep time: 0.290896
+  node_find time: 0.000845
+  node_crea time: 0.024621
+    pred time: 0.008578
+    thmpred time: 0.000002
+    mc time: 0.01776
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "bag" "EL_BAG"), (DB.fetch "bag" "BAG_INSERT_EQUAL")] THEN BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_UNION_INSERT")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004386
+
+BAG_INSERT_EQ_UNION
+proof length: 1
+proof time: 0.058086
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.095314
+  inferstep time: 0.066345
+  node_find time: 0.000241
+  node_crea time: 0.021354
+    pred time: 0.007008
+    thmpred time: 0.000001
+    mc time: 0.016745
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_IN_BAG_UNION" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , DB.fetch "bag" "BAG_UNION_INSERT" , DB.fetch "bag" "tactictoe_thm_3" , DB.fetch "bag" "tactictoe_thm_4" , DB.fetch "bag" "BAG_IN_BAG_MERGE" , DB.fetch "bag" "BAG_DELETE_BAG_IN" , DB.fetch "bag" "BAG_DELETE_BAG_IN_up" , DB.fetch "bag" "BAG_IN_BAG_DELETE" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_INN_BAG_UNION" , DB.fetch "bag" "BAG_DELETE_BAG_IN_down" , DB.fetch "bag" "BAG_UNION_EMPTY" , DB.fetch "bag" "BAG_UNION_LEFT_CANCEL" , DB.fetch "bag" "BAG_UNION_RIGHT_CANCEL"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.077472
+
+BAG_DELETE_SING
+proof length: 1
+proof time: 0.028792
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.089175
+  inferstep time: 0.069506
+  node_find time: 0.000103
+  node_crea time: 0.00943
+    pred time: 0.002394
+    thmpred time: 0.0
+    mc time: 0.013777
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "SING_BAG" , DB.fetch "bag" "SING_BAG_THM" , DB.fetch "bag" "SING_EL_BAG" , DB.fetch "bag" "BAG_DELETE_BAG_IN" , DB.fetch "bag" "BAG_DELETE_BAG_IN_up" , DB.fetch "bag" "BAG_INN_BAG_DELETE" , DB.fetch "bag" "BAG_IN_BAG_DELETE" , DB.fetch "bag" "BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_concrete" , DB.fetch "bag" "BAG_DELETE_BAG_IN_down" , DB.fetch "bag" "BAG_DELETE_TWICE" , DB.fetch "bag" "BAG_DELETE_11" , DB.fetch "bag" "BAG_DELETE_INSERT" , DB.fetch "bag" "BAG_DELETE_commutes" , DB.fetch "bag" "BAG_DELETE_EMPTY" , DB.fetch "bag" "BAG_cases"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00784
+
+NOT_IN_EMPTY_BAG
+proof length: 1
+proof time: 0.028837
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.043603
+  inferstep time: 0.028919
+  node_find time: 0.000128
+  node_crea time: 0.011103
+    pred time: 0.003824
+    thmpred time: 0.0
+    mc time: 0.007742
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "tactictoe_thm_3" , DB.fetch "bag" "tactictoe_thm_4" , DB.fetch "bag" "BAG_DELETE_BAG_IN_down" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_DELETE_BAG_IN" , DB.fetch "bag" "BAG_DELETE_BAG_IN_up" , DB.fetch "bag" "BAG_INSERT_EQ_UNION" , DB.fetch "bag" "BAG_IN_BAG_UNION" , DB.fetch "bag" "BAG_IN_BAG_DELETE" , DB.fetch "bag" "BAG_IN_BAG_MERGE" , DB.fetch "bag" "BAG_INSERT_NOT_EMPTY" , DB.fetch "bag" "BAG_DELETE_EMPTY" , DB.fetch "bag" "EL_BAG_INSERT_squeeze" , DB.fetch "bag" "SING_BAG"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004744
+
+BAG_INN_EMPTY_BAG
+proof length: 2
+proof time: 0.001697
+Statistics
+  infstep : 30
+  nodes   : 7
+  maxdepth: 3
+Time: 0.666139
+  inferstep time: 0.53657
+  node_find time: 0.003897
+  node_crea time: 0.087149
+    pred time: 0.028093
+    thmpred time: 0.000003
+    mc time: 0.06594
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_INN"), boolLib.FUN_EQ_THM, arithmeticTheory.GREATER_EQ] THEN bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), boolLib.FUN_EQ_THM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006007
+
+MEMBER_NOT_EMPTY
+proof length: 1
+proof time: 0.064339
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.116999
+  inferstep time: 0.098478
+  node_find time: 0.000147
+  node_crea time: 0.012726
+    pred time: 0.003923
+    thmpred time: 0.0
+    mc time: 0.011191
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "tactictoe_thm_3" , DB.fetch "bag" "tactictoe_thm_4" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_IN_BAG_DELETE" , DB.fetch "bag" "BAG_DELETE_BAG_IN_down" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , DB.fetch "bag" "BAG_INSERT_EQ_UNION" , DB.fetch "bag" "BAG_DELETE_BAG_IN" , DB.fetch "bag" "BAG_DELETE_BAG_IN_up" , DB.fetch "bag" "BAG_IN_BAG_UNION" , DB.fetch "bag" "BAG_IN_BAG_MERGE" , DB.fetch "bag" "NOT_IN_EMPTY_BAG" , DB.fetch "bag" "SING_BAG" , DB.fetch "bag" "BAG_cases" , DB.fetch "bag" "tactictoe_thm_5"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.035626
+
+SUB_BAG_LEQ
+Statistics
+  infstep : 907
+  nodes   : 131
+  maxdepth: 5
+Time: 10.009839
+  inferstep time: 7.875954
+  node_find time: 0.124673
+  node_crea time: 1.682287
+    pred time: 0.479086
+    thmpred time: 0.000023
+    mc time: 0.764969
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.112401
+
+SUB_BAG_EMPTY
+proof length: 4
+proof time: 0.012197
+Statistics
+  infstep : 39
+  nodes   : 15
+  maxdepth: 3
+Time: 1.176861
+  inferstep time: 0.980673
+  node_find time: 0.004066
+  node_crea time: 0.144036
+    pred time: 0.05029
+    thmpred time: 0.000004
+    mc time: 0.074096
+    inst time: 0.0
+Proof found: bossLib.rw [(DB.fetch "bag" "BAG_UNION"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM, numLib.DECIDE (Parse.Term [HolKernel.QUOTE " (*#loc 1 4792*)(x:num = x + y) <=> (y = 0)"])] THENL [BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG"), (DB.fetch "bag" "BAG_INN"), boolLib.EQ_IMP_THM] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", arithmeticTheory.GREATER_EQ, numeralTheory.numeral_distrib, arithmeticTheory.NOT_GREATER_EQ, pred_setTheory.FINITE_WEAK_ENUMERATE, arithmeticTheory.ONE_ONE_UNBOUNDED, arithmeticTheory.STRICTLY_INCREASING_UNBOUNDED, DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_DELETE_concrete", arithmeticTheory.ONE_ONE_INV_IMAGE_BOUNDED, combinTheory.UPDATE_APPLY, ind_typeTheory.ISO_USAGE, listTheory.FOLDL_CONG, listTheory.FOLDR_CONG, numeralTheory.tactictoe_thm_13], BasicProvers.SRW_TAC [] [DB.fetch "bag" "EMPTY_BAG", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "PSUB_BAG", combinTheory.K_THM, DB.fetch "bag" "BAG_DELETE_concrete", arithmeticTheory.SUB_ELIM_THM, arithmeticTheory.X_LT_EXP_X_IFF, arithmeticTheory.EXP_EXP_LT_MONO, arithmeticTheory.ADD_MOD, arithmeticTheory.SUC_MOD, arithmeticTheory.EXP_EXP_LE_MONO, dividesTheory.compute_divides, numeralTheory.tactictoe_thm_32, numeralTheory.tactictoe_thm_34, arithmeticTheory.EXP_BASE_LE_IFF]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005543
+
+SUB_BAG_REFL
+proof length: 1
+proof time: 0.040963
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.077247
+  inferstep time: 0.046499
+  node_find time: 0.000143
+  node_crea time: 0.011696
+    pred time: 0.003831
+    thmpred time: 0.000001
+    mc time: 0.023189
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "PSUB_BAG" , DB.fetch "bag" "SUB_BAG" , DB.fetch "bag" "SUB_BAG_LEQ" , DB.fetch "bag" "SUB_BAG_EMPTY" , DB.fetch "bag" "BAG_INN" , arithmeticTheory.ADD_MOD , arithmeticTheory.SUC_MOD , arithmeticTheory.EXP_ALWAYS_BIG_ENOUGH , arithmeticTheory.EXP_BASE_INJECTIVE , arithmeticTheory.EXP_BASE_LE_MONO , arithmeticTheory.EXP_BASE_LEQ_MONO_IMP , arithmeticTheory.EXP_BASE_LT_MONO , arithmeticTheory.EXP_EXP_LE_MONO , arithmeticTheory.tactictoe_thm_35 , arithmeticTheory.tactictoe_thm_36 , arithmeticTheory.EXP_EXP_LT_MONO])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.003564
+
+PSUB_BAG_IRREFL
+proof length: 1
+proof time: 0.025405
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.057362
+  inferstep time: 0.043908
+  node_find time: 0.000123
+  node_crea time: 0.009196
+    pred time: 0.002616
+    thmpred time: 0.0
+    mc time: 0.00788
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "PSUB_BAG" , DB.fetch "bag" "BAG_DELETE_BAG_IN_down" , DB.fetch "bag" "BAG_DELETE_EMPTY" , DB.fetch "bag" "BAG_INSERT_NOT_EMPTY" , DB.fetch "bag" "BAG_DELETE_TWICE" , DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG" , DB.fetch "bag" "BAG_INSERT_DIFF" , DB.fetch "bag" "MEMBER_NOT_EMPTY" , dividesTheory.NOT_LT_DIVIDES , dividesTheory.prime_def , combinTheory.SAME_KEY_UPDATE_DIFFER , combinTheory.UPD11_SAME_BASE , combinTheory.UPDATE_APPLY , combinTheory.UPDATE_COMMUTES , listTheory.MEM_APPEND_lemma , pred_setTheory.ITSET_IND])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004385
+
+SUB_BAG_ANTISYM
+proof length: 2
+proof time: 0.020756
+Statistics
+  infstep : 48
+  nodes   : 17
+  maxdepth: 4
+Time: 1.27576
+  inferstep time: 1.016977
+  node_find time: 0.005094
+  node_crea time: 0.223302
+    pred time: 0.074064
+    thmpred time: 0.000007
+    mc time: 0.108754
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THEN metisLib.METIS_TAC [(DB.fetch "arithmetic" "EXP_EXP_LE_MONO"), (DB.fetch "arithmetic" "LESS_EQUAL_ANTISYM"), (DB.fetch "arithmetic" "LESS_EQ_REFL")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013559
+
+PSUB_BAG_ANTISYM
+proof length: 1
+proof time: 0.054647
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.118265
+  inferstep time: 0.095819
+  node_find time: 0.000119
+  node_crea time: 0.013795
+    pred time: 0.00383
+    thmpred time: 0.0
+    mc time: 0.014918
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "PSUB_BAG" , DB.fetch "bag" "PSUB_BAG_IRREFL" , DB.fetch "bag" "BAG_DELETE_INSERT" , DB.fetch "bag" "BAG_DELETE_TWICE" , DB.fetch "bag" "BAG_UNION_INSERT" , DB.fetch "bag" "BAG_UNION_EMPTY" , DB.fetch "bag" "BAG_DELETE_11" , DB.fetch "bag" "BAG_DELETE_commutes" , DB.fetch "bag" "BAG_INN_BAG_UNION" , DB.fetch "bag" "SUB_BAG_ANTISYM" , ind_typeTheory.NUMSUM_INJ , markerTheory.AC_DEF , DB.fetch "bag" "BAG_INSERT_ONE_ONE" , DB.fetch "bag" "BAG_UNION_LEFT_CANCEL" , DB.fetch "bag" "SUB_BAG_LEQ" , arithmeticTheory.EXP_EXP_INJECTIVE])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007423
+
+SUB_BAG_TRANS
+proof length: 1
+proof time: 0.002681
+Statistics
+  infstep : 10
+  nodes   : 4
+  maxdepth: 2
+Time: 0.281546
+  inferstep time: 0.229621
+  node_find time: 0.001058
+  node_crea time: 0.042933
+    pred time: 0.013555
+    thmpred time: 0.000001
+    mc time: 0.021818
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "bag" "SUB_BAG" ) , ( DB.fetch "bag" "BAG_INN" ) , boolLib.EQ_IMP_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010393
+
+PSUB_BAG_TRANS
+proof length: 2
+proof time: 0.0756
+Statistics
+  infstep : 6
+  nodes   : 3
+  maxdepth: 2
+Time: 0.297304
+  inferstep time: 0.262092
+  node_find time: 0.000677
+  node_crea time: 0.02258
+    pred time: 0.006699
+    thmpred time: 0.000001
+    mc time: 0.019626
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN metisTools.METIS_TAC [DB.fetch "bag" "PSUB_BAG", DB.fetch "bag" "PSUB_BAG_ANTISYM", DB.fetch "bag" "PSUB_BAG_IRREFL", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "ASSOC_BAG_UNION", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "SUB_BAG_ANTISYM", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_DELETE_11", DB.fetch "bag" "BAG_DELETE_TWICE", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_UNION_LEFT_CANCEL", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "BAG_DELETE_commutes"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025485
+
+PSUB_BAG_SUB_BAG
+proof length: 1
+proof time: 0.037793
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.065033
+  inferstep time: 0.045985
+  node_find time: 0.000176
+  node_crea time: 0.013043
+    pred time: 0.003996
+    thmpred time: 0.000001
+    mc time: 0.011336
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "PSUB_BAG" , DB.fetch "bag" "PSUB_BAG_TRANS" , DB.fetch "bag" "PSUB_BAG_ANTISYM" , DB.fetch "bag" "PSUB_BAG_IRREFL" , DB.fetch "bag" "SUB_BAG_ANTISYM" , DB.fetch "bag" "SUB_BAG_TRANS" , DB.fetch "bag" "SUB_BAG" , DB.fetch "bag" "SUB_BAG_LEQ" , DB.fetch "bag" "SUB_BAG_REFL" , DB.fetch "bag" "SUB_BAG_EMPTY" , DB.fetch "bag" "BAG_DELETE_11" , DB.fetch "bag" "BAG_DELETE_INSERT" , DB.fetch "bag" "BAG_DELETE_TWICE" , DB.fetch "bag" "BAG_DELETE_commutes" , DB.fetch "bag" "BAG_INSERT_EQ_UNION" , DB.fetch "bag" "BAG_INSERT_ONE_ONE"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004674
+
+PSUB_BAG_NOT_EQ
+proof length: 1
+proof time: 0.065693
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.204458
+  inferstep time: 0.186234
+  node_find time: 0.00014
+  node_crea time: 0.010504
+    pred time: 0.00285
+    thmpred time: 0.000001
+    mc time: 0.011881
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "PSUB_BAG" , DB.fetch "bag" "PSUB_BAG_ANTISYM" , DB.fetch "bag" "PSUB_BAG_SUB_BAG" , DB.fetch "bag" "PSUB_BAG_TRANS" , DB.fetch "bag" "PSUB_BAG_IRREFL" , DB.fetch "bag" "BAG_DELETE_INSERT" , DB.fetch "bag" "BAG_DELETE_TWICE" , DB.fetch "bag" "SUB_BAG_ANTISYM" , DB.fetch "bag" "BAG_DELETE_11" , DB.fetch "bag" "BAG_INSERT_EQ_UNION" , DB.fetch "bag" "SUB_BAG" , DB.fetch "bag" "SUB_BAG_TRANS" , DB.fetch "bag" "BAG_DELETE_commutes" , DB.fetch "bag" "BAG_INSERT_ONE_ONE" , DB.fetch "bag" "BAG_UNION_INSERT" , DB.fetch "bag" "BAG_UNION_LEFT_CANCEL"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00464
+
+BAG_DIFF_EMPTY
+proof length: 2
+proof time: 0.053652
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.231162
+  inferstep time: 0.184483
+  node_find time: 0.000483
+  node_crea time: 0.035686
+    pred time: 0.015369
+    thmpred time: 0.0
+    mc time: 0.019155
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [bossLib.ARITH_ss, boolSimps.COND_elim_ss] [(DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN")] THEN metisTools.METIS_TAC [DB.fetch "bag" "SUB_BAG_LEQ", arithmeticTheory.ONE_ONE_INV_IMAGE_BOUNDED, DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_DELETE_INSERT", arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "SUB_BAG_ANTISYM", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "PSUB_BAG", DB.fetch "bag" "PSUB_BAG_SUB_BAG", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "BAG_DELETE_TWICE", DB.fetch "bag" "BAG_UNION_INSERT"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006769
+
+BAG_DIFF_EQ_EMPTY
+proof length: 1
+proof time: 0.001758
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.13981
+  inferstep time: 0.126718
+  node_find time: 0.000226
+  node_crea time: 0.008681
+    pred time: 0.00271
+    thmpred time: 0.000001
+    mc time: 0.00696
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "bag" "SUB_BAG_LEQ" ) , ( DB.fetch "bag" "BAG_DIFF" ) , ( DB.fetch "bag" "EMPTY_BAG" ) , boolLib.FUN_EQ_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011288
+
+BAG_DIFF_INSERT_same
+proof length: 1
+proof time: 0.01716
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.150034
+  inferstep time: 0.126873
+  node_find time: 0.000298
+  node_crea time: 0.017906
+    pred time: 0.006033
+    thmpred time: 0.000001
+    mc time: 0.01115
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ bossLib.ARITH_ss , boolSimps.COND_elim_ss ] [ ( DB.fetch "bag" "BAG_INSERT" ) , ( DB.fetch "bag" "BAG_DIFF" ) , ( DB.fetch "bag" "EMPTY_BAG" ) , boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_INN" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.017978
+
+BAG_DIFF_INSERT
+proof length: 3
+proof time: 0.059869
+Statistics
+  infstep : 90
+  nodes   : 32
+  maxdepth: 4
+Time: 2.305059
+  inferstep time: 1.905796
+  node_find time: 0.010496
+  node_crea time: 0.336826
+    pred time: 0.112007
+    thmpred time: 0.000004
+    mc time: 0.150775
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_INSERT")] THEN BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_DIFF_INSERT_same", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "BAG_DIFF_EMPTY_simple", DB.fetch "bag" "BAG_DIFF_EQ_EMPTY", DB.fetch "bag" "tactictoe_thm_3", DB.fetch "bag" "tactictoe_thm_4", DB.fetch "bag" "tactictoe_thm_2", combinTheory.UPDATE_def, DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_UNION_DIFF_eliminate", numeralTheory.numeral_distrib, DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "BAG_MERGE"] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_DIFF", pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_46, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_42, pred_setTheory.tactictoe_thm_43, pred_setTheory.tactictoe_thm_47, pred_setTheory.tactictoe_thm_48, pred_setTheory.tactictoe_thm_50, pred_setTheory.tactictoe_thm_38, combinTheory.UPDATE_def, DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_INTER"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.039182
+
+NOT_IN_BAG_DIFF
+proof length: 1
+proof time: 0.013237
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.139489
+  inferstep time: 0.125012
+  node_find time: 0.000299
+  node_crea time: 0.00949
+    pred time: 0.003336
+    thmpred time: 0.0
+    mc time: 0.007057
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ boolSimps.COND_elim_ss , bossLib.ARITH_ss ] [ boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_DIFF" ) , ( DB.fetch "bag" "BAG_INSERT" ) , bossLib.Cong ( DB.fetch "bag" "tactictoe_thm_6" ) , ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_INN" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.020062
+
+BAG_IN_DIFF_I
+proof length: 1
+proof time: 0.007413
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.133244
+  inferstep time: 0.117144
+  node_find time: 0.000196
+  node_crea time: 0.010912
+    pred time: 0.003178
+    thmpred time: 0.0
+    mc time: 0.009461
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ boolSimps.COND_elim_ss , bossLib.ARITH_ss ] [ boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_DIFF" ) , ( DB.fetch "bag" "BAG_INSERT" ) , bossLib.Cong ( DB.fetch "bag" "tactictoe_thm_6" ) , ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_INN" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009913
+
+BAG_IN_DIFF_E
+proof length: 1
+proof time: 0.005113
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.133976
+  inferstep time: 0.117324
+  node_find time: 0.000248
+  node_crea time: 0.011201
+    pred time: 0.003392
+    thmpred time: 0.0
+    mc time: 0.009799
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ bossLib.ARITH_ss , boolSimps.COND_elim_ss ] [ ( DB.fetch "bag" "BAG_INSERT" ) , ( DB.fetch "bag" "BAG_DIFF" ) , ( DB.fetch "bag" "EMPTY_BAG" ) , boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_INN" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00781
+Replaying proof: 0.008225
+
+BAG_DIFF_2L
+proof length: 2
+proof time: 0.063501
+Statistics
+  infstep : 11
+  nodes   : 7
+  maxdepth: 2
+Time: 0.396905
+  inferstep time: 0.316348
+  node_find time: 0.001406
+  node_crea time: 0.051904
+    pred time: 0.016121
+    thmpred time: 0.000002
+    mc time: 0.034047
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.COND_elim_ss, bossLib.ARITH_ss] [boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "BAG_INSERT"), bossLib.Cong (DB.fetch "bag" "tactictoe_thm_6"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN")] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_UNION_DIFF", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_DIFF", ind_typeTheory.INJ_INVERSE2, pred_setTheory.BIGUNION_SUBSET, pred_setTheory.SUBSET_BIGINTER, pred_setTheory.DISJOINT_BIGINTER, relationTheory.Order, relationTheory.StrongOrder, relationTheory.WeakOrder, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_UNION_DIFF_eliminate", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_UNION_EMPTY"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006698
+Replaying proof: 0.007213
+
+SUB_BAG_BAG_DIFF
+proof length: 5
+proof time: 0.019031
+Statistics
+  infstep : 626
+  nodes   : 81
+  maxdepth: 5
+Time: 7.658265
+  inferstep time: 6.385602
+  node_find time: 0.081801
+  node_crea time: 0.916279
+    pred time: 0.238281
+    thmpred time: 0.000019
+    mc time: 0.4695
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_DIFF_2L", DB.fetch "bag" "BAG_UNION_DIFF", DB.fetch "bag" "BAG_DIFF", ind_typeTheory.INJ_INVERSE2, pred_setTheory.BIGUNION_SUBSET, pred_setTheory.DISJOINT_BIGINTER, pred_setTheory.SUBSET_BIGINTER, relationTheory.Order, relationTheory.StrongOrder, relationTheory.WeakOrder, DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_DIFF_2R", DB.fetch "bag" "BAG_UNION_DIFF_eliminate", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION"] THEN
+  boolLib.FIRST_X_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 17272*)x"] boolLib.MP_TAC) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_UNION_DIFF", DB.fetch "bag" "BAG_DIFF_2L", DB.fetch "bag" "BAG_UNION", ind_typeTheory.INJ_INVERSE2, pred_setTheory.BIGUNION_SUBSET, pred_setTheory.DISJOINT_BIGINTER, pred_setTheory.SUBSET_BIGINTER, relationTheory.Order, relationTheory.StrongOrder, relationTheory.WeakOrder, DB.fetch "bag" "BAG_INSERT", arithmeticTheory.ONE_ONE_INV_IMAGE_BOUNDED, DB.fetch "bag" "SUB_BAG_LEQ", optionTheory.IF_NONE_EQUALS_OPTION, quantHeuristicsTheory.PAIR_EQ_EXPAND] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_DIFF_2L", DB.fetch "bag" "BAG_UNION_DIFF", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_DIFF", ind_typeTheory.INJ_INVERSE2, pred_setTheory.BIGUNION_SUBSET, pred_setTheory.DISJOINT_BIGINTER, pred_setTheory.SUBSET_BIGINTER, relationTheory.Order, relationTheory.StrongOrder, relationTheory.WeakOrder, DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "SUB_BAG_LEQ", arithmeticTheory.ONE_ONE_INV_IMAGE_BOUNDED, optionTheory.IF_NONE_EQUALS_OPTION, quantHeuristicsTheory.PAIR_EQ_EXPAND]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.126785
+
+BAG_DIFF_UNION_eliminate
+proof length: 1
+proof time: 0.004962
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 1
+Time: 0.181942
+  inferstep time: 0.145271
+  node_find time: 0.000398
+  node_crea time: 0.029715
+    pred time: 0.013794
+    thmpred time: 0.0
+    mc time: 0.013616
+    inst time: 0.0
+Proof found: (bossLib.SIMP_TAC numLib.arith_ss [ ( DB.fetch "bag" "BAG_UNION" ) , ( DB.fetch "bag" "BAG_INN" ) , ( DB.fetch "bag" "SUB_BAG" ) , ( DB.fetch "bag" "BAG_DIFF" ) ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.045847
+Replaying proof: 0.003117
+
+move_BAG_UNION_over_eq
+proof length: 1
+proof time: 0.048003
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.075443
+  inferstep time: 0.058673
+  node_find time: 0.000187
+  node_crea time: 0.011254
+    pred time: 0.003568
+    thmpred time: 0.000001
+    mc time: 0.009615
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_UNION_DIFF" , DB.fetch "bag" "SUB_BAG_BAG_DIFF" , DB.fetch "bag" "BAG_DIFF_2L" , DB.fetch "bag" "BAG_DIFF_2R" , DB.fetch "bag" "BAG_DIFF_UNION_eliminate" , ind_typeTheory.INJ_INVERSE2 , pred_setTheory.BIGUNION_SUBSET , pred_setTheory.SUBSET_BIGINTER , pred_setTheory.DISJOINT_BIGINTER , DB.fetch "bag" "tactictoe_thm_2" , DB.fetch "bag" "BAG_UNION_DIFF_eliminate" , DB.fetch "bag" "BAG_DIFF_EMPTY" , DB.fetch "bag" "BAG_DIFF_INSERT" , DB.fetch "bag" "NOT_IN_BAG_DIFF" , DB.fetch "bag" "BAG_IN_DIFF_E" , DB.fetch "bag" "BAG_IN_DIFF_I"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007667
+
+SUB_BAG_EL_BAG
+proof length: 6
+proof time: 0.070424
+Statistics
+  infstep : 210
+  nodes   : 60
+  maxdepth: 5
+Time: 3.980524
+  inferstep time: 3.350429
+  node_find time: 0.027473
+  node_crea time: 0.459155
+    pred time: 0.104548
+    thmpred time: 0.000008
+    mc time: 0.285787
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "EL_BAG"), (DB.fetch "bag" "BAG_UNION_INSERT")] THEN BasicProvers.SRW_TAC [bossLib.ARITH_ss, boolSimps.COND_elim_ss] [(DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN")] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_DELETE_concrete", DB.fetch "bag" "BAG_INSERT", listTheory.LUPDATE_SEM, pred_setTheory.DELETE_INSERT, DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "SUB_BAG_EMPTY", DB.fetch "bag" "BAG_DIFF_EQ_EMPTY", DB.fetch "bag" "SUB_BAG_REFL", DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_DIFF_2R", DB.fetch "bag" "BAG_UNION_DIFF", DB.fetch "bag" "PSUB_BAG", DB.fetch "bag" "SUB_BAG_ANTISYM"] THEN
+  BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_DELETE"), boolLib.EQ_IMP_THM] THENL
+  [metisTools.METIS_TAC [DB.fetch "bag" "BAG_INN", numeralTheory.numeral_distrib, arithmeticTheory.GREATER_EQ, arithmeticTheory.NOT_GREATER_EQ, arithmeticTheory.SUB_RIGHT_GREATER_EQ, DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_DELETE_concrete", DB.fetch "bag" "BAG_IN", pred_setTheory.PROD_IMAGE_DEF, pred_setTheory.PROD_IMAGE_THM, listTheory.LUPDATE_compute, arithmeticTheory.EXP_BASE_INJECTIVE, arithmeticTheory.EXP_BASE_LE_MONO, arithmeticTheory.tactictoe_thm_27, arithmeticTheory.tactictoe_thm_28, arithmeticTheory.EXP_BASE_LT_MONO],
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_DELETE_concrete", DB.fetch "bag" "BAG_INSERT", listTheory.LUPDATE_SEM, pred_setTheory.DELETE_INSERT, sumTheory.INL_DEF, sumTheory.INR_DEF, rich_listTheory.LIST_ELEM_COUNT_DEF, DB.fetch "bag" "BAG_IN", listTheory.LUPDATE_compute, pred_setTheory.PROD_IMAGE_DEF, pred_setTheory.PROD_IMAGE_THM, arithmeticTheory.EXP_BASE_LE_MONO, arithmeticTheory.tactictoe_thm_28, arithmeticTheory.tactictoe_thm_30, arithmeticTheory.EXP_BASE_INJECTIVE, arithmeticTheory.EXP_BASE_LT_MONO]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013485
+
+SUB_BAG_INSERT
+proof length: 3
+proof time: 0.020472
+Statistics
+  infstep : 218
+  nodes   : 57
+  maxdepth: 5
+Time: 4.98881
+  inferstep time: 4.027747
+  node_find time: 0.028901
+  node_crea time: 0.807348
+    pred time: 0.22862
+    thmpred time: 0.000013
+    mc time: 0.367712
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [boolSimps.COND_elim_ss] [boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_INSERT")] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.086333
+
+SUB_BAG_INSERT_I
+proof length: 2
+proof time: 0.048427
+Statistics
+  infstep : 53
+  nodes   : 15
+  maxdepth: 3
+Time: 1.267815
+  inferstep time: 1.064246
+  node_find time: 0.006578
+  node_crea time: 0.15037
+    pred time: 0.044403
+    thmpred time: 0.000003
+    mc time: 0.091144
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "SUB_BAG_INSERT", DB.fetch "bag" "BAG_DIFF_EQ_EMPTY", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "SUB_BAG_REFL", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_DIFF_2R", DB.fetch "bag" "BAG_UNION_DIFF", DB.fetch "bag" "PSUB_BAG_SUB_BAG", DB.fetch "bag" "SUB_BAG_ANTISYM", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "PSUB_BAG", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "SUB_BAG_EMPTY", DB.fetch "bag" "BAG_DECOMPOSE"] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_LESS", DB.fetch "bag" "BAG_INN_BAG_DELETE", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_INN_0", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "SUB_BAG_INSERT", DB.fetch "bag" "BAG_DECOMPOSE", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_DELETE", DB.fetch "bag" "BAG_INSERT_UNION", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_cases"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.093184
+
+NOT_IN_SUB_BAG_INSERT
+Statistics
+  infstep : 372
+  nodes   : 109
+  maxdepth: 6
+Time: 10.008158
+  inferstep time: 8.210822
+  node_find time: 0.061717
+  node_crea time: 1.577581
+    pred time: 0.428964
+    thmpred time: 0.000026
+    mc time: 0.740484
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.250549
+
+SUB_BAG_BAG_IN
+proof length: 3
+proof time: 0.002652
+Statistics
+  infstep : 40
+  nodes   : 15
+  maxdepth: 3
+Time: 1.355994
+  inferstep time: 1.133669
+  node_find time: 0.004883
+  node_crea time: 0.178179
+    pred time: 0.062577
+    thmpred time: 0.000001
+    mc time: 0.088538
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "SUB_BAG"), (DB.fetch "bag" "BAG_INN_BAG_INSERT"), (DB.fetch "bag" "BAG_IN")] THEN boolLib.REPEAT boolLib.STRIP_TAC THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.091123
+Replaying proof: 0.006143
+
+SUB_BAG_UNION_DIFF
+proof length: 8
+proof time: 0.010592
+Statistics
+  infstep : 436
+  nodes   : 113
+  maxdepth: 6
+Time: 9.763006
+  inferstep time: 7.901535
+  node_find time: 0.073173
+  node_crea time: 1.502688
+    pred time: 0.427837
+    thmpred time: 0.000024
+    mc time: 0.646665
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [bossLib.ARITH_ss] [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_UNION"), arithmeticTheory.GREATER_EQ, boolLib.EQ_IMP_THM] THENL
+  [boolLib.FIRST_X_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 17272*)x"] boolLib.MP_TAC) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "PSUB_BAG_TRANS", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "BAG_INSERT", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG"] THEN
+  boolLib.FIRST_X_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 17272*)x"] boolLib.MP_TAC) THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "PSUB_BAG_TRANS", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "BAG_INSERT", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG"],
+  boolLib.FIRST_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 21748*)x"] (boolLib.STRIP_ASSUME_TAC o bossLib.SIMP_RULE numLib.arith_ss [])) THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "PSUB_BAG_TRANS", DB.fetch "bag" "SUB_BAG_LEQ", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_DIFF_INSERT", DB.fetch "bag" "NOT_IN_BAG_DIFF", DB.fetch "bag" "BAG_DIFF_INSERT_same"]]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.194294
+Replaying proof: 0.005185
+
+SUB_BAG_DIFF
+proof length: 9
+proof time: 0.023044
+Statistics
+  infstep : 258
+  nodes   : 99
+  maxdepth: 6
+Time: 8.857107
+  inferstep time: 7.314534
+  node_find time: 0.042013
+  node_crea time: 1.242862
+    pred time: 0.332142
+    thmpred time: 0.000023
+    mc time: 0.617955
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THENL [boolLib.FIRST_X_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 17272*)x"] boolLib.MP_TAC) THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [listTheory.SUM_MAP_PLUS_ZIP, DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "SUB_BAG_UNION_DIFF", DB.fetch "bag" "SUB_BAG_UNION_down", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "PSUB_BAG_TRANS", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_MERGE"], BasicProvers.SRW_TAC [bossLib.ARITH_ss] [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_UNION"), arithmeticTheory.GREATER_EQ, boolLib.EQ_IMP_THM] THENL
+  [boolLib.REPEAT (boolLib.POP_ASSUM (boolLib.MP_TAC o boolLib.SPEC_ALL)) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "SUB_BAG_UNION", listTheory.SUM_MAP_PLUS_ZIP, DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "SUB_BAG_UNION_DIFF", DB.fetch "bag" "SUB_BAG_UNION_down", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "PSUB_BAG_TRANS", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_MERGE"] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "BAG_UNION", listTheory.SUM_MAP_PLUS_ZIP, DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "SUB_BAG_UNION_DIFF", DB.fetch "bag" "SUB_BAG_UNION_down", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "PSUB_BAG_TRANS", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "BAG_DIFF"],
+  boolLib.FIRST_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 21748*)x"] (boolLib.STRIP_ASSUME_TAC o bossLib.SIMP_RULE numLib.arith_ss [])) THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "BAG_INSERT", listTheory.SUM_MAP_PLUS_ZIP, DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "SUB_BAG_UNION_DIFF", DB.fetch "bag" "SUB_BAG_UNION_down", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "SUB_BAG_TRANS", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "PSUB_BAG_TRANS", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "BAG_INN_BAG_UNION"]]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.094859
+
+SUB_BAG_PSUB_BAG
+proof length: 2
+proof time: 0.103237
+Statistics
+  infstep : 47
+  nodes   : 19
+  maxdepth: 4
+Time: 1.244275
+  inferstep time: 1.039781
+  node_find time: 0.006241
+  node_crea time: 0.16632
+    pred time: 0.048411
+    thmpred time: 0.000004
+    mc time: 0.075226
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), boolLib.FUN_EQ_THM, numLib.DECIDE (Parse.Term [HolKernel.QUOTE " (*#loc 1 17919*)(x:num = y) <=> x <= y /\\ y <= x"])] THEN metisTools.METIS_TAC [DB.fetch "bag" "PSUB_BAG", DB.fetch "bag" "PSUB_BAG_ANTISYM", DB.fetch "bag" "PSUB_BAG_TRANS", DB.fetch "bag" "PSUB_BAG_NOT_EQ", DB.fetch "bag" "PSUB_BAG_SUB_BAG", DB.fetch "bag" "PSUB_BAG_IRREFL", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "BAG_DELETE_INSERT", arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_IN_BAG_MERGE", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.041187
+
+BAG_DELETE_PSUB_BAG
+proof length: 2
+proof time: 0.002448
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.304549
+  inferstep time: 0.241372
+  node_find time: 0.001011
+  node_crea time: 0.042342
+    pred time: 0.013648
+    thmpred time: 0.0
+    mc time: 0.033038
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_DELETE"), boolLib.EQ_IMP_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "bag" "PSUB_BAG_IRREFL", DB.fetch "bag" "PSUB_BAG", DB.fetch "bag" "PSUB_BAG_NOT_EQ", DB.fetch "bag" "PSUB_BAG_SUB_BAG", DB.fetch "bag" "PSUB_BAG_TRANS", DB.fetch "bag" "PSUB_BAG_ANTISYM", DB.fetch "bag" "SUB_BAG_PSUB_BAG", DB.fetch "bag" "BAG_DELETE", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_DECOMPOSE", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "SUB_BAG_INSERT_I", DB.fetch "bag" "BAG_INSERT_UNION", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007114
+
+SET_OF_EMPTY
+proof length: 2
+proof time: 0.002608
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 2
+Time: 0.32402
+  inferstep time: 0.244361
+  node_find time: 0.001257
+  node_crea time: 0.062721
+    pred time: 0.02026
+    thmpred time: 0.000002
+    mc time: 0.041636
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_OF_SET", pred_setTheory.CARD_DEF, pred_setTheory.MAX_SET_ELIM, pred_setTheory.SUM_SET_THM, pred_setTheory.tactictoe_thm_24, pred_setTheory.tactictoe_thm_38, pred_setTheory.CARD_EQ_0, pred_setTheory.MAX_SET_DEF, pred_setTheory.MAX_SET_THM, pred_setTheory.SUM_IMAGE_THM, pred_setTheory.count_EQN, pred_setTheory.MAX_SET_REWRITES, pred_setTheory.CARD_EMPTY, pred_setTheory.COUNT_ZERO, pred_setTheory.SUM_SET_EMPTY, pred_setTheory.CARD_SING]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007544
+
+BAG_IN_BAG_OF_SET
+proof length: 2
+proof time: 0.007367
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.276307
+  inferstep time: 0.238309
+  node_find time: 0.000566
+  node_crea time: 0.022999
+    pred time: 0.007809
+    thmpred time: 0.0
+    mc time: 0.021681
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_OF_SET", DB.fetch "bag" "SET_OF_EMPTY", DB.fetch "bag" "BAG_DECOMPOSE", DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_DELETE_BAG_IN_down", DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "BAG_DIFF_INSERT", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "MEMBER_NOT_EMPTY", DB.fetch "bag" "NOT_IN_BAG_DIFF", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "SET_OF_BAG", DB.fetch "bag" "SUB_BAG_EL_BAG", DB.fetch "bag" "tactictoe_thm_3"] THEN BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_OF_SET", DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_DELETE", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_INN_LESS", pred_setTheory.CARD_DELETE, pred_setTheory.CARD_DEF, pred_setTheory.CARD_INSERT, pred_setTheory.tactictoe_thm_33, pred_setTheory.INSERT_DIFF, pred_setTheory.INSERT_INTER, pred_setTheory.INSERT_UNION, pred_setTheory.PREIMAGE_K]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009587
+
+BAG_OF_EMPTY
+proof length: 2
+proof time: 0.058455
+Statistics
+  infstep : 17
+  nodes   : 10
+  maxdepth: 2
+Time: 0.603401
+  inferstep time: 0.4935
+  node_find time: 0.002414
+  node_crea time: 0.088707
+    pred time: 0.022713
+    thmpred time: 0.000004
+    mc time: 0.054873
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_INN"), boolLib.FUN_EQ_THM, arithmeticTheory.GREATER_EQ] THEN metisTools.METIS_TAC [DB.fetch "bag" "SET_OF_BAG", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "MEMBER_NOT_EMPTY", DB.fetch "bag" "NOT_IN_EMPTY_BAG", DB.fetch "bag" "BAG_DELETE_EMPTY", DB.fetch "bag" "EL_BAG_INSERT_squeeze", DB.fetch "bag" "SING_BAG", DB.fetch "bag" "tactictoe_thm_3", DB.fetch "bag" "tactictoe_thm_4", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "BAG_DIFF_EMPTY_simple", DB.fetch "bag" "BAG_DIFF_EQ_EMPTY", DB.fetch "bag" "BAG_INN_EMPTY_BAG", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "BAG_UNION_EQ_LCANCEL1", DB.fetch "bag" "BAG_UNION_EQ_RCANCEL1"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005342
+
+SET_BAG_I
+proof length: 4
+proof time: 0.005409
+Statistics
+  infstep : 22
+  nodes   : 10
+  maxdepth: 3
+Time: 0.96324
+  inferstep time: 0.838641
+  node_find time: 0.002805
+  node_crea time: 0.083399
+    pred time: 0.026659
+    thmpred time: 0.000002
+    mc time: 0.063021
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_IN_BAG_OF_SET", DB.fetch "bag" "BAG_OF_SET", DB.fetch "bag" "SET_OF_BAG", DB.fetch "bag" "BAG_OF_EMPTY", DB.fetch "bag" "SET_OF_EMPTY", listTheory.PAD_LEFT, listTheory.PAD_RIGHT, listTheory.SET_TO_LIST_CARD, pred_setTheory.CARD_EQ_0, pred_setTheory.CARD_DELETE, listTheory.splitAtPki_def, pred_setTheory.CARD_BIGUNION_SAME_SIZED_SETS, pred_setTheory.CARD_INSERT, pred_setTheory.CARD_UNION_EQN, pred_setTheory.CARD_DEF, pred_setTheory.CARD_DIFF] THEN BasicProvers.Cases_on [HolKernel.QUOTE " (*#loc 1 180200*)s = {}"] THENL
+  [BasicProvers.SRW_TAC [] [pred_setTheory.tactictoe_thm_21, pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, pred_setTheory.tactictoe_thm_22, pred_setTheory.tactictoe_thm_27, pred_setTheory.tactictoe_thm_33, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_45, pred_setTheory.CARD_DELETE, pred_setTheory.EXTENSION, pred_setTheory.IN_INTER, pred_setTheory.IN_INSERT, pred_setTheory.CARD_INSERT],
+  BasicProvers.SRW_TAC [] [pred_setTheory.tactictoe_thm_21, pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, pred_setTheory.tactictoe_thm_22, pred_setTheory.tactictoe_thm_27, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_33, pred_setTheory.CARD_DELETE, pred_setTheory.EXTENSION, pred_setTheory.IN_INTER, pred_setTheory.IN_INSERT, pred_setTheory.CARD_INSERT]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.030739
+
+SUB_BAG_SET
+Statistics
+  infstep : 742
+  nodes   : 161
+  maxdepth: 6
+Time: 10.103733
+  inferstep time: 8.107898
+  node_find time: 0.133039
+  node_crea time: 1.535928
+    pred time: 0.371567
+    thmpred time: 0.000026
+    mc time: 0.652076
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007468
+
+SET_OF_BAG_UNION
+proof length: 1
+proof time: 0.002772
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.296926
+  inferstep time: 0.237035
+  node_find time: 0.0008
+  node_crea time: 0.050897
+    pred time: 0.013644
+    thmpred time: 0.0
+    mc time: 0.033193
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "bag" "SET_OF_BAG" ) , ( DB.fetch "bag" "BAG_OF_SET" ) , boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_INN" ) , boolLib.IN_DEF ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.026181
+
+SET_OF_BAG_MERGE
+proof length: 1
+proof time: 0.003288
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.130698
+  inferstep time: 0.115386
+  node_find time: 0.000254
+  node_crea time: 0.010312
+    pred time: 0.003512
+    thmpred time: 0.000001
+    mc time: 0.007624
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "bag" "SET_OF_BAG" ) , ( DB.fetch "bag" "BAG_OF_SET" ) , boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_INN" ) , boolLib.IN_DEF ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.038874
+
+SET_OF_BAG_INSERT
+proof length: 1
+proof time: 0.00114
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.141857
+  inferstep time: 0.117946
+  node_find time: 0.000311
+  node_crea time: 0.015443
+    pred time: 0.003737
+    thmpred time: 0.0
+    mc time: 0.015677
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "bag" "SET_OF_BAG" ) , ( DB.fetch "bag" "BAG_OF_SET" ) , boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_INN" ) , boolLib.IN_DEF ])
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.115267
+
+SET_OF_EL_BAG
+proof length: 1
+proof time: 0.018672
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.059726
+  inferstep time: 0.043319
+  node_find time: 0.000167
+  node_crea time: 0.011499
+    pred time: 0.003343
+    thmpred time: 0.0
+    mc time: 0.009264
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT_UNION" , DB.fetch "bag" "EL_BAG" , DB.fetch "bag" "SUB_BAG_EL_BAG" , DB.fetch "bag" "SING_EL_BAG" , DB.fetch "bag" "EL_BAG_11" , DB.fetch "bag" "EL_BAG_INSERT_squeeze" , DB.fetch "bag" "SET_OF_BAG_INSERT" , DB.fetch "bag" "BAG_OF_EMPTY" , DB.fetch "bag" "SET_OF_BAG" , DB.fetch "bag" "SET_BAG_I" , DB.fetch "bag" "SET_OF_BAG_MERGE" , DB.fetch "bag" "SET_OF_BAG_UNION" , DB.fetch "bag" "SUB_BAG_SET" , pred_setTheory.MIN_SET_THM , pred_setTheory.SUM_IMAGE_SING , pred_setTheory.MAX_SET_REWRITES])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005546
+
+SET_OF_BAG_DIFF_SUBSET_down
+proof length: 2
+proof time: 0.00719
+Statistics
+  infstep : 39
+  nodes   : 14
+  maxdepth: 4
+Time: 1.26904
+  inferstep time: 1.054031
+  node_find time: 0.006729
+  node_crea time: 0.157167
+    pred time: 0.052217
+    thmpred time: 0.000002
+    mc time: 0.079458
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "SUB_BAG"), (DB.fetch "bag" "SET_OF_BAG"), (DB.fetch "bag" "BAG_IN"), pred_setTheory.SPECIFICATION, pred_setTheory.SUBSET_DEF] THEN BasicProvers.SRW_TAC [boolSimps.COND_elim_ss, bossLib.ARITH_ss] [boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "BAG_INSERT"), bossLib.Cong (DB.fetch "bag" "tactictoe_thm_6"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.036346
+
+SET_OF_BAG_DIFF_SUBSET_up
+proof length: 2
+proof time: 0.055562
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.211225
+  inferstep time: 0.179599
+  node_find time: 0.000373
+  node_crea time: 0.019243
+    pred time: 0.006386
+    thmpred time: 0.000001
+    mc time: 0.017189
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "SUB_BAG"), (DB.fetch "bag" "SET_OF_BAG"), (DB.fetch "bag" "BAG_IN"), pred_setTheory.SPECIFICATION, pred_setTheory.SUBSET_DEF] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_IN", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_EXTENSION", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_LESS", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_DIFF_INSERT", DB.fetch "bag" "NOT_IN_BAG_DIFF", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_DIFF_INSERT_same", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "SUB_BAG_DIFF", DB.fetch "bag" "SUB_BAG_UNION_DIFF", DB.fetch "bag" "BAG_IN_DIFF_E"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.040642
+
+IN_SET_OF_BAG
+proof length: 1
+proof time: 0.00146
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.128366
+  inferstep time: 0.112897
+  node_find time: 0.000331
+  node_crea time: 0.009686
+    pred time: 0.00294
+    thmpred time: 0.0
+    mc time: 0.008047
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "bag" "SET_OF_BAG" ) , ( DB.fetch "bag" "BAG_OF_SET" ) , boolLib.FUN_EQ_THM , ( DB.fetch "bag" "BAG_IN" ) , ( DB.fetch "bag" "BAG_INN" ) , boolLib.IN_DEF ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013859
+
+SET_OF_BAG_EQ_EMPTY
+proof length: 3
+proof time: 0.080388
+Statistics
+  infstep : 56
+  nodes   : 18
+  maxdepth: 3
+Time: 1.638182
+  inferstep time: 1.344829
+  node_find time: 0.008047
+  node_crea time: 0.229425
+    pred time: 0.067987
+    thmpred time: 0.000004
+    mc time: 0.132404
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.COND_elim_ss] [boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_INSERT")] THEN (metisTools.METIS_TAC [DB.fetch "bag" "IN_SET_OF_BAG", DB.fetch "bag" "SET_OF_BAG", DB.fetch "bag" "SET_OF_BAG_INSERT", DB.fetch "bag" "SET_OF_BAG_MERGE", DB.fetch "bag" "SET_OF_BAG_UNION", DB.fetch "bag" "SET_OF_BAG_DIFF_SUBSET_down", DB.fetch "bag" "SET_OF_BAG_DIFF_SUBSET_up", DB.fetch "bag" "SUB_BAG_SET", DB.fetch "bag" "BAG_OF_EMPTY", DB.fetch "bag" "SET_OF_EL_BAG", DB.fetch "bag" "SET_BAG_I", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "MEMBER_NOT_EMPTY", DB.fetch "bag" "BAG_DELETE_EMPTY", DB.fetch "bag" "EL_BAG_INSERT_squeeze", DB.fetch "bag" "SING_BAG"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.064184
+
+BAG_DISJOINT_EMPTY
+proof length: 2
+proof time: 0.001035
+Statistics
+  infstep : 204
+  nodes   : 34
+  maxdepth: 4
+Time: 2.928722
+  inferstep time: 2.315259
+  node_find time: 0.050566
+  node_crea time: 0.440819
+    pred time: 0.146714
+    thmpred time: 0.000008
+    mc time: 0.184378
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "bag" "BAG_DISJOINT", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "BAG_DIFF_EMPTY_simple", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "EL_BAG_INSERT_squeeze", DB.fetch "bag" "SET_OF_BAG_EQ_EMPTY", DB.fetch "bag" "SUB_BAG_EMPTY", DB.fetch "bag" "tactictoe_thm_2", DB.fetch "bag" "tactictoe_thm_5", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_DELETE_EMPTY", DB.fetch "bag" "BAG_DELETE_SING", DB.fetch "bag" "SING_BAG", DB.fetch "bag" "MEMBER_NOT_EMPTY", DB.fetch "bag" "BAG_DIFF_EQ_EMPTY"] THEN BasicProvers.SRW_TAC [boolSimps.COND_elim_ss] [boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_INSERT")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004683
+
+BAG_DISJOINT_DIFF
+Statistics
+  infstep : 1196
+  nodes   : 230
+  maxdepth: 6
+Time: 10.000948
+  inferstep time: 6.660067
+  node_find time: 0.301009
+  node_crea time: 2.29465
+    pred time: 0.341525
+    thmpred time: 0.000034
+    mc time: 1.350218
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.080109
+
+BAG_DISJOINT_BAG_IN
+proof length: 2
+proof time: 0.004695
+Statistics
+  infstep : 104
+  nodes   : 40
+  maxdepth: 5
+Time: 2.783618
+  inferstep time: 2.081526
+  node_find time: 0.02072
+  node_crea time: 0.595616
+    pred time: 0.158683
+    thmpred time: 0.00001
+    mc time: 0.323951
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [pred_setTheory.INTER_DEF, pred_setTheory.DISJOINT_DEF, (DB.fetch "bag" "BAG_DISJOINT"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "SET_OF_BAG"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), pred_setTheory.EXTENSION, pred_setTheory.GSPECIFICATION, pred_setTheory.NOT_IN_EMPTY] THEN BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_DELETE"), boolLib.EQ_IMP_THM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006321
+
+BAG_DISJOINT_BAG_INSERT
+proof length: 4
+proof time: 0.131312
+Statistics
+  infstep : 22
+  nodes   : 13
+  maxdepth: 3
+Time: 1.262201
+  inferstep time: 1.056421
+  node_find time: 0.003165
+  node_crea time: 0.168551
+    pred time: 0.070111
+    thmpred time: 0.000004
+    mc time: 0.068606
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "BAG_DISJOINT"), pred_setTheory.DISJOINT_DEF, pred_setTheory.EXTENSION, pred_setTheory.NOT_IN_EMPTY, pred_setTheory.IN_INTER, (DB.fetch "bag" "IN_SET_OF_BAG")] THEN BasicProvers.SRW_TAC [] [] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_IN_BAG_INSERT", DB.fetch "bag" "BAG_DELETE_BAG_IN_down", DB.fetch "bag" "BAG_DISJOINT_BAG_IN", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "BAG_DIFF_INSERT", DB.fetch "bag" "NOT_IN_BAG_DIFF", DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "SUB_BAG_BAG_IN", DB.fetch "bag" "BAG_IN_DIFF_E", DB.fetch "bag" "MEMBER_NOT_EMPTY", DB.fetch "bag" "IN_SET_OF_BAG", DB.fetch "bag" "SET_OF_BAG", DB.fetch "bag" "tactictoe_thm_3"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.064909
+
+BAG_DISJOINT_BAG_UNION
+proof length: 4
+proof time: 0.040051
+Statistics
+  infstep : 31
+  nodes   : 13
+  maxdepth: 3
+Time: 1.332084
+  inferstep time: 1.05485
+  node_find time: 0.004858
+  node_crea time: 0.216524
+    pred time: 0.093187
+    thmpred time: 0.0
+    mc time: 0.091821
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "BAG_DISJOINT"), pred_setTheory.DISJOINT_DEF, pred_setTheory.EXTENSION, pred_setTheory.NOT_IN_EMPTY, pred_setTheory.IN_INTER, (DB.fetch "bag" "IN_SET_OF_BAG")] THEN BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "SUB_BAG_DIFF", DB.fetch "bag" "SUB_BAG_UNION_eliminate", DB.fetch "bag" "SUB_BAG_UNION", DB.fetch "bag" "SUB_BAG_UNION_down", DB.fetch "bag" "ASSOC_BAG_UNION", DB.fetch "bag" "SUB_BAG_UNION_DIFF", DB.fetch "bag" "tactictoe_thm_3", DB.fetch "bag" "tactictoe_thm_4", DB.fetch "bag" "BAG_DISJOINT_BAG_IN", DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "BAG_DIFF_INSERT", DB.fetch "bag" "NOT_IN_BAG_DIFF", DB.fetch "bag" "BAG_DISJOINT_BAG_INSERT"] THEN
+  metisLib.METIS_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.058066
+
+FINITE_EMPTY_BAG
+proof length: 1
+proof time: 0.028925
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.068628
+  inferstep time: 0.050895
+  node_find time: 0.000168
+  node_crea time: 0.009918
+    pred time: 0.002422
+    thmpred time: 0.000001
+    mc time: 0.010465
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "FINITE_BAG" , DB.fetch "bag" "BAG_DELETE_EMPTY" , DB.fetch "bag" "BAG_INSERT_NOT_EMPTY" , DB.fetch "bag" "BAG_DELETE_SING" , DB.fetch "bag" "SING_BAG" , DB.fetch "bag" "BAG_DIFF_EMPTY" , DB.fetch "bag" "EMPTY_BAG" , DB.fetch "bag" "BAG_DIFF_EMPTY_simple" , DB.fetch "bag" "BAG_DIFF_EQ_EMPTY" , DB.fetch "bag" "BAG_DISJOINT_EMPTY" , DB.fetch "bag" "BAG_OF_EMPTY" , DB.fetch "bag" "BAG_INN_EMPTY_BAG" , DB.fetch "bag" "NOT_IN_EMPTY_BAG" , DB.fetch "bag" "BAG_UNION_EMPTY" , DB.fetch "bag" "BAG_UNION_EQ_LCANCEL1" , DB.fetch "bag" "BAG_UNION_EQ_RCANCEL1"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005214
+
+FINITE_BAG_INSERT
+Statistics
+  infstep : 629
+  nodes   : 128
+  maxdepth: 5
+Time: 10.054359
+  inferstep time: 8.018381
+  node_find time: 0.119743
+  node_crea time: 1.594696
+    pred time: 0.386385
+    thmpred time: 0.000016
+    mc time: 0.697557
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.069174
+
+FINITE_BAG_INDUCT
+proof length: 2
+proof time: 0.049742
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.278371
+  inferstep time: 0.222792
+  node_find time: 0.001683
+  node_crea time: 0.040913
+    pred time: 0.012969
+    thmpred time: 0.000002
+    mc time: 0.020859
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "bag" "FINITE_BAG")] THEN metisTools.METIS_TAC [DB.fetch "bag" "FINITE_BAG", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "EL_BAG_INSERT_squeeze", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "FINITE_BAG_INSERT", DB.fetch "bag" "BAG_DECOMPOSE", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "SUB_BAG_INSERT_I", DB.fetch "bag" "BAG_DELETE", DB.fetch "bag" "BAG_INSERT_UNION", DB.fetch "bag" "SET_OF_BAG_INSERT", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "SUB_BAG_INSERT", DB.fetch "bag" "EL_BAG"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.113829
+Replaying proof: 0.011038
+Replaying proof: 0.002847
+
+FINITE_BAG_DIFF
+Statistics
+  infstep : 608
+  nodes   : 66
+  maxdepth: 4
+Time: 10.004303
+  inferstep time: 8.682061
+  node_find time: 0.113538
+  node_crea time: 0.85539
+    pred time: 0.268876
+    thmpred time: 0.000012
+    mc time: 0.313215
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.200917
+
+FINITE_BAG_DIFF_dual
+Statistics
+  infstep : 465
+  nodes   : 113
+  maxdepth: 6
+Time: 10.008307
+  inferstep time: 7.987667
+  node_find time: 0.088041
+  node_crea time: 1.644995
+    pred time: 0.464304
+    thmpred time: 0.000029
+    mc time: 0.533605
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.19629
+Replaying proof: 0.000924
+Replaying proof: 0.025904
+
+FINITE_BAG_UNION
+proof length: 9
+proof time: 0.198656
+Statistics
+  infstep : 91
+  nodes   : 29
+  maxdepth: 4
+Time: 2.589534
+  inferstep time: 2.09899
+  node_find time: 0.015909
+  node_crea time: 0.37284
+    pred time: 0.119488
+    thmpred time: 0.000011
+    mc time: 0.174282
+    inst time: 0.0
+Proof found: Q.ASM_CASES_TAC [HolKernel.QUOTE " (*#loc 1 37343*)BAG_IN e b2"] THEN (BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM] THENL
+  [metisTools.METIS_TAC [DB.fetch "bag" "tactictoe_thm_8", DB.fetch "bag" "tactictoe_thm_9", DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "FINITE_BAG_DIFF_dual", DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT", DB.fetch "bag" "FINITE_BAG_THM", DB.fetch "bag" "FINITE_BAG", DB.fetch "bag" "FINITE_BAG_INSERT", DB.fetch "bag" "FINITE_BAG_INDUCT", DB.fetch "bag" "tactictoe_thm_7", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "FINITE_EMPTY_BAG", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_INSERT_EQ_UNION"],
+  metisTools.METIS_TAC [DB.fetch "bag" "tactictoe_thm_8", DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT", DB.fetch "bag" "FINITE_BAG_THM", DB.fetch "bag" "tactictoe_thm_9", DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "FINITE_BAG_DIFF_dual", DB.fetch "bag" "FINITE_BAG", DB.fetch "bag" "FINITE_BAG_INSERT", DB.fetch "bag" "FINITE_BAG_INDUCT", DB.fetch "bag" "tactictoe_thm_7", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "FINITE_EMPTY_BAG", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_DELETE"],
+  metisTools.METIS_TAC [DB.fetch "bag" "tactictoe_thm_8", DB.fetch "bag" "tactictoe_thm_9", arithmeticTheory.tactictoe_thm_11, DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "FINITE_BAG_DIFF_dual", DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT", DB.fetch "bag" "FINITE_BAG_THM", DB.fetch "bag" "FINITE_BAG", DB.fetch "bag" "FINITE_BAG_INSERT", DB.fetch "bag" "FINITE_BAG_INDUCT", DB.fetch "bag" "tactictoe_thm_7", DB.fetch "bag" "FINITE_EMPTY_BAG", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_DIFF_UNION_eliminate"]])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011515
+
+FINITE_SUB_BAG
+proof length: 1
+proof time: 0.042416
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.088946
+  inferstep time: 0.068019
+  node_find time: 0.000168
+  node_crea time: 0.012459
+    pred time: 0.003465
+    thmpred time: 0.000001
+    mc time: 0.011597
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "FINITE_BAG_DIFF" , DB.fetch "bag" "FINITE_BAG_DIFF_dual" , DB.fetch "bag" "tactictoe_thm_8" , DB.fetch "bag" "tactictoe_thm_9" , DB.fetch "bag" "FINITE_BAG_UNION" , DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT" , DB.fetch "bag" "FINITE_BAG" , DB.fetch "bag" "FINITE_BAG_INDUCT" , DB.fetch "bag" "FINITE_BAG_INSERT" , DB.fetch "bag" "tactictoe_thm_7" , DB.fetch "bag" "FINITE_BAG_THM" , DB.fetch "bag" "BAG_DIFF_EMPTY" , DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT" , DB.fetch "bag" "SUB_BAG" , DB.fetch "bag" "PSUB_BAG_SUB_BAG" , DB.fetch "bag" "SUB_BAG_ANTISYM"])
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.310491
+Replaying proof: 0.007081
+Replaying proof: 0.00398
+Replaying proof: 0.008106
+Replaying proof: 0.108716
+Replaying proof: 0.023348
+Replaying proof: 0.00077
+Replaying proof: 0.003384
+Replaying proof: 0.009326
+Replaying proof: 0.002653
+
+BCARD_0
+Statistics
+  infstep : 551
+  nodes   : 81
+  maxdepth: 5
+Time: 10.000538
+  inferstep time: 8.449827
+  node_find time: 0.119172
+  node_crea time: 1.05665
+    pred time: 0.263426
+    thmpred time: 0.000014
+    mc time: 0.438792
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.171852
+Replaying proof: 0.004824
+Replaying proof: 0.004673
+
+BAG_CARD_UNION
+Statistics
+  infstep : 664
+  nodes   : 123
+  maxdepth: 6
+Time: 10.044787
+  inferstep time: 7.425926
+  node_find time: 0.146327
+  node_crea time: 1.975227
+    pred time: 0.33738
+    thmpred time: 0.000016
+    mc time: 0.839264
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06312
+
+BCARD_SUC
+Statistics
+  infstep : 634
+  nodes   : 135
+  maxdepth: 6
+Time: 10.001231
+  inferstep time: 7.619544
+  node_find time: 0.145616
+  node_crea time: 1.841823
+    pred time: 0.377479
+    thmpred time: 0.000023
+    mc time: 0.756483
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.325578
+
+BAG_CARD_BAG_INN
+Statistics
+  infstep : 562
+  nodes   : 131
+  maxdepth: 5
+Time: 10.070407
+  inferstep time: 7.653079
+  node_find time: 0.123582
+  node_crea time: 1.917139
+    pred time: 0.470134
+    thmpred time: 0.000036
+    mc time: 0.748599
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.213108
+
+SUB_BAG_DIFF_EQ
+proof length: 4
+proof time: 0.007712
+Statistics
+  infstep : 23
+  nodes   : 11
+  maxdepth: 4
+Time: 1.038352
+  inferstep time: 0.871403
+  node_find time: 0.004283
+  node_crea time: 0.111742
+    pred time: 0.033533
+    thmpred time: 0.000004
+    mc time: 0.080162
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [bossLib.ARITH_ss] [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_UNION"), arithmeticTheory.GREATER_EQ, boolLib.EQ_IMP_THM] THEN
+  boolLib.FIRST_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 21748*)x"] (boolLib.STRIP_ASSUME_TAC o bossLib.SIMP_RULE numLib.arith_ss [])) THEN
+  BasicProvers.SRW_TAC [bossLib.ARITH_ss] [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_UNION"), arithmeticTheory.GREATER_EQ, boolLib.EQ_IMP_THM]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.102841
+Replaying proof: 0.001869
+
+SUB_BAG_CARD
+Statistics
+  infstep : 653
+  nodes   : 144
+  maxdepth: 7
+Time: 10.341937
+  inferstep time: 7.950857
+  node_find time: 0.142845
+  node_crea time: 1.859103
+    pred time: 0.422351
+    thmpred time: 0.000022
+    mc time: 0.688321
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.766359
+
+BAG_CARD_DIFF
+Statistics
+  infstep : 541
+  nodes   : 119
+  maxdepth: 5
+Time: 10.004237
+  inferstep time: 7.898836
+  node_find time: 0.128893
+  node_crea time: 1.61017
+    pred time: 0.407238
+    thmpred time: 0.000024
+    mc time: 0.567404
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.748761
+
+BAG_FILTER_EMPTY
+proof length: 2
+proof time: 0.074122
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.226192
+  inferstep time: 0.188011
+  node_find time: 0.000711
+  node_crea time: 0.026501
+    pred time: 0.00904
+    thmpred time: 0.0
+    mc time: 0.017878
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), boolLib.FUN_EQ_THM] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_FILTER_DEF", DB.fetch "bag" "EMPTY_BAG", combinTheory.K_THM, DB.fetch "bag" "BAG_OF_SET", arithmeticTheory.ADD_DIV_ADD_DIV, arithmeticTheory.ADD_MODULUS, arithmeticTheory.ADD_MODULUS_LEFT, arithmeticTheory.ADD_MODULUS_RIGHT, arithmeticTheory.X_LE_DIV, arithmeticTheory.DIV_DIV_DIV_MULT, arithmeticTheory.DIV_EQ_X, arithmeticTheory.DIV_LE_X, arithmeticTheory.X_LT_DIV, arithmeticTheory.DIV_LT_X, arithmeticTheory.EVEN_MOD2, arithmeticTheory.EXP_EXP_INJECTIVE]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.036764
+
+BAG_FILTER_BAG_INSERT
+proof length: 5
+proof time: 0.151359
+Statistics
+  infstep : 21
+  nodes   : 9
+  maxdepth: 3
+Time: 0.952556
+  inferstep time: 0.786556
+  node_find time: 0.004044
+  node_crea time: 0.110651
+    pred time: 0.033388
+    thmpred time: 0.000004
+    mc time: 0.070496
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_FILTER_DEF", DB.fetch "bag" "BAG_FILTER_EMPTY", rich_listTheory.FOLDL_FILTER, rich_listTheory.FOLDR_FILTER, quantHeuristicsTheory.GUESS_RULES_COND, listTheory.INDEX_FIND_def, listTheory.FILTER, rich_listTheory.FILTER_SNOC, listTheory.dropWhile_def, patternMatchesTheory.GUARDS_ELIM_THM, quantHeuristicsTheory.SIMPLE_GUESS_SELECT_THM, quantHeuristicsTheory.SIMPLE_GUESS_SOME_THM, rich_listTheory.FILTER_FOLDL, rich_listTheory.FILTER_FOLDR, rich_listTheory.PREFIX, rich_listTheory.PREFIX_FOLDR] THEN (bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), boolLib.FUN_EQ_THM] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_FILTER_DEF", quantHeuristicsTheory.GUESS_RULES_COND, patternMatchesTheory.GUARDS_ELIM_THM, DB.fetch "bag" "BAG_DELETE_concrete", indexedListsTheory.findi_def, listTheory.LUPDATE_SEM, combinTheory.APPLY_UPDATE_THM, combinTheory.UPDATE_def, listTheory.LLEX_def, pred_setTheory.DELETE_INSERT, pred_setTheory.SUM_IMAGE_THM, DB.fetch "bag" "BAG_UNION", pred_setTheory.tactictoe_thm_33, rich_listTheory.FOLDL_FILTER, rich_listTheory.FOLDR_FILTER])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.069278
+
+FINITE_BAG_FILTER
+proof length: 3
+proof time: 0.084041
+Statistics
+  infstep : 45
+  nodes   : 11
+  maxdepth: 3
+Time: 1.233227
+  inferstep time: 0.956018
+  node_find time: 0.01349
+  node_crea time: 0.19198
+    pred time: 0.054355
+    thmpred time: 0.000004
+    mc time: 0.101838
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT") THEN BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_FILTER_DEF"), boolLib.FUN_EQ_THM] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_FILTER_DEF", quantHeuristicsTheory.GUESS_RULES_COND, DB.fetch "bag" "BAG_FILTER_BAG_INSERT", DB.fetch "bag" "BAG_CARD_THM", DB.fetch "bag" "FINITE_BAG_INDUCT", DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT", DB.fetch "bag" "FINITE_BAG", DB.fetch "bag" "FINITE_BAG_THM", DB.fetch "bag" "FINITE_BAG_INSERT", DB.fetch "bag" "BCARD_SUC", DB.fetch "bag" "tactictoe_thm_7", DB.fetch "bag" "tactictoe_thm_25", DB.fetch "bag" "tactictoe_thm_27", listTheory.FILTER, rich_listTheory.FILTER_SNOC, DB.fetch "bag" "BAG_CARD_BAG_INN"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06319
+
+BAG_INN_BAG_FILTER
+proof length: 3
+proof time: 0.011369
+Statistics
+  infstep : 12
+  nodes   : 6
+  maxdepth: 2
+Time: 0.62196
+  inferstep time: 0.515079
+  node_find time: 0.003221
+  node_crea time: 0.069693
+    pred time: 0.020096
+    thmpred time: 0.000002
+    mc time: 0.04588
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_FILTER_DEF", DB.fetch "bag" "BAG_FILTER_BAG_INSERT", DB.fetch "bag" "FINITE_BAG_FILTER", DB.fetch "bag" "BAG_FILTER_EMPTY", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_INN_BAG_DELETE", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_LESS", DB.fetch "bag" "BAG_CARD_BAG_INN", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_EXTENSION", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "BAG_INN_EMPTY_BAG", DB.fetch "bag" "BAG_INN_0"] THEN (BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_UNION", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "PSUB_BAG", ind_typeTheory.NUMSUM_INJ, markerTheory.AC_DEF, arithmeticTheory.GREATER_OR_EQ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.01109
+
+BAG_IN_BAG_FILTER
+proof length: 1
+proof time: 0.00199
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.148031
+  inferstep time: 0.132154
+  node_find time: 0.000363
+  node_crea time: 0.009755
+    pred time: 0.003058
+    thmpred time: 0.000001
+    mc time: 0.007122
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "bag" "BAG_INN_BAG_FILTER" , DB.fetch "bag" "BAG_FILTER_DEF" , DB.fetch "bag" "BAG_FILTER_BAG_INSERT" , DB.fetch "bag" "FINITE_BAG_FILTER" , DB.fetch "bag" "BAG_FILTER_EMPTY" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_IN" , DB.fetch "bag" "BAG_INSERT_EQ_UNION" , DB.fetch "bag" "SUB_BAG_EL_BAG" , DB.fetch "bag" "BAG_DELETE_BAG_IN" , DB.fetch "bag" "BAG_DELETE_BAG_IN_up" , DB.fetch "bag" "BAG_IN_BAG_DELETE" , DB.fetch "bag" "BAG_IN_DIFF_I" , DB.fetch "bag" "BAG_IN_BAG_UNION" , DB.fetch "bag" "BAG_DISJOINT_BAG_IN" , DB.fetch "bag" "BAG_IN_BAG_MERGE" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00489
+
+BAG_FILTER_FILTER
+proof length: 2
+proof time: 0.102106
+Statistics
+  infstep : 12
+  nodes   : 5
+  maxdepth: 2
+Time: 0.578204
+  inferstep time: 0.497936
+  node_find time: 0.002591
+  node_crea time: 0.059722
+    pred time: 0.016901
+    thmpred time: 0.000002
+    mc time: 0.025859
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_FILTER_DEF"), boolLib.FUN_EQ_THM] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_FILTER_DEF", quantHeuristicsTheory.GUESS_RULES_COND, listTheory.EVERY_CONJ, rich_listTheory.FILTER_FILTER, pred_setTheory.GSPEC_AND, quantHeuristicsTheory.GUESS_RULES_CONJ, whileTheory.WHILE_RULE, patternMatchesTheory.PMATCH_ROW_COND_EX_WEAKEN, rich_listTheory.EVERY_FOLDR, DB.fetch "bag" "BAG_FILTER_BAG_INSERT", whileTheory.WHILE, rich_listTheory.FILTER_SNOC, listTheory.FILTER, relationTheory.RTC_ALT_DEF, relationTheory.TC_INDUCT_ALT_LEFT, relationTheory.TC_INDUCT_ALT_RIGHT]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.145171
+
+BAG_FILTER_SUB_BAG
+proof length: 2
+proof time: 0.006655
+Statistics
+  infstep : 19
+  nodes   : 8
+  maxdepth: 3
+Time: 0.622717
+  inferstep time: 0.504975
+  node_find time: 0.005049
+  node_crea time: 0.0841
+    pred time: 0.025801
+    thmpred time: 0.0
+    mc time: 0.045958
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_FILTER_DEF"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [boolSimps.COND_elim_ss, bossLib.ARITH_ss] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "EL_BAG"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "EMPTY_BAG")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014381
+
+SET_OF_BAG_EQ_INSERT
+Statistics
+  infstep : 360
+  nodes   : 95
+  maxdepth: 6
+Time: 10.007176
+  inferstep time: 7.477929
+  node_find time: 0.095001
+  node_crea time: 2.133526
+    pred time: 0.566888
+    thmpred time: 0.000022
+    mc time: 0.944067
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.613738
+
+FINITE_SET_OF_BAG
+Statistics
+  infstep : 668
+  nodes   : 151
+  maxdepth: 6
+Time: 10.01234
+  inferstep time: 7.286522
+  node_find time: 0.170578
+  node_crea time: 2.070289
+    pred time: 0.458672
+    thmpred time: 0.000018
+    mc time: 1.052611
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 30
+Original proof time: 0.0
+Replaying proof: 1.332606
+
+BAG_IMAGE_EMPTY
+proof length: 3
+proof time: 0.045471
+Statistics
+  infstep : 133
+  nodes   : 30
+  maxdepth: 5
+Time: 2.256394
+  inferstep time: 1.816962
+  node_find time: 0.029107
+  node_crea time: 0.275444
+    pred time: 0.078294
+    thmpred time: 0.000006
+    mc time: 0.147314
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.EQ_IMP_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_IMAGE_DEF", DB.fetch "bag" "EMPTY_BAG", combinTheory.K_THM, arithmeticTheory.FUNPOW, prim_recTheory.num_Axiom, arithmeticTheory.num_case_compute, arithmeticTheory.num_case_def, arithmeticTheory.num_case_cong, ind_typeTheory.FCONS, indexedListsTheory.MAPi_def, indexedListsTheory.FOLDRi_def, listTheory.GENLIST, listTheory.GENLIST_AUX, listTheory.GENLIST_AUX_compute, listTheory.HD_GENLIST_COR, listTheory.NULL_GENLIST] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_IMAGE_DEF", DB.fetch "bag" "EMPTY_BAG", DB.fetch "bag" "BAG_CARD_THM", DB.fetch "bag" "BCARD_0", DB.fetch "bag" "BAG_CARD", DB.fetch "bag" "BAG_FILTER_DEF", DB.fetch "bag" "BAG_FILTER_EMPTY", DB.fetch "bag" "tactictoe_thm_23", DB.fetch "bag" "BAG_CARD_EMPTY", relationTheory.WF_RECURSION_THM, combinTheory.K_THM, DB.fetch "bag" "FINITE_BAG", DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT", DB.fetch "bag" "FINITE_BAG_INDUCT", DB.fetch "bag" "FINITE_BAG_THM", DB.fetch "bag" "FINITE_BAG_INSERT"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.049487
+
+BAG_IMAGE_FINITE_INSERT
+Statistics
+  infstep : 492
+  nodes   : 80
+  maxdepth: 5
+Time: 10.000383
+  inferstep time: 8.212911
+  node_find time: 0.12399
+  node_crea time: 1.251426
+    pred time: 0.353984
+    thmpred time: 0.000023
+    mc time: 0.521551
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.238834
+
+BAG_IMAGE_FINITE_UNION
+Statistics
+  infstep : 553
+  nodes   : 116
+  maxdepth: 6
+Time: 10.110423
+  inferstep time: 7.808737
+  node_find time: 0.139691
+  node_crea time: 1.742329
+    pred time: 0.351166
+    thmpred time: 0.000015
+    mc time: 0.637472
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.116155
+
+BAG_IMAGE_FINITE
+proof length: 3
+proof time: 0.081059
+Statistics
+  infstep : 23
+  nodes   : 10
+  maxdepth: 3
+Time: 0.727686
+  inferstep time: 0.580083
+  node_find time: 0.004721
+  node_crea time: 0.109677
+    pred time: 0.033787
+    thmpred time: 0.000003
+    mc time: 0.055376
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT") THEN bossLib.ASM_SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "BAG_UNION_INSERT"), (DB.fetch "bag" "BAG_UNION_EMPTY"), (DB.fetch "bag" "BAG_IMAGE_EMPTY"), (DB.fetch "bag" "BAG_IMAGE_FINITE_INSERT"), (DB.fetch "bag" "FINITE_BAG_UNION")] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_IMAGE_FINITE_INSERT", DB.fetch "bag" "BAG_IMAGE_DEF", DB.fetch "bag" "BAG_IMAGE_FINITE_UNION", DB.fetch "bag" "FINITE_BAG_THM", DB.fetch "bag" "BAG_IMAGE_EMPTY", DB.fetch "bag" "FINITE_EMPTY_BAG", DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT", DB.fetch "bag" "FINITE_BAG_INDUCT", DB.fetch "bag" "FINITE_BAG", DB.fetch "bag" "BAG_CARD_THM", DB.fetch "bag" "BCARD_0", DB.fetch "bag" "BCARD_SUC", DB.fetch "bag" "FINITE_BAG_INSERT", DB.fetch "bag" "tactictoe_thm_7", DB.fetch "bag" "tactictoe_thm_25", DB.fetch "bag" "tactictoe_thm_27"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.037703
+
+BAG_IMAGE_COMPOSE
+Statistics
+  infstep : 729
+  nodes   : 154
+  maxdepth: 6
+Time: 10.000605
+  inferstep time: 7.242165
+  node_find time: 0.201595
+  node_crea time: 2.019246
+    pred time: 0.388739
+    thmpred time: 0.000025
+    mc time: 0.846877
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.092692
+
+BAG_IMAGE_FINITE_I
+proof length: 2
+proof time: 0.0017
+Statistics
+  infstep : 23
+  nodes   : 11
+  maxdepth: 3
+Time: 0.786766
+  inferstep time: 0.603763
+  node_find time: 0.005235
+  node_crea time: 0.142808
+    pred time: 0.04293
+    thmpred time: 0.0
+    mc time: 0.071146
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "bag" "STRONG_FINITE_BAG_INDUCT") THEN BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.031679
+
+BAG_IN_FINITE_BAG_IMAGE
+Statistics
+  infstep : 551
+  nodes   : 137
+  maxdepth: 5
+Time: 10.017925
+  inferstep time: 7.524316
+  node_find time: 0.159516
+  node_crea time: 1.916707
+    pred time: 0.410788
+    thmpred time: 0.000027
+    mc time: 0.884033
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 1.017988
+
+BAG_IMAGE_EQ_EMPTY
+Statistics
+  infstep : 536
+  nodes   : 136
+  maxdepth: 6
+Time: 10.027952
+  inferstep time: 7.657575
+  node_find time: 0.141553
+  node_crea time: 1.822179
+    pred time: 0.417695
+    thmpred time: 0.000021
+    mc time: 0.735934
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.060719
+Replaying proof: 0.001587
+
+BAG_INSERT_CHOICE_REST
+Statistics
+  infstep : 386
+  nodes   : 97
+  maxdepth: 6
+Time: 10.113839
+  inferstep time: 7.732402
+  node_find time: 0.129105
+  node_crea time: 1.837815
+    pred time: 0.533015
+    thmpred time: 0.000027
+    mc time: 0.769865
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.089673
+
+BAG_CHOICE_SING
+proof length: 1
+proof time: 0.063049
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.090398
+  inferstep time: 0.072434
+  node_find time: 0.000332
+  node_crea time: 0.012326
+    pred time: 0.002817
+    thmpred time: 0.0
+    mc time: 0.009561
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT_CHOICE_REST" , DB.fetch "bag" "BAG_CHOICE_DEF" , DB.fetch "bag" "BAG_REST_DEF" , DB.fetch "bag" "SING_BAG" , DB.fetch "bag" "tactictoe_thm_3" , DB.fetch "bag" "tactictoe_thm_4" , DB.fetch "bag" "EL_BAG" , DB.fetch "bag" "tactictoe_thm_2" , DB.fetch "bag" "tactictoe_thm_5" , DB.fetch "bag" "SING_BAG_THM" , DB.fetch "bag" "BAG_INSERT_NOT_EMPTY" , DB.fetch "bag" "EL_BAG_INSERT_squeeze" , DB.fetch "bag" "BAG_CARD_RELn" , DB.fetch "bag" "BAG_CARD_THM" , DB.fetch "bag" "BAG_cases" , DB.fetch "bag" "FINITE_BAG"])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.030956
+
+BAG_REST_SING
+proof length: 1
+proof time: 0.043904
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.090033
+  inferstep time: 0.070039
+  node_find time: 0.000251
+  node_crea time: 0.011541
+    pred time: 0.002949
+    thmpred time: 0.000001
+    mc time: 0.010445
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT_CHOICE_REST" , DB.fetch "bag" "BAG_REST_DEF" , DB.fetch "bag" "BAG_CHOICE_SING" , DB.fetch "bag" "SING_BAG" , DB.fetch "bag" "tactictoe_thm_3" , DB.fetch "bag" "tactictoe_thm_4" , DB.fetch "bag" "EL_BAG" , DB.fetch "bag" "tactictoe_thm_2" , DB.fetch "bag" "tactictoe_thm_5" , DB.fetch "bag" "SING_BAG_THM" , DB.fetch "bag" "BAG_INSERT_NOT_EMPTY" , DB.fetch "bag" "EL_BAG_INSERT_squeeze" , DB.fetch "bag" "BAG_CARD_RELn" , DB.fetch "bag" "BAG_CARD_THM" , DB.fetch "bag" "BAG_cases" , DB.fetch "bag" "FINITE_BAG"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006234
+
+SUB_BAG_REST
+proof length: 2
+proof time: 0.084831
+Statistics
+  infstep : 34
+  nodes   : 10
+  maxdepth: 2
+Time: 0.735307
+  inferstep time: 0.532311
+  node_find time: 0.011824
+  node_crea time: 0.123631
+    pred time: 0.034131
+    thmpred time: 0.000002
+    mc time: 0.078271
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_REST_DEF"), (DB.fetch "bag" "EL_BAG")] THEN metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT_CHOICE_REST", DB.fetch "bag" "BAG_REST_DEF", DB.fetch "bag" "BAG_CHOICE_DEF", DB.fetch "bag" "BAG_CHOICE_SING", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "BAG_DIFF_EQ_EMPTY", DB.fetch "bag" "BAG_CARD_DIFF", DB.fetch "bag" "BAG_DIFF_2R", DB.fetch "bag" "BAG_UNION_DIFF", DB.fetch "bag" "SUB_BAG_BAG_DIFF", DB.fetch "bag" "SUB_BAG_DIFF_EQ", DB.fetch "bag" "SUB_BAG_DIFF", DB.fetch "bag" "SUB_BAG_UNION_DIFF", DB.fetch "bag" "tactictoe_thm_2", DB.fetch "bag" "BAG_DIFF_EMPTY_simple", DB.fetch "bag" "BAG_DIFF_INSERT_same"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.028786
+
+PSUB_BAG_REST
+Statistics
+  infstep : 391
+  nodes   : 120
+  maxdepth: 6
+Time: 10.116781
+  inferstep time: 7.200699
+  node_find time: 0.142979
+  node_crea time: 2.32371
+    pred time: 0.544484
+    thmpred time: 0.000022
+    mc time: 1.077983
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.17827
+Replaying proof: 0.005122
+Replaying proof: 0.002961
+
+PSUB_BAG_CARD
+Statistics
+  infstep : 534
+  nodes   : 95
+  maxdepth: 5
+Time: 10.012775
+  inferstep time: 7.989184
+  node_find time: 0.149814
+  node_crea time: 1.416064
+    pred time: 0.38977
+    thmpred time: 0.000019
+    mc time: 0.447229
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.561867
+
+EL_BAG_BAG_INSERT
+proof length: 3
+proof time: 0.008125
+Statistics
+  infstep : 81
+  nodes   : 20
+  maxdepth: 4
+Time: 2.356644
+  inferstep time: 1.959199
+  node_find time: 0.020685
+  node_crea time: 0.269584
+    pred time: 0.084596
+    thmpred time: 0.000004
+    mc time: 0.119673
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "bag" "EL_BAG"), (DB.fetch "bag" "BAG_INSERT_EQUAL")] THEN bossLib.SIMP_TAC numLib.std_ss [(DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), boolLib.FUN_EQ_THM] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.679093
+
+EL_BAG_SUB_BAG
+proof length: 1
+proof time: 0.063264
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.112952
+  inferstep time: 0.092775
+  node_find time: 0.000238
+  node_crea time: 0.012879
+    pred time: 0.003709
+    thmpred time: 0.0
+    mc time: 0.010697
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "tactictoe_thm_3" , DB.fetch "bag" "tactictoe_thm_4" , DB.fetch "bag" "SUB_BAG_BAG_IN" , DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT" , DB.fetch "bag" "EL_BAG_BAG_INSERT" , DB.fetch "bag" "SING_BAG" , DB.fetch "bag" "tactictoe_thm_2" , DB.fetch "bag" "tactictoe_thm_5" , DB.fetch "bag" "BAG_CHOICE_SING" , DB.fetch "bag" "BAG_REST_SING" , DB.fetch "bag" "EL_BAG" , DB.fetch "bag" "SING_BAG_THM" , DB.fetch "bag" "SUB_BAG_EL_BAG" , DB.fetch "bag" "BAG_IN_BAG_INSERT" , DB.fetch "bag" "BAG_DECOMPOSE" , DB.fetch "bag" "BAG_INSERT_EQ_UNION"])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.076455
+
+COMMUTING_ITBAG_INSERT
+Statistics
+  infstep : 393
+  nodes   : 125
+  maxdepth: 7
+Time: 10.004713
+  inferstep time: 7.664169
+  node_find time: 0.116181
+  node_crea time: 1.85431
+    pred time: 0.397112
+    thmpred time: 0.000027
+    mc time: 0.788152
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.962336
+
+COMMUTING_ITBAG_RECURSES
+Statistics
+  infstep : 500
+  nodes   : 170
+  maxdepth: 7
+Time: 10.101032
+  inferstep time: 6.497973
+  node_find time: 0.166516
+  node_crea time: 2.96592
+    pred time: 0.496158
+    thmpred time: 0.000025
+    mc time: 1.432139
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.299708
+
+BAG_GEN_SUM_EMPTY
+proof length: 1
+proof time: 0.001452
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.283952
+  inferstep time: 0.245136
+  node_find time: 0.001226
+  node_crea time: 0.027331
+    pred time: 0.009607
+    thmpred time: 0.000001
+    mc time: 0.014547
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "bag" "BAG_GEN_SUM_def" , DB.fetch "bag" "BAG_CARD_RELn" , DB.fetch "bag" "BAG_INN_EMPTY_BAG" , DB.fetch "bag" "tactictoe_thm_12" , DB.fetch "bag" "tactictoe_thm_16" , DB.fetch "bag" "tactictoe_thm_20" , DB.fetch "bag" "tactictoe_thm_24" , DB.fetch "bag" "tactictoe_thm_26" , DB.fetch "bag" "tactictoe_thm_28" , DB.fetch "bag" "tactictoe_thm_10" , DB.fetch "bag" "tactictoe_thm_11" , DB.fetch "bag" "tactictoe_thm_13" , DB.fetch "bag" "tactictoe_thm_14" , DB.fetch "bag" "tactictoe_thm_15" , DB.fetch "bag" "tactictoe_thm_18" , DB.fetch "bag" "tactictoe_thm_19" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005529
+
+BAG_GEN_PROD_EMPTY
+proof length: 1
+proof time: 0.001746
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.291324
+  inferstep time: 0.249104
+  node_find time: 0.001238
+  node_crea time: 0.029501
+    pred time: 0.009891
+    thmpred time: 0.000001
+    mc time: 0.016555
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "bag" "BAG_GEN_PROD_def" , DB.fetch "bag" "BAG_CARD_RELn" , DB.fetch "bag" "BAG_GEN_SUM_EMPTY" , DB.fetch "bag" "BAG_INN_EMPTY_BAG" , DB.fetch "bag" "tactictoe_thm_12" , DB.fetch "bag" "tactictoe_thm_16" , DB.fetch "bag" "tactictoe_thm_20" , DB.fetch "bag" "tactictoe_thm_24" , DB.fetch "bag" "tactictoe_thm_26" , DB.fetch "bag" "tactictoe_thm_28" , DB.fetch "bag" "tactictoe_thm_10" , DB.fetch "bag" "tactictoe_thm_11" , DB.fetch "bag" "tactictoe_thm_13" , DB.fetch "bag" "tactictoe_thm_14" , DB.fetch "bag" "tactictoe_thm_15" , DB.fetch "bag" "tactictoe_thm_18" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006395
+
+BAG_GEN_SUM_TAILREC
+proof length: 2
+proof time: 0.005363
+Statistics
+  infstep : 359
+  nodes   : 128
+  maxdepth: 5
+Time: 8.779836
+  inferstep time: 6.154229
+  node_find time: 0.106896
+  node_crea time: 1.896032
+    pred time: 0.359413
+    thmpred time: 0.000017
+    mc time: 0.998636
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "ITBAG_INSERT"), (DB.fetch "bag" "BAG_REST_DEF"), (DB.fetch "bag" "EL_BAG")] THEN bossLib.FULL_SIMP_TAC numLib.arith_ss [DB.fetch "bag" "BAG_GEN_SUM_def", DB.fetch "bag" "BAG_GEN_SUM_EMPTY", pred_setTheory.tactictoe_thm_37, pred_setTheory.tactictoe_thm_41, DB.fetch "bag" "COMMUTING_ITBAG_INSERT", DB.fetch "bag" "COMMUTING_ITBAG_RECURSES", DB.fetch "bag" "BAG_INSERT_EQUAL", DB.fetch "bag" "tactictoe_thm_24", DB.fetch "bag" "tactictoe_thm_12", DB.fetch "bag" "tactictoe_thm_16", DB.fetch "bag" "tactictoe_thm_20", DB.fetch "bag" "tactictoe_thm_21", DB.fetch "bag" "tactictoe_thm_26", DB.fetch "bag" "tactictoe_thm_28", DB.fetch "bag" "tactictoe_thm_10", DB.fetch "bag" "tactictoe_thm_11"]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.120658
+
+BAG_GEN_SUM_REC
+Statistics
+  infstep : 433
+  nodes   : 137
+  maxdepth: 5
+Time: 10.00035
+  inferstep time: 6.844769
+  node_find time: 0.178958
+  node_crea time: 2.484961
+    pred time: 0.454088
+    thmpred time: 0.000033
+    mc time: 1.261994
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.154434
+
+BAG_GEN_PROD_TAILREC
+Statistics
+  infstep : 506
+  nodes   : 116
+  maxdepth: 5
+Time: 10.008974
+  inferstep time: 7.293235
+  node_find time: 0.162349
+  node_crea time: 2.063441
+    pred time: 0.376035
+    thmpred time: 0.000024
+    mc time: 1.085576
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.174724
+
+BAG_GEN_PROD_REC
+Statistics
+  infstep : 475
+  nodes   : 98
+  maxdepth: 6
+Time: 10.001155
+  inferstep time: 8.108945
+  node_find time: 0.141475
+  node_crea time: 1.327198
+    pred time: 0.255627
+    thmpred time: 0.00003
+    mc time: 0.713041
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.130803
+
+BAG_GEN_PROD_EQ_1
+Statistics
+  infstep : 509
+  nodes   : 106
+  maxdepth: 5
+Time: 10.070365
+  inferstep time: 7.751124
+  node_find time: 0.157441
+  node_crea time: 1.687651
+    pred time: 0.352157
+    thmpred time: 0.000021
+    mc time: 0.827644
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.261487
+
+BAG_GEN_PROD_ALL_ONES
+Statistics
+  infstep : 467
+  nodes   : 82
+  maxdepth: 5
+Time: 10.023924
+  inferstep time: 7.939782
+  node_find time: 0.156414
+  node_crea time: 1.389216
+    pred time: 0.331454
+    thmpred time: 0.000019
+    mc time: 0.664202
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.580073
+
+BAG_GEN_PROD_POSITIVE
+Statistics
+  infstep : 601
+  nodes   : 82
+  maxdepth: 5
+Time: 10.009014
+  inferstep time: 7.592587
+  node_find time: 0.209211
+  node_crea time: 1.580379
+    pred time: 0.340802
+    thmpred time: 0.000025
+    mc time: 0.826889
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.340312
+
+BAG_EVERY_THM
+Statistics
+  infstep : 744
+  nodes   : 146
+  maxdepth: 6
+Time: 10.008498
+  inferstep time: 6.880818
+  node_find time: 0.254547
+  node_crea time: 2.146912
+    pred time: 0.38656
+    thmpred time: 0.000023
+    mc time: 0.975121
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.047507
+
+BAG_EVERY_UNION
+proof length: 2
+proof time: 0.018596
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.290117
+  inferstep time: 0.242127
+  node_find time: 0.001273
+  node_crea time: 0.020893
+    pred time: 0.00601
+    thmpred time: 0.000001
+    mc time: 0.024302
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "bag" "BAG_EVERY")] THEN metisLib.METIS_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.061106
+
+BAG_EVERY_MERGE
+proof length: 2
+proof time: 0.019875
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.291793
+  inferstep time: 0.258745
+  node_find time: 0.00104
+  node_crea time: 0.018951
+    pred time: 0.005942
+    thmpred time: 0.0
+    mc time: 0.014427
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_EVERY_UNION", DB.fetch "bag" "BAG_EVERY_THM", DB.fetch "bag" "BAG_EVERY", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "SET_OF_BAG_MERGE", DB.fetch "bag" "BAG_MERGE_IDEM", DB.fetch "bag" "BAG_CARD_UNION", DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "FINITE_BAG_UNION", DB.fetch "bag" "BAG_DELETE_11", DB.fetch "bag" "BAG_DELETE_INSERT", DB.fetch "bag" "BAG_DELETE_TWICE", DB.fetch "bag" "BAG_DIFF_EMPTY"] THEN metisLib.METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007429
+
+BAG_EVERY_SET
+proof length: 3
+proof time: 0.08295
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 3
+Time: 0.39408
+  inferstep time: 0.335289
+  node_find time: 0.001955
+  node_crea time: 0.035934
+    pred time: 0.011687
+    thmpred time: 0.000002
+    mc time: 0.024184
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "bag" "BAG_EVERY")] THEN bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "SUB_BAG"), (DB.fetch "bag" "SET_OF_BAG"), (DB.fetch "bag" "BAG_IN"), pred_setTheory.SPECIFICATION, pred_setTheory.SUBSET_DEF] THEN
+  metisTools.METIS_TAC [DB.fetch "bag" "BAG_IN", pred_setTheory.GSPEC_AND, pred_setTheory.GSPEC_OR, listTheory.LIST_TO_SET_FILTER, pred_setTheory.GSPEC_ETA, pred_setTheory.IN_GSPEC_IFF, DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_BAG_FILTER", DB.fetch "bag" "BAG_INN_0", DB.fetch "bag" "BAG_EXTENSION", DB.fetch "bag" "BAG_INN_EMPTY_BAG", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "SUB_BAG", pred_setTheory.PAIR_IN_GSPEC_1, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_same]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005413
+
+BAG_FILTER_EQ_EMPTY
+Statistics
+  infstep : 581
+  nodes   : 165
+  maxdepth: 6
+Time: 10.005246
+  inferstep time: 7.508826
+  node_find time: 0.205143
+  node_crea time: 1.726628
+    pred time: 0.367452
+    thmpred time: 0.00002
+    mc time: 0.808351
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.729287
+
+SET_OF_BAG_IMAGE
+Statistics
+  infstep : 609
+  nodes   : 201
+  maxdepth: 7
+Time: 10.043948
+  inferstep time: 7.002383
+  node_find time: 0.21855
+  node_crea time: 2.236128
+    pred time: 0.390993
+    thmpred time: 0.000029
+    mc time: 1.037156
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.570335
+
+BAG_IMAGE_FINITE_RESTRICTED_I
+Statistics
+  infstep : 479
+  nodes   : 151
+  maxdepth: 6
+Time: 10.000649
+  inferstep time: 7.095738
+  node_find time: 0.18152
+  node_crea time: 2.238011
+    pred time: 0.400619
+    thmpred time: 0.00003
+    mc time: 1.044611
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06483
+
+BAG_ALL_DISTINCT_THM
+Statistics
+  infstep : 625
+  nodes   : 159
+  maxdepth: 6
+Time: 10.093519
+  inferstep time: 7.118822
+  node_find time: 0.231904
+  node_crea time: 1.994619
+    pred time: 0.429069
+    thmpred time: 0.000021
+    mc time: 1.046169
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.19251
+Replaying proof: 0.000062
+
+BAG_ALL_DISTINCT_BAG_MERGE
+proof length: 8
+proof time: 0.02231
+Statistics
+  infstep : 251
+  nodes   : 58
+  maxdepth: 4
+Time: 5.945463
+  inferstep time: 4.755487
+  node_find time: 0.077049
+  node_crea time: 0.799904
+    pred time: 0.259218
+    thmpred time: 0.000012
+    mc time: 0.31253
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.COND_elim_ss, boolSimps.DNF_ss] [(DB.fetch "bag" "BAG_ALL_DISTINCT"), (DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), boolLib.EQ_IMP_THM] THENL [boolLib.REPEAT (boolLib.POP_ASSUM (boolLib.MP_TAC o boolLib.SPEC_ALL)) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_EVERY_MERGE", DB.fetch "bag" "SET_OF_BAG_MERGE", DB.fetch "bag" "BAG_MERGE_IDEM", DB.fetch "bag" "SUB_BAG_LEQ", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "BAG_IN_DIFF_E"] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_UNION", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "PSUB_BAG", ind_typeTheory.NUMSUM_INJ, markerTheory.AC_DEF, arithmeticTheory.GREATER_OR_EQ], boolLib.REPEAT (boolLib.POP_ASSUM (boolLib.MP_TAC o boolLib.SPEC_ALL)) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_EVERY_MERGE", DB.fetch "bag" "SET_OF_BAG_MERGE", DB.fetch "bag" "BAG_MERGE_IDEM", DB.fetch "bag" "SUB_BAG_LEQ", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "BAG_IN_DIFF_E"] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_IN_BAG_UNION", DB.fetch "bag" "BAG_INN_BAG_UNION", numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, arithmeticTheory.EXP_EXP_INJECTIVE, DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "PSUB_BAG", ind_typeTheory.NUMSUM_INJ, markerTheory.AC_DEF, arithmeticTheory.GREATER_OR_EQ], BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_IN_BAG_MERGE", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_EVERY_MERGE", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "SET_OF_BAG_MERGE", DB.fetch "bag" "BAG_MERGE_IDEM", arithmeticTheory.tactictoe_thm_11, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_UNION_INSERT", DB.fetch "bag" "BAG_DISJOINT_BAG_IN", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION"]]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.154236
+
+BAG_ALL_DISTINCT_BAG_UNION
+Statistics
+  infstep : 352
+  nodes   : 103
+  maxdepth: 5
+Time: 10.001189
+  inferstep time: 7.669578
+  node_find time: 0.128916
+  node_crea time: 1.747652
+    pred time: 0.457873
+    thmpred time: 0.000033
+    mc time: 0.752883
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.168652
+
+BAG_ALL_DISTINCT_DIFF
+proof length: 5
+proof time: 0.011759
+Statistics
+  infstep : 256
+  nodes   : 56
+  maxdepth: 5
+Time: 4.434223
+  inferstep time: 3.539942
+  node_find time: 0.077296
+  node_crea time: 0.528848
+    pred time: 0.118662
+    thmpred time: 0.000013
+    mc time: 0.272974
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.COND_elim_ss, boolSimps.DNF_ss] [(DB.fetch "bag" "BAG_ALL_DISTINCT"), (DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), boolLib.EQ_IMP_THM] THEN BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_IN_DIFF_E", DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_DIFF_INSERT", DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "BAG_DIFF_INSERT_same", DB.fetch "bag" "FINITE_BAG_DIFF_dual", DB.fetch "bag" "NOT_IN_BAG_DIFF", DB.fetch "bag" "SUB_BAG_DIFF", DB.fetch "bag" "SUB_BAG_DIFF_EQ", DB.fetch "bag" "SUB_BAG_UNION_DIFF", DB.fetch "bag" "BAG_DIFF_UNION_eliminate", DB.fetch "bag" "SET_OF_BAG_DIFF_SUBSET_down", DB.fetch "bag" "SET_OF_BAG_DIFF_SUBSET_up", arithmeticTheory.tactictoe_thm_11] THEN
+  boolLib.REPEAT (boolLib.POP_ASSUM (boolLib.MP_TAC o boolLib.SPEC_ALL)) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", arithmeticTheory.ONE_ONE_INV_IMAGE_BOUNDED, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_IN_DIFF_E", DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "SUB_BAG_INSERT", DB.fetch "bag" "BAG_UNION_INSERT"] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_UNION", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "BAG_ALL_DISTINCT", arithmeticTheory.ONE_ONE_INV_IMAGE_BOUNDED, arithmeticTheory.tactictoe_thm_11, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_IN_DIFF_E", DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "SUB_BAG_INSERT", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "BAG_UNION_INSERT"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.212769
+
+BAG_ALL_DISTINCT_DELETE
+proof length: 4
+proof time: 0.017485
+Statistics
+  infstep : 128
+  nodes   : 38
+  maxdepth: 4
+Time: 3.571413
+  inferstep time: 2.738023
+  node_find time: 0.049074
+  node_crea time: 0.563362
+    pred time: 0.140845
+    thmpred time: 0.00001
+    mc time: 0.278128
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [bossLib.ARITH_ss, boolSimps.COND_elim_ss] [(DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN")] THEN bossLib.SIMP_TAC numLib.arith_ss [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_ALL_DISTINCT_THM", DB.fetch "bag" "BAG_ALL_DISTINCT_DIFF", DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_MERGE", DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_UNION", numeralTheory.numeral_distrib, arithmeticTheory.NOT_GREATER_EQ, arithmeticTheory.GREATER_EQ, arithmeticTheory.SUB_RIGHT_GREATER_EQ, numeralTheory.numeral_suc, DB.fetch "bag" "tactictoe_thm_10", DB.fetch "bag" "tactictoe_thm_14", DB.fetch "bag" "tactictoe_thm_19", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_IMAGE_DEF"] THEN
+  boolLib.HO_MATCH_MP_TAC (DB.fetch "bag" "tactictoe_thm_32") THEN
+  BasicProvers.SRW_TAC [bossLib.ARITH_ss] [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_UNION"), arithmeticTheory.GREATER_EQ, boolLib.EQ_IMP_THM]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.10371
+
+BAG_ALL_DISTINCT_SET
+proof length: 4
+proof time: 0.011339
+Statistics
+  infstep : 73
+  nodes   : 33
+  maxdepth: 4
+Time: 3.598257
+  inferstep time: 2.996563
+  node_find time: 0.025935
+  node_crea time: 0.448347
+    pred time: 0.129886
+    thmpred time: 0.000009
+    mc time: 0.209146
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_ALL_DISTINCT_THM", DB.fetch "bag" "BAG_ALL_DISTINCT_DIFF", DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_MERGE", DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_UNION", numeralTheory.numeral_distrib, arithmeticTheory.NOT_GREATER_EQ, arithmeticTheory.GREATER_EQ, arithmeticTheory.SUB_RIGHT_GREATER_EQ, numeralTheory.numeral_suc, DB.fetch "bag" "tactictoe_thm_10", DB.fetch "bag" "tactictoe_thm_14", DB.fetch "bag" "tactictoe_thm_19", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_IMAGE_DEF"] THEN BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SET_OF_BAG"), (DB.fetch "bag" "BAG_OF_SET"), boolLib.FUN_EQ_THM, (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), boolLib.IN_DEF] THEN
+  boolLib.HO_MATCH_MP_TAC (DB.fetch "bag" "tactictoe_thm_32") THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_INN", arithmeticTheory.ONE_ONE_INV_IMAGE_BOUNDED, DB.fetch "bag" "SUB_BAG_LEQ", numeralTheory.numeral_distrib, arithmeticTheory.GREATER_EQ, arithmeticTheory.NOT_GREATER_EQ, arithmeticTheory.SUB_RIGHT_GREATER_EQ, DB.fetch "bag" "BAG_DELETE_concrete", dividesTheory.compute_divides, DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_IMAGE_DEF", DB.fetch "bag" "BAG_OF_SET", arithmeticTheory.ZERO_EXP, arithmeticTheory.EXP_BASE_LE_IFF, arithmeticTheory.EXP_BASE_LE_MONO]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.196456
+
+BAG_ALL_DISTINCT_BAG_OF_SET
+proof length: 1
+proof time: 0.029954
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.08872
+  inferstep time: 0.058589
+  node_find time: 0.000542
+  node_crea time: 0.020527
+    pred time: 0.005566
+    thmpred time: 0.0
+    mc time: 0.01372
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "SET_BAG_I" , DB.fetch "bag" "BAG_IN_BAG_OF_SET" , DB.fetch "bag" "BAG_OF_SET" , DB.fetch "bag" "BAG_ALL_DISTINCT_SET" , DB.fetch "bag" "SET_OF_EMPTY" , DB.fetch "bag" "BAG_ALL_DISTINCT" , DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_MERGE" , DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_UNION" , DB.fetch "bag" "BAG_ALL_DISTINCT_DELETE" , DB.fetch "bag" "BAG_ALL_DISTINCT_DIFF" , DB.fetch "bag" "BAG_ALL_DISTINCT_THM" , DB.fetch "bag" "SET_OF_BAG_EQ_INSERT" , listTheory.PAD_LEFT , listTheory.PAD_RIGHT , listTheory.SET_TO_LIST_CARD , pred_setTheory.CARD_EQ_0])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00907
+
+BAG_IN_BAG_DIFF_ALL_DISTINCT
+proof length: 5
+proof time: 0.119699
+Statistics
+  infstep : 54
+  nodes   : 21
+  maxdepth: 3
+Time: 2.314309
+  inferstep time: 1.916832
+  node_find time: 0.015878
+  node_crea time: 0.276948
+    pred time: 0.086566
+    thmpred time: 0.000006
+    mc time: 0.14318
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_ALL_DISTINCT"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.EQ_IMP_THM] THENL [BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", numeralTheory.numeral_distrib, arithmeticTheory.GREATER_EQ, arithmeticTheory.SUB_RIGHT_GREATER_EQ, arithmeticTheory.NOT_GREATER_EQ, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "BAG_IN_DIFF_E", DB.fetch "bag" "SUB_BAG_INSERT", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "BAG_DISJOINT_BAG_IN", DB.fetch "bag" "BAG_INSERT_EQ_UNION", DB.fetch "bag" "BAG_IN_BAG_UNION"], boolLib.FIRST_X_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 69180*)e"] boolLib.MP_TAC) THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "SUB_BAG_LEQ", pred_setTheory.SUM_IMAGE_IN_LE, numeralTheory.numeral_distrib, arithmeticTheory.NOT_GREATER_EQ, arithmeticTheory.GREATER_EQ, arithmeticTheory.SUB_RIGHT_GREATER_EQ, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "NOT_IN_SUB_BAG_INSERT", DB.fetch "bag" "BAG_DISJOINT_BAG_IN", DB.fetch "bag" "BAG_IN_DIFF_E"], metisTools.METIS_TAC [DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_INN", pred_setTheory.SUM_IMAGE_THM, pred_setTheory.SUM_IMAGE_DEF, DB.fetch "bag" "BAG_UNION", numeralTheory.numeral_distrib, arithmeticTheory.SUB_RIGHT_GREATER_EQ, arithmeticTheory.GREATER_EQ, arithmeticTheory.NOT_GREATER_EQ, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_IN_DIFF_I", DB.fetch "bag" "BAG_IN_DIFF_E"]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.161718
+
+SUB_BAG_ALL_DISTINCT
+proof length: 5
+proof time: 0.010579
+Statistics
+  infstep : 120
+  nodes   : 47
+  maxdepth: 5
+Time: 4.857267
+  inferstep time: 3.886977
+  node_find time: 0.055036
+  node_crea time: 0.724775
+    pred time: 0.207768
+    thmpred time: 0.000018
+    mc time: 0.30957
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "BAG_ALL_DISTINCT"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_DIFF")] THEN BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG"), (DB.fetch "bag" "BAG_INN"), boolLib.EQ_IMP_THM] THEN
+  boolLib.FIRST_X_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 17272*)x"] boolLib.MP_TAC) THEN
+  boolLib.FIRST_X_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 17272*)x"] boolLib.MP_TAC) THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "SUB_BAG_LEQ", numeralTheory.numeral_distrib, arithmeticTheory.GREATER_EQ, arithmeticTheory.NOT_GREATER_EQ, arithmeticTheory.SUB_RIGHT_GREATER_EQ, numeralTheory.tactictoe_thm_19, numeralTheory.tactictoe_thm_5, numeralTheory.tactictoe_thm_6, numeralTheory.tactictoe_thm_9, DB.fetch "bag" "SUB_BAG_CARD", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG"]
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.384353
+
+BAG_ALL_DISTINCT_BAG_INN
+proof length: 3
+proof time: 0.015168
+Statistics
+  infstep : 148
+  nodes   : 57
+  maxdepth: 5
+Time: 4.533951
+  inferstep time: 3.381996
+  node_find time: 0.052854
+  node_crea time: 0.841875
+    pred time: 0.213493
+    thmpred time: 0.000009
+    mc time: 0.380136
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [boolSimps.COND_elim_ss, boolSimps.DNF_ss] [(DB.fetch "bag" "BAG_ALL_DISTINCT"), (DB.fetch "bag" "EMPTY_BAG"), (DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), boolLib.EQ_IMP_THM] THEN boolLib.FIRST_X_ASSUM (Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 69180*)e"] boolLib.MP_TAC) THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "SUB_BAG_LEQ", numeralTheory.numeral_distrib, quantHeuristicsTheory.LIST_LENGTH_0, quantHeuristicsTheory.LIST_LENGTH_COMPARE_1, quantHeuristicsTheory.LIST_LENGTH_1, quantHeuristicsTheory.LIST_LENGTH_2, quantHeuristicsTheory.LIST_LENGTH_3, quantHeuristicsTheory.LIST_LENGTH_4, arithmeticTheory.SUB_RIGHT_GREATER_EQ, arithmeticTheory.GREATER_OR_EQ, arithmeticTheory.GREATER_EQ, arithmeticTheory.NOT_GREATER_EQ, DB.fetch "bag" "tactictoe_thm_12", DB.fetch "bag" "tactictoe_thm_16"]
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.28436
+
+BAG_ALL_DISTINCT_EXTENSION
+Statistics
+  infstep : 238
+  nodes   : 94
+  maxdepth: 6
+Time: 10.011983
+  inferstep time: 8.026474
+  node_find time: 0.089973
+  node_crea time: 1.581126
+    pred time: 0.410539
+    thmpred time: 0.000025
+    mc time: 0.618357
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.039284
+
+NOT_BAG_IN
+proof length: 3
+proof time: 0.005167
+Statistics
+  infstep : 29
+  nodes   : 9
+  maxdepth: 3
+Time: 0.866759
+  inferstep time: 0.691285
+  node_find time: 0.008663
+  node_crea time: 0.116414
+    pred time: 0.040668
+    thmpred time: 0.000001
+    mc time: 0.052574
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BAG_ALL_DISTINCT"), (DB.fetch "bag" "BAG_IN"), (DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "BAG_INSERT"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.EQ_IMP_THM] THEN boolLib.REPEAT (boolLib.POP_ASSUM (boolLib.MP_TAC o boolLib.SPEC_ALL)) THEN
+  bossLib.SIMP_TAC numLib.arith_ss [DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_ALL_DISTINCT_THM", DB.fetch "bag" "BAG_ALL_DISTINCT_DIFF", DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_MERGE", DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_UNION", numeralTheory.numeral_distrib, arithmeticTheory.NOT_GREATER_EQ, arithmeticTheory.GREATER_EQ, arithmeticTheory.SUB_RIGHT_GREATER_EQ, numeralTheory.numeral_suc, DB.fetch "bag" "tactictoe_thm_10", DB.fetch "bag" "tactictoe_thm_14", DB.fetch "bag" "tactictoe_thm_19", DB.fetch "bag" "BAG_INSERT", DB.fetch "bag" "BAG_IMAGE_DEF"]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.302382
+
+BAG_UNION_EQ_LEFT
+proof length: 1
+proof time: 0.000874
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.144528
+  inferstep time: 0.113753
+  node_find time: 0.000803
+  node_crea time: 0.014958
+    pred time: 0.003435
+    thmpred time: 0.0
+    mc time: 0.015331
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ boolLib.EQ_IMP_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008906
+Replaying proof: 0.025368
+
+BAG_IN_DIVIDES
+proof length: 1
+proof time: 0.035573
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.069629
+  inferstep time: 0.039688
+  node_find time: 0.000373
+  node_crea time: 0.014412
+    pred time: 0.002795
+    thmpred time: 0.0
+    mc time: 0.017104
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "tactictoe_thm_34" , DB.fetch "bag" "BAG_GEN_PROD_REC" , DB.fetch "bag" "BAG_GEN_PROD_EQ_1" , DB.fetch "bag" "BAG_GEN_PROD_def" , DB.fetch "bag" "BAG_GEN_PROD_ALL_ONES" , DB.fetch "bag" "BAG_GEN_PROD_POSITIVE" , DB.fetch "bag" "BAG_GEN_PROD_TAILREC" , DB.fetch "bag" "BAG_GEN_PROD_EMPTY" , dividesTheory.DIVIDES_ADD_1 , dividesTheory.DIVIDES_ADD_2 , dividesTheory.DIVIDES_ANTISYM , dividesTheory.DIVIDES_LE , dividesTheory.DIVIDES_SUB , dividesTheory.DIVIDES_TRANS , dividesTheory.NOT_LT_DIVIDES , dividesTheory.prime_def])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013054
+
+BAG_GEN_PROD_UNION_LEM
+Statistics
+  infstep : 483
+  nodes   : 77
+  maxdepth: 5
+Time: 10.003603
+  inferstep time: 7.803666
+  node_find time: 0.225748
+  node_crea time: 1.250972
+    pred time: 0.277291
+    thmpred time: 0.000022
+    mc time: 0.518089
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.554647
+
+BAG_GEN_PROD_UNION
+Statistics
+  infstep : 538
+  nodes   : 97
+  maxdepth: 6
+Time: 10.004456
+  inferstep time: 7.525546
+  node_find time: 0.240318
+  node_crea time: 1.513616
+    pred time: 0.321771
+    thmpred time: 0.000028
+    mc time: 0.686789
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.030043
+
+BIG_BAG_UNION_EMPTY
+proof length: 2
+proof time: 0.043967
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.237482
+  inferstep time: 0.185363
+  node_find time: 0.001197
+  node_crea time: 0.031421
+    pred time: 0.008627
+    thmpred time: 0.000001
+    mc time: 0.023851
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "bag" "BIG_BAG_UNION_def", DB.fetch "bag" "BAG_OF_EMPTY", DB.fetch "bag" "SET_OF_BAG_EQ_EMPTY", DB.fetch "bag" "SET_OF_EMPTY", DB.fetch "bag" "BAG_cases", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "EMPTY_BAG", DB.fetch "bag" "BAG_ALL_DISTINCT_DELETE", DB.fetch "bag" "BAG_ALL_DISTINCT_THM", DB.fetch "bag" "BAG_CARD_EMPTY", DB.fetch "bag" "BAG_CARD_RELn", DB.fetch "bag" "BAG_CARD_THM", DB.fetch "bag" "BAG_CHOICE_DEF", DB.fetch "bag" "MEMBER_NOT_EMPTY", DB.fetch "bag" "BAG_CHOICE_SING", DB.fetch "bag" "BAG_DIFF_EMPTY"] THEN metisTools.METIS_TAC [DB.fetch "bag" "BIG_BAG_UNION_def", DB.fetch "bag" "EMPTY_BAG", pred_setTheory.PREIMAGE_K, pred_setTheory.SUBSET_K, combinTheory.K_THM, combinTheory.K_DEF, pred_setTheory.SUM_IMAGE_THM, pred_setTheory.SUM_IMAGE_SING, pred_setTheory.SUM_IMAGE_DEF, pred_setTheory.SUM_SET_DEF, combinTheory.o_ABS_R, combinTheory.S_ABS_R, pred_setTheory.ITSET_IND, pred_setTheory.ITSET_ind, DB.fetch "bag" "SET_OF_BAG_EQ_EMPTY", pred_setTheory.tactictoe_thm_70]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012456
+
+BIG_BAG_UNION_INSERT
+proof length: 2
+proof time: 0.007125
+Statistics
+  infstep : 7
+  nodes   : 3
+  maxdepth: 2
+Time: 0.342835
+  inferstep time: 0.269199
+  node_find time: 0.00309
+  node_crea time: 0.047267
+    pred time: 0.013447
+    thmpred time: 0.0
+    mc time: 0.03045
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BIG_BAG_UNION_def"), pred_setTheory.SUM_IMAGE_THM, (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [pred_setTheory.tactictoe_thm_33, DB.fetch "bag" "BIG_BAG_UNION_def", pred_setTheory.SUM_IMAGE_THM, pred_setTheory.SUM_IMAGE_DEF, DB.fetch "bag" "BAG_UNION", pred_setTheory.tactictoe_thm_21, DB.fetch "bag" "BAG_INSERT", pred_setTheory.SUM_IMAGE_DELETE, pred_setTheory.COMMUTING_ITSET_INSERT, pred_setTheory.COMMUTING_ITSET_RECURSES, pred_setTheory.SUM_SET_THM, pred_setTheory.tactictoe_thm_24, pred_setTheory.PROD_IMAGE_THM, pred_setTheory.BIJ_DELETE, pred_setTheory.INJ_DELETE, pred_setTheory.PROD_SET_THM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012555
+
+BIG_BAG_UNION_DELETE
+Statistics
+  infstep : 397
+  nodes   : 119
+  maxdepth: 5
+Time: 10.02481
+  inferstep time: 6.43091
+  node_find time: 0.188209
+  node_crea time: 2.83457
+    pred time: 0.578207
+    thmpred time: 0.000027
+    mc time: 1.27751
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.037904
+
+BIG_BAG_UNION_ITSET_BAG_UNION
+Statistics
+  infstep : 375
+  nodes   : 101
+  maxdepth: 5
+Time: 10.022914
+  inferstep time: 6.700457
+  node_find time: 0.168008
+  node_crea time: 2.532808
+    pred time: 0.609346
+    thmpred time: 0.000021
+    mc time: 1.024945
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.426317
+
+FINITE_BIG_BAG_UNION
+Statistics
+  infstep : 609
+  nodes   : 99
+  maxdepth: 5
+Time: 10.085567
+  inferstep time: 6.868299
+  node_find time: 0.282205
+  node_crea time: 2.068904
+    pred time: 0.431371
+    thmpred time: 0.00003
+    mc time: 0.986194
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.108975
+
+BAG_IN_BIG_BAG_UNION
+Statistics
+  infstep : 577
+  nodes   : 150
+  maxdepth: 6
+Time: 10.021587
+  inferstep time: 6.239841
+  node_find time: 0.262865
+  node_crea time: 2.791722
+    pred time: 0.497019
+    thmpred time: 0.000027
+    mc time: 1.396918
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.782162
+
+BIG_BAG_UNION_EQ_EMPTY_BAG
+proof length: 5
+proof time: 0.07065
+Statistics
+  infstep : 237
+  nodes   : 57
+  maxdepth: 5
+Time: 4.520539
+  inferstep time: 2.871605
+  node_find time: 0.088265
+  node_crea time: 1.196057
+    pred time: 0.232443
+    thmpred time: 0.000015
+    mc time: 0.573259
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "pred_set" "FINITE_INDUCT") THEN BasicProvers.SRW_TAC [] [(DB.fetch "bag" "BIG_BAG_UNION_INSERT")] THEN
+  simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "pred_set" "DELETE_NON_ELEMENT")] THEN
+  BasicProvers.SRW_TAC [bossLib.ARITH_ss] [(DB.fetch "bag" "BAG_INN"), (DB.fetch "bag" "BAG_UNION"), arithmeticTheory.GREATER_EQ, boolLib.EQ_IMP_THM] THEN
+  metisTools.METIS_TAC [pred_setTheory.tactictoe_thm_33, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_45, DB.fetch "bag" "FINITE_BAG_THM", DB.fetch "bag" "BAG_ALL_DISTINCT_DELETE", DB.fetch "bag" "BAG_CARD_RELn", DB.fetch "bag" "BAG_CARD_THM", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "BAG_CHOICE_DEF", DB.fetch "bag" "MEMBER_NOT_EMPTY", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "BAG_INSERT_CHOICE_REST", DB.fetch "bag" "BCARD_0", DB.fetch "bag" "tactictoe_thm_24"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.106013
+
+BIG_BAG_UNION_UNION
+Statistics
+  infstep : 413
+  nodes   : 100
+  maxdepth: 5
+Time: 10.031081
+  inferstep time: 6.90635
+  node_find time: 0.198558
+  node_crea time: 2.107717
+    pred time: 0.489037
+    thmpred time: 0.000026
+    mc time: 0.85592
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.01494
+
+BIG_BAG_UNION_EQ_ELEMENT
+Statistics
+  infstep : 1035
+  nodes   : 128
+  maxdepth: 6
+Time: 10.017321
+  inferstep time: 5.67388
+  node_find time: 0.445828
+  node_crea time: 2.616191
+    pred time: 0.29758
+    thmpred time: 0.000013
+    mc time: 1.228782
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.797086
+
+BAG_NOT_LESS_EMPTY
+proof length: 3
+proof time: 0.008981
+Statistics
+  infstep : 207
+  nodes   : 43
+  maxdepth: 5
+Time: 4.332975
+  inferstep time: 3.087244
+  node_find time: 0.091296
+  node_crea time: 0.793226
+    pred time: 0.216263
+    thmpred time: 0.00001
+    mc time: 0.380722
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN boolLib.POP_ASSUM boolLib.MP_TAC THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "bag" "mlt1_def", patternMatchesTheory.PMATCH_ROW_COND_NOT_EX_OR_EQ_NIL, patternMatchesTheory.PMATCH_IS_EXHAUSTIVE_CONTRADICT, patternMatchesTheory.PMATCH_IS_EXHAUSTIVE_REWRITES, satTheory.AND_INV_IMP, satTheory.OR_DUAL2, satTheory.OR_DUAL3, satTheory.AND_INV2, numeralTheory.numeral_distrib, numeralTheory.numeral_eq, numeralTheory.numeral_lte, numeralTheory.numeral_lt, optionTheory.IS_SOME_DEF, listTheory.EXISTS_DEF, listTheory.MEM, pred_setTheory.EMPTY_DEF]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010879
+
+NOT_mlt_EMPTY
+Statistics
+  infstep : 639
+  nodes   : 91
+  maxdepth: 5
+Time: 10.027179
+  inferstep time: 7.572506
+  node_find time: 0.290829
+  node_crea time: 1.289945
+    pred time: 0.340021
+    thmpred time: 0.000023
+    mc time: 0.47762
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019265
+
+BAG_LESS_ADD
+Statistics
+  infstep : 386
+  nodes   : 88
+  maxdepth: 6
+Time: 10.001513
+  inferstep time: 7.376846
+  node_find time: 0.166732
+  node_crea time: 1.934522
+    pred time: 0.430694
+    thmpred time: 0.00002
+    mc time: 0.732502
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.326961
+Replaying proof: 0.004421
+Replaying proof: 0.070646
+
+mlt1_all_accessible
+Statistics
+  infstep : 775
+  nodes   : 90
+  maxdepth: 5
+Time: 10.016575
+  inferstep time: 7.224118
+  node_find time: 0.372955
+  node_crea time: 1.285043
+    pred time: 0.279058
+    thmpred time: 0.000026
+    mc time: 0.572286
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.903603
+
+WF_mlt1
+proof length: 4
+proof time: 0.114879
+Statistics
+  infstep : 13
+  nodes   : 6
+  maxdepth: 3
+Time: 0.577962
+  inferstep time: 0.444586
+  node_find time: 0.006092
+  node_crea time: 0.05779
+    pred time: 0.015692
+    thmpred time: 0.000002
+    mc time: 0.055048
+    inst time: 0.0
+Proof found: boolLib.STRIP_TAC THEN boolLib.Q_TAC boolLib.SUFF_TAC [HolKernel.QUOTE " (*#loc 1 80186*)!a M. WFP (mlt1 R) M ==> WFP (mlt1 R) (BAG_INSERT a M)"] THENL
+  [metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "mlt1_all_accessible", DB.fetch "bag" "tactictoe_thm_36", DB.fetch "bag" "BAG_LESS_ADD", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "NOT_mlt_EMPTY", DB.fetch "bag" "BAG_NOT_LESS_EMPTY", relationTheory.WF_EQ_WFP, pred_setTheory.tactictoe_thm_21, pred_setTheory.tactictoe_thm_22, pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, pred_setTheory.tactictoe_thm_27, relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1],
+  metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_36", DB.fetch "bag" "mlt1_all_accessible", DB.fetch "bag" "BAG_LESS_ADD", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "NOT_mlt_EMPTY", DB.fetch "bag" "BAG_NOT_LESS_EMPTY", pred_setTheory.tactictoe_thm_21, pred_setTheory.tactictoe_thm_22, pred_setTheory.tactictoe_thm_23, pred_setTheory.tactictoe_thm_25, pred_setTheory.tactictoe_thm_26, pred_setTheory.tactictoe_thm_27, relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1, relationTheory.tactictoe_thm_2]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012293
+
+TC_mlt1_FINITE_BAG
+Statistics
+  infstep : 361
+  nodes   : 149
+  maxdepth: 6
+Time: 10.095621
+  inferstep time: 7.124735
+  node_find time: 0.157194
+  node_crea time: 2.238591
+    pred time: 0.469092
+    thmpred time: 0.00003
+    mc time: 0.828767
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.059605
+
+TC_mlt1_UNION2_I
+Statistics
+  infstep : 345
+  nodes   : 127
+  maxdepth: 6
+Time: 10.071851
+  inferstep time: 6.960259
+  node_find time: 0.160397
+  node_crea time: 2.451969
+    pred time: 0.42411
+    thmpred time: 0.000025
+    mc time: 1.089963
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.84079
+
+TC_mlt1_UNION1_I
+Statistics
+  infstep : 329
+  nodes   : 108
+  maxdepth: 6
+Time: 10.047399
+  inferstep time: 7.226723
+  node_find time: 0.153013
+  node_crea time: 2.08545
+    pred time: 0.468288
+    thmpred time: 0.000026
+    mc time: 0.776155
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.02495
+
+mlt_NOT_REFL
+proof length: 1
+proof time: 0.061735
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.112311
+  inferstep time: 0.096464
+  node_find time: 0.000334
+  node_crea time: 0.009888
+    pred time: 0.002379
+    thmpred time: 0.0
+    mc time: 0.00598
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "TC_mlt1_FINITE_BAG" , DB.fetch "bag" "TC_mlt1_UNION1_I" , DB.fetch "bag" "TC_mlt1_UNION2_I" , DB.fetch "bag" "NOT_mlt_EMPTY" , DB.fetch "bag" "WF_mlt1" , DB.fetch "bag" "mlt1_all_accessible" , DB.fetch "bag" "tactictoe_thm_36" , DB.fetch "bag" "BAG_LESS_ADD" , DB.fetch "bag" "BAG_NOT_LESS_EMPTY" , DB.fetch "bag" "mlt1_def" , relationTheory.WF_noloops , relationTheory.WF_TC , relationTheory.WF_TC_EQN , listTheory.SET_TO_LIST_primitive_def , relationTheory.WF_NOT_REFL , relationTheory.WF_DEF])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018289
+
+mlt_INSERT_CANCEL_I
+Statistics
+  infstep : 311
+  nodes   : 110
+  maxdepth: 6
+Time: 10.021608
+  inferstep time: 7.25229
+  node_find time: 0.145006
+  node_crea time: 2.143217
+    pred time: 0.46891
+    thmpred time: 0.00003
+    mc time: 0.858837
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.177272
+
+mlt1_INSERT_CANCEL
+Statistics
+  infstep : 319
+  nodes   : 91
+  maxdepth: 6
+Time: 10.061082
+  inferstep time: 7.352667
+  node_find time: 0.143434
+  node_crea time: 2.091077
+    pred time: 0.425478
+    thmpred time: 0.000024
+    mc time: 0.835778
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 1.011564
+
+dominates_EMPTY
+proof length: 1
+proof time: 0.001815
+Statistics
+  infstep : 6
+  nodes   : 2
+  maxdepth: 1
+Time: 0.147985
+  inferstep time: 0.118316
+  node_find time: 0.002346
+  node_crea time: 0.011707
+    pred time: 0.002696
+    thmpred time: 0.0
+    mc time: 0.00858
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "bag" "dominates_def" , DB.fetch "bag" "SET_OF_BAG_EQ_EMPTY" , pred_setTheory.ITSET_EMPTY , pred_setTheory.ITSET_IND , pred_setTheory.ITSET_ind , pred_setTheory.ITSET_THM , pred_setTheory.ITSET_def , pred_setTheory.tactictoe_thm_63 , pred_setTheory.tactictoe_thm_66 , pred_setTheory.tactictoe_thm_67 , pred_setTheory.tactictoe_thm_68 , pred_setTheory.tactictoe_thm_69 , pred_setTheory.tactictoe_thm_70 , listTheory.SET_TO_LIST_primitive_def , pred_setTheory.EMPTY_NOT_IN_partition , pred_setTheory.REL_RESTRICT_EMPTY ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009013
+Replaying proof: 0.10559
+
+dominates_SUBSET
+Statistics
+  infstep : 325
+  nodes   : 103
+  maxdepth: 5
+Time: 10.042381
+  inferstep time: 7.368911
+  node_find time: 0.153095
+  node_crea time: 1.935049
+    pred time: 0.357987
+    thmpred time: 0.000031
+    mc time: 0.693772
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.889951
+Replaying proof: 1.786887
+
+dominates_DIFF
+Statistics
+  infstep : 367
+  nodes   : 104
+  maxdepth: 5
+Time: 10.013934
+  inferstep time: 6.981588
+  node_find time: 0.177812
+  node_crea time: 2.32462
+    pred time: 0.384434
+    thmpred time: 0.000029
+    mc time: 0.749792
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 24
+Original proof time: 0.0
+Replaying proof: 1.125701
+
+BAG_INSERT_SUB_BAG_E
+proof length: 3
+proof time: 0.004801
+Statistics
+  infstep : 11
+  nodes   : 7
+  maxdepth: 3
+Time: 0.669602
+  inferstep time: 0.539509
+  node_find time: 0.004965
+  node_crea time: 0.088013
+    pred time: 0.026993
+    thmpred time: 0.000001
+    mc time: 0.048881
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC numLib.arith_ss [(DB.fetch "bag" "SUB_BAG"), (DB.fetch "bag" "BAG_INN_BAG_INSERT"), (DB.fetch "bag" "BAG_IN")] THEN boolLib.REPEAT boolLib.STRIP_TAC THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "bag" "BAG_IN", DB.fetch "bag" "BAG_ALL_DISTINCT_BAG_INN", DB.fetch "bag" "BAG_INN_BAG_INSERT", DB.fetch "bag" "BAG_INN_BAG_INSERT_STRONG", DB.fetch "bag" "BAG_INN", DB.fetch "bag" "BAG_INN_LESS", DB.fetch "bag" "BAG_INN_0", DB.fetch "bag" "BAG_INN_BAG_UNION", DB.fetch "bag" "BAG_EXTENSION", DB.fetch "bag" "BAG_INN_BAG_FILTER", DB.fetch "bag" "BAG_INN_BAG_DELETE", DB.fetch "bag" "BAG_INN_BAG_MERGE", DB.fetch "bag" "BAG_INN_EMPTY_BAG", DB.fetch "bag" "SUB_BAG", arithmeticTheory.BOUNDED_EXISTS_THM, arithmeticTheory.BOUNDED_FORALL_THM]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.291126
+
+bdominates_BAG_DIFF
+Statistics
+  infstep : 282
+  nodes   : 86
+  maxdepth: 5
+Time: 10.002849
+  inferstep time: 7.302567
+  node_find time: 0.137353
+  node_crea time: 2.124446
+    pred time: 0.433604
+    thmpred time: 0.000029
+    mc time: 0.666181
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 45
+Original proof time: 0.0
+Replaying proof: 2.454156
+
+BAG_INTER_SUB_BAG
+proof length: 3
+proof time: 0.01042
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.465743
+  inferstep time: 0.407059
+  node_find time: 0.002454
+  node_crea time: 0.027178
+    pred time: 0.00851
+    thmpred time: 0.000001
+    mc time: 0.021608
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THEN (BasicProvers.SRW_TAC [numSimps.ARITH_ss] [DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "SUB_BAG_LEQ", DB.fetch "bag" "SUB_BAG_CARD", DB.fetch "bag" "BAG_DIFF", DB.fetch "bag" "BAG_MERGE", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "SUB_BAG", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "SUB_BAG_BAG_IN", DB.fetch "bag" "SUB_BAG_ALL_DISTINCT", DB.fetch "bag" "BAG_DIFF_INSERT_same", DB.fetch "bag" "BAG_DIFF_INSERT", DB.fetch "bag" "BAG_ALL_DISTINCT_EXTENSION", DB.fetch "bag" "BAG_INSERT_ONE_ONE", DB.fetch "bag" "BAG_DELETE_INSERT", arithmeticTheory.EXP_EXP_INJECTIVE])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.01258
+
+BAG_INTER_FINITE
+proof length: 3
+proof time: 0.101932
+Statistics
+  infstep : 6
+  nodes   : 5
+  maxdepth: 2
+Time: 0.392371
+  inferstep time: 0.31348
+  node_find time: 0.002408
+  node_crea time: 0.05167
+    pred time: 0.01227
+    thmpred time: 0.0
+    mc time: 0.036827
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "bag" "SUB_BAG_LEQ"), (DB.fetch "bag" "BAG_DIFF"), (DB.fetch "bag" "EMPTY_BAG"), boolLib.FUN_EQ_THM] THEN (metisTools.METIS_TAC [DB.fetch "bag" "BAG_INTER", DB.fetch "bag" "BAG_INTER_SUB_BAG", DB.fetch "bag" "BAG_CARD_UNION", DB.fetch "bag" "FINITE_BAG_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION_LEM", DB.fetch "bag" "BAG_IMAGE_FINITE_UNION", DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "FINITE_BAG_DIFF_dual", DB.fetch "bag" "FINITE_SUB_BAG", DB.fetch "bag" "PSUB_BAG_CARD", DB.fetch "bag" "SUB_BAG_CARD", DB.fetch "bag" "TC_mlt1_FINITE_BAG", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "TC_mlt1_UNION2_I"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.038294
+Replaying proof: 0.067912
+
+BAG_DIFF_INSERT_SUB_BAG
+Statistics
+  infstep : 408
+  nodes   : 81
+  maxdepth: 5
+Time: 10.013965
+  inferstep time: 7.425063
+  node_find time: 0.200097
+  node_crea time: 1.757378
+    pred time: 0.504246
+    thmpred time: 0.000015
+    mc time: 0.671694
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.231539
+
+mlt_INSERT_CANCEL
+Statistics
+  infstep : 344
+  nodes   : 113
+  maxdepth: 6
+Time: 10.020148
+  inferstep time: 6.244863
+  node_find time: 0.173652
+  node_crea time: 2.97072
+    pred time: 0.73171
+    thmpred time: 0.000019
+    mc time: 0.837734
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 25
+Original proof time: 0.0
+Replaying proof: 1.25283
+
+mlt_UNION_RCANCEL_I
+Statistics
+  infstep : 402
+  nodes   : 107
+  maxdepth: 5
+Time: 10.007502
+  inferstep time: 6.946296
+  node_find time: 0.18857
+  node_crea time: 2.282154
+    pred time: 0.484075
+    thmpred time: 0.000016
+    mc time: 0.909017
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.249852
+
+mlt_UNION_RCANCEL
+Statistics
+  infstep : 311
+  nodes   : 109
+  maxdepth: 6
+Time: 10.017308
+  inferstep time: 6.503707
+  node_find time: 0.151887
+  node_crea time: 2.863144
+    pred time: 0.60368
+    thmpred time: 0.000021
+    mc time: 0.828288
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.321517
+Replaying proof: 0.007708
+
+mlt_UNION_CANCEL_EQN
+proof length: 9
+proof time: 0.386545
+Statistics
+  infstep : 13
+  nodes   : 11
+  maxdepth: 2
+Time: 1.218747
+  inferstep time: 0.886403
+  node_find time: 0.007371
+  node_crea time: 0.189056
+    pred time: 0.065585
+    thmpred time: 0.000005
+    mc time: 0.129845
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM] THENL [metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_39", DB.fetch "bag" "FINITE_BAG_UNION", DB.fetch "bag" "TC_mlt1_FINITE_BAG", DB.fetch "bag" "TC_mlt1_UNION2_I", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "mlt_dominates_thm2", DB.fetch "bag" "FINITE_SUB_BAG", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "BAG_INTER_FINITE", DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "BAG_CARD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION_LEM", DB.fetch "bag" "BAG_IMAGE_FINITE_UNION"], metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_39", DB.fetch "bag" "FINITE_BAG_UNION", DB.fetch "bag" "TC_mlt1_FINITE_BAG", DB.fetch "bag" "TC_mlt1_UNION2_I", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "mlt_dominates_thm2", DB.fetch "bag" "FINITE_SUB_BAG", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "BAG_INTER_FINITE", DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "BAG_CARD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION_LEM", DB.fetch "bag" "BAG_IMAGE_FINITE_UNION"], metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_39", DB.fetch "bag" "TC_mlt1_UNION2_I", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "mlt_dominates_thm2", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "tactictoe_thm_30", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "ITBAG_IND", DB.fetch "bag" "PSUB_BAG_REST", DB.fetch "bag" "BAG_CHOICE_DEF", DB.fetch "bag" "NOT_IN_EMPTY_BAG", DB.fetch "bag" "NOT_mlt_EMPTY"], metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_39", DB.fetch "bag" "TC_mlt1_UNION2_I", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "mlt_UNION_LCANCEL", DB.fetch "bag" "mlt_UNION_RCANCEL", DB.fetch "bag" "mlt_UNION_LCANCEL_I", DB.fetch "bag" "mlt_UNION_RCANCEL_I", DB.fetch "bag" "mlt_dominates_thm2", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "TC_mlt1_FINITE_BAG", DB.fetch "bag" "mlt_INSERT_CANCEL", DB.fetch "bag" "mlt_INSERT_CANCEL_I", DB.fetch "bag" "mlt_NOT_REFL", DB.fetch "bag" "NOT_mlt_EMPTY", DB.fetch "bag" "mlt1_def"], metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_39", DB.fetch "bag" "FINITE_BAG_UNION", DB.fetch "bag" "TC_mlt1_FINITE_BAG", DB.fetch "bag" "TC_mlt1_UNION2_I", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "mlt_dominates_thm2", DB.fetch "bag" "FINITE_SUB_BAG", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "BAG_INTER_FINITE", DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "BAG_CARD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION_LEM", DB.fetch "bag" "BAG_IMAGE_FINITE_UNION"], metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_39", DB.fetch "bag" "FINITE_BAG_UNION", DB.fetch "bag" "TC_mlt1_FINITE_BAG", DB.fetch "bag" "TC_mlt1_UNION2_I", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "mlt_dominates_thm2", DB.fetch "bag" "FINITE_SUB_BAG", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "BAG_INTER_FINITE", DB.fetch "bag" "FINITE_BAG_DIFF", DB.fetch "bag" "BAG_CARD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION", DB.fetch "bag" "BAG_GEN_PROD_UNION_LEM", DB.fetch "bag" "BAG_IMAGE_FINITE_UNION"], metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_39", DB.fetch "bag" "TC_mlt1_UNION2_I", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "mlt_dominates_thm2", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "BAG_UNION_EMPTY", DB.fetch "bag" "mlt1_def", DB.fetch "bag" "tactictoe_thm_30", DB.fetch "bag" "BAG_DIFF_EMPTY", DB.fetch "bag" "BAG_INSERT_NOT_EMPTY", DB.fetch "bag" "ITBAG_IND", DB.fetch "bag" "PSUB_BAG_REST", DB.fetch "bag" "BAG_CHOICE_DEF", DB.fetch "bag" "NOT_IN_EMPTY_BAG", DB.fetch "bag" "NOT_mlt_EMPTY"], metisTools.METIS_TAC [relationTheory.tactictoe_thm_24, DB.fetch "bag" "tactictoe_thm_39", DB.fetch "bag" "TC_mlt1_UNION2_I", DB.fetch "bag" "TC_mlt1_UNION1_I", DB.fetch "bag" "mlt_UNION_LCANCEL", DB.fetch "bag" "mlt_UNION_RCANCEL", DB.fetch "bag" "mlt_UNION_LCANCEL_I", DB.fetch "bag" "mlt_UNION_RCANCEL_I", DB.fetch "bag" "mlt_dominates_thm2", DB.fetch "bag" "mlt_dominates_thm1", DB.fetch "bag" "TC_mlt1_FINITE_BAG", DB.fetch "bag" "mlt_INSERT_CANCEL", DB.fetch "bag" "mlt_INSERT_CANCEL_I", DB.fetch "bag" "mlt_NOT_REFL", DB.fetch "bag" "NOT_mlt_EMPTY", DB.fetch "bag" "mlt1_def"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.162178
+
+SUB_BAG_SING
+Statistics
+  infstep : 471
+  nodes   : 89
+  maxdepth: 6
+Time: 10.007559
+  inferstep time: 6.869549
+  node_find time: 0.261828
+  node_crea time: 2.024117
+    pred time: 0.549938
+    thmpred time: 0.00003
+    mc time: 0.813558
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.425581
+
+SUB_BAG_DIFF_simple
+proof length: 1
+proof time: 0.057441
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.079972
+  inferstep time: 0.060408
+  node_find time: 0.000503
+  node_crea time: 0.012321
+    pred time: 0.003013
+    thmpred time: 0.000001
+    mc time: 0.007624
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "bag" "SUB_BAG_DIFF" , DB.fetch "bag" "SUB_BAG_BAG_DIFF" , DB.fetch "bag" "BAG_CARD_DIFF" , DB.fetch "bag" "BAG_DIFF_EQ_EMPTY" , DB.fetch "bag" "BAG_DIFF_INSERT_SUB_BAG" , DB.fetch "bag" "BAG_DIFF_EMPTY" , DB.fetch "bag" "BAG_DIFF_2R" , DB.fetch "bag" "BAG_UNION_DIFF" , DB.fetch "bag" "SUB_BAG_DIFF_EQ" , DB.fetch "bag" "SUB_BAG_UNION_DIFF" , DB.fetch "bag" "bdominates_BAG_DIFF" , DB.fetch "bag" "mlt_dominates_thm1" , DB.fetch "bag" "mlt_dominates_thm2" , DB.fetch "bag" "BAG_DIFF_EMPTY_simple" , DB.fetch "bag" "BAG_DIFF" , DB.fetch "bag" "BAG_DIFF_INSERT_same"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008636
+
+mltLT_SING0
+Statistics
+  infstep : 392
+  nodes   : 92
+  maxdepth: 5
+Time: 10.068251
+  inferstep time: 6.897847
+  node_find time: 0.211485
+  node_crea time: 2.284186
+    pred time: 0.686571
+    thmpred time: 0.000031
+    mc time: 0.735358
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 25
+Original proof time: 0.0
+Replaying proof: 0.954535
+
+BAG_SIZE_EMPTY
+proof length: 1
+proof time: 0.000862
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.158321
+  inferstep time: 0.137783
+  node_find time: 0.000895
+  node_crea time: 0.011318
+    pred time: 0.002671
+    thmpred time: 0.000001
+    mc time: 0.007481
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "bag" "bag_size_def" , DB.fetch "bag" "BAG_CARD_RELn" , DB.fetch "bag" "BAG_CARD_THM" , DB.fetch "bag" "BAG_INN_EMPTY_BAG" , DB.fetch "bag" "BCARD_0" , DB.fetch "bag" "tactictoe_thm_24" , DB.fetch "bag" "mltLT_SING0" , DB.fetch "bag" "tactictoe_thm_12" , DB.fetch "bag" "tactictoe_thm_16" , DB.fetch "bag" "tactictoe_thm_20" , DB.fetch "bag" "tactictoe_thm_26" , DB.fetch "bag" "tactictoe_thm_28" , DB.fetch "bag" "EMPTY_BAG" , DB.fetch "bag" "tactictoe_thm_23" , DB.fetch "bag" "BAG_CARD_EMPTY" , DB.fetch "bag" "EMPTY_BAG_alt" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.021549
+Replaying proof: 0.004153
+Bad stac: 2

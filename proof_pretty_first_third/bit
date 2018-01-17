@@ -1,0 +1,1830 @@
+
+LESS_MULT_MONO2
+proof length: 6
+proof time: 0.093474
+Statistics
+  infstep : 51
+  nodes   : 17
+  maxdepth: 4
+Time: 2.330977
+  inferstep time: 1.766235
+  node_find time: 0.002905
+  node_crea time: 0.474682
+    pred time: 0.162245
+    thmpred time: 0.000004
+    mc time: 0.26689
+    inst time: 0.0
+Proof found: REPEAT STRIP_TAC THEN
+  Q.SUBGOAL_THEN [QUOTE " (*#loc 1 99135*)0 < y"] ASSUME_TAC THENL
+  [METIS_TAC [(fetch "arithmetic" "NOT_ZERO_LT_ZERO"), prim_recTheory.NOT_LESS_0],
+  Q.SUBGOAL_THEN [QUOTE " (*#loc 1 99135*)0 < y"] ASSUME_TAC THENL
+  [METIS_TAC [],
+  METIS_TAC [(fetch "arithmetic" "LE_MULT_LCANCEL"), (fetch "arithmetic" "LT_MULT_RCANCEL"), (fetch "arithmetic" "LESS_EQ_LESS_TRANS"), (fetch "arithmetic" "LESS_OR_EQ")]]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.07614
+
+LOG2_TWOEXP
+proof length: 1
+proof time: 0.000884
+Statistics
+  infstep : 15
+  nodes   : 6
+  maxdepth: 2
+Time: 0.385968
+  inferstep time: 0.27166
+  node_find time: 0.000625
+  node_crea time: 0.1048
+    pred time: 0.032088
+    thmpred time: 0.0
+    mc time: 0.071293
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "bit" "LOG2_UNIQUE"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.073556
+
+ONE_LE_TWOEXP
+proof length: 4
+proof time: 0.029737
+Statistics
+  infstep : 268
+  nodes   : 68
+  maxdepth: 5
+Time: 5.523084
+  inferstep time: 4.203891
+  node_find time: 0.023241
+  node_crea time: 1.120257
+    pred time: 0.24078
+    thmpred time: 0.000009
+    mc time: 0.8948
+    inst time: 0.0
+Proof found: SRW_TAC [] [] THEN
+  ASM_REWRITE_TAC [(fetch "arithmetic" "NUMERAL_DEF"), (fetch "arithmetic" "BIT2"), (fetch "arithmetic" "BIT1"), (fetch "arithmetic" "ALT_ZERO"), (fetch "arithmetic" "ADD_CLAUSES")] THEN
+  MATCH_MP_TAC (fetch "arithmetic" "LESS_OR") THEN
+  METIS_TAC [ZERO_LESS_EXP, LOG, LOG_ADD1]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.044155
+
+TWOEXP_MONO
+proof length: 1
+proof time: 0.000779
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.188288
+  inferstep time: 0.14367
+  node_find time: 0.000204
+  node_crea time: 0.031258
+    pred time: 0.004248
+    thmpred time: 0.000001
+    mc time: 0.037848
+    inst time: 0.0
+Proof found: SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.022334
+
+TWOEXP_MONO2
+proof length: 1
+proof time: 0.001132
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.171054
+  inferstep time: 0.137
+  node_find time: 0.000187
+  node_crea time: 0.020477
+    pred time: 0.005082
+    thmpred time: 0.0
+    mc time: 0.026618
+    inst time: 0.0
+Proof found: SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.015584
+
+EXP_SUB_LESS_EQ
+proof length: 1
+proof time: 0.001082
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.143582
+  inferstep time: 0.118161
+  node_find time: 0.000178
+  node_crea time: 0.014573
+    pred time: 0.0036
+    thmpred time: 0.000001
+    mc time: 0.01968
+    inst time: 0.0
+Proof found: FULL_SIMP_TAC (srw_ss ()) []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011935
+
+MOD_LEQ
+proof length: 1
+proof time: 0.086552
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.101523
+  inferstep time: 0.067901
+  node_find time: 0.000135
+  node_crea time: 0.021253
+    pred time: 0.004285
+    thmpred time: 0.0
+    mc time: 0.027142
+    inst time: 0.0
+Proof found: METIS_TAC [MOD_LESS_EQ]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.199923
+
+BITSLT_THM
+Statistics
+  infstep : 349
+  nodes   : 76
+  maxdepth: 5
+Time: 10.031978
+  inferstep time: 8.078751
+  node_find time: 0.043892
+  node_crea time: 1.826867
+    pred time: 0.476664
+    thmpred time: 0.000027
+    mc time: 1.119158
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016307
+
+BITSLT_THM2
+Statistics
+  infstep : 483
+  nodes   : 129
+  maxdepth: 5
+Time: 10.028133
+  inferstep time: 7.151275
+  node_find time: 0.088782
+  node_crea time: 2.559401
+    pred time: 0.420324
+    thmpred time: 0.000027
+    mc time: 1.92328
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.147954
+
+tactictoe_prove_9
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.087248
+
+tactictoe_prove_10
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.036134
+
+tactictoe_prove_11
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012618
+
+tactictoe_prove_12
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.063816
+
+tactictoe_prove_13
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.333924
+
+BITS_THM2
+proof length: 2
+proof time: 0.035187
+Statistics
+  infstep : 11
+  nodes   : 6
+  maxdepth: 3
+Time: 0.631145
+  inferstep time: 0.487071
+  node_find time: 0.001199
+  node_crea time: 0.098546
+    pred time: 0.016583
+    thmpred time: 0.000002
+    mc time: 0.114872
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM")] THEN
+  METIS_TAC [DIV_MOD_MOD_DIV3]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016163
+
+BITS_LEQ
+Statistics
+  infstep : 702
+  nodes   : 92
+  maxdepth: 5
+Time: 10.03918
+  inferstep time: 8.426193
+  node_find time: 0.124639
+  node_crea time: 1.319229
+    pred time: 0.407568
+    thmpred time: 0.000018
+    mc time: 0.672766
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.223374
+
+tactictoe_prove_16
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.217414
+
+BITS_COMP_THM
+Statistics
+  infstep : 397
+  nodes   : 121
+  maxdepth: 5
+Time: 10.050393
+  inferstep time: 7.9382
+  node_find time: 0.087169
+  node_crea time: 1.853064
+    pred time: 0.474472
+    thmpred time: 0.000034
+    mc time: 0.960482
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.068762
+
+BITS_DIV_THM
+proof length: 3
+proof time: 0.006582
+Statistics
+  infstep : 34
+  nodes   : 9
+  maxdepth: 3
+Time: 1.200505
+  inferstep time: 0.926955
+  node_find time: 0.004386
+  node_crea time: 0.190371
+    pred time: 0.033156
+    thmpred time: 0.000001
+    mc time: 0.207886
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM"), (local_tag DIV_MOD_MOD_DIV3)] THEN
+  RW_TAC bool_ss [MOD_2EXP_LEM] THEN
+  SIMP_TAC arith_ss [DIV_DIV_DIV_MULT, GSYM EXP_ADD]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012373
+
+BITS_LT_HIGH
+proof length: 2
+proof time: 0.001703
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.3913
+  inferstep time: 0.279752
+  node_find time: 0.000843
+  node_crea time: 0.078375
+    pred time: 0.020098
+    thmpred time: 0.000002
+    mc time: 0.082913
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM"), (local_tag DIV_MOD_MOD_DIV3)] THEN
+  SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008129
+
+BITS_ZERO
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.119162
+
+BITS_ZERO2
+proof length: 3
+proof time: 0.003087
+Statistics
+  infstep : 204
+  nodes   : 28
+  maxdepth: 4
+Time: 2.992414
+  inferstep time: 2.448769
+  node_find time: 0.030251
+  node_crea time: 0.428644
+    pred time: 0.073603
+    thmpred time: 0.000003
+    mc time: 0.325642
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM"), (local_tag DIV_MOD_MOD_DIV3)] THEN
+  RW_TAC (srw_ss () ++ old_ARITH_ss) [] THEN
+  SRW_TAC [] [ZERO_DIV]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.020396
+
+BITS_ZERO4
+Statistics
+  infstep : 356
+  nodes   : 89
+  maxdepth: 5
+Time: 10.078424
+  inferstep time: 8.05221
+  node_find time: 0.07348
+  node_crea time: 1.811358
+    pred time: 0.40506
+    thmpred time: 0.000027
+    mc time: 1.12888
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025223
+
+BITS_ZEROL
+proof length: 2
+proof time: 0.01567
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.324881
+  inferstep time: 0.250984
+  node_find time: 0.00075
+  node_crea time: 0.045582
+    pred time: 0.01099
+    thmpred time: 0.000001
+    mc time: 0.055197
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM2"), LESS_MOD] THEN
+  RW_TAC (srw_ss () ++ old_ARITH_ss) []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.026835
+
+BITS_LOG2_ZERO_ID
+proof length: 2
+proof time: 0.01085
+Statistics
+  infstep : 11
+  nodes   : 8
+  maxdepth: 3
+Time: 0.69484
+  inferstep time: 0.514827
+  node_find time: 0.001812
+  node_crea time: 0.147476
+    pred time: 0.030578
+    thmpred time: 0.000002
+    mc time: 0.121803
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "bit" "LOG2_def", fetch "bit" "BITS_THM"] THEN
+  SRW_TAC [] [LOG]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.079825
+
+BITS_LT_LOW
+Statistics
+  infstep : 448
+  nodes   : 123
+  maxdepth: 5
+Time: 10.005826
+  inferstep time: 6.936716
+  node_find time: 0.111905
+  node_crea time: 2.725878
+    pred time: 0.3887
+    thmpred time: 0.00002
+    mc time: 2.048778
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.354812
+
+BIT_ZERO
+proof length: 2
+proof time: 0.003209
+Statistics
+  infstep : 32
+  nodes   : 8
+  maxdepth: 2
+Time: 0.79382
+  inferstep time: 0.654812
+  node_find time: 0.006005
+  node_crea time: 0.099913
+    pred time: 0.038445
+    thmpred time: 0.000003
+    mc time: 0.055625
+    inst time: 0.0
+Proof found: CONV_TAC ((REDEPTH_CONV ((NOT_EXISTS_CONV ORELSEC NOT_FORALL_CONV) ORELSEC CHANGED_CONV (REWRITE_CONV [fetch "bit" "BIT_def"])))) THEN
+  FULL_SIMP_TAC (srw_ss () ++ old_ARITH_ss) [fetch "bit" "BITS_LT_LOW"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.018124
+
+BIT_B
+proof length: 2
+proof time: 0.002271
+Statistics
+  infstep : 10
+  nodes   : 5
+  maxdepth: 2
+Time: 0.411251
+  inferstep time: 0.310181
+  node_find time: 0.001607
+  node_crea time: 0.070578
+    pred time: 0.020705
+    thmpred time: 0.0
+    mc time: 0.063319
+    inst time: 0.0
+Proof found: CONV_TAC ((REDEPTH_CONV ((NOT_EXISTS_CONV ORELSEC NOT_FORALL_CONV) ORELSEC CHANGED_CONV (REWRITE_CONV [fetch "bit" "BIT_def"])))) THEN
+  RW_TAC arith_ss [(fetch "bit" "BITS_THM"), SUB]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.029825
+
+BIT_TWO_POW
+Statistics
+  infstep : 380
+  nodes   : 116
+  maxdepth: 5
+Time: 10.046515
+  inferstep time: 7.187959
+  node_find time: 0.097553
+  node_crea time: 2.503893
+    pred time: 0.546271
+    thmpred time: 0.000024
+    mc time: 1.742533
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.274793
+
+BITS_COMP_THM2
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 0.798008
+
+NOT_MOD2_LEM
+proof length: 1
+proof time: 0.003991
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.158008
+  inferstep time: 0.121906
+  node_find time: 0.000466
+  node_crea time: 0.024565
+    pred time: 0.003358
+    thmpred time: 0.0
+    mc time: 0.028651
+    inst time: 0.0
+Proof found: PROVE_TAC [(fetch "arithmetic" "MOD_2"), (fetch "arithmetic" "SUC_NOT"), (fetch "arithmetic" "ONE")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.015569
+
+NOT_MOD2_LEM2
+proof length: 1
+proof time: 0.008655
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.159176
+  inferstep time: 0.131122
+  node_find time: 0.000396
+  node_crea time: 0.01706
+    pred time: 0.003397
+    thmpred time: 0.0
+    mc time: 0.021125
+    inst time: 0.0
+Proof found: PROVE_TAC [(fetch "arithmetic" "MOD_2"), (fetch "arithmetic" "SUC_NOT"), (fetch "arithmetic" "ONE")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019147
+
+ODD_MOD2_LEM
+proof length: 1
+proof time: 0.014451
+Statistics
+  infstep : 13
+  nodes   : 4
+  maxdepth: 2
+Time: 0.546172
+  inferstep time: 0.429442
+  node_find time: 0.002221
+  node_crea time: 0.07777
+    pred time: 0.016101
+    thmpred time: 0.000002
+    mc time: 0.085515
+    inst time: 0.0
+Proof found: PROVE_TAC [fetch "bit" "NOT_MOD2_LEM2", EVEN_MOD2, ODD_EVEN]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.038477
+
+DIV_MULT_THM
+proof length: 3
+proof time: 0.025195
+Statistics
+  infstep : 71
+  nodes   : 18
+  maxdepth: 3
+Time: 1.867611
+  inferstep time: 1.330268
+  node_find time: 0.014056
+  node_crea time: 0.43266
+    pred time: 0.081244
+    thmpred time: 0.000006
+    mc time: 0.35774
+    inst time: 0.0
+Proof found: SIMP_TAC bool_ss [(local_tag MOD_2EXP_LEM)] THEN
+  RW_TAC arith_ss [GSYM ADD_EQ_SUB] THEN
+  METIS_TAC [MOD_2EXP_LEM, fetch "bit" "TWOEXP_DIVISION", fetch "bit" "BITS_LT_HIGH"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013915
+
+LESS_EQ_EXP_MULT
+Statistics
+  infstep : 371
+  nodes   : 91
+  maxdepth: 5
+Time: 10.054814
+  inferstep time: 7.456515
+  node_find time: 0.091867
+  node_crea time: 2.29803
+    pred time: 0.547509
+    thmpred time: 0.000024
+    mc time: 1.426337
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.130934
+
+tactictoe_prove_35
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.11417
+
+tactictoe_prove_36
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.287948
+
+tactictoe_prove_37
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.320224
+
+SLICE_THM
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.655884
+
+SLICELT_THM
+Statistics
+  infstep : 441
+  nodes   : 98
+  maxdepth: 5
+Time: 10.007015
+  inferstep time: 7.225269
+  node_find time: 0.124758
+  node_crea time: 2.37357
+    pred time: 0.449016
+    thmpred time: 0.000025
+    mc time: 1.63834
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.125526
+
+BITS_SLICE_THM
+Statistics
+  infstep : 472
+  nodes   : 121
+  maxdepth: 5
+Time: 10.011717
+  inferstep time: 7.281241
+  node_find time: 0.133038
+  node_crea time: 2.334585
+    pred time: 0.411608
+    thmpred time: 0.000023
+    mc time: 1.541911
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014419
+
+BITS_SLICE_THM2
+Statistics
+  infstep : 349
+  nodes   : 119
+  maxdepth: 5
+Time: 10.001976
+  inferstep time: 7.363086
+  node_find time: 0.100623
+  node_crea time: 2.328006
+    pred time: 0.571194
+    thmpred time: 0.000036
+    mc time: 1.287006
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.334883
+
+MOD_2EXP_MONO
+Statistics
+  infstep : 322
+  nodes   : 104
+  maxdepth: 6
+Time: 10.028561
+  inferstep time: 7.003015
+  node_find time: 0.109293
+  node_crea time: 2.694303
+    pred time: 0.570358
+    thmpred time: 0.000031
+    mc time: 1.747958
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.077367
+
+SLICE_COMP_THM
+Statistics
+  infstep : 318
+  nodes   : 115
+  maxdepth: 5
+Time: 10.083821
+  inferstep time: 7.431547
+  node_find time: 0.103589
+  node_crea time: 2.33559
+    pred time: 0.55818
+    thmpred time: 0.000028
+    mc time: 1.183886
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012422
+
+SLICE_COMP_RWT
+Statistics
+  infstep : 223
+  nodes   : 102
+  maxdepth: 6
+Time: 10.017605
+  inferstep time: 6.794127
+  node_find time: 0.075883
+  node_crea time: 2.983024
+    pred time: 0.528973
+    thmpred time: 0.000021
+    mc time: 1.879966
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.024912
+
+SLICE_ZERO
+proof length: 2
+proof time: 0.011193
+Statistics
+  infstep : 27
+  nodes   : 11
+  maxdepth: 3
+Time: 1.147264
+  inferstep time: 0.855296
+  node_find time: 0.00833
+  node_crea time: 0.227247
+    pred time: 0.054157
+    thmpred time: 0.000004
+    mc time: 0.156895
+    inst time: 0.0
+Proof found: RW_TAC arith_ss [(fetch "bit" "SLICE_def"), (fetch "bit" "MOD_2EXP_def")] THEN
+  METIS_TAC [SLICE_LEM3]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008534
+
+BITS_SUM
+Statistics
+  infstep : 298
+  nodes   : 83
+  maxdepth: 5
+Time: 10.027718
+  inferstep time: 6.657631
+  node_find time: 0.101442
+  node_crea time: 2.93341
+    pred time: 0.469874
+    thmpred time: 0.000019
+    mc time: 2.167501
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.041414
+
+BITS_SUM2
+proof length: 2
+proof time: 0.01644
+Statistics
+  infstep : 18
+  nodes   : 5
+  maxdepth: 2
+Time: 0.614614
+  inferstep time: 0.433246
+  node_find time: 0.00566
+  node_crea time: 0.124686
+    pred time: 0.033499
+    thmpred time: 0.000002
+    mc time: 0.114719
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM"), (local_tag DIV_MOD_MOD_DIV3)] THEN
+  SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00961
+
+tactictoe_prove_48
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.167621
+
+SLICE_COMP_THM2
+Statistics
+  infstep : 342
+  nodes   : 113
+  maxdepth: 6
+Time: 10.131921
+  inferstep time: 7.334178
+  node_find time: 0.118372
+  node_crea time: 2.440604
+    pred time: 0.464877
+    thmpred time: 0.000028
+    mc time: 1.304392
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.329315
+
+BITS_SUM3
+proof length: 2
+proof time: 0.023508
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.395303
+  inferstep time: 0.30542
+  node_find time: 0.001581
+  node_crea time: 0.063235
+    pred time: 0.015605
+    thmpred time: 0.000001
+    mc time: 0.057622
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM2")] THEN
+  SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014632
+
+BITS_MUL
+proof length: 1
+proof time: 0.034978
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.182982
+  inferstep time: 0.148104
+  node_find time: 0.000687
+  node_crea time: 0.020972
+    pred time: 0.004423
+    thmpred time: 0.000001
+    mc time: 0.024176
+    inst time: 0.0
+Proof found: RW_TAC (srw_ss () ++ old_ARITH_ss) [fetch "bit" "BITS_THM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012482
+
+tactictoe_prove_52
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004831
+
+tactictoe_prove_53
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010789
+
+tactictoe_prove_54
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.080299
+
+BIT_COMP_THM3
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.257528
+
+NOT_BIT
+Statistics
+  infstep : 566
+  nodes   : 134
+  maxdepth: 5
+Time: 10.009202
+  inferstep time: 6.495614
+  node_find time: 0.204232
+  node_crea time: 2.919191
+    pred time: 0.480122
+    thmpred time: 0.000021
+    mc time: 1.946039
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025653
+
+NOT_BITS
+proof length: 1
+proof time: 0.002599
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.166363
+  inferstep time: 0.117293
+  node_find time: 0.000729
+  node_crea time: 0.017734
+    pred time: 0.003113
+    thmpred time: 0.000001
+    mc time: 0.039639
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM"), (fetch "bit" "SUC_SUB"), EXP_1, GSYM (fetch "bit" "NOT_MOD2_LEM")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009123
+
+NOT_BITS2
+proof length: 1
+proof time: 0.001674
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.171516
+  inferstep time: 0.12836
+  node_find time: 0.000734
+  node_crea time: 0.019599
+    pred time: 0.004158
+    thmpred time: 0.0
+    mc time: 0.032269
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM"), (fetch "bit" "SUC_SUB"), EXP_1, GSYM (fetch "bit" "NOT_MOD2_LEM")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019979
+
+BIT_SLICE
+Statistics
+  infstep : 435
+  nodes   : 111
+  maxdepth: 5
+Time: 10.003977
+  inferstep time: 7.691177
+  node_find time: 0.183847
+  node_crea time: 1.79712
+    pred time: 0.464992
+    thmpred time: 0.00003
+    mc time: 0.890909
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.264817
+
+BIT_SLICE_LEM
+proof length: 3
+proof time: 0.006224
+Statistics
+  infstep : 36
+  nodes   : 15
+  maxdepth: 3
+Time: 1.496588
+  inferstep time: 0.945245
+  node_find time: 0.012266
+  node_crea time: 0.44583
+    pred time: 0.082331
+    thmpred time: 0.000004
+    mc time: 0.370259
+    inst time: 0.0
+Proof found: RW_TAC (srw_ss () ++ old_ARITH_ss) [fetch "bit" "BIT_def", fetch "bit" "SLICE_THM", fetch "bit" "SBIT_def"] THENL
+  [SIMP_TAC arith_ss [GSYM EXP_ADD],
+  FULL_SIMP_TAC arith_ss [(fetch "bit" "NOT_BITS2")]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.05809
+
+BIT_SLICE_THM2
+Statistics
+  infstep : 386
+  nodes   : 118
+  maxdepth: 5
+Time: 10.01982
+  inferstep time: 6.67733
+  node_find time: 0.152028
+  node_crea time: 2.859963
+    pred time: 0.521901
+    thmpred time: 0.000029
+    mc time: 1.936157
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007769
+
+BIT_SLICE_THM3
+proof length: 1
+proof time: 0.003346
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.177178
+  inferstep time: 0.144821
+  node_find time: 0.000887
+  node_crea time: 0.021519
+    pred time: 0.008322
+    thmpred time: 0.0
+    mc time: 0.017004
+    inst time: 0.0
+Proof found: RW_TAC (srw_ss () ++ old_ARITH_ss) [fetch "bit" "SLICE_THM", fetch "bit" "NOT_BIT"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.023364
+
+BIT_SLICE_THM4
+Statistics
+  infstep : 441
+  nodes   : 97
+  maxdepth: 5
+Time: 10.031622
+  inferstep time: 7.459905
+  node_find time: 0.170618
+  node_crea time: 2.039979
+    pred time: 0.4889
+    thmpred time: 0.000019
+    mc time: 1.130722
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.612912
+
+tactictoe_prove_64
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.205051
+
+SBIT_DIV
+proof length: 4
+proof time: 0.013461
+Statistics
+  infstep : 44
+  nodes   : 14
+  maxdepth: 3
+Time: 1.579204
+  inferstep time: 1.135966
+  node_find time: 0.016021
+  node_crea time: 0.337411
+    pred time: 0.074626
+    thmpred time: 0.000004
+    mc time: 0.257957
+    inst time: 0.0
+Proof found: RW_TAC (srw_ss () ++ old_ARITH_ss) [fetch "bit" "SBIT_def"] THENL
+  [IMP_RES_TAC LESS_ADD_1 THEN
+  ASM_SIMP_TAC std_ss [ONCE_REWRITE_RULE [MULT_COMM] MULT_DIV, EXP_ADD],
+  RW_TAC (srw_ss () ++ old_ARITH_ss) [ZERO_DIV]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.035662
+
+BITS_SUC
+Statistics
+  infstep : 362
+  nodes   : 84
+  maxdepth: 5
+Time: 10.000542
+  inferstep time: 7.470518
+  node_find time: 0.141148
+  node_crea time: 2.075865
+    pred time: 0.550391
+    thmpred time: 0.000021
+    mc time: 1.101344
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.465435
+
+BITS_SUC_THM
+proof length: 6
+proof time: 0.01472
+Statistics
+  infstep : 166
+  nodes   : 55
+  maxdepth: 4
+Time: 4.625636
+  inferstep time: 2.948648
+  node_find time: 0.063106
+  node_crea time: 1.296235
+    pred time: 0.25606
+    thmpred time: 0.000012
+    mc time: 0.895372
+    inst time: 0.0
+Proof found: REPEAT STRIP_TAC THEN
+  Cases_on [QUOTE " (*#loc 1 22876*)l = SUC h"] THENL
+  [RW_TAC arith_ss [(fetch "bit" "BITS_ZERO"), (fetch "bit" "SBIT_def"), (fetch "bit" "BIT_def")] THEN
+  FULL_SIMP_TAC bool_ss [(fetch "bit" "NOT_BITS2")],
+  ASM_SIMP_TAC arith_ss [(fetch "bit" "SBIT_DIV"), (fetch "bit" "BIT_SLICE_THM"), (fetch "bit" "SLICE_THM"), ONCE_REWRITE_RULE [MULT_COMM] (local_tag lem4), (ONCE_REWRITE_RULE [MULT_COMM] o Q.SPECL [[QUOTE " (*#loc 1 23267*)SUC h"], [QUOTE " (*#loc 1 23276*)h"]]) (fetch "bit" "BIT_COMP_THM3")] THEN
+  RW_TAC arith_ss [(fetch "bit" "BITS_ZERO")]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011983
+
+tactictoe_prove_68
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010118
+
+tactictoe_prove_69
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.072703
+
+BIT_BITS_THM
+Org tac number: 21
+Original proof time: 0.0
+Replaying proof: 1.146665
+
+BITS_ZERO5
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06848
+
+BIT0_ODD
+Statistics
+  infstep : 363
+  nodes   : 90
+  maxdepth: 6
+Time: 10.040237
+  inferstep time: 7.328708
+  node_find time: 0.160226
+  node_crea time: 2.176492
+    pred time: 0.572537
+    thmpred time: 0.000028
+    mc time: 1.104616
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.056189
+
+BITV_THM
+proof length: 3
+proof time: 0.021687
+Statistics
+  infstep : 12
+  nodes   : 5
+  maxdepth: 3
+Time: 0.564611
+  inferstep time: 0.433321
+  node_find time: 0.005063
+  node_crea time: 0.072575
+    pred time: 0.022122
+    thmpred time: 0.000001
+    mc time: 0.070739
+    inst time: 0.0
+Proof found: RW_TAC (srw_ss () ++ old_ARITH_ss) [fetch "bit" "BITV_def", fetch "bit" "BIT_def"] THEN
+  RW_TAC arith_ss [(fetch "bit" "SBIT_def")] THEN
+  METIS_TAC [fetch "bit" "NOT_BIT", fetch "bit" "BIT_def"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.040872
+
+ADD_BITS_SUC
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.917516
+
+ADD_BIT_SUC
+Statistics
+  infstep : 254
+  nodes   : 108
+  maxdepth: 6
+Time: 10.027604
+  inferstep time: 6.534819
+  node_find time: 0.121197
+  node_crea time: 3.105803
+    pred time: 0.63857
+    thmpred time: 0.000028
+    mc time: 1.870722
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.206315
+
+BITWISE_LT_2EXP
+Statistics
+  infstep : 345
+  nodes   : 97
+  maxdepth: 5
+Time: 10.010246
+  inferstep time: 6.98365
+  node_find time: 0.151043
+  node_crea time: 2.464387
+    pred time: 0.560094
+    thmpred time: 0.000052
+    mc time: 1.589179
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.09223
+
+tactictoe_prove_77
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.151976
+
+tactictoe_prove_78
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.092572
+
+BITWISE_THM
+Statistics
+  infstep : 319
+  nodes   : 101
+  maxdepth: 5
+Time: 10.002372
+  inferstep time: 6.667145
+  node_find time: 0.150694
+  node_crea time: 2.69595
+    pred time: 0.622827
+    thmpred time: 0.00002
+    mc time: 1.644608
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.571006
+
+BITWISE_COR
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.15851
+
+BITWISE_NOT_COR
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.119065
+
+BITWISE_BITS
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.205223
+
+NOT_BIT_GT_TWOEXP
+proof length: 1
+proof time: 0.009294
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.088328
+  inferstep time: 0.045171
+  node_find time: 0.000538
+  node_crea time: 0.021017
+    pred time: 0.004069
+    thmpred time: 0.0
+    mc time: 0.032488
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "bit" "BITS_LT_LOW", fetch "bit" "NOT_BIT"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.024623
+
+BIT_IMP_GE_TWOEXP
+Statistics
+  infstep : 501
+  nodes   : 65
+  maxdepth: 4
+Time: 10.000621
+  inferstep time: 7.198779
+  node_find time: 0.253201
+  node_crea time: 1.953708
+    pred time: 0.449146
+    thmpred time: 0.000014
+    mc time: 1.222323
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.023314
+
+tactictoe_prove_85
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.021299
+
+tactictoe_prove_86
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.014473
+
+BITWISE_ONE_COMP_LEM
+Statistics
+  infstep : 280
+  nodes   : 105
+  maxdepth: 5
+Time: 10.032779
+  inferstep time: 6.554668
+  node_find time: 0.130406
+  node_crea time: 3.010248
+    pred time: 0.611517
+    thmpred time: 0.000033
+    mc time: 2.045139
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.554124
+
+tactictoe_prove_88
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025165
+
+tactictoe_prove_89
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.443736
+
+BIT_COMPLEMENT
+Statistics
+  infstep : 352
+  nodes   : 88
+  maxdepth: 5
+Time: 10.025646
+  inferstep time: 7.293813
+  node_find time: 0.164664
+  node_crea time: 2.179793
+    pred time: 0.438952
+    thmpred time: 0.000025
+    mc time: 1.450596
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.665399
+
+BIT_OF_BITS_THM
+Statistics
+  infstep : 349
+  nodes   : 120
+  maxdepth: 6
+Time: 10.03853
+  inferstep time: 6.639164
+  node_find time: 0.170872
+  node_crea time: 2.811712
+    pred time: 0.609717
+    thmpred time: 0.000034
+    mc time: 1.738204
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016956
+
+BIT_SHIFT_THM
+proof length: 4
+proof time: 0.016939
+Statistics
+  infstep : 19
+  nodes   : 8
+  maxdepth: 3
+Time: 0.924814
+  inferstep time: 0.708686
+  node_find time: 0.008629
+  node_crea time: 0.124335
+    pred time: 0.027773
+    thmpred time: 0.000005
+    mc time: 0.133906
+    inst time: 0.0
+Proof found: RW_TAC arith_ss [SPEC_SLICE_TWOEXP, fetch "bit" "BIT_SLICE_THM2"] THEN
+  RW_TAC bool_ss [(fetch "bit" "SBIT_def"), GSYM (fetch "bit" "BIT_SLICE_THM"), (fetch "bit" "TWOEXP_NOT_ZERO")] THENL
+  [SIMP_TAC arith_ss [GSYM EXP_ADD],
+  SIMP_TAC arith_ss []]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.328373
+
+BIT_SHIFT_THM2
+proof length: 3
+proof time: 0.008614
+Statistics
+  infstep : 67
+  nodes   : 21
+  maxdepth: 4
+Time: 1.796219
+  inferstep time: 1.210455
+  node_find time: 0.030903
+  node_crea time: 0.431318
+    pred time: 0.106014
+    thmpred time: 0.000002
+    mc time: 0.286639
+    inst time: 0.0
+Proof found: RW_TAC arith_ss [] THEN
+  IMP_RES_TAC LESS_EQUAL_ADD THEN
+  RW_TAC arith_ss [fetch "bit" "BIT_SHIFT_THM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.021361
+
+BIT_SHIFT_THM3
+Statistics
+  infstep : 535
+  nodes   : 96
+  maxdepth: 5
+Time: 10.136509
+  inferstep time: 7.218071
+  node_find time: 0.288816
+  node_crea time: 1.972403
+    pred time: 0.332667
+    thmpred time: 0.000024
+    mc time: 1.277226
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.216128
+
+BIT_OF_BITS_THM2
+proof length: 3
+proof time: 0.002984
+Statistics
+  infstep : 94
+  nodes   : 43
+  maxdepth: 4
+Time: 4.19969
+  inferstep time: 2.83756
+  node_find time: 0.045556
+  node_crea time: 1.11139
+    pred time: 0.303127
+    thmpred time: 0.000009
+    mc time: 0.657129
+    inst time: 0.0
+Proof found: RW_TAC arith_ss [fetch "bit" "NOT_BIT"] THEN
+  ASSUME_TAC (Q.SPECL [[QUOTE " (*#loc 1 11231*)h1"], [QUOTE " (*#loc 1 11237*)l1"], [QUOTE " (*#loc 1 11243*)n"]] (fetch "bit" "BITSLT_THM")) THEN
+  RW_TAC (srw_ss () ++ old_ARITH_ss) [fetch "bit" "BITS_ZERO", fetch "bit" "BITS_DIV_THM", fetch "bit" "BITS_THM"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.028044
+
+BIT_DIV2
+Statistics
+  infstep : 388
+  nodes   : 136
+  maxdepth: 6
+Time: 10.023118
+  inferstep time: 5.573132
+  node_find time: 0.219031
+  node_crea time: 3.748567
+    pred time: 0.71518
+    thmpred time: 0.000019
+    mc time: 2.326842
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025467
+
+BIT_SHIFT_THM4
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.065329
+
+tactictoe_prove_98
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.306968
+
+DIV_LT
+Statistics
+  infstep : 359
+  nodes   : 77
+  maxdepth: 5
+Time: 10.027657
+  inferstep time: 6.532703
+  node_find time: 0.195292
+  node_crea time: 2.769293
+    pred time: 0.634201
+    thmpred time: 0.000022
+    mc time: 1.77889
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.386047
+
+MOD_ZERO_GT
+Statistics
+  infstep : 335
+  nodes   : 73
+  maxdepth: 5
+Time: 10.08883
+  inferstep time: 6.856071
+  node_find time: 0.18329
+  node_crea time: 2.542432
+    pred time: 0.55941
+    thmpred time: 0.000021
+    mc time: 1.675415
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.112947
+
+DIV_GT0
+proof length: 1
+proof time: 0.004428
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.404639
+  inferstep time: 0.278154
+  node_find time: 0.008219
+  node_crea time: 0.089772
+    pred time: 0.020841
+    thmpred time: 0.000002
+    mc time: 0.071124
+    inst time: 0.0
+Proof found: PROVE_TAC [X_LE_DIV, MULT_CLAUSES, (EQT_ELIM o ARITH_CONV) (Term [QUOTE " (*#loc 1 7361*)1 <= a ==> 0n < a"])]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.015245
+
+DIV_SUB1
+Statistics
+  infstep : 318
+  nodes   : 86
+  maxdepth: 5
+Time: 10.116746
+  inferstep time: 6.891354
+  node_find time: 0.17687
+  node_crea time: 2.560749
+    pred time: 0.565213
+    thmpred time: 0.000031
+    mc time: 1.548061
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.323104
+
+tactictoe_prove_103
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.544691
+
+BIT_EXP_SUB1
+Statistics
+  infstep : 356
+  nodes   : 82
+  maxdepth: 5
+Time: 10.000235
+  inferstep time: 7.057158
+  node_find time: 0.181304
+  node_crea time: 2.331934
+    pred time: 0.594899
+    thmpred time: 0.000024
+    mc time: 1.46758
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.491191
+
+BIT_SHIFT_THM5
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 1.760307
+
+tactictoe_prove_106
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.111207
+
+tactictoe_prove_107
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.063928
+
+SBIT_MULT
+proof length: 3
+proof time: 0.036442
+Statistics
+  infstep : 6
+  nodes   : 5
+  maxdepth: 2
+Time: 0.493436
+  inferstep time: 0.337277
+  node_find time: 0.003233
+  node_crea time: 0.105254
+    pred time: 0.022886
+    thmpred time: 0.000003
+    mc time: 0.106399
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "bit" "SBIT_def")] THENL
+  [SIMP_TAC arith_ss [GSYM EXP_ADD],
+  METIS_TAC [MULT, fetch "bit" "SLICE_THM", MOD_EXP_ADD, SLICE_LEM1]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.025679
+
+tactictoe_prove_109
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.103976
+
+tactictoe_prove_110
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.098993
+
+tactictoe_prove_111
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.098571
+
+tactictoe_prove_112
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.224644
+
+BITWISE_EVAL
+Statistics
+  infstep : 161
+  nodes   : 83
+  maxdepth: 6
+Time: 10.05087
+  inferstep time: 6.607817
+  node_find time: 0.119331
+  node_crea time: 2.906185
+    pred time: 0.736065
+    thmpred time: 0.000029
+    mc time: 1.795646
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.219625
+
+MOD_PLUS_RIGHT
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.159794
+
+tactictoe_prove_115
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.037741
+
+tactictoe_prove_116
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.117831
+
+tactictoe_prove_117
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.114104
+
+MOD_PLUS_1
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.54004
+
+MOD_ADD_1
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.326342
+
+BIT_REVERSE_THM
+Statistics
+  infstep : 239
+  nodes   : 85
+  maxdepth: 6
+Time: 10.098391
+  inferstep time: 7.115476
+  node_find time: 0.14048
+  node_crea time: 2.437607
+    pred time: 0.516467
+    thmpred time: 0.000032
+    mc time: 1.534648
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Replaying proof: 1.266017
+
+NOT_BIT_GT_LOG2
+Statistics
+  infstep : 314
+  nodes   : 82
+  maxdepth: 5
+Time: 10.026405
+  inferstep time: 7.375096
+  node_find time: 0.184602
+  node_crea time: 2.033503
+    pred time: 0.475881
+    thmpred time: 0.000024
+    mc time: 1.16906
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.621399
+
+NOT_BIT_GT_BITWISE
+Statistics
+  infstep : 351
+  nodes   : 102
+  maxdepth: 5
+Time: 10.104509
+  inferstep time: 7.0354
+  node_find time: 0.217012
+  node_crea time: 2.342327
+    pred time: 0.461308
+    thmpred time: 0.000022
+    mc time: 1.483394
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.170054
+
+LT_TWOEXP
+Statistics
+  infstep : 389
+  nodes   : 124
+  maxdepth: 5
+Time: 10.0576
+  inferstep time: 6.835487
+  node_find time: 0.230442
+  node_crea time: 2.20077
+    pred time: 0.319395
+    thmpred time: 0.000027
+    mc time: 1.749418
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.503327
+
+tactictoe_prove_124
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.084128
+
+tactictoe_prove_125
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.14286
+
+BIT_MODIFY_THM
+Statistics
+  infstep : 254
+  nodes   : 78
+  maxdepth: 5
+Time: 10.00652
+  inferstep time: 7.091794
+  node_find time: 0.143284
+  node_crea time: 2.242744
+    pred time: 0.497601
+    thmpred time: 0.000024
+    mc time: 1.495963
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 14
+Original proof time: 0.0
+Replaying proof: 0.630243
+
+tactictoe_prove_127
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.249798
+
+BIT_SIGN_EXTEND
+Statistics
+  infstep : 315
+  nodes   : 62
+  maxdepth: 5
+Time: 10.000636
+  inferstep time: 7.159259
+  node_find time: 0.195635
+  node_crea time: 2.183975
+    pred time: 0.497252
+    thmpred time: 0.000022
+    mc time: 1.335334
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 32
+Original proof time: 0.0
+Replaying proof: 2.404306
+
+BIT_LOG2
+Statistics
+  infstep : 347
+  nodes   : 82
+  maxdepth: 5
+Time: 10.07268
+  inferstep time: 7.012125
+  node_find time: 0.26083
+  node_crea time: 2.145318
+    pred time: 0.397743
+    thmpred time: 0.00003
+    mc time: 1.420767
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.270157
+
+EXISTS_BIT_IN_RANGE
+Statistics
+  infstep : 221
+  nodes   : 62
+  maxdepth: 5
+Time: 10.004632
+  inferstep time: 6.865672
+  node_find time: 0.172861
+  node_crea time: 2.457606
+    pred time: 0.572741
+    thmpred time: 0.000044
+    mc time: 1.342671
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.223581
+
+LEAST_THM
+Statistics
+  infstep : 335
+  nodes   : 116
+  maxdepth: 7
+Time: 10.018972
+  inferstep time: 6.597765
+  node_find time: 0.2807
+  node_crea time: 2.550095
+    pred time: 0.434834
+    thmpred time: 0.000023
+    mc time: 1.387218
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.297099
+Bad stac: 39

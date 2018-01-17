@@ -1,0 +1,2013 @@
+Replaying proof: 0.000033
+Replaying proof: 0.00785
+Replaying proof: 0.001415
+Replaying proof: 0.003182
+
+stopped_at_11
+proof length: 1
+proof time: 0.001417
+Statistics
+  infstep : 86
+  nodes   : 31
+  maxdepth: 5
+Time: 1.691298
+  inferstep time: 1.418696
+  node_find time: 0.002268
+  node_crea time: 0.252323
+    pred time: 0.087479
+    thmpred time: 0.000007
+    mc time: 0.106185
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "path" "stopped_at_def" , DB.fetch "path" "pcons_def" , DB.fetch "path" "first_def" , DB.fetch "path" "fromPath_11" , DB.fetch "path" "path_absrep_bijections" , DB.fetch "path" "fromPath_onto" , DB.fetch "path" "path_rep_bijections_thm" , DB.fetch "path" "toPath_11" , DB.fetch "path" "toPath_onto" , DB.fetch "path" "path_TY_DEF" , ConseqConvTheory.ASM_MARKER_THM , arithmeticTheory.DIV_EQ_X , arithmeticTheory.X_LE_DIV , arithmeticTheory.DIV_LE_X , arithmeticTheory.X_LT_DIV , arithmeticTheory.DIV_LT_X ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007883
+
+pcons_11
+Statistics
+  infstep : 1017
+  nodes   : 108
+  maxdepth: 5
+Time: 10.087669
+  inferstep time: 8.487223
+  node_find time: 0.059902
+  node_crea time: 1.452219
+    pred time: 0.36682
+    thmpred time: 0.000018
+    mc time: 0.773584
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.028608
+
+stopped_at_not_pcons
+proof length: 2
+proof time: 0.007361
+Statistics
+  infstep : 26
+  nodes   : 8
+  maxdepth: 2
+Time: 0.703321
+  inferstep time: 0.60709
+  node_find time: 0.000792
+  node_crea time: 0.084691
+    pred time: 0.031183
+    thmpred time: 0.000001
+    mc time: 0.035118
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "path" "tactictoe_thm_0"), pairTheory.PAIR_FST_SND_EQ, boolLib.CONJ_ASSOC] THEN (simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss () hhs_infixl0_open simpLib.++ hhs_infixl0_close boolSimps.LET_ss hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss)) [DB.fetch "path" "pcons_def", DB.fetch "path" "pcons_11", DB.fetch "path" "stopped_at_def", DB.fetch "path" "stopped_at_11", DB.fetch "path" "first_def", DB.fetch "path" "tactictoe_thm_0", DB.fetch "path" "path_absrep_bijections", DB.fetch "path" "path_rep_bijections_thm", DB.fetch "path" "fromPath_onto", DB.fetch "path" "fromPath_11", DB.fetch "path" "toPath_11", DB.fetch "path" "toPath_onto", DB.fetch "path" "path_TY_DEF", pairTheory.PAIR_FST_SND_EQ, listTheory.ZIP_MAP, pairTheory.PROD_ALL_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004877
+
+path_cases
+Statistics
+  infstep : 889
+  nodes   : 149
+  maxdepth: 5
+Time: 10.008793
+  inferstep time: 7.888459
+  node_find time: 0.072161
+  node_crea time: 1.932076
+    pred time: 0.391405
+    thmpred time: 0.000012
+    mc time: 1.125297
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.046257
+
+FORALL_path
+proof length: 1
+proof time: 0.144114
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.130585
+  inferstep time: 0.103032
+  node_find time: 0.000098
+  node_crea time: 0.023678
+    pred time: 0.003254
+    thmpred time: 0.000001
+    mc time: 0.022141
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "path" "stopped_at_not_pcons" , DB.fetch "path" "path_cases" , DB.fetch "path" "pcons_11" , DB.fetch "path" "pcons_def" , DB.fetch "path" "stopped_at_def" , DB.fetch "path" "stopped_at_11" , DB.fetch "path" "tactictoe_thm_1" , DB.fetch "path" "tactictoe_thm_2" , DB.fetch "path" "first_def" , DB.fetch "path" "tactictoe_thm_0" , DB.fetch "path" "path_rep_bijections_thm" , DB.fetch "path" "path_absrep_bijections" , DB.fetch "path" "toPath_11" , DB.fetch "path" "toPath_onto" , DB.fetch "path" "fromPath_onto" , DB.fetch "path" "fromPath_11"])
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.138468
+
+EXISTS_path
+proof length: 2
+proof time: 0.100217
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.225953
+  inferstep time: 0.203226
+  node_find time: 0.000132
+  node_crea time: 0.015797
+    pred time: 0.005787
+    thmpred time: 0.000001
+    mc time: 0.012772
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN metisTools.METIS_TAC [DB.fetch "path" "FORALL_path", DB.fetch "path" "path_cases", DB.fetch "path" "stopped_at_not_pcons", DB.fetch "path" "pcons_def", DB.fetch "path" "pcons_11", DB.fetch "path" "stopped_at_def", DB.fetch "path" "stopped_at_11", DB.fetch "path" "tactictoe_thm_2", DB.fetch "path" "tactictoe_thm_1", DB.fetch "path" "first_def", DB.fetch "path" "tactictoe_thm_0", DB.fetch "path" "toPath_onto", DB.fetch "path" "fromPath_onto", DB.fetch "path" "path_rep_bijections_thm", DB.fetch "path" "toPath_11", DB.fetch "path" "path_absrep_bijections"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.116612
+
+first_thm
+proof length: 1
+proof time: 0.001069
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.138717
+  inferstep time: 0.114332
+  node_find time: 0.000123
+  node_crea time: 0.02027
+    pred time: 0.008021
+    thmpred time: 0.0
+    mc time: 0.011497
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "path" "pcons_def" , DB.fetch "path" "FORALL_path" , DB.fetch "path" "stopped_at_not_pcons" , DB.fetch "path" "path_cases" , DB.fetch "path" "EXISTS_path" , DB.fetch "path" "pcons_11" , DB.fetch "path" "first_def" , DB.fetch "path" "stopped_at_def" , DB.fetch "path" "stopped_at_11" , DB.fetch "path" "tactictoe_thm_1" , DB.fetch "path" "tactictoe_thm_2" , DB.fetch "path" "tactictoe_thm_0" , DB.fetch "path" "path_rep_bijections_thm" , DB.fetch "path" "path_absrep_bijections" , DB.fetch "path" "toPath_11" , DB.fetch "path" "toPath_onto" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008718
+
+finite_thm
+proof length: 1
+proof time: 0.003882
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.135733
+  inferstep time: 0.110111
+  node_find time: 0.000115
+  node_crea time: 0.02119
+    pred time: 0.00828
+    thmpred time: 0.0
+    mc time: 0.01241
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "path" "finite_def" , DB.fetch "path" "FORALL_path" , DB.fetch "path" "first_thm" , DB.fetch "path" "stopped_at_not_pcons" , DB.fetch "path" "path_cases" , DB.fetch "path" "EXISTS_path" , DB.fetch "path" "pcons_11" , DB.fetch "path" "pcons_def" , DB.fetch "path" "stopped_at_def" , DB.fetch "path" "stopped_at_11" , DB.fetch "path" "path_absrep_bijections" , DB.fetch "path" "path_TY_DEF" , DB.fetch "path" "tactictoe_thm_1" , DB.fetch "path" "tactictoe_thm_2" , DB.fetch "path" "first_def" , DB.fetch "path" "tactictoe_thm_0" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00805
+Replaying proof: 0.013294
+
+path_bisimulation
+Statistics
+  infstep : 706
+  nodes   : 151
+  maxdepth: 6
+Time: 10.067175
+  inferstep time: 7.929717
+  node_find time: 0.071333
+  node_crea time: 1.944577
+    pred time: 0.384672
+    thmpred time: 0.000029
+    mc time: 0.780139
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 40
+Original proof time: 0.0
+Replaying proof: 1.6809
+
+finite_path_ind
+Statistics
+  infstep : 1160
+  nodes   : 89
+  maxdepth: 5
+Time: 10.002618
+  inferstep time: 8.118995
+  node_find time: 0.0886
+  node_crea time: 1.565161
+    pred time: 0.348769
+    thmpred time: 0.000024
+    mc time: 0.664317
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.20874
+
+pmap_thm
+proof length: 2
+proof time: 0.01639
+Statistics
+  infstep : 67
+  nodes   : 11
+  maxdepth: 2
+Time: 0.909749
+  inferstep time: 0.769109
+  node_find time: 0.003192
+  node_crea time: 0.116054
+    pred time: 0.041139
+    thmpred time: 0.000001
+    mc time: 0.060028
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "path" "tactictoe_thm_0"), pairTheory.PAIR_FST_SND_EQ, boolLib.CONJ_ASSOC] THEN BasicProvers.SRW_TAC [] [DB.fetch "path" "pmap_def", DB.fetch "path" "FORALL_path", DB.fetch "path" "finite_path_ind", DB.fetch "path" "EXISTS_path", DB.fetch "path" "finite_thm", DB.fetch "path" "first_thm", DB.fetch "path" "last_thm", DB.fetch "path" "stopped_at_not_pcons", DB.fetch "path" "path_cases", DB.fetch "path" "path_bisimulation", DB.fetch "path" "pcons_def", DB.fetch "path" "pcons_11", DB.fetch "path" "stopped_at_def", DB.fetch "path" "stopped_at_11", DB.fetch "path" "first_def", DB.fetch "path" "finite_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.010418
+
+first_pmap
+proof length: 1
+proof time: 0.001496
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.123397
+  inferstep time: 0.107734
+  node_find time: 0.00011
+  node_crea time: 0.0112
+    pred time: 0.0033
+    thmpred time: 0.0
+    mc time: 0.009864
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "path" "pmap_def" ) , ( DB.fetch "path" "stopped_at_def" ) , ( DB.fetch "path" "pcons_def" ) , ( DB.fetch "path" "first_def" ) ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.031141
+
+last_pmap
+Statistics
+  infstep : 995
+  nodes   : 166
+  maxdepth: 6
+Time: 10.009393
+  inferstep time: 7.536162
+  node_find time: 0.122783
+  node_crea time: 2.058145
+    pred time: 0.406983
+    thmpred time: 0.000023
+    mc time: 1.09948
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.030533
+
+finite_pmap
+Statistics
+  infstep : 1053
+  nodes   : 164
+  maxdepth: 6
+Time: 10.009217
+  inferstep time: 7.633078
+  node_find time: 0.119074
+  node_crea time: 1.769392
+    pred time: 0.374337
+    thmpred time: 0.00004
+    mc time: 0.942984
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.305687
+Replaying proof: 0.002291
+Replaying proof: 0.002342
+
+length_thm
+Statistics
+  infstep : 933
+  nodes   : 155
+  maxdepth: 5
+Time: 10.01757
+  inferstep time: 7.378532
+  node_find time: 0.131024
+  node_crea time: 2.15811
+    pred time: 0.409569
+    thmpred time: 0.000024
+    mc time: 1.255835
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.085198
+
+alt_length_thm
+proof length: 3
+proof time: 0.012455
+Statistics
+  infstep : 16
+  nodes   : 9
+  maxdepth: 3
+Time: 0.679169
+  inferstep time: 0.55342
+  node_find time: 0.001217
+  node_crea time: 0.089936
+    pred time: 0.025992
+    thmpred time: 0.000004
+    mc time: 0.070728
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "path" "length_def"), (DB.fetch "path" "finite_def"), (DB.fetch "path" "stopped_at_def"), (DB.fetch "path" "pcons_def"), llistTheory.toList_THM, llistTheory.LFINITE_THM] THEN boolLib.IMP_RES_TAC llistTheory.LFINITE_toList THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] []
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.063641
+
+length_never_zero
+proof length: 1
+proof time: 0.002689
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.127018
+  inferstep time: 0.109049
+  node_find time: 0.000179
+  node_crea time: 0.012548
+    pred time: 0.004227
+    thmpred time: 0.000001
+    mc time: 0.01042
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "path" "length_def" ) , ( DB.fetch "path" "finite_def" ) , ( DB.fetch "path" "stopped_at_def" ) , ( DB.fetch "path" "pcons_def" ) , llistTheory.toList_THM , llistTheory.LFINITE_THM ])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.051745
+Replaying proof: 0.009966
+
+finite_length
+proof length: 1
+proof time: 0.003806
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.123653
+  inferstep time: 0.1101
+  node_find time: 0.000147
+  node_crea time: 0.009449
+    pred time: 0.003262
+    thmpred time: 0.0
+    mc time: 0.007096
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "path" "length_def" ) , ( DB.fetch "path" "finite_def" ) , ( DB.fetch "path" "stopped_at_def" ) , ( DB.fetch "path" "pcons_def" ) , llistTheory.toList_THM , llistTheory.LFINITE_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012125
+
+length_pmap
+Statistics
+  infstep : 945
+  nodes   : 133
+  maxdepth: 5
+Time: 10.089019
+  inferstep time: 7.61116
+  node_find time: 0.10538
+  node_crea time: 2.116999
+    pred time: 0.477007
+    thmpred time: 0.000026
+    mc time: 0.912594
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.396174
+
+path_Axiom
+Statistics
+  infstep : 1006
+  nodes   : 155
+  maxdepth: 6
+Time: 10.00233
+  inferstep time: 7.272413
+  node_find time: 0.137197
+  node_crea time: 2.128273
+    pred time: 0.36093
+    thmpred time: 0.000031
+    mc time: 1.200058
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.91181
+
+pconcat_thm
+proof length: 4
+proof time: 0.017777
+Statistics
+  infstep : 76
+  nodes   : 21
+  maxdepth: 3
+Time: 1.445604
+  inferstep time: 1.164133
+  node_find time: 0.006866
+  node_crea time: 0.228533
+    pred time: 0.072942
+    thmpred time: 0.000003
+    mc time: 0.120512
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "path" "pcons_def"), (DB.fetch "path" "stopped_at_def"), pairTheory.FORALL_PROD, boolLib.EQ_IMP_THM, boolLib.FORALL_AND_THM, (DB.fetch "path" "tactictoe_thm_3"), boolLib.GSYM boolLib.LEFT_FORALL_IMP_THM] THEN boolLib.REPEAT boolLib.STRIP_TAC THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "path" "pconcat_def", DB.fetch "path" "stopped_at_def", pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, markerTheory.label_def, DB.fetch "path" "pcons_def", DB.fetch "path" "first_def", DB.fetch "path" "first_thm", DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "first_pmap", DB.fetch "path" "path_rep_bijections_thm", DB.fetch "path" "toPath_11", DB.fetch "path" "toPath_onto", DB.fetch "path" "tactictoe_thm_3", DB.fetch "path" "pmap_def"],
+  BasicProvers.SRW_TAC [] [DB.fetch "path" "pconcat_def", pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, markerTheory.label_def, DB.fetch "path" "pcons_def", DB.fetch "path" "first_def", DB.fetch "path" "path_rep_bijections_thm", DB.fetch "path" "path_absrep_bijections", DB.fetch "path" "pmap_def", DB.fetch "path" "first_thm", DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "first_pmap", DB.fetch "path" "finite_def", DB.fetch "path" "length_def", DB.fetch "path" "fromPath_onto"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013815
+
+pconcat_eq_stopped
+proof length: 1
+proof time: 0.002044
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.141349
+  inferstep time: 0.128921
+  node_find time: 0.000171
+  node_crea time: 0.008544
+    pred time: 0.0031
+    thmpred time: 0.0
+    mc time: 0.005974
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "path" "pconcat_def" ) , ( DB.fetch "path" "pcons_def" ) , ( DB.fetch "path" "first_def" ) , ( DB.fetch "path" "stopped_at_def" ) ])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.059893
+
+pconcat_eq_pcons
+Statistics
+  infstep : 925
+  nodes   : 149
+  maxdepth: 5
+Time: 10.042526
+  inferstep time: 7.200354
+  node_find time: 0.126892
+  node_crea time: 2.427157
+    pred time: 0.507609
+    thmpred time: 0.000013
+    mc time: 0.919486
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.105677
+
+finite_pconcat
+Statistics
+  infstep : 1031
+  nodes   : 168
+  maxdepth: 6
+Time: 10.015324
+  inferstep time: 7.24797
+  node_find time: 0.162117
+  node_crea time: 2.236887
+    pred time: 0.550924
+    thmpred time: 0.00002
+    mc time: 0.981557
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.222289
+
+infinite_PL
+proof length: 2
+proof time: 0.002728
+Statistics
+  infstep : 29
+  nodes   : 6
+  maxdepth: 2
+Time: 0.581396
+  inferstep time: 0.488281
+  node_find time: 0.002788
+  node_crea time: 0.070374
+    pred time: 0.036148
+    thmpred time: 0.000002
+    mc time: 0.030057
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "path" "length_thm")] THEN BasicProvers.SRW_TAC [] [DB.fetch "path" "PL_def", pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_37, DB.fetch "path" "finite_length", DB.fetch "path" "tactictoe_thm_6", DB.fetch "path" "length_def", DB.fetch "path" "length_thm", DB.fetch "path" "length_never_zero", DB.fetch "path" "alt_length_thm", DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "length_pmap", DB.fetch "path" "nth_label_def", DB.fetch "path" "nth_label_def_compute", DB.fetch "path" "finite_path_ind", DB.fetch "path" "first_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005009
+
+PL_pcons
+Statistics
+  infstep : 1207
+  nodes   : 174
+  maxdepth: 5
+Time: 10.00872
+  inferstep time: 7.059993
+  node_find time: 0.194871
+  node_crea time: 2.333963
+    pred time: 0.425364
+    thmpred time: 0.000025
+    mc time: 1.278094
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.157062
+
+PL_stopped_at
+proof length: 1
+proof time: 0.005753
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.1318
+  inferstep time: 0.117677
+  node_find time: 0.000215
+  node_crea time: 0.009516
+    pred time: 0.003151
+    thmpred time: 0.0
+    mc time: 0.007217
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ bossLib.ARITH_ss ] [ ( DB.fetch "path" "PL_def" ) , pred_setTheory.EXTENSION , ( DB.fetch "path" "length_thm" ) , boolLib.EQ_IMP_THM , arithmeticTheory.ADD1 ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.013433
+
+PL_0
+proof length: 3
+proof time: 0.005291
+Statistics
+  infstep : 38
+  nodes   : 8
+  maxdepth: 3
+Time: 0.713081
+  inferstep time: 0.540343
+  node_find time: 0.004819
+  node_crea time: 0.134576
+    pred time: 0.04678
+    thmpred time: 0.000002
+    mc time: 0.071924
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "path" "PL_def")] THEN BasicProvers.SRW_TAC [] [DB.fetch "path" "PL_def", DB.fetch "path" "length_thm", DB.fetch "path" "length_def", DB.fetch "path" "length_never_zero", DB.fetch "path" "alt_length_thm", DB.fetch "path" "finite_length", DB.fetch "path" "tactictoe_thm_6", DB.fetch "path" "length_pmap", arithmeticTheory.tactictoe_thm_11, optionTheory.THE_DEF, llistTheory.LLIST_BISIMULATION, DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "nth_label_def", DB.fetch "path" "nth_label_def_compute", DB.fetch "path" "infinite_PL"] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.027833
+
+PL_downward_closed
+proof length: 2
+proof time: 0.004034
+Statistics
+  infstep : 36
+  nodes   : 12
+  maxdepth: 3
+Time: 1.13035
+  inferstep time: 0.939067
+  node_find time: 0.004114
+  node_crea time: 0.149966
+    pred time: 0.046128
+    thmpred time: 0.000003
+    mc time: 0.08172
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "path" "PL_def")] THEN bossLib.FULL_SIMP_TAC (BasicProvers.srw_ss () hhs_infixl0_open bossLib.++ hhs_infixl0_close bossLib.ARITH_ss) []
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.031838
+
+PL_pmap
+proof length: 1
+proof time: 0.001712
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.141431
+  inferstep time: 0.109287
+  node_find time: 0.000271
+  node_crea time: 0.012051
+    pred time: 0.003827
+    thmpred time: 0.0
+    mc time: 0.024283
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "path" "PL_def" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009457
+
+el_pmap
+Statistics
+  infstep : 776
+  nodes   : 141
+  maxdepth: 6
+Time: 10.015837
+  inferstep time: 7.528311
+  node_find time: 0.120047
+  node_crea time: 2.081535
+    pred time: 0.519434
+    thmpred time: 0.00002
+    mc time: 0.887166
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067243
+
+nth_label_pmap
+proof length: 5
+proof time: 0.009208
+Statistics
+  infstep : 78
+  nodes   : 25
+  maxdepth: 3
+Time: 2.007287
+  inferstep time: 1.566769
+  node_find time: 0.010473
+  node_crea time: 0.345816
+    pred time: 0.100948
+    thmpred time: 0.000006
+    mc time: 0.189095
+    inst time: 0.0
+Proof found: BasicProvers.Induct THENL [boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "path" "pmap_thm", DB.fetch "path" "PL_thm", DB.fetch "path" "nth_label_def", DB.fetch "path" "nth_label_def_compute", DB.fetch "path" "PL_pcons", DB.fetch "path" "PL_stopped_at", DB.fetch "path" "el_pmap", DB.fetch "path" "PL_pmap", DB.fetch "path" "last_pmap", DB.fetch "path" "length_pmap", DB.fetch "path" "first_pmap", DB.fetch "path" "finite_pmap", DB.fetch "path" "pmap_def", DB.fetch "path" "alt_length_thm", DB.fetch "path" "finite_path_ind", DB.fetch "path" "length_thm"], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.087357
+Replaying proof: 0.008109
+Replaying proof: 0.061399
+
+firstP_at_zero
+proof length: 1
+proof time: 0.009527
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.16842
+  inferstep time: 0.11839
+  node_find time: 0.000391
+  node_crea time: 0.036682
+    pred time: 0.00385
+    thmpred time: 0.0
+    mc time: 0.040348
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "path" "firstP_at_thm" , DB.fetch "path" "firstP_at_def" , DB.fetch "path" "first_pmap" , DB.fetch "path" "el_def" , DB.fetch "path" "el_def_compute" , DB.fetch "path" "first_def" , DB.fetch "path" "pcons_def" , DB.fetch "path" "pconcat_def" , DB.fetch "path" "first_thm" , DB.fetch "path" "length_never_zero" , DB.fetch "path" "nth_label_def" , DB.fetch "path" "nth_label_def_compute" , DB.fetch "path" "PL_0" , DB.fetch "path" "alt_length_thm" , DB.fetch "path" "PL_def" , DB.fetch "path" "length_def" ])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.322227
+
+exists_thm
+Statistics
+  infstep : 837
+  nodes   : 136
+  maxdepth: 5
+Time: 10.000604
+  inferstep time: 7.440417
+  node_find time: 0.128447
+  node_crea time: 2.086911
+    pred time: 0.544963
+    thmpred time: 0.00003
+    mc time: 0.889034
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.172566
+
+every_thm
+Statistics
+  infstep : 1011
+  nodes   : 151
+  maxdepth: 5
+Time: 10.014301
+  inferstep time: 7.435685
+  node_find time: 0.169547
+  node_crea time: 1.971362
+    pred time: 0.521959
+    thmpred time: 0.000038
+    mc time: 0.799494
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004653
+
+not_every
+proof length: 1
+proof time: 0.065496
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.1088
+  inferstep time: 0.092927
+  node_find time: 0.000136
+  node_crea time: 0.009956
+    pred time: 0.002903
+    thmpred time: 0.0
+    mc time: 0.009194
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "path" "every_def" , DB.fetch "path" "every_thm" , DB.fetch "path" "exists_thm" , DB.fetch "path" "exists_def" , listTheory.NOT_EVERY , listTheory.NOT_EXISTS , listTheory.dropWhile_APPEND_EXISTS , listTheory.dropWhile_splitAtPki , llistTheory.LFILTER_EQ_NIL , llistTheory.LFILTER_NIL , llistTheory.every_def , rich_listTheory.PREFIX_DEF , rich_listTheory.SPLITL_def , rich_listTheory.SPLITR_def , whileTheory.LEAST_DEF , quantHeuristicsTheory.GUESSES_NEG_DUALITY])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.0043
+
+not_exists
+proof length: 2
+proof time: 0.006692
+Statistics
+  infstep : 11
+  nodes   : 5
+  maxdepth: 2
+Time: 0.500952
+  inferstep time: 0.444085
+  node_find time: 0.001306
+  node_crea time: 0.042799
+    pred time: 0.01519
+    thmpred time: 0.000002
+    mc time: 0.023115
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "path" "exists_def", DB.fetch "path" "exists_thm", DB.fetch "path" "every_def", DB.fetch "path" "not_every", DB.fetch "path" "every_thm", listTheory.NOT_EVERY, listTheory.NOT_EXISTS, listTheory.dropWhile_APPEND_EXISTS, listTheory.dropWhile_splitAtPki, llistTheory.LFILTER_EQ_NIL, llistTheory.LFILTER_NIL, llistTheory.every_def, rich_listTheory.PREFIX_DEF, rich_listTheory.SPLITL_def, rich_listTheory.SPLITR_def, whileTheory.LEAST_DEF] THEN BasicProvers.SRW_TAC [] [DB.fetch "path" "firstP_at_def", DB.fetch "path" "exists_def", DB.fetch "path" "firstP_at_thm", DB.fetch "path" "firstP_at_zero", DB.fetch "path" "every_def", DB.fetch "path" "not_every", quantHeuristicsTheory.GUESSES_NEG_DUALITY, listTheory.dropWhile_splitAtPki, whileTheory.LEAST_DEF, rich_listTheory.LENGTH_FILTER_LESS, listTheory.NOT_EVERY, listTheory.NOT_EXISTS, listTheory.dropWhile_APPEND_EXISTS, llistTheory.LFILTER_EQ_NIL, llistTheory.LFILTER_NIL, llistTheory.every_def]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004451
+
+exists_el
+Statistics
+  infstep : 625
+  nodes   : 136
+  maxdepth: 6
+Time: 10.005778
+  inferstep time: 7.577137
+  node_find time: 0.108382
+  node_crea time: 2.004914
+    pred time: 0.543783
+    thmpred time: 0.000037
+    mc time: 0.723231
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.126253
+
+every_el
+Statistics
+  infstep : 1155
+  nodes   : 144
+  maxdepth: 6
+Time: 10.073718
+  inferstep time: 7.44883
+  node_find time: 0.214193
+  node_crea time: 1.892914
+    pred time: 0.397163
+    thmpred time: 0.000015
+    mc time: 0.78843
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.060362
+
+every_coinduction
+Statistics
+  infstep : 597
+  nodes   : 130
+  maxdepth: 6
+Time: 10.017988
+  inferstep time: 7.848262
+  node_find time: 0.111187
+  node_crea time: 1.760375
+    pred time: 0.328289
+    thmpred time: 0.000021
+    mc time: 0.607316
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.3708
+Replaying proof: 0.000375
+
+mem_thm
+Statistics
+  infstep : 862
+  nodes   : 136
+  maxdepth: 5
+Time: 10.016599
+  inferstep time: 7.472045
+  node_find time: 0.158903
+  node_crea time: 1.954113
+    pred time: 0.574283
+    thmpred time: 0.00002
+    mc time: 0.766758
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009743
+
+finite_drop
+Statistics
+  infstep : 618
+  nodes   : 115
+  maxdepth: 5
+Time: 10.013576
+  inferstep time: 7.800107
+  node_find time: 0.117374
+  node_crea time: 1.731359
+    pred time: 0.489367
+    thmpred time: 0.000018
+    mc time: 0.637536
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.120818
+
+length_drop
+proof length: 8
+proof time: 0.12768
+Statistics
+  infstep : 231
+  nodes   : 82
+  maxdepth: 5
+Time: 7.182589
+  inferstep time: 5.574051
+  node_find time: 0.04346
+  node_crea time: 1.32076
+    pred time: 0.41036
+    thmpred time: 0.000019
+    mc time: 0.569685
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 22566*)n"] THENL [BasicProvers.SRW_TAC [] [] THEN
+  metisTools.METIS_TAC [DB.fetch "path" "finite_length", DB.fetch "path" "tactictoe_thm_6", DB.fetch "path" "length_def", DB.fetch "path" "length_thm", DB.fetch "path" "alt_length_thm", DB.fetch "path" "length_never_zero", DB.fetch "path" "PL_def", DB.fetch "path" "length_pmap", DB.fetch "path" "path_Axiom", optionTheory.option_case_def, optionTheory.option_CLAUSES, optionTheory.option_case_cong, llistTheory.LPREFIX_def, llistTheory.LPREFIX_fromList, llistTheory.LNTH_LGENLIST, llistTheory.LTL], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [(DB.fetch "path" "length_thm")] THENL
+  [BasicProvers.SRW_TAC [] [DB.fetch "path" "length_thm", llistTheory.LDROP_SOME_LLENGTH, DB.fetch "path" "PL_def", DB.fetch "path" "length_def", DB.fetch "path" "alt_length_thm", DB.fetch "path" "finite_length", DB.fetch "path" "tactictoe_thm_6", DB.fetch "path" "length_never_zero", DB.fetch "path" "length_pmap", llistTheory.LTAKE, optionTheory.option_CLAUSES, optionTheory.option_case_compute, llistTheory.LNTH_LAPPEND, llistTheory.LTL, llistTheory.LNTH_LUNFOLD_compute, DB.fetch "path" "path_Axiom"] THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] [],
+  BasicProvers.SRW_TAC [] [llistTheory.LDROP_SOME_LLENGTH, DB.fetch "path" "finite_length", DB.fetch "path" "length_def", DB.fetch "path" "length_thm", DB.fetch "path" "tactictoe_thm_6", DB.fetch "path" "alt_length_thm", DB.fetch "path" "length_never_zero", DB.fetch "path" "PL_def", DB.fetch "path" "length_pmap", llistTheory.LNTH_LAPPEND, DB.fetch "path" "path_Axiom", llistTheory.LNTH_LUNFOLD_compute, llistTheory.LNTH_LGENLIST, llistTheory.LTL, llistTheory.LTAKE, llistTheory.LTAKE_SNOC_LNTH]]]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.797283
+
+PL_drop
+Statistics
+  infstep : 416
+  nodes   : 99
+  maxdepth: 6
+Time: 10.100885
+  inferstep time: 8.048794
+  node_find time: 0.086911
+  node_crea time: 1.685551
+    pred time: 0.606762
+    thmpred time: 0.000021
+    mc time: 0.523784
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.232277
+
+IN_PL_drop
+Statistics
+  infstep : 348
+  nodes   : 100
+  maxdepth: 5
+Time: 10.023271
+  inferstep time: 7.780757
+  node_find time: 0.071045
+  node_crea time: 1.916845
+    pred time: 0.575743
+    thmpred time: 0.000034
+    mc time: 0.720753
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.16635
+
+first_drop
+proof length: 4
+proof time: 0.059333
+Statistics
+  infstep : 8
+  nodes   : 6
+  maxdepth: 3
+Time: 0.499559
+  inferstep time: 0.405405
+  node_find time: 0.001275
+  node_crea time: 0.065334
+    pred time: 0.019977
+    thmpred time: 0.000002
+    mc time: 0.043775
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 23328*)i"] THENL [metisTools.METIS_TAC [DB.fetch "path" "PL_0", DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "drop_def", DB.fetch "path" "drop_def_compute", DB.fetch "path" "el_pmap", DB.fetch "path" "every_el", DB.fetch "path" "firstP_at_def", DB.fetch "path" "IN_PL_drop", DB.fetch "path" "PL_drop", DB.fetch "path" "finite_drop", DB.fetch "path" "length_drop", DB.fetch "path" "exists_el", DB.fetch "path" "mem_def", DB.fetch "path" "numeral_drop", DB.fetch "path" "firstP_at_zero"], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.112952
+
+first_label_drop
+proof length: 4
+proof time: 0.04956
+Statistics
+  infstep : 9
+  nodes   : 6
+  maxdepth: 3
+Time: 0.484564
+  inferstep time: 0.381516
+  node_find time: 0.001692
+  node_crea time: 0.064322
+    pred time: 0.020958
+    thmpred time: 0.0
+    mc time: 0.056052
+    inst time: 0.0
+Proof found: BasicProvers.Induct THENL [metisTools.METIS_TAC [DB.fetch "path" "PL_0", DB.fetch "path" "nth_label_def", DB.fetch "path" "nth_label_def_compute", DB.fetch "path" "drop_def", DB.fetch "path" "drop_def_compute", DB.fetch "path" "nth_label_pmap", DB.fetch "path" "first_label_def", DB.fetch "path" "IN_PL_drop", DB.fetch "path" "PL_drop", DB.fetch "path" "first_drop", DB.fetch "path" "finite_drop", DB.fetch "path" "length_drop", DB.fetch "path" "numeral_drop", DB.fetch "path" "el_pmap", DB.fetch "path" "every_el", DB.fetch "path" "firstP_at_def"], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.080097
+
+tail_drop
+proof length: 4
+proof time: 0.047735
+Statistics
+  infstep : 273
+  nodes   : 82
+  maxdepth: 6
+Time: 6.804132
+  inferstep time: 5.10029
+  node_find time: 0.049632
+  node_crea time: 1.368807
+    pred time: 0.344725
+    thmpred time: 0.000017
+    mc time: 0.76813
+    inst time: 0.0
+Proof found: BasicProvers.Induct THENL [metisTools.METIS_TAC [DB.fetch "path" "drop_def_compute", DB.fetch "path" "drop_def", numeralTheory.numeral_distrib, arithmeticTheory.ADD, arithmeticTheory.ADD_CLAUSES, DB.fetch "path" "numeral_drop", DB.fetch "path" "IN_PL_drop", DB.fetch "path" "PL_drop", DB.fetch "path" "first_drop", DB.fetch "path" "first_label_drop", DB.fetch "path" "finite_drop", DB.fetch "path" "length_drop", DB.fetch "path" "el_def_compute", DB.fetch "path" "nth_label_def_compute", DB.fetch "path" "el_def", DB.fetch "path" "nth_label_def"], let
+  fun simp thl = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) thl
+in
+  boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  simp [boolLib.GSYM arithmeticTheory.ADD1]
+end]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.120784
+
+el_drop
+Statistics
+  infstep : 498
+  nodes   : 105
+  maxdepth: 6
+Time: 10.040354
+  inferstep time: 8.027749
+  node_find time: 0.095033
+  node_crea time: 1.531474
+    pred time: 0.47827
+    thmpred time: 0.000028
+    mc time: 0.65693
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.116526
+
+nth_label_drop
+Statistics
+  infstep : 379
+  nodes   : 108
+  maxdepth: 5
+Time: 10.000392
+  inferstep time: 7.925675
+  node_find time: 0.077668
+  node_crea time: 1.637523
+    pred time: 0.474301
+    thmpred time: 0.00004
+    mc time: 0.751491
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.11941
+
+first_take
+proof length: 3
+proof time: 0.080241
+Statistics
+  infstep : 216
+  nodes   : 25
+  maxdepth: 3
+Time: 1.983978
+  inferstep time: 1.547378
+  node_find time: 0.035096
+  node_crea time: 0.260864
+    pred time: 0.090002
+    thmpred time: 0.000005
+    mc time: 0.125719
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 23328*)i"] THENL [metisTools.METIS_TAC [DB.fetch "path" "take_def", DB.fetch "path" "take_def_compute", DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "firstP_at_zero", DB.fetch "path" "first_def", DB.fetch "path" "first_pmap", DB.fetch "path" "pcons_def", DB.fetch "path" "pconcat_def", DB.fetch "path" "first_drop", DB.fetch "path" "first_thm", DB.fetch "path" "firstP_at_thm", DB.fetch "path" "drop_def", DB.fetch "path" "nth_label_def", DB.fetch "path" "drop_def_compute", DB.fetch "path" "length_never_zero"], metisTools.METIS_TAC [DB.fetch "path" "take_def", DB.fetch "path" "take_def_compute", DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "firstP_at_zero", DB.fetch "path" "first_def", DB.fetch "path" "first_pmap", DB.fetch "path" "pcons_def", DB.fetch "path" "pconcat_def", pred_setTheory.tactictoe_thm_37, pred_setTheory.tactictoe_thm_41, DB.fetch "path" "first_drop", DB.fetch "path" "first_thm", DB.fetch "path" "nth_label_pmap", DB.fetch "path" "nth_label_drop", DB.fetch "path" "IN_PL_drop"]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.06001
+
+finite_take
+proof length: 4
+proof time: 0.003812
+Statistics
+  infstep : 31
+  nodes   : 17
+  maxdepth: 4
+Time: 1.554447
+  inferstep time: 1.300858
+  node_find time: 0.005577
+  node_crea time: 0.181294
+    pred time: 0.056781
+    thmpred time: 0.000004
+    mc time: 0.115242
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 23328*)i"] THENL [BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.163213
+
+length_take
+proof length: 5
+proof time: 0.094037
+Statistics
+  infstep : 16
+  nodes   : 10
+  maxdepth: 4
+Time: 0.958989
+  inferstep time: 0.742771
+  node_find time: 0.003052
+  node_crea time: 0.154954
+    pred time: 0.049354
+    thmpred time: 0.000015
+    mc time: 0.113484
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 23328*)i"] THENL [metisTools.METIS_TAC [DB.fetch "path" "PL_0", DB.fetch "path" "take_def_compute", DB.fetch "path" "take_def", DB.fetch "path" "finite_take", numeralTheory.numeral_distrib, arithmeticTheory.ADD_CLAUSES, DB.fetch "path" "first_take", DB.fetch "path" "length_drop", DB.fetch "path" "PL_def", DB.fetch "path" "length_thm", DB.fetch "path" "length_def", DB.fetch "path" "alt_length_thm", DB.fetch "path" "length_never_zero", DB.fetch "path" "finite_length", DB.fetch "path" "tactictoe_thm_6", DB.fetch "path" "length_pmap"], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "path" "PL_thm", DB.fetch "path" "take_def", DB.fetch "path" "nth_label_pmap", DB.fetch "path" "PL_pcons", DB.fetch "path" "PL_stopped_at", DB.fetch "path" "length_thm", DB.fetch "path" "alt_length_thm", DB.fetch "path" "take_def_compute", DB.fetch "path" "finite_take", DB.fetch "path" "first_take", DB.fetch "path" "firstP_at_thm", DB.fetch "path" "finite_path_ind", DB.fetch "path" "FORALL_path", DB.fetch "path" "first_thm", DB.fetch "path" "finite_thm", DB.fetch "path" "pmap_thm"] THEN
+  metisTools.METIS_TAC [DB.fetch "path" "tail_drop", indexedListsTheory.EL_delN_AFTER, indexedListsTheory.MAPi_ACC_def, arithmeticTheory.ADD1, llistTheory.LGENLIST_def, llistTheory.LTL, arithmeticTheory.LESS_ADD_1, arithmeticTheory.tactictoe_thm_10, arithmeticTheory.DIV_LE_X, arithmeticTheory.X_LT_DIV, arithmeticTheory.LE_LT1, numeralTheory.exactlog_characterisation, rich_listTheory.DROP_EL_CONS, rich_listTheory.TAKE_EL_SNOC, arithmeticTheory.tactictoe_thm_59, arithmeticTheory.tactictoe_thm_60]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.09674
+
+PL_take
+proof length: 1
+proof time: 0.012406
+Statistics
+  infstep : 39
+  nodes   : 21
+  maxdepth: 4
+Time: 2.17102
+  inferstep time: 1.771077
+  node_find time: 0.00732
+  node_crea time: 0.338529
+    pred time: 0.122369
+    thmpred time: 0.000007
+    mc time: 0.137075
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ bossLib.ARITH_ss ] [ ( DB.fetch "path" "PL_def" ) , pred_setTheory.EXTENSION , ( DB.fetch "path" "length_thm" ) , boolLib.EQ_IMP_THM , arithmeticTheory.ADD1 ])
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.214273
+
+last_take
+proof length: 4
+proof time: 0.044773
+Statistics
+  infstep : 8
+  nodes   : 6
+  maxdepth: 3
+Time: 0.47785
+  inferstep time: 0.384173
+  node_find time: 0.001462
+  node_crea time: 0.061396
+    pred time: 0.020845
+    thmpred time: 0.000001
+    mc time: 0.04654
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 23328*)i"] THENL [metisTools.METIS_TAC [DB.fetch "path" "PL_0", DB.fetch "path" "take_def", DB.fetch "path" "take_def_compute", DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "last_pmap", DB.fetch "path" "last_thm", DB.fetch "path" "PL_take", DB.fetch "path" "length_take", DB.fetch "path" "finite_take", DB.fetch "path" "el_pmap", DB.fetch "path" "every_el", DB.fetch "path" "firstP_at_def", DB.fetch "path" "first_drop", DB.fetch "path" "el_drop", DB.fetch "path" "exists_el"], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "path" "PL_thm", DB.fetch "path" "take_def", DB.fetch "path" "el_def", DB.fetch "path" "nth_label_pmap", DB.fetch "path" "last_thm", DB.fetch "path" "PL_pcons", DB.fetch "path" "PL_stopped_at", DB.fetch "path" "last_pmap", pred_setTheory.tactictoe_thm_37, pred_setTheory.tactictoe_thm_41, DB.fetch "path" "take_def_compute", DB.fetch "path" "PL_take", DB.fetch "path" "length_take", DB.fetch "path" "finite_take", DB.fetch "path" "alt_length_thm", DB.fetch "path" "finite_path_ind"]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.107159
+
+nth_label_take
+proof length: 7
+proof time: 0.087791
+Statistics
+  infstep : 496
+  nodes   : 94
+  maxdepth: 5
+Time: 8.157534
+  inferstep time: 6.284679
+  node_find time: 0.098523
+  node_crea time: 1.416376
+    pred time: 0.432607
+    thmpred time: 0.000025
+    mc time: 0.526929
+    inst time: 0.0
+Proof found: BasicProvers.Induct THENL [metisTools.METIS_TAC [DB.fetch "path" "PL_0", DB.fetch "path" "take_def", DB.fetch "path" "take_def_compute", DB.fetch "path" "first_label_drop", DB.fetch "path" "nth_label_pmap", DB.fetch "path" "nth_label_drop", DB.fetch "path" "nth_label_def", numeralTheory.numeral_distrib, prim_recTheory.NOT_LESS_0, DB.fetch "path" "PL_take", DB.fetch "path" "last_take", DB.fetch "path" "length_take", DB.fetch "path" "finite_take", DB.fetch "path" "nth_label_def_compute", DB.fetch "path" "first_take", DB.fetch "path" "firstP_at_def"], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [pred_setTheory.EXTENSION, boolLib.EQ_IMP_THM] THEN
+  BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 23328*)i"] THENL
+  [BasicProvers.SRW_TAC [] [prim_recTheory.LESS_0, DB.fetch "path" "nth_label_def", DB.fetch "path" "nth_label_def_compute", DB.fetch "path" "PL_take", DB.fetch "path" "last_take", DB.fetch "path" "length_take", DB.fetch "path" "finite_take", DB.fetch "path" "first_take", arithmeticTheory.tactictoe_thm_11, DB.fetch "path" "take_def", DB.fetch "path" "nth_label_pmap", DB.fetch "path" "nth_label_drop", DB.fetch "path" "first_label_drop", DB.fetch "path" "take_def_compute", DB.fetch "path" "firstP_at_thm", DB.fetch "path" "alt_length_thm"],
+  BasicProvers.SRW_TAC [] [DB.fetch "path" "nth_label_def", DB.fetch "path" "PL_take", DB.fetch "path" "last_take", DB.fetch "path" "length_take", DB.fetch "path" "finite_take", DB.fetch "path" "first_take", arithmeticTheory.tactictoe_thm_11, DB.fetch "path" "take_def", arithmeticTheory.LESS_MONO_EQ, DB.fetch "path" "nth_label_pmap", DB.fetch "path" "nth_label_drop", DB.fetch "path" "first_label_drop", DB.fetch "path" "nth_label_def_compute", DB.fetch "path" "take_def_compute", DB.fetch "path" "alt_length_thm", DB.fetch "path" "firstP_at_thm"]]]
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.189426
+
+singleton_seg
+proof length: 2
+proof time: 0.002332
+Statistics
+  infstep : 30
+  nodes   : 7
+  maxdepth: 2
+Time: 0.722018
+  inferstep time: 0.622294
+  node_find time: 0.004988
+  node_crea time: 0.060964
+    pred time: 0.021539
+    thmpred time: 0.000003
+    mc time: 0.034738
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [] THEN BasicProvers.SRW_TAC [] [DB.fetch "path" "seg_def", DB.fetch "path" "el_pmap", DB.fetch "path" "every_el", DB.fetch "path" "exists_el", DB.fetch "path" "firstP_at_def", DB.fetch "path" "first_drop", DB.fetch "path" "last_take", DB.fetch "path" "mem_def", DB.fetch "path" "el_drop", DB.fetch "path" "el_def", pred_setTheory.tactictoe_thm_37, pred_setTheory.tactictoe_thm_41, DB.fetch "path" "el_def_compute", DB.fetch "path" "take_def", DB.fetch "path" "length_thm", DB.fetch "path" "firstP_at_thm"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019513
+
+recursive_seg
+Statistics
+  infstep : 435
+  nodes   : 114
+  maxdepth: 6
+Time: 10.015056
+  inferstep time: 7.129938
+  node_find time: 0.101687
+  node_crea time: 2.346248
+    pred time: 0.595767
+    thmpred time: 0.000026
+    mc time: 1.17645
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.562531
+Replaying proof: 0.001862
+
+PL_seg
+Statistics
+  infstep : 434
+  nodes   : 101
+  maxdepth: 5
+Time: 10.09806
+  inferstep time: 7.672251
+  node_find time: 0.1031
+  node_crea time: 1.966608
+    pred time: 0.535464
+    thmpred time: 0.000026
+    mc time: 0.764252
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.151616
+
+finite_seg
+proof length: 3
+proof time: 0.006431
+Statistics
+  infstep : 266
+  nodes   : 61
+  maxdepth: 5
+Time: 6.826978
+  inferstep time: 5.284224
+  node_find time: 0.059817
+  node_crea time: 1.183608
+    pred time: 0.373566
+    thmpred time: 0.000018
+    mc time: 0.517186
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "path" "seg_def")] THEN boolLib.IMP_RES_TAC (DB.fetch "path" "tactictoe_thm_7") THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] []
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.11856
+
+first_seg
+proof length: 3
+proof time: 0.05672
+Statistics
+  infstep : 44
+  nodes   : 14
+  maxdepth: 3
+Time: 1.39533
+  inferstep time: 1.115551
+  node_find time: 0.00863
+  node_crea time: 0.202976
+    pred time: 0.07112
+    thmpred time: 0.000005
+    mc time: 0.104895
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "path" "recursive_seg", DB.fetch "path" "singleton_seg", DB.fetch "path" "PL_seg", DB.fetch "path" "finite_seg", DB.fetch "path" "seg_def", DB.fetch "path" "first_drop", DB.fetch "path" "firstP_at_def", DB.fetch "path" "exists_el", DB.fetch "path" "mem_def", DB.fetch "path" "el_pmap", DB.fetch "path" "every_el", DB.fetch "path" "last_take", DB.fetch "path" "el_drop", DB.fetch "path" "el_def", DB.fetch "path" "el_def_compute", DB.fetch "path" "tactictoe_thm_7"] THEN boolLib.IMP_RES_TAC (DB.fetch "path" "tactictoe_thm_7") THEN
+  metisTools.METIS_TAC [DB.fetch "path" "first_drop", DB.fetch "path" "el_drop", DB.fetch "path" "recursive_seg", DB.fetch "path" "singleton_seg", DB.fetch "path" "firstP_at_def", DB.fetch "path" "exists_el", DB.fetch "path" "mem_def", DB.fetch "path" "el_pmap", DB.fetch "path" "every_el", DB.fetch "path" "last_take", DB.fetch "path" "first_label_drop", DB.fetch "path" "tail_drop", DB.fetch "path" "seg_def", DB.fetch "path" "IN_PL_drop", DB.fetch "path" "PL_drop", DB.fetch "path" "nth_label_drop"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.069558
+
+last_seg
+proof length: 3
+proof time: 0.007109
+Statistics
+  infstep : 15
+  nodes   : 7
+  maxdepth: 3
+Time: 0.60451
+  inferstep time: 0.50092
+  node_find time: 0.002619
+  node_crea time: 0.074748
+    pred time: 0.021737
+    thmpred time: 0.000001
+    mc time: 0.041742
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "path" "first_seg", DB.fetch "path" "recursive_seg", DB.fetch "path" "singleton_seg", DB.fetch "path" "PL_seg", DB.fetch "path" "finite_seg", DB.fetch "path" "seg_def", DB.fetch "path" "last_take", DB.fetch "path" "firstP_at_def", DB.fetch "path" "exists_el", DB.fetch "path" "mem_def", DB.fetch "path" "first_drop", DB.fetch "path" "el_pmap", DB.fetch "path" "every_el", DB.fetch "path" "last_thm", DB.fetch "path" "last_pmap", DB.fetch "path" "el_drop"] THEN boolLib.IMP_RES_TAC (DB.fetch "path" "tactictoe_thm_7") THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] []
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.070191
+Replaying proof: 0.004054
+
+firstP_at_unique
+Statistics
+  infstep : 710
+  nodes   : 120
+  maxdepth: 5
+Time: 10.069057
+  inferstep time: 7.014763
+  node_find time: 0.173474
+  node_crea time: 2.417295
+    pred time: 0.585624
+    thmpred time: 0.000019
+    mc time: 0.662528
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.610059
+
+is_stopped_thm
+proof length: 1
+proof time: 0.002178
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.13971
+  inferstep time: 0.118538
+  node_find time: 0.000452
+  node_crea time: 0.0133
+    pred time: 0.003894
+    thmpred time: 0.0
+    mc time: 0.011148
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "path" "is_stopped_def" , DB.fetch "path" "finite_thm" , DB.fetch "path" "FORALL_path" , DB.fetch "path" "alt_length_thm" , DB.fetch "path" "every_thm" , DB.fetch "path" "exists_thm" , DB.fetch "path" "firstP_at_thm" , DB.fetch "path" "first_thm" , DB.fetch "path" "labels_def" , DB.fetch "path" "stopped_at_not_pcons" , DB.fetch "path" "last_thm" , DB.fetch "path" "length_thm" , DB.fetch "path" "mem_thm" , DB.fetch "path" "pconcat_eq_pcons" , DB.fetch "path" "pconcat_thm" , DB.fetch "path" "pmap_thm" ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006593
+Replaying proof: 0.132951
+Replaying proof: 0.012836
+Replaying proof: 0.038243
+
+filter_every
+Statistics
+  infstep : 609
+  nodes   : 119
+  maxdepth: 6
+Time: 10.038398
+  inferstep time: 7.836435
+  node_find time: 0.141939
+  node_crea time: 1.647167
+    pred time: 0.457473
+    thmpred time: 0.00002
+    mc time: 0.545089
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.151273
+Replaying proof: 0.004258
+
+pgenerate_infinite
+Statistics
+  infstep : 1032
+  nodes   : 138
+  maxdepth: 6
+Time: 10.067352
+  inferstep time: 7.50333
+  node_find time: 0.250728
+  node_crea time: 1.661503
+    pred time: 0.375561
+    thmpred time: 0.000017
+    mc time: 0.618134
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.366255
+
+pgenerate_not_stopped
+proof length: 1
+proof time: 0.046871
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.105248
+  inferstep time: 0.085389
+  node_find time: 0.000206
+  node_crea time: 0.011402
+    pred time: 0.003104
+    thmpred time: 0.000001
+    mc time: 0.010216
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "path" "pgenerate_infinite" , DB.fetch "path" "pgenerate_def" , DB.fetch "path" "path_Axiom" , DB.fetch "path" "pmap_thm" , DB.fetch "path" "firstP_at_thm" , DB.fetch "path" "stopped_at_not_pcons" , DB.fetch "path" "pconcat_eq_stopped" , DB.fetch "path" "PL_thm" , DB.fetch "path" "PL_stopped_at" , DB.fetch "path" "length_thm" , DB.fetch "path" "alt_length_thm" , DB.fetch "path" "stopped_at_def" , DB.fetch "path" "stopped_at_11" , DB.fetch "path" "first_thm" , DB.fetch "path" "path_cases" , DB.fetch "path" "pconcat_thm"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006164
+
+el_pgenerate
+Statistics
+  infstep : 498
+  nodes   : 133
+  maxdepth: 6
+Time: 10.088895
+  inferstep time: 8.010328
+  node_find time: 0.125768
+  node_crea time: 1.571998
+    pred time: 0.355737
+    thmpred time: 0.000024
+    mc time: 0.740484
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.101246
+
+nth_label_pgenerate
+proof length: 5
+proof time: 0.000967
+Statistics
+  infstep : 13
+  nodes   : 8
+  maxdepth: 3
+Time: 0.786661
+  inferstep time: 0.666589
+  node_find time: 0.002961
+  node_crea time: 0.069072
+    pred time: 0.023798
+    thmpred time: 0.000005
+    mc time: 0.055801
+    inst time: 0.0
+Proof found: BasicProvers.Induct THEN (boolLib.ONCE_REWRITE_TAC [(DB.fetch "path" "pgenerate_def")] THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.059984
+
+pgenerate_11
+Statistics
+  infstep : 705
+  nodes   : 137
+  maxdepth: 6
+Time: 10.06865
+  inferstep time: 7.741736
+  node_find time: 0.190507
+  node_crea time: 1.623483
+    pred time: 0.354518
+    thmpred time: 0.000023
+    mc time: 0.527523
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.099058
+
+pgenerate_onto
+Statistics
+  infstep : 372
+  nodes   : 107
+  maxdepth: 6
+Time: 10.074525
+  inferstep time: 7.832893
+  node_find time: 0.116913
+  node_crea time: 1.782722
+    pred time: 0.472517
+    thmpred time: 0.000028
+    mc time: 0.749629
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.31346
+
+okpath_monotone
+Statistics
+  infstep : 1220
+  nodes   : 136
+  maxdepth: 6
+Time: 10.070258
+  inferstep time: 6.952957
+  node_find time: 0.329436
+  node_crea time: 1.895243
+    pred time: 0.373621
+    thmpred time: 0.000019
+    mc time: 0.847921
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.043723
+
+okpath_thm
+Statistics
+  infstep : 1299
+  nodes   : 146
+  maxdepth: 5
+Time: 10.012351
+  inferstep time: 6.849057
+  node_find time: 0.344805
+  node_crea time: 1.833604
+    pred time: 0.420591
+    thmpred time: 0.000024
+    mc time: 0.773546
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.26778
+
+finite_okpath_ind
+Statistics
+  infstep : 528
+  nodes   : 93
+  maxdepth: 5
+Time: 10.084208
+  inferstep time: 7.229055
+  node_find time: 0.143582
+  node_crea time: 2.242242
+    pred time: 0.483832
+    thmpred time: 0.000019
+    mc time: 0.559288
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.173359
+
+okpath_pmap
+Statistics
+  infstep : 530
+  nodes   : 164
+  maxdepth: 7
+Time: 10.032065
+  inferstep time: 7.00676
+  node_find time: 0.156707
+  node_crea time: 2.389841
+    pred time: 0.46656
+    thmpred time: 0.000037
+    mc time: 0.863095
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.312072
+Replaying proof: 0.021453
+
+finite_plink
+Statistics
+  infstep : 563
+  nodes   : 95
+  maxdepth: 5
+Time: 10.006341
+  inferstep time: 7.990103
+  node_find time: 0.158763
+  node_crea time: 1.343121
+    pred time: 0.39055
+    thmpred time: 0.000018
+    mc time: 0.428426
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.314113
+
+first_plink
+proof length: 2
+proof time: 0.001895
+Statistics
+  infstep : 33
+  nodes   : 11
+  maxdepth: 3
+Time: 0.834715
+  inferstep time: 0.660122
+  node_find time: 0.007868
+  node_crea time: 0.126218
+    pred time: 0.044624
+    thmpred time: 0.000001
+    mc time: 0.04504
+    inst time: 0.0
+Proof found: boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.034544
+
+last_plink
+Statistics
+  infstep : 559
+  nodes   : 114
+  maxdepth: 5
+Time: 10.066228
+  inferstep time: 7.281557
+  node_find time: 0.159945
+  node_crea time: 2.09697
+    pred time: 0.483455
+    thmpred time: 0.00002
+    mc time: 0.571803
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.115587
+
+okpath_plink
+Statistics
+  infstep : 424
+  nodes   : 134
+  maxdepth: 6
+Time: 10.022878
+  inferstep time: 6.791012
+  node_find time: 0.131319
+  node_crea time: 2.627337
+    pred time: 0.590637
+    thmpred time: 0.000033
+    mc time: 0.731164
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.227499
+
+okpath_take
+proof length: 5
+proof time: 0.059794
+Statistics
+  infstep : 45
+  nodes   : 15
+  maxdepth: 4
+Time: 2.049841
+  inferstep time: 1.655076
+  node_find time: 0.011719
+  node_crea time: 0.265712
+    pred time: 0.093525
+    thmpred time: 0.000005
+    mc time: 0.124869
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 23328*)i"] THENL [metisTools.METIS_TAC [DB.fetch "path" "PL_0", DB.fetch "path" "take_def", DB.fetch "path" "take_def_compute", DB.fetch "path" "finite_okpath_ind", DB.fetch "path" "okpath_co_ind", DB.fetch "path" "okpath_pmap", DB.fetch "path" "okpath_thm", DB.fetch "path" "okpath_cases", DB.fetch "path" "okpath_plink", DB.fetch "path" "okpath_def", DB.fetch "path" "nth_label_take", DB.fetch "path" "PL_take", DB.fetch "path" "finite_take", DB.fetch "path" "last_take", DB.fetch "path" "length_take", DB.fetch "path" "first_take"], boolLib.GEN_TAC THEN
+  boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [pred_setTheory.EXTENSION, boolLib.EQ_IMP_THM]]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.13019
+
+okpath_drop
+proof length: 5
+proof time: 0.054715
+Statistics
+  infstep : 56
+  nodes   : 18
+  maxdepth: 4
+Time: 1.656612
+  inferstep time: 1.236862
+  node_find time: 0.013908
+  node_crea time: 0.302397
+    pred time: 0.11997
+    thmpred time: 0.000004
+    mc time: 0.131976
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 23328*)i"] THENL [metisTools.METIS_TAC [DB.fetch "path" "PL_0", DB.fetch "path" "drop_def", DB.fetch "path" "drop_def_compute", DB.fetch "path" "okpath_take", DB.fetch "path" "finite_okpath_ind", DB.fetch "path" "okpath_co_ind", DB.fetch "path" "okpath_pmap", DB.fetch "path" "okpath_thm", DB.fetch "path" "okpath_cases", DB.fetch "path" "okpath_plink", DB.fetch "path" "okpath_def", DB.fetch "path" "IN_PL_drop", DB.fetch "path" "PL_drop", DB.fetch "path" "first_drop", DB.fetch "path" "first_label_drop", DB.fetch "path" "finite_drop"], boolLib.GEN_TAC THEN
+  boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM]]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.13749
+
+okpath_seg
+proof length: 3
+proof time: 0.005613
+Statistics
+  infstep : 9
+  nodes   : 5
+  maxdepth: 3
+Time: 0.53781
+  inferstep time: 0.39144
+  node_find time: 0.003091
+  node_crea time: 0.107941
+    pred time: 0.031676
+    thmpred time: 0.000002
+    mc time: 0.052703
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "path" "seg_def")] THEN boolLib.IMP_RES_TAC (DB.fetch "path" "tactictoe_thm_7") THEN
+  BasicProvers.SRW_TAC [numSimps.ARITH_ss] []
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067736
+
+SN_finite_paths
+Statistics
+  infstep : 371
+  nodes   : 98
+  maxdepth: 6
+Time: 10.035434
+  inferstep time: 5.625872
+  node_find time: 0.180236
+  node_crea time: 3.760859
+    pred time: 0.849726
+    thmpred time: 0.000026
+    mc time: 1.352497
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 1.047829
+
+finite_paths_SN
+Statistics
+  infstep : 665
+  nodes   : 148
+  maxdepth: 5
+Time: 10.00081
+  inferstep time: 7.348225
+  node_find time: 0.209554
+  node_crea time: 1.863243
+    pred time: 0.385715
+    thmpred time: 0.000027
+    mc time: 0.752984
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.676286
+
+SN_finite_paths_EQ
+proof length: 3
+proof time: 0.079709
+Statistics
+  infstep : 18
+  nodes   : 8
+  maxdepth: 3
+Time: 0.659611
+  inferstep time: 0.530046
+  node_find time: 0.004621
+  node_crea time: 0.091611
+    pred time: 0.033013
+    thmpred time: 0.000003
+    mc time: 0.042758
+    inst time: 0.0
+Proof found: bossLib.SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "path" "SN_def"), boolLib.GSYM boolLib.AND_IMP_INTRO, boolLib.RIGHT_FORALL_IMP_THM] THEN boolLib.STRIP_TAC THEN
+  metisTools.METIS_TAC [DB.fetch "path" "SN_def", DB.fetch "path" "finite_okpath_ind", DB.fetch "path" "SN_finite_paths", DB.fetch "path" "finite_paths_SN", DB.fetch "path" "okpath_plink", DB.fetch "path" "okpath_pmap", DB.fetch "path" "okpath_cases", DB.fetch "path" "okpath_co_ind", DB.fetch "path" "okpath_thm", DB.fetch "path" "okpath_drop", DB.fetch "path" "okpath_seg", DB.fetch "path" "okpath_take", DB.fetch "path" "okpath_def", DB.fetch "path" "pgenerate_onto", DB.fetch "path" "finite_length", DB.fetch "path" "tactictoe_thm_6"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008618
+
+labels_LMAP
+Statistics
+  infstep : 1001
+  nodes   : 115
+  maxdepth: 5
+Time: 10.000639
+  inferstep time: 7.211459
+  node_find time: 0.3122
+  node_crea time: 1.569985
+    pred time: 0.409877
+    thmpred time: 0.000023
+    mc time: 0.610786
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.306199
+Replaying proof: 0.100663
+
+labels_plink
+Statistics
+  infstep : 547
+  nodes   : 128
+  maxdepth: 6
+Time: 10.095323
+  inferstep time: 7.8072
+  node_find time: 0.165972
+  node_crea time: 1.585611
+    pred time: 0.326924
+    thmpred time: 0.00002
+    mc time: 0.586683
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 0
+Replaying proof: 0.008523
+
+finite_labels
+proof length: 2
+proof time: 0.002107
+Statistics
+  infstep : 59
+  nodes   : 22
+  maxdepth: 4
+Time: 1.889833
+  inferstep time: 1.533723
+  node_find time: 0.018313
+  node_crea time: 0.246104
+    pred time: 0.069774
+    thmpred time: 0.000006
+    mc time: 0.105122
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "path" "labels_LMAP", DB.fetch "path" "labels_def", DB.fetch "path" "labels_plink", DB.fetch "path" "finite_def", DB.fetch "path" "length_def", DB.fetch "path" "PL_def", DB.fetch "path" "SN_finite_paths_EQ", DB.fetch "path" "finite_drop", DB.fetch "path" "finite_thm", DB.fetch "path" "finite_length", DB.fetch "path" "tactictoe_thm_6", DB.fetch "path" "finite_pmap", DB.fetch "path" "last_pmap", DB.fetch "path" "length_thm", DB.fetch "path" "pgenerate_onto", DB.fetch "path" "SN_finite_paths"] THEN BasicProvers.SRW_TAC [] [DB.fetch "path" "labels_LMAP", DB.fetch "path" "finite_def", DB.fetch "path" "pcons_def", DB.fetch "path" "length_def", DB.fetch "path" "pconcat_def", DB.fetch "path" "pmap_def", DB.fetch "path" "first_def", DB.fetch "path" "tactictoe_thm_0", DB.fetch "path" "path_rep_bijections_thm", DB.fetch "path" "fromPath_11", DB.fetch "path" "path_absrep_bijections", DB.fetch "path" "fromPath_onto", llistTheory.LFINITE_MAP, llistTheory.LMAP_LUNFOLD, llistTheory.LMAP, llistTheory.LLENGTH_MAP]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008239
+
+unfold_thm
+Statistics
+  infstep : 695
+  nodes   : 129
+  maxdepth: 5
+Time: 10.003858
+  inferstep time: 7.056758
+  node_find time: 0.21279
+  node_crea time: 2.072897
+    pred time: 0.560116
+    thmpred time: 0.000018
+    mc time: 0.75887
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.142154
+
+unfold_thm2
+proof length: 4
+proof time: 0.011726
+Statistics
+  infstep : 15
+  nodes   : 9
+  maxdepth: 3
+Time: 0.79219
+  inferstep time: 0.609194
+  node_find time: 0.004273
+  node_crea time: 0.134411
+    pred time: 0.043425
+    thmpred time: 0.000003
+    mc time: 0.06657
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "path" "unfold_def")] THENL [BasicProvers.SRW_TAC [] [(DB.fetch "path" "stopped_at_def"), (DB.fetch "path" "pcons_def"), (DB.fetch "path" "toPath_11"), boolLib.Once llistTheory.LUNFOLD], BasicProvers.SRW_TAC [] [(DB.fetch "path" "stopped_at_def"), (DB.fetch "path" "pcons_def"), (DB.fetch "path" "toPath_11"), boolLib.Once llistTheory.LUNFOLD] THEN
+  bossLib.ASM_SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "path" "first_def")]]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.083843
+
+labels_unfold
+Statistics
+  infstep : 447
+  nodes   : 179
+  maxdepth: 6
+Time: 10.014407
+  inferstep time: 6.62876
+  node_find time: 0.145313
+  node_crea time: 2.675418
+    pred time: 0.580812
+    thmpred time: 0.00002
+    mc time: 1.318841
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.277272
+Replaying proof: 0.0275
+
+okpath_unfold
+Statistics
+  infstep : 463
+  nodes   : 131
+  maxdepth: 6
+Time: 10.03678
+  inferstep time: 6.728267
+  node_find time: 0.153119
+  node_crea time: 2.604629
+    pred time: 0.505544
+    thmpred time: 0.000051
+    mc time: 0.948638
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 24
+Original proof time: 0.0
+Replaying proof: 0.823122
+Replaying proof: 0.002893
+Replaying proof: 0.001281
+
+trace_machine_thm
+Statistics
+  infstep : 671
+  nodes   : 155
+  maxdepth: 6
+Time: 10.01535
+  inferstep time: 6.830859
+  node_find time: 0.214055
+  node_crea time: 2.310319
+    pred time: 0.381862
+    thmpred time: 0.000027
+    mc time: 0.997766
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 29
+Replaying proof: 0.147801
+
+trace_machine_thm2
+Statistics
+  infstep : 723
+  nodes   : 102
+  maxdepth: 4
+Time: 10.001897
+  inferstep time: 7.090718
+  node_find time: 0.237358
+  node_crea time: 1.939662
+    pred time: 0.452287
+    thmpred time: 0.000022
+    mc time: 0.641957
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.515931
+Replaying proof: 0.02614
+
+LTAKE_labels
+proof length: 10
+proof time: 0.112953
+Statistics
+  infstep : 237
+  nodes   : 91
+  maxdepth: 7
+Time: 8.574272
+  inferstep time: 6.225707
+  node_find time: 0.081782
+  node_crea time: 1.818208
+    pred time: 0.532992
+    thmpred time: 0.000013
+    mc time: 0.733504
+    inst time: 0.0
+Proof found: BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 51935*)n"] THENL [BasicProvers.SRW_TAC [] [] THEN
+  metisTools.METIS_TAC [llistTheory.toList_THM, llistTheory.LTAKE_LLENGTH_SOME, llistTheory.from_toList, llistTheory.LFINITE_toList, llistTheory.LPREFIX_fromList, llistTheory.LPREFIX_def, llistTheory.toList_LAPPEND_APPEND, DB.fetch "path" "length_def", llistTheory.toList, llistTheory.to_fromList, llistTheory.LTAKE_LAPPEND2, llistTheory.LFINITE_toList_SOME, llistTheory.LTAKE_NIL_EQ_SOME, llistTheory.LHD_THM, llistTheory.LTL_THM, llistTheory.LUNFOLD_EQ], boolLib.REPEAT boolLib.STRIP_TAC THEN
+  Q.SPEC_THEN [HolKernel.QUOTE " (*#loc 1 27285*)p"] boolLib.STRUCT_CASES_TAC (DB.fetch "path" "path_cases") THENL
+  [BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM],
+  BasicProvers.SRW_TAC [] [] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "path" "length_take", DB.fetch "path" "nth_label_take", DB.fetch "path" "PL_take", DB.fetch "path" "okpath_take", DB.fetch "path" "last_take", DB.fetch "path" "finite_take", DB.fetch "path" "first_take", DB.fetch "path" "take_def", DB.fetch "path" "labels_def", DB.fetch "path" "trace_machine_thm", DB.fetch "path" "trace_machine_thm2", DB.fetch "path" "labels_unfold", DB.fetch "path" "finite_labels", DB.fetch "path" "labels_LMAP", DB.fetch "path" "labels_plink", DB.fetch "path" "take_def_compute"] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "path" "labels_LMAP", DB.fetch "path" "length_take", DB.fetch "path" "PL_take", DB.fetch "path" "nth_label_take", DB.fetch "path" "okpath_take", DB.fetch "path" "last_take", DB.fetch "path" "finite_take", DB.fetch "path" "first_take", DB.fetch "path" "take_def", DB.fetch "path" "length_def", llistTheory.LMAP, DB.fetch "path" "take_def_compute", DB.fetch "path" "seg_def", llistTheory.toList_THM, llistTheory.LMAP_LUNFOLD, llistTheory.LFINITE_MAP] THEN
+  metisTools.METIS_TAC [DB.fetch "path" "labels_LMAP", DB.fetch "path" "length_take", DB.fetch "path" "PL_take", DB.fetch "path" "nth_label_take", DB.fetch "path" "okpath_take", DB.fetch "path" "last_take", DB.fetch "path" "finite_take", DB.fetch "path" "first_take", DB.fetch "path" "take_def", DB.fetch "path" "length_def", DB.fetch "path" "take_def_compute", DB.fetch "path" "seg_def", llistTheory.LMAP_LUNFOLD, llistTheory.LMAP, llistTheory.LFINITE_MAP, DB.fetch "path" "pcons_def"]]]
+Org tac number: 8
+Replaying proof: 0.105779
+
+drop_eq_pcons
+proof length: 5
+proof time: 0.014776
+Statistics
+  infstep : 100
+  nodes   : 25
+  maxdepth: 4
+Time: 3.100441
+  inferstep time: 2.488549
+  node_find time: 0.028058
+  node_crea time: 0.430033
+    pred time: 0.147721
+    thmpred time: 0.000009
+    mc time: 0.17889
+    inst time: 0.0
+Proof found: BasicProvers.Induct THENL [BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM], boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM] THEN
+  bossLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [bossLib.DECIDE (Parse.Term [HolKernel.QUOTE " (*#loc 1 24844*)SUC x + y = SUC (x + y)"])]]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.394287
+
+okpath_parallel_comp
+Statistics
+  infstep : 668
+  nodes   : 135
+  maxdepth: 5
+Time: 10.094203
+  inferstep time: 7.286066
+  node_find time: 0.225901
+  node_crea time: 1.949628
+    pred time: 0.444958
+    thmpred time: 0.000017
+    mc time: 0.583533
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 57
+Original proof time: 0.0
+Replaying proof: 2.113738
+
+build_pcomp_trace
+Statistics
+  infstep : 743
+  nodes   : 135
+  maxdepth: 6
+Time: 10.018165
+  inferstep time: 6.807977
+  node_find time: 0.247914
+  node_crea time: 2.21071
+    pred time: 0.354861
+    thmpred time: 0.000034
+    mc time: 0.668418
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 23
+Original proof time: 0.0
+Replaying proof: 1.003408
+
+nth_label_LNTH
+proof length: 5
+proof time: 0.012527
+Statistics
+  infstep : 209
+  nodes   : 55
+  maxdepth: 4
+Time: 5.850417
+  inferstep time: 4.503301
+  node_find time: 0.070036
+  node_crea time: 0.93918
+    pred time: 0.301863
+    thmpred time: 0.000014
+    mc time: 0.437238
+    inst time: 0.0
+Proof found: BasicProvers.Induct THENL [boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  BasicProvers.SRW_TAC [] [boolLib.EQ_IMP_THM], let
+  fun simp thl = simpLib.ASM_SIMP_TAC ( BasicProvers.srw_ss ( ) hhs_infixl0_open simpLib.++ hhs_infixl0_close numSimps.ARITH_ss ) thl
+in
+  boolLib.CONV_TAC (boolLib.HO_REWR_CONV (DB.fetch "path" "FORALL_path")) THEN
+  simp [boolLib.GSYM arithmeticTheory.ADD1]
+end]
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.678539
+
+nth_label_LTAKE
+Statistics
+  infstep : 371
+  nodes   : 120
+  maxdepth: 6
+Time: 10.07008
+  inferstep time: 7.094613
+  node_find time: 0.127559
+  node_crea time: 2.365397
+    pred time: 0.565584
+    thmpred time: 0.000025
+    mc time: 0.895635
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.588247
+
+finite_path_end_cases
+proof length: 6
+proof time: 0.175541
+Statistics
+  infstep : 108
+  nodes   : 28
+  maxdepth: 5
+Time: 3.268004
+  inferstep time: 2.572006
+  node_find time: 0.037913
+  node_crea time: 0.469321
+    pred time: 0.148728
+    thmpred time: 0.000007
+    mc time: 0.174852
+    inst time: 0.0
+Proof found: boolLib.HO_MATCH_MP_TAC (DB.fetch "path" "finite_path_ind") THEN BasicProvers.SRW_TAC [] [] THENL
+  [bossLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [] THEN
+  BasicProvers.SRW_TAC [] [] THEN
+  metisTools.METIS_TAC [DB.fetch "path" "last_plink", DB.fetch "path" "okpath_plink", DB.fetch "path" "first_plink", DB.fetch "path" "last_thm", DB.fetch "path" "plink_def", DB.fetch "path" "last_pmap", DB.fetch "path" "finite_plink", DB.fetch "path" "labels_plink", DB.fetch "path" "last_seg", DB.fetch "path" "last_take", DB.fetch "path" "okpath_cases", patternMatchesTheory.PMATCH_ROWS_DROP_REDUNDANT_PMATCH_ROWS, patternMatchesTheory.PMATCH_ROWS_DROP_SUBSUMED_PMATCH_ROWS, patternMatchesTheory.PMATCH_ROW_EQ_AUX, patternMatchesTheory.PMATCH_ROW_EXTEND_INPUT, patternMatchesTheory.PMATCH_ROW_REMOVE_FUN_VAR],
+  metisTools.METIS_TAC [DB.fetch "path" "last_plink", DB.fetch "path" "okpath_plink", DB.fetch "path" "first_plink", DB.fetch "path" "last_thm", DB.fetch "path" "plink_def", DB.fetch "path" "last_pmap", DB.fetch "path" "finite_plink", DB.fetch "path" "labels_plink", DB.fetch "path" "last_seg", DB.fetch "path" "last_take", DB.fetch "path" "path_cases", DB.fetch "path" "path_bisimulation", DB.fetch "path" "pconcat_eq_pcons", DB.fetch "path" "EXISTS_path", DB.fetch "path" "okpath_cases", DB.fetch "path" "mem_thm"]]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.178403
+
+simulation_trace_inclusion
+Statistics
+  infstep : 519
+  nodes   : 103
+  maxdepth: 6
+Time: 10.018987
+  inferstep time: 7.020479
+  node_find time: 0.175876
+  node_crea time: 2.240794
+    pred time: 0.460663
+    thmpred time: 0.00003
+    mc time: 0.693441
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 24
+Original proof time: 0.0
+Replaying proof: 0.979181
+Bad stac: 2

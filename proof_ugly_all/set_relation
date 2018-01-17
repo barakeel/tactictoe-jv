@@ -1,0 +1,2710 @@
+
+rextension
+proof length: 3
+proof time: 0.0066
+Statistics
+  infstep : 87
+  nodes   : 20
+  maxdepth: 3
+Time: 1.631992
+  inferstep time: 1.438269
+  node_find time: 0.002024
+  node_crea time: 0.174134
+    pred time: 0.054797
+    thmpred time: 0.000006
+    mc time: 0.104582
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF] THEN
+  BasicProvers.SRW_TAC [] [pairTheory.pair_Axiom, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.EXISTS_PROD, pairTheory.pair_induction, pairTheory.UNCURRY_DEF, pairTheory.PAIR_MAP_THM, pairTheory.PROD_ALL_CONG, pairTheory.UNCURRY_CONG, pairTheory.pair_case_cong, pred_setTheory.PAIR_IN_GSPEC_1, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pred_setTheory.GSPEC_PAIR_ETA, pairTheory.PROD_ALL_THM]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.105883
+
+in_domain
+proof length: 3
+proof time: 0.004864
+Statistics
+  infstep : 52
+  nodes   : 13
+  maxdepth: 3
+Time: 0.924569
+  inferstep time: 0.79217
+  node_find time: 0.00103
+  node_crea time: 0.115354
+    pred time: 0.038097
+    thmpred time: 0.000003
+    mc time: 0.068661
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "domain_def", pairTheory.pair_Axiom, pairTheory.EXISTS_PROD, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.pair_induction, DB.fetch "set_relation" "range_def", pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, DB.fetch "set_relation" "rextension", pred_setTheory.PAIR_IN_GSPEC_1, pairTheory.PAIR_EQ, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pairTheory.UNCURRY_DEF] THEN
+  BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004595
+
+in_range
+proof length: 1
+proof time: 0.002074
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.251402
+  inferstep time: 0.215758
+  node_find time: 0.000123
+  node_crea time: 0.031114
+    pred time: 0.00862
+    thmpred time: 0.000001
+    mc time: 0.023443
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "set_relation" "domain_def" , pairTheory.pair_Axiom , pairTheory.EXISTS_PROD , pairTheory.CURRY_DEF , pairTheory.FORALL_PROD , pairTheory.LAMBDA_PROD , pairTheory.pair_induction , DB.fetch "set_relation" "range_def" , pairTheory.ABS_PAIR_THM , pairTheory.pair_CASES , DB.fetch "set_relation" "rextension" , pred_setTheory.PAIR_IN_GSPEC_1 , pairTheory.PAIR_EQ , pred_setTheory.PAIR_IN_GSPEC_2 , pred_setTheory.PAIR_IN_GSPEC_IFF , pairTheory.UNCURRY_DEF ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00696
+
+in_dom_rg
+proof length: 3
+proof time: 0.090326
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.316475
+  inferstep time: 0.255426
+  node_find time: 0.000113
+  node_crea time: 0.044939
+    pred time: 0.01692
+    thmpred time: 0.000002
+    mc time: 0.038161
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "domain_def", pairTheory.pair_Axiom, pairTheory.EXISTS_PROD, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.pair_induction, DB.fetch "set_relation" "range_def", pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, DB.fetch "set_relation" "rextension", pred_setTheory.PAIR_IN_GSPEC_1, pairTheory.PAIR_EQ, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pairTheory.UNCURRY_DEF] THEN (metisTools.METIS_TAC [DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "rextension", pred_setTheory.PAIR_IN_GSPEC_1, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pred_setTheory.PAIR_IN_GSPEC_same, pred_setTheory.tactictoe_thm_46, pred_setTheory.tactictoe_thm_21, arithmeticTheory.tactictoe_thm_11, pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, pairTheory.pair_Axiom, pairTheory.EXISTS_PROD])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.029439
+
+domain_mono
+proof length: 2
+proof time: 0.049323
+Statistics
+  infstep : 48
+  nodes   : 10
+  maxdepth: 2
+Time: 0.65607
+  inferstep time: 0.544559
+  node_find time: 0.001056
+  node_crea time: 0.096572
+    pred time: 0.026649
+    thmpred time: 0.000002
+    mc time: 0.049027
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN metisTools.METIS_TAC [DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "domain_def", arithmeticTheory.tactictoe_thm_21, numTheory.tactictoe_thm_2, numTheory.tactictoe_thm_6, optionTheory.tactictoe_thm_0, optionTheory.tactictoe_thm_1, arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "in_range", pred_setTheory.GSPECIFICATION, pred_setTheory.IN_CROSS, pred_setTheory.DIFF_DEF, pred_setTheory.INSERT_DEF, pred_setTheory.partition_def, pred_setTheory.BIGINTER]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.087337
+
+range_mono
+proof length: 2
+proof time: 0.049788
+Statistics
+  infstep : 19
+  nodes   : 6
+  maxdepth: 2
+Time: 0.405612
+  inferstep time: 0.328251
+  node_find time: 0.00052
+  node_crea time: 0.060552
+    pred time: 0.018806
+    thmpred time: 0.000002
+    mc time: 0.045953
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN metisTools.METIS_TAC [DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "domain_mono", arithmeticTheory.tactictoe_thm_21, numTheory.tactictoe_thm_2, numTheory.tactictoe_thm_6, optionTheory.tactictoe_thm_0, optionTheory.tactictoe_thm_1, arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "in_domain", pred_setTheory.GSPECIFICATION, pred_setTheory.IN_CROSS, pred_setTheory.DIFF_DEF, pred_setTheory.INSERT_DEF, pred_setTheory.partition_def]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.080771
+
+in_rrestrict
+proof length: 3
+proof time: 0.017405
+Statistics
+  infstep : 84
+  nodes   : 18
+  maxdepth: 4
+Time: 1.502943
+  inferstep time: 1.308917
+  node_find time: 0.002381
+  node_crea time: 0.16699
+    pred time: 0.048945
+    thmpred time: 0.000004
+    mc time: 0.104828
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "rrestrict_def", pairTheory.pair_Axiom, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.EXISTS_PROD, pairTheory.pair_induction, DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, pred_setTheory.PAIR_IN_GSPEC_1, pred_setTheory.PAIR_IN_GSPEC_2] THEN
+  BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006868
+
+in_rrestrict_alt
+proof length: 1
+proof time: 0.001658
+Statistics
+  infstep : 12
+  nodes   : 6
+  maxdepth: 2
+Time: 0.493003
+  inferstep time: 0.440394
+  node_find time: 0.000322
+  node_crea time: 0.047387
+    pred time: 0.018141
+    thmpred time: 0.000002
+    mc time: 0.025364
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ pred_setTheory.IN_CROSS , pred_setTheory.CROSS_applied , pred_setTheory.CROSS_DEF , DB.fetch "set_relation" "in_rrestrict" , DB.fetch "set_relation" "rrestrict_def" , pairTheory.PAIR_FST_SND_EQ , pairTheory.PROD_ALL_def , pairTheory.PAIR , pairTheory.ELIM_UNCURRY , pairTheory.UNCURRY_VAR , pairTheory.ELIM_PEXISTS , pairTheory.ELIM_PFORALL , pairTheory.PAIR_FUN_THM , pairTheory.PAIR_MAP , pairTheory.SWAP_def , pairTheory.UNCURRY ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.025278
+
+rrestrict_SUBSET
+proof length: 2
+proof time: 0.057704
+Statistics
+  infstep : 19
+  nodes   : 7
+  maxdepth: 2
+Time: 0.498857
+  inferstep time: 0.430671
+  node_find time: 0.000634
+  node_crea time: 0.058814
+    pred time: 0.020313
+    thmpred time: 0.000001
+    mc time: 0.035754
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", pairTheory.ABS_PAIR_THM, pairTheory.ABS_REP_prod, pairTheory.pair_CASES, DB.fetch "set_relation" "domain_mono", DB.fetch "set_relation" "range_mono", arithmeticTheory.ADD_DIV_ADD_DIV, sumTheory.tactictoe_thm_8]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.032407
+
+rrestrict_union
+proof length: 5
+proof time: 0.230414
+Statistics
+  infstep : 89
+  nodes   : 37
+  maxdepth: 5
+Time: 2.56206
+  inferstep time: 1.953634
+  node_find time: 0.004998
+  node_crea time: 0.551305
+    pred time: 0.143801
+    thmpred time: 0.000008
+    mc time: 0.310627
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF] THEN BasicProvers.SRW_TAC [] [(DB.fetch "pred_set" "EXTENSION"), boolLib.EQ_IMP_THM] THENL
+  [metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "rrestrict_SUBSET", pred_setTheory.UNION_DEF, pred_setTheory.INSERT_DEF, pred_setTheory.IN_UNION, pred_setTheory.IN_INSERT, pred_setTheory.UNION_applied, pred_setTheory.SET_CASES, pairTheory.LEX_DEF, pred_setTheory.CROSS_EMPTY_EQN, pred_setTheory.cross_countable_IFF, pred_setTheory.GSPEC_OR, pred_setTheory.FINITE_CROSS_EQ, pred_setTheory.CROSS_SUBSET],
+  metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "rrestrict_SUBSET", pred_setTheory.UNION_DEF, pred_setTheory.IN_UNION, pred_setTheory.INSERT_UNION, pred_setTheory.UNION_applied, pred_setTheory.pairwise_UNION, pred_setTheory.INSERT_UNION_EQ, pred_setTheory.BIGUNION_PAIR, pred_setTheory.CARD_UNION, pred_setTheory.tactictoe_thm_30, pred_setTheory.CARD_UNION_EQN, pred_setTheory.DISJOINT_UNION, pred_setTheory.DISJOINT_UNION_BOTH],
+  metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "rrestrict_SUBSET", pred_setTheory.UNION_DEF, pred_setTheory.IN_UNION, pred_setTheory.INSERT_UNION, pred_setTheory.UNION_applied, pred_setTheory.pairwise_UNION, pred_setTheory.INSERT_UNION_EQ, pred_setTheory.BIGUNION_PAIR, pred_setTheory.CARD_UNION, pred_setTheory.tactictoe_thm_30, pred_setTheory.CARD_UNION_EQN, pred_setTheory.DISJOINT_UNION, pred_setTheory.DISJOINT_UNION_BOTH]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.094647
+
+rrestrict_rrestrict
+proof length: 3
+proof time: 0.008516
+Statistics
+  infstep : 16
+  nodes   : 9
+  maxdepth: 3
+Time: 0.544525
+  inferstep time: 0.389889
+  node_find time: 0.000706
+  node_crea time: 0.128564
+    pred time: 0.034165
+    thmpred time: 0.000002
+    mc time: 0.096755
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "rrestrict_def")] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "rrestrict_def", pred_setTheory.INTER_DEF, pred_setTheory.BIGUNION, pred_setTheory.PAIR_IN_GSPEC_IFF, pred_setTheory.PAIR_IN_GSPEC_1, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_same, DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", pred_setTheory.GSPEC_PAIR_ETA, DB.fetch "set_relation" "rextension", pred_setTheory.partition_def] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "rextension", pred_setTheory.PAIR_IN_GSPEC_1, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pred_setTheory.PAIR_IN_GSPEC_same, pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, pairTheory.PAIR_EQ, pairTheory.CLOSED_PAIR_EQ]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.067404
+
+domain_rrestrict_SUBSET
+proof length: 2
+proof time: 0.057069
+Statistics
+  infstep : 80
+  nodes   : 15
+  maxdepth: 3
+Time: 1.626149
+  inferstep time: 1.369098
+  node_find time: 0.004429
+  node_crea time: 0.226683
+    pred time: 0.06648
+    thmpred time: 0.000016
+    mc time: 0.138716
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "set_relation" "in_domain"), pred_setTheory.SUBSET_DEF] THEN metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_union", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "rextension", pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, pairTheory.EXISTS_PROD, pairTheory.PROD_ALL_CONG]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.027307
+
+range_rrestrict_SUBSET
+proof length: 2
+proof time: 0.123247
+Statistics
+  infstep : 16
+  nodes   : 6
+  maxdepth: 2
+Time: 0.646597
+  inferstep time: 0.566862
+  node_find time: 0.000559
+  node_crea time: 0.06608
+    pred time: 0.018977
+    thmpred time: 0.000002
+    mc time: 0.048841
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "set_relation" "in_domain"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "in_rrestrict")] THEN metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "domain_rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "rrestrict_union", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "range_mono", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "domain_def", pairTheory.ABS_PAIR_THM, pairTheory.ABS_REP_prod, pairTheory.pair_CASES]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.029214
+
+strict_rrestrict
+proof length: 4
+proof time: 0.009245
+Statistics
+  infstep : 14
+  nodes   : 9
+  maxdepth: 4
+Time: 0.726813
+  inferstep time: 0.575802
+  node_find time: 0.000712
+  node_crea time: 0.122706
+    pred time: 0.032615
+    thmpred time: 0.000001
+    mc time: 0.096888
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "strict_def", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "domain_rrestrict_SUBSET", DB.fetch "set_relation" "range_rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "rrestrict_union", pairTheory.ABS_PAIR_THM, DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", pairTheory.ABS_REP_prod, pairTheory.pair_CASES, DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def"] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "domain_def", pairTheory.pair_Axiom, pairTheory.EXISTS_PROD, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.pair_induction, DB.fetch "set_relation" "range_def", pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, DB.fetch "set_relation" "rextension", pred_setTheory.PAIR_IN_GSPEC_1, pairTheory.PAIR_EQ, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pairTheory.UNCURRY_DEF] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "strict_def", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "rextension", DB.fetch "set_relation" "rcomp_def", pred_setTheory.PAIR_IN_GSPEC_1, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pred_setTheory.PAIR_IN_GSPEC_same, pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.049763
+
+finite_prefixes_subset_s
+proof length: 5
+proof time: 0.120913
+Statistics
+  infstep : 90
+  nodes   : 16
+  maxdepth: 3
+Time: 1.77912
+  inferstep time: 1.482701
+  node_find time: 0.004612
+  node_crea time: 0.250267
+    pred time: 0.091711
+    thmpred time: 0.000006
+    mc time: 0.106958
+    inst time: 0.0
+Proof found: boolLib.STRIP_ASSUME_TAC (HolKernel.SPEC (Parse.-- [HolKernel.QUOTE " (*#loc 1 3827*)s:('a,'b)sum"] Parse.--) (DB.fetch "sum" "tactictoe_thm_8")) THEN (BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "finite_prefixes_def", DB.fetch "set_relation" "domain_mono", DB.fetch "set_relation" "range_mono", arithmeticTheory.tactictoe_thm_21, numTheory.tactictoe_thm_2, numTheory.tactictoe_thm_6, optionTheory.tactictoe_thm_0, optionTheory.tactictoe_thm_1, arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", pred_setTheory.POW_DEF, pred_setTheory.CROSS_SUBSET, pairTheory.FST, pairTheory.SND, pairTheory.FORALL_PROD])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005279
+
+finite_prefixes_subset_r
+Statistics
+  infstep : 955
+  nodes   : 131
+  maxdepth: 6
+Time: 10.019334
+  inferstep time: 8.531912
+  node_find time: 0.070731
+  node_crea time: 1.303907
+    pred time: 0.287653
+    thmpred time: 0.000025
+    mc time: 0.529374
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.085244
+
+finite_prefixes_subset_rs
+proof length: 1
+proof time: 0.074615
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.087684
+  inferstep time: 0.076327
+  node_find time: 0.000038
+  node_crea time: 0.007572
+    pred time: 0.002583
+    thmpred time: 0.0
+    mc time: 0.006968
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "set_relation" "finite_prefixes_subset_r" , DB.fetch "set_relation" "finite_prefixes_subset_s" , DB.fetch "set_relation" "finite_prefixes_def" , DB.fetch "set_relation" "domain_mono" , DB.fetch "set_relation" "range_mono" , arithmeticTheory.tactictoe_thm_21 , numTheory.tactictoe_thm_2 , numTheory.tactictoe_thm_6 , optionTheory.tactictoe_thm_0 , optionTheory.tactictoe_thm_1 , pred_setTheory.tactictoe_thm_81 , pred_setTheory.tactictoe_thm_84 , pred_setTheory.DISJOINT_BIGUNION , pred_setTheory.IMAGE_CONG , sumTheory.SUM_ALL_CONG , whileTheory.OWHILE_INV_IND])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.054997
+
+finite_prefixes_subset
+proof length: 3
+proof time: 0.240656
+Statistics
+  infstep : 20
+  nodes   : 13
+  maxdepth: 3
+Time: 0.773751
+  inferstep time: 0.645259
+  node_find time: 0.000799
+  node_crea time: 0.115034
+    pred time: 0.039087
+    thmpred time: 0.000004
+    mc time: 0.048431
+    inst time: 0.0
+Proof found: boolLib.STRIP_ASSUME_TAC (HolKernel.SPEC (Parse.-- [HolKernel.QUOTE " (*#loc 1 3827*)s:('a,'b)sum"] Parse.--) (DB.fetch "sum" "tactictoe_thm_8")) THEN (metisTools.METIS_TAC [DB.fetch "set_relation" "finite_prefixes_subset_s", DB.fetch "set_relation" "finite_prefixes_subset_rs", DB.fetch "set_relation" "finite_prefixes_subset_r", DB.fetch "set_relation" "finite_prefixes_def", DB.fetch "set_relation" "domain_rrestrict_SUBSET", DB.fetch "set_relation" "range_rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "strict_rrestrict", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "rrestrict_union", pred_setTheory.tactictoe_thm_81, pred_setTheory.tactictoe_thm_84, pred_setTheory.DISJOINT_BIGUNION])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.034527
+
+finite_prefixes_union
+Statistics
+  infstep : 501
+  nodes   : 120
+  maxdepth: 5
+Time: 10.098417
+  inferstep time: 8.20556
+  node_find time: 0.044413
+  node_crea time: 1.752016
+    pred time: 0.406635
+    thmpred time: 0.00003
+    mc time: 0.627511
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007829
+
+finite_prefixes_comp
+Statistics
+  infstep : 549
+  nodes   : 115
+  maxdepth: 5
+Time: 10.010085
+  inferstep time: 8.231207
+  node_find time: 0.045875
+  node_crea time: 1.647407
+    pred time: 0.399051
+    thmpred time: 0.00003
+    mc time: 0.575562
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.383046
+
+finite_prefixes_inj_image
+Statistics
+  infstep : 494
+  nodes   : 85
+  maxdepth: 5
+Time: 10.0056
+  inferstep time: 8.029136
+  node_find time: 0.048496
+  node_crea time: 1.817853
+    pred time: 0.504078
+    thmpred time: 0.000024
+    mc time: 0.778985
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.222125
+
+finite_prefixes_range
+Statistics
+  infstep : 593
+  nodes   : 126
+  maxdepth: 5
+Time: 10.087801
+  inferstep time: 8.373909
+  node_find time: 0.051994
+  node_crea time: 1.509637
+    pred time: 0.397391
+    thmpred time: 0.000025
+    mc time: 0.61994
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.205744
+
+tc_rules
+proof length: 4
+proof time: 0.056968
+Statistics
+  infstep : 140
+  nodes   : 15
+  maxdepth: 3
+Time: 1.960184
+  inferstep time: 1.7179
+  node_find time: 0.007361
+  node_crea time: 0.173535
+    pred time: 0.058538
+    thmpred time: 0.000004
+    mc time: 0.111761
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF] THENL [metisTools.METIS_TAC [DB.fetch "set_relation" "tactictoe_thm_0", DB.fetch "set_relation" "tc_rules", DB.fetch "set_relation" "tc_strongind", DB.fetch "set_relation" "tc_cases", DB.fetch "set_relation" "tc_ind", DB.fetch "set_relation" "tc_def", relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1, relationTheory.tactictoe_thm_2, relationTheory.tactictoe_thm_3, relationTheory.tactictoe_thm_4, relationTheory.tactictoe_thm_6, relationTheory.tactictoe_thm_7, relationTheory.tactictoe_thm_9, arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "domain_def"], boolLib.ONCE_REWRITE_TAC [DB.fetch "set_relation" "tactictoe_thm_0", DB.fetch "set_relation" "tc_rules", DB.fetch "set_relation" "tc_strongind", DB.fetch "set_relation" "tc_cases", DB.fetch "set_relation" "tc_ind", relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1, relationTheory.tactictoe_thm_2, relationTheory.tactictoe_thm_3, relationTheory.tactictoe_thm_4, relationTheory.tactictoe_thm_6, relationTheory.tactictoe_thm_7, relationTheory.tactictoe_thm_9, DB.fetch "set_relation" "tc_def", arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "domain_def"] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.016541
+
+tc_cases
+Statistics
+  infstep : 708
+  nodes   : 69
+  maxdepth: 5
+Time: 10.079981
+  inferstep time: 8.834118
+  node_find time: 0.056685
+  node_crea time: 1.024775
+    pred time: 0.252984
+    thmpred time: 0.000018
+    mc time: 0.442108
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.034006
+
+tc_ind
+Statistics
+  infstep : 891
+  nodes   : 75
+  maxdepth: 4
+Time: 10.038311
+  inferstep time: 8.586607
+  node_find time: 0.074902
+  node_crea time: 1.14891
+    pred time: 0.293461
+    thmpred time: 0.000018
+    mc time: 0.502105
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.09127
+
+tc_closure
+Statistics
+  infstep : 481
+  nodes   : 85
+  maxdepth: 6
+Time: 10.008644
+  inferstep time: 8.76351
+  node_find time: 0.047386
+  node_crea time: 1.075298
+    pred time: 0.307653
+    thmpred time: 0.000019
+    mc time: 0.438523
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.132365
+
+subset_tc
+proof length: 2
+proof time: 0.040472
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.187781
+  inferstep time: 0.168379
+  node_find time: 0.000175
+  node_crea time: 0.013044
+    pred time: 0.004912
+    thmpred time: 0.0
+    mc time: 0.010588
+    inst time: 0.0
+Proof found: Ho_Rewrite.REWRITE_TAC [pred_setTheory.SUBSET_DEF, pairTheory.FORALL_PROD] THEN metisTools.METIS_TAC [DB.fetch "set_relation" "tactictoe_thm_3", pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "set_relation" "tc_ind", DB.fetch "set_relation" "tactictoe_thm_0", DB.fetch "set_relation" "tactictoe_thm_2", DB.fetch "set_relation" "tc_rules", DB.fetch "set_relation" "tc_strongind", DB.fetch "set_relation" "tactictoe_thm_1", DB.fetch "set_relation" "tc_cases", DB.fetch "set_relation" "tactictoe_thm_4", DB.fetch "set_relation" "tc_closure", DB.fetch "set_relation" "finite_prefixes_def", DB.fetch "set_relation" "finite_prefixes_inj_image", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_domain"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.026442
+
+tc_idemp
+Statistics
+  infstep : 540
+  nodes   : 76
+  maxdepth: 5
+Time: 10.094055
+  inferstep time: 8.854399
+  node_find time: 0.05062
+  node_crea time: 1.028923
+    pred time: 0.31197
+    thmpred time: 0.000023
+    mc time: 0.464725
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.095327
+
+tc_mono
+Statistics
+  infstep : 507
+  nodes   : 96
+  maxdepth: 5
+Time: 10.006745
+  inferstep time: 8.777088
+  node_find time: 0.051103
+  node_crea time: 1.018916
+    pred time: 0.293526
+    thmpred time: 0.000022
+    mc time: 0.410066
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.100712
+
+tc_strongind
+Statistics
+  infstep : 587
+  nodes   : 59
+  maxdepth: 5
+Time: 10.010958
+  inferstep time: 8.638771
+  node_find time: 0.059708
+  node_crea time: 1.124016
+    pred time: 0.222558
+    thmpred time: 0.000015
+    mc time: 0.437172
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.066958
+Replaying proof: 0.066792
+
+tc_cases_right
+Statistics
+  infstep : 720
+  nodes   : 118
+  maxdepth: 6
+Time: 10.004931
+  inferstep time: 8.456884
+  node_find time: 0.080086
+  node_crea time: 1.253589
+    pred time: 0.284021
+    thmpred time: 0.000025
+    mc time: 0.622947
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.127715
+
+tc_cases_left
+Statistics
+  infstep : 663
+  nodes   : 110
+  maxdepth: 6
+Time: 10.08215
+  inferstep time: 8.553599
+  node_find time: 0.087917
+  node_crea time: 1.224016
+    pred time: 0.31504
+    thmpred time: 0.000036
+    mc time: 0.604084
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.11812
+Replaying proof: 0.029634
+
+tc_ind_left
+Statistics
+  infstep : 779
+  nodes   : 75
+  maxdepth: 5
+Time: 10.001113
+  inferstep time: 8.588231
+  node_find time: 0.099514
+  node_crea time: 1.026966
+    pred time: 0.253823
+    thmpred time: 0.000031
+    mc time: 0.460282
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.263187
+Replaying proof: 0.056172
+
+tc_strongind_left
+Statistics
+  infstep : 635
+  nodes   : 65
+  maxdepth: 5
+Time: 10.010678
+  inferstep time: 8.770362
+  node_find time: 0.075896
+  node_crea time: 0.930104
+    pred time: 0.214535
+    thmpred time: 0.00002
+    mc time: 0.419816
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.252528
+Replaying proof: 0.040139
+
+tc_ind_right
+Statistics
+  infstep : 740
+  nodes   : 68
+  maxdepth: 5
+Time: 10.006149
+  inferstep time: 8.724346
+  node_find time: 0.087209
+  node_crea time: 0.893217
+    pred time: 0.224383
+    thmpred time: 0.000022
+    mc time: 0.384929
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.294904
+
+rtc_ind_right
+Statistics
+  infstep : 881
+  nodes   : 59
+  maxdepth: 4
+Time: 10.065065
+  inferstep time: 8.802171
+  node_find time: 0.103981
+  node_crea time: 0.828448
+    pred time: 0.204524
+    thmpred time: 0.000012
+    mc time: 0.352009
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.137689
+Replaying proof: 0.053399
+
+tc_strongind_right
+Statistics
+  infstep : 677
+  nodes   : 63
+  maxdepth: 5
+Time: 10.010678
+  inferstep time: 8.735474
+  node_find time: 0.088219
+  node_crea time: 0.913778
+    pred time: 0.212623
+    thmpred time: 0.000019
+    mc time: 0.386106
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.183832
+
+tc_union
+Statistics
+  infstep : 947
+  nodes   : 75
+  maxdepth: 5
+Time: 10.042797
+  inferstep time: 8.657701
+  node_find time: 0.133802
+  node_crea time: 0.877174
+    pred time: 0.253648
+    thmpred time: 0.000014
+    mc time: 0.392362
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.1121
+Replaying proof: 0.018054
+
+tc_implication
+Statistics
+  infstep : 740
+  nodes   : 72
+  maxdepth: 5
+Time: 10.050607
+  inferstep time: 8.747234
+  node_find time: 0.100129
+  node_crea time: 0.887083
+    pred time: 0.237142
+    thmpred time: 0.000015
+    mc time: 0.380381
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.033257
+Replaying proof: 0.000302
+
+tc_empty_eqn
+proof length: 4
+proof time: 0.082949
+Statistics
+  infstep : 229
+  nodes   : 24
+  maxdepth: 4
+Time: 4.052284
+  inferstep time: 3.679566
+  node_find time: 0.030267
+  node_crea time: 0.206779
+    pred time: 0.070941
+    thmpred time: 0.000003
+    mc time: 0.100464
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [pred_setTheory.SET_EQ_SUBSET] THEN Ho_Rewrite.REWRITE_TAC [pred_setTheory.SUBSET_DEF, pairTheory.FORALL_PROD] THEN
+  boolLib.REWRITE_TAC [DB.fetch "set_relation" "tactictoe_thm_12", DB.fetch "set_relation" "tc_empty", pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "set_relation" "tactictoe_thm_6", DB.fetch "set_relation" "tactictoe_thm_5", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_3", DB.fetch "set_relation" "tactictoe_thm_7", DB.fetch "set_relation" "tactictoe_thm_8", DB.fetch "set_relation" "tactictoe_thm_9", DB.fetch "set_relation" "tc_ind_left", DB.fetch "set_relation" "tc_strongind_left", DB.fetch "set_relation" "tc_strongind_right"] THEN
+  metisTools.METIS_TAC [pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, DB.fetch "set_relation" "tc_empty", DB.fetch "set_relation" "tactictoe_thm_12", DB.fetch "set_relation" "tc_cases_left", DB.fetch "set_relation" "tactictoe_thm_6", DB.fetch "set_relation" "tc_cases_right", DB.fetch "set_relation" "tactictoe_thm_5", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_11", DB.fetch "set_relation" "tactictoe_thm_3", DB.fetch "set_relation" "tactictoe_thm_7"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005139
+
+tc_domain_range
+proof length: 3
+proof time: 0.21204
+Statistics
+  infstep : 9
+  nodes   : 7
+  maxdepth: 3
+Time: 0.51249
+  inferstep time: 0.423325
+  node_find time: 0.001124
+  node_crea time: 0.062605
+    pred time: 0.022117
+    thmpred time: 0.000002
+    mc time: 0.046726
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "domain_def", pairTheory.pair_Axiom, pairTheory.EXISTS_PROD, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.pair_induction, DB.fetch "set_relation" "range_def", pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, DB.fetch "set_relation" "rextension", pred_setTheory.PAIR_IN_GSPEC_1, pairTheory.PAIR_EQ, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pairTheory.UNCURRY_DEF] THEN (metisTools.METIS_TAC [pred_setTheory.tactictoe_thm_46, pred_setTheory.tactictoe_thm_21, DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_5", DB.fetch "set_relation" "tactictoe_thm_6", DB.fetch "set_relation" "tactictoe_thm_7", DB.fetch "set_relation" "tactictoe_thm_8", DB.fetch "set_relation" "tactictoe_thm_9", DB.fetch "set_relation" "tc_ind_left", DB.fetch "set_relation" "tc_strongind_left"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.073608
+
+rrestrict_tc
+Statistics
+  infstep : 657
+  nodes   : 68
+  maxdepth: 5
+Time: 10.069943
+  inferstep time: 8.746055
+  node_find time: 0.094272
+  node_crea time: 0.946741
+    pred time: 0.254552
+    thmpred time: 0.000017
+    mc time: 0.464299
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.096268
+Replaying proof: 0.002166
+
+tc_SWAP
+Statistics
+  infstep : 514
+  nodes   : 87
+  maxdepth: 5
+Time: 10.009028
+  inferstep time: 8.76409
+  node_find time: 0.0783
+  node_crea time: 0.917237
+    pred time: 0.278802
+    thmpred time: 0.000017
+    mc time: 0.429879
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.319382
+
+acyclic_subset
+proof length: 3
+proof time: 0.034193
+Statistics
+  infstep : 433
+  nodes   : 48
+  maxdepth: 4
+Time: 6.052732
+  inferstep time: 5.208808
+  node_find time: 0.067838
+  node_crea time: 0.524937
+    pred time: 0.17173
+    thmpred time: 0.000011
+    mc time: 0.223417
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC boolSimps.bool_ss [(DB.fetch "pred_set" "IN_CROSS"), (DB.fetch "pred_set" "SUBSET_DEF"), pairTheory.FORALL_PROD, pairTheory.FST, pairTheory.SND, (DB.fetch "pred_set" "NOT_IN_EMPTY"), (DB.fetch "pred_set" "EXTENSION")] THEN boolLib.REWRITE_TAC [DB.fetch "set_relation" "acyclic_def", pairTheory.pair_induction, pairTheory.FORALL_PROD, DB.fetch "set_relation" "finite_prefixes_comp", DB.fetch "set_relation" "rcomp_def", DB.fetch "set_relation" "tactictoe_thm_11", DB.fetch "set_relation" "tactictoe_thm_19", DB.fetch "set_relation" "tc_implication", DB.fetch "set_relation" "tc_union", DB.fetch "set_relation" "finite_prefixes_union", DB.fetch "set_relation" "rrestrict_union", DB.fetch "set_relation" "finite_prefixes_inj_image", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_16"] THEN
+  metisLib.METIS_TAC [(DB.fetch "set_relation" "tactictoe_thm_11")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.076494
+
+acyclic_union
+Statistics
+  infstep : 700
+  nodes   : 68
+  maxdepth: 4
+Time: 10.104456
+  inferstep time: 8.722796
+  node_find time: 0.125753
+  node_crea time: 0.894409
+    pred time: 0.302401
+    thmpred time: 0.000018
+    mc time: 0.370468
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.061032
+
+acyclic_rrestrict
+proof length: 1
+proof time: 0.042693
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.068767
+  inferstep time: 0.055161
+  node_find time: 0.000137
+  node_crea time: 0.009146
+    pred time: 0.002593
+    thmpred time: 0.0
+    mc time: 0.0075
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "set_relation" "acyclic_def" , DB.fetch "set_relation" "acyclic_subset" , DB.fetch "set_relation" "acyclic_union" , DB.fetch "set_relation" "finite_prefixes_subset" , DB.fetch "set_relation" "rrestrict_def" , DB.fetch "set_relation" "in_rrestrict" , DB.fetch "set_relation" "strict_rrestrict" , DB.fetch "set_relation" "domain_rrestrict_SUBSET" , DB.fetch "set_relation" "in_rrestrict_alt" , DB.fetch "set_relation" "range_rrestrict_SUBSET" , DB.fetch "set_relation" "rrestrict_SUBSET" , DB.fetch "set_relation" "rrestrict_tc" , DB.fetch "set_relation" "rrestrict_rrestrict" , DB.fetch "set_relation" "rrestrict_union" , DB.fetch "set_relation" "finite_prefixes_def" , DB.fetch "set_relation" "finite_prefixes_inj_image"])
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.14034
+
+acyclic_irreflexive
+proof length: 2
+proof time: 0.009875
+Statistics
+  infstep : 40
+  nodes   : 8
+  maxdepth: 2
+Time: 0.829579
+  inferstep time: 0.708024
+  node_find time: 0.005137
+  node_crea time: 0.083485
+    pred time: 0.025098
+    thmpred time: 0.000004
+    mc time: 0.055793
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "acyclic_def"), pred_setTheory.SUBSET_DEF] THEN metisLib.METIS_TAC [(DB.fetch "set_relation" "tc_rules")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.045126
+
+acyclic_SWAP
+proof length: 1
+proof time: 0.07849
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.107644
+  inferstep time: 0.093926
+  node_find time: 0.000137
+  node_crea time: 0.009289
+    pred time: 0.002789
+    thmpred time: 0.0
+    mc time: 0.007462
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "set_relation" "tactictoe_thm_13" , DB.fetch "set_relation" "tactictoe_thm_14" , DB.fetch "set_relation" "tactictoe_thm_18" , DB.fetch "set_relation" "tactictoe_thm_20" , DB.fetch "set_relation" "tc_SWAP" , DB.fetch "set_relation" "acyclic_def" , DB.fetch "set_relation" "acyclic_irreflexive" , DB.fetch "set_relation" "acyclic_rrestrict" , DB.fetch "set_relation" "acyclic_union" , DB.fetch "set_relation" "acyclic_subset" , pairTheory.SWAP_def , DB.fetch "set_relation" "finite_prefixes_inj_image" , pred_setTheory.CROSS_EQNS , pred_setTheory.IMAGE_DEF , pred_setTheory.FINITELY_INJECTIVE_IMAGE_FINITE , pred_setTheory.GSPEC_IMAGE])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004846
+Replaying proof: 0.510096
+
+acyclic_bigunion
+Statistics
+  infstep : 743
+  nodes   : 111
+  maxdepth: 5
+Time: 10.003098
+  inferstep time: 7.998012
+  node_find time: 0.130202
+  node_crea time: 1.499699
+    pred time: 0.340552
+    thmpred time: 0.000013
+    mc time: 0.595375
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.232959
+
+acyclic_union
+Statistics
+  infstep : 515
+  nodes   : 107
+  maxdepth: 5
+Time: 10.033713
+  inferstep time: 8.174316
+  node_find time: 0.09057
+  node_crea time: 1.458734
+    pred time: 0.274492
+    thmpred time: 0.000033
+    mc time: 0.444216
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.145868
+Replaying proof: 0.041667
+
+transitive_tc
+proof length: 5
+proof time: 0.107755
+Statistics
+  infstep : 86
+  nodes   : 17
+  maxdepth: 4
+Time: 1.866103
+  inferstep time: 1.615933
+  node_find time: 0.014432
+  node_crea time: 0.161115
+    pred time: 0.043263
+    thmpred time: 0.000002
+    mc time: 0.101761
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF] THEN Ho_Rewrite.REWRITE_TAC [pred_setTheory.SET_EQ_SUBSET, pred_setTheory.SUBSET_DEF, pairTheory.FORALL_PROD, (DB.fetch "set_relation" "tactictoe_thm_13")] THEN
+  boolLib.REPEAT boolLib.STRIP_TAC THENL
+  [metisTools.METIS_TAC [pairTheory.FORALL_PROD, pairTheory.EXISTS_PROD, pairTheory.pair_induction, arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "tactictoe_thm_22", DB.fetch "set_relation" "transitive_def", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_16", DB.fetch "set_relation" "tactictoe_thm_5", DB.fetch "set_relation" "tactictoe_thm_6", DB.fetch "set_relation" "tactictoe_thm_7"],
+  metisLib.METIS_TAC [(DB.fetch "set_relation" "tc_rules")]]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.230149
+
+tc_transitive
+proof length: 4
+proof time: 0.007086
+Statistics
+  infstep : 146
+  nodes   : 16
+  maxdepth: 4
+Time: 1.991126
+  inferstep time: 1.748547
+  node_find time: 0.020134
+  node_crea time: 0.119728
+    pred time: 0.035839
+    thmpred time: 0.000003
+    mc time: 0.06695
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "tactictoe_thm_22", DB.fetch "set_relation" "transitive_tc", DB.fetch "set_relation" "transitive_def", DB.fetch "set_relation" "tc_ind", DB.fetch "set_relation" "tc_rules", DB.fetch "set_relation" "acyclic_def", DB.fetch "set_relation" "rrestrict_tc", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "tactictoe_thm_0", DB.fetch "set_relation" "tactictoe_thm_1", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tc_strongind", DB.fetch "set_relation" "tactictoe_thm_15", DB.fetch "set_relation" "tactictoe_thm_16", DB.fetch "set_relation" "tactictoe_thm_17"] THEN BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RDOM_DEF"), boolLib.IN_DEF] THEN
+  boolLib.ONCE_REWRITE_TAC [DB.fetch "set_relation" "tc_rules", DB.fetch "set_relation" "tactictoe_thm_0", DB.fetch "set_relation" "tactictoe_thm_1", DB.fetch "set_relation" "tc_strongind", DB.fetch "set_relation" "tc_cases", arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "tc_ind", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_16", DB.fetch "set_relation" "tactictoe_thm_2", DB.fetch "set_relation" "tactictoe_thm_3", DB.fetch "set_relation" "tactictoe_thm_5", DB.fetch "set_relation" "tactictoe_thm_6", DB.fetch "set_relation" "tactictoe_thm_7"] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.045608
+
+antisym_subset
+proof length: 1
+proof time: 0.054479
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.085903
+  inferstep time: 0.068163
+  node_find time: 0.000141
+  node_crea time: 0.009602
+    pred time: 0.002505
+    thmpred time: 0.000001
+    mc time: 0.009784
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "set_relation" "partial_order_def" , DB.fetch "set_relation" "antisym_def" , pred_setTheory.BIGINTER_SUBSET , pred_setTheory.SUBSET_DEF , pred_setTheory.BIJ_FINITE_SUBSET , pred_setTheory.CARD_SUBSET , pred_setTheory.SUBSET_FINITE , pred_setTheory.COUNTABLE_SUBSET , pred_setTheory.DIFF_BIGINTER , pred_setTheory.DIFF_DIFF_SUBSET , pred_setTheory.DIFF_INTER_SUBSET , pred_setTheory.DISJOINT_SUBSET , pred_setTheory.EQ_SUBSET_SUBSET , pred_setTheory.FINITE_PSUBSET_INFINITE , pred_setTheory.IMAGE_SUBSET , pred_setTheory.IMAGE_SUBSET_gen])
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.148197
+
+partial_order_dom_rng
+proof length: 6
+proof time: 0.13497
+Statistics
+  infstep : 554
+  nodes   : 47
+  maxdepth: 4
+Time: 5.44072
+  inferstep time: 4.414821
+  node_find time: 0.099288
+  node_crea time: 0.615843
+    pred time: 0.184741
+    thmpred time: 0.000007
+    mc time: 0.232369
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "partial_order_def", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "irreflexive_def", DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "finite_prefixes_def", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "finite_prefixes_inj_image", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_16", DB.fetch "set_relation" "tactictoe_thm_5"] THEN BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THENL
+  [simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def")] THEN
+  metisTools.METIS_TAC [pred_setTheory.tactictoe_thm_21, arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "irreflexive_def", DB.fetch "set_relation" "reflexive_def", pred_setTheory.SUBSET_DEF, pred_setTheory.IN_IMAGE, pred_setTheory.EXTENSION, pred_setTheory.IN_BIGUNION, pred_setTheory.IN_INTER, pred_setTheory.IN_UNION, pred_setTheory.IMAGE_DEF, pred_setTheory.IN_INSERT, pred_setTheory.partition_def, pred_setTheory.INSERT_DEF],
+  simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def")] THEN
+  metisTools.METIS_TAC [pred_setTheory.tactictoe_thm_21, arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", pred_setTheory.IN_IMAGE, pred_setTheory.IN_INSERT, pred_setTheory.partition_def, pred_setTheory.INSERT_DEF, pred_setTheory.BIJ_ALT, pred_setTheory.INJ_DEF, pred_setTheory.SURJ_DEF, pred_setTheory.INJ_IFF, pred_setTheory.INJ_INSERT, pred_setTheory.INJ_LINV_OPT, pred_setTheory.LINV_OPT_def, pred_setTheory.SET_MINIMUM]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.054311
+
+partial_order_subset
+Statistics
+  infstep : 544
+  nodes   : 91
+  maxdepth: 5
+Time: 10.012792
+  inferstep time: 8.019757
+  node_find time: 0.100301
+  node_crea time: 1.558546
+    pred time: 0.383257
+    thmpred time: 0.000028
+    mc time: 0.449484
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.423282
+
+strict_partial_order
+Statistics
+  infstep : 682
+  nodes   : 82
+  maxdepth: 4
+Time: 10.017369
+  inferstep time: 8.37828
+  node_find time: 0.120796
+  node_crea time: 1.159266
+    pred time: 0.286422
+    thmpred time: 0.000012
+    mc time: 0.429148
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.453601
+
+strict_partial_order_acyclic
+Statistics
+  infstep : 674
+  nodes   : 123
+  maxdepth: 6
+Time: 10.001
+  inferstep time: 7.730107
+  node_find time: 0.138091
+  node_crea time: 1.762592
+    pred time: 0.278288
+    thmpred time: 0.000018
+    mc time: 0.798564
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.061036
+
+linear_order_subset
+Statistics
+  infstep : 548
+  nodes   : 112
+  maxdepth: 5
+Time: 10.068808
+  inferstep time: 7.811344
+  node_find time: 0.107623
+  node_crea time: 1.815726
+    pred time: 0.375499
+    thmpred time: 0.000027
+    mc time: 0.547483
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.44743
+
+partial_order_linear_order
+proof length: 5
+proof time: 0.231149
+Statistics
+  infstep : 13
+  nodes   : 9
+  maxdepth: 3
+Time: 0.72415
+  inferstep time: 0.589023
+  node_find time: 0.002133
+  node_crea time: 0.098596
+    pred time: 0.029402
+    thmpred time: 0.000003
+    mc time: 0.052539
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "linear_order_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "transitive_def"), (DB.fetch "set_relation" "antisym_def"), (DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def"), (DB.fetch "set_relation" "rrestrict_def")] THEN BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "domain_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "range_def"), (DB.fetch "set_relation" "partial_order_def"), (DB.fetch "set_relation" "strict_def")] THENL
+  [metisTools.METIS_TAC [DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "transitive_def", DB.fetch "set_relation" "partial_order_def", DB.fetch "set_relation" "transitive_tc", DB.fetch "set_relation" "tactictoe_thm_22", DB.fetch "set_relation" "strict_partial_order", DB.fetch "set_relation" "tc_transitive", arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "reflexive_def"],
+  metisTools.METIS_TAC [DB.fetch "set_relation" "partial_order_def", DB.fetch "set_relation" "reflexive_def", arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "strict_partial_order", DB.fetch "set_relation" "strict_partial_order_acyclic", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "finite_prefixes_def", DB.fetch "set_relation" "finite_prefixes_inj_image", DB.fetch "set_relation" "finite_prefixes_range", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "finite_prefixes_subset_r"],
+  metisTools.METIS_TAC [DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "partial_order_def", DB.fetch "set_relation" "antisym_subset", DB.fetch "set_relation" "strict_partial_order", arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "transitive_def", DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "strict_def", DB.fetch "set_relation" "strict_partial_order_acyclic"]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.0525
+
+strict_linear_order_dom_rng
+proof length: 4
+proof time: 0.113898
+Statistics
+  infstep : 158
+  nodes   : 18
+  maxdepth: 3
+Time: 2.042022
+  inferstep time: 1.690775
+  node_find time: 0.025451
+  node_crea time: 0.195011
+    pred time: 0.05219
+    thmpred time: 0.000003
+    mc time: 0.097735
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "irreflexive_def", DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "finite_prefixes_def", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "finite_prefixes_inj_image", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "tactictoe_thm_10"] THEN BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "domain_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "range_def"), (DB.fetch "set_relation" "partial_order_def"), (DB.fetch "set_relation" "strict_def")] THENL
+  [metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "partial_order_dom_rng", pred_setTheory.SUBSET_DEF, DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "irreflexive_def", DB.fetch "set_relation" "reflexive_def", pred_setTheory.IN_IMAGE, pred_setTheory.EXTENSION, pred_setTheory.IN_BIGUNION, pred_setTheory.IN_INTER, pred_setTheory.IN_UNION, pred_setTheory.IMAGE_DEF, pred_setTheory.IN_INSERT],
+  metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", pred_setTheory.IN_IMAGE, pred_setTheory.IN_INSERT, pred_setTheory.partition_def, pred_setTheory.INSERT_DEF, pred_setTheory.BIJ_ALT, pred_setTheory.INJ_DEF, pred_setTheory.SURJ_DEF, pred_setTheory.INJ_IFF, pred_setTheory.INJ_INSERT, pred_setTheory.INJ_LINV_OPT]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.061418
+
+linear_order_dom_rng
+proof length: 3
+proof time: 0.154353
+Statistics
+  infstep : 5
+  nodes   : 5
+  maxdepth: 2
+Time: 0.366143
+  inferstep time: 0.293282
+  node_find time: 0.000821
+  node_crea time: 0.05444
+    pred time: 0.016181
+    thmpred time: 0.000001
+    mc time: 0.026694
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "linear_order_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "transitive_def"), (DB.fetch "set_relation" "antisym_def"), (DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def"), (DB.fetch "set_relation" "rrestrict_def")] THENL [metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "linear_order_def", pred_setTheory.SUBSET_DEF, DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "strict_linear_order_dom_rng", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "irreflexive_def", pred_setTheory.IN_IMAGE, pred_setTheory.EXTENSION, pred_setTheory.IN_BIGUNION, pred_setTheory.IN_INTER, pred_setTheory.IN_UNION, pred_setTheory.IMAGE_DEF], metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "strict_linear_order_dom_rng", DB.fetch "set_relation" "in_rrestrict", pred_setTheory.IN_IMAGE, pred_setTheory.IN_INSERT, pred_setTheory.partition_def, pred_setTheory.INSERT_DEF, pred_setTheory.BIJ_ALT, pred_setTheory.INJ_DEF, pred_setTheory.SURJ_DEF, pred_setTheory.INJ_IFF, pred_setTheory.INJ_INSERT]]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.070771
+
+RREFL_EXP_RSUBSET
+proof length: 2
+proof time: 0.152952
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.24485
+  inferstep time: 0.213631
+  node_find time: 0.000627
+  node_crea time: 0.021951
+    pred time: 0.007047
+    thmpred time: 0.000001
+    mc time: 0.013527
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "RREFL_EXP_def", relationTheory.REMPTY_SUBSET, relationTheory.RUNIV_SUBSET, relationTheory.RSUBSET, relationTheory.EqIsBothRSUBSET, relationTheory.O_MONO, relationTheory.RSUBSET_ANTISYM, relationTheory.irreflexive_RSUBSET, pred_setTheory.REL_RESTRICT_SUBSET, relationTheory.reflexive_Id_RSUBSET, relationTheory.symmetric_inv_RSUBSET, relationTheory.transitive_O_RSUBSET, relationTheory.RSUBSET_WeakOrder, relationTheory.RSUBSET_antisymmetric, pred_setTheory.REL_RESTRICT_DEF, pred_setTheory.BIGUNION_partition] THEN metisTools.METIS_TAC [DB.fetch "set_relation" "RREFL_EXP_def", relationTheory.RUNION, relationTheory.RC_OR_Id, pairTheory.LEX_DEF, pred_setTheory.DELETE_INSERT, pred_setTheory.partition_def, pred_setTheory.BIJ_ALT, pred_setTheory.equiv_on_def, pred_setTheory.tactictoe_thm_61, pred_setTheory.tactictoe_thm_71, pred_setTheory.partition_elements_interrelate, pred_setTheory.REL_RESTRICT_DEF, relationTheory.RRESTRICT_DEF, pred_setTheory.pairwise_UNION, pred_setTheory.pairwise_def, pred_setTheory.IN_DELETE]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005355
+
+RREFL_EXP_UNIV
+proof length: 2
+proof time: 0.001891
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.260069
+  inferstep time: 0.220629
+  node_find time: 0.01728
+  node_crea time: 0.013483
+    pred time: 0.00428
+    thmpred time: 0.0
+    mc time: 0.009731
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [relationTheory.RSUBSET, (DB.fetch "set_relation" "RREFL_EXP_def"), relationTheory.RUNION] THEN BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RC_DEF"), (DB.fetch "relation" "RUNION"), boolLib.FUN_EQ_THM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00589
+
+REL_RESTRICT_UNIV
+proof length: 1
+proof time: 0.001332
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.119799
+  inferstep time: 0.107231
+  node_find time: 0.000347
+  node_crea time: 0.007707
+    pred time: 0.002304
+    thmpred time: 0.0
+    mc time: 0.005681
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "pred_set" "REL_RESTRICT_DEF" ) , boolLib.FUN_EQ_THM ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006579
+
+in_rel_to_reln
+proof length: 1
+proof time: 0.001505
+Statistics
+  infstep : 3
+  nodes   : 2
+  maxdepth: 1
+Time: 0.126848
+  inferstep time: 0.112017
+  node_find time: 0.000475
+  node_crea time: 0.008725
+    pred time: 0.002842
+    thmpred time: 0.0
+    mc time: 0.006402
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "set_relation" "rel_to_reln_def" , pairTheory.ELIM_PEXISTS , pairTheory.ELIM_PFORALL , pairTheory.ELIM_UNCURRY , pairTheory.UNCURRY_VAR , pairTheory.UNCURRY , pairTheory.pair_CASE_def , pairTheory.tactictoe_thm_1 , pairTheory.PAIR_MAP , pairTheory.PROD_ALL_def , pairTheory.FST_PAIR_MAP , pred_setTheory.IN_CROSS , DB.fetch "set_relation" "in_rrestrict_alt" , pred_setTheory.CROSS_DEF , pred_setTheory.CROSS_applied , pairTheory.PAIR ])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.025045
+
+reln_to_rel_app
+proof length: 3
+proof time: 0.0823
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.336159
+  inferstep time: 0.292035
+  node_find time: 0.00085
+  node_crea time: 0.027072
+    pred time: 0.009747
+    thmpred time: 0.000001
+    mc time: 0.021806
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "pred_set" "EXTENSION"), boolLib.EQ_IMP_THM] THENL [metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "finite_prefixes_inj_image", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "strict_def", DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "tc_cases_left", DB.fetch "set_relation" "tactictoe_thm_6", DB.fetch "set_relation" "tc_cases_right"], metisTools.METIS_TAC [DB.fetch "set_relation" "reln_to_rel_def", arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "finite_prefixes_inj_image", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "strict_def", DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "tc_cases_left", DB.fetch "set_relation" "tc_rules", DB.fetch "set_relation" "tactictoe_thm_6"]]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.00371
+
+rel_to_reln_IS_UNCURRY
+proof length: 3
+proof time: 0.003196
+Statistics
+  infstep : 40
+  nodes   : 7
+  maxdepth: 3
+Time: 0.664443
+  inferstep time: 0.547024
+  node_find time: 0.007907
+  node_crea time: 0.06719
+    pred time: 0.024464
+    thmpred time: 0.0
+    mc time: 0.039909
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [boolLib.FUN_EQ_THM, (DB.fetch "pair" "UNCURRY_VAR"), (DB.fetch "pair" "PAIR")] THEN boolLib.REWRITE_TAC [DB.fetch "set_relation" "in_rel_to_reln", DB.fetch "set_relation" "rel_to_reln_def", pairTheory.ELIM_UNCURRY, pairTheory.UNCURRY_VAR, pairTheory.UNCURRY, pairTheory.ELIM_PEXISTS, pairTheory.ELIM_PFORALL, pairTheory.tactictoe_thm_1, pairTheory.pair_CASE_def, DB.fetch "set_relation" "tactictoe_thm_16", pairTheory.PAIR_MAP, pairTheory.PROD_ALL_def, pairTheory.FST_PAIR_MAP, pairTheory.PAIR, pred_setTheory.IN_CROSS, pred_setTheory.CROSS_applied] THEN
+  BasicProvers.SRW_TAC [] [(DB.fetch "pred_set" "EXTENSION"), (DB.fetch "pred_set" "SPECIFICATION")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004175
+
+reln_to_rel_IS_CURRY
+Statistics
+  infstep : 485
+  nodes   : 108
+  maxdepth: 5
+Time: 10.005523
+  inferstep time: 8.175939
+  node_find time: 0.103918
+  node_crea time: 1.382249
+    pred time: 0.498184
+    thmpred time: 0.000046
+    mc time: 0.498864
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.0046
+
+rel_to_reln_inv
+proof length: 2
+proof time: 0.047816
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.225083
+  inferstep time: 0.182296
+  node_find time: 0.000813
+  node_crea time: 0.027996
+    pred time: 0.008666
+    thmpred time: 0.000001
+    mc time: 0.022731
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "in_rel_to_reln", DB.fetch "set_relation" "rel_to_reln_def", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "rel_to_reln_IS_UNCURRY", DB.fetch "set_relation" "reln_to_rel_IS_CURRY", pred_setTheory.KoenigsLemma, pred_setTheory.partition_def, pred_setTheory.tactictoe_thm_75, pairTheory.WF_LEX, pairTheory.WF_RPROD, pred_setTheory.KoenigsLemma_WF, pred_setTheory.tactictoe_thm_74, pairTheory.PAIR_EQ, pairTheory.CLOSED_PAIR_EQ, pairTheory.ABS_PAIR_THM] THEN metisTools.METIS_TAC [pairTheory.PEXISTS_THM, pairTheory.PFORALL_THM, pairTheory.LET2_RAND, pairTheory.LET2_RATOR, combinTheory.C_DEF, combinTheory.C_ABS_L, DB.fetch "set_relation" "rel_to_reln_def", pred_setTheory.KoenigsLemma, pred_setTheory.partition_def, relationTheory.inv_DEF, relationTheory.RTC_CASES1, relationTheory.RESTRICT_DEF, relationTheory.symmetric_def, relationTheory.total_def, relationTheory.transitive_def, pred_setTheory.tactictoe_thm_75]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006276
+
+reln_to_rel_inv
+proof length: 2
+proof time: 0.002751
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.294328
+  inferstep time: 0.240859
+  node_find time: 0.001106
+  node_crea time: 0.039368
+    pred time: 0.012874
+    thmpred time: 0.0
+    mc time: 0.026233
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "rel_to_reln_inv", DB.fetch "set_relation" "rel_to_reln_def", DB.fetch "set_relation" "in_rel_to_reln", DB.fetch "set_relation" "rel_to_reln_IS_UNCURRY", DB.fetch "set_relation" "reln_to_rel_IS_CURRY", pairTheory.ABS_PAIR_THM, pairTheory.ABS_REP_prod, pairTheory.pair_CASES, DB.fetch "set_relation" "acyclic_SWAP", DB.fetch "set_relation" "tc_SWAP", DB.fetch "set_relation" "acyclic_def", DB.fetch "set_relation" "tactictoe_thm_20", DB.fetch "set_relation" "acyclic_bigunion", DB.fetch "set_relation" "tactictoe_thm_21"] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "domain_def", pairTheory.pair_Axiom, pairTheory.EXISTS_PROD, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.pair_induction, DB.fetch "set_relation" "range_def", pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, DB.fetch "set_relation" "rextension", pred_setTheory.PAIR_IN_GSPEC_1, pairTheory.PAIR_EQ, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pairTheory.UNCURRY_DEF]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.004098
+
+reln_to_rel_11
+proof length: 1
+proof time: 0.073412
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.120264
+  inferstep time: 0.10609
+  node_find time: 0.000221
+  node_crea time: 0.009179
+    pred time: 0.002516
+    thmpred time: 0.0
+    mc time: 0.007134
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "set_relation" "reln_to_rel_app" , DB.fetch "set_relation" "reln_to_rel_def" , DB.fetch "set_relation" "reln_to_rel_inv" , DB.fetch "set_relation" "rel_to_reln_inv" , DB.fetch "set_relation" "reln_to_rel_IS_CURRY" , DB.fetch "set_relation" "rcomp_def" , DB.fetch "set_relation" "rrestrict_union" , DB.fetch "set_relation" "acyclic_subset" , DB.fetch "set_relation" "tactictoe_thm_19" , DB.fetch "set_relation" "acyclic_union" , DB.fetch "set_relation" "finite_prefixes_comp" , DB.fetch "set_relation" "finite_prefixes_union" , DB.fetch "set_relation" "tactictoe_thm_11" , DB.fetch "set_relation" "tc_implication" , DB.fetch "set_relation" "tc_union" , pairTheory.PAIR])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005947
+
+rel_to_reln_11
+proof length: 2
+proof time: 0.011968
+Statistics
+  infstep : 7
+  nodes   : 3
+  maxdepth: 2
+Time: 0.285416
+  inferstep time: 0.247842
+  node_find time: 0.001092
+  node_crea time: 0.017415
+    pred time: 0.005737
+    thmpred time: 0.000002
+    mc time: 0.020399
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "reln_to_rel_def"), (DB.fetch "set_relation" "rel_to_reln_def"), boolLib.FUN_EQ_THM] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "domain_def", pairTheory.pair_Axiom, pairTheory.EXISTS_PROD, pairTheory.CURRY_DEF, pairTheory.FORALL_PROD, pairTheory.LAMBDA_PROD, pairTheory.pair_induction, DB.fetch "set_relation" "range_def", pairTheory.ABS_PAIR_THM, pairTheory.pair_CASES, DB.fetch "set_relation" "rextension", pred_setTheory.PAIR_IN_GSPEC_1, pairTheory.PAIR_EQ, pred_setTheory.PAIR_IN_GSPEC_2, pred_setTheory.PAIR_IN_GSPEC_IFF, pairTheory.UNCURRY_DEF]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.031293
+
+rel_to_reln_swap
+proof length: 1
+proof time: 0.04864
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.066896
+  inferstep time: 0.045895
+  node_find time: 0.000192
+  node_crea time: 0.014388
+    pred time: 0.006237
+    thmpred time: 0.0
+    mc time: 0.010259
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "set_relation" "reln_to_rel_inv" , DB.fetch "set_relation" "rel_to_reln_inv" , DB.fetch "set_relation" "reln_to_rel_app" , DB.fetch "set_relation" "reln_to_rel_def" , DB.fetch "set_relation" "in_rel_to_reln" , DB.fetch "set_relation" "rel_to_reln_def" , DB.fetch "set_relation" "rel_to_reln_11" , DB.fetch "set_relation" "reln_to_rel_11" , DB.fetch "set_relation" "rel_to_reln_IS_UNCURRY" , DB.fetch "set_relation" "reln_to_rel_IS_CURRY" , pairTheory.ABS_PAIR_THM , pairTheory.ABS_REP_prod , pairTheory.pair_CASES , DB.fetch "set_relation" "acyclic_SWAP" , DB.fetch "set_relation" "tc_SWAP" , DB.fetch "set_relation" "acyclic_def"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.019637
+
+domain_to_rel_conv
+proof length: 2
+proof time: 0.000991
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.342631
+  inferstep time: 0.261898
+  node_find time: 0.001745
+  node_crea time: 0.047066
+    pred time: 0.011667
+    thmpred time: 0.0
+    mc time: 0.049058
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "reln_to_rel_app"), pred_setTheory.EXTENSION, (DB.fetch "set_relation" "in_rel_to_reln")] THEN boolLib.REWRITE_TAC [DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "tc_domain_range", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "rel_to_reln_swap", DB.fetch "set_relation" "reln_to_rel_inv", DB.fetch "set_relation" "reln_to_rel_11", relationTheory.IN_RDOM, relationTheory.IN_RDOM_DELETE, relationTheory.IN_RDOM_RRESTRICT, relationTheory.IN_RDOM_RUNION, relationTheory.RDOM_DEF, DB.fetch "set_relation" "tactictoe_thm_21"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008841
+
+range_to_rel_conv
+proof length: 2
+proof time: 0.001039
+Statistics
+  infstep : 58
+  nodes   : 16
+  maxdepth: 3
+Time: 1.21577
+  inferstep time: 1.006551
+  node_find time: 0.011339
+  node_crea time: 0.149481
+    pred time: 0.039269
+    thmpred time: 0.000004
+    mc time: 0.085678
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "domain_def"), pred_setTheory.EXTENSION, relationTheory.IN_RDOM, (DB.fetch "set_relation" "tactictoe_thm_23")] THEN boolLib.REWRITE_TAC [relationTheory.IN_RRANGE, relationTheory.RRANGE, DB.fetch "set_relation" "in_range", DB.fetch "set_relation" "tc_domain_range", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "domain_to_rel_conv", DB.fetch "set_relation" "rel_to_reln_swap", DB.fetch "set_relation" "reln_to_rel_inv", DB.fetch "set_relation" "reln_to_rel_11", DB.fetch "set_relation" "tactictoe_thm_21", DB.fetch "set_relation" "linear_order_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.005201
+
+strict_to_rel_conv
+proof length: 2
+proof time: 0.004802
+Statistics
+  infstep : 14
+  nodes   : 5
+  maxdepth: 2
+Time: 0.299877
+  inferstep time: 0.205899
+  node_find time: 0.003986
+  node_crea time: 0.062884
+    pred time: 0.021797
+    thmpred time: 0.0
+    mc time: 0.038274
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "strict_def", DB.fetch "set_relation" "strict_rrestrict", DB.fetch "set_relation" "strict_partial_order", DB.fetch "set_relation" "strict_partial_order_acyclic", DB.fetch "set_relation" "rel_to_reln_swap", DB.fetch "set_relation" "reln_to_rel_inv", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "domain_to_rel_conv", DB.fetch "set_relation" "range_to_rel_conv", DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "rel_to_reln_inv", DB.fetch "set_relation" "reln_to_rel_11", relationTheory.RC_STRORD] THEN BasicProvers.SRW_TAC [] [(DB.fetch "relation" "STRORD"), (DB.fetch "relation" "RINTER"), (DB.fetch "relation" "RCOMPL"), boolLib.FUN_EQ_THM]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007991
+
+rrestrict_to_rel_conv
+proof length: 4
+proof time: 0.006361
+Statistics
+  infstep : 61
+  nodes   : 22
+  maxdepth: 4
+Time: 1.733752
+  inferstep time: 1.424269
+  node_find time: 0.012375
+  node_crea time: 0.225194
+    pred time: 0.07333
+    thmpred time: 0.000002
+    mc time: 0.132513
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "reln_to_rel_app"), pred_setTheory.EXTENSION, (DB.fetch "set_relation" "in_rel_to_reln")] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "rrestrict_tc", DB.fetch "set_relation" "strict_rrestrict", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "domain_rrestrict_SUBSET", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "range_rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_SUBSET"] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "in_rrestrict_alt", pred_setTheory.IN_CROSS, pred_setTheory.CROSS_applied, pred_setTheory.CROSS_DEF, DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_26", pred_setTheory.REL_RESTRICT_DEF, pred_setTheory.FINITE_StrongOrder_WF, pred_setTheory.FINITE_WF_noloops, pred_setTheory.REL_RESTRICT_EMPTY, DB.fetch "set_relation" "REL_RESTRICT_UNIV", pred_setTheory.REL_RESTRICT_SUBSET, DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "reln_to_rel_def"] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict_alt", pred_setTheory.IN_CROSS, pred_setTheory.CROSS_applied, pred_setTheory.CROSS_DEF, DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "in_rel_to_reln", pairTheory.PAIR_FST_SND_EQ, pairTheory.PROD_ALL_def, pairTheory.PAIR, pairTheory.ELIM_UNCURRY, pairTheory.UNCURRY_VAR, pairTheory.SWAP_def, pairTheory.ELIM_PEXISTS]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.012014
+
+rcomp_to_rel_conv
+proof length: 3
+proof time: 0.009558
+Statistics
+  infstep : 135
+  nodes   : 47
+  maxdepth: 4
+Time: 4.920001
+  inferstep time: 3.923096
+  node_find time: 0.031544
+  node_crea time: 0.789463
+    pred time: 0.223149
+    thmpred time: 0.000013
+    mc time: 0.486921
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "strict_def"), (DB.fetch "set_relation" "rextension"), (DB.fetch "set_relation" "tactictoe_thm_25"), relationTheory.STRORD] THEN BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "finite_prefixes_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "rcomp_def")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "tactictoe_thm_27", DB.fetch "set_relation" "reln_to_rel_11", relationTheory.O_DEF, DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "reln_to_rel_def", relationTheory.O_MONO, relationTheory.Id_O, relationTheory.O_ASSOC, relationTheory.O_Id, relationTheory.inv_O, relationTheory.transitive_O_RSUBSET, DB.fetch "set_relation" "rcomp_def"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.011017
+
+univ_reln_to_rel_conv
+proof length: 2
+proof time: 0.003906
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 2
+Time: 0.29904
+  inferstep time: 0.238548
+  node_find time: 0.001303
+  node_crea time: 0.04473
+    pred time: 0.01479
+    thmpred time: 0.000001
+    mc time: 0.02875
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "reln_to_rel_app"), pred_setTheory.EXTENSION, (DB.fetch "set_relation" "in_rel_to_reln")] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "univ_reln_def", DB.fetch "set_relation" "RRUNIV_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "tactictoe_thm_27", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_28", pred_setTheory.IN_CROSS, DB.fetch "set_relation" "in_rel_to_reln", pred_setTheory.CROSS_applied, pred_setTheory.CROSS_DEF, pairTheory.PAIR, pairTheory.ELIM_UNCURRY, pairTheory.UNCURRY_VAR]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009518
+
+tc_to_rel_conv
+Statistics
+  infstep : 596
+  nodes   : 104
+  maxdepth: 6
+Time: 10.015899
+  inferstep time: 8.727986
+  node_find time: 0.129986
+  node_crea time: 0.769849
+    pred time: 0.238946
+    thmpred time: 0.000026
+    mc time: 0.294518
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.252993
+
+acyclic_reln_to_rel_conv
+proof length: 2
+proof time: 0.105957
+Statistics
+  infstep : 26
+  nodes   : 9
+  maxdepth: 3
+Time: 0.520639
+  inferstep time: 0.429345
+  node_find time: 0.006029
+  node_crea time: 0.060338
+    pred time: 0.023797
+    thmpred time: 0.000002
+    mc time: 0.025154
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "acyclic_def"), pred_setTheory.SUBSET_DEF] THEN metisTools.METIS_TAC [DB.fetch "set_relation" "tc_to_rel_conv", pred_setTheory.FINITE_WF_noloops, relationTheory.irreflexive_def, relationTheory.StrongOrder, relationTheory.irreflexive_inv, relationTheory.irrefl_trans_implies_antisym, relationTheory.irreflexive_RSUBSET, relationTheory.WF_irreflexive, DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "tactictoe_thm_29", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_27"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.049162
+
+irreflexive_reln_to_rel_conv
+proof length: 3
+proof time: 0.149312
+Statistics
+  infstep : 9
+  nodes   : 5
+  maxdepth: 3
+Time: 0.406156
+  inferstep time: 0.34717
+  node_find time: 0.001616
+  node_crea time: 0.038265
+    pred time: 0.01371
+    thmpred time: 0.000001
+    mc time: 0.026459
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "irreflexive_def", DB.fetch "set_relation" "rrestrict_to_rel_conv", pred_setTheory.FINITE_WF_noloops, DB.fetch "set_relation" "acyclic_reln_to_rel_conv", pred_setTheory.REL_RESTRICT_DEF, pred_setTheory.FINITE_StrongOrder_WF, pred_setTheory.REL_RESTRICT_EMPTY, DB.fetch "set_relation" "REL_RESTRICT_UNIV", pred_setTheory.REL_RESTRICT_SUBSET, relationTheory.irreflexive_def, relationTheory.StrongOrder, relationTheory.irreflexive_inv, relationTheory.WF_irreflexive, relationTheory.irrefl_trans_implies_antisym, relationTheory.irreflexive_RSUBSET, DB.fetch "set_relation" "tactictoe_thm_26"] THEN BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "domain_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "range_def"), (DB.fetch "set_relation" "partial_order_def"), (DB.fetch "set_relation" "strict_def")] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "irreflexive_def", DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "linear_order_dom_rng", DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "strict_linear_order_dom_rng", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "finite_prefixes_def", DB.fetch "set_relation" "tactictoe_thm_6", DB.fetch "set_relation" "tactictoe_thm_5", DB.fetch "set_relation" "tc_cases_left", DB.fetch "set_relation" "tc_cases_right", DB.fetch "set_relation" "in_dom_rg"]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.03276
+
+irreflexive_reln_to_rel_conv_UNIV
+proof length: 1
+proof time: 0.002645
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.127162
+  inferstep time: 0.113281
+  node_find time: 0.000374
+  node_crea time: 0.008204
+    pred time: 0.00232
+    thmpred time: 0.0
+    mc time: 0.005716
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "set_relation" "irreflexive_def" ) , relationTheory.irreflexive_def , pred_setTheory.REL_RESTRICT_DEF , relationTheory.RINTER , ( DB.fetch "set_relation" "RRUNIV_def" ) , ( DB.fetch "set_relation" "tactictoe_thm_31" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008819
+
+reflexive_reln_to_rel_conv
+proof length: 4
+proof time: 0.0072
+Statistics
+  infstep : 485
+  nodes   : 84
+  maxdepth: 6
+Time: 7.449956
+  inferstep time: 6.142664
+  node_find time: 0.109972
+  node_crea time: 0.795762
+    pred time: 0.19491
+    thmpred time: 0.000013
+    mc time: 0.426398
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "RSUBSET"), (DB.fetch "relation" "reflexive_def")] THEN BasicProvers.SRW_TAC [] [relationTheory.RSUBSET, (DB.fetch "set_relation" "RREFL_EXP_def"), relationTheory.RUNION] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "partial_order_def", DB.fetch "set_relation" "tactictoe_thm_31", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "tactictoe_thm_30", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_27", DB.fetch "set_relation" "tactictoe_thm_28", DB.fetch "set_relation" "tactictoe_thm_29", DB.fetch "set_relation" "tactictoe_thm_32", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "irreflexive_reln_to_rel_conv", DB.fetch "set_relation" "rrestrict_to_rel_conv"] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.03203
+
+reflexive_reln_to_rel_conv_UNIV
+proof length: 1
+proof time: 0.00152
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.135962
+  inferstep time: 0.112877
+  node_find time: 0.000539
+  node_crea time: 0.01695
+    pred time: 0.005893
+    thmpred time: 0.000001
+    mc time: 0.008867
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ ( DB.fetch "set_relation" "reflexive_def" ) , relationTheory.reflexive_def , ( DB.fetch "set_relation" "tactictoe_thm_32" ) , ( DB.fetch "set_relation" "RREFL_EXP_def" ) , relationTheory.RUNION , ( DB.fetch "set_relation" "RRUNIV_def" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.007149
+
+reflexive_reln_to_rel_conv
+proof length: 3
+proof time: 0.004972
+Statistics
+  infstep : 62
+  nodes   : 11
+  maxdepth: 3
+Time: 1.170597
+  inferstep time: 0.965024
+  node_find time: 0.014023
+  node_crea time: 0.110922
+    pred time: 0.038741
+    thmpred time: 0.000003
+    mc time: 0.061853
+    inst time: 0.0
+Proof found: simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "set_relation" "transitive_def"), (DB.fetch "set_relation" "strict_def"), (DB.fetch "set_relation" "antisym_def")] THEN BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "tactictoe_thm_30", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_31", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_32", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_27", DB.fetch "set_relation" "tactictoe_thm_28", DB.fetch "set_relation" "tactictoe_thm_29", DB.fetch "set_relation" "tactictoe_thm_33", DB.fetch "set_relation" "reln_to_rel_def", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "acyclic_reln_to_rel_conv", DB.fetch "set_relation" "tc_to_rel_conv", DB.fetch "set_relation" "domain_to_rel_conv"] THEN
+  simpLib.SIMP_TAC (BasicProvers.srw_ss ()) [relationTheory.transitive_def, (DB.fetch "pair" "FORALL_PROD"), (DB.fetch "pair" "LEX_DEF"), (DB.fetch "pair" "UNCURRY_DEF")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.0062
+
+antisym_reln_to_rel_conv
+proof length: 2
+proof time: 0.000375
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.290007
+  inferstep time: 0.25221
+  node_find time: 0.001189
+  node_crea time: 0.021999
+    pred time: 0.007284
+    thmpred time: 0.0
+    mc time: 0.017876
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "set_relation" "antisym_def"), pred_setTheory.SUBSET_DEF] THEN boolLib.REWRITE_TAC [relationTheory.antisymmetric_def, relationTheory.irrefl_trans_implies_antisym, relationTheory.antisymmetric_RINTER, relationTheory.Order, relationTheory.WeakOrder, relationTheory.WF_antisymmetric, relationTheory.antisymmetric_RC, relationTheory.antisymmetric_inv, relationTheory.RSUBSET_antisymmetric, DB.fetch "set_relation" "tactictoe_thm_30", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_31", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_33", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "tactictoe_thm_25"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006396
+Replaying proof: 0.006115
+Replaying proof: 0.035733
+Replaying proof: 0.018154
+
+partial_order_reln_to_rel_conv
+Statistics
+  infstep : 439
+  nodes   : 164
+  maxdepth: 6
+Time: 10.076052
+  inferstep time: 8.093972
+  node_find time: 0.111947
+  node_crea time: 1.550634
+    pred time: 0.256464
+    thmpred time: 0.000027
+    mc time: 0.804492
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 0
+Replaying proof: 0.006046
+
+partial_order_reln_to_rel_conv_UNIV
+proof length: 3
+proof time: 0.00158
+Statistics
+  infstep : 44
+  nodes   : 23
+  maxdepth: 4
+Time: 1.266656
+  inferstep time: 1.020533
+  node_find time: 0.008408
+  node_crea time: 0.19013
+    pred time: 0.058185
+    thmpred time: 0.000003
+    mc time: 0.086721
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "domain_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "range_def"), (DB.fetch "set_relation" "partial_order_def"), (DB.fetch "set_relation" "strict_def")] THEN boolLib.REWRITE_TAC [DB.fetch "set_relation" "reflexive_reln_to_rel_conv_UNIV", DB.fetch "set_relation" "partial_order_def", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "reflexive_reln_to_rel_conv", DB.fetch "set_relation" "tactictoe_thm_35", DB.fetch "set_relation" "antisym_reln_to_rel_conv", DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "transitive_def", DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "strict_partial_order", DB.fetch "set_relation" "transitive_tc", DB.fetch "set_relation" "tactictoe_thm_22", DB.fetch "set_relation" "partial_order_reln_to_rel_conv", DB.fetch "set_relation" "tc_transitive", relationTheory.WeakOrder] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "antisym_reln_to_rel_conv", DB.fetch "set_relation" "reflexive_reln_to_rel_conv_UNIV", relationTheory.WeakOrder, relationTheory.Order, relationTheory.antisymmetric_def, relationTheory.antisymmetric_RC, DB.fetch "set_relation" "reflexive_reln_to_rel_conv", DB.fetch "set_relation" "tactictoe_thm_35", DB.fetch "set_relation" "partial_order_reln_to_rel_conv", DB.fetch "set_relation" "tactictoe_thm_30", DB.fetch "set_relation" "tactictoe_thm_34", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_31", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_33", DB.fetch "set_relation" "tactictoe_thm_26"]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006089
+
+linear_order_reln_to_rel_conv_UNIV
+proof length: 5
+proof time: 0.024211
+Statistics
+  infstep : 143
+  nodes   : 54
+  maxdepth: 5
+Time: 3.772999
+  inferstep time: 3.198143
+  node_find time: 0.0289
+  node_crea time: 0.41006
+    pred time: 0.112441
+    thmpred time: 0.00001
+    mc time: 0.18572
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "relation" "WeakLinearOrder"), (DB.fetch "relation" "trichotomous")] THEN boolLib.REWRITE_TAC [DB.fetch "set_relation" "partial_order_reln_to_rel_conv_UNIV", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "linear_order_dom_rng", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "partial_order_linear_order", DB.fetch "set_relation" "tactictoe_thm_30", DB.fetch "set_relation" "tactictoe_thm_34", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_31", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_33", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_27", DB.fetch "set_relation" "tactictoe_thm_28", DB.fetch "set_relation" "tactictoe_thm_29"] THEN
+  boolLib.REWRITE_TAC [DB.fetch "set_relation" "reflexive_reln_to_rel_conv_UNIV", DB.fetch "set_relation" "partial_order_def", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "reflexive_reln_to_rel_conv", DB.fetch "set_relation" "tactictoe_thm_35", DB.fetch "set_relation" "antisym_reln_to_rel_conv", DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "transitive_def", DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "strict_partial_order", DB.fetch "set_relation" "transitive_tc", DB.fetch "set_relation" "tactictoe_thm_22", DB.fetch "set_relation" "partial_order_reln_to_rel_conv", DB.fetch "set_relation" "tc_transitive", relationTheory.WeakOrder] THEN
+  BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "reflexive_def"), relationTheory.reflexive_def, (DB.fetch "set_relation" "tactictoe_thm_32"), (DB.fetch "set_relation" "RREFL_EXP_def"), relationTheory.RUNION, (DB.fetch "set_relation" "RRUNIV_def")] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "reflexive_def"), (DB.fetch "relation" "TC_SUBSET")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.035538
+
+strict_linear_order_reln_to_rel_conv_UNIV
+Statistics
+  infstep : 811
+  nodes   : 176
+  maxdepth: 6
+Time: 10.000653
+  inferstep time: 7.887126
+  node_find time: 0.197881
+  node_crea time: 1.365744
+    pred time: 0.238537
+    thmpred time: 0.000024
+    mc time: 0.596716
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.04866
+
+acyclic_WF
+Statistics
+  infstep : 1095
+  nodes   : 100
+  maxdepth: 4
+Time: 10.016264
+  inferstep time: 7.785559
+  node_find time: 0.275769
+  node_crea time: 1.146424
+    pred time: 0.222411
+    thmpred time: 0.000024
+    mc time: 0.443198
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.178803
+
+minimal_elements_subset
+proof length: 2
+proof time: 0.004264
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.265717
+  inferstep time: 0.229057
+  node_find time: 0.001278
+  node_crea time: 0.023195
+    pred time: 0.007803
+    thmpred time: 0.0
+    mc time: 0.014647
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "minimal_elements_def", pred_setTheory.POW_DEF, DB.fetch "set_relation" "acyclic_WF", DB.fetch "set_relation" "antisym_subset", DB.fetch "set_relation" "domain_rrestrict_SUBSET", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "finite_prefixes_subset_r", DB.fetch "set_relation" "finite_prefixes_subset_rs", DB.fetch "set_relation" "finite_prefixes_subset_s", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "partial_order_def", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "range_rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "strict_linear_order_def"] THEN BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "finite_prefixes_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "rcomp_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.008702
+
+minimal_elements_SWAP
+proof length: 1
+proof time: 0.002576
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.149884
+  inferstep time: 0.125326
+  node_find time: 0.000581
+  node_crea time: 0.017303
+    pred time: 0.005459
+    thmpred time: 0.0
+    mc time: 0.010168
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "set_relation" "maximal_elements_def" , DB.fetch "set_relation" "minimal_elements_def" , DB.fetch "set_relation" "minimal_elements_subset" , DB.fetch "set_relation" "acyclic_SWAP" , DB.fetch "set_relation" "tc_SWAP" , DB.fetch "set_relation" "tactictoe_thm_20" , DB.fetch "set_relation" "tactictoe_thm_13" , DB.fetch "set_relation" "tactictoe_thm_14" , DB.fetch "set_relation" "tactictoe_thm_18" , DB.fetch "set_relation" "tactictoe_thm_36" , DB.fetch "set_relation" "univ_reln_def" , pairTheory.SWAP_def , DB.fetch "set_relation" "finite_prefixes_inj_image" , pred_setTheory.CROSS_EQNS , pred_setTheory.IMAGE_DEF , pred_setTheory.FINITELY_INJECTIVE_IMAGE_FINITE ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.006512
+
+maximal_union
+proof length: 2
+proof time: 0.004347
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.279546
+  inferstep time: 0.238942
+  node_find time: 0.000775
+  node_crea time: 0.025886
+    pred time: 0.007071
+    thmpred time: 0.0
+    mc time: 0.021472
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "maximal_elements_def", DB.fetch "set_relation" "minimal_elements_SWAP", DB.fetch "set_relation" "tc_union", DB.fetch "set_relation" "rrestrict_union", DB.fetch "set_relation" "acyclic_union", DB.fetch "set_relation" "finite_prefixes_union", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "finite_prefixes_comp", DB.fetch "set_relation" "tactictoe_thm_23", DB.fetch "set_relation" "tactictoe_thm_24", DB.fetch "set_relation" "tactictoe_thm_25", DB.fetch "set_relation" "tactictoe_thm_26", DB.fetch "set_relation" "tactictoe_thm_27", DB.fetch "set_relation" "tactictoe_thm_28", DB.fetch "set_relation" "tactictoe_thm_29", DB.fetch "set_relation" "tactictoe_thm_30"] THEN BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "finite_prefixes_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "rcomp_def")]
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009508
+
+minimal_union
+proof length: 1
+proof time: 0.003095
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.136552
+  inferstep time: 0.118548
+  node_find time: 0.000417
+  node_crea time: 0.010804
+    pred time: 0.002835
+    thmpred time: 0.0
+    mc time: 0.009027
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ pred_setTheory.SUBSET_DEF , ( DB.fetch "set_relation" "minimal_elements_def" ) ])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.009985
+
+minimal_elements_mono
+proof length: 1
+proof time: 0.004851
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.131721
+  inferstep time: 0.115944
+  node_find time: 0.000418
+  node_crea time: 0.009539
+    pred time: 0.002722
+    thmpred time: 0.000001
+    mc time: 0.007036
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ pred_setTheory.SUBSET_DEF , ( DB.fetch "set_relation" "minimal_elements_def" ) ])
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.075659
+
+minimal_elements_rrestrict
+proof length: 3
+proof time: 0.014458
+Statistics
+  infstep : 36
+  nodes   : 15
+  maxdepth: 3
+Time: 1.255328
+  inferstep time: 1.073373
+  node_find time: 0.008002
+  node_crea time: 0.125893
+    pred time: 0.035284
+    thmpred time: 0.000001
+    mc time: 0.072637
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "minimal_elements_def", DB.fetch "set_relation" "minimal_elements_mono", DB.fetch "set_relation" "minimal_elements_subset", DB.fetch "set_relation" "minimal_union", DB.fetch "set_relation" "minimal_elements_SWAP", DB.fetch "set_relation" "maximal_elements_def", DB.fetch "set_relation" "univ_reln_def", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "rrestrict_to_rel_conv", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "strict_rrestrict", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "domain_rrestrict_SUBSET"] THEN BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.092645
+
+WF_has_minimal_path
+Statistics
+  infstep : 711
+  nodes   : 100
+  maxdepth: 5
+Time: 10.004443
+  inferstep time: 8.267182
+  node_find time: 0.18024
+  node_crea time: 0.997385
+    pred time: 0.198031
+    thmpred time: 0.000016
+    mc time: 0.439372
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.4545
+Replaying proof: 0.079639
+Replaying proof: 0.063386
+
+finite_acyclic_has_maximal
+Statistics
+  infstep : 483
+  nodes   : 101
+  maxdepth: 6
+Time: 10.092188
+  inferstep time: 8.071622
+  node_find time: 0.123647
+  node_crea time: 1.534419
+    pred time: 0.319078
+    thmpred time: 0.000015
+    mc time: 0.683759
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.114157
+
+finite_acyclic_has_minimal
+Statistics
+  infstep : 554
+  nodes   : 121
+  maxdepth: 5
+Time: 10.095669
+  inferstep time: 7.832077
+  node_find time: 0.152157
+  node_crea time: 1.699651
+    pred time: 0.298474
+    thmpred time: 0.00002
+    mc time: 0.822359
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.112764
+Replaying proof: 0.014939
+
+maximal_TC
+Statistics
+  infstep : 490
+  nodes   : 84
+  maxdepth: 5
+Time: 10.038301
+  inferstep time: 8.259994
+  node_find time: 0.129397
+  node_crea time: 1.270695
+    pred time: 0.277331
+    thmpred time: 0.000022
+    mc time: 0.576917
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Replaying proof: 0.064542
+Replaying proof: 0.013539
+
+minimal_TC
+Statistics
+  infstep : 653
+  nodes   : 112
+  maxdepth: 5
+Time: 10.002284
+  inferstep time: 8.157766
+  node_find time: 0.168769
+  node_crea time: 1.197756
+    pred time: 0.254541
+    thmpred time: 0.000024
+    mc time: 0.506376
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Replaying proof: 0.055951
+
+finite_acyclic_has_minimal_path
+Statistics
+  infstep : 583
+  nodes   : 132
+  maxdepth: 5
+Time: 10.055267
+  inferstep time: 7.454243
+  node_find time: 0.162535
+  node_crea time: 1.9183
+    pred time: 0.324817
+    thmpred time: 0.000026
+    mc time: 0.75864
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.169534
+
+finite_acyclic_has_maximal_path
+Statistics
+  infstep : 425
+  nodes   : 123
+  maxdepth: 6
+Time: 10.015913
+  inferstep time: 7.371526
+  node_find time: 0.115645
+  node_crea time: 2.110145
+    pred time: 0.398723
+    thmpred time: 0.000023
+    mc time: 0.69322
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.226133
+
+finite_prefix_po_has_minimal_path
+Statistics
+  infstep : 370
+  nodes   : 103
+  maxdepth: 5
+Time: 10.077508
+  inferstep time: 7.752221
+  node_find time: 0.103691
+  node_crea time: 1.888175
+    pred time: 0.37211
+    thmpred time: 0.000025
+    mc time: 0.559718
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 12
+Original proof time: 0.0
+Replaying proof: 0.549536
+
+empty_strict_linear_order
+Statistics
+  infstep : 499
+  nodes   : 160
+  maxdepth: 6
+Time: 10.006142
+  inferstep time: 8.069755
+  node_find time: 0.142186
+  node_crea time: 1.380237
+    pred time: 0.312398
+    thmpred time: 0.000033
+    mc time: 0.60034
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.129107
+
+empty_linear_order
+Statistics
+  infstep : 448
+  nodes   : 179
+  maxdepth: 6
+Time: 10.002201
+  inferstep time: 7.949739
+  node_find time: 0.148008
+  node_crea time: 1.539353
+    pred time: 0.317368
+    thmpred time: 0.000033
+    mc time: 0.726752
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.135116
+
+linear_order_restrict
+proof length: 16
+proof time: 0.34577
+Statistics
+  infstep : 331
+  nodes   : 74
+  maxdepth: 5
+Time: 8.225448
+  inferstep time: 6.40973
+  node_find time: 0.091568
+  node_crea time: 1.295876
+    pred time: 0.333206
+    thmpred time: 0.000018
+    mc time: 0.459193
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "linear_order_def"), (DB.fetch "set_relation" "partial_order_def"), (DB.fetch "set_relation" "reflexive_def")] THENL [boolLib.REWRITE_TAC [(DB.fetch "set_relation" "in_domain"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "in_rrestrict")] THEN
+  simpLib.FULL_SIMP_TAC numLib.std_ss [pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "in_domain"), (DB.fetch "set_relation" "in_range"), boolLib.GSYM boolLib.LEFT_FORALL_IMP_THM, boolLib.FUN_EQ_THM, pred_setTheory.REL_RESTRICT_DEF, (DB.fetch "set_relation" "reln_to_rel_app")] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "finite_prefix_po_has_minimal_path", pred_setTheory.IMAGE_CONG, pred_setTheory.DISJOINT_BIGUNION, DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "finite_prefixes_subset_s", DB.fetch "set_relation" "finite_prefixes_subset_rs", whileTheory.OWHILE_INV_IND, pred_setTheory.tactictoe_thm_81, pred_setTheory.tactictoe_thm_84, sumTheory.SUM_ALL_CONG, whileTheory.OWHILE_ENDCOND, whileTheory.OWHILE_WHILE, arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "linear_order_def"], metisTools.METIS_TAC [DB.fetch "set_relation" "domain_rrestrict_SUBSET", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "range_rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "rrestrict_to_rel_conv", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "tactictoe_thm_41", DB.fetch "set_relation" "tactictoe_thm_40", DB.fetch "set_relation" "minimal_elements_rrestrict", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "strict_rrestrict"], boolLib.REWRITE_TAC [(DB.fetch "set_relation" "in_domain"), pred_setTheory.SUBSET_DEF] THEN
+  simpLib.FULL_SIMP_TAC numLib.std_ss [pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "in_domain"), (DB.fetch "set_relation" "in_range"), boolLib.GSYM boolLib.LEFT_FORALL_IMP_THM, boolLib.FUN_EQ_THM, pred_setTheory.REL_RESTRICT_DEF, (DB.fetch "set_relation" "reln_to_rel_app")] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "finite_prefix_po_has_minimal_path", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "minimal_elements_def", DB.fetch "set_relation" "maximal_elements_def", DB.fetch "set_relation" "tactictoe_thm_16", DB.fetch "set_relation" "tactictoe_thm_40", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "rrestrict_tc", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "tactictoe_thm_41", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "strict_rrestrict"], metisTools.METIS_TAC [DB.fetch "set_relation" "range_rrestrict_SUBSET", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "domain_rrestrict_SUBSET", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "rrestrict_to_rel_conv", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "tactictoe_thm_41", DB.fetch "set_relation" "tactictoe_thm_40", DB.fetch "set_relation" "minimal_elements_rrestrict", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "strict_rrestrict"], simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "set_relation" "transitive_def"), (DB.fetch "set_relation" "strict_def"), (DB.fetch "set_relation" "antisym_def")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "tactictoe_thm_40", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "rrestrict_tc", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "tactictoe_thm_41", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "strict_rrestrict", DB.fetch "set_relation" "rrestrict_to_rel_conv", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "domain_rrestrict_SUBSET"] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")], simpLib.FULL_SIMP_TAC numLib.std_ss [pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "in_domain"), (DB.fetch "set_relation" "in_range"), boolLib.GSYM boolLib.LEFT_FORALL_IMP_THM, boolLib.FUN_EQ_THM, pred_setTheory.REL_RESTRICT_DEF, (DB.fetch "set_relation" "reln_to_rel_app")] THEN
+  simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "set_relation" "antisym_def")] THEN
+  metisTools.METIS_TAC [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "tactictoe_thm_40", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "rrestrict_tc", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "tactictoe_thm_41", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "strict_rrestrict", DB.fetch "set_relation" "rrestrict_to_rel_conv", DB.fetch "set_relation" "minimal_elements_rrestrict", DB.fetch "set_relation" "rrestrict_SUBSET"], BasicProvers.SRW_TAC [] [DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "tactictoe_thm_40", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "rrestrict_tc", DB.fetch "set_relation" "tactictoe_thm_41", DB.fetch "set_relation" "in_rrestrict_alt", DB.fetch "set_relation" "rrestrict_rrestrict", DB.fetch "set_relation" "rrestrict_to_rel_conv", DB.fetch "set_relation" "acyclic_rrestrict", DB.fetch "set_relation" "rrestrict_SUBSET", DB.fetch "set_relation" "domain_rrestrict_SUBSET", DB.fetch "set_relation" "range_rrestrict_SUBSET"]]
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.209713
+
+strict_linear_order_restrict
+Statistics
+  infstep : 502
+  nodes   : 69
+  maxdepth: 4
+Time: 10.007436
+  inferstep time: 7.787269
+  node_find time: 0.14545
+  node_crea time: 1.472445
+    pred time: 0.42209
+    thmpred time: 0.000017
+    mc time: 0.509411
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.219709
+
+linear_order_dom_rg
+proof length: 3
+proof time: 0.017204
+Statistics
+  infstep : 108
+  nodes   : 21
+  maxdepth: 4
+Time: 2.411112
+  inferstep time: 2.054113
+  node_find time: 0.026336
+  node_crea time: 0.2228
+    pred time: 0.070149
+    thmpred time: 0.000004
+    mc time: 0.088402
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "linear_order_def"), (DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def"), pred_setTheory.SUBSET_DEF] THEN BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.233567
+
+linear_order_refl
+proof length: 2
+proof time: 0.094128
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.232339
+  inferstep time: 0.190238
+  node_find time: 0.000752
+  node_crea time: 0.028228
+    pred time: 0.008044
+    thmpred time: 0.000001
+    mc time: 0.018801
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "linear_order_def"), (DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def"), pred_setTheory.SUBSET_DEF] THEN metisTools.METIS_TAC [DB.fetch "set_relation" "linear_order_dom_rg", DB.fetch "set_relation" "minimal_elements_subset", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "minimal_elements_def", DB.fetch "set_relation" "linear_order_dom_rng", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "transitive_def", DB.fetch "set_relation" "antisym_def", DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "reln_rel_conv_thms", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "finite_prefix_po_has_minimal_path", DB.fetch "set_relation" "strict_def"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.053847
+
+linear_order_in_set
+proof length: 3
+proof time: 0.143144
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.351174
+  inferstep time: 0.280522
+  node_find time: 0.001022
+  node_crea time: 0.043922
+    pred time: 0.013043
+    thmpred time: 0.000001
+    mc time: 0.030305
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "linear_order_def"), (DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def"), pred_setTheory.SUBSET_DEF] THENL [metisTools.METIS_TAC [DB.fetch "set_relation" "linear_order_refl", pred_setTheory.DISJOINT_BIGINTER, pred_setTheory.BIGUNION_SUBSET, pred_setTheory.SUBSET_BIGINTER, optionTheory.IF_NONE_EQUALS_OPTION, DB.fetch "set_relation" "linear_order_dom_rg", DB.fetch "set_relation" "linear_order_def", pred_setTheory.SUBSET_DEF, pred_setTheory.IN_UNION, DB.fetch "set_relation" "linear_order_dom_rng", DB.fetch "set_relation" "rrestrict_def", pred_setTheory.IN_INTER, DB.fetch "set_relation" "reflexive_def", DB.fetch "set_relation" "minimal_elements_def", pred_setTheory.EXTENSION, pred_setTheory.IN_BIGINTER], metisTools.METIS_TAC [DB.fetch "set_relation" "linear_order_refl", pred_setTheory.DISJOINT_BIGINTER, pred_setTheory.BIGUNION_SUBSET, pred_setTheory.SUBSET_BIGINTER, DB.fetch "set_relation" "linear_order_dom_rg", optionTheory.IF_NONE_EQUALS_OPTION, DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "linear_order_dom_rng", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "finite_prefixes_comp", pred_setTheory.IN_IMAGE, DB.fetch "set_relation" "partial_order_dom_rng", DB.fetch "set_relation" "strict_linear_order_def", DB.fetch "set_relation" "strict_linear_order_dom_rng", DB.fetch "set_relation" "in_rrestrict", DB.fetch "set_relation" "finite_acyclic_has_minimal_path"]]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.114052
+
+IN_MIN_LO
+proof length: 3
+proof time: 0.094134
+Statistics
+  infstep : 29
+  nodes   : 8
+  maxdepth: 3
+Time: 0.724942
+  inferstep time: 0.537794
+  node_find time: 0.009224
+  node_crea time: 0.11531
+    pred time: 0.030085
+    thmpred time: 0.000001
+    mc time: 0.05893
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "linear_order_def"), (DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def"), pred_setTheory.SUBSET_DEF] THEN simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [(DB.fetch "set_relation" "minimal_elements_def"), (DB.fetch "set_relation" "strict_def"), pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "partial_order_def"), (DB.fetch "set_relation" "reflexive_def")] THEN
+  metisTools.METIS_TAC [pred_setTheory.tactictoe_thm_21, DB.fetch "set_relation" "linear_order_in_set", DB.fetch "set_relation" "linear_order_refl", DB.fetch "set_relation" "linear_order_dom_rg", DB.fetch "set_relation" "minimal_elements_subset", DB.fetch "set_relation" "in_dom_rg", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "in_domain", DB.fetch "set_relation" "domain_def", DB.fetch "set_relation" "strict_def", DB.fetch "set_relation" "transitive_def", DB.fetch "set_relation" "reln_to_rel_app", DB.fetch "set_relation" "linear_order_dom_rng", DB.fetch "set_relation" "range_def", DB.fetch "set_relation" "rrestrict_def", DB.fetch "set_relation" "antisym_def"]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.188893
+
+extend_linear_order
+Statistics
+  infstep : 269
+  nodes   : 88
+  maxdepth: 6
+Time: 10.004656
+  inferstep time: 6.524512
+  node_find time: 0.085529
+  node_crea time: 3.088698
+    pred time: 0.69576
+    thmpred time: 0.000013
+    mc time: 0.88936
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.315223
+
+strict_linear_order_acyclic
+proof length: 3
+proof time: 0.09503
+Statistics
+  infstep : 18
+  nodes   : 10
+  maxdepth: 3
+Time: 0.892933
+  inferstep time: 0.73093
+  node_find time: 0.004857
+  node_crea time: 0.111175
+    pred time: 0.034196
+    thmpred time: 0.000002
+    mc time: 0.045895
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "strict_linear_order_def"), (DB.fetch "set_relation" "domain_def"), (DB.fetch "set_relation" "range_def"), pred_setTheory.SUBSET_DEF] THEN BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "acyclic_def"), pred_setTheory.SUBSET_DEF] THEN
+  metisTools.METIS_TAC [arithmeticTheory.tactictoe_thm_11, DB.fetch "set_relation" "finite_acyclic_has_maximal_path", DB.fetch "set_relation" "finite_acyclic_has_minimal_path", DB.fetch "set_relation" "acyclic_def", DB.fetch "set_relation" "tactictoe_thm_21", DB.fetch "set_relation" "tactictoe_thm_42", DB.fetch "set_relation" "WF_has_minimal_path", DB.fetch "set_relation" "tactictoe_thm_3", DB.fetch "set_relation" "rrestrict_tc", DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_16", DB.fetch "set_relation" "tc_domain_range", DB.fetch "set_relation" "tactictoe_thm_22", DB.fetch "set_relation" "tactictoe_thm_5"]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.069806
+Replaying proof: 0.000282
+
+strict_linear_order_union_acyclic
+Statistics
+  infstep : 324
+  nodes   : 93
+  maxdepth: 6
+Time: 10.066613
+  inferstep time: 8.254858
+  node_find time: 0.095659
+  node_crea time: 1.421866
+    pred time: 0.323475
+    thmpred time: 0.000026
+    mc time: 0.441888
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.554599
+
+strict_linear_order
+Statistics
+  infstep : 605
+  nodes   : 158
+  maxdepth: 6
+Time: 10.001827
+  inferstep time: 7.028065
+  node_find time: 0.1894
+  node_crea time: 2.239106
+    pred time: 0.524862
+    thmpred time: 0.00002
+    mc time: 0.73562
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.234116
+
+linear_order
+Statistics
+  infstep : 316
+  nodes   : 78
+  maxdepth: 4
+Time: 10.030425
+  inferstep time: 7.807976
+  node_find time: 0.101997
+  node_crea time: 1.743996
+    pred time: 0.492826
+    thmpred time: 0.000015
+    mc time: 0.382885
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.228734
+
+finite_strict_linear_order_has_maximal
+Statistics
+  infstep : 364
+  nodes   : 123
+  maxdepth: 6
+Time: 10.000842
+  inferstep time: 7.680036
+  node_find time: 0.120487
+  node_crea time: 1.80649
+    pred time: 0.28269
+    thmpred time: 0.000024
+    mc time: 0.763355
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.020104
+
+finite_strict_linear_order_has_minimal
+proof length: 1
+proof time: 0.070202
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.129055
+  inferstep time: 0.09869
+  node_find time: 0.000337
+  node_crea time: 0.014658
+    pred time: 0.002696
+    thmpred time: 0.0
+    mc time: 0.01755
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "set_relation" "finite_acyclic_has_minimal" , DB.fetch "set_relation" "finite_acyclic_has_minimal_path" , DB.fetch "set_relation" "tactictoe_thm_40" , DB.fetch "set_relation" "finite_prefix_po_has_minimal_path" , DB.fetch "set_relation" "WF_has_minimal_path" , DB.fetch "set_relation" "minimal_union" , DB.fetch "set_relation" "IN_MIN_LO" , DB.fetch "set_relation" "finite_strict_linear_order_has_maximal" , DB.fetch "set_relation" "strict_linear_order_def" , DB.fetch "set_relation" "strict_linear_order_dom_rng" , DB.fetch "set_relation" "linear_order" , DB.fetch "set_relation" "strict_linear_order_acyclic" , DB.fetch "set_relation" "strict_linear_order_restrict" , DB.fetch "set_relation" "strict_linear_order_union_acyclic" , DB.fetch "set_relation" "minimal_elements_def" , DB.fetch "set_relation" "minimal_TC"])
+Org tac number: 1
+Original proof time: 0.0
+Replaying proof: 0.022071
+
+finite_linear_order_has_maximal
+Statistics
+  infstep : 346
+  nodes   : 131
+  maxdepth: 6
+Time: 10.018053
+  inferstep time: 7.292051
+  node_find time: 0.129974
+  node_crea time: 2.232344
+    pred time: 0.410022
+    thmpred time: 0.000016
+    mc time: 0.986844
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.211561
+
+finite_linear_order_has_minimal
+Statistics
+  infstep : 313
+  nodes   : 83
+  maxdepth: 5
+Time: 10.103353
+  inferstep time: 7.6427
+  node_find time: 0.104375
+  node_crea time: 2.008209
+    pred time: 0.463314
+    thmpred time: 0.000021
+    mc time: 0.798875
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.247714
+
+maximal_linear_order
+proof length: 3
+proof time: 0.023954
+Statistics
+  infstep : 159
+  nodes   : 38
+  maxdepth: 4
+Time: 3.423117
+  inferstep time: 2.639534
+  node_find time: 0.048616
+  node_crea time: 0.53653
+    pred time: 0.156877
+    thmpred time: 0.000007
+    mc time: 0.176989
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "finite_linear_order_has_maximal", DB.fetch "set_relation" "finite_acyclic_has_maximal_path", DB.fetch "set_relation" "finite_strict_linear_order_has_maximal", DB.fetch "set_relation" "finite_acyclic_has_maximal", DB.fetch "set_relation" "maximal_union", DB.fetch "set_relation" "maximal_elements_def", DB.fetch "set_relation" "maximal_TC", DB.fetch "set_relation" "minimal_elements_SWAP", DB.fetch "set_relation" "tactictoe_thm_38", DB.fetch "set_relation" "linear_order_def", DB.fetch "set_relation" "linear_order_dom_rng", DB.fetch "set_relation" "linear_order_in_set", DB.fetch "set_relation" "IN_MIN_LO", DB.fetch "set_relation" "linear_order_refl", DB.fetch "set_relation" "extend_linear_order", DB.fetch "set_relation" "finite_linear_order_has_minimal"] THEN BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN
+  metisLib.METIS_TAC [pred_setTheory.INTER_FINITE, pred_setTheory.INTER_COMM]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.047451
+
+minimal_linear_order
+proof length: 1
+proof time: 0.104163
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.097162
+  inferstep time: 0.078419
+  node_find time: 0.000333
+  node_crea time: 0.012029
+    pred time: 0.003959
+    thmpred time: 0.000001
+    mc time: 0.007398
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "set_relation" "IN_MIN_LO" , DB.fetch "set_relation" "finite_linear_order_has_minimal" , DB.fetch "set_relation" "finite_prefix_po_has_minimal_path" , DB.fetch "set_relation" "finite_acyclic_has_minimal_path" , DB.fetch "set_relation" "tactictoe_thm_40" , DB.fetch "set_relation" "WF_has_minimal_path" , DB.fetch "set_relation" "finite_strict_linear_order_has_minimal" , DB.fetch "set_relation" "finite_acyclic_has_minimal" , DB.fetch "set_relation" "minimal_union" , DB.fetch "set_relation" "minimal_elements_def" , DB.fetch "set_relation" "linear_order_def" , DB.fetch "set_relation" "linear_order_dom_rng" , DB.fetch "set_relation" "maximal_linear_order" , DB.fetch "set_relation" "linear_order_in_set" , DB.fetch "set_relation" "linear_order_refl" , DB.fetch "set_relation" "minimal_TC"])
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.048722
+
+minimal_linear_order_unique
+proof length: 3
+proof time: 0.020856
+Statistics
+  infstep : 33
+  nodes   : 9
+  maxdepth: 3
+Time: 0.859229
+  inferstep time: 0.671865
+  node_find time: 0.00872
+  node_crea time: 0.128802
+    pred time: 0.031562
+    thmpred time: 0.000003
+    mc time: 0.050123
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "linear_order_def"), (DB.fetch "set_relation" "minimal_elements_def")] THEN simpLib.FULL_SIMP_TAC numLib.std_ss [pred_setTheory.SUBSET_DEF, (DB.fetch "set_relation" "in_domain"), (DB.fetch "set_relation" "in_range"), boolLib.GSYM boolLib.LEFT_FORALL_IMP_THM, boolLib.FUN_EQ_THM, pred_setTheory.REL_RESTRICT_DEF, (DB.fetch "set_relation" "reln_to_rel_app")] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.075969
+
+finite_prefix_linear_order_has_unique_minimal
+Statistics
+  infstep : 296
+  nodes   : 91
+  maxdepth: 5
+Time: 10.039564
+  inferstep time: 7.821869
+  node_find time: 0.09411
+  node_crea time: 1.820966
+    pred time: 0.404772
+    thmpred time: 0.000023
+    mc time: 0.577158
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.207471
+
+nat_order_iso_thm
+Statistics
+  infstep : 407
+  nodes   : 97
+  maxdepth: 6
+Time: 10.005212
+  inferstep time: 7.256411
+  node_find time: 0.13566
+  node_crea time: 2.053384
+    pred time: 0.387764
+    thmpred time: 0.000011
+    mc time: 0.612471
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.780841
+
+upper_bounds_lem
+Statistics
+  infstep : 680
+  nodes   : 113
+  maxdepth: 5
+Time: 10.10781
+  inferstep time: 7.584124
+  node_find time: 0.219299
+  node_crea time: 1.649459
+    pred time: 0.477963
+    thmpred time: 0.000017
+    mc time: 0.442938
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Replaying proof: 0.091476
+Replaying proof: 0.007324
+Replaying proof: 0.361417
+Replaying proof: 0.178618
+Replaying proof: 0.176305
+Replaying proof: 0.022087
+Replaying proof: 0.385265
+Replaying proof: 0.302475
+Replaying proof: 1.349973
+Replaying proof: 0.336329
+
+zorns_lemma
+Statistics
+  infstep : 312
+  nodes   : 114
+  maxdepth: 6
+Time: 10.102655
+  inferstep time: 7.554018
+  node_find time: 0.110728
+  node_crea time: 2.085659
+    pred time: 0.435027
+    thmpred time: 0.000024
+    mc time: 0.80934
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Replaying proof: 0.030112
+
+per_delete
+Statistics
+  infstep : 399
+  nodes   : 128
+  maxdepth: 6
+Time: 10.01574
+  inferstep time: 7.101646
+  node_find time: 0.149851
+  node_crea time: 2.335421
+    pred time: 0.533558
+    thmpred time: 0.000022
+    mc time: 0.901619
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.597437
+
+per_restrict_per
+proof length: 5
+proof time: 0.051647
+Statistics
+  infstep : 497
+  nodes   : 77
+  maxdepth: 5
+Time: 9.474723
+  inferstep time: 7.178606
+  node_find time: 0.171121
+  node_crea time: 1.518857
+    pred time: 0.455203
+    thmpred time: 0.000034
+    mc time: 0.458721
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "per_restrict_def", DB.fetch "set_relation" "per_def", DB.fetch "set_relation" "per_delete", DB.fetch "set_relation" "finite_prefix_linear_order_has_unique_minimal", DB.fetch "set_relation" "finite_prefix_po_has_minimal_path", DB.fetch "set_relation" "minimal_linear_order_unique", DB.fetch "set_relation" "finite_prefixes_subset", DB.fetch "set_relation" "finite_prefixes_subset_rs", DB.fetch "set_relation" "finite_prefixes_subset_s", DB.fetch "set_relation" "linear_order_restrict", DB.fetch "set_relation" "linear_order_subset", DB.fetch "set_relation" "partial_order_subset", DB.fetch "set_relation" "strict_linear_order_restrict", pred_setTheory.DISJOINT_BIGUNION, pred_setTheory.IMAGE_CONG, pred_setTheory.tactictoe_thm_81] THEN BasicProvers.SRW_TAC [] [(DB.fetch "set_relation" "acyclic_def"), pred_setTheory.SUBSET_DEF] THENL
+  [simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [pred_setTheory.IN_DELETE],
+  simpLib.FULL_SIMP_TAC (BasicProvers.srw_ss ()) [pred_setTheory.EXTENSION, pred_setTheory.DISJOINT_DEF] THEN
+  BasicProvers.PROVE_TAC [(DB.fetch "relation" "RTC_RULES")]]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.137593
+
+countable_per
+Statistics
+  infstep : 564
+  nodes   : 144
+  maxdepth: 5
+Time: 10.000318
+  inferstep time: 7.418046
+  node_find time: 0.195238
+  node_crea time: 1.836855
+    pred time: 0.327877
+    thmpred time: 0.000021
+    mc time: 0.754303
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.940952
+
+all_choices_thm
+proof length: 3
+proof time: 0.114235
+Statistics
+  infstep : 99
+  nodes   : 20
+  maxdepth: 4
+Time: 1.993666
+  inferstep time: 1.63773
+  node_find time: 0.029092
+  node_crea time: 0.200635
+    pred time: 0.060756
+    thmpred time: 0.000005
+    mc time: 0.065212
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [DB.fetch "set_relation" "all_choices_def", pred_setTheory.equiv_on_def, pred_setTheory.IMAGE_EQ_SING, DB.fetch "set_relation" "rtc_ind_right", DB.fetch "set_relation" "tc_ind_right", DB.fetch "set_relation" "tactictoe_thm_10", DB.fetch "set_relation" "tactictoe_thm_16", DB.fetch "set_relation" "tactictoe_thm_3", DB.fetch "set_relation" "tactictoe_thm_5", DB.fetch "set_relation" "tactictoe_thm_6", DB.fetch "set_relation" "tactictoe_thm_7", DB.fetch "set_relation" "tactictoe_thm_8", DB.fetch "set_relation" "tactictoe_thm_9", DB.fetch "set_relation" "tc_ind_left", DB.fetch "set_relation" "tc_strongind_left", DB.fetch "set_relation" "tc_strongind_right"] THEN BasicProvers.SRW_TAC [] [DB.fetch "pred_set" "INTER_DEF", DB.fetch "pred_set" "IN_INTER", DB.fetch "pred_set" "INTER_applied", DB.fetch "pred_set" "UNION_DEF", DB.fetch "pred_set" "tactictoe_thm_0", DB.fetch "pred_set" "GSPECIFICATION", DB.fetch "pred_set" "EXTENSION", DB.fetch "pred_set" "IN_UNION", DB.fetch "pred_set" "SUBSET_DEF", DB.fetch "pred_set" "NOT_EQUAL_SETS", DB.fetch "pred_set" "UNION_applied", DB.fetch "pred_set" "SET_MINIMUM", relationTheory.RRESTRICT_DEF, relationTheory.IN_RDOM_RRESTRICT, DB.fetch "pred_set" "NUM_SET_WOP", DB.fetch "pred_set" "EQ_UNIV"] THEN
+  metisTools.METIS_TAC [relationTheory.tactictoe_thm_0, relationTheory.tactictoe_thm_1, relationTheory.tactictoe_thm_2, relationTheory.tactictoe_thm_3, relationTheory.tactictoe_thm_4, relationTheory.tactictoe_thm_6, relationTheory.tactictoe_thm_7, relationTheory.tactictoe_thm_9, relationTheory.tactictoe_thm_5, relationTheory.tactictoe_thm_8, pred_setTheory.tactictoe_thm_45, pred_setTheory.tactictoe_thm_41, pred_setTheory.tactictoe_thm_44, pred_setTheory.tactictoe_thm_49, pred_setTheory.equiv_on_def, pred_setTheory.IMAGE_EQ_SING]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.059158
+
+linear_order_num_order
+Statistics
+  infstep : 621
+  nodes   : 125
+  maxdepth: 5
+Time: 10.017243
+  inferstep time: 7.124626
+  node_find time: 0.217685
+  node_crea time: 1.947116
+    pred time: 0.331172
+    thmpred time: 0.000015
+    mc time: 0.75607
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.307079
+
+num_order_finite_prefix
+Statistics
+  infstep : 696
+  nodes   : 107
+  maxdepth: 5
+Time: 10.085357
+  inferstep time: 7.632662
+  node_find time: 0.245613
+  node_crea time: 1.467215
+    pred time: 0.2645
+    thmpred time: 0.000023
+    mc time: 0.690672
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.208677
+Replaying proof: 0.002696
+Replaying proof: 0.328959
+Replaying proof: 0.081842
+Replaying proof: 0.262647
+Replaying proof: 0.016814
+Replaying proof: 0.006471
+Replaying proof: 0.020085
+Replaying proof: 0.021708
+Replaying proof: 0.039412
+Replaying proof: 0.120952
+
+linear_order_of_countable_po
+Statistics
+  infstep : 314
+  nodes   : 114
+  maxdepth: 5
+Time: 10.000734
+  inferstep time: 7.430088
+  node_find time: 0.11128
+  node_crea time: 2.097614
+    pred time: 0.423581
+    thmpred time: 0.00002
+    mc time: 0.67917
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.83301
+Bad stac: 4

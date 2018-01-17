@@ -1,0 +1,898 @@
+
+SEQ
+proof length: 5
+proof time: 0.009981
+Statistics
+  infstep : 209
+  nodes   : 51
+  maxdepth: 5
+Time: 3.918442
+  inferstep time: 3.375764
+  node_find time: 0.00824
+  node_crea time: 0.49655
+    pred time: 0.136723
+    thmpred time: 0.000015
+    mc time: 0.281474
+    inst time: 0.0
+Proof found: jrhUtils.GEN_REWR_TAC (boolLib.RAND_CONV o boolLib.ONCE_DEPTH_CONV) [realTheory.ABS_SUB] THEN BasicProvers.SRW_TAC [] [DB.fetch "real" "REAL_SUB_0", DB.fetch "real" "REAL_SUB_REFL", DB.fetch "real" "REAL_SUB_ADD", DB.fetch "real" "real_sub", DB.fetch "real" "REAL_NEG_SUB", DB.fetch "real" "REAL_SUB_ADD2", DB.fetch "real" "REAL_SUP_ALLPOS", DB.fetch "real" "REAL_NEG_GT0", DB.fetch "real" "REAL_LT_ADD", DB.fetch "real" "REAL_LT_MUL", DB.fetch "real" "REAL_NEG_LT0", DB.fetch "real" "REAL_LT_NEGTOTAL", DB.fetch "real" "REAL_LT_01", realaxTheory.REAL_SUP_ALLPOS, DB.fetch "real" "REAL_LT_TOTAL", DB.fetch "real" "REAL_LT_RADD"] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "seq" "tends_num_real", netsTheory.NET_NEG, netsTheory.SEQ_TENDS, realTheory.SUM_NEG, realTheory.SUM_ZERO, arithmeticTheory.GREATER_EQ, arithmeticTheory.GREATER_OR_EQ, arithmeticTheory.NOT_GREATER_EQ, numeralTheory.numeral_distrib, arithmeticTheory.SUB_RIGHT_GREATER_EQ, arithmeticTheory.SUB_LEFT_GREATER_EQ, listTheory.DROP_NIL, patternMatchesTheory.EL2_STRONGEST_REDUNDANT_ROWS_INFO_AUX, netsTheory.NET_CONV_NZ, netsTheory.NET_LE, netsTheory.MR1_BOUNDED] THEN
+  boolLib.REWRITE_TAC [(DB.fetch "topology" "mr1"), boolLib.REWRITE_RULE [(DB.fetch "topology" "metric_tybij")] (DB.fetch "topology" "ISMET_R1")] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "real" "REAL_SUB_0", DB.fetch "real" "REAL_SUB_REFL", DB.fetch "real" "REAL_SUB_ADD", DB.fetch "real" "real_sub", DB.fetch "real" "REAL_NEG_SUB", DB.fetch "real" "REAL_SUB_ADD2", DB.fetch "real" "REAL_SUP_ALLPOS", DB.fetch "real" "REAL_NEG_GT0", DB.fetch "real" "REAL_LT_ADD", DB.fetch "real" "REAL_LT_MUL", DB.fetch "real" "REAL_NEG_LT0", DB.fetch "real" "REAL_LT_NEGTOTAL", DB.fetch "real" "REAL_LT_01", realaxTheory.REAL_SUP_ALLPOS, DB.fetch "real" "REAL_LT_TOTAL", DB.fetch "real" "REAL_LT_RADD"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.109952
+
+SEQ_CONST
+proof length: 1
+proof time: 0.001388
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.326872
+  inferstep time: 0.119911
+  node_find time: 0.00005
+  node_crea time: 0.011769
+    pred time: 0.003706
+    thmpred time: 0.0
+    mc time: 0.020376
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "seq" "SEQ" , DB.fetch "seq" "tends_num_real" , realTheory.pow_rat , numpairTheory.nfoldl_def , prim_recTheory.PRIM_REC_FUN , listTheory.EVERY_SIMP , listTheory.EXISTS_SIMP , oneTheory.tactictoe_thm_0 , pred_setTheory.BIJ_ID , pred_setTheory.INJ_ID , pred_setTheory.SURJ_ID , pred_setTheory.IMAGE_ID , quantHeuristicsTheory.GUESSES_UEXISTS_THM1 , quantHeuristicsTheory.GUESSES_UEXISTS_THM2 , quantHeuristicsTheory.GUESSES_UEXISTS_THM3 , quantHeuristicsTheory.GUESSES_UEXISTS_THM4 ])
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.107067
+
+SEQ_ADD
+Statistics
+  infstep : 860
+  nodes   : 151
+  maxdepth: 6
+Time: 10.040413
+  inferstep time: 8.031866
+  node_find time: 0.064081
+  node_crea time: 1.861102
+    pred time: 0.395482
+    thmpred time: 0.000028
+    mc time: 0.822567
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.088628
+
+SEQ_MUL
+Statistics
+  infstep : 1454
+  nodes   : 178
+  maxdepth: 5
+Time: 10.073787
+  inferstep time: 7.351832
+  node_find time: 0.129268
+  node_crea time: 2.44164
+    pred time: 0.432777
+    thmpred time: 0.000027
+    mc time: 1.230525
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.08526
+
+SEQ_NEG
+proof length: 3
+proof time: 0.006507
+Statistics
+  infstep : 13
+  nodes   : 8
+  maxdepth: 3
+Time: 0.520629
+  inferstep time: 0.442805
+  node_find time: 0.000513
+  node_crea time: 0.064005
+    pred time: 0.019643
+    thmpred time: 0.000001
+    mc time: 0.041246
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [netsTheory.NET_NEG, realTheory.SUM_NEG, DB.fetch "seq" "SEQ", DB.fetch "seq" "SEQ_ADD", DB.fetch "seq" "SEQ_MUL", DB.fetch "seq" "tends_num_real", DB.fetch "seq" "SEQ_CONST", netsTheory.MTOP_TENDS, netsTheory.SEQ_TENDS, netsTheory.NET_CONV_IBOUNDED, netsTheory.NET_CONV_NZ, netsTheory.NET_DIV, netsTheory.NET_INV, netsTheory.NET_NULL, netsTheory.NET_ADD, netsTheory.NET_MUL] THEN jrhUtils.GEN_REWR_TAC (boolLib.RAND_CONV o boolLib.ONCE_DEPTH_CONV) [realTheory.ABS_SUB] THEN
+  BasicProvers.SRW_TAC [] [DB.fetch "seq" "SEQ", netsTheory.NET_NULL, realTheory.SUM_NSUB, netsTheory.NET_NEG, realTheory.REAL_SUB_NEG2, realTheory.REAL_SUB_LNEG, realTheory.SUM_NEG, netsTheory.SEQ_TENDS, realTheory.SUM_ZERO, arithmeticTheory.GREATER_EQ, netsTheory.NET_SUB, realTheory.SUM_SUB, numeralTheory.numeral_distrib, netsTheory.NET_CONV_NZ, netsTheory.NET_LE, netsTheory.MR1_BOUNDED]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.091857
+
+SEQ_INV
+Statistics
+  infstep : 914
+  nodes   : 131
+  maxdepth: 5
+Time: 10.009374
+  inferstep time: 7.87649
+  node_find time: 0.102991
+  node_crea time: 1.874129
+    pred time: 0.437366
+    thmpred time: 0.000025
+    mc time: 0.805155
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.093622
+
+SEQ_SUB
+proof length: 3
+proof time: 0.075807
+Statistics
+  infstep : 6
+  nodes   : 5
+  maxdepth: 3
+Time: 0.305685
+  inferstep time: 0.261425
+  node_find time: 0.000274
+  node_crea time: 0.033452
+    pred time: 0.009458
+    thmpred time: 0.0
+    mc time: 0.023654
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.GEN_TAC THEN BasicProvers.SRW_TAC [] [DB.fetch "real" "REAL_SUB_0", DB.fetch "real" "REAL_SUB_REFL", DB.fetch "real" "REAL_SUB_ADD", DB.fetch "real" "real_sub", DB.fetch "real" "REAL_NEG_SUB", DB.fetch "real" "REAL_SUB_ADD2", DB.fetch "real" "REAL_SUP_ALLPOS", DB.fetch "real" "REAL_NEG_GT0", DB.fetch "real" "REAL_LT_ADD", DB.fetch "real" "REAL_LT_MUL", DB.fetch "real" "REAL_NEG_LT0", DB.fetch "real" "REAL_LT_NEGTOTAL", DB.fetch "real" "REAL_LT_01", realaxTheory.REAL_SUP_ALLPOS, DB.fetch "real" "REAL_LT_TOTAL", DB.fetch "real" "REAL_LT_RADD"] THEN
+  metisTools.METIS_TAC [DB.fetch "seq" "SEQ_NEG", DB.fetch "seq" "SEQ_ADD", netsTheory.NET_NEG, netsTheory.NET_ADD, realTheory.SUM_NEG, realTheory.real_sub, realTheory.REAL_LT_ADDNEG2, realTheory.REAL_ADD_RINV, DB.fetch "seq" "SEQ_MUL", netsTheory.NET_NULL_ADD, realTheory.SUM_ADD, DB.fetch "seq" "SEQ", DB.fetch "seq" "SEQ_INV", DB.fetch "seq" "tends_num_real", DB.fetch "seq" "SEQ_CONST", netsTheory.NET_DIV]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.087103
+
+SEQ_DIV
+proof length: 2
+proof time: 0.115127
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 2
+Time: 0.4905
+  inferstep time: 0.415745
+  node_find time: 0.000441
+  node_crea time: 0.055848
+    pred time: 0.017588
+    thmpred time: 0.000002
+    mc time: 0.045353
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [realTheory.real_div] THEN metisTools.METIS_TAC [DB.fetch "seq" "SEQ_MUL", DB.fetch "seq" "SEQ_INV", DB.fetch "seq" "SEQ_ADD", DB.fetch "seq" "SEQ_SUB", realTheory.REAL_MUL_RINV, realTheory.real_div, DB.fetch "seq" "SEQ", DB.fetch "seq" "SEQ_NEG", DB.fetch "seq" "tends_num_real", netsTheory.NET_MUL, netsTheory.NET_INV, netsTheory.NET_CONV_IBOUNDED, netsTheory.NET_NULL_MUL, DB.fetch "seq" "SEQ_CONST", netsTheory.NET_DIV, netsTheory.LIM_TENDS]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.571682
+
+SEQ_UNIQ
+Statistics
+  infstep : 1373
+  nodes   : 123
+  maxdepth: 5
+Time: 10.015843
+  inferstep time: 7.825221
+  node_find time: 0.129141
+  node_crea time: 1.793129
+    pred time: 0.421049
+    thmpred time: 0.000033
+    mc time: 0.667453
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.112267
+
+SEQ_LIM
+Statistics
+  infstep : 930
+  nodes   : 198
+  maxdepth: 6
+Time: 10.019428
+  inferstep time: 7.811029
+  node_find time: 0.106975
+  node_crea time: 1.883391
+    pred time: 0.456975
+    thmpred time: 0.000022
+    mc time: 0.815271
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Replaying proof: 0.19015
+
+SUBSEQ_SUC
+Statistics
+  infstep : 1067
+  nodes   : 153
+  maxdepth: 5
+Time: 10.105613
+  inferstep time: 7.744311
+  node_find time: 0.11943
+  node_crea time: 1.98629
+    pred time: 0.47613
+    thmpred time: 0.000028
+    mc time: 0.850269
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Replaying proof: 0.52875
+
+MONO_SUC
+Statistics
+  infstep : 776
+  nodes   : 123
+  maxdepth: 6
+Time: 10.075791
+  inferstep time: 7.955008
+  node_find time: 0.086163
+  node_crea time: 1.72761
+    pred time: 0.468764
+    thmpred time: 0.000029
+    mc time: 0.74739
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.731157
+
+MAX_LEMMA
+Statistics
+  infstep : 1685
+  nodes   : 129
+  maxdepth: 5
+Time: 10.017437
+  inferstep time: 7.820922
+  node_find time: 0.194293
+  node_crea time: 1.521197
+    pred time: 0.376265
+    thmpred time: 0.000069
+    mc time: 0.773184
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.789411
+Replaying proof: 0.000724
+
+SEQ_BOUNDED_2
+Statistics
+  infstep : 1081
+  nodes   : 149
+  maxdepth: 6
+Time: 10.008521
+  inferstep time: 7.528645
+  node_find time: 0.154395
+  node_crea time: 2.005366
+    pred time: 0.3846
+    thmpred time: 0.000026
+    mc time: 0.994003
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 26
+Original proof time: 0.0
+Replaying proof: 0.706572
+
+SEQ_CBOUNDED
+Statistics
+  infstep : 690
+  nodes   : 115
+  maxdepth: 6
+Time: 10.095639
+  inferstep time: 7.97426
+  node_find time: 0.087398
+  node_crea time: 1.788352
+    pred time: 0.529133
+    thmpred time: 0.000039
+    mc time: 0.590421
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.240833
+Replaying proof: 0.00286
+
+SEQ_NEG_CONV
+proof length: 3
+proof time: 0.056718
+Statistics
+  infstep : 587
+  nodes   : 89
+  maxdepth: 5
+Time: 6.549104
+  inferstep time: 5.368528
+  node_find time: 0.07233
+  node_crea time: 0.843801
+    pred time: 0.204389
+    thmpred time: 0.000018
+    mc time: 0.420133
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [(DB.fetch "seq" "convergent")] THEN Ho_Rewrite.ONCE_REWRITE_TAC [boolLib.GSYM (DB.fetch "real" "REAL_NEG_NEG")] THEN
+  metisTools.METIS_TAC [DB.fetch "seq" "SEQ_NEG", realTheory.REAL_NEGNEG, realTheory.REAL_NEG_NEG, netsTheory.NET_NEG, realTheory.SUM_NEG, DB.fetch "seq" "convergent", DB.fetch "seq" "lim", DB.fetch "seq" "SEQ", DB.fetch "seq" "SEQ_LIM", DB.fetch "seq" "SEQ_DIV", DB.fetch "seq" "SEQ_INV", DB.fetch "seq" "SEQ_ADD", DB.fetch "seq" "SEQ_MUL", DB.fetch "seq" "SEQ_SUB", DB.fetch "seq" "tends_num_real", realTheory.REAL_ADD_RINV]
+Org tac number: 9
+Original proof time: 0.0
+Replaying proof: 0.251839
+
+SEQ_NEG_BOUNDED
+proof length: 3
+proof time: 0.078103
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 3
+Time: 0.36498
+  inferstep time: 0.295811
+  node_find time: 0.000795
+  node_crea time: 0.036304
+    pred time: 0.010414
+    thmpred time: 0.0
+    mc time: 0.04505
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN BasicProvers.SRW_TAC [] [DB.fetch "seq" "SEQ_BOUNDED_2", DB.fetch "seq" "SEQ_ICONV", DB.fetch "seq" "SEQ_CBOUNDED", DB.fetch "seq" "SEQ_BOUNDED", netsTheory.NET_NEG, realTheory.SUM_NEG, DB.fetch "seq" "SEQ_NEG_CONV", DB.fetch "seq" "SEQ_NEG", netsTheory.MR1_BOUNDED, netsTheory.NET_CONV_IBOUNDED, netsTheory.NET_NULL_MUL, netsTheory.NET_CONV_BOUNDED, netsTheory.bounded, DB.fetch "seq" "tends_num_real", netsTheory.NET_CONV_NZ, netsTheory.NET_DIV] THEN
+  metisTools.METIS_TAC [netsTheory.MR1_BOUNDED, DB.fetch "seq" "SEQ_BOUNDED", DB.fetch "seq" "MAX_LEMMA", realTheory.SUM_NEG, DB.fetch "seq" "SEQ_NEG_CONV", DB.fetch "seq" "SEQ_NEG", netsTheory.NET_NEG, realTheory.SUM_ABS, netsTheory.NET_ABS, realTheory.ABS_BOUNDS, realTheory.ABS_SIGN2, realTheory.POW_M1, realTheory.abs, realTheory.ABS_NEG, netsTheory.bounded, DB.fetch "seq" "cauchy"]
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.080757
+
+SEQ_BCONV
+Statistics
+  infstep : 828
+  nodes   : 138
+  maxdepth: 6
+Time: 10.007074
+  inferstep time: 7.772817
+  node_find time: 0.115697
+  node_crea time: 1.819702
+    pred time: 0.405112
+    thmpred time: 0.000036
+    mc time: 0.758458
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.332809
+Replaying proof: 0.00293
+
+SEQ_SBOUNDED
+proof length: 3
+proof time: 0.081718
+Statistics
+  infstep : 11
+  nodes   : 6
+  maxdepth: 3
+Time: 0.378371
+  inferstep time: 0.298873
+  node_find time: 0.001189
+  node_crea time: 0.059972
+    pred time: 0.017589
+    thmpred time: 0.000002
+    mc time: 0.040625
+    inst time: 0.0
+Proof found: boolLib.REPEAT boolLib.STRIP_TAC THEN boolLib.ASM_REWRITE_TAC [DB.fetch "seq" "SEQ_BOUNDED", DB.fetch "seq" "SEQ_BOUNDED_2", DB.fetch "seq" "SEQ_ICONV", DB.fetch "seq" "SEQ_NEG_BOUNDED", DB.fetch "seq" "SEQ_BCONV", DB.fetch "seq" "SEQ_CBOUNDED", netsTheory.MR1_BOUNDED, netsTheory.NET_CONV_IBOUNDED, netsTheory.NET_NULL_MUL, netsTheory.NET_CONV_BOUNDED, netsTheory.bounded, realTheory.SUM_PERMUTE_0, DB.fetch "seq" "SEQ_MONOSUB", ind_typeTheory.CONSTR_REC, patternMatchesTheory.PMATCH_ROW_REMOVE_FUN_VAR, combinTheory.o_DEF] THEN
+  metisTools.METIS_TAC [DB.fetch "seq" "SEQ_MONOSUB", ind_typeTheory.CONSTR_REC, patternMatchesTheory.PMATCH_ROW_REMOVE_FUN_VAR, ind_typeTheory.ZRECSPACE_def, realTheory.SUM_PERMUTE_0, combinTheory.o_DEF, listTheory.EVERY_MAP, listTheory.EXISTS_MAP, patternMatchesTheory.PMATCH_ROW_LIFT_THM, combinTheory.o_ABS_L, combinTheory.o_ABS_R, patternMatchesTheory.PMATCH_FLATTEN_FUN_PMATCH_ROW, patternMatchesTheory.PMATCH_ROW_REMOVE_FUN, DB.fetch "seq" "SEQ_BOUNDED", DB.fetch "seq" "MAX_LEMMA", netsTheory.MR1_BOUNDED]
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.170874
+
+SEQ_SUBLE
+Statistics
+  infstep : 826
+  nodes   : 112
+  maxdepth: 5
+Time: 10.057775
+  inferstep time: 8.348102
+  node_find time: 0.124426
+  node_crea time: 1.272015
+    pred time: 0.357122
+    thmpred time: 0.000024
+    mc time: 0.508585
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.333876
+
+SEQ_DIRECT
+Statistics
+  infstep : 693
+  nodes   : 143
+  maxdepth: 7
+Time: 10.086111
+  inferstep time: 7.89616
+  node_find time: 0.121076
+  node_crea time: 1.776966
+    pred time: 0.364517
+    thmpred time: 0.000024
+    mc time: 0.912425
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.405286
+
+SEQ_CAUCHY
+Statistics
+  infstep : 889
+  nodes   : 211
+  maxdepth: 6
+Time: 10.013275
+  inferstep time: 7.942055
+  node_find time: 0.152652
+  node_crea time: 1.578494
+    pred time: 0.368567
+    thmpred time: 0.000028
+    mc time: 0.691207
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 80
+Original proof time: 0.0
+Replaying proof: 2.542434
+
+SEQ_LE
+Statistics
+  infstep : 616
+  nodes   : 111
+  maxdepth: 6
+Time: 10.024668
+  inferstep time: 7.987603
+  node_find time: 0.105356
+  node_crea time: 1.64125
+    pred time: 0.409071
+    thmpred time: 0.00002
+    mc time: 0.705795
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.103404
+Replaying proof: 0.000549
+
+SEQ_ABS
+Statistics
+  infstep : 770
+  nodes   : 120
+  maxdepth: 6
+Time: 10.031246
+  inferstep time: 8.090172
+  node_find time: 0.119284
+  node_crea time: 1.489885
+    pred time: 0.361171
+    thmpred time: 0.000023
+    mc time: 0.686562
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.161664
+
+SEQ_ABS_IMP
+proof length: 2
+proof time: 0.078224
+Statistics
+  infstep : 306
+  nodes   : 127
+  maxdepth: 6
+Time: 5.928454
+  inferstep time: 4.063426
+  node_find time: 0.056428
+  node_crea time: 1.475637
+    pred time: 0.22749
+    thmpred time: 0.00002
+    mc time: 0.782541
+    inst time: 0.0
+Proof found: boolLib.REWRITE_TAC [netsTheory.DORDER_NGE, (DB.fetch "seq" "tends_num_real"), arithmeticTheory.GREATER_EQ, arithmeticTheory.LESS_EQ_REFL] THEN metisTools.METIS_TAC [netsTheory.NET_ABS, DB.fetch "seq" "tends_num_real", netsTheory.NET_DIV, netsTheory.NET_INV, netsTheory.NET_LE, netsTheory.NET_ADD, netsTheory.NET_MUL, netsTheory.NET_SUB, netsTheory.NET_NEG, realTheory.ABS_SUM, realTheory.SUM_ABS, realTheory.SUM_ABS_LE, DB.fetch "seq" "SEQ_ABS", netsTheory.SEQ_TENDS, netsTheory.MTOP_TENDS, netsTheory.MTOP_TENDS_UNIQ]
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.132367
+Replaying proof: 0.000577
+Replaying proof: 0.000918
+
+SEQ_POWER
+Statistics
+  infstep : 1204
+  nodes   : 214
+  maxdepth: 6
+Time: 10.000539
+  inferstep time: 7.162547
+  node_find time: 0.248811
+  node_crea time: 2.022855
+    pred time: 0.313085
+    thmpred time: 0.000019
+    mc time: 1.101493
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Replaying proof: 0.144129
+
+NEST_LEMMA
+Statistics
+  infstep : 621
+  nodes   : 86
+  maxdepth: 5
+Time: 10.00065
+  inferstep time: 7.784684
+  node_find time: 0.120203
+  node_crea time: 1.434163
+    pred time: 0.335505
+    thmpred time: 0.000088
+    mc time: 0.563283
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 117
+Original proof time: 0.0
+Replaying proof: 4.209925
+Replaying proof: 0.00083
+Replaying proof: 0.015342
+
+SUM_SUMMABLE
+proof length: 1
+proof time: 0.049692
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.076433
+  inferstep time: 0.059537
+  node_find time: 0.000235
+  node_crea time: 0.011556
+    pred time: 0.003285
+    thmpred time: 0.000001
+    mc time: 0.009086
+    inst time: 0.0
+Proof found: (metisTools.METIS_TAC [DB.fetch "seq" "summable" , DB.fetch "seq" "suminf" , DB.fetch "seq" "sums" , DB.fetch "seq" "NEST_LEMMA" , DB.fetch "seq" "SEQ_LE" , DB.fetch "seq" "NEST_LEMMA_UNIQ" , DB.fetch "seq" "SEQ_ABS_IMP" , DB.fetch "seq" "SEQ_SUC" , DB.fetch "seq" "convergent" , DB.fetch "seq" "lim" , indexedListsTheory.EL_MAPi , listTheory.EL_MAP , listTheory.ZIP_GENLIST , numpairTheory.tactictoe_thm_4 , rich_listTheory.BUTLASTN_MAP , rich_listTheory.ELL_MAP])
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.120815
+
+SUMMABLE_SUM
+proof length: 2
+proof time: 0.05229
+Statistics
+  infstep : 12
+  nodes   : 7
+  maxdepth: 3
+Time: 0.505566
+  inferstep time: 0.420861
+  node_find time: 0.001908
+  node_crea time: 0.063022
+    pred time: 0.017277
+    thmpred time: 0.000001
+    mc time: 0.039192
+    inst time: 0.0
+Proof found: BasicProvers.SRW_TAC [] [DB.fetch "seq" "suminf", DB.fetch "seq" "SUM_SUMMABLE", DB.fetch "seq" "summable", DB.fetch "seq" "sums", netsTheory.LIM_TENDS, netsTheory.LIM_TENDS2, realTheory.SUM_BOUND, realTheory.SUM_EQ, realTheory.SUM_LE, realTheory.SUM_PERMUTE_0, realTheory.SUM_POS, realTheory.SUM_POS_GEN, realTheory.SUM_SUBST, realTheory.SUM_ZERO, realTheory.sum_ind, DB.fetch "seq" "NEST_LEMMA"] THEN metisTools.METIS_TAC [DB.fetch "seq" "sums", realTheory.SUM_PERMUTE_0, realTheory.SUM_TWO, realTheory.SUM_DIFF, realTheory.SUM_NSUB, realTheory.SUM_OFFSET, realTheory.SUM_GROUP, DB.fetch "seq" "lim", DB.fetch "seq" "tends_num_real", DB.fetch "seq" "NEST_LEMMA_UNIQ", DB.fetch "seq" "SEQ_INV0", DB.fetch "seq" "SEQ_ABS", DB.fetch "seq" "SEQ", DB.fetch "seq" "SEQ_POWER_ABS", DB.fetch "seq" "SEQ_DIV", DB.fetch "seq" "SEQ_INV"]
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.426949
+
+SUM_UNIQ
+Statistics
+  infstep : 1056
+  nodes   : 102
+  maxdepth: 5
+Time: 10.013903
+  inferstep time: 7.905555
+  node_find time: 0.210509
+  node_crea time: 1.310513
+    pred time: 0.288219
+    thmpred time: 0.000028
+    mc time: 0.677269
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.338046
+
+SER_0
+Statistics
+  infstep : 1813
+  nodes   : 164
+  maxdepth: 6
+Time: 10.003172
+  inferstep time: 7.089767
+  node_find time: 0.385461
+  node_crea time: 1.608599
+    pred time: 0.307962
+    thmpred time: 0.000017
+    mc time: 0.801899
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Replaying proof: 0.834317
+
+SER_POS_LE
+Statistics
+  infstep : 957
+  nodes   : 161
+  maxdepth: 6
+Time: 10.042534
+  inferstep time: 7.358398
+  node_find time: 0.206464
+  node_crea time: 1.876927
+    pred time: 0.415234
+    thmpred time: 0.00003
+    mc time: 0.888792
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.489589
+
+SER_POS_LT
+Statistics
+  infstep : 577
+  nodes   : 138
+  maxdepth: 6
+Time: 10.000281
+  inferstep time: 7.713886
+  node_find time: 0.125585
+  node_crea time: 1.764833
+    pred time: 0.41889
+    thmpred time: 0.000038
+    mc time: 0.780528
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.508486
+Replaying proof: 0.000509
+
+SER_PAIR
+Statistics
+  infstep : 607
+  nodes   : 150
+  maxdepth: 6
+Time: 10.045368
+  inferstep time: 7.352089
+  node_find time: 0.141214
+  node_crea time: 2.096031
+    pred time: 0.377791
+    thmpred time: 0.000038
+    mc time: 1.220019
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.123647
+Replaying proof: 0.000853
+Replaying proof: 0.0024
+
+SER_ADD
+proof length: 1
+proof time: 0.002485
+Statistics
+  infstep : 15
+  nodes   : 7
+  maxdepth: 3
+Time: 0.423596
+  inferstep time: 0.349192
+  node_find time: 0.002775
+  node_crea time: 0.055626
+    pred time: 0.012569
+    thmpred time: 0.000002
+    mc time: 0.025494
+    inst time: 0.0
+Proof found: (BasicProvers.SRW_TAC [ ] [ DB.fetch "seq" "SEQ_ADD" , netsTheory.NET_ADD , netsTheory.NET_NULL_ADD , realTheory.SUM_ADD , DB.fetch "seq" "sums" , DB.fetch "seq" "SUM_UNIQ" , DB.fetch "seq" "SUM_SUMMABLE" , DB.fetch "seq" "summable" , DB.fetch "seq" "suminf" , DB.fetch "seq" "SER_0" , DB.fetch "seq" "SUMMABLE_SUM" , realTheory.SUM_2 , DB.fetch "seq" "SER_GROUP" , DB.fetch "seq" "SER_OFFSET" , DB.fetch "seq" "SER_PAIR" , netsTheory.NET_DIV ])
+Org tac number: 5
+Original proof time: 0.0
+Replaying proof: 0.137267
+
+SER_CMUL
+Statistics
+  infstep : 888
+  nodes   : 151
+  maxdepth: 6
+Time: 10.052232
+  inferstep time: 7.829311
+  node_find time: 0.195975
+  node_crea time: 1.503416
+    pred time: 0.291536
+    thmpred time: 0.000024
+    mc time: 0.689996
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Replaying proof: 0.207711
+
+SER_NEG
+Statistics
+  infstep : 949
+  nodes   : 138
+  maxdepth: 7
+Time: 10.009222
+  inferstep time: 7.630025
+  node_find time: 0.228014
+  node_crea time: 1.507076
+    pred time: 0.270274
+    thmpred time: 0.000022
+    mc time: 0.795698
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.054005
+Replaying proof: 0.000137
+
+SER_CDIV
+Statistics
+  infstep : 781
+  nodes   : 174
+  maxdepth: 6
+Time: 10.010062
+  inferstep time: 7.165169
+  node_find time: 0.20612
+  node_crea time: 2.089573
+    pred time: 0.347039
+    thmpred time: 0.000036
+    mc time: 1.10838
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Replaying proof: 0.11578
+
+SER_CAUCHY
+Statistics
+  infstep : 978
+  nodes   : 112
+  maxdepth: 5
+Time: 10.058501
+  inferstep time: 7.780389
+  node_find time: 0.232197
+  node_crea time: 1.396639
+    pred time: 0.329074
+    thmpred time: 0.000022
+    mc time: 0.709855
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 29
+Original proof time: 0.0
+Replaying proof: 0.923758
+Replaying proof: 0.000223
+
+SER_COMPAR
+Statistics
+  infstep : 529
+  nodes   : 121
+  maxdepth: 6
+Time: 10.00088
+  inferstep time: 7.203994
+  node_find time: 0.13583
+  node_crea time: 2.254898
+    pred time: 0.509879
+    thmpred time: 0.000028
+    mc time: 1.006617
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 38
+Original proof time: 0.0
+Replaying proof: 1.25975
+Replaying proof: 0.000081
+Replaying proof: 0.000553
+
+SER_LE2
+Statistics
+  infstep : 697
+  nodes   : 141
+  maxdepth: 6
+Time: 10.007307
+  inferstep time: 7.041968
+  node_find time: 0.176502
+  node_crea time: 2.227375
+    pred time: 0.4853
+    thmpred time: 0.000042
+    mc time: 1.064762
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Replaying proof: 0.371859
+
+SER_ACONV
+Statistics
+  infstep : 679
+  nodes   : 138
+  maxdepth: 6
+Time: 10.007585
+  inferstep time: 7.237532
+  node_find time: 0.203524
+  node_crea time: 2.026191
+    pred time: 0.425762
+    thmpred time: 0.000031
+    mc time: 1.049933
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 11
+Original proof time: 0.0
+Replaying proof: 0.458026
+
+SER_ABS
+Statistics
+  infstep : 642
+  nodes   : 177
+  maxdepth: 6
+Time: 10.01749
+  inferstep time: 5.903432
+  node_find time: 0.223648
+  node_crea time: 3.138916
+    pred time: 0.621548
+    thmpred time: 0.000047
+    mc time: 1.655798
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Replaying proof: 0.409884
+Replaying proof: 0.001125
+Replaying proof: 0.00105
+Replaying proof: 0.000338
+Replaying proof: 0.002181
+
+LE_SEQ_IMP_LE_LIM
+Statistics
+  infstep : 376
+  nodes   : 109
+  maxdepth: 6
+Time: 10.01067
+  inferstep time: 7.786683
+  node_find time: 0.102638
+  node_crea time: 1.77314
+    pred time: 0.475955
+    thmpred time: 0.000021
+    mc time: 0.786169
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Replaying proof: 0.276744
+
+SEQ_LE_IMP_LIM_LE
+Statistics
+  infstep : 402
+  nodes   : 112
+  maxdepth: 6
+Time: 10.077
+  inferstep time: 7.761265
+  node_find time: 0.10725
+  node_crea time: 1.859718
+    pred time: 0.504145
+    thmpred time: 0.000039
+    mc time: 0.864249
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Replaying proof: 0.634794
+
+SEQ_MONO_LE
+Statistics
+  infstep : 313
+  nodes   : 108
+  maxdepth: 6
+Time: 10.020392
+  inferstep time: 7.710145
+  node_find time: 0.088016
+  node_crea time: 1.925448
+    pred time: 0.513368
+    thmpred time: 0.000032
+    mc time: 0.922875
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 23
+Original proof time: 0.0
+Replaying proof: 0.749913
+
+SEQ_LE_MONO
+Statistics
+  infstep : 258
+  nodes   : 106
+  maxdepth: 5
+Time: 10.085993
+  inferstep time: 7.693611
+  node_find time: 0.072797
+  node_crea time: 2.062928
+    pred time: 0.539069
+    thmpred time: 0.000039
+    mc time: 0.990861
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Replaying proof: 0.082167
+Bad stac: 3
