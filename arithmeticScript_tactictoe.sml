@@ -9796,6 +9796,6 @@ in hhsRecord.try_record_proof "datatype_num" false tactictoe_tac2 tactictoe_tac1
 end )
 ;
 ;
-val _ = export_theory ( )
+val _ = ( )
 ;
 val _ = hhsRecord.end_thy "arithmetic"
