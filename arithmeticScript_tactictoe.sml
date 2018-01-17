@@ -1,12 +1,9 @@
 (* ========================================================================== *)
 (* This file was modifed by TacticToe.                                        *)
 (* ========================================================================== *)
-fun load_err s = load s handle _ => ();
-List.app load_err ["BasicProvers", "Feedback", "Globals", "GrammarSpecials", "HOLgrammars", "HolKernel", "OpenTheoryMap", "PP", "Parse", "Prim_rec", "Q", "SatisfySimps", "UTF8", "Unicode", "UnicodeChars", "boolLib", "boolSimps", "markerLib", "mesonLib", "metisLib", "numTheory", "pairTheory", "prim_recTheory", "relationTheory", "simpLib"];
 load "hhsRecord";
-hhsSetup.set_irecord ();
-hhsSetup.set_isearch ();
-
+hhsSetup.set_erecord ();
+hhsSetup.set_esearch ();
 infix 0 hhs_infixl0_open hhs_infixl0_close;
 infix 1 hhs_infixl1_open hhs_infixl1_close;
 infix 2 hhs_infixl2_open hhs_infixl2_close;
@@ -9799,6 +9796,6 @@ in hhsRecord.try_record_proof "datatype_num" false tactictoe_tac2 tactictoe_tac1
 end )
 ;
 ;
-val _ = ( )
+val _ = export_theory ( )
 ;
 val _ = hhsRecord.end_thy "arithmetic"
