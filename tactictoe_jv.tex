@@ -211,8 +211,9 @@ the relevance of tactics in particular proof situations.
 % steps, 
 This learned knowledge is then used in a Monte Carlo tree search algorithm that explores the most promising tactic-level proof paths. 
 Experiments on the \holfour standard 
-library show that TacticToe is able to re-prove 59\% of the 7088 theorems in less 
-than 10 seconds compared to 29\% proved by the HolyHammer system using the E ATP in its auto-schedule mode.
+library show that TacticToe is able to re-prove 59\% of 7088 theorems in less 
+than 10 seconds. This is to be compared with the 29\% proved by the ATP Eprover 
+in auto-schedule mode with 128 lemmas predicted and translated by HolyHammer.
 
 
 %on their first-order translations?
@@ -1682,7 +1683,7 @@ multiple goals.
 %%The process stops if the root goal is solved, the time limit is exceeded or 
 %%there is no more tactic to be applied to an active node.
 
-\subsection{A proof tree and solved node}
+\subsection{A proof tree with two branching factors}
 
 A tactical proof tree is a set of nodes containing a list of goals where each 
 goal $g$ of a node $n$ is linked to a node $m$ when the list of 
@@ -1730,18 +1731,24 @@ tactic $t_j$.}
 Starting from the bottom node, we can construct descendant of this node by 
 choosing a goal $g_i^0$ on this node and choosing tactics $t1,t2,\ldots$ to 
 apply to this goal. Here the result produces new nodes each containing a list 
-of goals to be proven. If one of those list where empty, the goal $g_i^0$ would 
-be proved.
-
-
-A node is solved when every of its goal are solved.
-A goal is solved when every of its children node are solved.
+of goals to be proven. 
 
 
 
 
+Supervised learning introduction.
+\subsection{Prior tactic policy}
 
-\subsection{Guiding the proof search}
+
+
+
+\subsection{Prior node evaluation}
+
+
+
+
+
+\subsection{Node selection}
 
 A similar trade-off between exploration and exploitation exists in algorithm 
 like Monte Carlo. However, Monte Carlo tree search metrics are based on many 
@@ -1780,8 +1787,6 @@ In the context of changing wiehgts, the diagonalized tree has the advantage of
 being a little faster to explore as the ordered of tactic is inscribed in the 
 shape of the tree. if the prior shapes 
 
-
-
 \subsection{Node extension}
 
 To prevent tactics from looping, we add timeout of 0.02 seconds to all tactics 
@@ -1800,12 +1805,6 @@ ancestor nodes.
 produced from the same node with the same active goal.
 \end{itemize}
 
-
-
-
-
-\end{definition}
-
 The third point of the definition is a partial attempt to prevent confluent 
 branches. The general 
 case where two branches becomes parallel after $n$ steps is handle by a
@@ -1813,6 +1812,36 @@ tactic cache which memorizes tactic effects on goals. Similarly there is also a
 prediction cache, which memorize the tactic predictions for each goal. Those 
 two caches allow a fast exploration of confluent branches but they remain 
 separated in our search tree.
+
+\paragraph{Solving a goal and a node}
+Describe the case where a proof for a goal in a node is found.
+If one of those list where empty, the goal $g_i^0$ would 
+be proved.
+A node is solved when every of its goal are solved.
+
+
+\subsection{End of the proof search}
+The proof search stops when one of these 3 conditions is realized:
+\item It found a proof (i.e. the root node is solved). In this case, 
+the search returns a minimized and 
+prettified proof script (see Section~\ref{sec:proofdisplay}).
+\item It has saturated. 
+There is no more tactics to be applied to any open goal. (todo: define open 
+goal somewhere).
+
+\item It exceeded a given time limit.
+
+The second case happens very rarely (less than 10 times when evaluating 7088 
+theorems) and only at the beginning of the library when the learned dataset is 
+small. So in our experiments, we just give the number of proof found relative 
+to the number of proof attempts.
+
+
+
+\end{definition}
+
+
+
 
 
 \subsection{Evaluation} 
@@ -2138,6 +2167,29 @@ variables (essentially tactics, theorems and simpsets) are accessible.
 And for each theorem to be re-proven \tactictoe is only trained on previous 
 proofs.
 
+
+
+\paragraph{Dataset}
+
+All top-level theorems in the standard library are considered except:
+\begin{itemize}
+\item the 619 calls to store\_thm that contains a let binding, these are 
+typically 
+harder for \tactictoe as it may not have seen the particular local declaration 
+before and therefore would have to find an alternative proofs. We also do not 
+learn from these proofs because they were explictly local.
+\item the 1175 calls to save\_thm. These are typically mostly trivial and easy 
+theorems.
+The remaining 7088 top-level theorems are evaluated in the full scale 
+evaluation and the level of difficulty of these problem is assessed by a 
+comparison with \eprover.
+\end{itemize}
+
+Among these types of theorems, every tenth theorems of the first third of the 
+library is evaluated during tuning, which give us a total of 273 theorems to 
+train different parameters on.
+
+\paragraph{Strategy selection}
 Although the training process in each strategy on its own is fair, the 
 selection of the 
 best strategy in Section~\ref{sec:sel_param} should also be considered as a 
@@ -2146,7 +2198,6 @@ process. To ensure the global fairness, the final experiments in
 Section~\ref{sec:exp_full} 
 runs the best strategy on the full dataset which is about 10 times larger. The
 performance is minimally better on this validation set.
-
 
 \subsection{Tuning \tactictoe}
 
@@ -2642,6 +2693,13 @@ proof}
 % \caption{\label{tab:stats} old search statistics}
 %\end{table*}
 
+Constant progress: 
+  From 45 percent on the same dataset in 5 seconds 
+       59 percent in december in 10 seconds
+  Probably 65-70 percent en of January in 60 seconds.      
+
+The progress cannot be attributed only to the time increase but to testing and 
+debugging of parameters.
 
 \section{Proof Presentation}\label{sec:proofdisplay}\todo{MN + RK: add 
 motivations and transitions}
@@ -2694,9 +2752,6 @@ from the proof. To obtain a shorter proof, the exploration coefficient should be
 increased and the policy coefficient lowered to encourage exploration in the 
 width of the proof tree. Additionally, by giving a weaker evaluation to slow 
 tactics, we can aim for faster proofs.
-
-
-
 
 \paragraph{Minimizing tactic arguments}
 One of the argument that may contain unnecessary information are lists.
@@ -2776,6 +2831,9 @@ which improves readability and prevents duplication of this declarations.
 %previous 
 %proofs.
 
+%Name: 218 SURJ_INJ_INV
+%Original proof time: 0.002033
+
 %SURJ_INJ_INV
 %proof length: 2
 %proof time: 0.050853
@@ -2831,7 +2889,7 @@ Goal
 !f s t. SURJ f s t ==> ?g. INJ g t s wedge !y. y IN t ==> (f (g y) = y)
 \end{lstlisting}
 
-Original \holfour proof script
+Original \holfour proof script (2.03 milliseconds)
 \begin{lstlisting}[language=SMLSmall,frame=tb]
 REWRITE_TAC [IMAGE_SURJ] THEN
   DISCH_TAC THEN Q.EXISTS_TAC `THE o LINV_OPT f s` THEN
@@ -2848,7 +2906,7 @@ REWRITE_TAC [IMAGE_SURJ] THEN
 
 \vspace{5mm}
 
-\tactictoe proof script
+\tactictoe proof script (50.85 milliseconds)
 \begin{lstlisting}[language=SMLSmall,frame=tb]
 SRW_TAC [] [SURJ_DEF, INJ_DEF] THEN METIS_TAC []
 \end{lstlisting}
@@ -2864,13 +2922,18 @@ Goal
 
 \vspace{5mm}
 
-Original \holfour proof script
+Original \holfour proof script (62.69 milliseconds)
 \begin{lstlisting}[language=SMLSmall,frame=tb]
   rw[] THEN simp[LIST_EQ_REWRITE] THEN Q.X_GEN_TAC `z` THEN
   simp[EL_LUPDATE] THEN rw[] THEN simp[EL_APPEND2,EL_LUPDATE] THEN
   fs[] THEN Cases_on `z < LENGTH l1` THEN
   fs[] THEN simp[EL_APPEND1,EL_APPEND2,EL_LUPDATE]
 \end{lstlisting}
+
+%Name: 224 LUPDATE_APPEND2
+%Original proof time: 
+
+
 
 %val LUPDATE_APPEND2 = Q.store_thm("LUPDATE_APPEND2",
 %   `!l1 l2 n x.
@@ -2879,7 +2942,7 @@ Original \holfour proof script
 %);
 \vspace{5mm}
 
-\tactictoe proof script
+\tactictoe proof script (17.16 milliseconds)
 \begin{lstlisting}[language=SMLSmall,frame=tb]
 Induct_on `l1` THENL [SRW_TAC [] [],
   Cases_on `n` THENL [SRW_TAC [] [],
@@ -2887,8 +2950,12 @@ Induct_on `l1` THENL [SRW_TAC [] [],
 \end{lstlisting}
 
 
-If a discovered proof is reasonable short, fast and understandable, they could 
-replace its original in the \holfour standard library.
+If a discovered proof is reasonable short, fast, maintainable  and 
+understandable, they could 
+replace its original in the \holfour standard library. In the first case the 
+tactictoe proof is slower but could still be considered becaues it is much more 
+readable. In the second case, it is faster and more readable.
+
 
 
 %
@@ -2924,7 +2991,8 @@ replace its original in the \holfour standard library.
 Future work:
   Promising techniques that could not be evaluated. 
   + Orthogonalization of theorems~\cite{ckju-jsc15}. 
-  + Try harder on term predictions. \cite{latest version of sepia}.
+  + Try harder and smarted on term predictions. \cite{latest version of sepia}. 
+  \cite{conjecturing}
  
 More training than just orthogonalization of tactics.
 
@@ -2940,8 +3008,9 @@ More training than just orthogonalization of tactics.
 We proposed a new proof assistant automation technique which combines 
 tactic-based proof search with machine learning tactic prediction
 Its implementation,
-\tactictoe, achieves an overall performance of 59\% theorems on most of the 
-\holfour standard library surpassing \eprover with auto-schedule. Its 
+\tactictoe, achieves an overall performance of 59\% theorems on 7088 theorems  
+of the \holfour standard library surpassing \eprover with 
+auto-schedule. Its 
 effectiveness is especially visible on 
 theories which use inductive data structures, specialized decision procedures, 
 and custom built simplification sets.
@@ -2985,8 +3054,6 @@ grant no.\ 714034 \textit{SMART}.
 
 \bibliographystyle{plain}
 \bibliography{biblio}
-
-
 
 \end{document}
 % LocalWords: TacticToe tactictoe precedences ITP ITPs THENL
