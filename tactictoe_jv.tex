@@ -241,6 +241,8 @@ in auto-schedule mode with 128 lemmas predicted and translated by HolyHammer.
 %5 seconds whereas the best single HOL(y)Hammer strategy solves 32\% in the 
 %same 
 %amount of time.
+\todo{include latest results: 66.56 percent of 7123 theorems in 60 seconds and
+do a similar experiment for hh with minimization}
 
 \end{abstract}
 
@@ -308,8 +310,7 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
 %proves many theorems whose proofs are not found by the hammering
 %approach.
 
-\todo{include latest results: 66.56 percent of 7123 theorems in 60 seconds and
-do a similar experiment for hh with minimization}
+
 
 
 \todo{JU or CK review}
@@ -2826,7 +2827,7 @@ which improves readability and prevents duplication of this declarations.
 
 
 
-\section{Case study}\todo{
+\section{Case study: comparison with original proofs}\todo{
   TG + RK: describe the two examples.
   RK: After implementation and small experiment is done (in about 1 week) 
       Test tactictoe find new examples on new goals and manual exploration mode.
@@ -2870,6 +2871,10 @@ which improves readability and prevents duplication of this declarations.
 %Name: 218 SURJ_INJ_INV
 %Original proof time: 0.002033
 
+%val SURJ_INJ_INV = store_thm(
+%  "SURJ_INJ_INV",
+%  ``SURJ f s t ==> ?g. INJ g t s /\ !y. y IN t ==> (f (g y) = y)``,
+
 %SURJ_INJ_INV
 %proof length: 2
 %proof time: 0.050853
@@ -2889,38 +2894,86 @@ which improves readability and prevents duplication of this declarations.
 %Org tac number: 15
 %Replaying proof: 0.562829
 
+%Name: 0 IS_GCD_UNIQUE
+%proof length: 12
+%proof time: 0.080819
+%Statistics
+%  infstep : 2539
+%  nodes   : 396
+%  maxdepth: 7
+%Time: 40.309547
+%  inferstep time: 30.15097
+%  node_find time: 0.58993
+%  node_crea time: 9.142918
+%    pred time: 2.425785
+%    thmpred time: 0.000101
+%    mc time: 4.417004
+%    inst time: 0.0
+%Proof found: STRIP_TAC THEN REWRITE_TAC [fetch "gcd" "is_gcd_def"] THEN REPEAT 
+%Cases THENL [metisTools.METIS_TAC [], REWRITE_TAC [SUC_NOT, ALL_DIVIDES_0, 
+%compute_divides] THEN metisTools.METIS_TAC [numTheory.NOT_SUC], 
+%metisTools.METIS_TAC [numTheory.NOT_SUC, DIVIDES_ANTISYM], metisLib.METIS_TAC 
+%[LESS_EQUAL_ANTISYM, (fetch "divides" "DIVIDES_LE"), prim_recTheory.LESS_0], 
+%metisTools.METIS_TAC [], (RW_TAC numLib.arith_ss) [(fetch "divides" 
+%"divides_def")], metisTools.METIS_TAC [DIVIDES_ANTISYM], metisLib.METIS_TAC 
+%[LESS_EQUAL_ANTISYM, (fetch "divides" "DIVIDES_LE"), prim_recTheory.LESS_0]]
+%Org tac number: 1
+%Original proof time: 0.0
+%Recording proof time: 0.008556
 
 
+%
+%LUPDATE_APPEND2
+%proof length: 6
+%proof time: 0.017156
+%Statistics
+%  infstep : 70
+%  nodes   : 27
+%  maxdepth: 4
+%Time: 3.02716
+%  inferstep time: 2.12842
+%  node_find time: 0.07146
+%  node_crea time: 0.508384
+%    pred time: 0.164047
+%    thmpred time: 0.000012
+%    mc time: 0.265314
+%    inst time: 0.0
+%Proof found: 
+%Org tac number: 10
+%Original proof time: 0.0
+%Replaying proof: 0.470118
 
-%\begin{remark}
-%The additional difficulty produced by the necessary induction is such that the 
-%theorem could not be proven by \holyhammer.
-%\end{remark}
+Goal: \texttt{IS\_GCD\_UNIQUE} in theory \texttt{pred\_set}).
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+!a b c d. is_gcd a b c wedge is_gcd a b d ==> (c = d)
+\end{lstlisting}
 
-\newcommand{\wed}{\begin{math}\wedge\end{math}}
+Original \holfour proof script (2.03 milliseconds)
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+PROVE_TAC[IS_GCD,DIVIDES_ANTISYM]
+\end{lstlisting}
 
-Proofs discovered by \tactictoe discovered during evaluation.
-
-
-
-
-for theorem \texttt{SURJ\_INJ\_INV} In 
-theory \texttt{pred\_set})
-
-
-
-\begin{example}\label{ex:casestudy}()
-
-
-
-%val SURJ_INJ_INV = store_thm(
-%  "SURJ_INJ_INV",
-%  ``SURJ f s t ==> ?g. INJ g t s /\ !y. y IN t ==> (f (g y) = y)``,
 \vspace{5mm}
-\small
 
+\tactictoe proof script
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+STRIP_TAC THEN 
+REWRITE_TAC [fetch "gcd" "is_gcd_def"] THEN 
+REPEAT Cases THENL 
+  [METIS_TAC [], 
+   REWRITE_TAC [SUC_NOT, ALL_DIVIDES_0, compute_divides] THEN 
+     METIS_TAC [NOT_SUC], 
+   METIS_TAC [NOT_SUC, DIVIDES_ANTISYM], 
+   METIS_TAC [LESS_EQUAL_ANTISYM, DIVIDES_LE, LESS_0], 
+   METIS_TAC [], 
+   RW_TAC numLib.arith_ss [divides_def], 
+   METIS_TAC [DIVIDES_ANTISYM],
+   METIS_TAC [LESS_EQUAL_ANTISYM, DIVIDES_LE, LESS_0]]
+\end{lstlisting}
 
-Goal
+tacictoe is resourceful.
+
+Goal: \texttt{SURJ\_INJ\_INV} in theory \texttt{pred\_set})
 \begin{lstlisting}[language=SMLSmall,frame=tb]
 !f s t. SURJ f s t ==> ?g. INJ g t s wedge !y. y IN t ==> (f (g y) = y)
 \end{lstlisting}
@@ -2994,33 +3047,7 @@ readable. In the second case, it is faster and more readable.
 
 
 
-%
-%LUPDATE_APPEND2
-%proof length: 6
-%proof time: 0.017156
-%Statistics
-%  infstep : 70
-%  nodes   : 27
-%  maxdepth: 4
-%Time: 3.02716
-%  inferstep time: 2.12842
-%  node_find time: 0.07146
-%  node_crea time: 0.508384
-%    pred time: 0.164047
-%    thmpred time: 0.000012
-%    mc time: 0.265314
-%    inst time: 0.0
-%Proof found: 
-%Org tac number: 10
-%Original proof time: 0.0
-%Replaying proof: 0.470118
 
-
-
-
-
-
-\end{example}
 
 \section{Conclusion}\label{sec:concl}\todo{TG + JU or CK review}
 
