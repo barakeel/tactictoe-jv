@@ -1,0 +1,280 @@
+
+Name: 0 enc2dec_none
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034776
+
+Name: 1 enc2dec_some
+Org tac number: 20
+Original proof time: 0.0
+Recording proof time: 0.784976
+
+Name: 2 enc2dec_some_alt
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.122928
+
+Name: 3 wf_enc2dec
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.050346
+
+Name: 4 dec2enc_some
+Org tac number: 20
+Original proof time: 0.0
+Recording proof time: 0.88711
+
+Name: 5 decode_dec2enc
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.027076
+
+Name: 6 decode_dec2enc_append
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.220597
+
+Name: 7 wf_dec2enc
+Original proof time: 0.011802
+
+Name: 8 dec2enc_enc2dec
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.124799
+
+Name: 9 enc2dec_dec2enc
+Statistics
+  infstep : 4338
+  nodes   : 1012
+  maxdepth: 8
+Time: 60.016463
+  inferstep time: 37.014889
+  node_find time: 1.782222
+  node_crea time: 21.170809
+    pred time: 3.04273
+    thmpred time: 0.000198
+    mc time: 12.719985
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 25
+Original proof time: 0.0
+Recording proof time: 0.811998
+
+Name: 10 wf_decode_unit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004425
+
+Name: 11 dec2enc_decode_unit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003677
+
+Name: 12 decode_unit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006172
+
+Name: 13 wf_decode_bool
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003795
+
+Name: 14 dec2enc_decode_bool
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006513
+
+Name: 15 decode_bool
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.052071
+
+Name: 16 wf_decode_prod
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034852
+
+Name: 17 dec2enc_decode_prod
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004303
+
+Name: 18 encode_then_decode_prod
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.395595
+
+Name: 19 decode_prod
+Statistics
+  infstep : 3171
+  nodes   : 873
+  maxdepth: 8
+Time: 60.104798
+  inferstep time: 36.723625
+  node_find time: 1.203992
+  node_crea time: 22.135746
+    pred time: 3.757356
+    thmpred time: 0.000194
+    mc time: 10.941417
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 58
+Original proof time: 0.0
+Recording proof time: 2.351419
+
+Name: 20 wf_decode_sum
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.084615
+
+Name: 21 dec2enc_decode_sum
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012066
+
+Name: 22 encode_then_decode_sum
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.320391
+
+Name: 23 decode_sum
+Org tac number: 70
+Original proof time: 0.0
+Recording proof time: 2.885482
+
+Name: 24 wf_decode_option
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037463
+
+Name: 25 dec2enc_decode_option
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004733
+
+Name: 26 encode_then_decode_option
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.341841
+
+Name: 27 decode_option
+Org tac number: 44
+Original proof time: 0.0
+Recording proof time: 1.708318
+
+Name: 28 wf_decode_list
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.031596
+
+Name: 29 dec2enc_decode_list
+proof length: 3
+proof time: 0.003358
+Statistics
+  infstep : 477
+  nodes   : 131
+  maxdepth: 6
+Time: 10.429207
+  inferstep time: 7.30168
+  node_find time: 0.033945
+  node_crea time: 3.006865
+    pred time: 0.705911
+    thmpred time: 0.000028
+    mc time: 1.646791
+    inst time: 0.0
+Proof found: RW_TAC std_ss [(fetch "Decode" "decode_list_def")] THEN MP_TAC (Q.SPECL [`p`, `d`] (fetch "Decode" "wf_dec2enc")) THEN SRW_TAC [] [wf_encode_list, fetch "Decode" "dec2enc_enc2dec"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013669
+
+Name: 30 encode_then_decode_list
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.339241
+
+Name: 31 decode_list
+Org tac number: 74
+Original proof time: 0.0
+Recording proof time: 2.557852
+
+Name: 32 wf_decode_blist
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03601
+
+Name: 33 dec2enc_decode_blist
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.05212
+
+Name: 34 encode_then_decode_blist
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 0.651054
+
+Name: 35 decode_blist
+Original proof time: 0.12694
+
+Name: 36 wf_decode_num
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005118
+
+Name: 37 dec2enc_decode_num
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005423
+
+Name: 38 decode_num_total
+Org tac number: 23
+Original proof time: 0.0
+Recording proof time: 1.145188
+
+Name: 39 decode_num
+Original proof time: 0.113183
+
+Name: 40 dec_bnum_lt
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.216069
+
+Name: 41 dec_bnum_inj
+Original proof time: 0.052818
+
+Name: 42 wf_decode_bnum
+proof length: 1
+proof time: 0.007664
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.072657
+  inferstep time: 0.048627
+  node_find time: 0.000015
+  node_crea time: 0.016555
+    pred time: 0.004331
+    thmpred time: 0.0
+    mc time: 0.018081
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "Decode" "decode_bnum_def", wf_encode_bnum, fetch "Decode" "wf_enc2dec"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003961
+
+Name: 43 dec2enc_decode_bnum
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006628
+
+Name: 44 decode_bnum
+Original proof time: 0.16456
+
+Name: 45 wf_decode_tree
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.086279
+
+Name: 46 decode_tree
+Original proof time: 0.0508
+Bad stac: 0

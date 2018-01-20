@@ -1,0 +1,166 @@
+
+Name: 0 MAPi_ACC_MAPi
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.245877
+
+Name: 1 MAPi_compute
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.093133
+
+Name: 2 LT_SUC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.091254
+
+Name: 3 MEM_MAPi
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.284074
+
+Name: 4 MAPi_CONG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039342
+
+Name: 5 MAPi_CONG'
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.073696
+
+Name: 6 LENGTH_MAPi
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.135613
+
+Name: 7 MAP_MAPi
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.044832
+
+Name: 8 EL_MAPi
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.079269
+
+Name: 9 MAPi_APPEND
+proof length: 6
+proof time: 0.024435
+Statistics
+  infstep : 848
+  nodes   : 215
+  maxdepth: 6
+Time: 20.253276
+  inferstep time: 16.255826
+  node_find time: 0.118106
+  node_crea time: 3.490873
+    pred time: 1.010208
+    thmpred time: 0.000098
+    mc time: 2.21058
+    inst time: 0.0
+Proof found: let fun simp thl = ASM_SIMP_TAC (srw_ss () ++ numSimps.ARITH_ss) thl in Induct_on `l1` THENL [metisTools.METIS_TAC [fetch "indexedLists" "MAPi_def", APPEND_NIL, LENGTH, fetch "indexedLists" "MAPi_compute", fetch "indexedLists" "MAPi_ACC_MAPi"], simp [] THEN RW_TAC arith_ss [] THEN REPEAT (AP_TERM_TAC ORELSE AP_THM_TAC) THEN simp [FUN_EQ_THM]] end
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.224457
+
+Name: 10 MAPi_GENLIST
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.180195
+
+Name: 11 GENLIST_CONG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.085241
+
+Name: 12 FOLDR_MAPi
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.061982
+
+Name: 13 FOLDRi_APPEND
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.48463
+
+Name: 14 FOLDRi_CONG
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.546718
+
+Name: 15 FOLDRi_CONG'
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.309803
+
+Name: 16 MEM_findi
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.07143
+
+Name: 17 findi_EL
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.354639
+
+Name: 18 EL_findi
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.130909
+
+Name: 19 delN_shortens
+proof length: 4
+proof time: 0.005699
+Statistics
+  infstep : 40
+  nodes   : 18
+  maxdepth: 4
+Time: 1.851087
+  inferstep time: 1.387089
+  node_find time: 0.000881
+  node_crea time: 0.387211
+    pred time: 0.148944
+    thmpred time: 0.000004
+    mc time: 0.24818
+    inst time: 0.0
+Proof found: INDUCT_THEN ((fetch "list" "list_INDUCT")) STRIP_ASSUME_TAC THENL [SRW_TAC [] [], SRW_TAC [] [fetch "indexedLists" "delN_def"] THEN SRW_TAC [numSimps.ARITH_ss] []]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.105711
+
+Name: 20 EL_delN_BEFORE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.141209
+
+Name: 21 EL_delN_AFTER
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.424672
+
+Name: 22 fupdLast_EQ_NIL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.121112
+
+Name: 23 fupdLast_FRONT_LAST
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.10879
+
+Name: 24 LIST_RELi_LENGTH
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.059688
+
+Name: 25 LIST_RELi_EL_EQN
+Org tac number: 24
+Original proof time: 0.0
+Recording proof time: 1.118185
+
+Name: 26 LIST_RELi_thm
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.301017
+Bad stac: 0

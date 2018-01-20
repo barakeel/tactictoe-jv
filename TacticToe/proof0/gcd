@@ -1,0 +1,259 @@
+
+Name: 0 IS_GCD_UNIQUE
+proof length: 12
+proof time: 0.080819
+Statistics
+  infstep : 2539
+  nodes   : 396
+  maxdepth: 7
+Time: 40.309547
+  inferstep time: 30.15097
+  node_find time: 0.58993
+  node_crea time: 9.142918
+    pred time: 2.425785
+    thmpred time: 0.000101
+    mc time: 4.417004
+    inst time: 0.0
+Proof found: STRIP_TAC THEN REWRITE_TAC [fetch "gcd" "is_gcd_def"] THEN REPEAT Cases THENL [metisTools.METIS_TAC [], REWRITE_TAC [SUC_NOT, ALL_DIVIDES_0, compute_divides] THEN metisTools.METIS_TAC [numTheory.NOT_SUC], metisTools.METIS_TAC [numTheory.NOT_SUC, DIVIDES_ANTISYM], metisLib.METIS_TAC [LESS_EQUAL_ANTISYM, (fetch "divides" "DIVIDES_LE"), prim_recTheory.LESS_0], metisTools.METIS_TAC [], (RW_TAC numLib.arith_ss) [(fetch "divides" "divides_def")], metisTools.METIS_TAC [DIVIDES_ANTISYM], metisLib.METIS_TAC [LESS_EQUAL_ANTISYM, (fetch "divides" "DIVIDES_LE"), prim_recTheory.LESS_0]]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008556
+
+Name: 1 IS_GCD_REF
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007611
+
+Name: 2 IS_GCD_SYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.034635
+
+Name: 3 IS_GCD_0R
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.023996
+
+Name: 4 IS_GCD_0L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00652
+
+Name: 5 PRIME_IS_GCD
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.711626
+
+Name: 6 IS_GCD_MINUS_L
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.075571
+
+Name: 7 IS_GCD_MINUS_R
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004662
+
+Name: 8 GCD_IS_GCD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.100822
+
+Name: 9 GCD_REF
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003514
+
+Name: 10 GCD_SYM
+proof length: 1
+proof time: 0.005889
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.105831
+  inferstep time: 0.086005
+  node_find time: 0.000011
+  node_crea time: 0.012423
+    pred time: 0.003289
+    thmpred time: 0.0
+    mc time: 0.015481
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "GCD_IS_GCD", fetch "gcd" "IS_GCD_UNIQUE", fetch "gcd" "IS_GCD_SYM"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013496
+
+Name: 11 GCD_0R
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005096
+
+Name: 12 GCD_0L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003884
+
+Name: 13 GCD_ADD_R
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.07709
+
+Name: 14 GCD_ADD_L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003706
+
+Name: 15 GCD_EQ_0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04408
+
+Name: 16 GCD_1
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.111023
+
+Name: 17 PRIME_GCD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003765
+
+Name: 18 tactictoe_prove_18
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.837995
+
+Name: 19 L_EUCLIDES
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.204545
+
+Name: 20 P_EUCLIDES
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.208417
+
+Name: 21 FACTOR_OUT_GCD
+Statistics
+  infstep : 4150
+  nodes   : 661
+  maxdepth: 8
+Time: 60.033745
+  inferstep time: 45.814749
+  node_find time: 1.48662
+  node_crea time: 12.458539
+    pred time: 2.211845
+    thmpred time: 0.000118
+    mc time: 7.743566
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 1.657603
+
+Name: 22 GCD_SUCfree_ind
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.997841
+
+Name: 23 tactictoe_prove_23
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 1.00091
+
+Name: 24 LINEAR_GCD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.350317
+
+Name: 25 tactictoe_prove_25
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.171294
+
+Name: 26 tactictoe_prove_26
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.576214
+
+Name: 27 GCD_EFFICIENTLY
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 1.038198
+
+Name: 28 LCM_IS_LEAST_COMMON_MULTIPLE
+Org tac number: 36
+Original proof time: 0.0
+Recording proof time: 2.642988
+
+Name: 29 LCM_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007308
+
+Name: 30 LCM_1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017431
+
+Name: 31 LCM_COMM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006174
+
+Name: 32 LCM_LE
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.853832
+
+Name: 33 LCM_LEAST
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.403164
+
+Name: 34 GCD_COMMON_FACTOR
+proof length: 4
+proof time: 0.027429
+Statistics
+  infstep : 377
+  nodes   : 71
+  maxdepth: 4
+Time: 8.364748
+  inferstep time: 6.949124
+  node_find time: 0.018832
+  node_crea time: 1.323115
+    pred time: 0.390134
+    thmpred time: 0.000048
+    mc time: 0.773926
+    inst time: 0.0
+Proof found: HO_MATCH_MP_TAC (fetch "gcd" "GCD_SUCfree_ind") THEN SRW_TAC [] [] THENL [METIS_TAC [fetch "gcd" "GCD_SYM"], METIS_TAC [LEFT_ADD_DISTRIB, fetch "gcd" "GCD_ADD_L_THM", fetch "gcd" "GCD_SYM"]]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.268351
+
+Name: 35 tactictoe_prove_35
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017179
+
+Name: 36 tactictoe_prove_36
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.111242
+
+Name: 37 GCD_CANCEL_MULT
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.754048
+
+Name: 38 tactictoe_prove_38
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.34289
+
+Name: 39 BINARY_GCD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.385732
+Bad stac: 2

@@ -1,0 +1,274 @@
+
+Name: 0 IN_SET_MAP
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.024086
+
+Name: 1 SET_REL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036764
+
+Name: 2 SET_REL_MP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.167004
+
+Name: 3 IN_PRS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.082367
+
+Name: 4 IN_RSP
+proof length: 2
+proof time: 0.008111
+Statistics
+  infstep : 41
+  nodes   : 20
+  maxdepth: 4
+Time: 1.489602
+  inferstep time: 1.141418
+  node_find time: 0.000885
+  node_crea time: 0.336236
+    pred time: 0.109391
+    thmpred time: 0.000002
+    mc time: 0.141414
+    inst time: 0.0
+Proof found: REWRITE_TAC [FUN_REL, SPECIFICATION] THEN METIS_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.043015
+
+Name: 5 IN_GSPECR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003293
+
+Name: 6 GSPEC_PRS
+Org tac number: 19
+Original proof time: 0.0
+Recording proof time: 0.638703
+
+Name: 7 GSPECR_RSP
+Org tac number: 19
+Original proof time: 0.0
+Recording proof time: 0.577133
+
+Name: 8 EMPTY_PRS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.102578
+
+Name: 9 EMPTY_RSP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.068876
+
+Name: 10 UNIV_PRS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.060182
+
+Name: 11 UNIV_RSP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.055866
+
+Name: 12 UNION_PRS
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.151183
+
+Name: 13 UNION_RSP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.138433
+
+Name: 14 INTER_PRS
+proof length: 7
+proof time: 0.003462
+Statistics
+  infstep : 490
+  nodes   : 205
+  maxdepth: 7
+Time: 8.144988
+  inferstep time: 5.982668
+  node_find time: 0.041869
+  node_crea time: 2.081041
+    pred time: 0.33479
+    thmpred time: 0.000024
+    mc time: 1.207306
+    inst time: 0.0
+Proof found: REWRITE_TAC [INTER_UNION_COMPL] THEN SIMP_TAC bool_ss [(fetch "pred_set" "EXTENSION"), (fetch "pred_set" "IN_COMPL"), (fetch "pred_set" "IN_UNION")] THEN REPEAT STRIP_TAC THEN RW_TAC bool_ss [fetch "quotient_pred_set" "IN_SET_MAP", IN_COMPL] THEN IMP_RES_TAC QUOTIENT_ABS_REP THEN SIMP_TAC bool_ss [(fetch "pred_set" "IN_COMPL"), (fetch "pred_set" "IN_UNION")] THEN RW_TAC bool_ss [fetch "quotient_pred_set" "IN_SET_MAP"]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.161892
+
+Name: 15 INTER_RSP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.192405
+
+Name: 16 SUBSET_PRS
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.36885
+
+Name: 17 SUBSETR_RSP
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.512854
+
+Name: 18 PSUBSET_PRS
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.507885
+
+Name: 19 PSUBSETR_RSP
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.361496
+
+Name: 20 IN_INSERTR
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.085776
+
+Name: 21 INSERT_PRS
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.134969
+
+Name: 22 INSERTR_RSP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.182134
+
+Name: 23 IN_DELETER
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.089596
+
+Name: 24 DELETE_PRS
+proof length: 6
+proof time: 0.010498
+Statistics
+  infstep : 1532
+  nodes   : 439
+  maxdepth: 7
+Time: 20.553388
+  inferstep time: 14.775029
+  node_find time: 0.2581
+  node_crea time: 5.479256
+    pred time: 0.967834
+    thmpred time: 0.000113
+    mc time: 2.642236
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "pred_set" "EXTENSION")] THEN IMP_RES_TAC QUOTIENT_REL_REP THEN PURE_REWRITE_TAC [fetch "quotient_pred_set" "IN_DELETER", fetch "quotient_pred_set" "IN_SET_MAP"] THEN IMP_RES_TAC (fetch "quotient" "QUOTIENT_REP_REFL") THEN IMP_RES_THEN (fn th => REWRITE_TAC [th]) (fetch "quotient" "QUOTIENT_ABS_REP") THEN METIS_TAC []
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.19766
+
+Name: 25 DELETER_RSP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.240681
+
+Name: 26 DIFF_PRS
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.124247
+
+Name: 27 DIFF_RSP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.158861
+
+Name: 28 DISJOINT_PRS
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.458073
+
+Name: 29 DISJOINTR_RSP
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.218701
+
+Name: 30 FINITE_PRS
+Org tac number: 68
+Original proof time: 0.0
+Recording proof time: 2.063611
+
+Name: 31 FINITER_EQ
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.621642
+
+Name: 32 FINITER_RSP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004484
+
+Name: 33 FINITER_EMPTY
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.088797
+
+Name: 34 FINITER_INSERTR
+proof length: 5
+proof time: 0.014101
+Statistics
+  infstep : 1191
+  nodes   : 376
+  maxdepth: 7
+Time: 24.356068
+  inferstep time: 18.938344
+  node_find time: 0.193487
+  node_crea time: 5.185996
+    pred time: 1.063597
+    thmpred time: 0.000092
+    mc time: 2.436976
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "quotient_pred_set" "FINITER_def", fetch "quotient_pred_set" "INSERTR_def"] THEN CONV_TAC (DEPTH_CONV RES_FORALL_CONV) THEN REPEAT STRIP_TAC THEN RES_TAC THEN METIS_TAC []
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.32547
+
+Name: 35 tactictoe_prove_35
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.549027
+
+Name: 36 tactictoe_prove_36
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035434
+
+Name: 37 tactictoe_prove_37
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.267836
+
+Name: 38 ABSORPTIONR
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.144688
+
+Name: 39 FINITER_INDUCT
+Org tac number: 22
+Original proof time: 0.0
+Recording proof time: 0.614076
+
+Name: 40 IN_IMAGER
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.18905
+
+Name: 41 IMAGE_PRS
+Original proof time: 0.000882
+
+Name: 42 IMAGER_RSP
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.699178
+Bad stac: 0

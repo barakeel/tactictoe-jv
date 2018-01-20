@@ -1,0 +1,139 @@
+
+Name: 0 align_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008459
+
+Name: 1 align_align
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.023362
+
+Name: 2 aligned_align
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010727
+
+Name: 3 align_aligned
+proof length: 1
+proof time: 0.006202
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.099738
+  inferstep time: 0.069082
+  node_find time: 0.000029
+  node_crea time: 0.022078
+    pred time: 0.005408
+    thmpred time: 0.000001
+    mc time: 0.022407
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "alignment" "aligned_def"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003043
+
+Name: 4 align_bitwise_and
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.050611
+
+Name: 5 align_shift
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.152398
+
+Name: 6 align_w2n
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.268085
+
+Name: 7 align_sub
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.621099
+
+Name: 8 aligned_extract
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.465719
+
+Name: 9 aligned_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016447
+
+Name: 10 aligned_1_lsb
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019166
+
+Name: 11 aligned_ge_dim
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.045579
+
+Name: 12 aligned_bitwise_and
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.377392
+
+Name: 13 aligned_bit_count_upto
+proof length: 6
+proof time: 0.026332
+Statistics
+  infstep : 67
+  nodes   : 36
+  maxdepth: 5
+Time: 3.658597
+  inferstep time: 2.567272
+  node_find time: 0.002246
+  node_crea time: 0.981427
+    pred time: 0.25877
+    thmpred time: 0.000014
+    mc time: 0.674355
+    inst time: 0.0
+Proof found: rewrite_tac [(fetch "alignment" "aligned_def")] THEN Cases THENL [SRW_TAC [] [fetch "alignment" "align_0", wordsTheory.bit_count_upto_is_zero], srw_tac [WORD_BIT_EQ_ss] [(fetch "alignment" "align_def")] THEN SIMP_TAC (std_ss ++ fcpLib.FCP_ss) [wordsTheory.bit_count_upto_is_zero, arithmeticTheory.LESS_EQ] THEN METIS_TAC [arithmeticTheory.NOT_SUC_LESS_EQ]]
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.503342
+
+Name: 14 aligned_add_sub
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.425892
+
+Name: 15 aligned_add_sub_cor
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.063307
+
+Name: 16 aligned_mul_shift_1
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.467452
+
+Name: 17 aligned_add_sub_prod
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.076275
+
+Name: 18 aligned_imp
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.238717
+
+Name: 19 align_add_aligned
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.410334
+
+Name: 20 tactictoe_prove_20
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.089167
+
+Name: 21 aligned_numeric
+Org tac number: 2
+Bad stac: 0

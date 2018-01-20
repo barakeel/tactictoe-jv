@@ -1,0 +1,94 @@
+
+Name: 0 SUM_REL_EQ
+proof length: 3
+proof time: 0.003794
+Statistics
+  infstep : 46
+  nodes   : 6
+  maxdepth: 3
+Time: 0.568471
+  inferstep time: 0.471285
+  node_find time: 0.000353
+  node_crea time: 0.077879
+    pred time: 0.026107
+    thmpred time: 0.000003
+    mc time: 0.055236
+    inst time: 0.0
+Proof found: CONV_TAC (REDEPTH_CONV (BETA_CONV ORELSEC FUN_EQ_CONV)) THEN SIMP_TAC (srw_ss ()) [(fetch "sum" "FORALL_SUM")] THEN REWRITE_TAC [fetch "quotient_sum" "SUM_REL_def"]
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.116416
+
+Name: 1 SUM_EQUIV
+Org tac number: 23
+Original proof time: 0.0
+Recording proof time: 0.626983
+
+Name: 2 SUM_QUOTIENT
+Original proof time: 0.00348
+
+Name: 3 INL_PRS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.150503
+
+Name: 4 INL_RSP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.17373
+
+Name: 5 INR_PRS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.123695
+
+Name: 6 INR_RSP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.264277
+
+Name: 7 ISL_PRS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.162255
+
+Name: 8 ISL_RSP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.199278
+
+Name: 9 ISR_PRS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.082168
+
+Name: 10 ISR_RSP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.281744
+
+Name: 11 SUM_MAP_PRS
+proof length: 6
+proof time: 0.007533
+Statistics
+  infstep : 457
+  nodes   : 84
+  maxdepth: 6
+Time: 6.452174
+  inferstep time: 4.746683
+  node_find time: 0.023579
+  node_crea time: 1.638305
+    pred time: 0.303564
+    thmpred time: 0.000019
+    mc time: 0.577757
+    inst time: 0.0
+Proof found: SRW_TAC [] [] THEN REWRITE_TAC [(fetch "quotient" "FUN_MAP")] THEN BETA_TAC THEN CONV_TAC FUN_EQ_CONV THEN SIMP_TAC (srw_ss ()) [(fetch "sum" "FORALL_SUM")] THEN IMP_RES_THEN (fn th => REWRITE_TAC [th]) (fetch "quotient" "QUOTIENT_ABS_REP")
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.192479
+
+Name: 12 SUM_MAP_RSP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.249956
+Bad stac: 1

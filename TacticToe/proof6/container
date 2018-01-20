@@ -1,0 +1,139 @@
+
+Name: 0 LIST_TO_BAG_alt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020378
+
+Name: 1 BAG_TO_LIST_INV
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.130967
+
+Name: 2 BAG_IN_MEM
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.174425
+
+Name: 3 MEM_BAG_TO_LIST
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008261
+
+Name: 4 FINITE_LIST_TO_BAG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.056666
+
+Name: 5 EVERY_LIST_TO_BAG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.065782
+
+Name: 6 LIST_TO_BAG_APPEND
+proof length: 2
+proof time: 0.040742
+Statistics
+  infstep : 23
+  nodes   : 7
+  maxdepth: 2
+Time: 0.483785
+  inferstep time: 0.392129
+  node_find time: 0.000226
+  node_crea time: 0.07777
+    pred time: 0.023891
+    thmpred time: 0.0
+    mc time: 0.053085
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "container" "LIST_TO_BAG_alt", BAG_UNION] THEN METIS_TAC [fetch "container" "LIST_TO_BAG_alt", PERM_alt, fetch "container" "LIST_TO_BAG_def", FILTER_APPEND_DISTRIB, LENGTH_EQ_NUM_compute]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.042872
+
+Name: 7 LIST_TO_BAG_MAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007883
+
+Name: 8 LIST_TO_BAG_FILTER
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018577
+
+Name: 9 IN_LIST_TO_BAG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.09745
+
+Name: 10 IN_LIST_TO_BAG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.055801
+
+Name: 11 LIST_TO_BAG_DISTINCT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.032613
+
+Name: 12 LIST_TO_BAG_EQ_EMPTY
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.045021
+
+Name: 13 PERM_LIST_TO_BAG
+Original proof time: 0.001151
+
+Name: 14 CARD_LIST_TO_BAG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027479
+
+Name: 15 BAG_TO_LIST_CARD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020614
+
+Name: 16 BAG_TO_LIST_EQ_NIL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.032571
+
+Name: 17 LIST_ELEM_COUNT_LIST_TO_BAG
+proof length: 5
+proof time: 0.006171
+Statistics
+  infstep : 145
+  nodes   : 24
+  maxdepth: 3
+Time: 2.042451
+  inferstep time: 1.664248
+  node_find time: 0.004547
+  node_crea time: 0.32127
+    pred time: 0.104584
+    thmpred time: 0.00001
+    mc time: 0.199326
+    inst time: 0.0
+Proof found: Induct_on `ls` THENL [SIMP_TAC (numLib.arith_ss ++ LIST_ss ++ pred_setSimps.PRED_SET_ss) [(fetch "rich_list" "LIST_ELEM_COUNT_DEF")] THEN SRW_TAC [] [fetch "container" "LIST_TO_BAG_alt"], FULL_SIMP_TAC (numLib.arith_ss ++ LIST_ss ++ pred_setSimps.PRED_SET_ss) [(fetch "rich_list" "LIST_ELEM_COUNT_DEF"), COND_RAND, COND_RATOR] THEN ASM_SIMP_TAC list_ss [fetch "container" "LIST_TO_BAG_def", BAG_INSERT]]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.146233
+
+Name: 18 WF_mlt_list
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.417035
+
+Name: 19 BAG_OF_FMAP_THM
+Org tac number: 30
+Original proof time: 0.0
+Recording proof time: 1.435069
+
+Name: 20 BAG_IN_BAG_OF_FMAP
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.718055
+
+Name: 21 FINITE_BAG_OF_FMAP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.05946
+Bad stac: 0

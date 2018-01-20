@@ -1,0 +1,94 @@
+
+Name: 0 SUM_REL_EQ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.166445
+
+Name: 1 SUM_EQUIV
+proof length: 14
+proof time: 0.047571
+Statistics
+  infstep : 5540
+  nodes   : 851
+  maxdepth: 7
+Time: 50.432368
+  inferstep time: 36.783377
+  node_find time: 2.179538
+  node_crea time: 11.332444
+    pred time: 2.165111
+    thmpred time: 0.000169
+    mc time: 4.881388
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "quotient" "EQUIV_def")] THEN REPEAT (REPEAT GEN_TAC THEN DISCH_TAC) THEN Cases THENL [CONV_TAC (REDEPTH_CONV (BETA_CONV ORELSEC FUN_EQ_CONV)) THEN SIMP_TAC (srw_ss ()) [fetch "quotient_sum" "SUM_REL_def", FORALL_SUM] THEN REPEAT STRIP_TAC THEN METIS_TAC [], Cases THENL [REWRITE_TAC [fetch "quotient_sum" "SUM_REL_def"] THEN METIS_TAC [fetch "quotient_sum" "SUM_REL_def", fetch "quotient_sum" "SUM_REL_EQ"], CONV_TAC (REDEPTH_CONV (BETA_CONV ORELSEC FUN_EQ_CONV)) THEN SIMP_TAC (srw_ss ()) [fetch "quotient_sum" "SUM_REL_def", FORALL_SUM] THEN METIS_TAC []]]
+Org tac number: 23
+Original proof time: 0.0
+Recording proof time: 0.944311
+
+Name: 2 SUM_QUOTIENT
+Original proof time: 0.00279
+
+Name: 3 INL_PRS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.149155
+
+Name: 4 INL_RSP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.176006
+
+Name: 5 INR_PRS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.100194
+
+Name: 6 INR_RSP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.152501
+
+Name: 7 ISL_PRS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.077426
+
+Name: 8 ISL_RSP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.203587
+
+Name: 9 ISR_PRS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.095282
+
+Name: 10 ISR_RSP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.160274
+
+Name: 11 SUM_MAP_PRS
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.272685
+
+Name: 12 SUM_MAP_RSP
+proof length: 3
+proof time: 0.011096
+Statistics
+  infstep : 494
+  nodes   : 66
+  maxdepth: 5
+Time: 8.593225
+  inferstep time: 5.183754
+  node_find time: 0.022745
+  node_crea time: 3.370762
+    pred time: 0.435763
+    thmpred time: 0.000016
+    mc time: 0.518211
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "quotient" "FUN_REL")] THEN SIMP_TAC (srw_ss ()) [(fetch "sum" "FORALL_SUM")] THEN ASM_REWRITE_TAC [fetch "quotient_sum" "SUM_REL_def"]
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.194974
+Bad stac: 1

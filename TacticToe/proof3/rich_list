@@ -1,0 +1,2090 @@
+
+Name: 0 tactictoe_prove_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00423
+
+Name: 1 TAKE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004246
+
+Name: 2 DROP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004077
+
+Name: 3 tactictoe_prove_3
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.07207
+
+Name: 4 DROP_FUNPOW_TL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.172806
+
+Name: 5 NOT_NULL_SNOC
+proof length: 3
+proof time: 0.021935
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.19672
+  inferstep time: 0.155309
+  node_find time: 0.000043
+  node_crea time: 0.025764
+    pred time: 0.009054
+    thmpred time: 0.000001
+    mc time: 0.028843
+    inst time: 0.0
+Proof found: Cases_on `l` THENL [METIS_TAC [SNOC, NULL_DEF], METIS_TAC [NULL_DEF, listTheory.NULL_EQ, listTheory.REVERSE_SNOC_DEF, REVERSE_SNOC]]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.032628
+
+Name: 6 LASTN
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.063531
+
+Name: 7 BUTLASTN
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004601
+
+Name: 8 tactictoe_prove_8
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.150813
+
+Name: 9 tactictoe_prove_9
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.038397
+
+Name: 10 tactictoe_prove_10
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.069645
+
+Name: 11 LENGTH_MAP2
+Org tac number: 21
+Original proof time: 0.0
+Recording proof time: 0.644928
+
+Name: 12 LENGTH_EQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06963
+
+Name: 13 LENGTH_NOT_NULL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.076206
+
+Name: 14 SNOC_EQ_LENGTH_EQ
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.115396
+
+Name: 15 FOLDR_SNOC
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.104559
+
+Name: 16 FOLDR_FOLDL
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.463364
+
+Name: 17 LENGTH_FOLDR
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.105044
+
+Name: 18 LENGTH_FOLDL
+proof length: 3
+proof time: 0.104461
+Statistics
+  infstep : 157
+  nodes   : 36
+  maxdepth: 4
+Time: 2.983145
+  inferstep time: 2.475954
+  node_find time: 0.004446
+  node_crea time: 0.443882
+    pred time: 0.127904
+    thmpred time: 0.000011
+    mc time: 0.29559
+    inst time: 0.0
+Proof found: INDUCT_THEN listTheory.SNOC_INDUCT ASSUME_TAC THENL [METIS_TAC [listTheory.LENGTH_EQ_NUM_compute, FOLDL], SRW_TAC [] [FOLDL_SNOC]]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.166025
+
+Name: 19 MAP_FOLDR
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.093924
+
+Name: 20 MAP_FOLDL
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.29533
+
+Name: 21 FILTER_FOLDR
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.110598
+
+Name: 22 FILTER_SNOC
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.118991
+
+Name: 23 FILTER_FOLDL
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.192197
+
+Name: 24 FILTER_COMM
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.216353
+
+Name: 25 FILTER_IDEM
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.11044
+
+Name: 26 FILTER_MAP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.120909
+
+Name: 27 LENGTH_FILTER_LEQ
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030887
+
+Name: 28 tactictoe_prove_28
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.160688
+
+Name: 29 tactictoe_prove_29
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.596125
+
+Name: 30 FILTER_EQ
+proof length: 21
+proof time: 0.092797
+Statistics
+  infstep : 2916
+  nodes   : 483
+  maxdepth: 8
+Time: 34.661622
+  inferstep time: 24.494368
+  node_find time: 0.691862
+  node_crea time: 8.905677
+    pred time: 1.632603
+    thmpred time: 0.000108
+    mc time: 4.328181
+    inst time: 0.0
+Proof found: STRIP_TAC THEN STRIP_TAC THEN INDUCT_THEN ((fetch "list" "list_INDUCT")) ASSUME_TAC THENL [SRW_TAC [] [], SRW_TAC [] [] THENL [SRW_TAC [] [listTheory.MEM_EL] THEN EQ_TAC THENL [SRW_TAC [] [] THENL [METIS_TAC [], METIS_TAC [listTheory.EVERY_FILTER, listTheory.ALL_DISTINCT_FILTER_EL_IMP]], SRW_TAC [] []], SRW_TAC [] [FILTER_EQ_lem] THEN METIS_TAC [], SRW_TAC [] [FILTER_EQ_lem] THEN METIS_TAC [], SRW_TAC [] [listTheory.MEM_EL] THEN EQ_TAC THENL [SRW_TAC [] [] THENL [METIS_TAC [], METIS_TAC [listTheory.EVERY_FILTER_IMP]], METIS_TAC [listTheory.EVERY_FILTER_IMP, listTheory.MEM_EL]]]]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.235937
+
+Name: 31 LENGTH_SEG
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.236396
+
+Name: 32 APPEND_NIL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.13162
+
+Name: 33 APPEND_FOLDR
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.042956
+
+Name: 34 APPEND_FOLDL
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.280565
+
+Name: 35 FOLDR_APPEND
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.253708
+
+Name: 36 FOLDL_APPEND
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.136168
+
+Name: 37 CONS_APPEND
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.102438
+
+Name: 38 ASSOC_APPEND
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.039282
+
+Name: 39 tactictoe_prove_39
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004253
+
+Name: 40 tactictoe_prove_40
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007141
+
+Name: 41 MONOID_APPEND_NIL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005088
+
+Name: 42 FLAT_SNOC
+proof length: 3
+proof time: 0.003119
+Statistics
+  infstep : 17
+  nodes   : 7
+  maxdepth: 3
+Time: 0.700675
+  inferstep time: 0.607724
+  node_find time: 0.000231
+  node_crea time: 0.065831
+    pred time: 0.02727
+    thmpred time: 0.000001
+    mc time: 0.053532
+    inst time: 0.0
+Proof found: Induct_on `l` THEN SRW_TAC [] []
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033779
+
+Name: 43 FLAT_FOLDR
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.050213
+
+Name: 44 FLAT_FOLDL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.066916
+
+Name: 45 LENGTH_FLAT
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.116361
+
+Name: 46 REVERSE_FOLDR
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.081574
+
+Name: 47 REVERSE_FOLDL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.167924
+
+Name: 48 ALL_EL_MAP
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.125979
+
+Name: 49 MEM_EXISTS
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.045853
+
+Name: 50 SUM_FOLDR
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.33693
+
+Name: 51 SUM_FOLDL
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.240809
+
+Name: 52 IS_PREFIX_APPEND
+proof length: 8
+proof time: 0.017264
+Statistics
+  infstep : 4205
+  nodes   : 1041
+  maxdepth: 8
+Time: 54.689041
+  inferstep time: 35.308906
+  node_find time: 1.827555
+  node_crea time: 17.050993
+    pred time: 2.633856
+    thmpred time: 0.000188
+    mc time: 8.149039
+    inst time: 0.0
+Proof found: Induct THENL [Induct THEN SRW_TAC [] [], Cases_on `l2` THENL [SRW_TAC [] [], SRW_TAC [] [] THEN METIS_TAC []]]
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.437104
+
+Name: 53 IS_SUFFIX_APPEND
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 0.547961
+
+Name: 54 tactictoe_prove_54
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.076754
+
+Name: 55 IS_SUBLIST_APPEND
+Org tac number: 35
+Original proof time: 0.0
+Recording proof time: 1.168032
+
+Name: 56 IS_PREFIX_IS_SUBLIST
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.198986
+
+Name: 57 IS_SUFFIX_IS_SUBLIST
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.175293
+
+Name: 58 tactictoe_prove_58
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.096315
+
+Name: 59 IS_PREFIX_REVERSE
+Org tac number: 20
+Original proof time: 0.0
+Recording proof time: 0.635606
+
+Name: 60 IS_SUFFIX_CONS2_E
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.081734
+
+Name: 61 IS_SUFFIX_REFL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030907
+
+Name: 62 IS_SUBLIST_REVERSE
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.406412
+
+Name: 63 PREFIX_FOLDR
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.62281
+
+Name: 64 PREFIX
+proof length: 2
+proof time: 0.005157
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.381405
+  inferstep time: 0.26563
+  node_find time: 0.00007
+  node_crea time: 0.077156
+    pred time: 0.023824
+    thmpred time: 0.000001
+    mc time: 0.082598
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC bool_ss [fetch "rich_list" "PREFIX_FOLDR"] THEN SRW_TAC [] []
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.099516
+
+Name: 65 IS_PREFIX_PREFIX
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.166784
+
+Name: 66 LENGTH_SCANL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.225402
+
+Name: 67 LENGTH_SCANR
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.121209
+
+Name: 68 COMM_MONOID_FOLDL
+Original proof time: 0.000454
+
+Name: 69 COMM_MONOID_FOLDR
+Original proof time: 0.000419
+
+Name: 70 FCOMM_FOLDR_APPEND
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.18689
+
+Name: 71 FCOMM_FOLDL_APPEND
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.260953
+
+Name: 72 FOLDL_SINGLE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.050674
+
+Name: 73 FOLDR_SINGLE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004256
+
+Name: 74 FOLDR_CONS_NIL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041429
+
+Name: 75 FOLDL_SNOC_NIL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.152496
+
+Name: 76 FOLDR_FOLDL_REVERSE
+proof length: 8
+proof time: 0.021613
+Statistics
+  infstep : 3564
+  nodes   : 722
+  maxdepth: 9
+Time: 30.979628
+  inferstep time: 22.226069
+  node_find time: 0.971213
+  node_crea time: 7.459481
+    pred time: 1.245176
+    thmpred time: 0.000107
+    mc time: 4.717297
+    inst time: 0.0
+Proof found: STRIP_TAC THEN STRIP_TAC THEN INDUCT_THEN ((fetch "list" "list_INDUCT")) ASSUME_TAC THENL [SRW_TAC [] [], SRW_TAC [] [listTheory.REVERSE_DEF] THEN SRW_TAC [] [fetch "rich_list" "REVERSE_FOLDL"] THEN SRW_TAC [] [fetch "rich_list" "APPEND_FOLDL"] THEN METIS_TAC [C_DEF, FOLDL_SNOC]]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.106002
+
+Name: 77 FOLDL_FOLDR_REVERSE
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.151762
+
+Name: 78 FOLDR_REVERSE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004976
+
+Name: 79 FOLDL_REVERSE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005035
+
+Name: 80 FOLDR_MAP
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.106233
+
+Name: 81 FOLDL_MAP
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.131664
+
+Name: 82 EVERY_FOLDR
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.134624
+
+Name: 83 EVERY_FOLDL
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.170225
+
+Name: 84 EXISTS_FOLDR
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.087561
+
+Name: 85 EXISTS_FOLDL
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.283464
+
+Name: 86 EVERY_FOLDR_MAP
+proof length: 3
+proof time: 0.001446
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.380676
+  inferstep time: 0.332276
+  node_find time: 0.000064
+  node_crea time: 0.034058
+    pred time: 0.015219
+    thmpred time: 0.0
+    mc time: 0.026606
+    inst time: 0.0
+Proof found: Induct_on `l` THEN SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006547
+
+Name: 87 EVERY_FOLDL_MAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007219
+
+Name: 88 EXISTS_FOLDR_MAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005419
+
+Name: 89 EXISTS_FOLDL_MAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003607
+
+Name: 90 FOLDR_FILTER
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.230221
+
+Name: 91 FOLDL_FILTER
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.310137
+
+Name: 92 ASSOC_FOLDR_FLAT
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.311379
+
+Name: 93 ASSOC_FOLDL_FLAT
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.252304
+
+Name: 94 MAP_FLAT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04692
+
+Name: 95 FILTER_FLAT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.02931
+
+Name: 96 EXISTS_DISJ
+proof length: 4
+proof time: 0.084718
+Statistics
+  infstep : 84
+  nodes   : 31
+  maxdepth: 4
+Time: 2.754899
+  inferstep time: 2.314483
+  node_find time: 0.001869
+  node_crea time: 0.38793
+    pred time: 0.117782
+    thmpred time: 0.000009
+    mc time: 0.21792
+    inst time: 0.0
+Proof found: Induct_on `l` THENL [metisTools.METIS_TAC [boolTheory.UEXISTS_OR_THM, listTheory.EXISTS_DEF, pred_setTheory.GSPEC_OR, DB.fetch "rich_list" "EXISTS_FOLDR", listTheory.MONO_EXISTS, listTheory.EXISTS_SNOC, DB.fetch "rich_list" "EXISTS_FOLDL", DB.fetch "rich_list" "EXISTS_FOLDR_MAP", listTheory.EXISTS_APPEND, listTheory.EXISTS_NOT_EVERY, listTheory.EXISTS_MAP], SRW_TAC [] [fetch "rich_list" "EXISTS_FOLDR"] THEN mesonLib.MESON_TAC []]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.109002
+
+Name: 97 MEM_FOLDR
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.061427
+
+Name: 98 MEM_FOLDL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.053511
+
+Name: 99 NULL_FOLDR
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.045174
+
+Name: 100 NULL_FOLDL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.031629
+
+Name: 101 MAP_REVERSE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065532
+
+Name: 102 SEG_LENGTH_ID
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039826
+
+Name: 103 SEG_SUC_CONS
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041856
+
+Name: 104 SEG_0_SNOC
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.228615
+
+Name: 105 BUTLASTN_SEG
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.283766
+
+Name: 106 LASTN_CONS
+proof length: 1
+proof time: 0.002026
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.144142
+  inferstep time: 0.117602
+  node_find time: 0.000022
+  node_crea time: 0.020045
+    pred time: 0.006609
+    thmpred time: 0.0
+    mc time: 0.017921
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "rich_list" "LASTN_def", listTheory.TAKE_APPEND1]
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.226305
+
+Name: 107 LENGTH_LASTN
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.266439
+
+Name: 108 LASTN_LENGTH_ID
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.111685
+
+Name: 109 LASTN_LASTN
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.311613
+
+Name: 110 TAKE_SNOC
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.262559
+
+Name: 111 BUTLASTN_LENGTH_NIL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034602
+
+Name: 112 BUTLASTN_SUC_FRONT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.054926
+
+Name: 113 BUTLASTN_FRONT
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.210764
+
+Name: 114 LENGTH_BUTLASTN
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.166664
+
+Name: 115 BUTLASTN_BUTLASTN
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.169358
+
+Name: 116 APPEND_BUTLASTN_LASTN
+proof length: 6
+proof time: 0.014451
+Statistics
+  infstep : 623
+  nodes   : 99
+  maxdepth: 5
+Time: 8.836879
+  inferstep time: 6.888826
+  node_find time: 0.031232
+  node_crea time: 1.733787
+    pred time: 0.550062
+    thmpred time: 0.000029
+    mc time: 0.963915
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN numTheory.INDUCTION ASSUME_TAC g in INDUCT_TAC THENL [SRW_TAC [] [fetch "rich_list" "BUTLASTN", fetch "rich_list" "LASTN_def"], INDUCT_THEN listTheory.SNOC_INDUCT ASSUME_TAC THENL [SRW_TAC [] [], SRW_TAC [] [fetch "rich_list" "LASTN_def", fetch "rich_list" "BUTLASTN_def"] THEN METIS_TAC [fetch "rich_list" "BUTLASTN_def", fetch "rich_list" "LASTN_def"]]] end
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.27702
+
+Name: 117 APPEND_TAKE_LASTN
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 0.56663
+
+Name: 118 BUTLASTN_APPEND2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.106603
+
+Name: 119 LASTN_LENGTH_APPEND
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.088115
+
+Name: 120 BUTLASTN_CONS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.100641
+
+Name: 121 LAST_LASTN_LAST
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.093591
+
+Name: 122 BUTLASTN_LASTN_NIL
+Original proof time: 0.00008
+
+Name: 123 LASTN_BUTLASTN
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.235612
+
+Name: 124 BUTLASTN_LASTN
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.110541
+
+Name: 125 LASTN_1
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.115793
+
+Name: 126 BUTLASTN_1
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.23228
+
+Name: 127 BUTLASTN_APPEND1
+proof length: 6
+proof time: 0.014016
+Statistics
+  infstep : 1814
+  nodes   : 295
+  maxdepth: 7
+Time: 29.330126
+  inferstep time: 23.629699
+  node_find time: 0.2694
+  node_crea time: 5.128193
+    pred time: 1.58157
+    thmpred time: 0.000118
+    mc time: 2.524942
+    inst time: 0.0
+Proof found: INDUCT_THEN listTheory.SNOC_INDUCT ASSUME_TAC THENL [SRW_TAC [] [], SRW_TAC [numSimps.ARITH_ss] [fetch "rich_list" "BUTLASTN_def"] THEN Induct_on `l2` THENL [SRW_TAC [] [], SRW_TAC [numSimps.ARITH_ss] [fetch "rich_list" "BUTLASTN_def"]]]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.331897
+
+Name: 128 LASTN_APPEND2
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.227959
+
+Name: 129 LASTN_APPEND1
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.206996
+
+Name: 130 LASTN_MAP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.29798
+
+Name: 131 BUTLASTN_MAP
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.205184
+
+Name: 132 EVERY_LASTN
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.600085
+
+Name: 133 EVERY_BUTLASTN
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.498975
+
+Name: 134 TAKE_TAKE
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.25267
+
+Name: 135 TAKE_TAKE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006563
+
+Name: 136 DROP_LENGTH_NIL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.038518
+
+Name: 137 BUTLASTN_LENGTH_NIL
+proof length: 1
+proof time: 0.003503
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.068095
+  inferstep time: 0.049501
+  node_find time: 0.000013
+  node_crea time: 0.011454
+    pred time: 0.003906
+    thmpred time: 0.000001
+    mc time: 0.013436
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "rich_list" "BUTLASTN_LENGTH_NIL"]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039882
+
+Name: 138 DROP_APPEND
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.224048
+
+Name: 139 DROP_APPEND1
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.160673
+
+Name: 140 DROP_APPEND2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.162254
+
+Name: 141 DROP_DROP_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020281
+
+Name: 142 DROP_DROP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015048
+
+Name: 143 LASTN_SEG
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.610411
+
+Name: 144 TAKE_SEG
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.211435
+
+Name: 145 DROP_SEG
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.170198
+
+Name: 146 DROP_SNOC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.046793
+
+Name: 147 APPEND_BUTLASTN_DROP
+proof length: 13
+proof time: 0.04807
+Statistics
+  infstep : 1212
+  nodes   : 358
+  maxdepth: 7
+Time: 29.764132
+  inferstep time: 22.335556
+  node_find time: 0.200849
+  node_crea time: 6.768104
+    pred time: 1.860451
+    thmpred time: 0.000129
+    mc time: 3.592112
+    inst time: 0.0
+Proof found: REPEAT INDUCT_TAC THENL [METIS_TAC [fetch "rich_list" "BUTLASTN", fetch "rich_list" "DROP", ADD, fetch "rich_list" "BUTLASTN_LENGTH_APPEND"], SRW_TAC [] [fetch "rich_list" "BUTLASTN_def"] THEN METIS_TAC [fetch "rich_list" "DROP_LENGTH_NIL"], SRW_TAC [] [] THEN METIS_TAC [fetch "rich_list" "BUTLASTN_LENGTH_NIL"], INDUCT_THEN listTheory.SNOC_INDUCT ASSUME_TAC THENL [SRW_TAC [] [], REWRITE_TAC [LENGTH_SNOC, ADD] THEN PURE_ONCE_REWRITE_TAC [INV_SUC_EQ] THEN REPEAT STRIP_TAC THEN IMP_RES_TAC (DECIDE (``!m n p. (n + m = p) ==> m <= p``)) THEN METIS_TAC [fetch "rich_list" "BUTLASTN", fetch "rich_list" "DROP_SNOC", APPEND_SNOC]]]
+Org tac number: 19
+Original proof time: 0.0
+Recording proof time: 0.602263
+
+Name: 148 SEG_SEG
+Org tac number: 26
+Original proof time: 0.0
+Recording proof time: 0.986518
+
+Name: 149 SEG_APPEND1
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.442371
+
+Name: 150 SEG_APPEND2
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.379428
+
+Name: 151 SEG_TAKE_BUTFISTN
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.239111
+
+Name: 152 SEG_APPEND
+Org tac number: 34
+Original proof time: 0.0
+Recording proof time: 1.122528
+
+Name: 153 SEG_LENGTH_SNOC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.102439
+
+Name: 154 SEG_SNOC
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.336936
+
+Name: 155 ELL_SEG
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.519474
+
+Name: 156 SNOC_FOLDR
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.068651
+
+Name: 157 MEM_FOLDR_MAP
+proof length: 1
+proof time: 0.000815
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.144466
+  inferstep time: 0.124895
+  node_find time: 0.000027
+  node_crea time: 0.014955
+    pred time: 0.005528
+    thmpred time: 0.0
+    mc time: 0.012083
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "rich_list" "MEM_FOLDR", fetch "rich_list" "FOLDR_MAP"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00791
+
+Name: 158 MEM_FOLDL_MAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005341
+
+Name: 159 FILTER_FILTER
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.23681
+
+Name: 160 FCOMM_FOLDR_FLAT
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.246935
+
+Name: 161 FCOMM_FOLDL_FLAT
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.313545
+
+Name: 162 tactictoe_prove_162
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.313324
+
+Name: 163 tactictoe_prove_163
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.201747
+
+Name: 164 tactictoe_prove_164
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.215331
+
+Name: 165 FOLDR_MAP_REVERSE
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.258627
+
+Name: 166 FOLDR_FILTER_REVERSE
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.391907
+
+Name: 167 tactictoe_prove_167
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.192178
+
+Name: 168 tactictoe_prove_168
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.186015
+
+Name: 169 tactictoe_prove_169
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.092902
+
+Name: 170 COMM_ASSOC_FOLDR_REVERSE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.123633
+
+Name: 171 COMM_ASSOC_FOLDL_REVERSE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.154681
+
+Name: 172 ELL_LAST
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.146805
+
+Name: 173 ELL_0_SNOC
+proof length: 1
+proof time: 0.003798
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.073696
+  inferstep time: 0.051783
+  node_find time: 0.000013
+  node_crea time: 0.016024
+    pred time: 0.006112
+    thmpred time: 0.000001
+    mc time: 0.014084
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "rich_list" "ELL_compute", LAST_SNOC]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04925
+
+Name: 174 ELL_SNOC
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041542
+
+Name: 175 ELL_CONS
+Original proof time: 0.000758
+
+Name: 176 ELL_LENGTH_CONS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.103613
+
+Name: 177 ELL_LENGTH_SNOC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.090726
+
+Name: 178 ELL_APPEND2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.137929
+
+Name: 179 ELL_APPEND1
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.148202
+
+Name: 180 ELL_PRE_LENGTH
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.109747
+
+Name: 181 EL_PRE_LENGTH
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.038954
+
+Name: 182 EL_ELL
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.358447
+
+Name: 183 EL_LENGTH_APPEND
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.225016
+
+Name: 184 ELL_EL
+proof length: 4
+proof time: 0.006055
+Statistics
+  infstep : 295
+  nodes   : 79
+  maxdepth: 6
+Time: 6.758998
+  inferstep time: 4.991847
+  node_find time: 0.011593
+  node_crea time: 1.619911
+    pred time: 0.42336
+    thmpred time: 0.000019
+    mc time: 0.992112
+    inst time: 0.0
+Proof found: REPEAT STRIP_TAC THEN IMP_RES_THEN SUBST1_TAC (DECIDE (``!k m. m < k ==> (k - m = SUC (k - SUC m))``)) THEN SRW_TAC [] [fetch "rich_list" "ELL_SEG"] THEN SRW_TAC [numSimps.ARITH_ss] [fetch "rich_list" "ELL_SEG", fetch "rich_list" "EL_ELL"]
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.343698
+
+Name: 185 ELL_MAP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.225167
+
+Name: 186 LENGTH_FRONT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.025742
+
+Name: 187 DROP_LENGTH_APPEND
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027767
+
+Name: 188 TAKE_APPEND
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.179743
+
+Name: 189 TAKE_APPEND1
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.109074
+
+Name: 190 TAKE_APPEND2
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.153145
+
+Name: 191 TAKE_LENGTH_APPEND
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.028323
+
+Name: 192 REVERSE_FLAT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.055159
+
+Name: 193 tactictoe_prove_193
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.057942
+
+Name: 194 MAP_FILTER
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.267583
+
+Name: 195 FLAT_REVERSE
+proof length: 3
+proof time: 0.002821
+Statistics
+  infstep : 14
+  nodes   : 7
+  maxdepth: 2
+Time: 0.617817
+  inferstep time: 0.527735
+  node_find time: 0.000169
+  node_crea time: 0.069199
+    pred time: 0.027349
+    thmpred time: 0.000002
+    mc time: 0.050769
+    inst time: 0.0
+Proof found: local_tag LIST_INDUCT_TAC THEN SRW_TAC [] []
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.05307
+
+Name: 196 FLAT_FLAT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03989
+
+Name: 197 EVERY_REVERSE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.137506
+
+Name: 198 EXISTS_REVERSE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.113722
+
+Name: 199 EVERY_SEG
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.442926
+
+Name: 200 EVERY_TAKE
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.07871
+
+Name: 201 EVERY_DROP
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.112428
+
+Name: 202 EXISTS_SEG
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.54947
+
+Name: 203 EXISTS_TAKE_IMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.071924
+
+Name: 204 EXISTS_DROP_IMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.039879
+
+Name: 205 EXISTS_TAKE
+proof length: 1
+proof time: 0.005541
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.060669
+  inferstep time: 0.044118
+  node_find time: 0.000013
+  node_crea time: 0.012438
+    pred time: 0.004872
+    thmpred time: 0.000001
+    mc time: 0.010087
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "rich_list" "EXISTS_TAKE_IMP"]
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.181878
+
+Name: 206 EXISTS_DROP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.194092
+
+Name: 207 EXISTS_LASTN
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.181754
+
+Name: 208 EXISTS_BUTLASTN
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.19448
+
+Name: 209 MEM_SEG
+Original proof time: 0.002346
+
+Name: 210 MEM_TAKE_IMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.026933
+
+Name: 211 MEM_DROP_IMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.0502
+
+Name: 212 MEM_TAKE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.087328
+
+Name: 213 MEM_DROP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.045233
+
+Name: 214 MEM_BUTLASTN
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.060004
+
+Name: 215 MEM_LASTN
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.055239
+
+Name: 216 ZIP_SNOC
+proof length: 6
+proof time: 0.024103
+Statistics
+  infstep : 1660
+  nodes   : 323
+  maxdepth: 6
+Time: 26.798411
+  inferstep time: 19.269568
+  node_find time: 0.271927
+  node_crea time: 6.918298
+    pred time: 1.378442
+    thmpred time: 0.000076
+    mc time: 3.955791
+    inst time: 0.0
+Proof found: Induct_on `l1` THENL [SRW_TAC [] [], Cases_on `l2` THENL [FULL_SIMP_TAC (srw_ss ()) [], ASM_REWRITE_TAC [(fetch "list" "ZIP"), (fetch "list" "LENGTH"), INV_SUC_EQ] THEN METIS_TAC [ZIP, SNOC]]]
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.184375
+
+Name: 217 UNZIP_SNOC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.067282
+
+Name: 218 LENGTH_UNZIP_FST
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.084302
+
+Name: 219 LENGTH_UNZIP_SND
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065022
+
+Name: 220 SUM_REVERSE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06151
+
+Name: 221 SUM_FLAT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039723
+
+Name: 222 EL_APPEND1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009089
+
+Name: 223 EL_APPEND2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009603
+
+Name: 224 LUPDATE_APPEND2
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.835483
+
+Name: 225 LUPDATE_APPEND1
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.896326
+
+Name: 226 is_prefix_el
+proof length: 3
+proof time: 0.006153
+Statistics
+  infstep : 17
+  nodes   : 6
+  maxdepth: 3
+Time: 0.516241
+  inferstep time: 0.401436
+  node_find time: 0.000262
+  node_crea time: 0.093641
+    pred time: 0.031049
+    thmpred time: 0.000003
+    mc time: 0.068778
+    inst time: 0.0
+Proof found: ONCE_ASM_REWRITE_TAC [(fetch "rich_list" "IS_PREFIX_APPEND")] THEN REPEAT STRIP_TAC THEN METIS_TAC [EL_APPEND_EQN]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.242261
+
+Name: 227 EL_CONS
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.040833
+
+Name: 228 EL_SEG
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.311154
+
+Name: 229 EL_MEM
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.193855
+
+Name: 230 TL_SNOC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.059082
+
+Name: 231 EL_REVERSE_ELL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.073223
+
+Name: 232 ELL_LENGTH_APPEND
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.070026
+
+Name: 233 ELL_MEM
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.153545
+
+Name: 234 ELL_REVERSE
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.272136
+
+Name: 235 ELL_REVERSE_EL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.101398
+
+Name: 236 TAKE_BUTLASTN
+proof length: 1
+proof time: 0.002996
+Statistics
+  infstep : 41
+  nodes   : 20
+  maxdepth: 3
+Time: 1.81586
+  inferstep time: 1.369979
+  node_find time: 0.00072
+  node_crea time: 0.351245
+    pred time: 0.154606
+    thmpred time: 0.000008
+    mc time: 0.232346
+    inst time: 0.0
+Proof found: SRW_TAC [numSimps.ARITH_ss] [fetch "rich_list" "TAKE_SEG", fetch "rich_list" "BUTLASTN_SEG"]
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.456898
+
+Name: 237 BUTLASTN_TAKE
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.345182
+
+Name: 238 LASTN_DROP
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.353071
+
+Name: 239 DROP_LASTN
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.239923
+
+Name: 240 SEG_LASTN_BUTLASTN
+Original proof time: 0.000225
+
+Name: 241 DROP_REVERSE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065162
+
+Name: 242 BUTLASTN_REVERSE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.071013
+
+Name: 243 LASTN_REVERSE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.093699
+
+Name: 244 TAKE_REVERSE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.067635
+
+Name: 245 SEG_REVERSE
+Original proof time: 0.000512
+
+Name: 246 LENGTH_REPLICATE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.051998
+
+Name: 247 MEM_REPLICATE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.02857
+
+Name: 248 EVERY_REPLICATE
+proof length: 4
+proof time: 0.001322
+Statistics
+  infstep : 114
+  nodes   : 24
+  maxdepth: 4
+Time: 1.927616
+  inferstep time: 1.63281
+  node_find time: 0.001924
+  node_crea time: 0.275846
+    pred time: 0.087029
+    thmpred time: 0.000004
+    mc time: 0.142807
+    inst time: 0.0
+Proof found: GEN_TAC THEN Induct THEN SRW_TAC [] []
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.078518
+
+Name: 249 IS_PREFIX_NIL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.192328
+
+Name: 250 IS_PREFIX_REFL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.031653
+
+Name: 251 IS_PREFIX_ANTISYM
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.22025
+
+Name: 252 IS_PREFIX_TRANS
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.463527
+
+Name: 253 IS_PREFIX_BUTLAST
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.124106
+
+Name: 254 IS_PREFIX_LENGTH
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.197303
+
+Name: 255 IS_PREFIX_LENGTH_ANTI
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.317499
+
+Name: 256 IS_PREFIX_SNOC
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.529643
+
+Name: 257 IS_PREFIX_APPEND1
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.168141
+
+Name: 258 IS_PREFIX_APPEND2
+proof length: 6
+proof time: 0.043342
+Statistics
+  infstep : 746
+  nodes   : 221
+  maxdepth: 7
+Time: 19.436068
+  inferstep time: 15.863182
+  node_find time: 0.090416
+  node_crea time: 3.40989
+    pred time: 1.009529
+    thmpred time: 0.000067
+    mc time: 1.562861
+    inst time: 0.0
+Proof found: local_tag LIST_INDUCT_TAC THENL [METIS_TAC [listTheory.isPREFIX_THM], STRIP_TAC THEN local_tag LIST_INDUCT_TAC THENL [METIS_TAC [fetch "rich_list" "IS_PREFIX_NIL"], METIS_TAC [APPEND, listTheory.isPREFIX_THM, fetch "rich_list" "IS_SUBLIST"]]]
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.185776
+
+Name: 259 IS_PREFIX_APPENDS
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.065744
+
+Name: 260 prefixes_is_prefix_total
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.175655
+
+Name: 261 COUNT_LIST_GENLIST
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.083232
+
+Name: 262 LENGTH_COUNT_LIST
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005022
+
+Name: 263 EL_COUNT_LIST
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006152
+
+Name: 264 MEM_COUNT_LIST
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.02132
+
+Name: 265 COUNT_LIST_SNOC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010192
+
+Name: 266 COUNT_LIST_COUNT
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.16156
+
+Name: 267 COUNT_LIST_ADD
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.236476
+
+Name: 268 EL_DROP
+proof length: 8
+proof time: 0.00639
+Statistics
+  infstep : 2541
+  nodes   : 680
+  maxdepth: 8
+Time: 46.466336
+  inferstep time: 33.857675
+  node_find time: 0.688854
+  node_crea time: 10.948509
+    pred time: 2.754457
+    thmpred time: 0.000128
+    mc time: 6.704746
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN numTheory.INDUCTION ASSUME_TAC g in GEN_TAC THEN INDUCT_TAC THENL [REWRITE_TAC [listTheory.DROP_0, ADD_CLAUSES], ASM_REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES")] THEN Cases THENL [SRW_TAC [] [], SIMP_TAC (srw_ss ()) [] THEN METIS_TAC []]] end
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.179826
+
+Name: 269 SNOC_EL_TAKE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.063633
+
+Name: 270 ZIP_TAKE_LEQ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.143868
+
+Name: 271 ZIP_TAKE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010868
+
+Name: 272 EL_TAKE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.158169
+
+Name: 273 ZIP_APPEND
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.671535
+
+Name: 274 APPEND_ASSOC_CONS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004523
+
+Name: 275 APPEND_SNOC1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005865
+
+Name: 276 FOLDL_MAP2
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.181293
+
+Name: 277 SPLITP_EVERY
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033129
+
+Name: 278 MEM_FRONT
+proof length: 4
+proof time: 0.016545
+Statistics
+  infstep : 18
+  nodes   : 9
+  maxdepth: 3
+Time: 0.756425
+  inferstep time: 0.61133
+  node_find time: 0.000216
+  node_crea time: 0.116032
+    pred time: 0.043241
+    thmpred time: 0.000004
+    mc time: 0.080736
+    inst time: 0.0
+Proof found: INDUCT_THEN (local_tag list_INDUCT) ASSUME_TAC THENL [SRW_TAC [] [], SRW_TAC [] [] THEN METIS_TAC [MEM]]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.040342
+
+Name: 279 FRONT_APPEND
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.043852
+
+Name: 280 EL_FRONT
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.186283
+
+Name: 281 MEM_LAST
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035991
+
+Name: 282 DROP_CONS_EL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.125953
+
+Name: 283 MEM_LAST_FRONT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.119725
+
+Name: 284 LIST_ELEM_COUNT_THM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01449
+
+Name: 285 LIST_ELEM_COUNT_MEM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.082929
+
+Name: 286 LIST_TO_SET_EQ_SING
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.156419
+
+Name: 287 REPLICATE_GENLIST
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034741
+
+Name: 288 EL_REPLICATE
+proof length: 1
+proof time: 0.001106
+Statistics
+  infstep : 24
+  nodes   : 11
+  maxdepth: 3
+Time: 1.138101
+  inferstep time: 0.970579
+  node_find time: 0.000339
+  node_crea time: 0.124818
+    pred time: 0.050488
+    thmpred time: 0.000003
+    mc time: 0.096201
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "rich_list" "REPLICATE_GENLIST"]
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.19443
+
+Name: 289 EVERY_REPLICATE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.070924
+
+Name: 290 ALL_DISTINCT_DROP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.075302
+
+Name: 291 MAP_SND_FILTER_NEQ
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.228243
+
+Name: 292 MEM_SING_APPEND
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.482341
+
+Name: 293 EL_LENGTH_APPEND_rwt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013526
+
+Name: 294 MAP_FST_funs
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008026
+
+Name: 295 TAKE_PRE_LENGTH
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.072634
+
+Name: 296 DROP_LENGTH_NIL_rwt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004439
+
+Name: 297 DROP_EL_CONS
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.244754
+
+Name: 298 TAKE_EL_SNOC
+proof length: 1
+proof time: 0.002087
+Statistics
+  infstep : 224
+  nodes   : 91
+  maxdepth: 5
+Time: 8.520521
+  inferstep time: 6.378473
+  node_find time: 0.011165
+  node_crea time: 1.947214
+    pred time: 0.6278
+    thmpred time: 0.000029
+    mc time: 1.117985
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "rich_list" "DROP_CONS_EL", listTheory.TAKE_SUM]
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.483647
+
+Name: 299 REVERSE_DROP
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.383763
+
+Name: 300 LENGTH_FILTER_LESS
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.121554
+
+Name: 301 EVERY2_APPEND
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.169593
+
+Name: 302 LIST_REL_APPEND_IMP
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.29664
+
+Name: 303 EVERY2_APPEND_suff
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.031126
+
+Name: 304 EVERY2_DROP
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.655391
+
+Name: 305 EVERY2_TAKE
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.528325
+
+Name: 306 LIST_REL_APPEND_SING
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.148526
+
+Name: 307 LIST_REL_GENLIST
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.191448
+
+Name: 308 ALL_DISTINCT_MEM_ZIP_MAP
+proof length: 3
+proof time: 0.011822
+Statistics
+  infstep : 25
+  nodes   : 7
+  maxdepth: 3
+Time: 0.805096
+  inferstep time: 0.65777
+  node_find time: 0.000358
+  node_crea time: 0.128277
+    pred time: 0.04813
+    thmpred time: 0.000004
+    mc time: 0.072895
+    inst time: 0.0
+Proof found: (SRW_TAC []) [(fetch "list" "ZIP_MAP"), (fetch "list" "MEM_MAP")] THEN REWRITE_TAC [pairTheory.PAIR_FST_SND_EQ] THEN METIS_TAC []
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.427613
+
+Name: 309 REVERSE_ZIP
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.239291
+
+Name: 310 EVERY2_REVERSE1
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.20907
+
+Name: 311 every_count_list
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.457129
+
+Name: 312 count_list_sub1
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.10057
+
+Name: 313 el_map_count
+Original proof time: 0.01381
+
+Name: 314 ZIP_COUNT_LIST
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015553
+
+Name: 315 map_replicate
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036318
+
+Name: 316 REPLICATE_NIL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04578
+
+Name: 317 REPLICATE_APPEND
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.135808
+
+Name: 318 DROP_REPLICATE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019099
+
+Name: 319 LIST_REL_REPLICATE_same
+proof length: 5
+proof time: 0.011831
+Statistics
+  infstep : 49
+  nodes   : 14
+  maxdepth: 4
+Time: 1.198391
+  inferstep time: 1.028054
+  node_find time: 0.000601
+  node_crea time: 0.131993
+    pred time: 0.046111
+    thmpred time: 0.000001
+    mc time: 0.098701
+    inst time: 0.0
+Proof found: Induct_on `n` THENL [SIMP_TAC bool_ss [GREATER_DEF, NOT_LESS_0] THEN METIS_TAC [fetch "rich_list" "REPLICATE_NIL", listTheory.LIST_REL_NIL], SRW_TAC [] [] THEN METIS_TAC []]
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.172299
+
+Name: 320 take_drop_partition
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.337164
+
+Name: 321 all_distinct_count_list
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.113905
+
+Name: 322 list_rel_lastn
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.425266
+
+Name: 323 list_rel_butlastn
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.533049
+
+Name: 324 tactictoe_prove_324
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.053698
+
+Name: 325 COUNT_LIST_compute
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.062862
+
+Name: 326 tactictoe_prove_326
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04756
+
+Name: 327 tactictoe_prove_327
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041627
+
+Name: 328 tactictoe_prove_328
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.127814
+
+Name: 329 BUTLASTN_compute
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009597
+
+Name: 330 LASTN_compute
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020307
+Bad stac: 1

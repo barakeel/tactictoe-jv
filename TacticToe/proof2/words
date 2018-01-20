@@ -1,0 +1,3218 @@
+
+Name: 0 ZERO_LT_dimword
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.026284
+
+Name: 1 dimword_IS_TWICE_INT_MIN
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014795
+
+Name: 2 dimword_sub_int_min
+proof length: 3
+proof time: 0.003694
+Statistics
+  infstep : 173
+  nodes   : 34
+  maxdepth: 4
+Time: 2.448137
+  inferstep time: 1.737436
+  node_find time: 0.00426
+  node_crea time: 0.683251
+    pred time: 0.190019
+    thmpred time: 0.000008
+    mc time: 0.353703
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "words" "dimword_IS_TWICE_INT_MIN", fetch "words" "INT_MIN_def"] THEN ASM_REWRITE_TAC [(fetch "fcp" "dimindex_def")] THEN SRW_TAC [] [TIMES2]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006251
+
+Name: 3 ONE_LT_dimword
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.029722
+
+Name: 4 MOD_DIMINDEX
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.043185
+
+Name: 5 BITS_ZEROL_DIMINDEX
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006091
+
+Name: 6 INT_MIN_SUM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016085
+
+Name: 7 ZERO_LT_INT_MIN
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01943
+
+Name: 8 ZERO_LT_INT_MAX
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.228952
+
+Name: 9 ZERO_LE_INT_MAX
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003579
+
+Name: 10 ZERO_LT_UINT_MAX
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010127
+
+Name: 11 INT_MIN_LT_DIMWORD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004433
+
+Name: 12 INT_MAX_LT_DIMWORD
+proof length: 5
+proof time: 0.004569
+Statistics
+  infstep : 2496
+  nodes   : 538
+  maxdepth: 7
+Time: 22.975496
+  inferstep time: 12.340455
+  node_find time: 0.535641
+  node_crea time: 10.012203
+    pred time: 1.534526
+    thmpred time: 0.000083
+    mc time: 5.342735
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "words" "INT_MAX_def", fetch "words" "dimword_def"] THEN simp [(fetch "words" "INT_MIN_def")] THEN STRIP_ASSUME_TAC (fetch "words" "EXISTS_HB") THEN FULL_SIMP_TAC bool_ss [] THEN RW_TAC (srw_ss () ++ old_ARITH_ss) [EXP]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.032732
+
+Name: 13 dimindex_lt_dimword
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005106
+
+Name: 14 BOUND_ORDER
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018702
+
+Name: 15 dimindex_dimword_iso
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005848
+
+Name: 16 dimindex_dimword_le_iso
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004976
+
+Name: 17 dimindex_dimword_lt_iso
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011354
+
+Name: 18 dimindex_int_min_iso
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037088
+
+Name: 19 dimindex_int_min_le_iso
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033299
+
+Name: 20 dimindex_int_min_lt_iso
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035669
+
+Name: 21 dimindex_int_max_iso
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.046842
+
+Name: 22 dimindex_int_max_le_iso
+proof length: 2
+proof time: 0.004583
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.199511
+  inferstep time: 0.153132
+  node_find time: 0.000042
+  node_crea time: 0.03659
+    pred time: 0.012393
+    thmpred time: 0.000002
+    mc time: 0.028756
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "words" "dimindex_int_min_le_iso", fetch "words" "INT_MAX_def"] THEN SIMP_TAC (srw_ss ()) [(local_tag iso_lem)]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012185
+
+Name: 23 dimindex_int_max_lt_iso
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010292
+
+Name: 24 dimindex_uint_max_iso
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039362
+
+Name: 25 dimindex_uint_max_le_iso
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007329
+
+Name: 26 dimindex_uint_max_lt_iso
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007347
+
+Name: 27 tactictoe_prove_27
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.304369
+
+Name: 28 tactictoe_prove_28
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.233287
+
+Name: 29 tactictoe_prove_29
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.128729
+
+Name: 30 w2n_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010129
+
+Name: 31 tactictoe_prove_31
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 0.749136
+
+Name: 32 n2w_w2n
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005144
+
+Name: 33 word_nchotomy
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004045
+
+Name: 34 n2w_mod
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.090707
+
+Name: 35 n2w_11
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.333255
+
+Name: 36 ranged_word_nchotomy
+Statistics
+  infstep : 6205
+  nodes   : 1167
+  maxdepth: 8
+Time: 60.009677
+  inferstep time: 36.362268
+  node_find time: 2.983419
+  node_crea time: 20.586414
+    pred time: 2.566025
+    thmpred time: 0.000224
+    mc time: 11.502846
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.102235
+
+Name: 37 dimindex_1_cases
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.182754
+
+Name: 38 mod_dimindex
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.023836
+
+Name: 39 WORD_INDUCT
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.123838
+
+Name: 40 w2n_11
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027248
+
+Name: 41 w2n_lt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006423
+
+Name: 42 word_0_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004119
+
+Name: 43 word_1_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005712
+
+Name: 44 w2n_eq_0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.057929
+
+Name: 45 n2w_dimword
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003138
+
+Name: 46 word_2comp_dimindex_1
+proof length: 8
+proof time: 0.01119
+Statistics
+  infstep : 570
+  nodes   : 241
+  maxdepth: 7
+Time: 14.803124
+  inferstep time: 9.662915
+  node_find time: 0.07066
+  node_crea time: 4.960301
+    pred time: 0.74869
+    thmpred time: 0.000042
+    mc time: 2.874052
+    inst time: 0.0
+Proof found: Cases THEN STRIP_TAC THEN Induct_on `n` THENL [SRW_TAC [] [fetch "words" "word_2comp_def"], Induct_on `n` THENL [SRW_TAC [] [fetch "words" "word_2comp_def"] THEN FULL_SIMP_TAC std_ss [(fetch "words" "dimword_def")], ASM_SIMP_TAC arith_ss [(fetch "words" "dimword_def")]]]
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.198124
+
+Name: 47 word_add_n2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.075479
+
+Name: 48 word_mul_n2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.08817
+
+Name: 49 word_log2_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006871
+
+Name: 50 tactictoe_prove_50
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.149196
+
+Name: 51 tactictoe_prove_51
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.11659
+
+Name: 52 word_1comp_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008972
+
+Name: 53 word_2comp_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007086
+
+Name: 54 word_lsb
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004903
+
+Name: 55 word_msb
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015752
+
+Name: 56 word_lsb_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012448
+
+Name: 57 word_msb_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011641
+
+Name: 58 word_msb_n2w_numeric
+Statistics
+  infstep : 4962
+  nodes   : 1224
+  maxdepth: 8
+Time: 60.005798
+  inferstep time: 32.19703
+  node_find time: 2.433254
+  node_crea time: 25.310084
+    pred time: 2.834825
+    thmpred time: 0.000202
+    mc time: 16.456649
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 19
+Original proof time: 0.0
+Recording proof time: 1.744959
+
+Name: 59 word_and_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009547
+
+Name: 60 word_or_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010365
+
+Name: 61 word_xor_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007049
+
+Name: 62 word_nand_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012538
+
+Name: 63 word_nor_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015204
+
+Name: 64 word_xnor_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006815
+
+Name: 65 l2w_w2l
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007528
+
+Name: 66 w2l_l2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008542
+
+Name: 67 s2w_w2s
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005963
+
+Name: 68 w2s_s2w
+proof length: 1
+proof time: 0.002298
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.075394
+  inferstep time: 0.056423
+  node_find time: 0.000023
+  node_crea time: 0.01351
+    pred time: 0.004009
+    thmpred time: 0.0
+    mc time: 0.012773
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "words" "s2w_def", fetch "words" "w2s_def"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007686
+
+Name: 69 word_bin_list
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017959
+
+Name: 70 word_oct_list
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013468
+
+Name: 71 word_dec_list
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01283
+
+Name: 72 word_hex_list
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.025597
+
+Name: 73 word_bin_string
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.022964
+
+Name: 74 word_oct_string
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009603
+
+Name: 75 word_dec_string
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015079
+
+Name: 76 word_hex_string
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.040368
+
+Name: 77 word_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005055
+
+Name: 78 word_eq_0
+proof length: 2
+proof time: 0.002786
+Statistics
+  infstep : 19
+  nodes   : 10
+  maxdepth: 3
+Time: 0.815748
+  inferstep time: 0.606492
+  node_find time: 0.000284
+  node_crea time: 0.181146
+    pred time: 0.048164
+    thmpred time: 0.000003
+    mc time: 0.129701
+    inst time: 0.0
+Proof found: ASM_SIMP_TAC ((std_ss ++ FCP_ss) ++ ARITH_ss) [(fetch "words" "n2w_def"), BIT_def] THEN SRW_TAC [] [BITS_LT_LOW]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015844
+
+Name: 79 word_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007958
+
+Name: 80 FCP_T_F
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006679
+
+Name: 81 word_L
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.089471
+
+Name: 82 word_H
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06272
+
+Name: 83 word_L2
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.176937
+
+Name: 84 WORD_NEG_1
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.10977
+
+Name: 85 WORD_MSB_1COMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006497
+
+Name: 86 w2n_minus1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012578
+
+Name: 87 w2n_plus1
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.188114
+
+Name: 88 WORD_NOT_NOT
+proof length: 1
+proof time: 0.001352
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.156195
+  inferstep time: 0.132922
+  node_find time: 0.000022
+  node_crea time: 0.015631
+    pred time: 0.003648
+    thmpred time: 0.000001
+    mc time: 0.017673
+    inst time: 0.0
+Proof found: SRW_TAC [FCP_ss] [fetch "words" "word_1comp_def"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00793
+
+Name: 89 WORD_DE_MORGAN_THM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013239
+
+Name: 90 WORD_NOT_XOR
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.103747
+
+Name: 91 WORD_AND_CLAUSES
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006028
+
+Name: 92 WORD_OR_CLAUSES
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015063
+
+Name: 93 WORD_XOR_CLAUSES
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009519
+
+Name: 94 WORD_AND_ASSOC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.02069
+
+Name: 95 WORD_OR_ASSOC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.041133
+
+Name: 96 WORD_XOR_ASSOC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.038304
+
+Name: 97 WORD_AND_COMM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.022371
+
+Name: 98 WORD_OR_COMM
+proof length: 1
+proof time: 0.01307
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.145584
+  inferstep time: 0.124634
+  node_find time: 0.000023
+  node_crea time: 0.01501
+    pred time: 0.004742
+    thmpred time: 0.0
+    mc time: 0.014245
+    inst time: 0.0
+Proof found: local_tag BOOL_WORD_TAC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.026046
+
+Name: 99 WORD_XOR_COMM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.031043
+
+Name: 100 WORD_AND_IDEM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014143
+
+Name: 101 WORD_OR_IDEM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010848
+
+Name: 102 WORD_AND_ABSORD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.032174
+
+Name: 103 WORD_OR_ABSORB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017846
+
+Name: 104 WORD_AND_COMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012729
+
+Name: 105 WORD_OR_COMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011463
+
+Name: 106 WORD_XOR_COMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.023084
+
+Name: 107 WORD_RIGHT_AND_OVER_OR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.025123
+
+Name: 108 WORD_RIGHT_OR_OVER_AND
+proof length: 1
+proof time: 0.015281
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.157587
+  inferstep time: 0.131587
+  node_find time: 0.000026
+  node_crea time: 0.016401
+    pred time: 0.004834
+    thmpred time: 0.0
+    mc time: 0.019031
+    inst time: 0.0
+Proof found: local_tag BOOL_WORD_TAC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020303
+
+Name: 109 WORD_RIGHT_AND_OVER_XOR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.036709
+
+Name: 110 WORD_LEFT_AND_OVER_OR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.030379
+
+Name: 111 WORD_LEFT_OR_OVER_AND
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.029892
+
+Name: 112 WORD_LEFT_AND_OVER_XOR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.025803
+
+Name: 113 WORD_XOR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.034071
+
+Name: 114 WORD_NAND_NOT_AND
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.021115
+
+Name: 115 WORD_NOR_NOT_OR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01443
+
+Name: 116 WORD_XNOR_NOT_XOR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011862
+
+Name: 117 tactictoe_prove_117
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041825
+
+Name: 118 tactictoe_prove_118
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.126894
+
+Name: 119 WORD_ADD_OR
+Original proof time: 0.017242
+
+Name: 120 WORD_ADD_XOR
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.142856
+
+Name: 121 WORD_AND_EXP_SUB1
+Statistics
+  infstep : 2763
+  nodes   : 717
+  maxdepth: 9
+Time: 60.081614
+  inferstep time: 36.407796
+  node_find time: 0.989024
+  node_crea time: 22.073063
+    pred time: 3.488723
+    thmpred time: 0.000195
+    mc time: 14.609393
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.113081
+
+Name: 122 word_msb_add_word_L
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.184752
+
+Name: 123 w2w
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.222198
+
+Name: 124 sw2sw
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.179538
+
+Name: 125 w2w_id
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014716
+
+Name: 126 sw2sw_id
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.032826
+
+Name: 127 w2w_w2w
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.194658
+
+Name: 128 tactictoe_prove_128
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.558096
+
+Name: 129 tactictoe_prove_129
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.070586
+
+Name: 130 sw2sw_sw2sw
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.12608
+
+Name: 131 sw2sw_w2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.103197
+
+Name: 132 word_bit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005899
+
+Name: 133 word_slice_n2w
+proof length: 1
+proof time: 0.004485
+Statistics
+  infstep : 14
+  nodes   : 7
+  maxdepth: 2
+Time: 0.357893
+  inferstep time: 0.176656
+  node_find time: 0.000169
+  node_crea time: 0.133315
+    pred time: 0.025519
+    thmpred time: 0.000001
+    mc time: 0.138977
+    inst time: 0.0
+Proof found: local_tag FIELD_WORD_TAC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010921
+
+Name: 134 word_bits_n2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.112358
+
+Name: 135 word_bit_n2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.068577
+
+Name: 136 word_signed_bits_n2w
+Org tac number: 20
+Original proof time: 0.0
+Recording proof time: 1.369618
+
+Name: 137 tactictoe_prove_137
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016418
+
+Name: 138 word_sign_extend_bits
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.311253
+
+Name: 139 word_index_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007262
+
+Name: 140 tactictoe_prove_140
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007645
+
+Name: 141 tactictoe_prove_141
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.028252
+
+Name: 142 tactictoe_prove_142
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00605
+
+Name: 143 word_bits_w2w
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.29641
+
+Name: 144 word_reverse_n2w
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.060476
+
+Name: 145 word_modify_n2w
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039988
+
+Name: 146 fcp_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010865
+
+Name: 147 w2n_w2w
+Statistics
+  infstep : 2115
+  nodes   : 693
+  maxdepth: 7
+Time: 60.002651
+  inferstep time: 39.639261
+  node_find time: 0.866535
+  node_crea time: 19.420623
+    pred time: 3.369347
+    thmpred time: 0.000198
+    mc time: 10.645166
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.269918
+
+Name: 148 w2n_w2w_le
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.299211
+
+Name: 149 w2w_lt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020542
+
+Name: 150 w2w_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019956
+
+Name: 151 w2w_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006869
+
+Name: 152 w2n_11_lift
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.069471
+
+Name: 153 word_extract_w2w
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.469618
+
+Name: 154 WORD_w2w_EXTRACT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.124602
+
+Name: 155 WORD_EQ
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.051612
+
+Name: 156 BIT_UPDATE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.040297
+
+Name: 157 WORD_MODIFY_BIT
+proof length: 1
+proof time: 0.001605
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.14457
+  inferstep time: 0.118079
+  node_find time: 0.000021
+  node_crea time: 0.018231
+    pred time: 0.004593
+    thmpred time: 0.000001
+    mc time: 0.019681
+    inst time: 0.0
+Proof found: local_tag FIELD_WORD_TAC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.037283
+
+Name: 158 tactictoe_prove_158
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.044391
+
+Name: 159 WORD_BIT_BITS
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.613698
+
+Name: 160 tactictoe_prove_160
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.035855
+
+Name: 161 WORD_BITS_COMP_THM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.05779
+
+Name: 162 WORD_BITS_EXTRACT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009685
+
+Name: 163 WORD_BITS_LSR
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.099856
+
+Name: 164 WORD_BITS_ZERO
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.056175
+
+Name: 165 WORD_BITS_ZERO2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005846
+
+Name: 166 WORD_BITS_ZERO3
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014055
+
+Name: 167 WORD_BITS_LT
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.356149
+
+Name: 168 WORD_EXTRACT_LT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.061171
+
+Name: 169 WORD_EXTRACT_ZERO
+proof length: 2
+proof time: 0.021567
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.366927
+  inferstep time: 0.235387
+  node_find time: 0.000053
+  node_crea time: 0.094124
+    pred time: 0.019651
+    thmpred time: 0.000001
+    mc time: 0.095707
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "words" "word_extract_def")] THEN METIS_TAC [fetch "words" "WORD_BITS_ZERO", fetch "words" "word_bits_w2w", fetch "words" "WORD_BITS_ZERO2"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01599
+
+Name: 170 WORD_EXTRACT_ZERO2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005171
+
+Name: 171 WORD_EXTRACT_ZERO3
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006487
+
+Name: 172 WORD_SLICE_THM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.088327
+
+Name: 173 WORD_SLICE_ZERO
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.076069
+
+Name: 174 WORD_SLICE_BITS_THM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016931
+
+Name: 175 WORD_BITS_SLICE_THM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.078398
+
+Name: 176 WORD_SLICE_COMP_THM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.202146
+
+Name: 177 WORD_EXTRACT_COMP_THM
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 1.336435
+
+Name: 178 WORD_ALL_BITS
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.042575
+
+Name: 179 EXTRACT_ALL_BITS
+proof length: 4
+proof time: 0.007317
+Statistics
+  infstep : 13
+  nodes   : 8
+  maxdepth: 3
+Time: 0.768739
+  inferstep time: 0.519449
+  node_find time: 0.000153
+  node_crea time: 0.192836
+    pred time: 0.046292
+    thmpred time: 0.000003
+    mc time: 0.162002
+    inst time: 0.0
+Proof found: local_tag FIELD_WORD_TAC THEN Cases_on [QUOTE " (*#loc 1 43028*)i < ", ANTIQUOTE (((``dimindex (:'a)``)))] THENL [local_tag FIELD_WORD_TAC, METIS_TAC []]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012181
+
+Name: 180 WORD_BITS_MIN_HIGH
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.093476
+
+Name: 181 WORD_EXTRACT_MIN_HIGH
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.198647
+
+Name: 182 CONCAT_EXTRACT
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 2.45708
+
+Name: 183 EXTRACT_CONCAT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.129568
+
+Name: 184 EXTRACT_JOIN
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 1.138775
+
+Name: 185 EXTRACT_JOIN_ADD
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.480213
+
+Name: 186 EXTEND_EXTRACT
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.280056
+
+Name: 187 WORD_SLICE_OVER_BITWISE
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.174391
+
+Name: 188 WORD_BITS_OVER_BITWISE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.137399
+
+Name: 189 WORD_w2w_OVER_BITWISE
+proof length: 10
+proof time: 120.0
+Statistics
+  infstep : 73
+  nodes   : 34
+  maxdepth: 3
+Time: 3.132093
+  inferstep time: 2.207423
+  node_find time: 0.001953
+  node_crea time: 0.818764
+    pred time: 0.258515
+    thmpred time: 0.000011
+    mc time: 0.406592
+    inst time: 0.0
+Proof found: local_tag FIELD_WORD_TAC THEN Cases_on [QUOTE " (*#loc 1 43028*)i < ", ANTIQUOTE (((``dimindex (:'a)``)))] THENL [local_tag FIELD_WORD_TAC, METIS_TAC []]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.119411
+
+Name: 190 WORD_EXTRACT_OVER_BITWISE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009663
+
+Name: 191 tactictoe_prove_191
+Original proof time: 0.004244
+
+Name: 192 tactictoe_prove_192
+Original proof time: 0.005724
+
+Name: 193 WORD_w2w_OVER_ADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.085812
+
+Name: 194 WORD_w2w_OVER_MUL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.055224
+
+Name: 195 WORD_EXTRACT_OVER_ADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.139449
+
+Name: 196 WORD_EXTRACT_OVER_MUL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.066085
+
+Name: 197 WORD_EXTRACT_OVER_ADD2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.386575
+
+Name: 198 WORD_EXTRACT_OVER_MUL2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.316376
+
+Name: 199 WORD_EXTRACT_ID
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.208467
+
+Name: 200 tactictoe_prove_200
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.072681
+
+Name: 201 tactictoe_prove_201
+Original proof time: 0.007938
+
+Name: 202 tactictoe_prove_202
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009023
+
+Name: 203 tactictoe_prove_203
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.028625
+
+Name: 204 tactictoe_prove_204
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.370877
+
+Name: 205 tactictoe_prove_205
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.418428
+
+Name: 206 tactictoe_prove_206
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.336294
+
+Name: 207 tactictoe_prove_207
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.030009
+
+Name: 208 tactictoe_prove_208
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.023925
+
+Name: 209 tactictoe_prove_209
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008511
+
+Name: 210 tactictoe_prove_210
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014007
+
+Name: 211 tactictoe_prove_211
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00869
+
+Name: 212 tactictoe_prove_212
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013782
+
+Name: 213 tactictoe_prove_213
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008845
+
+Name: 214 WORD_LITERAL_XOR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.025671
+
+Name: 215 tactictoe_prove_215
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.045279
+
+Name: 216 word_replicate_concat_word_list
+Original proof time: 0.066719
+
+Name: 217 bit_field_insert
+Statistics
+  infstep : 1394
+  nodes   : 595
+  maxdepth: 7
+Time: 60.028444
+  inferstep time: 35.970547
+  node_find time: 0.448295
+  node_crea time: 23.58614
+    pred time: 4.305791
+    thmpred time: 0.000144
+    mc time: 12.183838
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.076538
+
+Name: 218 word_join_index
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.204331
+
+Name: 219 tactictoe_prove_219
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006609
+
+Name: 220 tactictoe_prove_220
+Org tac number: 1
+
+Name: 221 tactictoe_prove_220
+Org tac number: 1
+
+Name: 222 tactictoe_prove_220
+Org tac number: 1
+
+Name: 223 tactictoe_prove_220
+Org tac number: 1
+
+Name: 224 tactictoe_prove_220
+Org tac number: 1
+
+Name: 225 tactictoe_prove_220
+Org tac number: 1
+
+Name: 226 LOG2_w2n
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 1.180179
+
+Name: 227 LEAST_BIT_LT
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.514547
+
+Name: 228 tactictoe_prove_223
+Original proof time: 0.032031
+
+Name: 229 tactictoe_prove_224
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015438
+
+Name: 230 tactictoe_prove_225
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005961
+
+Name: 231 tactictoe_prove_226
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009407
+
+Name: 232 tactictoe_prove_227
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.063647
+
+Name: 233 tactictoe_prove_228
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.244649
+
+Name: 234 tactictoe_prove_229
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033623
+
+Name: 235 tactictoe_prove_230
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027208
+
+Name: 236 NOT_UINTMAXw
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.0843
+
+Name: 237 NOT_0w
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.086197
+
+Name: 238 reduce_and
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.762589
+
+Name: 239 reduce_or
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.760284
+
+Name: 240 tactictoe_prove_235
+Original proof time: 0.005967
+
+Name: 241 tactictoe_prove_236
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.292287
+
+Name: 242 tactictoe_prove_237
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.210144
+
+Name: 243 tactictoe_prove_238
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.178971
+
+Name: 244 tactictoe_prove_239
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.067782
+
+Name: 245 tactictoe_prove_240
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.684584
+
+Name: 246 tactictoe_prove_241
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037097
+
+Name: 247 WORD_ADD_0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039959
+
+Name: 248 WORD_ADD_ASSOC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017996
+
+Name: 249 WORD_MULT_ASSOC
+proof length: 1
+proof time: 0.016705
+Statistics
+  infstep : 76
+  nodes   : 39
+  maxdepth: 5
+Time: 3.253176
+  inferstep time: 2.326851
+  node_find time: 0.002382
+  node_crea time: 0.917038
+    pred time: 0.264334
+    thmpred time: 0.000009
+    mc time: 0.44509
+    inst time: 0.0
+Proof found: FULL_SIMP_TAC (srw_ss () ++ ARITH_ss) [fetch "words" "word_mul_def"]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.042519
+
+Name: 250 WORD_ADD_COMM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.024116
+
+Name: 251 WORD_MULT_COMM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012382
+
+Name: 252 WORD_MULT_CLAUSES
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.029061
+
+Name: 253 WORD_LEFT_ADD_DISTRIB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011578
+
+Name: 254 WORD_RIGHT_ADD_DISTRIB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01486
+
+Name: 255 WORD_ADD_SUB_ASSOC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.039265
+
+Name: 256 WORD_ADD_SUB_SYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.063472
+
+Name: 257 WORD_ADD_LINV
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.164667
+
+Name: 258 WORD_ADD_RINV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014605
+
+Name: 259 WORD_SUB_REFL
+proof length: 1
+proof time: 0.00546
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.078087
+  inferstep time: 0.049131
+  node_find time: 0.000018
+  node_crea time: 0.020488
+    pred time: 0.004242
+    thmpred time: 0.000001
+    mc time: 0.022963
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "words" "word_sub_def", fetch "words" "WORD_ADD_RINV"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007795
+
+Name: 260 WORD_SUB_ADD2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007835
+
+Name: 261 WORD_ADD_SUB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006258
+
+Name: 262 WORD_ADD_EQ_SUB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018683
+
+Name: 263 WORD_ADD_INV_0_EQ
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030942
+
+Name: 264 WORD_EQ_ADD_LCANCEL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039825
+
+Name: 265 WORD_EQ_ADD_RCANCEL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.024351
+
+Name: 266 WORD_NEG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.053354
+
+Name: 267 WORD_NOT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00738
+
+Name: 268 WORD_NEG_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008794
+
+Name: 269 WORD_NEG_ADD
+proof length: 1
+proof time: 0.034446
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.125956
+  inferstep time: 0.093609
+  node_find time: 0.000014
+  node_crea time: 0.022058
+    pred time: 0.005465
+    thmpred time: 0.0
+    mc time: 0.024377
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "words" "word_sub_def", fetch "words" "WORD_ADD_COMM", fetch "words" "WORD_ADD_EQ_SUB"]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.247767
+
+Name: 270 WORD_NEG_NEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.14477
+
+Name: 271 WORD_SUB_SUB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016422
+
+Name: 272 WORD_EQ_SUB_LADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.067314
+
+Name: 273 WORD_EQ_SUB_RADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020623
+
+Name: 274 WORD_LCANCEL_SUB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00844
+
+Name: 275 WORD_RCANCEL_SUB
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.047704
+
+Name: 276 WORD_SUB_PLUS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00765
+
+Name: 277 WORD_SUB_LZERO
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008355
+
+Name: 278 WORD_SUB_RZERO
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012029
+
+Name: 279 WORD_SUM_ZERO
+proof length: 1
+proof time: 0.042594
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.118767
+  inferstep time: 0.089414
+  node_find time: 0.000013
+  node_crea time: 0.020124
+    pred time: 0.004803
+    thmpred time: 0.0
+    mc time: 0.022558
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "words" "WORD_ADD_OR", fetch "words" "WORD_ADD_XOR", fetch "words" "WORD_ADD_LID_UNIQ", fetch "words" "WORD_EQ_ADD_LCANCEL", fetch "words" "WORD_ADD_RINV", fetch "words" "WORD_ADD_LINV"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.049555
+
+Name: 280 WORD_EQ_NEG
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005705
+
+Name: 281 WORD_SUB_TRIANGLE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.042333
+
+Name: 282 WORD_NOT_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007655
+
+Name: 283 WORD_NEG_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009244
+
+Name: 284 WORD_MULT_SUC
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030533
+
+Name: 285 WORD_NEG_LMUL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.179202
+
+Name: 286 WORD_NEG_MUL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007367
+
+Name: 287 sw2sw_w2w_add
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.184235
+
+Name: 288 WORD_ADD_BIT0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.066576
+
+Name: 289 WORD_ADD_BIT
+Statistics
+  infstep : 1558
+  nodes   : 514
+  maxdepth: 8
+Time: 60.000998
+  inferstep time: 37.547805
+  node_find time: 0.463439
+  node_crea time: 21.497589
+    pred time: 4.085041
+    thmpred time: 0.000188
+    mc time: 11.407048
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.302669
+
+Name: 290 WORD_LEFT_SUB_DISTRIB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008935
+
+Name: 291 WORD_LITERAL_MULT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009709
+
+Name: 292 WORD_LITERAL_ADD
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.3423
+
+Name: 293 WORD_SUB_INTRO
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.078436
+
+Name: 294 n2w_sub
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.098927
+
+Name: 295 n2w_sub_eq_0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.115149
+
+Name: 296 WORD_H_WORD_L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017287
+
+Name: 297 word_L_MULT
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.2547
+
+Name: 298 ASR_ADD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.15199
+
+Name: 299 LSR_ADD
+proof length: 4
+proof time: 0.021863
+Statistics
+  infstep : 17
+  nodes   : 8
+  maxdepth: 3
+Time: 0.908621
+  inferstep time: 0.667518
+  node_find time: 0.00029
+  node_crea time: 0.187832
+    pred time: 0.046285
+    thmpred time: 0.000003
+    mc time: 0.158521
+    inst time: 0.0
+Proof found: local_tag FIELD_WORD_TAC THEN Cases_on `i + n < dimindex (:'a)` THEN local_tag FIELD_WORD_TAC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.081079
+
+Name: 300 ROR_ADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.046705
+
+Name: 301 LSL_ADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.071399
+
+Name: 302 ASR_LIMIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017989
+
+Name: 303 ASR_UINT_MAX
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011963
+
+Name: 304 LSR_LIMIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017174
+
+Name: 305 LSL_LIMIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020292
+
+Name: 306 ROR_CYCLE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037979
+
+Name: 307 ROR_MOD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013006
+
+Name: 308 ROL_MOD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006189
+
+Name: 309 LSL_ONE
+Statistics
+  infstep : 2729
+  nodes   : 593
+  maxdepth: 8
+Time: 60.003482
+  inferstep time: 38.878733
+  node_find time: 0.805549
+  node_crea time: 20.20312
+    pred time: 3.476131
+    thmpred time: 0.000129
+    mc time: 12.123919
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.255967
+
+Name: 310 ROR_UINT_MAX
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011589
+
+Name: 311 ROR_ROL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.425472
+
+Name: 312 tactictoe_prove_307
+Original proof time: 0.005932
+
+Name: 313 tactictoe_prove_308
+Original proof time: 0.1076
+
+Name: 314 tactictoe_prove_309
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.125266
+
+Name: 315 MOD_COMPLEMENT
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.330444
+
+Name: 316 ROL_ADD
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.267673
+
+Name: 317 ZERO_SHIFT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.107033
+
+Name: 318 tactictoe_prove_313
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014535
+
+Name: 319 SHIFT_ZERO
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.048998
+
+Name: 320 word_lsl_n2w
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.414032
+
+Name: 321 word_1_lsl
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.175018
+
+Name: 322 word_lsr_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.022322
+
+Name: 323 tactictoe_prove_318
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.250678
+
+Name: 324 LSL_UINT_MAX
+Statistics
+  infstep : 2307
+  nodes   : 849
+  maxdepth: 9
+Time: 60.014221
+  inferstep time: 30.532579
+  node_find time: 0.893948
+  node_crea time: 28.516095
+    pred time: 3.325114
+    thmpred time: 0.000165
+    mc time: 18.06448
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 1.04309
+
+Name: 325 word_ror_n2w
+Original proof time: 0.031617
+
+Name: 326 word_rrx_n2w
+Original proof time: 0.059466
+
+Name: 327 word_ror
+Original proof time: 0.145681
+
+Name: 328 word_asr
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.108394
+
+Name: 329 w2n_lsr
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.090002
+
+Name: 330 WORD_MUL_LSL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.467186
+
+Name: 331 WORD_ADD_LSL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009814
+
+Name: 332 WORD_DIV_LSR
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.512419
+
+Name: 333 WORD_MOD_1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005378
+
+Name: 334 WORD_MOD_POW2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.264809
+
+Name: 335 SHIFT_1_SUB_1
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.057611
+
+Name: 336 LSR_BITWISE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.116705
+
+Name: 337 LSL_BITWISE
+proof length: 11
+proof time: 0.122939
+Statistics
+  infstep : 770
+  nodes   : 294
+  maxdepth: 7
+Time: 30.704648
+  inferstep time: 20.755922
+  node_find time: 0.112629
+  node_crea time: 9.304664
+    pred time: 2.431287
+    thmpred time: 0.000103
+    mc time: 4.38982
+    inst time: 0.0
+Proof found: SRW_TAC [FCP_ss] [fetch "words" "word_lsl_def", fetch "words" "WORD_XOR"] THENL [local_tag FIELD_WORD_TAC THEN METIS_TAC [], local_tag FIELD_WORD_TAC THEN EQ_TAC THENL [METIS_TAC [fetch "words" "word_nor_def"], METIS_TAC [fetch "words" "word_lsl_def"]], SRW_TAC [FCP_ss, ARITH_ss] [(fetch "words" "word_and_def"), (fetch "words" "word_or_def"), (fetch "words" "word_1comp_def")] THEN EQ_TAC THEN METIS_TAC []]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.179055
+
+Name: 338 ROR_BITWISE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.061115
+
+Name: 339 ROL_BITWISE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010788
+
+Name: 340 WORD_2COMP_LSL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006549
+
+Name: 341 w2w_LSL
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.394857
+
+Name: 342 n2w_DIV
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.480165
+
+Name: 343 WORD_BITS_LSL
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.955264
+
+Name: 344 WORD_EXTRACT_LSL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.241784
+
+Name: 345 WORD_EXTRACT_LSL2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.234218
+
+Name: 346 EXTRACT_JOIN_LSL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.133852
+
+Name: 347 EXTRACT_JOIN_ADD_LSL
+Statistics
+  infstep : 1280
+  nodes   : 391
+  maxdepth: 8
+Time: 60.039968
+  inferstep time: 33.499463
+  node_find time: 0.277828
+  node_crea time: 26.242834
+    pred time: 5.295534
+    thmpred time: 0.000102
+    mc time: 12.437929
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.097282
+
+Name: 348 tactictoe_prove_343
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.260138
+
+Name: 349 tactictoe_prove_344
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007943
+
+Name: 350 word_shift_bv
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.161524
+
+Name: 351 lsl_lsr
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.32712
+
+Name: 352 tactictoe_prove_347
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009597
+
+Name: 353 tactictoe_prove_348
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.042666
+
+Name: 354 WORD_NEG_L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012904
+
+Name: 355 word_L_MULT_NEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.076079
+
+Name: 356 word_L2_MULT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.023079
+
+Name: 357 tactictoe_prove_352
+Original proof time: 0.006009
+
+Name: 358 tactictoe_prove_353
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.191217
+
+Name: 359 tactictoe_prove_354
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.515752
+
+Name: 360 tactictoe_prove_355
+Original proof time: 0.01954
+
+Name: 361 tactictoe_prove_356
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.551012
+
+Name: 362 tactictoe_prove_357
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.176168
+
+Name: 363 tactictoe_prove_358
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.155295
+
+Name: 364 tactictoe_prove_359
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037066
+
+Name: 365 tactictoe_prove_360
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.03048
+
+Name: 366 tactictoe_prove_361
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.066947
+
+Name: 367 tactictoe_prove_362
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.077833
+
+Name: 368 tactictoe_prove_363
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.105917
+
+Name: 369 tactictoe_prove_364
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005107
+
+Name: 370 tactictoe_prove_365
+Original proof time: 0.097368
+
+Name: 371 tactictoe_prove_366
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.445467
+
+Name: 372 TWO_COMP_NEG
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 1.062035
+
+Name: 373 TWO_COMP_POS_NEG
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.926704
+
+Name: 374 WORD_0_POS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006251
+
+Name: 375 WORD_H_POS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.340772
+
+Name: 376 WORD_L_NEG
+proof length: 1
+proof time: 0.001089
+Statistics
+  infstep : 3
+  nodes   : 2
+  maxdepth: 1
+Time: 0.165381
+  inferstep time: 0.124785
+  node_find time: 0.000027
+  node_crea time: 0.019803
+    pred time: 0.003402
+    thmpred time: 0.0
+    mc time: 0.03545
+    inst time: 0.0
+Proof found: fs [(fetch "words" "word_L_def"), (fetch "words" "dimword_IS_TWICE_INT_MIN"), (fetch "words" "word_msb_n2w_numeric")]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.086405
+
+Name: 377 tactictoe_prove_372
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.675555
+
+Name: 378 WORD_GREATER
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.145921
+
+Name: 379 WORD_GREATER_EQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.108681
+
+Name: 380 WORD_NOT_LESS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.117576
+
+Name: 381 tactictoe_prove_376
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.29642
+
+Name: 382 tactictoe_prove_377
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 1.426434
+
+Name: 383 tactictoe_prove_378
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.583314
+
+Name: 384 tactictoe_prove_379
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.873914
+
+Name: 385 WORD_LT
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.525997
+
+Name: 386 WORD_LE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.056705
+
+Name: 387 tactictoe_prove_382
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.577297
+
+Name: 388 WORD_LO
+Original proof time: 0.020574
+
+Name: 389 WORD_LS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013096
+
+Name: 390 WORD_HI
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006139
+
+Name: 391 WORD_HS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008206
+
+Name: 392 WORD_NOT_LESS_EQUAL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005679
+
+Name: 393 WORD_LESS_OR_EQ
+proof length: 1
+proof time: 0.014141
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.154293
+  inferstep time: 0.133361
+  node_find time: 0.000021
+  node_crea time: 0.01473
+    pred time: 0.004181
+    thmpred time: 0.0
+    mc time: 0.014745
+    inst time: 0.0
+Proof found: local_tag LEM1_TAC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015239
+
+Name: 394 WORD_GREATER_OR_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018633
+
+Name: 395 WORD_LESS_TRANS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.143584
+
+Name: 396 WORD_LESS_EQ_TRANS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.123854
+
+Name: 397 WORD_LESS_EQ_LESS_TRANS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.138827
+
+Name: 398 WORD_LESS_LESS_EQ_TRANS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.13695
+
+Name: 399 WORD_LESS_EQ_CASES
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.031745
+
+Name: 400 WORD_LESS_CASES
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010741
+
+Name: 401 WORD_LESS_CASES_IMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008663
+
+Name: 402 WORD_LESS_ANTISYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009584
+
+Name: 403 WORD_LESS_EQ_ANTISYM
+proof length: 1
+proof time: 0.03505
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.128335
+  inferstep time: 0.100926
+  node_find time: 0.000013
+  node_crea time: 0.020122
+    pred time: 0.005065
+    thmpred time: 0.0
+    mc time: 0.020171
+    inst time: 0.0
+Proof found: METIS_TAC [word_le, fetch "words" "word_le_def", fetch "words" "WORD_LESS_ANTISYM", word_lt]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007274
+
+Name: 404 WORD_LESS_EQ_REFL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006171
+
+Name: 405 WORD_LESS_EQUAL_ANTISYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008131
+
+Name: 406 WORD_LESS_IMP_LESS_OR_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007419
+
+Name: 407 WORD_LESS_REFL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007143
+
+Name: 408 WORD_LESS_LESS_CASES
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013353
+
+Name: 409 WORD_NOT_GREATER
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010891
+
+Name: 410 WORD_LESS_NOT_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007122
+
+Name: 411 WORD_NOT_LESS_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005583
+
+Name: 412 WORD_HIGHER
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012976
+
+Name: 413 WORD_HIGHER_EQ
+proof length: 2
+proof time: 0.001466
+Statistics
+  infstep : 13
+  nodes   : 6
+  maxdepth: 2
+Time: 0.443024
+  inferstep time: 0.366128
+  node_find time: 0.00018
+  node_crea time: 0.063289
+    pred time: 0.018449
+    thmpred time: 0.000001
+    mc time: 0.04994
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "words" "WORD_HS", fetch "words" "WORD_LS"] THEN DECIDE_TAC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016411
+
+Name: 414 WORD_NOT_LOWER
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011459
+
+Name: 415 WORD_NOT_LOWER_EQUAL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008681
+
+Name: 416 WORD_LOWER_OR_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008121
+
+Name: 417 WORD_HIGHER_OR_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014192
+
+Name: 418 WORD_LOWER_TRANS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007418
+
+Name: 419 WORD_LOWER_EQ_TRANS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006062
+
+Name: 420 WORD_LOWER_EQ_LOWER_TRANS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010341
+
+Name: 421 WORD_LOWER_LOWER_EQ_TRANS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009441
+
+Name: 422 WORD_LOWER_EQ_CASES
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006962
+
+Name: 423 WORD_LOWER_CASES
+proof length: 1
+proof time: 0.004085
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.058405
+  inferstep time: 0.039514
+  node_find time: 0.000013
+  node_crea time: 0.013527
+    pred time: 0.004147
+    thmpred time: 0.0
+    mc time: 0.012965
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "words" "WORD_NOT_LOWER_EQUAL"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007643
+
+Name: 424 WORD_LOWER_CASES_IMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012793
+
+Name: 425 WORD_LOWER_ANTISYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01327
+
+Name: 426 WORD_LOWER_EQ_ANTISYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.025819
+
+Name: 427 WORD_LOWER_EQ_REFL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008346
+
+Name: 428 WORD_LOWER_EQUAL_ANTISYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01027
+
+Name: 429 WORD_LOWER_IMP_LOWER_OR_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007477
+
+Name: 430 WORD_LOWER_REFL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009712
+
+Name: 431 WORD_LOWER_LOWER_CASES
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009856
+
+Name: 432 WORD_NOT_HIGHER
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011977
+
+Name: 433 WORD_LOWER_NOT_EQ
+proof length: 1
+proof time: 0.007975
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.06456
+  inferstep time: 0.045469
+  node_find time: 0.000015
+  node_crea time: 0.01379
+    pred time: 0.004324
+    thmpred time: 0.0
+    mc time: 0.012763
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "words" "WORD_LOWER_EQ_ANTISYM", fetch "words" "WORD_LOWER_IMP_LOWER_OR_EQ"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012242
+
+Name: 434 WORD_NOT_LOWER_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007125
+
+Name: 435 tactictoe_prove_430
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.515766
+
+Name: 436 WORD_L_PLUS_H
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.135965
+
+Name: 437 WORD_L_LESS_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.021611
+
+Name: 438 WORD_LESS_EQ_H
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.152213
+
+Name: 439 tactictoe_prove_434
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009656
+
+Name: 440 WORD_L_LESS_H
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014927
+
+Name: 441 WORD_0_LS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007819
+
+Name: 442 WORD_LS_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011928
+
+Name: 443 WORD_ADD_LEFT_LO
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.729931
+
+Name: 444 WORD_ADD_LEFT_LS
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.822929
+
+Name: 445 tactictoe_prove_440
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.163338
+
+Name: 446 tactictoe_prove_441
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.125326
+
+Name: 447 tactictoe_prove_442
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009745
+
+Name: 448 WORD_MSB_INT_MIN_LS
+proof length: 3
+proof time: 0.002844
+Statistics
+  infstep : 93
+  nodes   : 34
+  maxdepth: 4
+Time: 2.359187
+  inferstep time: 1.638004
+  node_find time: 0.002513
+  node_crea time: 0.6641
+    pred time: 0.13036
+    thmpred time: 0.000005
+    mc time: 0.486713
+    inst time: 0.0
+Proof found: SIMP_TAC std_ss [(fetch "words" "WORD_LS")] THEN Cases THEN fs [(fetch "words" "word_L_def"), (fetch "words" "dimword_IS_TWICE_INT_MIN"), (fetch "words" "word_msb_n2w_numeric")]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.063584
+
+Name: 449 WORD_LESS_NEG_LEFT
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.324517
+
+Name: 450 WORD_LESS_NEG_RIGHT
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.175103
+
+Name: 451 WORD_LS_word_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011962
+
+Name: 452 WORD_LO_word_0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03138
+
+Name: 453 word_msb_neg
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011013
+
+Name: 454 word_abs
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013426
+
+Name: 455 word_abs_word_abs
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.262444
+
+Name: 456 word_abs_neg
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.319254
+
+Name: 457 word_abs_diff
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01724
+
+Name: 458 tactictoe_prove_453
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.122481
+
+Name: 459 ADD_WITH_CARRY_SUB
+Original proof time: 0.082809
+
+Name: 460 word_eq_n2w
+proof length: 7
+proof time: 0.075967
+Statistics
+  infstep : 41
+  nodes   : 24
+  maxdepth: 4
+Time: 2.304407
+  inferstep time: 1.444804
+  node_find time: 0.000947
+  node_crea time: 0.638122
+    pred time: 0.141272
+    thmpred time: 0.000007
+    mc time: 0.642758
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "words" "word_2comp_def"), (fetch "words" "w2n_n2w")] THEN SRW_TAC [] [fetch "words" "n2w_11", MOD_2EXP_MAX_def, MOD_2EXP_EQ_def] THENL [METIS_TAC [GENLIST_FCP_INDEX, MOD_2EXP_def, fetch "words" "dimword_def"], RW_TAC (std_ss ++ FCP_ss) [(fetch "words" "dimword_def")] THEN METIS_TAC [MOD_2EXP_def], RW_TAC (std_ss ++ FCP_ss) [(fetch "words" "dimword_def")] THEN METIS_TAC [MSB_THM4, fetch "words" "dimword_def", MOD_2EXP_def, SIGN_EXTEND_def, BIT_SIGN_EXTEND]]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.102318
+
+Name: 461 word_lt_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014444
+
+Name: 462 word_gt_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.026181
+
+Name: 463 word_le_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012225
+
+Name: 464 word_ge_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.035898
+
+Name: 465 word_ls_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008153
+
+Name: 466 word_hi_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005621
+
+Name: 467 word_lo_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010712
+
+Name: 468 word_hs_n2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00332
+
+Name: 469 tactictoe_prove_464
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012965
+
+Name: 470 w2n_add
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.149005
+
+Name: 471 saturate_w2w_n2w
+Statistics
+  infstep : 1211
+  nodes   : 560
+  maxdepth: 7
+Time: 60.018022
+  inferstep time: 38.762854
+  node_find time: 0.42571
+  node_crea time: 20.75645
+    pred time: 3.47491
+    thmpred time: 0.000164
+    mc time: 11.951775
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.315142
+
+Name: 472 saturate_w2w
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.968627
+
+Name: 473 saturate_sub
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016388
+
+Name: 474 saturate_add
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.132019
+
+Name: 475 tactictoe_prove_470
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004317
+
+Name: 476 tactictoe_prove_471
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013047
+
+Name: 477 NOT_FINITE_IMP_dimword_2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00626
+
+Name: 478 tactictoe_prove_473
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016879
+
+Name: 479 saturate_mul
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.245916
+
+Name: 480 WORD_DIVISION
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.429595
+
+Name: 481 word_reverse_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016676
+
+Name: 482 word_reverse_word_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013239
+
+Name: 483 sw2sw_word_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019626
+
+Name: 484 word_lsb_word_T
+proof length: 1
+proof time: 0.000399
+Statistics
+  infstep : 11
+  nodes   : 6
+  maxdepth: 2
+Time: 0.460667
+  inferstep time: 0.293547
+  node_find time: 0.000165
+  node_crea time: 0.156237
+    pred time: 0.036995
+    thmpred time: 0.000001
+    mc time: 0.109908
+    inst time: 0.0
+Proof found: (ASM_SIMP_TAC (srw_ss () ++ boolSimps.LET_ss ++ ARITH_ss)) [fetch "words" "word_lsb_def", fetch "words" "WORD_NEG_1_T"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.028396
+
+Name: 485 word_msb_word_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014417
+
+Name: 486 word_bit_0_word_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013035
+
+Name: 487 word_log2_1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010143
+
+Name: 488 word_join_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011604
+
+Name: 489 w2w_eq_n2w
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.384568
+
+Name: 490 word_extract_eq_n2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.120079
+
+Name: 491 word_concat_0
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.365785
+
+Name: 492 word_concat_0_eq
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.047087
+
+Name: 493 word_concat_assoc
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.924151
+
+Name: 494 word_join_word_T
+Statistics
+  infstep : 1668
+  nodes   : 586
+  maxdepth: 8
+Time: 60.012022
+  inferstep time: 39.965716
+  node_find time: 0.519792
+  node_crea time: 19.475447
+    pred time: 3.518571
+    thmpred time: 0.00017
+    mc time: 9.518689
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.155066
+
+Name: 495 tactictoe_prove_490
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.276432
+
+Name: 496 lsr_1_word_T
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.087246
+
+Name: 497 word_rrx_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018028
+
+Name: 498 word_rrx_word_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.055484
+
+Name: 499 word_T_not_zero
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009832
+
+Name: 500 WORD_LS_word_T
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.13091
+
+Name: 501 WORD_LO_word_T
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.047614
+
+Name: 502 WORD_LESS_0_word_T
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018462
+
+Name: 503 tactictoe_prove_498
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.240354
+
+Name: 504 tactictoe_prove_499
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.404355
+
+Name: 505 tactictoe_prove_500
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014073
+
+Name: 506 tactictoe_prove_501
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.353141
+
+Name: 507 tactictoe_prove_502
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.411544
+
+Name: 508 word_reverse_thm
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.197113
+
+Name: 509 bit_count_upto_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007638
+
+Name: 510 bit_count_upto_SUC
+proof length: 2
+proof time: 0.005213
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.500617
+  inferstep time: 0.361603
+  node_find time: 0.000058
+  node_crea time: 0.104689
+    pred time: 0.0336
+    thmpred time: 0.0
+    mc time: 0.093032
+    inst time: 0.0
+Proof found: SIMP_TAC std_ss [(fetch "words" "bit_count_upto_def"), SUM_def] THEN FULL_SIMP_TAC (srw_ss () ++ ARITH_ss) []
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.015019
+
+Name: 511 bit_count_upto_is_zero
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.425343
+
+Name: 512 bit_count_is_zero
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014311
+
+Name: 513 WORD_FINITE
+Org tac number: 20
+Original proof time: 0.0
+Recording proof time: 0.643126
+
+Name: 514 SUC_WORD_PRED
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.571713
+
+Name: 515 WORD_PRED_THM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06571
+
+Name: 516 tactictoe_prove_511
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04801
+
+Name: 517 tactictoe_prove_512
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.149396
+
+Name: 518 LSR_LESS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.146916
+
+Name: 519 word_sub_w2n
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.418696
+
+Name: 520 tactictoe_prove_515
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.069312
+
+Name: 521 WORD_LE_EQ_LS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.081123
+
+Name: 522 WORD_LT_EQ_LO
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.067378
+
+Name: 523 WORD_ZERO_LE
+proof length: 4
+proof time: 0.002431
+Statistics
+  infstep : 344
+  nodes   : 118
+  maxdepth: 6
+Time: 9.290998
+  inferstep time: 5.627005
+  node_find time: 0.023331
+  node_crea time: 3.57005
+    pred time: 0.71323
+    thmpred time: 0.000027
+    mc time: 2.154284
+    inst time: 0.0
+Proof found: Cases THEN REWRITE_TAC [(fetch "words" "WORD_LE"), (fetch "words" "WORD_0_POS")] THEN SRW_TAC [] [fetch "words" "word_msb_n2w_numeric", fetch "words" "INT_MIN_def"] THEN FULL_SIMP_TAC (srw_ss () ++ ARITH_ss) []
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.10644
+
+Name: 524 tactictoe_prove_519
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.126585
+
+Name: 525 tactictoe_prove_520
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.11087
+
+Name: 526 tactictoe_prove_521
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.220451
+
+Name: 527 WORD_LT_SUB_UPPER
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.304369
+
+Name: 528 tactictoe_prove_523
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.283211
+
+Name: 529 WORD_SUB_LT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007032
+
+Name: 530 WORD_SUB_LE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012019
+Bad stac: 3

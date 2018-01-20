@@ -1,0 +1,221 @@
+
+Name: 0 tactictoe_prove_0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035357
+
+Name: 1 ORD_CHR_RWT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003858
+
+Name: 2 ORD_CHR_COMPUTE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018218
+
+Name: 3 ORD_BOUND
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003563
+
+Name: 4 char_nchotomy
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.094996
+
+Name: 5 ranged_char_nchotomy
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.108207
+
+Name: 6 CHAR_EQ_THM
+proof length: 1
+proof time: 0.000608
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.131142
+  inferstep time: 0.11012
+  node_find time: 0.000022
+  node_crea time: 0.01333
+    pred time: 0.003851
+    thmpred time: 0.0
+    mc time: 0.015582
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "string" "ORD_11"]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.053515
+
+Name: 7 CHAR_INDUCT_THM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.056528
+
+Name: 8 tactictoe_prove_8
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.048358
+
+Name: 9 tactictoe_prove_9
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.026342
+
+Name: 10 IMPLODE_EXPLODE_I
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033999
+
+Name: 11 IMPLODE_EXPLODE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.046584
+
+Name: 12 EXPLODE_IMPLODE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.021425
+
+Name: 13 tactictoe_prove_13
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.105092
+
+Name: 14 STRING_ACYCLIC
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035482
+
+Name: 15 STRLEN_EQ_0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.057759
+
+Name: 16 STRLEN_EXPLODE_THM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012238
+
+Name: 17 DEST_STRING_LEMS
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036572
+
+Name: 18 IMPLODE_EQ_EMPTYSTRING
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.025489
+
+Name: 19 EXPLODE_EQ_NIL
+proof length: 3
+proof time: 0.024053
+Statistics
+  infstep : 6
+  nodes   : 5
+  maxdepth: 2
+Time: 0.394147
+  inferstep time: 0.343244
+  node_find time: 0.000066
+  node_crea time: 0.03708
+    pred time: 0.015239
+    thmpred time: 0.000003
+    mc time: 0.028079
+    inst time: 0.0
+Proof found: Induct_on `s` THENL [SRW_TAC [] [], METIS_TAC [fetch "string" "EXPLODE_11", fetch "string" "EXPLODE_IMPLODE", fetch "string" "IMPLODE_EQ_EMPTYSTRING", CONS_APPEND]]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.025247
+
+Name: 20 EXPLODE_EQ_THM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.088512
+
+Name: 21 IMPLODE_EQ_THM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.084582
+
+Name: 22 EXPLODE_DEST_STRING
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.029129
+
+Name: 23 IMPLODE_STRING
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.02947
+
+Name: 24 STRCAT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.002283
+
+Name: 25 STRCAT_EQNS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003092
+
+Name: 26 STRCAT_ACYCLIC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017322
+
+Name: 27 STRCAT_EXPLODE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.040806
+
+Name: 28 isPREFIX_DEF
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.060467
+
+Name: 29 isPREFIX_IND
+proof length: 5
+proof time: 0.012272
+Statistics
+  infstep : 4642
+  nodes   : 959
+  maxdepth: 8
+Time: 46.490709
+  inferstep time: 29.655358
+  node_find time: 1.620156
+  node_crea time: 15.108131
+    pred time: 1.629172
+    thmpred time: 0.000128
+    mc time: 8.899505
+    inst time: 0.0
+Proof found: REPEAT GEN_TAC THEN STRIP_TAC THEN INDUCT_THEN ((fetch "list" "list_INDUCT")) ASSUME_TAC THEN SRW_TAC [] []
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.104659
+
+Name: 30 isPREFIX_STRCAT
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.094077
+
+Name: 31 string_lt_nonrefl
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033954
+
+Name: 32 string_lt_antisym
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.387769
+
+Name: 33 string_lt_cases
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.255572
+
+Name: 34 string_lt_trans
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.48225
+Bad stac: 0

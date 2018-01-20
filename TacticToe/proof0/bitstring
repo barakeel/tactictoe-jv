@@ -1,0 +1,564 @@
+
+Name: 0 extend_cons
+proof length: 3
+proof time: 0.037912
+Statistics
+  infstep : 24
+  nodes   : 8
+  maxdepth: 2
+Time: 0.826383
+  inferstep time: 0.685427
+  node_find time: 0.000359
+  node_crea time: 0.117787
+    pred time: 0.036865
+    thmpred time: 0.000005
+    mc time: 0.076879
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN numTheory.INDUCTION ASSUME_TAC g in INDUCT_TAC THEN METIS_TAC [fetch "bitstring" "extend_def"] end
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.087118
+
+Name: 1 pad_left_extend
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.569443
+
+Name: 2 extend
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012949
+
+Name: 3 fixwidth
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011081
+
+Name: 4 fixwidth_id
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007585
+
+Name: 5 boolify_reverse_map
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.040786
+
+Name: 6 bitify_reverse_map
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041764
+
+Name: 7 every_bit_bitify
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.08258
+
+Name: 8 length_pad_left
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.028022
+
+Name: 9 length_pad_right
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00982
+
+Name: 10 length_zero_extend
+Statistics
+  infstep : 4143
+  nodes   : 656
+  maxdepth: 8
+Time: 60.051758
+  inferstep time: 35.038242
+  node_find time: 1.469595
+  node_crea time: 23.251842
+    pred time: 3.878154
+    thmpred time: 0.000182
+    mc time: 9.977957
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008685
+
+Name: 11 length_sign_extend
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00633
+
+Name: 12 length_fixwidth
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013152
+
+Name: 13 length_field
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005663
+
+Name: 14 length_bitify
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007182
+
+Name: 15 length_bitify_null
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006203
+
+Name: 16 length_shiftr
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009338
+
+Name: 17 length_rev_count_list
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.05869
+
+Name: 18 length_w2v
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010543
+
+Name: 19 length_rotate
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.111842
+
+Name: 20 el_rev_count_list
+proof length: 3
+proof time: 0.004903
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.511522
+  inferstep time: 0.379078
+  node_find time: 0.000097
+  node_crea time: 0.077754
+    pred time: 0.020541
+    thmpred time: 0.0
+    mc time: 0.100425
+    inst time: 0.0
+Proof found: Induct_on `n` THENL [(ASM_SIMP_TAC (srw_ss () ++ boolSimps.LET_ss ++ ARITH_ss)) [], lrw [(fetch "bitstring" "rev_count_list_def")]]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.11383
+
+Name: 21 tactictoe_prove_21
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010748
+
+Name: 22 el_zero_extend
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.09159
+
+Name: 23 el_sign_extend
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.041731
+
+Name: 24 el_fixwidth
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.029544
+
+Name: 25 el_field
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.459826
+
+Name: 26 tactictoe_prove_26
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.162632
+
+Name: 27 el_w2v
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011501
+
+Name: 28 el_shiftr
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.084959
+
+Name: 29 shiftr_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006855
+
+Name: 30 field_fixwidth
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006136
+
+Name: 31 testbit
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.376026
+
+Name: 32 testbit_geq_len
+proof length: 2
+proof time: 0.008885
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.331531
+  inferstep time: 0.209769
+  node_find time: 0.000084
+  node_crea time: 0.089158
+    pred time: 0.025007
+    thmpred time: 0.0
+    mc time: 0.078049
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "bitstring" "testbit"] THEN lrw []
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020269
+
+Name: 33 testbit_el
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.027613
+
+Name: 34 bit_v2w
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.23214
+
+Name: 35 word_index_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017315
+
+Name: 36 testbit_w2v
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.327011
+
+Name: 37 w2v_v2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.180049
+
+Name: 38 v2w_w2v
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.034569
+
+Name: 39 v2w_fixwidth
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.185584
+
+Name: 40 fixwidth_fixwidth
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.073534
+
+Name: 41 bitstring_nchotomy
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006854
+
+Name: 42 ranged_bitstring_nchotomy
+Statistics
+  infstep : 2150
+  nodes   : 801
+  maxdepth: 9
+Time: 60.007866
+  inferstep time: 31.454181
+  node_find time: 0.840028
+  node_crea time: 27.678509
+    pred time: 5.21577
+    thmpred time: 0.000204
+    mc time: 13.091356
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.136053
+
+Name: 43 tactictoe_prove_43
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.336002
+
+Name: 44 fixwidth_eq
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.552651
+
+Name: 45 v2w_11
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013256
+
+Name: 46 field_concat_right
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035547
+
+Name: 47 field_concat_left
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.245406
+
+Name: 48 field_id_imp
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007156
+
+Name: 49 shiftl_replicate_F
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.088941
+
+Name: 50 word_lsb_v2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.066375
+
+Name: 51 word_msb_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014853
+
+Name: 52 w2w_v2w
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.577374
+
+Name: 53 sw2sw_v2w
+Statistics
+  infstep : 1435
+  nodes   : 619
+  maxdepth: 8
+Time: 60.020308
+  inferstep time: 29.422748
+  node_find time: 0.43799
+  node_crea time: 30.133732
+    pred time: 4.714797
+    thmpred time: 0.000107
+    mc time: 14.462429
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.794562
+
+Name: 54 n2w_v2n
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.373245
+
+Name: 55 tactictoe_prove_55
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.031632
+
+Name: 56 v2n_n2v
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014457
+
+Name: 57 v2w_n2v
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004458
+
+Name: 58 w2n_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006971
+
+Name: 59 v2n_lt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.022586
+
+Name: 60 word_and_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.489291
+
+Name: 61 word_or_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.220416
+
+Name: 62 word_xor_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.198023
+
+Name: 63 word_nand_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.128804
+
+Name: 64 word_nor_v2w
+Statistics
+  infstep : 1489
+  nodes   : 536
+  maxdepth: 8
+Time: 60.02636
+  inferstep time: 34.35566
+  node_find time: 0.575907
+  node_crea time: 25.064208
+    pred time: 4.759534
+    thmpred time: 0.000143
+    mc time: 12.41282
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.088017
+
+Name: 65 word_xnor_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.071688
+
+Name: 66 word_1comp_v2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.099546
+
+Name: 67 word_lsl_v2w
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.24678
+
+Name: 68 word_lsr_v2w
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.304908
+
+Name: 69 word_modify_v2w
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.491676
+
+Name: 70 word_bits_v2w
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.491357
+
+Name: 71 word_extract_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004592
+
+Name: 72 word_slice_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010601
+
+Name: 73 tactictoe_prove_73
+Original proof time: 0.067898
+
+Name: 74 word_asr_v2w
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 1.017504
+
+Name: 75 word_ror_v2w
+Statistics
+  infstep : 1668
+  nodes   : 653
+  maxdepth: 8
+Time: 60.050727
+  inferstep time: 32.938467
+  node_find time: 0.514525
+  node_crea time: 26.570146
+    pred time: 4.308639
+    thmpred time: 0.000166
+    mc time: 15.360043
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 2.583586
+
+Name: 76 word_reverse_v2w
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.213366
+
+Name: 77 word_join_v2w
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.276841
+
+Name: 78 word_concat_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018199
+
+Name: 79 word_join_v2w_rwt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008601
+
+Name: 80 word_concat_v2w_rwt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010054
+
+Name: 81 tactictoe_prove_81
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.119798
+
+Name: 82 word_reduce_v2w
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.112102
+
+Name: 83 extract_v2w
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 2.82786
+
+Name: 84 tactictoe_prove_84
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.120255
+
+Name: 85 word_bit_last_shiftr
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.272732
+
+Name: 86 ops_to_v2w
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007096
+
+Name: 87 ops_to_n2w
+proof length: 1
+proof time: 0.006066
+Statistics
+  infstep : 39
+  nodes   : 19
+  maxdepth: 4
+Time: 2.545024
+  inferstep time: 1.349719
+  node_find time: 0.000828
+  node_crea time: 1.179038
+    pred time: 0.186512
+    thmpred time: 0.000006
+    mc time: 0.490381
+    inst time: 0.0
+Proof found: RW_TAC arith_ss [fetch "bitstring" "n2w_v2n"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005271
+Bad stac: 0

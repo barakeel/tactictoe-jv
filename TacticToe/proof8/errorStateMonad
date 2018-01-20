@@ -1,0 +1,166 @@
+
+Name: 0 BIND_LEFT_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017545
+
+Name: 1 MCOMP_THM
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.098876
+
+Name: 2 MCOMP_ASSOC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008476
+
+Name: 3 UNIT_CURRY
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.096847
+
+Name: 4 MCOMP_ID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003306
+
+Name: 5 BIND_RIGHT_UNIT
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.142949
+
+Name: 6 BIND_ASSOC
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.192025
+
+Name: 7 MMAP_ID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00353
+
+Name: 8 MMAP_COMP
+proof length: 6
+proof time: 0.016282
+Statistics
+  infstep : 911
+  nodes   : 176
+  maxdepth: 6
+Time: 10.97956
+  inferstep time: 9.025456
+  node_find time: 0.078638
+  node_crea time: 1.817056
+    pred time: 0.433439
+    thmpred time: 0.000035
+    mc time: 0.990509
+    inst time: 0.0
+Proof found: SRW_TAC [] [FUN_EQ_THM, (fetch "errorStateMonad" "MMAP_DEF")] THEN SRW_TAC [] [(fetch "errorStateMonad" "BIND_DEF"), (fetch "errorStateMonad" "UNIT_DEF")] THEN Q.RENAME1_TAC `option_CASE (k v) NONE _` THEN Cases_on `k v` THENL [METIS_TAC [fetch "errorStateMonad" "READ_def", option_case_def], SRW_TAC [] [pair_CASE_def]]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.024037
+
+Name: 9 MMAP_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004596
+
+Name: 10 MMAP_JOIN
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005645
+
+Name: 11 JOIN_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00498
+
+Name: 12 JOIN_MMAP_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.036738
+
+Name: 13 JOIN_MAP_JOIN
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00588
+
+Name: 14 JOIN_MAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008254
+
+Name: 15 sequence_nil
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005846
+
+Name: 16 mapM_nil
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003292
+
+Name: 17 mapM_cons
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005532
+
+Name: 18 ES_CHOICE_ASSOC
+proof length: 6
+proof time: 0.026779
+Statistics
+  infstep : 2238
+  nodes   : 308
+  maxdepth: 6
+Time: 21.768957
+  inferstep time: 16.717936
+  node_find time: 0.357993
+  node_crea time: 4.594486
+    pred time: 1.01015
+    thmpred time: 0.000066
+    mc time: 2.39205
+    inst time: 0.0
+Proof found: SRW_TAC [] [FUN_EQ_THM] THEN ONCE_REWRITE_TAC [fetch "errorStateMonad" "ES_CHOICE_DEF"] THEN REWRITE_TAC [fetch "errorStateMonad" "ES_CHOICE_DEF", option_case_eq] THEN SIMP_TAC (srw_ss ()) [] THEN SIMP_TAC (srw_ss ()) [SOME_DEF, option_case_eq] THEN METIS_TAC [SOME_DEF, option_case_eq]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.134097
+
+Name: 19 ES_CHOICE_FAIL_LID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008503
+
+Name: 20 ES_CHOICE_FAIL_RID
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.081505
+
+Name: 21 BIND_FAIL_L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004208
+
+Name: 22 BIND_ESGUARD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004615
+
+Name: 23 IGNORE_BIND_ESGUARD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004053
+
+Name: 24 IGNORE_BIND_FAIL
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.271168
+
+Name: 25 APPLY_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003658
+
+Name: 26 APPLY_UNIT_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014191
+Bad stac: 0

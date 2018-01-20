@@ -1,0 +1,1896 @@
+
+Name: 0 EQ_LADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003653
+
+Name: 1 EQ_ADDL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010841
+
+Name: 2 LT_LADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007208
+
+Name: 3 LT_ADDL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.002277
+
+Name: 4 LT_ADDR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006772
+
+Name: 5 LT_ADD2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011022
+
+Name: 6 TINT_EQ_REFL
+proof length: 2
+proof time: 0.005666
+Statistics
+  infstep : 60
+  nodes   : 5
+  maxdepth: 2
+Time: 0.518252
+  inferstep time: 0.456515
+  node_find time: 0.00052
+  node_crea time: 0.05228
+    pred time: 0.02036
+    thmpred time: 0.000005
+    mc time: 0.033576
+    inst time: 0.0
+Proof found: Cases THEN METIS_TAC [fetch "integer" "tint_eq"]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037505
+
+Name: 7 TINT_EQ_SYM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.074095
+
+Name: 8 TINT_EQ_TRANS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.068529
+
+Name: 9 TINT_EQ_EQUIV
+Original proof time: 0.000136
+
+Name: 10 TINT_EQ_AP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.072071
+
+Name: 11 TINT_10
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.055581
+
+Name: 12 TINT_ADD_SYM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.073792
+
+Name: 13 TINT_MUL_SYM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06866
+
+Name: 14 TINT_ADD_ASSOC
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.031605
+
+Name: 15 TINT_MUL_ASSOC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.087345
+
+Name: 16 TINT_LDISTRIB
+
+Name: 17 TINT_ADD_LID
+proof length: 5
+proof time: 0.001202
+Statistics
+  infstep : 288
+  nodes   : 31
+  maxdepth: 5
+Time: 3.551058
+  inferstep time: 3.03906
+  node_find time: 0.008825
+  node_crea time: 0.465575
+    pred time: 0.137634
+    thmpred time: 0.00002
+    mc time: 0.293211
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "integer" "tint_0")] THEN REPEAT GEN_PAIR_TAC THEN REWRITE_TAC [(fetch "integer" "tint_add")] THEN REWRITE_TAC [fetch "integer" "tint_eq"] THEN ARITH_TAC
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.084209
+
+Name: 18 TINT_MUL_LID
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.069498
+
+Name: 19 TINT_ADD_LINV
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.081485
+
+Name: 20 TINT_LT_TOTAL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.16668
+
+Name: 21 TINT_LT_REFL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.061895
+
+Name: 22 TINT_LT_TRANS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006182
+
+Name: 23 TINT_LT_ADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010033
+
+Name: 24 TINT_LT_MUL
+
+Name: 25 TINT_NEG_WELLDEF
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00814
+
+Name: 26 TINT_ADD_WELLDEFR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010536
+
+Name: 27 TINT_ADD_WELLDEF
+proof length: 1
+proof time: 0.005923
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.143483
+  inferstep time: 0.108281
+  node_find time: 0.000039
+  node_crea time: 0.024805
+    pred time: 0.004743
+    thmpred time: 0.000001
+    mc time: 0.028963
+    inst time: 0.0
+Proof found: let fun unfold_dec l = REPEAT GEN_PAIR_TAC THEN REWRITE_TAC l THEN ARITH_TAC in unfold_dec [(fetch "integer" "tint_eq"), (fetch "integer" "tint_add")] end
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.022044
+
+Name: 28 TINT_MUL_WELLDEFR
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.327773
+
+Name: 29 TINT_MUL_WELLDEF
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.303668
+
+Name: 30 TINT_LT_WELLDEFR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011438
+
+Name: 31 TINT_LT_WELLDEFL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013769
+
+Name: 32 TINT_LT_WELLDEF
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011733
+
+Name: 33 tint_of_num_eq
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.170233
+
+Name: 34 TINT_INJ
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.199638
+
+Name: 35 NUM_POSTINT_EX
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.196519
+
+Name: 36 INT_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.0032
+
+Name: 37 INT_1
+Statistics
+  infstep : 6292
+  nodes   : 940
+  maxdepth: 8
+Time: 60.197321
+  inferstep time: 38.022775
+  node_find time: 2.712671
+  node_crea time: 19.347973
+    pred time: 3.045439
+    thmpred time: 0.000192
+    mc time: 13.212719
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004535
+
+Name: 38 INT_ADD_LID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010819
+
+Name: 39 INT_ADD_RID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005094
+
+Name: 40 INT_ADD_LINV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020944
+
+Name: 41 INT_ADD_RINV
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037132
+
+Name: 42 INT_MUL_LID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011558
+
+Name: 43 INT_MUL_RID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004336
+
+Name: 44 INT_RDISTRIB
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.044307
+
+Name: 45 INT_EQ_LADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.140311
+
+Name: 46 INT_EQ_RADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.068318
+
+Name: 47 INT_ADD_LID_UNIQ
+proof length: 1
+proof time: 0.022932
+Statistics
+  infstep : 6
+  nodes   : 3
+  maxdepth: 2
+Time: 0.36693
+  inferstep time: 0.314888
+  node_find time: 0.000136
+  node_crea time: 0.037412
+    pred time: 0.011314
+    thmpred time: 0.000002
+    mc time: 0.037089
+    inst time: 0.0
+Proof found: PROVE_TAC [fetch "integer" "INT_EQ_LADD", fetch "integer" "INT_ADD_SYM", fetch "integer" "INT_ADD_LID"]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.063005
+
+Name: 48 INT_ADD_RID_UNIQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.05877
+
+Name: 49 INT_LNEG_UNIQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.09415
+
+Name: 50 INT_RNEG_UNIQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.058812
+
+Name: 51 INT_NEG_ADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.265611
+
+Name: 52 INT_MUL_LZERO
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.066697
+
+Name: 53 INT_MUL_RZERO
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.09765
+
+Name: 54 INT_NEG_LMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.084342
+
+Name: 55 INT_NEG_RMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.089612
+
+Name: 56 INT_NEGNEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.055784
+
+Name: 57 INT_NEG_MUL2
+proof length: 1
+proof time: 0.009333
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.038899
+  inferstep time: 0.024187
+  node_find time: 0.000012
+  node_crea time: 0.010731
+    pred time: 0.003919
+    thmpred time: 0.000001
+    mc time: 0.009664
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "integer" "INT_NEG_RMUL", fetch "integer" "INT_MUL_SYM", fetch "integer" "INT_NEGNEG"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008135
+
+Name: 58 INT_LT_LADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.125731
+
+Name: 59 INT_LT_RADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.057648
+
+Name: 60 INT_NOT_LT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.066912
+
+Name: 61 INT_LT_ANTISYM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.053831
+
+Name: 62 INT_LT_GT
+Original proof time: 0.000065
+
+Name: 63 INT_NOT_LE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03215
+
+Name: 64 INT_LE_TOTAL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034598
+
+Name: 65 INT_LET_TOTAL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064339
+
+Name: 66 INT_LTE_TOTAL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.166567
+
+Name: 67 INT_LE_REFL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.046938
+
+Name: 68 INT_LE_LT
+proof length: 1
+proof time: 0.015083
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.094272
+  inferstep time: 0.082192
+  node_find time: 0.000007
+  node_crea time: 0.008189
+    pred time: 0.003191
+    thmpred time: 0.000001
+    mc time: 0.007801
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "integer" "INT_NOT_LT", fetch "integer" "INT_LT_TOTAL", fetch "integer" "INT_LT_GT"]
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.167043
+
+Name: 69 INT_LT_LE
+Original proof time: 0.000306
+
+Name: 70 INT_LT_IMP_LE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.096093
+
+Name: 71 INT_LTE_TRANS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.080416
+
+Name: 72 INT_LET_TRANS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.055039
+
+Name: 73 INT_LE_TRANS
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.18608
+
+Name: 74 INT_LE_ANTISYM
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.175692
+
+Name: 75 INT_LET_ANTISYM
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.086104
+
+Name: 76 INT_LTE_ANTSYM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.078365
+
+Name: 77 INT_NEG_LT0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.084461
+
+Name: 78 INT_NEG_GT0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035346
+
+Name: 79 INT_NEG_LE0
+proof length: 2
+proof time: 0.02142
+Statistics
+  infstep : 10
+  nodes   : 6
+  maxdepth: 3
+Time: 0.409836
+  inferstep time: 0.353921
+  node_find time: 0.000115
+  node_crea time: 0.04476
+    pred time: 0.019841
+    thmpred time: 0.000002
+    mc time: 0.030531
+    inst time: 0.0
+Proof found: SUBST1_TAC (SYM (SPEC (``y:int``) (fetch "integer" "INT_ADD_LINV"))) THEN METIS_TAC [fetch "integer" "INT_ADD_RINV", fetch "integer" "INT_NEG_GT0", fetch "integer" "INT_NEGNEG", fetch "integer" "INT_NOT_LT"]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.047725
+
+Name: 80 INT_NEG_GE0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.057416
+
+Name: 81 INT_LT_NEGTOTAL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06305
+
+Name: 82 INT_LE_NEGTOTAL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.085972
+
+Name: 83 INT_LE_MUL
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.247994
+
+Name: 84 INT_LE_SQUARE
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.090083
+
+Name: 85 INT_LE_01
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.046457
+
+Name: 86 INT_LT_01
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.037501
+
+Name: 87 INT_LE_LADD
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.110129
+
+Name: 88 INT_LE_RADD
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.085139
+
+Name: 89 INT_LT_ADD2
+Statistics
+  infstep : 5608
+  nodes   : 814
+  maxdepth: 8
+Time: 60.003397
+  inferstep time: 39.675134
+  node_find time: 2.289222
+  node_crea time: 17.983671
+    pred time: 2.751448
+    thmpred time: 0.000227
+    mc time: 6.141911
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.366911
+
+Name: 90 INT_LE_ADD2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.10922
+
+Name: 91 INT_LE_ADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.071614
+
+Name: 92 INT_LT_ADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.23696
+
+Name: 93 INT_LT_ADDNEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.112803
+
+Name: 94 INT_LT_ADDNEG2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064516
+
+Name: 95 INT_LT_ADD1
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.247938
+
+Name: 96 INT_SUB_ADD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027264
+
+Name: 97 INT_SUB_ADD2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.052913
+
+Name: 98 INT_SUB_REFL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.045351
+
+Name: 99 INT_SUB_0
+proof length: 1
+proof time: 0.018375
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.071467
+  inferstep time: 0.060259
+  node_find time: 0.000011
+  node_crea time: 0.008319
+    pred time: 0.003277
+    thmpred time: 0.000001
+    mc time: 0.0069
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "integer" "INT_SUB_ADD", fetch "integer" "INT_ADD_LID_UNIQ"]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.129157
+
+Name: 100 INT_LE_DOUBLE
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.289088
+
+Name: 101 INT_LE_NEGL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.061541
+
+Name: 102 INT_LE_NEGR
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.146028
+
+Name: 103 INT_NEG_EQ0
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.281025
+
+Name: 104 INT_NEG_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007154
+
+Name: 105 INT_NEG_SUB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.049053
+
+Name: 106 INT_SUB_LT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064839
+
+Name: 107 INT_SUB_LE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.215563
+
+Name: 108 INT_ADD_SUB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06712
+
+Name: 109 INT_SUB_LDISTRIB
+proof length: 1
+proof time: 0.010555
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.054414
+  inferstep time: 0.04183
+  node_find time: 0.000011
+  node_crea time: 0.00916
+    pred time: 0.003686
+    thmpred time: 0.000001
+    mc time: 0.007751
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "integer" "int_sub", fetch "integer" "INT_LDISTRIB", fetch "integer" "INT_NEG_RMUL"]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.095086
+
+Name: 110 INT_SUB_RDISTRIB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.114187
+
+Name: 111 INT_NEG_EQ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.104749
+
+Name: 112 INT_NEG_MINUS1
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065905
+
+Name: 113 INT_LT_IMP_NE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.131264
+
+Name: 114 INT_LE_ADDR
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.070152
+
+Name: 115 INT_LE_ADDL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.0542
+
+Name: 116 INT_LT_ADDR
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.07151
+
+Name: 117 INT_LT_ADDL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.045126
+
+Name: 118 INT_ENTIRE
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.573892
+
+Name: 119 INT_EQ_LMUL
+Statistics
+  infstep : 3749
+  nodes   : 1065
+  maxdepth: 8
+Time: 60.002223
+  inferstep time: 42.405191
+  node_find time: 1.91999
+  node_crea time: 14.693262
+    pred time: 4.572631
+    thmpred time: 0.000267
+    mc time: 6.875065
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.095154
+
+Name: 120 INT_EQ_RMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.053565
+
+Name: 121 INT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.122835
+
+Name: 122 INT_POS
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.238988
+
+Name: 123 INT_LE
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.220988
+
+Name: 124 INT_LT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036854
+
+Name: 125 INT_INJ
+Original proof time: 0.000163
+
+Name: 126 INT_ADD
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.156412
+
+Name: 127 INT_MUL
+Original proof time: 0.000401
+
+Name: 128 INT_LT_NZ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.127363
+
+Name: 129 INT_NZ_IMP_LT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.043846
+
+Name: 130 INT_DOUBLE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.089277
+
+Name: 131 INT_SUB_SUB
+proof length: 1
+proof time: 0.012864
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.045149
+  inferstep time: 0.033195
+  node_find time: 0.000013
+  node_crea time: 0.008589
+    pred time: 0.003534
+    thmpred time: 0.000001
+    mc time: 0.007303
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "integer" "INT_NEG_SUB", fetch "integer" "INT_SUB_ADD", fetch "integer" "INT_ADD_SUB"]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.09551
+
+Name: 132 INT_LT_ADD_SUB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064831
+
+Name: 133 INT_LT_SUB_RADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.073815
+
+Name: 134 INT_LT_SUB_LADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.091727
+
+Name: 135 INT_LE_SUB_LADD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.038305
+
+Name: 136 INT_LE_SUB_RADD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041426
+
+Name: 137 INT_LT_NEG
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.127671
+
+Name: 138 INT_LE_NEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.085824
+
+Name: 139 INT_ADD2_SUB2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.053868
+
+Name: 140 INT_SUB_LZERO
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.029397
+
+Name: 141 INT_SUB_RZERO
+proof length: 1
+proof time: 0.007636
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.062044
+  inferstep time: 0.051137
+  node_find time: 0.00001
+  node_crea time: 0.008335
+    pred time: 0.004391
+    thmpred time: 0.000001
+    mc time: 0.005465
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "integer" "INT_SUB_REFL", fetch "integer" "INT_SUB_ADD2", fetch "integer" "INT_SUB_SUB"]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036901
+
+Name: 142 INT_LET_ADD2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.119549
+
+Name: 143 INT_LTE_ADD2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.093099
+
+Name: 144 INT_LET_ADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.107907
+
+Name: 145 INT_LTE_ADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.119242
+
+Name: 146 INT_LT_MUL2
+Original proof time: 0.000439
+
+Name: 147 INT_SUB_LNEG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.144839
+
+Name: 148 INT_SUB_RNEG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037887
+
+Name: 149 INT_SUB_NEG2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.104285
+
+Name: 150 INT_SUB_TRIANGLE
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.143409
+
+Name: 151 INT_EQ_SUB_LADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.074197
+
+Name: 152 INT_EQ_SUB_RADD
+proof length: 1
+proof time: 0.023722
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.087013
+  inferstep time: 0.07662
+  node_find time: 0.000012
+  node_crea time: 0.008095
+    pred time: 0.003525
+    thmpred time: 0.000001
+    mc time: 0.005736
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "integer" "INT_EQ_SUB_LADD"]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.070149
+
+Name: 153 INT_SUB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00906
+
+Name: 154 INT_SUB_SUB2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.101173
+
+Name: 155 INT_ADD_SUB2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.122897
+
+Name: 156 INT_EQ_LMUL2
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.213127
+
+Name: 157 INT_EQ_IMP_LE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064163
+
+Name: 158 INT_POS_NZ
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.102383
+
+Name: 159 INT_EQ_RMUL_IMP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.052233
+
+Name: 160 INT_EQ_LMUL_IMP
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.149278
+
+Name: 161 INT_DIFFSQ
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.193153
+
+Name: 162 INT_POASQ
+proof length: 2
+proof time: 0.026848
+Statistics
+  infstep : 315
+  nodes   : 66
+  maxdepth: 4
+Time: 6.272836
+  inferstep time: 5.080083
+  node_find time: 0.011961
+  node_crea time: 1.161025
+    pred time: 0.548094
+    thmpred time: 0.000034
+    mc time: 0.237757
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "integer" "INT_LT_LE")] THEN METIS_TAC [fetch "integer" "int_of_num", fetch "integer" "INT_LE_MUL", fetch "integer" "INT_LE_SQUARE", fetch "integer" "INT_ENTIRE"]
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.259684
+
+Name: 163 INT_SUMSQ
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.278755
+
+Name: 164 INT_EQ_NEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065695
+
+Name: 165 tactictoe_prove_165
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.318905
+
+Name: 166 INT_LT_CALCULATE
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.56036
+
+Name: 167 NUM_POSINT
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.237813
+
+Name: 168 NUM_POSINT_EXISTS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.038088
+
+Name: 169 NUM_NEGINT_EXISTS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006922
+
+Name: 170 INT_NUM_CASES
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.360852
+
+Name: 171 tactictoe_prove_171
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005949
+
+Name: 172 INT_DISCRETE
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 1.091459
+
+Name: 173 INT_LE_LT1
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.486833
+
+Name: 174 INT_LT_LE1
+proof length: 1
+proof time: 0.017145
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.078138
+  inferstep time: 0.066426
+  node_find time: 0.000012
+  node_crea time: 0.008579
+    pred time: 0.003511
+    thmpred time: 0.000001
+    mc time: 0.007211
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "integer" "INT_LE_LT1", fetch "integer" "INT_LT_RADD"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005819
+
+Name: 175 INT_MUL_EQ_1
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 1.066512
+
+Name: 176 NUM_OF_INT
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.082006
+
+Name: 177 INT_OF_NUM
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.31686
+
+Name: 178 LE_NUM_OF_INT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.057052
+
+Name: 179 tactictoe_prove_179
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.106679
+
+Name: 180 INT_DIV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.024724
+
+Name: 181 INT_DIV_NEG
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.231839
+
+Name: 182 INT_DIV_1
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.596577
+
+Name: 183 INT_DIV_0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.062942
+
+Name: 184 INT_DIV_ID
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.338808
+
+Name: 185 tactictoe_prove_185
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.228812
+
+Name: 186 tactictoe_prove_186
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.093612
+
+Name: 187 tactictoe_prove_187
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00598
+
+Name: 188 INT_MOD_BOUNDS
+Statistics
+  infstep : 4284
+  nodes   : 746
+  maxdepth: 8
+Time: 60.011138
+  inferstep time: 48.44714
+  node_find time: 1.303711
+  node_crea time: 10.217414
+    pred time: 3.319107
+    thmpred time: 0.000213
+    mc time: 3.699759
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 27
+Original proof time: 0.0
+Recording proof time: 1.164572
+
+Name: 189 INT_DIVISION
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.130773
+
+Name: 190 INT_MOD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041332
+
+Name: 191 INT_MOD_NEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.082091
+
+Name: 192 INT_MOD0
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.802331
+
+Name: 193 INT_DIV_MUL_ID
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.213768
+
+Name: 194 tactictoe_prove_194
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.107249
+
+Name: 195 tactictoe_prove_195
+Org tac number: 29
+Original proof time: 0.0
+Recording proof time: 1.962955
+
+Name: 196 INT_DIV_UNIQUE
+Org tac number: 23
+Original proof time: 0.0
+Recording proof time: 0.897427
+
+Name: 197 INT_MOD_UNIQUE
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.368553
+
+Name: 198 INT_MOD_ID
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.135478
+
+Name: 199 INT_MOD_COMMON_FACTOR
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.152452
+
+Name: 200 INT_DIV_LMUL
+Statistics
+  infstep : 5159
+  nodes   : 820
+  maxdepth: 8
+Time: 60.000401
+  inferstep time: 43.42161
+  node_find time: 1.730971
+  node_crea time: 14.801051
+    pred time: 3.734693
+    thmpred time: 0.000173
+    mc time: 6.747312
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.118432
+
+Name: 201 INT_DIV_RMUL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005494
+
+Name: 202 INT_MOD_EQ0
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.238781
+
+Name: 203 INT_MUL_DIV
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.470858
+
+Name: 204 INT_ADD_DIV
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.596984
+
+Name: 205 tactictoe_prove_205
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.194339
+
+Name: 206 tactictoe_prove_206
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.084808
+
+Name: 207 INT_MOD_ADD_MULTIPLES
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 1.054476
+
+Name: 208 INT_MOD_NEG_NUMERATOR
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.02238
+
+Name: 209 INT_MOD_PLUS
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.541724
+
+Name: 210 INT_MOD_SUB
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.591573
+
+Name: 211 INT_MOD_MOD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.211859
+
+Name: 212 INT_DIV_P
+Statistics
+  infstep : 5062
+  nodes   : 889
+  maxdepth: 8
+Time: 60.01405
+  inferstep time: 37.480794
+  node_find time: 1.743158
+  node_crea time: 20.745026
+    pred time: 3.366685
+    thmpred time: 0.000159
+    mc time: 9.851326
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.154917
+
+Name: 213 INT_MOD_P
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.315912
+
+Name: 214 INT_DIV_FORALL_P
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.153511
+
+Name: 215 INT_MOD_FORALL_P
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.255378
+
+Name: 216 INT_MOD_1
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.078491
+
+Name: 217 INT_LESS_MOD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.122568
+
+Name: 218 INT_MOD_MINUS1
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 1.139359
+
+Name: 219 INT_ABS_POS
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.212715
+
+Name: 220 INT_ABS_NUM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007281
+
+Name: 221 INT_NEG_SAME_EQ
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.179875
+
+Name: 222 INT_ABS_NEG
+proof length: 5
+proof time: 0.01935
+Statistics
+  infstep : 62
+  nodes   : 30
+  maxdepth: 4
+Time: 2.766501
+  inferstep time: 2.33449
+  node_find time: 0.001618
+  node_crea time: 0.372545
+    pred time: 0.117369
+    thmpred time: 0.000019
+    mc time: 0.230202
+    inst time: 0.0
+Proof found: FULL_SIMP_TAC (srw_ss ()) [fetch "integer" "INT_ABS", fetch "integer" "INT_NEGNEG"] THEN SIMP_TAC bool_ss [GSYM (fetch "integer" "INT_NEG_GT0")] THEN SRW_TAC [] [fetch "integer" "INT_NEG_GT0", fetch "integer" "INT_NEG_LT0", fetch "integer" "INT_NEG_SAME_EQ"] THENL [METIS_TAC [(local_tag INT_LT_TRANS), (local_tag INT_LT_REFL)], METIS_TAC [fetch "integer" "INT_NEG_GT0", fetch "integer" "INT_LT_NEGTOTAL", fetch "integer" "INT_NEGNEG"]]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.069996
+
+Name: 223 INT_ABS_ABS
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.187743
+
+Name: 224 INT_ABS_EQ_ID
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.229478
+
+Name: 225 INT_ABS_MUL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.131008
+
+Name: 226 INT_ABS_EQ0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.072318
+
+Name: 227 INT_ABS_LT0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.078658
+
+Name: 228 INT_ABS_LE0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.080215
+
+Name: 229 INT_ABS_LT
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.196136
+
+Name: 230 INT_ABS_LE
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.17987
+
+Name: 231 INT_ABS_EQ
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.202973
+
+Name: 232 tactictoe_prove_232
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.094618
+
+Name: 233 INT_QUOT
+Statistics
+  infstep : 4455
+  nodes   : 896
+  maxdepth: 9
+Time: 60.000726
+  inferstep time: 38.268919
+  node_find time: 1.93638
+  node_crea time: 19.741311
+    pred time: 3.808732
+    thmpred time: 0.000251
+    mc time: 12.618821
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014038
+
+Name: 234 INT_QUOT_0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.139855
+
+Name: 235 INT_QUOT_1
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.091326
+
+Name: 236 INT_QUOT_NEG
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.205573
+
+Name: 237 INT_ABS_QUOT
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.215466
+
+Name: 238 tactictoe_prove_238
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005496
+
+Name: 239 tactictoe_prove_239
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008665
+
+Name: 240 tactictoe_prove_240
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009874
+
+Name: 241 tactictoe_prove_241
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.021538
+
+Name: 242 tactictoe_prove_242
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.044511
+
+Name: 243 INT_QUOT_UNIQUE
+Org tac number: 27
+Original proof time: 0.0
+Recording proof time: 1.165102
+
+Name: 244 INT_QUOT_ID
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.128411
+
+Name: 245 tactictoe_prove_245
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.108134
+
+Name: 246 INT_REM
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.102929
+
+Name: 247 tactictoe_prove_247
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.082535
+
+Name: 248 tactictoe_prove_248
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009913
+
+Name: 249 tactictoe_prove_249
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.269278
+
+Name: 250 tactictoe_prove_250
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.12919
+
+Name: 251 tactictoe_prove_251
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017455
+
+Name: 252 INT_REMQUOT
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.406324
+
+Name: 253 INT_REM_UNIQUE
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.258989
+
+Name: 254 INT_REM_NEG
+Statistics
+  infstep : 3028
+  nodes   : 1168
+  maxdepth: 9
+Time: 60.039368
+  inferstep time: 28.69647
+  node_find time: 1.698214
+  node_crea time: 29.60074
+    pred time: 3.94954
+    thmpred time: 0.000207
+    mc time: 15.39209
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.44986
+
+Name: 255 INT_REM_ID
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.240532
+
+Name: 256 INT_REM0
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.126889
+
+Name: 257 INT_REM_COMMON_FACTOR
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.10358
+
+Name: 258 INT_REM_EQ0
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.579573
+
+Name: 259 INT_MUL_QUOT
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.517704
+
+Name: 260 INT_REM_EQ_MOD
+Org tac number: 33
+Original proof time: 0.0
+Recording proof time: 1.99327
+
+Name: 261 INT_DIVIDES_MOD0
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.342461
+
+Name: 262 INT_DIVIDES_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012543
+
+Name: 263 INT_DIVIDES_1
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.10135
+
+Name: 264 INT_DIVIDES_REFL
+proof length: 7
+proof time: 0.021687
+Statistics
+  infstep : 352
+  nodes   : 48
+  maxdepth: 5
+Time: 5.585492
+  inferstep time: 4.854828
+  node_find time: 0.013668
+  node_crea time: 0.686224
+    pred time: 0.313974
+    thmpred time: 0.000042
+    mc time: 0.190077
+    inst time: 0.0
+Proof found: REPEAT_TCL DISJ_CASES_THEN MP_TAC (SPEC (``y:int``) (fetch "integer" "INT_LT_NEGTOTAL")) THENL [REWRITE_TAC [fetch "integer" "INT_DIVIDES_MOD0"] THEN METIS_TAC [fetch "integer" "INT_MOD_ID"], REWRITE_TAC [fetch "integer" "INT_DIVIDES_MOD0"] THEN METIS_TAC [fetch "integer" "INT_MOD_ID"], REWRITE_TAC [fetch "integer" "INT_DIVIDES_MOD0", fetch "integer" "INT_NEG_GT0"] THEN METIS_TAC [fetch "integer" "INT_MOD_ID"]]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013272
+
+Name: 265 INT_DIVIDES_TRANS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014657
+
+Name: 266 INT_DIVIDES_MUL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010996
+
+Name: 267 INT_DIVIDES_LMUL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.0295
+
+Name: 268 INT_DIVIDES_RMUL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01052
+
+Name: 269 INT_DIVIDES_MUL_BOTH
+Original proof time: 0.007171
+
+Name: 270 INT_DIVIDES_LADD
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.191752
+
+Name: 271 INT_DIVIDES_NEG
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.336216
+
+Name: 272 INT_DIVIDES_LSUB
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.050224
+
+Name: 273 INT_DIVIDES_RSUB
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.051637
+
+Name: 274 INT_EXP
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.071955
+
+Name: 275 INT_EXP_EQ0
+Statistics
+  infstep : 3283
+  nodes   : 566
+  maxdepth: 7
+Time: 60.014029
+  inferstep time: 45.261857
+  node_find time: 1.104416
+  node_crea time: 13.376595
+    pred time: 3.498726
+    thmpred time: 0.000211
+    mc time: 7.454302
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.383722
+
+Name: 276 INT_MUL_SIGN_CASES
+Org tac number: 27
+Original proof time: 0.0
+Recording proof time: 1.793322
+
+Name: 277 INT_EXP_NEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.127894
+
+Name: 278 INT_EXP_ADD_EXPONENTS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.193219
+
+Name: 279 INT_EXP_MULTIPLY_EXPONENTS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.079371
+
+Name: 280 INT_EXP_MOD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.070784
+
+Name: 281 INT_EXP_SUBTRACT_EXPONENTS
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.763468
+
+Name: 282 INT_MIN_LT
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.130064
+
+Name: 283 INT_MAX_LT
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.147609
+
+Name: 284 INT_MIN_NUM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014603
+
+Name: 285 INT_MAX_NUM
+proof length: 2
+proof time: 0.008719
+Statistics
+  infstep : 9
+  nodes   : 5
+  maxdepth: 2
+Time: 0.621883
+  inferstep time: 0.5202
+  node_find time: 0.000172
+  node_crea time: 0.080134
+    pred time: 0.026589
+    thmpred time: 0.000005
+    mc time: 0.067524
+    inst time: 0.0
+Proof found: ASM_REWRITE_TAC [fetch "integer" "INT_MAX", MAX_DEF] THEN METIS_TAC [fetch "integer" "INT_LT"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009145
+
+Name: 286 INT_LT_MONO
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.105713
+
+Name: 287 INT_LE_MONO
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.186877
+
+Name: 288 INFINITE_INT_UNIV
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.397435
+
+Name: 289 INT_ADD_CALCULATE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.056064
+
+Name: 290 INT_ADD_REDUCE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.058607
+
+Name: 291 INT_SUB_REDUCE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012726
+
+Name: 292 INT_MUL_REDUCE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016032
+
+Name: 293 tactictoe_prove_293
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019456
+
+Name: 294 INT_DIV_REDUCE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.321906
+
+Name: 295 INT_QUOT_REDUCE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.033691
+
+Name: 296 INT_MOD_REDUCE
+Statistics
+  infstep : 2876
+  nodes   : 701
+  maxdepth: 6
+Time: 60.050285
+  inferstep time: 36.644658
+  node_find time: 0.813045
+  node_crea time: 20.694197
+    pred time: 3.928077
+    thmpred time: 0.000171
+    mc time: 13.010455
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.111837
+
+Name: 297 INT_REM_REDUCE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.099064
+
+Name: 298 tactictoe_prove_298
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019128
+
+Name: 299 tactictoe_prove_299
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012943
+
+Name: 300 INT_EXP_CALCULATE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.049113
+
+Name: 301 INT_EXP_REDUCE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014288
+
+Name: 302 INT_LT_REDUCE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.042472
+
+Name: 303 INT_LE_REDUCE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.055969
+
+Name: 304 INT_EQ_REDUCE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.048305
+
+Name: 305 INT_DIVIDES_REDUCE
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.159805
+Bad stac: 4

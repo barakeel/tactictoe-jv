@@ -1,0 +1,173 @@
+
+Name: 0 biprefix_refl
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003645
+
+Name: 1 biprefix_sym
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004991
+
+Name: 2 biprefix_append
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.110504
+
+Name: 3 biprefix_cons
+proof length: 2
+proof time: 0.01292
+Statistics
+  infstep : 19
+  nodes   : 7
+  maxdepth: 3
+Time: 0.698341
+  inferstep time: 0.599132
+  node_find time: 0.000311
+  node_crea time: 0.076159
+    pred time: 0.026928
+    thmpred time: 0.000002
+    mc time: 0.059512
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "Encode" "biprefix_def"] THEN METIS_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.049988
+
+Name: 4 biprefix_appends
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003385
+
+Name: 5 wf_encoder_alt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.021614
+
+Name: 6 wf_encoder_eq
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006283
+
+Name: 7 wf_encoder_total
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004875
+
+Name: 8 wf_encode_unit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005059
+
+Name: 9 wf_encode_bool
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003672
+
+Name: 10 encode_prod_alt
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.076412
+
+Name: 11 wf_encode_prod
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.6997
+
+Name: 12 wf_encode_sum
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.116675
+
+Name: 13 wf_encode_option
+proof length: 11
+proof time: 0.035253
+Statistics
+  infstep : 581
+  nodes   : 169
+  maxdepth: 6
+Time: 15.201774
+  inferstep time: 10.450075
+  node_find time: 0.052968
+  node_crea time: 4.341862
+    pred time: 0.958166
+    thmpred time: 0.000062
+    mc time: 2.163048
+    inst time: 0.0
+Proof found: let fun fs l = FULL_SIMP_TAC (srw_ss ()) l in SRW_TAC [] [fetch "Encode" "lift_option_def", fetch "Encode" "wf_encoder_def", option_case_compute] THEN Cases_on `x` THENL [Cases_on `y` THENL [METIS_TAC [], FULL_SIMP_TAC numLib.std_ss [] THEN METIS_TAC [fetch "Encode" "encode_option_def", IS_PREFIX]], FULL_SIMP_TAC numLib.std_ss [] THEN Cases_on `y` THENL [SRW_TAC [] [] THEN METIS_TAC [fetch "Encode" "encode_option_def", IS_PREFIX], fs [fetch "Encode" "encode_option_def"]]] end
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.107092
+
+Name: 14 wf_encode_list
+Org tac number: 19
+Original proof time: 0.0
+Recording proof time: 0.674212
+
+Name: 15 encode_list_cong
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.146899
+
+Name: 16 lift_blist_suc
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00595
+
+Name: 17 wf_encode_blist
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.615892
+
+Name: 18 wf_encode_num
+Original proof time: 0.102452
+
+Name: 19 wf_pred_bnum_total
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.081849
+
+Name: 20 wf_pred_bnum
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.062148
+
+Name: 21 encode_bnum_length
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027802
+
+Name: 22 encode_bnum_inj
+Original proof time: 0.00989
+
+Name: 23 wf_encode_bnum_collision_free
+Original proof time: 0.118229
+
+Name: 24 wf_encode_bnum
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003872
+
+Name: 25 tree_ind
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.335148
+
+Name: 26 wf_encode_tree
+Statistics
+  infstep : 3369
+  nodes   : 650
+  maxdepth: 8
+Time: 60.027203
+  inferstep time: 45.986879
+  node_find time: 1.16073
+  node_crea time: 12.836838
+    pred time: 2.532081
+    thmpred time: 0.000278
+    mc time: 5.849578
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 40
+Original proof time: 0.0
+Recording proof time: 2.076619
+Bad stac: 0

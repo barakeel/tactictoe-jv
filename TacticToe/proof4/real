@@ -1,0 +1,2353 @@
+
+Name: 0 REAL_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004679
+
+Name: 1 REAL_1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003873
+
+Name: 2 REAL_ADD_RID
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.055588
+
+Name: 3 REAL_ADD_RINV
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.056901
+
+Name: 4 REAL_MUL_RID
+proof length: 1
+proof time: 0.007336
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.072774
+  inferstep time: 0.041664
+  node_find time: 0.000011
+  node_crea time: 0.021495
+    pred time: 0.006227
+    thmpred time: 0.000001
+    mc time: 0.022367
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_1", fetch "real" "REAL_MUL_COMM", realaxTheory.REAL_MUL_LID]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.073673
+
+Name: 5 REAL_MUL_RINV
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.07318
+
+Name: 6 REAL_RDISTRIB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065396
+
+Name: 7 REAL_EQ_LADD
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.140183
+
+Name: 8 REAL_EQ_RADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.057001
+
+Name: 9 REAL_ADD_LID_UNIQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.081568
+
+Name: 10 REAL_ADD_RID_UNIQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.081514
+
+Name: 11 REAL_LNEG_UNIQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.04712
+
+Name: 12 REAL_RNEG_UNIQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.137403
+
+Name: 13 REAL_NEG_ADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.190899
+
+Name: 14 REAL_MUL_LZERO
+proof length: 5
+proof time: 0.063085
+Statistics
+  infstep : 2174
+  nodes   : 443
+  maxdepth: 7
+Time: 30.18779
+  inferstep time: 23.643288
+  node_find time: 0.396077
+  node_crea time: 6.088821
+    pred time: 1.46865
+    thmpred time: 0.000104
+    mc time: 3.287072
+    inst time: 0.0
+Proof found: REPEAT GEN_TAC THEN GEN_REWR_TAC (LAND_CONV o RAND_CONV) [GSYM (fetch "real" "REAL_ADD_LID")] THEN GEN_REWR_TAC (LAND_CONV o RAND_CONV) [GSYM (fetch "real" "REAL_ADD_LID")] THEN GEN_REWR_TAC (LAND_CONV o RAND_CONV) [GSYM (fetch "real" "REAL_ADD_LID")] THEN metisTools.METIS_TAC [DB.fetch "real" "REAL_ADD_LID", DB.fetch "real" "REAL_MUL_RINV", DB.fetch "real" "REAL_MUL_LINV", DB.fetch "real" "REAL_LT_MUL", DB.fetch "real" "REAL_ADD_LID_UNIQ", DB.fetch "real" "REAL_ADD_RID_UNIQ", DB.fetch "real" "REAL_RNEG_UNIQ", DB.fetch "real" "REAL_LNEG_UNIQ", DB.fetch "real" "REAL_ADD_LINV", DB.fetch "real" "REAL_ADD_RINV", DB.fetch "real" "REAL_ADD_RID", DB.fetch "real" "real_of_num", DB.fetch "real" "REAL_MUL_LID", DB.fetch "real" "REAL_RDISTRIB"]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.053186
+
+Name: 15 REAL_MUL_RZERO
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.109204
+
+Name: 16 REAL_NEG_LMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064969
+
+Name: 17 REAL_NEG_RMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.087834
+
+Name: 18 REAL_NEGNEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.057679
+
+Name: 19 REAL_NEG_MUL2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016955
+
+Name: 20 REAL_ENTIRE
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.216249
+
+Name: 21 REAL_LT_LADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.117434
+
+Name: 22 REAL_LT_RADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.046911
+
+Name: 23 REAL_NOT_LT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.052754
+
+Name: 24 REAL_LT_ANTISYM
+proof length: 2
+proof time: 0.006797
+Statistics
+  infstep : 33
+  nodes   : 7
+  maxdepth: 2
+Time: 0.540515
+  inferstep time: 0.448122
+  node_find time: 0.000356
+  node_crea time: 0.081778
+    pred time: 0.027787
+    thmpred time: 0.000001
+    mc time: 0.048385
+    inst time: 0.0
+Proof found: ONCE_REWRITE_TAC [real_lt] THEN METIS_TAC [TREAL_LT_REFL, TREAL_LT_TRANS]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.037761
+
+Name: 25 REAL_LT_GT
+Original proof time: 0.000121
+
+Name: 26 REAL_NOT_LE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04238
+
+Name: 27 REAL_LE_TOTAL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034722
+
+Name: 28 REAL_LET_TOTAL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.081959
+
+Name: 29 REAL_LTE_TOTAL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.353631
+
+Name: 30 REAL_LE_REFL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03292
+
+Name: 31 REAL_LE_LT
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.166089
+
+Name: 32 REAL_LT_LE
+Original proof time: 0.000417
+
+Name: 33 REAL_LT_IMP_LE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.056427
+
+Name: 34 REAL_LTE_TRANS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.089403
+
+Name: 35 REAL_LET_TRANS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.083518
+
+Name: 36 REAL_LE_TRANS
+proof length: 1
+proof time: 0.041594
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.078204
+  inferstep time: 0.064205
+  node_find time: 0.000012
+  node_crea time: 0.009432
+    pred time: 0.002998
+    thmpred time: 0.0
+    mc time: 0.009528
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_LTE_TRANS", fetch "real" "REAL_LET_TRANS", fetch "real" "REAL_NOT_LE", fetch "real" "REAL_LE_REFL", fetch "real" "REAL_LT_TRANS"]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.175418
+
+Name: 37 REAL_LE_ANTISYM
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.168379
+
+Name: 38 REAL_LET_ANTISYM
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.096398
+
+Name: 39 REAL_LTE_ANTSYM
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.082196
+
+Name: 40 REAL_NEG_LT0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.220591
+
+Name: 41 REAL_NEG_GT0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036465
+
+Name: 42 REAL_NEG_LE0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.072857
+
+Name: 43 REAL_NEG_GE0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.058292
+
+Name: 44 REAL_LT_NEGTOTAL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.062416
+
+Name: 45 REAL_LE_NEGTOTAL
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.095497
+
+Name: 46 REAL_LE_MUL
+proof length: 3
+proof time: 0.014787
+Statistics
+  infstep : 32
+  nodes   : 17
+  maxdepth: 3
+Time: 1.046
+  inferstep time: 0.781335
+  node_find time: 0.000603
+  node_crea time: 0.250134
+    pred time: 0.074989
+    thmpred time: 0.000003
+    mc time: 0.120791
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "real" "REAL_LE_LT")] THEN SRW_TAC [] [fetch "real" "real_of_num", real_mul] THEN METIS_TAC [real_mul, realaxTheory.REAL_LT_MUL]
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.607417
+
+Name: 47 REAL_LE_SQUARE
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.084466
+
+Name: 48 REAL_LE_01
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037959
+
+Name: 49 REAL_LT_01
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.057432
+
+Name: 50 REAL_LE_LADD
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.093576
+
+Name: 51 REAL_LE_RADD
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.117958
+
+Name: 52 REAL_LT_ADD2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.164036
+
+Name: 53 REAL_LE_ADD2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.145963
+
+Name: 54 REAL_LE_ADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.056034
+
+Name: 55 REAL_LT_ADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.172033
+
+Name: 56 REAL_LT_ADDNEG
+Statistics
+  infstep : 7456
+  nodes   : 1523
+  maxdepth: 8
+Time: 60.105749
+  inferstep time: 35.960827
+  node_find time: 5.026573
+  node_crea time: 18.858978
+    pred time: 2.856065
+    thmpred time: 0.000153
+    mc time: 9.276135
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.061992
+
+Name: 57 REAL_LT_ADDNEG2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.071115
+
+Name: 58 REAL_LT_ADD1
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.195691
+
+Name: 59 REAL_SUB_ADD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030519
+
+Name: 60 REAL_SUB_ADD2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06397
+
+Name: 61 REAL_SUB_REFL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.050276
+
+Name: 62 REAL_SUB_0
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.173107
+
+Name: 63 REAL_LE_DOUBLE
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.168976
+
+Name: 64 REAL_LE_NEGL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.056168
+
+Name: 65 REAL_LE_NEGR
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.156818
+
+Name: 66 REAL_NEG_EQ0
+proof length: 1
+proof time: 0.019089
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.095068
+  inferstep time: 0.072551
+  node_find time: 0.000015
+  node_crea time: 0.017362
+    pred time: 0.004823
+    thmpred time: 0.000001
+    mc time: 0.015191
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_ADD_RID_UNIQ", fetch "real" "REAL_ADD_RINV"]
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.215549
+
+Name: 67 REAL_NEG_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003447
+
+Name: 68 REAL_NEG_SUB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.084102
+
+Name: 69 REAL_SUB_LT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.066031
+
+Name: 70 REAL_SUB_LE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.130229
+
+Name: 71 REAL_ADD_SUB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.182962
+
+Name: 72 REAL_EQ_LMUL
+Original proof time: 0.000635
+
+Name: 73 REAL_EQ_RMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.081215
+
+Name: 74 REAL_SUB_LDISTRIB
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.029246
+
+Name: 75 REAL_SUB_RDISTRIB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.070879
+
+Name: 76 REAL_NEG_EQ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.112267
+
+Name: 77 REAL_NEG_MINUS1
+proof length: 1
+proof time: 0.00659
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.075736
+  inferstep time: 0.049925
+  node_find time: 0.000018
+  node_crea time: 0.017823
+    pred time: 0.005632
+    thmpred time: 0.000001
+    mc time: 0.018052
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_MUL_LID", fetch "real" "REAL_NEG_LMUL"]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.084962
+
+Name: 78 REAL_INV_NZ
+Original proof time: 0.000245
+
+Name: 79 REAL_INVINV
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.393045
+
+Name: 80 REAL_LT_IMP_NE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.11741
+
+Name: 81 REAL_INV_POS
+Original proof time: 0.000538
+
+Name: 82 REAL_LT_LMUL_0
+Original proof time: 0.000384
+
+Name: 83 REAL_LT_RMUL_0
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.059895
+
+Name: 84 REAL_LT_LMUL
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.133452
+
+Name: 85 REAL_LT_RMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.080793
+
+Name: 86 REAL_LT_RMUL_IMP
+Original proof time: 0.000156
+
+Name: 87 REAL_LT_LMUL_IMP
+Original proof time: 0.000159
+
+Name: 88 REAL_LINV_UNIQ
+Original proof time: 0.00032
+
+Name: 89 REAL_RINV_UNIQ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.061713
+
+Name: 90 REAL_INV_INV
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.218727
+
+Name: 91 REAL_INV_EQ_0
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.165311
+
+Name: 92 REAL_NEG_INV
+Original proof time: 0.000224
+
+Name: 93 REAL_INV_1OVER
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.028673
+
+Name: 94 REAL_LT_INV_EQ
+proof length: 1
+proof time: 0.010078
+Statistics
+  infstep : 19
+  nodes   : 6
+  maxdepth: 3
+Time: 0.474654
+  inferstep time: 0.419996
+  node_find time: 0.000176
+  node_crea time: 0.050284
+    pred time: 0.026609
+    thmpred time: 0.000002
+    mc time: 0.01672
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_INV_INV", fetch "real" "REAL_INV_POS"]
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.109754
+
+Name: 95 REAL_LE_INV_EQ
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.064917
+
+Name: 96 REAL_LE_INV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006974
+
+Name: 97 REAL_LE_ADDR
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.096206
+
+Name: 98 REAL_LE_ADDL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.051466
+
+Name: 99 REAL_LT_ADDR
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.076771
+
+Name: 100 REAL_LT_ADDL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.054352
+
+Name: 101 REAL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.062025
+
+Name: 102 REAL_POS
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.152364
+
+Name: 103 REAL_LE
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.268903
+
+Name: 104 REAL_LT
+proof length: 12
+proof time: 0.015311
+Statistics
+  infstep : 4210
+  nodes   : 809
+  maxdepth: 8
+Time: 43.16406
+  inferstep time: 31.300484
+  node_find time: 1.478965
+  node_crea time: 10.149942
+    pred time: 2.097904
+    thmpred time: 0.000157
+    mc time: 5.095647
+    inst time: 0.0
+Proof found: REPEAT INDUCT_TAC THENL [SRW_TAC [] [], SRW_TAC [] [fetch "real" "real_of_num"] THEN SRW_TAC [] [fetch "real" "REAL_1"] THEN METIS_TAC [fetch "real" "real_of_num", fetch "real" "REAL_POS", fetch "real" "REAL_LT_ADD1"], REWRITE_TAC [(fetch "real" "REAL_LT_LE")] THEN SRW_TAC [] [fetch "real" "real_of_num"] THEN REWRITE_TAC [(fetch "real" "REAL_NOT_LE")] THEN METIS_TAC [fetch "real" "real_of_num", fetch "real" "REAL_POS", fetch "real" "REAL_LT_ADD1"], ASM_REWRITE_TAC [(fetch "real" "REAL")] THEN boolLib.ASM_REWRITE_TAC [(fetch "arithmetic" "LESS_MONO_EQ")] THEN SRW_TAC [] []]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04832
+
+Name: 105 REAL_INJ
+Original proof time: 0.000155
+
+Name: 106 REAL_ADD
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.270922
+
+Name: 107 REAL_MUL
+Original proof time: 0.000578
+
+Name: 108 REAL_INV1
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.074617
+
+Name: 109 REAL_OVER1
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027877
+
+Name: 110 REAL_DIV_REFL
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.048776
+
+Name: 111 REAL_DIV_LZERO
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.038892
+
+Name: 112 REAL_LT_NZ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.117007
+
+Name: 113 REAL_NZ_IMP_LT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04115
+
+Name: 114 REAL_LT_RDIV_0
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.25553
+
+Name: 115 REAL_LT_RDIV
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.131152
+
+Name: 116 REAL_LT_FRACTION_0
+proof length: 1
+proof time: 0.013656
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.104394
+  inferstep time: 0.091441
+  node_find time: 0.000012
+  node_crea time: 0.009503
+    pred time: 0.003317
+    thmpred time: 0.0
+    mc time: 0.008073
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_LT_RDIV_0", fetch "real" "REAL_NZ_IMP_LT"]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.124763
+
+Name: 117 REAL_LT_MULTIPLE
+Org tac number: 22
+Original proof time: 0.0
+Recording proof time: 0.643783
+
+Name: 118 REAL_LT_FRACTION
+Original proof time: 0.000603
+
+Name: 119 REAL_LT_HALF1
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.050243
+
+Name: 120 REAL_LT_HALF2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.087183
+
+Name: 121 REAL_DOUBLE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.089444
+
+Name: 122 REAL_DIV_LMUL
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.193455
+
+Name: 123 REAL_DIV_RMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.098358
+
+Name: 124 REAL_HALF_DOUBLE
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.147643
+
+Name: 125 REAL_DOWN
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.087051
+
+Name: 126 REAL_DOWN2
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.330552
+
+Name: 127 REAL_SUB_SUB
+proof length: 1
+proof time: 0.015199
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.056415
+  inferstep time: 0.041583
+  node_find time: 0.00001
+  node_crea time: 0.011871
+    pred time: 0.003405
+    thmpred time: 0.0
+    mc time: 0.009989
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_NEG_SUB", fetch "real" "REAL_SUB_ADD", fetch "real" "REAL_ADD_SUB"]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.290325
+
+Name: 128 REAL_LT_ADD_SUB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064744
+
+Name: 129 REAL_LT_SUB_RADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.093029
+
+Name: 130 REAL_LT_SUB_LADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.08006
+
+Name: 131 REAL_LE_SUB_LADD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.028599
+
+Name: 132 REAL_LE_SUB_RADD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030432
+
+Name: 133 REAL_LT_NEG
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.107742
+
+Name: 134 REAL_LE_NEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.075908
+
+Name: 135 REAL_ADD2_SUB2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.057371
+
+Name: 136 REAL_SUB_LZERO
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027955
+
+Name: 137 REAL_SUB_RZERO
+proof length: 1
+proof time: 0.010855
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.053089
+  inferstep time: 0.042661
+  node_find time: 0.000011
+  node_crea time: 0.007967
+    pred time: 0.00343
+    thmpred time: 0.0
+    mc time: 0.005566
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_SUB_REFL", fetch "real" "REAL_SUB_ADD2", fetch "real" "REAL_SUB_SUB"]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027949
+
+Name: 138 REAL_LET_ADD2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.129749
+
+Name: 139 REAL_LTE_ADD2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.083413
+
+Name: 140 REAL_LET_ADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.106179
+
+Name: 141 REAL_LTE_ADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.117529
+
+Name: 142 REAL_LT_MUL2
+Original proof time: 0.001367
+
+Name: 143 REAL_LT_INV
+Org tac number: 27
+Original proof time: 0.0
+Recording proof time: 0.954116
+
+Name: 144 REAL_SUB_LNEG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.048506
+
+Name: 145 REAL_SUB_RNEG
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027466
+
+Name: 146 REAL_SUB_NEG2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.088686
+
+Name: 147 REAL_SUB_TRIANGLE
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.155618
+
+Name: 148 REAL_EQ_SUB_LADD
+proof length: 1
+proof time: 0.049432
+Statistics
+  infstep : 211
+  nodes   : 68
+  maxdepth: 6
+Time: 3.198299
+  inferstep time: 2.620826
+  node_find time: 0.008669
+  node_crea time: 0.560469
+    pred time: 0.172163
+    thmpred time: 0.000015
+    mc time: 0.249065
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_SUB_ADD", fetch "real" "REAL_ADD_LID_UNIQ", fetch "real" "REAL_ADD_RID_UNIQ", fetch "real" "REAL_LT_SUB_LADD", fetch "real" "real_sub"]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.105399
+
+Name: 149 REAL_EQ_SUB_RADD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.069504
+
+Name: 150 REAL_INV_MUL
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.360752
+
+Name: 151 REAL_LE_LMUL
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.167456
+
+Name: 152 REAL_LE_RMUL
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064218
+
+Name: 153 REAL_SUB_INV2
+Original proof time: 0.000807
+
+Name: 154 REAL_SUB_SUB2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.106868
+
+Name: 155 REAL_ADD_SUB2
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.085109
+
+Name: 156 REAL_MEAN
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.225103
+
+Name: 157 REAL_EQ_LMUL2
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.186067
+
+Name: 158 REAL_LE_MUL2
+Original proof time: 0.001147
+
+Name: 159 REAL_LE_LDIV
+Original proof time: 0.000122
+
+Name: 160 REAL_LE_RDIV
+Original proof time: 0.000162
+
+Name: 161 REAL_LT_DIV
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.123913
+
+Name: 162 REAL_LE_DIV
+proof length: 2
+proof time: 0.001987
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.27742
+  inferstep time: 0.25391
+  node_find time: 0.000076
+  node_crea time: 0.018165
+    pred time: 0.007675
+    thmpred time: 0.000002
+    mc time: 0.011106
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "real" "real_div"] THEN SRW_TAC [] [fetch "real" "REAL_LE_INV_EQ", fetch "real" "REAL_LE_MUL"]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.091235
+
+Name: 163 REAL_LT_1
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.53519
+
+Name: 164 REAL_LE_LMUL_IMP
+Original proof time: 0.000334
+
+Name: 165 REAL_LE_RMUL_IMP
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030527
+
+Name: 166 REAL_EQ_IMP_LE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.096259
+
+Name: 167 REAL_INV_LT1
+Org tac number: 31
+Original proof time: 0.0
+Recording proof time: 0.98511
+
+Name: 168 REAL_POS_NZ
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.080181
+
+Name: 169 REAL_EQ_RMUL_IMP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.096394
+
+Name: 170 REAL_EQ_LMUL_IMP
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04007
+
+Name: 171 REAL_FACT_NZ
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.056908
+
+Name: 172 REAL_DIFFSQ
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.303152
+
+Name: 173 REAL_POASQ
+Statistics
+  infstep : 3148
+  nodes   : 821
+  maxdepth: 8
+Time: 60.013464
+  inferstep time: 41.477873
+  node_find time: 1.150986
+  node_crea time: 16.815183
+    pred time: 4.60836
+    thmpred time: 0.000226
+    mc time: 4.368267
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.194674
+
+Name: 174 REAL_SUMSQ
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.3494
+
+Name: 175 REAL_EQ_NEG
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.086777
+
+Name: 176 REAL_DIV_MUL2
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.243131
+
+Name: 177 REAL_MIDDLE1
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.249352
+
+Name: 178 REAL_MIDDLE2
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.228538
+
+Name: 179 ABS_ZERO
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.080479
+
+Name: 180 ABS_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008936
+
+Name: 181 ABS_1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004032
+
+Name: 182 ABS_NEG
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.432095
+
+Name: 183 ABS_TRIANGLE
+Statistics
+  infstep : 6328
+  nodes   : 1107
+  maxdepth: 9
+Time: 60.00397
+  inferstep time: 37.965622
+  node_find time: 2.99058
+  node_crea time: 18.535424
+    pred time: 3.198771
+    thmpred time: 0.000258
+    mc time: 5.933427
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.452681
+
+Name: 184 ABS_POS
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.204988
+
+Name: 185 ABS_MUL
+Org tac number: 21
+Original proof time: 0.0
+Recording proof time: 1.065136
+
+Name: 186 ABS_LT_MUL2
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.119431
+
+Name: 187 ABS_SUB
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.071083
+
+Name: 188 ABS_NZ
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.257611
+
+Name: 189 ABS_INV
+Original proof time: 0.000255
+
+Name: 190 ABS_ABS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.13178
+
+Name: 191 ABS_LE
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.407685
+
+Name: 192 ABS_REFL
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.336033
+
+Name: 193 ABS_N
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.026257
+
+Name: 194 ABS_BETWEEN
+Statistics
+  infstep : 4565
+  nodes   : 978
+  maxdepth: 8
+Time: 60.098228
+  inferstep time: 43.827414
+  node_find time: 1.848987
+  node_crea time: 14.283755
+    pred time: 3.237047
+    thmpred time: 0.000182
+    mc time: 5.96601
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 33
+Original proof time: 0.0
+Recording proof time: 1.157405
+
+Name: 195 ABS_BOUND
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.206516
+
+Name: 196 ABS_STILLNZ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.130911
+
+Name: 197 ABS_CASES
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.09219
+
+Name: 198 ABS_BETWEEN1
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.258557
+
+Name: 199 ABS_SIGN
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.051274
+
+Name: 200 ABS_SIGN2
+Original proof time: 0.000294
+
+Name: 201 ABS_DIV
+Original proof time: 0.000245
+
+Name: 202 ABS_CIRCLE
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.199577
+
+Name: 203 REAL_SUB_ABS
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.382902
+
+Name: 204 ABS_SUB_ABS
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.166236
+
+Name: 205 ABS_BETWEEN2
+Org tac number: 73
+Original proof time: 0.0
+Recording proof time: 2.888741
+
+Name: 206 ABS_BOUNDS
+Statistics
+  infstep : 3925
+  nodes   : 891
+  maxdepth: 8
+Time: 60.006831
+  inferstep time: 44.747246
+  node_find time: 1.55637
+  node_crea time: 13.277324
+    pred time: 2.952315
+    thmpred time: 0.000186
+    mc time: 6.385647
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.828472
+
+Name: 207 POW_0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.044353
+
+Name: 208 POW_NZ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.1029
+
+Name: 209 POW_INV
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.308378
+
+Name: 210 POW_ABS
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064343
+
+Name: 211 POW_PLUS1
+Original proof time: 0.001754
+
+Name: 212 POW_ADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.131622
+
+Name: 213 POW_1
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065509
+
+Name: 214 POW_2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.108933
+
+Name: 215 POW_ONE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.045075
+
+Name: 216 POW_POS
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.322096
+
+Name: 217 POW_LE
+proof length: 3
+proof time: 0.002172
+Statistics
+  infstep : 24
+  nodes   : 11
+  maxdepth: 3
+Time: 1.173721
+  inferstep time: 1.036854
+  node_find time: 0.000346
+  node_crea time: 0.117243
+    pred time: 0.037185
+    thmpred time: 0.000005
+    mc time: 0.069787
+    inst time: 0.0
+Proof found: INDUCT_TAC THENL [SRW_TAC [] [fetch "real" "pow"], SRW_TAC [] [fetch "real" "pow", fetch "real" "POW_POS", fetch "real" "REAL_LE_MUL2"]]
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.355497
+
+Name: 218 POW_M1
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.069588
+
+Name: 219 POW_MUL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.124743
+
+Name: 220 REAL_LE_POW2
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036034
+
+Name: 221 ABS_POW2
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.056946
+
+Name: 222 REAL_POW2_ABS
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.1215
+
+Name: 223 REAL_LE1_POW2
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.24365
+
+Name: 224 REAL_LT1_POW2
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.221115
+
+Name: 225 POW_POS_LT
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.336374
+
+Name: 226 POW_2_LE1
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.144701
+
+Name: 227 POW_2_LT
+Statistics
+  infstep : 3172
+  nodes   : 590
+  maxdepth: 8
+Time: 60.023781
+  inferstep time: 46.850008
+  node_find time: 0.870127
+  node_crea time: 12.148973
+    pred time: 2.604476
+    thmpred time: 0.000261
+    mc time: 7.548601
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.19926
+
+Name: 228 POW_MINUS1
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.198643
+
+Name: 229 POW_LT
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.66659
+
+Name: 230 REAL_POW_LT
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.206811
+
+Name: 231 POW_EQ
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.451742
+
+Name: 232 POW_ZERO
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.211083
+
+Name: 233 POW_ZERO_EQ
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.174615
+
+Name: 234 REAL_POW_LT2
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.399656
+
+Name: 235 tactictoe_prove_235
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.216127
+
+Name: 236 REAL_POW_MONO_LT
+Org tac number: 20
+Original proof time: 0.0
+Recording proof time: 0.681333
+
+Name: 237 REAL_POW_POW
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.110212
+
+Name: 238 REAL_SUP_SOMEPOS
+Original proof time: 0.001254
+
+Name: 239 SUP_LEMMA1
+Statistics
+  infstep : 5436
+  nodes   : 1124
+  maxdepth: 8
+Time: 60.007185
+  inferstep time: 40.926996
+  node_find time: 2.550207
+  node_crea time: 16.472265
+    pred time: 3.328908
+    thmpred time: 0.000195
+    mc time: 7.592653
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.443764
+
+Name: 240 SUP_LEMMA2
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.472171
+
+Name: 241 SUP_LEMMA3
+Original proof time: 0.00017
+
+Name: 242 REAL_SUP_EXISTS
+Original proof time: 0.000277
+
+Name: 243 REAL_SUP
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.094652
+
+Name: 244 REAL_SUP_UBOUND
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.481405
+
+Name: 245 SETOK_LE_LT
+Original proof time: 0.00018
+
+Name: 246 REAL_SUP_LE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039081
+
+Name: 247 REAL_SUP_UBOUND_LE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.028201
+
+Name: 248 REAL_ARCH
+Original proof time: 0.001909
+
+Name: 249 REAL_ARCH_LEAST
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.870508
+
+Name: 250 SUM_TWO
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.146924
+
+Name: 251 SUM_DIFF
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.24112
+
+Name: 252 ABS_SUM
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.251581
+
+Name: 253 SUM_LE
+Statistics
+  infstep : 6401
+  nodes   : 836
+  maxdepth: 8
+Time: 60.043972
+  inferstep time: 41.117608
+  node_find time: 2.318026
+  node_crea time: 16.426779
+    pred time: 2.327418
+    thmpred time: 0.00014
+    mc time: 9.297101
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.444571
+
+Name: 254 SUM_EQ
+Original proof time: 0.000351
+
+Name: 255 SUM_POS
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.16745
+
+Name: 256 SUM_POS_GEN
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.214753
+
+Name: 257 SUM_ABS
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.231047
+
+Name: 258 SUM_ABS_LE
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.238076
+
+Name: 259 SUM_ZERO
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.309104
+
+Name: 260 SUM_ADD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.171453
+
+Name: 261 SUM_CMUL
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.107672
+
+Name: 262 SUM_NEG
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.140606
+
+Name: 263 SUM_SUB
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.097234
+
+Name: 264 SUM_SUBST
+proof length: 1
+proof time: 0.004274
+Statistics
+  infstep : 159
+  nodes   : 14
+  maxdepth: 3
+Time: 1.400762
+  inferstep time: 1.168864
+  node_find time: 0.00197
+  node_crea time: 0.215863
+    pred time: 0.067916
+    thmpred time: 0.000005
+    mc time: 0.110208
+    inst time: 0.0
+Proof found: (ASM_SIMP_TAC (srw_ss () ++ boolSimps.LET_ss ++ ARITH_ss)) [fetch "real" "SUM_EQ"]
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.564255
+
+Name: 265 SUM_NSUB
+Original proof time: 0.001149
+
+Name: 266 SUM_BOUND
+Org tac number: 19
+Original proof time: 0.0
+Recording proof time: 0.651726
+
+Name: 267 SUM_GROUP
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.203519
+
+Name: 268 SUM_1
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.047623
+
+Name: 269 SUM_2
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.099038
+
+Name: 270 SUM_OFFSET
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.482968
+
+Name: 271 SUM_REINDEX
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.284641
+
+Name: 272 SUM_0
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.11462
+
+Name: 273 SUM_PERMUTE_0
+Original proof time: 0.011505
+
+Name: 274 SUM_CANCEL
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.299502
+
+Name: 275 REAL_MUL_RNEG
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.109397
+
+Name: 276 REAL_MUL_LNEG
+proof length: 1
+proof time: 0.007292
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.078958
+  inferstep time: 0.045899
+  node_find time: 0.000257
+  node_crea time: 0.029158
+    pred time: 0.020556
+    thmpred time: 0.000001
+    mc time: 0.010095
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_NEG_MINUS1", fetch "real" "REAL_MUL_ASSOC"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011695
+
+Name: 277 real_lt
+Original proof time: 0.000008
+
+Name: 278 REAL_LE_LNEG
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.183134
+
+Name: 279 REAL_LE_RNEG
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.389232
+
+Name: 280 REAL_POW_INV
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.634033
+
+Name: 281 REAL_POW_DIV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00616
+
+Name: 282 REAL_POW_ADD
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03046
+
+Name: 283 REAL_LE_RDIV_EQ
+Original proof time: 0.001109
+
+Name: 284 REAL_LE_LDIV_EQ
+Original proof time: 0.001125
+
+Name: 285 REAL_LT_RDIV_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007589
+
+Name: 286 REAL_LT_LDIV_EQ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010732
+
+Name: 287 REAL_EQ_RDIV_EQ
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.038244
+
+Name: 288 REAL_EQ_LDIV_EQ
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.038478
+
+Name: 289 REAL_OF_NUM_POW
+proof length: 10
+proof time: 0.022144
+Statistics
+  infstep : 3445
+  nodes   : 695
+  maxdepth: 7
+Time: 48.948075
+  inferstep time: 34.572861
+  node_find time: 1.057438
+  node_crea time: 12.901159
+    pred time: 2.91365
+    thmpred time: 0.00013
+    mc time: 6.683332
+    inst time: 0.0
+Proof found: INDUCT_TAC THENL [INDUCT_TAC THENL [boolLib.ASM_REWRITE_TAC [(fetch "arithmetic" "EXP"), (fetch "arithmetic" "ONE")] THEN REWRITE_TAC [SYM (num_CONV (-- `1:num` --))] THEN METIS_TAC [fetch "real" "pow"], SRW_TAC [] [ZERO_EXP, fetch "real" "pow"]], INDUCT_TAC THENL [SRW_TAC [] [fetch "real" "pow"], SRW_TAC [] [fetch "real" "pow"] THEN boolLib.REWRITE_TAC [ADD1, EXP]]]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.040696
+
+Name: 290 REAL_OF_NUM_SUC
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004074
+
+Name: 291 REAL_EQ_MUL_LCANCEL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019888
+
+Name: 292 REAL_LE_EPSILON
+Original proof time: 0.009969
+
+Name: 293 REAL_BIGNUM
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.104279
+
+Name: 294 REAL_INV_LT_ANTIMONO
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.303847
+
+Name: 295 REAL_INV_INJ
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008788
+
+Name: 296 REAL_DIV_RMUL_CANCEL
+Original proof time: 0.008133
+
+Name: 297 REAL_DIV_LMUL_CANCEL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.03169
+
+Name: 298 REAL_DIV_ADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007599
+
+Name: 299 REAL_ADD_RAT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011057
+
+Name: 300 REAL_SUB_RAT
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.084992
+
+Name: 301 REAL_SUB
+Statistics
+  infstep : 3887
+  nodes   : 685
+  maxdepth: 8
+Time: 60.008436
+  inferstep time: 41.922461
+  node_find time: 1.323609
+  node_crea time: 16.213832
+    pred time: 3.118311
+    thmpred time: 0.000169
+    mc time: 7.380317
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.080307
+
+Name: 302 REAL_POS_POS
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009095
+
+Name: 303 REAL_POS_ID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006177
+
+Name: 304 REAL_POS_INFLATE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.040669
+
+Name: 305 REAL_POS_MONO
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.047859
+
+Name: 306 REAL_POS_EQ_ZERO
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039802
+
+Name: 307 REAL_POS_LE_ZERO
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.05113
+
+Name: 308 REAL_MIN_REFL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004312
+
+Name: 309 REAL_LE_MIN
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034482
+
+Name: 310 REAL_MIN_LE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.075099
+
+Name: 311 REAL_MIN_LE1
+proof length: 1
+proof time: 0.011742
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.078175
+  inferstep time: 0.064673
+  node_find time: 0.000012
+  node_crea time: 0.01023
+    pred time: 0.003938
+    thmpred time: 0.0
+    mc time: 0.008096
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "REAL_LE_MIN", fetch "real" "REAL_LE_TOTAL"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008414
+
+Name: 312 REAL_MIN_LE2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007771
+
+Name: 313 REAL_MIN_ALT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.032605
+
+Name: 314 REAL_MIN_LE_LIN
+Org tac number: 22
+Original proof time: 0.0
+Recording proof time: 0.908799
+
+Name: 315 REAL_MIN_ADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008251
+
+Name: 316 REAL_MIN_SUB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013927
+
+Name: 317 REAL_IMP_MIN_LE2
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.053018
+
+Name: 318 REAL_MAX_REFL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007114
+
+Name: 319 REAL_LE_MAX
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.025634
+
+Name: 320 REAL_LE_MAX1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006606
+
+Name: 321 REAL_LE_MAX2
+proof length: 1
+proof time: 0.009535
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.056483
+  inferstep time: 0.043749
+  node_find time: 0.000024
+  node_crea time: 0.009606
+    pred time: 0.00356
+    thmpred time: 0.0
+    mc time: 0.007652
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "real" "max_def", fetch "real" "REAL_LE_TOTAL"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00603
+
+Name: 322 REAL_MAX_LE
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.076686
+
+Name: 323 REAL_MAX_ALT
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036095
+
+Name: 324 REAL_MAX_MIN
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.14621
+
+Name: 325 REAL_MIN_MAX
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.095533
+
+Name: 326 REAL_LIN_LE_MAX
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.087962
+
+Name: 327 REAL_MAX_ADD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.036078
+
+Name: 328 REAL_MAX_SUB
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008411
+
+Name: 329 REAL_IMP_MAX_LE2
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033507
+
+Name: 330 REAL_SUP_EXISTS_UNIQUE
+Org tac number: 19
+Original proof time: 0.0
+Recording proof time: 0.791392
+
+Name: 331 REAL_SUP_MAX
+Statistics
+  infstep : 5217
+  nodes   : 879
+  maxdepth: 8
+Time: 60.000597
+  inferstep time: 43.343032
+  node_find time: 2.245486
+  node_crea time: 14.356778
+    pred time: 2.876375
+    thmpred time: 0.000166
+    mc time: 6.874496
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.576837
+
+Name: 332 REAL_IMP_SUP_LE
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.234472
+
+Name: 333 REAL_IMP_LE_SUP
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.187485
+
+Name: 334 REAL_INF_MIN
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.305546
+
+Name: 335 REAL_IMP_LE_INF
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.240199
+
+Name: 336 REAL_IMP_INF_LE
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.76557
+
+Name: 337 REAL_INF_LT
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.334786
+
+Name: 338 REAL_INF_CLOSE
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.113042
+
+Name: 339 SUP_EPSILON
+Original proof time: 0.047248
+
+Name: 340 REAL_LE_SUP
+Original proof time: 0.020024
+
+Name: 341 REAL_INF_LE
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.541944
+
+Name: 342 REAL_SUP_CONST
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.160931
+
+Name: 343 REAL_MUL_SUB2_CANCEL
+proof length: 2
+proof time: 0.015142
+Statistics
+  infstep : 45
+  nodes   : 19
+  maxdepth: 4
+Time: 1.303658
+  inferstep time: 1.03158
+  node_find time: 0.001014
+  node_crea time: 0.250964
+    pred time: 0.082657
+    thmpred time: 0.000006
+    mc time: 0.146077
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "real" "REAL_MIN_MAX"), (fetch "real" "REAL_NEG_NEG"), (fetch "real" "REAL_MUL_RNEG"), GSYM (fetch "real" "REAL_NEG_ADD"), (fetch "real" "REAL_LE_NEG2")] THEN METIS_TAC [fetch "real" "REAL_ADD_RDISTRIB", fetch "real" "REAL_SUB_ADD2"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006464
+
+Name: 344 REAL_MUL_SUB1_CANCEL
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007141
+
+Name: 345 REAL_NEG_HALF
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.12436
+
+Name: 346 REAL_NEG_THIRD
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.464328
+
+Name: 347 REAL_DIV_DENOM_CANCEL
+Original proof time: 0.011274
+
+Name: 348 REAL_DIV_INNER_CANCEL
+Original proof time: 0.013172
+
+Name: 349 REAL_DIV_OUTER_CANCEL
+Original proof time: 0.012613
+
+Name: 350 REAL_HALF_BETWEEN
+Original proof time: 0.017878
+
+Name: 351 REAL_THIRDS_BETWEEN
+Original proof time: 0.02357
+
+Name: 352 REAL_LE_SUB_CANCEL2
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014621
+
+Name: 353 REAL_ADD_SUB_ALT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008021
+
+Name: 354 INFINITE_REAL_UNIV
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.121518
+
+Name: 355 add_rat
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036845
+
+Name: 356 add_ratl
+Original proof time: 0.003464
+
+Name: 357 add_ratr
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041873
+
+Name: 358 add_ints
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.268422
+
+Name: 359 mult_rat
+proof length: 4
+proof time: 0.00837
+Statistics
+  infstep : 3251
+  nodes   : 731
+  maxdepth: 9
+Time: 36.03898
+  inferstep time: 23.870817
+  node_find time: 0.944299
+  node_crea time: 10.454596
+    pred time: 1.254044
+    thmpred time: 0.000107
+    mc time: 6.068018
+    inst time: 0.0
+Proof found: SRW_TAC [] [markerTheory.unint_def] THEN RW_TAC bool_ss [(fetch "real" "real_div")] THEN SRW_TAC [] [fetch "real" "REAL_INV_MUL", fetch "real" "REAL_MUL_ASSOC", fetch "real" "REAL_INV_EQ_0"] THEN CONV_TAC (AC_CONV ((fetch "real" "REAL_MUL_ASSOC"), (fetch "real" "REAL_MUL_COMM")))
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.300859
+
+Name: 360 mult_ratl
+Original proof time: 0.004585
+
+Name: 361 mult_ratr
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.060397
+
+Name: 362 mult_ints
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008815
+
+Name: 363 pow_rat
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.242546
+
+Name: 364 neg_rat
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.045522
+
+Name: 365 eq_rat
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.537167
+
+Name: 366 eq_ratl
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.087723
+
+Name: 367 eq_ratr
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.047214
+
+Name: 368 eq_ints
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 1.01913
+
+Name: 369 div_ratr
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.123835
+
+Name: 370 div_ratl
+proof length: 5
+proof time: 0.032844
+Statistics
+  infstep : 16
+  nodes   : 8
+  maxdepth: 3
+Time: 0.838441
+  inferstep time: 0.69255
+  node_find time: 0.0002
+  node_crea time: 0.100996
+    pred time: 0.030348
+    thmpred time: 0.000005
+    mc time: 0.089918
+    inst time: 0.0
+Proof found: SRW_TAC [] [] THENL [SRW_TAC [] [markerTheory.unint_def], METIS_TAC [fetch "real" "add_ratr", fetch "real" "mult_rat", markerTheory.unint_def], SRW_TAC [] [(fetch "real" "real_div"), (fetch "real" "REAL_INV_MUL")] THEN REWRITE_TAC [GSYM (fetch "real" "REAL_MUL_ASSOC")]]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.053794
+
+Name: 371 div_rat
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.119284
+
+Name: 372 le_rat
+Original proof time: 0.011376
+
+Name: 373 le_int
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.469301
+
+Name: 374 lt_rat
+Original proof time: 0.009952
+
+Name: 375 lt_int
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.260952
+
+Name: 376 tactictoe_prove_376
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.263347
+
+Name: 377 tactictoe_prove_377
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.220082
+
+Name: 378 NUM_FLOOR_LE
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.193321
+
+Name: 379 NUM_FLOOR_LE2
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.428393
+
+Name: 380 NUM_FLOOR_LET
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.642889
+
+Name: 381 NUM_FLOOR_DIV
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.244732
+
+Name: 382 NUM_FLOOR_DIV_LOWERBOUND
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.193395
+
+Name: 383 NUM_FLOOR_BASE
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.460657
+
+Name: 384 tactictoe_prove_384
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.088476
+
+Name: 385 tactictoe_prove_385
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.115559
+
+Name: 386 NUM_FLOOR_EQNS
+Statistics
+  infstep : 5495
+  nodes   : 1235
+  maxdepth: 8
+Time: 60.073013
+  inferstep time: 34.730055
+  node_find time: 3.134278
+  node_crea time: 21.925419
+    pred time: 2.343906
+    thmpred time: 0.000136
+    mc time: 14.945972
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 31
+Original proof time: 0.0
+Recording proof time: 1.510716
+
+Name: 387 NUM_FLOOR_LOWER_BOUND
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.053988
+
+Name: 388 NUM_FLOOR_upper_bound
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.031145
+
+Name: 389 NUM_CEILING_NUM_FLOOR
+Original proof time: 0.082686
+
+Name: 390 LE_NUM_CEILING
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.14029
+
+Name: 391 NUM_CEILING_LE
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.083509
+Bad stac: 2

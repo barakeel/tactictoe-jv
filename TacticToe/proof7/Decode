@@ -1,0 +1,282 @@
+
+Name: 0 enc2dec_none
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.047945
+
+Name: 1 enc2dec_some
+Org tac number: 20
+Original proof time: 0.0
+Recording proof time: 0.797951
+
+Name: 2 enc2dec_some_alt
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.115403
+
+Name: 3 wf_enc2dec
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036383
+
+Name: 4 dec2enc_some
+Org tac number: 20
+Original proof time: 0.0
+Recording proof time: 0.928066
+
+Name: 5 decode_dec2enc
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005858
+
+Name: 6 decode_dec2enc_append
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.244707
+
+Name: 7 wf_dec2enc
+Original proof time: 0.008529
+
+Name: 8 dec2enc_enc2dec
+proof length: 1
+proof time: 0.001872
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.288129
+  inferstep time: 0.22025
+  node_find time: 0.000068
+  node_crea time: 0.046525
+    pred time: 0.013548
+    thmpred time: 0.000002
+    mc time: 0.047534
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "Decode" "enc2dec_some_alt", fetch "Decode" "dec2enc_def"]
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.194489
+
+Name: 9 enc2dec_dec2enc
+Org tac number: 25
+Original proof time: 0.0
+Recording proof time: 1.027023
+
+Name: 10 wf_decode_unit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004405
+
+Name: 11 dec2enc_decode_unit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004261
+
+Name: 12 decode_unit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011517
+
+Name: 13 wf_decode_bool
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004629
+
+Name: 14 dec2enc_decode_bool
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004685
+
+Name: 15 decode_bool
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.029266
+
+Name: 16 wf_decode_prod
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035566
+
+Name: 17 dec2enc_decode_prod
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005383
+
+Name: 18 encode_then_decode_prod
+proof length: 4
+proof time: 0.004134
+Statistics
+  infstep : 1099
+  nodes   : 230
+  maxdepth: 6
+Time: 20.063822
+  inferstep time: 13.154852
+  node_find time: 0.135176
+  node_crea time: 6.677603
+    pred time: 1.195324
+    thmpred time: 0.000055
+    mc time: 3.093876
+    inst time: 0.0
+Proof found: RW_TAC std_ss [(fetch "Decode" "decode_prod_def")] THEN MP_TAC (Q.SPECL [`p`, `d`] (fetch "Decode" "wf_dec2enc")) THEN SRW_TAC [] [wf_encode_prod, encode_prod_alt, fetch "Decode" "wf_dec2enc", fetch "Decode" "enc2dec_some", fetch "Decode" "wf_enc2dec"] THEN FULL_SIMP_TAC bool_ss [fetch "Decode" "dec2enc_enc2dec", lift_prod_def]
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.359012
+
+Name: 19 decode_prod
+Org tac number: 58
+Original proof time: 0.0
+Recording proof time: 2.437947
+
+Name: 20 wf_decode_sum
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03586
+
+Name: 21 dec2enc_decode_sum
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004774
+
+Name: 22 encode_then_decode_sum
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.347037
+
+Name: 23 decode_sum
+Org tac number: 70
+Original proof time: 0.0
+Recording proof time: 3.901521
+
+Name: 24 wf_decode_option
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030879
+
+Name: 25 dec2enc_decode_option
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007997
+
+Name: 26 encode_then_decode_option
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.326188
+
+Name: 27 decode_option
+Org tac number: 44
+Original proof time: 0.0
+Recording proof time: 1.586829
+
+Name: 28 wf_decode_list
+proof length: 3
+proof time: 0.038922
+Statistics
+  infstep : 112
+  nodes   : 26
+  maxdepth: 4
+Time: 2.398936
+  inferstep time: 1.684062
+  node_find time: 0.002239
+  node_crea time: 0.669102
+    pred time: 0.214653
+    thmpred time: 0.000006
+    mc time: 0.356928
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "Decode" "decode_list_def", fetch "Decode" "wf_decoder_def"] THEN SRW_TAC [] [fetch "Decode" "wf_decoder_def", wf_encode_list, fetch "Decode" "enc2dec_some", fetch "Decode" "wf_dec2enc"] THEN METIS_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03753
+
+Name: 29 dec2enc_decode_list
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008672
+
+Name: 30 encode_then_decode_list
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.269274
+
+Name: 31 decode_list
+Org tac number: 74
+Original proof time: 0.0
+Recording proof time: 2.691878
+
+Name: 32 wf_decode_blist
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.04422
+
+Name: 33 dec2enc_decode_blist
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036439
+
+Name: 34 encode_then_decode_blist
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 0.635243
+
+Name: 35 decode_blist
+Original proof time: 0.133599
+
+Name: 36 wf_decode_num
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004943
+
+Name: 37 dec2enc_decode_num
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004418
+
+Name: 38 decode_num_total
+Org tac number: 23
+Original proof time: 0.0
+Recording proof time: 0.665451
+
+Name: 39 decode_num
+Original proof time: 0.128333
+
+Name: 40 dec_bnum_lt
+Statistics
+  infstep : 2863
+  nodes   : 749
+  maxdepth: 9
+Time: 60.02533
+  inferstep time: 36.524956
+  node_find time: 1.031544
+  node_crea time: 22.249356
+    pred time: 3.927474
+    thmpred time: 0.000185
+    mc time: 14.650489
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.255659
+
+Name: 41 dec_bnum_inj
+Original proof time: 0.03422
+
+Name: 42 wf_decode_bnum
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01473
+
+Name: 43 dec2enc_decode_bnum
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010699
+
+Name: 44 decode_bnum
+Original proof time: 0.147371
+
+Name: 45 wf_decode_tree
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.043399
+
+Name: 46 decode_tree
+Original proof time: 0.035487
+Bad stac: 0

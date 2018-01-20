@@ -1,0 +1,175 @@
+
+Name: 0 biprefix_refl
+proof length: 1
+proof time: 0.000421
+Statistics
+  infstep : 8
+  nodes   : 3
+  maxdepth: 2
+Time: 0.256151
+  inferstep time: 0.219645
+  node_find time: 0.000088
+  node_crea time: 0.026627
+    pred time: 0.008943
+    thmpred time: 0.0
+    mc time: 0.023895
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "Encode" "biprefix_def"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.025216
+
+Name: 1 biprefix_sym
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006657
+
+Name: 2 biprefix_append
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.037784
+
+Name: 3 biprefix_cons
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030901
+
+Name: 4 biprefix_appends
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003321
+
+Name: 5 wf_encoder_alt
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019594
+
+Name: 6 wf_encoder_eq
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004977
+
+Name: 7 wf_encoder_total
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011411
+
+Name: 8 wf_encode_unit
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004631
+
+Name: 9 wf_encode_bool
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004186
+
+Name: 10 encode_prod_alt
+proof length: 2
+proof time: 0.003811
+Statistics
+  infstep : 104
+  nodes   : 12
+  maxdepth: 2
+Time: 1.150145
+  inferstep time: 0.913733
+  node_find time: 0.001415
+  node_crea time: 0.21056
+    pred time: 0.0635
+    thmpred time: 0.000005
+    mc time: 0.139159
+    inst time: 0.0
+Proof found: SIMP_TAC numLib.std_ss [FORALL_PROD] THEN METIS_TAC [fetch "Encode" "encode_prod_def"]
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.097793
+
+Name: 11 wf_encode_prod
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.305812
+
+Name: 12 wf_encode_sum
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.082433
+
+Name: 13 wf_encode_option
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.098709
+
+Name: 14 wf_encode_list
+Org tac number: 19
+Original proof time: 0.0
+Recording proof time: 0.768361
+
+Name: 15 encode_list_cong
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.089186
+
+Name: 16 lift_blist_suc
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004921
+
+Name: 17 wf_encode_blist
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.568623
+
+Name: 18 wf_encode_num
+Original proof time: 0.178173
+
+Name: 19 wf_pred_bnum_total
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.062028
+
+Name: 20 wf_pred_bnum
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.058314
+
+Name: 21 encode_bnum_length
+proof length: 3
+proof time: 0.022217
+Statistics
+  infstep : 11
+  nodes   : 8
+  maxdepth: 2
+Time: 0.650058
+  inferstep time: 0.52349
+  node_find time: 0.000148
+  node_crea time: 0.096004
+    pred time: 0.0372
+    thmpred time: 0.000002
+    mc time: 0.075563
+    inst time: 0.0
+Proof found: Induct THENL [METIS_TAC [fetch "Encode" "encode_bnum_def_compute", LENGTH_NIL_SYM], METIS_TAC [fetch "Encode" "encode_bnum_def", LENGTH_CONS]]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.044418
+
+Name: 22 encode_bnum_inj
+Original proof time: 0.008345
+
+Name: 23 wf_encode_bnum_collision_free
+Original proof time: 0.168371
+
+Name: 24 wf_encode_bnum
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005623
+
+Name: 25 tree_ind
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.333863
+
+Name: 26 wf_encode_tree
+Org tac number: 40
+Original proof time: 0.0
+Recording proof time: 2.069516
+Bad stac: 1

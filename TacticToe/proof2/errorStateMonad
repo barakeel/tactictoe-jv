@@ -1,0 +1,181 @@
+
+Name: 0 BIND_LEFT_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.018143
+
+Name: 1 MCOMP_THM
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.085621
+
+Name: 2 MCOMP_ASSOC
+proof length: 4
+proof time: 0.0305
+Statistics
+  infstep : 32
+  nodes   : 11
+  maxdepth: 4
+Time: 0.9871
+  inferstep time: 0.858849
+  node_find time: 0.000389
+  node_crea time: 0.10317
+    pred time: 0.0353
+    thmpred time: 0.000002
+    mc time: 0.071038
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "errorStateMonad" "MCOMP_DEF"), FUN_EQ_THM, OPTION_MCOMP_def, CURRY_DEF, UNCURRY_DEF] THEN REPEAT STRIP_TAC THEN SIMP_TAC (srw_ss ()) [] THEN METIS_TAC [fetch "errorStateMonad" "MCOMP_DEF", OPTION_MCOMP_def, OPTION_MCOMP_ASSOC, OPTION_MCOMP_ID, UNCURRY_DEF]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00353
+
+Name: 3 UNIT_CURRY
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.09851
+
+Name: 4 MCOMP_ID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004676
+
+Name: 5 BIND_RIGHT_UNIT
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.203208
+
+Name: 6 BIND_ASSOC
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.178045
+
+Name: 7 MMAP_ID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.034404
+
+Name: 8 MMAP_COMP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004985
+
+Name: 9 MMAP_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.040773
+
+Name: 10 MMAP_JOIN
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005499
+
+Name: 11 JOIN_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014031
+
+Name: 12 JOIN_MMAP_UNIT
+proof length: 2
+proof time: 0.003611
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.192645
+  inferstep time: 0.16252
+  node_find time: 0.000033
+  node_crea time: 0.022995
+    pred time: 0.008259
+    thmpred time: 0.000001
+    mc time: 0.018652
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "errorStateMonad" "MMAP_DEF"), o_DEF, (fetch "errorStateMonad" "JOIN_DEF"), FUN_EQ_THM, GSYM (fetch "errorStateMonad" "BIND_ASSOC")] THEN METIS_TAC [fetch "errorStateMonad" "BIND_RIGHT_UNIT"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020485
+
+Name: 13 JOIN_MAP_JOIN
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004964
+
+Name: 14 JOIN_MAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003964
+
+Name: 15 sequence_nil
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006688
+
+Name: 16 mapM_nil
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.002592
+
+Name: 17 mapM_cons
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004811
+
+Name: 18 ES_CHOICE_ASSOC
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.093697
+
+Name: 19 ES_CHOICE_FAIL_LID
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003635
+
+Name: 20 ES_CHOICE_FAIL_RID
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.078777
+
+Name: 21 BIND_FAIL_L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003177
+
+Name: 22 BIND_ESGUARD
+proof length: 5
+proof time: 0.005286
+Statistics
+  infstep : 42
+  nodes   : 15
+  maxdepth: 3
+Time: 1.015801
+  inferstep time: 0.839996
+  node_find time: 0.000573
+  node_crea time: 0.145993
+    pred time: 0.044949
+    thmpred time: 0.000006
+    mc time: 0.107256
+    inst time: 0.0
+Proof found: SRW_TAC [] [FUN_EQ_THM, (fetch "errorStateMonad" "ES_FAIL_DEF"), (fetch "errorStateMonad" "BIND_DEF")] THENL [SRW_TAC [] [fetch "errorStateMonad" "ES_GUARD_DEF", pair_CASE_def] THEN SRW_TAC [] [(fetch "errorStateMonad" "ES_FAIL_DEF")], SRW_TAC [] [fetch "errorStateMonad" "ES_GUARD_DEF", pair_CASE_def] THEN SRW_TAC [] [(fetch "errorStateMonad" "UNIT_DEF")]]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006256
+
+Name: 23 IGNORE_BIND_ESGUARD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.002798
+
+Name: 24 IGNORE_BIND_FAIL
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.188213
+
+Name: 25 APPLY_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003265
+
+Name: 26 APPLY_UNIT_UNIT
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.028663
+Bad stac: 0

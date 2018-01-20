@@ -1,0 +1,244 @@
+
+Name: 0 IS_GCD_UNIQUE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010523
+
+Name: 1 IS_GCD_REF
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007137
+
+Name: 2 IS_GCD_SYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.056003
+
+Name: 3 IS_GCD_0R
+proof length: 1
+proof time: 0.070465
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.075964
+  inferstep time: 0.058069
+  node_find time: 0.000009
+  node_crea time: 0.010571
+    pred time: 0.002613
+    thmpred time: 0.000001
+    mc time: 0.014402
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "is_gcd_def", fetch "gcd" "IS_GCD_REF", compute_divides]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017395
+
+Name: 4 IS_GCD_0L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008001
+
+Name: 5 PRIME_IS_GCD
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.422463
+
+Name: 6 IS_GCD_MINUS_L
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065365
+
+Name: 7 IS_GCD_MINUS_R
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00763
+
+Name: 8 GCD_IS_GCD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.098169
+
+Name: 9 GCD_REF
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005014
+
+Name: 10 GCD_SYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003964
+
+Name: 11 GCD_0R
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005373
+
+Name: 12 GCD_0L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004159
+
+Name: 13 GCD_ADD_R
+proof length: 6
+proof time: 0.013085
+Statistics
+  infstep : 512
+  nodes   : 91
+  maxdepth: 5
+Time: 9.099262
+  inferstep time: 7.879607
+  node_find time: 0.02694
+  node_crea time: 1.096735
+    pred time: 0.331006
+    thmpred time: 0.000026
+    mc time: 0.623883
+    inst time: 0.0
+Proof found: recInduct (fetch "gcd" "gcd_ind") THEN ASM_REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES")] THEN REPEAT STRIP_TAC THENL [metisTools.METIS_TAC [fetch "gcd" "GCD_0L", fetch "gcd" "GCD_SYM", fetch "gcd" "GCD_REF"], ONCE_REWRITE_TAC [GSYM (el 4 (CONJUNCTS ADD_CLAUSES))] THEN (RW_TAC (bool_ss ++ numSimps.ARITH_ss)) [(local_tag GCD)]]
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.108128
+
+Name: 14 GCD_ADD_L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004135
+
+Name: 15 GCD_EQ_0
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036321
+
+Name: 16 GCD_1
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.118135
+
+Name: 17 PRIME_GCD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009675
+
+Name: 18 tactictoe_prove_18
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.618558
+
+Name: 19 L_EUCLIDES
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.232849
+
+Name: 20 P_EUCLIDES
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.421833
+
+Name: 21 FACTOR_OUT_GCD
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 1.895644
+
+Name: 22 GCD_SUCfree_ind
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.705334
+
+Name: 23 tactictoe_prove_23
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 1.043087
+
+Name: 24 LINEAR_GCD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.114803
+
+Name: 25 tactictoe_prove_25
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.146696
+
+Name: 26 tactictoe_prove_26
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.402949
+
+Name: 27 GCD_EFFICIENTLY
+Statistics
+  infstep : 4040
+  nodes   : 722
+  maxdepth: 8
+Time: 60.012646
+  inferstep time: 44.364967
+  node_find time: 1.670311
+  node_crea time: 13.766462
+    pred time: 2.720037
+    thmpred time: 0.000168
+    mc time: 8.534396
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 1.221188
+
+Name: 28 LCM_IS_LEAST_COMMON_MULTIPLE
+Org tac number: 36
+Original proof time: 0.0
+Recording proof time: 2.534205
+
+Name: 29 LCM_0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017242
+
+Name: 30 LCM_1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.054991
+
+Name: 31 LCM_COMM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.013853
+
+Name: 32 LCM_LE
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 0.637987
+
+Name: 33 LCM_LEAST
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.623351
+
+Name: 34 GCD_COMMON_FACTOR
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.276374
+
+Name: 35 tactictoe_prove_35
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.02465
+
+Name: 36 tactictoe_prove_36
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.131502
+
+Name: 37 GCD_CANCEL_MULT
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.898539
+
+Name: 38 tactictoe_prove_38
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.602858
+
+Name: 39 BINARY_GCD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.262684
+Bad stac: 0

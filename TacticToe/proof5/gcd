@@ -1,0 +1,246 @@
+
+Name: 0 IS_GCD_UNIQUE
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011674
+
+Name: 1 IS_GCD_REF
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007951
+
+Name: 2 IS_GCD_SYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.037225
+
+Name: 3 IS_GCD_0R
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.024772
+
+Name: 4 IS_GCD_0L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007377
+
+Name: 5 PRIME_IS_GCD
+proof length: 3
+proof time: 0.00953
+Statistics
+  infstep : 245
+  nodes   : 45
+  maxdepth: 4
+Time: 5.955154
+  inferstep time: 5.123045
+  node_find time: 0.008683
+  node_crea time: 0.711716
+    pred time: 0.163158
+    thmpred time: 0.000012
+    mc time: 0.547749
+    inst time: 0.0
+Proof found: ASM_REWRITE_TAC [fetch "gcd" "is_gcd_def", prime_def] THEN SRW_TAC [] [] THEN metisLib.METIS_TAC []
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.272942
+
+Name: 6 IS_GCD_MINUS_L
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.075325
+
+Name: 7 IS_GCD_MINUS_R
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004868
+
+Name: 8 GCD_IS_GCD
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.153109
+
+Name: 9 GCD_REF
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005302
+
+Name: 10 GCD_SYM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005623
+
+Name: 11 GCD_0R
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004625
+
+Name: 12 GCD_0L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003671
+
+Name: 13 GCD_ADD_R
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.159247
+
+Name: 14 GCD_ADD_L
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004217
+
+Name: 15 GCD_EQ_0
+proof length: 3
+proof time: 0.013205
+Statistics
+  infstep : 75
+  nodes   : 18
+  maxdepth: 3
+Time: 1.822502
+  inferstep time: 1.506739
+  node_find time: 0.001484
+  node_crea time: 0.269442
+    pred time: 0.075632
+    thmpred time: 0.000004
+    mc time: 0.205128
+    inst time: 0.0
+Proof found: recInduct (fetch "gcd" "gcd_ind") THEN ASM_REWRITE_TAC [fetch "gcd" "gcd_def", numTheory.NOT_SUC, numTheory.ZERO_DEF] THEN metisTools.METIS_TAC [numTheory.ZERO_DEF, numTheory.NOT_SUC]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.050517
+
+Name: 16 GCD_1
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.451456
+
+Name: 17 PRIME_GCD
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005429
+
+Name: 18 tactictoe_prove_18
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.577864
+
+Name: 19 L_EUCLIDES
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.197599
+
+Name: 20 P_EUCLIDES
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.392127
+
+Name: 21 FACTOR_OUT_GCD
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 3.231791
+
+Name: 22 GCD_SUCfree_ind
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.802167
+
+Name: 23 tactictoe_prove_23
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 0.814791
+
+Name: 24 LINEAR_GCD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.281241
+
+Name: 25 tactictoe_prove_25
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.16867
+
+Name: 26 tactictoe_prove_26
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.404413
+
+Name: 27 GCD_EFFICIENTLY
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.877366
+
+Name: 28 LCM_IS_LEAST_COMMON_MULTIPLE
+Org tac number: 36
+Original proof time: 0.0
+Recording proof time: 2.792101
+
+Name: 29 LCM_0
+proof length: 1
+proof time: 0.008849
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.086301
+  inferstep time: 0.064319
+  node_find time: 0.000013
+  node_crea time: 0.016472
+    pred time: 0.004259
+    thmpred time: 0.000001
+    mc time: 0.01663
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "gcd" "lcm_def"]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005693
+
+Name: 30 LCM_1
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014282
+
+Name: 31 LCM_COMM
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007744
+
+Name: 32 LCM_LE
+Org tac number: 11
+Original proof time: 0.0
+Recording proof time: 1.053849
+
+Name: 33 LCM_LEAST
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.474084
+
+Name: 34 GCD_COMMON_FACTOR
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.326811
+
+Name: 35 tactictoe_prove_35
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.022493
+
+Name: 36 tactictoe_prove_36
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.107814
+
+Name: 37 GCD_CANCEL_MULT
+Org tac number: 14
+Original proof time: 0.0
+Recording proof time: 0.707782
+
+Name: 38 tactictoe_prove_38
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.408345
+
+Name: 39 BINARY_GCD
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.275002
+Bad stac: 2

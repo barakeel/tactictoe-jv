@@ -1,0 +1,1040 @@
+
+Name: 0 rextension
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.134116
+
+Name: 1 in_domain
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005468
+
+Name: 2 in_range
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00521
+
+Name: 3 in_dom_rg
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03212
+
+Name: 4 domain_mono
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.100084
+
+Name: 5 range_mono
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.109838
+
+Name: 6 in_rrestrict
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004841
+
+Name: 7 in_rrestrict_alt
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.049337
+
+Name: 8 rrestrict_SUBSET
+proof length: 2
+proof time: 0.016637
+Statistics
+  infstep : 16
+  nodes   : 6
+  maxdepth: 2
+Time: 0.396869
+  inferstep time: 0.319383
+  node_find time: 0.000217
+  node_crea time: 0.06889
+    pred time: 0.020966
+    thmpred time: 0.000002
+    mc time: 0.046278
+    inst time: 0.0
+Proof found: REWRITE_TAC [SUBSET_DEF] THEN METIS_TAC [fetch "set_relation" "in_rrestrict", pair_CASES]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.05985
+
+Name: 9 rrestrict_union
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.075694
+
+Name: 10 rrestrict_rrestrict
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.06403
+
+Name: 11 domain_rrestrict_SUBSET
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027661
+
+Name: 12 range_rrestrict_SUBSET
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.029529
+
+Name: 13 strict_rrestrict
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.048762
+
+Name: 14 finite_prefixes_subset_s
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003448
+
+Name: 15 finite_prefixes_subset_r
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.138768
+
+Name: 16 finite_prefixes_subset_rs
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.170314
+
+Name: 17 finite_prefixes_subset
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.040809
+
+Name: 18 finite_prefixes_union
+Statistics
+  infstep : 3170
+  nodes   : 719
+  maxdepth: 7
+Time: 60.113192
+  inferstep time: 40.38811
+  node_find time: 1.376884
+  node_crea time: 17.538247
+    pred time: 3.196333
+    thmpred time: 0.000242
+    mc time: 8.266419
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009361
+
+Name: 19 finite_prefixes_comp
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.655348
+
+Name: 20 finite_prefixes_inj_image
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.323271
+
+Name: 21 finite_prefixes_range
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.298104
+
+Name: 22 tc_rules
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009704
+
+Name: 23 tc_cases
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.056278
+
+Name: 24 tc_ind
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.07447
+
+Name: 25 tc_closure
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.182668
+
+Name: 26 subset_tc
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.054008
+
+Name: 27 tc_idemp
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.28281
+
+Name: 28 tc_mono
+proof length: 6
+proof time: 0.009187
+Statistics
+  infstep : 297
+  nodes   : 57
+  maxdepth: 5
+Time: 6.491938
+  inferstep time: 5.570261
+  node_find time: 0.013054
+  node_crea time: 0.868148
+    pred time: 0.233964
+    thmpred time: 0.000031
+    mc time: 0.485446
+    inst time: 0.0
+Proof found: SIMP_TAC bool_ss [(fetch "pred_set" "SUBSET_DEF"), FORALL_PROD] THEN STRIP_TAC THEN HO_MATCH_MP_TAC (fetch "set_relation" "tc_ind") THEN STRIP_TAC THENL [METIS_TAC [tc_rule1], NTAC 2 (REWRITE_TAC [tc_rule2] THEN BETA_TAC)]
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.12486
+
+Name: 29 tc_strongind
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.131672
+
+Name: 30 tactictoe_prove_30
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.27884
+
+Name: 31 tc_cases_right
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.131406
+
+Name: 32 tc_cases_left
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.153599
+
+Name: 33 tactictoe_prove_33
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.180961
+
+Name: 34 tc_ind_left
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.257587
+
+Name: 35 tactictoe_prove_35
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.30011
+
+Name: 36 tc_strongind_left
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.27098
+
+Name: 37 tactictoe_prove_37
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.310763
+
+Name: 38 tc_ind_right
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.304647
+
+Name: 39 rtc_ind_right
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.201131
+
+Name: 40 tactictoe_prove_40
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.299686
+
+Name: 41 tc_strongind_right
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.179639
+
+Name: 42 tc_union
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.192774
+
+Name: 43 tactictoe_prove_43
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.126428
+
+Name: 44 tc_implication
+proof length: 5
+proof time: 0.026457
+Statistics
+  infstep : 1298
+  nodes   : 94
+  maxdepth: 5
+Time: 12.834837
+  inferstep time: 11.06617
+  node_find time: 0.081903
+  node_crea time: 1.611482
+    pred time: 0.422294
+    thmpred time: 0.000042
+    mc time: 0.84916
+    inst time: 0.0
+Proof found: NTAC 3 STRIP_TAC THEN HO_MATCH_MP_TAC (fetch "set_relation" "tc_ind") THEN SRW_TAC [] [] THENL [METIS_TAC [tc_implication_lem, fetch "set_relation" "tc_union", fetch "set_relation" "finite_prefixes_comp", fetch "set_relation" "rcomp_def", tc_rule1'], METIS_TAC [(fetch "set_relation" "tc_rules")]]
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.027475
+
+Name: 45 tactictoe_prove_45
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.078422
+
+Name: 46 tc_empty_eqn
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003448
+
+Name: 47 tc_domain_range
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.209018
+
+Name: 48 rrestrict_tc
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.102702
+
+Name: 49 tactictoe_prove_49
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.191681
+
+Name: 50 tc_SWAP
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.502949
+
+Name: 51 acyclic_subset
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.059334
+
+Name: 52 acyclic_union
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.047054
+
+Name: 53 acyclic_rrestrict
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.18564
+
+Name: 54 acyclic_irreflexive
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.057911
+
+Name: 55 acyclic_SWAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003762
+
+Name: 56 tactictoe_prove_56
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 1.516019
+
+Name: 57 acyclic_bigunion
+Statistics
+  infstep : 7232
+  nodes   : 867
+  maxdepth: 7
+Time: 60.002159
+  inferstep time: 41.617287
+  node_find time: 3.145214
+  node_crea time: 14.916559
+    pred time: 1.83243
+    thmpred time: 0.000161
+    mc time: 8.151915
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.184199
+
+Name: 58 acyclic_union
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.148335
+
+Name: 59 tactictoe_prove_59
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.220033
+
+Name: 60 transitive_tc
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.298979
+
+Name: 61 tc_transitive
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039664
+
+Name: 62 antisym_subset
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.191212
+
+Name: 63 partial_order_dom_rng
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.126231
+
+Name: 64 partial_order_subset
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.627826
+
+Name: 65 strict_partial_order
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.538338
+
+Name: 66 strict_partial_order_acyclic
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.199751
+
+Name: 67 linear_order_subset
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.550726
+
+Name: 68 partial_order_linear_order
+proof length: 2
+proof time: 0.008858
+Statistics
+  infstep : 260
+  nodes   : 29
+  maxdepth: 4
+Time: 3.173041
+  inferstep time: 2.393257
+  node_find time: 0.007637
+  node_crea time: 0.75913
+    pred time: 0.211259
+    thmpred time: 0.000006
+    mc time: 0.27143
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "set_relation" "linear_order_def", fetch "set_relation" "partial_order_def", fetch "set_relation" "reflexive_def"] THEN METIS_TAC []
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.138372
+
+Name: 69 strict_linear_order_dom_rng
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.060698
+
+Name: 70 linear_order_dom_rng
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.0604
+
+Name: 71 RREFL_EXP_RSUBSET
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005284
+
+Name: 72 RREFL_EXP_UNIV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004592
+
+Name: 73 REL_RESTRICT_UNIV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.029805
+
+Name: 74 in_rel_to_reln
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033002
+
+Name: 75 reln_to_rel_app
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003765
+
+Name: 76 rel_to_reln_IS_UNCURRY
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00413
+
+Name: 77 reln_to_rel_IS_CURRY
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005905
+
+Name: 78 rel_to_reln_inv
+proof length: 2
+proof time: 0.001421
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.178452
+  inferstep time: 0.148944
+  node_find time: 0.000028
+  node_crea time: 0.020239
+    pred time: 0.006446
+    thmpred time: 0.000002
+    mc time: 0.020878
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "set_relation" "in_rel_to_reln", fetch "set_relation" "reln_to_rel_def"] THEN METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.009817
+
+Name: 79 reln_to_rel_inv
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003469
+
+Name: 80 reln_to_rel_11
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005841
+
+Name: 81 rel_to_reln_11
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.038612
+
+Name: 82 rel_to_reln_swap
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016473
+
+Name: 83 domain_to_rel_conv
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00361
+
+Name: 84 range_to_rel_conv
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.0054
+
+Name: 85 strict_to_rel_conv
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005182
+
+Name: 86 rrestrict_to_rel_conv
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007514
+
+Name: 87 rcomp_to_rel_conv
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007429
+
+Name: 88 univ_reln_to_rel_conv
+proof length: 3
+proof time: 0.002874
+Statistics
+  infstep : 39
+  nodes   : 10
+  maxdepth: 3
+Time: 1.009675
+  inferstep time: 0.854152
+  node_find time: 0.000587
+  node_crea time: 0.133371
+    pred time: 0.044786
+    thmpred time: 0.000005
+    mc time: 0.093398
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "set_relation" "in_rel_to_reln"), EXTENSION, FORALL_PROD] THEN NTAC 2 (REWRITE_TAC [fetch "set_relation" "univ_reln_def", fetch "set_relation" "RRUNIV_def"] THEN BETA_TAC) THEN SRW_TAC [] []
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.027474
+
+Name: 89 tc_to_rel_conv
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.348258
+
+Name: 90 acyclic_reln_to_rel_conv
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030496
+
+Name: 91 irreflexive_reln_to_rel_conv
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.097968
+
+Name: 92 irreflexive_reln_to_rel_conv_UNIV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007486
+
+Name: 93 reflexive_reln_to_rel_conv
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.031486
+
+Name: 94 reflexive_reln_to_rel_conv_UNIV
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004669
+
+Name: 95 reflexive_reln_to_rel_conv
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004613
+
+Name: 96 antisym_reln_to_rel_conv
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005795
+
+Name: 97 tactictoe_prove_97
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034759
+
+Name: 98 tactictoe_prove_98
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.092432
+
+Name: 99 tactictoe_prove_99
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.056118
+
+Name: 100 partial_order_reln_to_rel_conv
+Org tac number: 0
+
+Name: 101 partial_order_reln_to_rel_conv_UNIV
+proof length: 3
+proof time: 0.001838
+Statistics
+  infstep : 35
+  nodes   : 16
+  maxdepth: 3
+Time: 0.902438
+  inferstep time: 0.67416
+  node_find time: 0.000717
+  node_crea time: 0.209497
+    pred time: 0.063117
+    thmpred time: 0.000005
+    mc time: 0.121549
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "set_relation" "partial_order_def")] THEN SRW_TAC [] [fetch "set_relation" "reflexive_reln_to_rel_conv_UNIV", fetch "set_relation" "reflexive_reln_to_rel_conv", fetch "set_relation" "antisym_reln_to_rel_conv", WeakOrder] THEN METIS_TAC []
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006668
+
+Name: 102 linear_order_reln_to_rel_conv_UNIV
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.049405
+
+Name: 103 strict_linear_order_reln_to_rel_conv_UNIV
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.039463
+
+Name: 104 acyclic_WF
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.37946
+
+Name: 105 minimal_elements_subset
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007372
+
+Name: 106 minimal_elements_SWAP
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.012233
+
+Name: 107 maximal_union
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008702
+
+Name: 108 minimal_union
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006257
+
+Name: 109 minimal_elements_mono
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.093475
+
+Name: 110 minimal_elements_rrestrict
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.133762
+
+Name: 111 WF_has_minimal_path
+Statistics
+  infstep : 7692
+  nodes   : 827
+  maxdepth: 8
+Time: 60.012543
+  inferstep time: 44.744625
+  node_find time: 3.30668
+  node_crea time: 11.869493
+    pred time: 1.786561
+    thmpred time: 0.000131
+    mc time: 6.661809
+    inst time: 0.0
+Proof status: Time Out
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 0.621324
+
+Name: 112 tactictoe_prove_112
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.837877
+
+Name: 113 tactictoe_prove_113
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.441916
+
+Name: 114 finite_acyclic_has_maximal
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.196701
+
+Name: 115 finite_acyclic_has_minimal
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.106636
+
+Name: 116 tactictoe_prove_116
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.094932
+
+Name: 117 maximal_TC
+Org tac number: 3
+
+Name: 118 tactictoe_prove_118
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.082236
+
+Name: 119 minimal_TC
+Org tac number: 3
+
+Name: 120 finite_acyclic_has_minimal_path
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.317689
+
+Name: 121 finite_acyclic_has_maximal_path
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.213098
+
+Name: 122 finite_prefix_po_has_minimal_path
+Org tac number: 12
+Original proof time: 0.0
+Recording proof time: 0.664282
+
+Name: 123 empty_strict_linear_order
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.141864
+
+Name: 124 empty_linear_order
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.344388
+
+Name: 125 linear_order_restrict
+proof length: 13
+proof time: 0.136903
+Statistics
+  infstep : 249
+  nodes   : 60
+  maxdepth: 5
+Time: 7.036956
+  inferstep time: 5.329862
+  node_find time: 0.01041
+  node_crea time: 1.534735
+    pred time: 0.470492
+    thmpred time: 0.000019
+    mc time: 0.659969
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "set_relation" "linear_order_def")] THENL [FULL_SIMP_TAC std_ss [SUBSET_DEF, (fetch "set_relation" "in_domain"), (fetch "set_relation" "in_range"), GSYM LEFT_FORALL_IMP_THM] THEN METIS_TAC [fetch "set_relation" "in_rrestrict_alt"], METIS_TAC [fetch "set_relation" "domain_rrestrict_SUBSET"], FULL_SIMP_TAC std_ss [SUBSET_DEF, (fetch "set_relation" "in_domain"), (fetch "set_relation" "in_range"), GSYM LEFT_FORALL_IMP_THM] THEN METIS_TAC [fetch "set_relation" "in_rrestrict_alt"], METIS_TAC [fetch "set_relation" "range_rrestrict_SUBSET"], FULL_SIMP_TAC (srw_ss ()) [(fetch "set_relation" "transitive_def"), (fetch "set_relation" "antisym_def")] THEN REWRITE_TAC [fetch "set_relation" "in_rrestrict_alt"] THEN METIS_TAC [], FULL_SIMP_TAC (srw_ss ()) [(fetch "set_relation" "transitive_def"), (fetch "set_relation" "antisym_def")] THEN METIS_TAC [rme, urme, fetch "set_relation" "in_rrestrict_alt"], SRW_TAC [] [(fetch "set_relation" "rrestrict_def")]]
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.169414
+
+Name: 126 strict_linear_order_restrict
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.239441
+
+Name: 127 linear_order_dom_rg
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 1.093801
+
+Name: 128 linear_order_refl
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.110483
+
+Name: 129 linear_order_in_set
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.209704
+
+Name: 130 IN_MIN_LO
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.264387
+
+Name: 131 extend_linear_order
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.518101
+
+Name: 132 strict_linear_order_acyclic
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.059406
+
+Name: 133 tactictoe_prove_133
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.280674
+
+Name: 134 strict_linear_order_union_acyclic
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.729786
+
+Name: 135 strict_linear_order
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.295706
+
+Name: 136 linear_order
+proof length: 13
+proof time: 0.210148
+Statistics
+  infstep : 747
+  nodes   : 200
+  maxdepth: 6
+Time: 21.668657
+  inferstep time: 15.2695
+  node_find time: 0.127107
+  node_crea time: 5.658536
+    pred time: 1.434551
+    thmpred time: 0.000059
+    mc time: 2.125002
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "set_relation" "strict_linear_order_def"), (fetch "set_relation" "domain_def"), (fetch "set_relation" "range_def"), SUBSET_DEF] THEN Ho_Rewrite.REWRITE_TAC [(fetch "set_relation" "linear_order_def"), (fetch "set_relation" "domain_def"), (fetch "set_relation" "range_def"), (fetch "set_relation" "transitive_def"), (fetch "set_relation" "antisym_def"), SUBSET_DEF, IN_UNION, IN_GSPEC_IFF] THEN SRW_TAC [] [] THENL [METIS_TAC [], METIS_TAC [], METIS_TAC [], FULL_SIMP_TAC (srw_ss ()) [(fetch "set_relation" "transitive_def")] THEN METIS_TAC [], METIS_TAC [irme, fetch "set_relation" "strict_linear_order_def", fetch "set_relation" "linear_order_def", fetch "set_relation" "minimal_elements_def"], METIS_TAC [irme, rme], FULL_SIMP_TAC (srw_ss ()) [(fetch "set_relation" "transitive_def")] THEN METIS_TAC [], METIS_TAC []]
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.265064
+
+Name: 137 finite_strict_linear_order_has_maximal
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017785
+
+Name: 138 finite_strict_linear_order_has_minimal
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014095
+
+Name: 139 finite_linear_order_has_maximal
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.35815
+
+Name: 140 finite_linear_order_has_minimal
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.225513
+
+Name: 141 maximal_linear_order
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.088739
+
+Name: 142 minimal_linear_order
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.047966
+
+Name: 143 minimal_linear_order_unique
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.070284
+
+Name: 144 finite_prefix_linear_order_has_unique_minimal
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.171456
+
+Name: 145 nat_order_iso_thm
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 1.372277
+
+Name: 146 upper_bounds_lem
+proof length: 5
+proof time: 0.036856
+Statistics
+  infstep : 5130
+  nodes   : 853
+  maxdepth: 8
+Time: 59.300818
+  inferstep time: 42.891783
+  node_find time: 2.099949
+  node_crea time: 13.909805
+    pred time: 3.252193
+    thmpred time: 0.00018
+    mc time: 5.062007
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "set_relation" "upper_bounds_def", fetch "set_relation" "reln_rel_conv_thms"] THEN SRW_TAC [] [relationTheory.transitive_def, (local_tag reln_rel_conv_props)] THENL [SRW_TAC [] [IN_RRANGE, fetch "set_relation" "reln_to_rel_def"] THEN METIS_TAC [], METIS_TAC []]
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.072619
+
+Name: 147 tactictoe_prove_147
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.051804
+
+Name: 148 tactictoe_prove_148
+Org tac number: 24
+
+Name: 149 tactictoe_prove_149
+Org tac number: 3
+
+Name: 150 tactictoe_prove_150
+Org tac number: 4
+
+Name: 151 tactictoe_prove_151
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.194536
+
+Name: 152 tactictoe_prove_152
+Org tac number: 10
+
+Name: 153 tactictoe_prove_153
+Org tac number: 11
+
+Name: 154 tactictoe_prove_154
+Org tac number: 29
+Original proof time: 0.0
+Recording proof time: 3.166083
+
+Name: 155 tactictoe_prove_155
+Org tac number: 17
+
+Name: 156 zorns_lemma
+Org tac number: 5
+
+Name: 157 per_delete
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.846833
+
+Name: 158 per_restrict_per
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.381689
+
+Name: 159 countable_per
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 1.376064
+
+Name: 160 all_choices_thm
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.070315
+
+Name: 161 linear_order_num_order
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.208044
+
+Name: 162 num_order_finite_prefix
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.256481
+
+Name: 163 tactictoe_prove_163
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064257
+
+Name: 164 tactictoe_prove_164
+Org tac number: 45
+Original proof time: 0.0
+Recording proof time: 2.673154
+
+Name: 165 tactictoe_prove_165
+Org tac number: 34
+Original proof time: 0.0
+Recording proof time: 1.251099
+
+Name: 166 tactictoe_prove_166
+Org tac number: 28
+Original proof time: 0.0
+Recording proof time: 1.830513
+
+Name: 167 tactictoe_prove_167
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.133772
+
+Name: 168 tactictoe_prove_168
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.221397
+
+Name: 169 tactictoe_prove_169
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.493804
+
+Name: 170 tactictoe_prove_170
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.632868
+
+Name: 171 tactictoe_prove_171
+Org tac number: 21
+Original proof time: 0.0
+Recording proof time: 0.679093
+
+Name: 172 tactictoe_prove_172
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 1.098781
+
+Name: 173 linear_order_of_countable_po
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.95555
+Bad stac: 4
