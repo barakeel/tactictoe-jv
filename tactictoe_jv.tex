@@ -1734,18 +1734,68 @@ apply to this goal. Here the result produces new nodes each containing a list
 of goals to be proven. 
 
 
+Since there is a bijection between tactics of the tree search 
+and the node they 
+produced, any function define on tactics of the tree search can be map to a 
+function defined on nodes. 
 
 
 Supervised learning introduction.
 \subsection{Prior tactic policy}
 
+The estimation through the distance produced by the tactic selectors are hard 
+to translate into a prior tactic policy, so we rely only on the order of 
+tactics to estimate the probability with which a tactic should be tried.
+Let $t_0,\ldots,t_500$ be the list of preselected tactics ordered by their 
+distance to a goal $g$. Let $c_policy$ be a constant heuristic that estimates 
+how likely a tactic $t_i$ is to prove the goal compared to the rest of the 
+tactics $t_{i+1},\ldots,t_500$. We make the strong assumption that $c_policy$ 
+is constant across the search. We can now calculate the prior policy by:
 
+\[PriorPolicy(t_{i}) = (1 - c_policy)^{i} * c_policy\]
 
+The first term of the multiplication is the probability that none of the better 
+ranked tactic is selected. 
+
+In fact, these probabilities are never used directly and only serves as a 
+guidance to our deterministic node selection algorithm over many simulations.
 
 \subsection{Prior node evaluation}
 
+We now concentrate on defining a reasonable evaluation function that also 
+influences node selection in MCTS. Essentially, we estimate how 
+interesting is the list of goals of a tactic to determine if we should continue 
+searching in this direction. Theoretically, an interesting list of goal is one 
+that has the shortest proof, and we could measure the likelihood of being 
+provable in a number of steps from previous proof search. However, this 
+approach produces a lot of negatives\todo{TG: cite Hard Negative mining (cite 
+Deep math)}. So to reduce this number, we limit 
+ourselves to feature vectors tested during orthogonalization. We declare a list 
+of goals l to be positive, noted $l \in Positive$, if it is has been 
+produced by the winner of an orthogonalization competition. We extend the 
+definition of a $distance$ to a list of goals by considering the union of the 
+features of the goals. The set of the $r$ set of goals closest to a set of 
+goal $l$ is noted $Neighbour(r,l)$. We can define the set of positives and 
+negatives within a radius $r$ of a 
+list of goals $l$ to be $Positive(r,l) = \lbrace m \in Neighbour(r,l)\ |\ m \in 
+Positive \rbrace$.
 
+During our experiments, we evaluate output goals in three different manners 
+with the following functions:
 
+\begin{align*}
+PriorEvaluation_{none} (a_i) &= 0 \\
+PriorEvaluation_{productive} (a_i) &= 1\\
+PriorEvaluation_r (a_i) &= \frac{card\ Positive(r,a_i)}{r}\\
+\end{align*}
+
+For all evaluations functions, if a tactic is not productive then there is no 
+output to evaluate, so the result is a failure and a reward of $0$ will be 
+given for this node. The same thing happens if the node selected is already 
+proven or a descendant of a proven goal. 
+Experimentally, it is preferable not to 
+filter proven (or descendants of proven) nodes before 
+node selection to keep the estimation of the algorithm balanced.
 
 
 \subsection{Node selection}
@@ -1755,19 +1805,28 @@ like Monte Carlo. However, Monte Carlo tree search metrics are based on many
 simulations and do not reflect our exploration strategy that only 
 
 
-
 We present here a monte carlo tree search with no roll out which is essentially 
 the same as the one use by AlphaGo Zero~\cite{} originally defined by \cite{} 
 in \cite{}.
 
 \[Value(a_i) = Exploitation(a_i) + c_{exploration} * Exploration(a_i)\] 
 
+The exploration term is determined by the prior policy and the current policy 
+where as the exploitation is exactly the current evaluation build from prior of 
+evaluations of descendants of $a_i$.
+
+
+
 \[Exploration(a_i) = \frac{PriorPolicy(a_i)}{Policy(a_i)}\]
 
-\[Policy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(a_i))}}\]
+\[Policy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(p))}}\]
+The policy is approximatively the  percentage of time a node was visited.The 
+square root skews this probability to favor even more exploration of nodes with 
+few visits. 
 
 The exploitation function $Exploitation$ is the average of the evaluation of 
-all nodes descendant of $a_i$ in the current search tree.  
+all nodes descendant of $a_i$ (itself included) in the current search tree.   
+\[Exploitation{a_i} = Average_{b \in Desc(a_i))} {PriorEvaluation(b)}\]
 
 
 MCTS with prior policy
@@ -1822,14 +1881,15 @@ A node is solved when every of its goal are solved.
 
 \subsection{End of the proof search}
 The proof search stops when one of these 3 conditions is realized:
+\begin{itemize}
 \item It found a proof (i.e. the root node is solved). In this case, 
 the search returns a minimized and 
 prettified proof script (see Section~\ref{sec:proofdisplay}).
 \item It has saturated. 
-There is no more tactics to be applied to any open goal. (todo: define open 
-goal somewhere).
-
+There is no more tactics to be applied to any open goal. \todo{define open 
+goal}
 \item It exceeded a given time limit.
+\end{itemize}
 
 The second case happens very rarely (less than 10 times when evaluating 7088 
 theorems) and only at the beginning of the library when the learned dataset is 
@@ -1846,37 +1906,7 @@ to the number of proof attempts.
 
 \subsection{Evaluation} 
 
-We now concentrate on defining a reasonable evaluation function that also 
-influences node selection in MCTS. Essentially, we estimate how 
-interesting is the list of goals of a tactic to determine if we should continue 
-searching in this direction. Theoretically, an interesting list of goal is one 
-that has the shortest proof, and we could measure the likelihood of being 
-provable in a number of steps from previous proof search. However, this 
-approach produces a lot of negatives\todo{TG: cite Hard Negative mining (cite 
-Deep math)}. So to reduce this number, we limit 
-ourselves to feature vectors tested during orthogonalization. We declare a list 
-of goals l to be positive, noted $l \in Positive$, if it is has been 
-produced by the winner of an orthogonalization competition. We extend the 
-definition of a $distance$ to a list of goals by considering the union of the 
-features of the goals. The set of the $r$ set of goals closest to a set of 
-goal $l$ is noted $Neighbour(r,l)$. We can define the set of positives and 
-negatives within a radius $r$ of a 
-list of goals $l$ to be $Positive(r,l) = \lbrace m \in Neighbour(r,l)\ |\ m \in 
-Positive \rbrace$.
 
-During our experiments, we evaluate output goals in three different manners 
-with the following functions:
-
-\begin{align*}
-E_{none} (a_i) &= 0 \\
-E_{productive} (a_i) &= 1\\
-E_r (a_i) &= \frac{card\ Positive(r,a_i)}{r}\\
-\end{align*}
-
-
-For all evaluations functions, if a tactic is not productive then there is no 
-output to evaluate, so the result is a failure and a reward of $0$ will be 
-backpropagated.
 
 
 %A large difference between diagonalized search and our MCTS algorithm is in 
