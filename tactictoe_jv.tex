@@ -308,6 +308,9 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
 %proves many theorems whose proofs are not found by the hammering
 %approach.
 
+\todo{include latest results: 66.56 percent of 7123 theorems in 60 seconds and
+do a similar experiment for hh with minimization}
+
 
 \todo{JU or CK review}
 \subsection{Contributions}
@@ -1211,18 +1214,19 @@ Section~\ref{sec:proofsearch}.
 %$tactic\_norm\_score_2$.
 
 \subsection{Preselecting feature vectors and their  
-dependencies}\label{sec:dependencies}
+recursive dependencies}\label{sec:dependencies}
 We first rank feature vectors by their distance to the conjecture. But better 
 ranked vectors only contains symbols from 
 the conjecture and may not be suitable for later stages of the proof where the 
 goals may have derived significantly from the conjecture. To solve this 
 problem, we reorder the list so that descendants (see 
-Definition~\ref{def:descendant}) of vectors inherits the similarity of their 
+Definition~\ref{def:recdep}) of vectors inherits the similarity of their 
 parent.
 
-\begin{definition}(Descendant of a feature vector)\label{def:descendant}
+\begin{definition}(Recursive dependencies of a feature 
+vector)\label{def:recdep}
 Let $\mathfrak{F}$ be a set of recorded feature vectors. 
-The set of all descendants $D_\infty$ of a feature vector $f$ is 
+The set of all recursive dependencies $D_\infty$ of a feature vector $f$ is 
 inductively defined by:
 
 \begin{align*}
@@ -1237,8 +1241,10 @@ of the tactic $\hat{t}$ to the goal $\hat{g}$.
 \end{definition}
 
 We augment the ordered predictions by inserting after each predicted vector 
-its descendants and removing lower ranked duplicates. This contrast with 
-theorem predictions where we only select parents. This phase is only applied 
+its descendants and removing lower ranked duplicates. 
+%This contrast with 
+%theorem predictions where we only select parents. 
+ This phase is only applied 
 during preselection, so is of no great consequence as long as we select enough 
 theorems and tactics.
 
