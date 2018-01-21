@@ -327,10 +327,10 @@ explain here the additional contributions and their effect across our system:
 matching constructions, opening of submodules are supported. The different 
 recording steps (parsing, unfolding and replaying) are regrouped into a single 
 \sml function. So, our recording is more complete and fully automatized.
-\item Existing tactic orthogonalization on recorded data is made stronger by 
-also including the internal ATP \metis in the orthogonalization 
-competition. Because we manage a database of theorems for argument 
-prediction, we apply here a pruning step to remove easy theorems.
+%\item Existing tactic orthogonalization on recorded data is made stronger by 
+%also including the internal ATP \metis in the orthogonalization 
+%competition. Because we manage a database of theorems for argument 
+%prediction, we apply here a pruning step to remove easy theorems.
 \item Two types of arguments (list of theorems and terms) can be predicted 
 independently of the tactic. Combinatorial explosion in the number of tactics 
 is prevented through the introduction of abstracted tactics. As desired, their 
@@ -339,199 +339,14 @@ instantiations is dependent on the target goal.
 algorithm. MCTS gives a more balanced feedback to guide proof search by 
 comparing subtrees instead of leafs. The policy and evaluation are learned 
 through supervised learning.
-\item The internal ATP \metis used during our proof search is complemented by 
-asynchronous calls to \eprover.
+
 \item First evaluation of \tactictoe and \eprover success rates relative to 
 the length of the original proofs.
 \item User interaction is enhanced by the minimization and prettification 
 applied on the generated proof.
+\item The internal ATP \metis used during proof search can be complemented 
+by asynchronous calls to \eprover.
 \end{itemize}
-
-
-\section{Related Work}\todo{TG reorganise + other motivation?}
-There are several essential components of our work that are comparable to 
-previous approaches: tactic-level proof recording, tactic 
-selection through machine learning techniques and automatic tactic-based proof 
-search. Our work is also related to previous approaches that use machine 
-learning to select premises for the ATP systems and guide ATP proof search 
-internally.
-
-For \hollight, the Tactician tool~\cite{DBLP:conf/sefm/Adams15} 
-can transform a packed tactical proof into a series of interactive tactic 
-calls. Its principal application 
-was so far refactoring the library and teaching common proof techniques to new 
-ITP users. In our work, the splitting of a proof into a sequence of tactics is 
-essential for the
-tactic recording procedure, used to train our tactic prediction module.
-
-The system \textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14} 
-groups related proofs thanks to its clustering 
-algorithms. It allows \coq users to inspire themselves from similar proofs and 
-notice 
-duplicated proofs. Our predictions comes from a much more detailed description 
-of the open goal.
-However, we simply create a single label for each tactic call whereas each of 
-its
-arguments is treated independently in \textsf{ML4PG}. 
-Our choice is motivated by the k-NN algorithm already used in
-\holyhammer for the selection of theorems.
-%, which can be easly adapted to the selection of tactics but would be improved 
-%by a 
-%version that can learn to predict tactics and their arguments independently.
-
-\textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} is a powerful system able to 
-generate
-proof scripts from previous \coq proof examples.
-Its strength lies in its ability to produce likely sequences 
-of tactics for solving domain specific goals. It operates by creating a model 
-for common sequences of tactics for a specific library.
-This means that in order to propose the following tactic, only the previously 
-called tactics
-are considered.
-%intuition tells us that it should not be the main factor
-Our algorithm, on the other hand, relies mainly on the characteristics of the 
-current goal 
-to decide
-which tactics to apply next. In this way, our learning mechanism has to 
-rediscover why each 
-tactic was applied for the current subgoals. It may lack some useful bias for 
-common sequences 
-of tactics, but is more reactive to subtle changes. Indeed, it can be trained 
-on a large library and only tactics relevant to the current subgoal will be 
-selected. 
-Concerning the proof search, \textsf{SEPIA}'s %simple 
-breadth-first search is replaced by an A*-algorithm which allows for heuristic 
-guidance in 
-the exploration of the search tree.
-Finally, \textsf{SEPIA} was evaluated on three chosen parts (totaling 2382 
-theorems) of the 
-\coq library demonstrating that it globally outperforms individual \coq 
-tactics. In contrast, we demonstrate the competitiveness of our system against 
-the successful general-purpose hammers on the \holfour standard library (7902 
-theorems).
-
-Machine learning has also been used to advise the best library lemmas for new 
-ITP goals.
-This can be done either in an interactive way, when the user completes the 
-proof based on the recommended lemmas, as in the \textsc{Mizar Proof 
-Advisor}~\cite{Urb04-MPTP0}, or attempted fully automatically, where such lemma 
-selection is handed over to the ATP component of a \emph{hammer} 
-system~\cite{hammers4qed,tgck-cpp15,holyhammer,BlanchetteGKKU16,mizAR40}.
-
-Internal learning-based selection of tactical steps inside an ITP is analogous 
-to internal learning-based selection of clausal steps inside ATPs such as 
-\textsc{MaLeCoP}~\cite{malecop} and \textsc{FEMaLeCoP}~\cite{femalecop}. These 
-systems
-use the naive Bayes classifier to  select clauses for the extension steps in
-tableaux proof search based on many previous proofs. Satallax~\cite{Brown2012a} 
-can guide its
-search internally~\cite{mllax} using a command classifier, which can estimate 
-the priority of the 11 kinds of
-commands in the priority queue based on positive and negative examples.
-There are several essential components of our work that are comparable to 
-previous approaches: tactic-level proof recording, tactic 
-selection through machine learning techniques and automatic tactic-based proof 
-search. Our work is also related to previous approaches that use machine 
-learning to select premises for the ATP systems and guide ATP proof search 
-internally.
-
-For \hollight, the Tactician tool~\cite{DBLP:conf/sefm/Adams15} 
-can transform a packed tactical proof into a series of interactive tactic 
-calls. Its principal application 
-was so far refactoring the library and teaching common proof techniques to new 
-ITP users. In our work, the splitting of a proof into a sequence of tactics is 
-essential for the
-tactic recording procedure, used to train our tactic prediction mechanism.
-
-The system \textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14} 
-groups related proofs thanks to its clustering 
-algorithms. It allows \coq users to inspire themselves from similar proofs and 
-notice 
-duplicated proofs. Our predictions comes from a much more detailed description 
-of the open goal.
-However, we simply create a single label for each tactic call whereas each of 
-its
-arguments is treated independently in \textsf{ML4PG}. 
-Our choice is motivated by the k-NN algorithm already used in
-\holyhammer for the selection of theorems.
-%, which can be easly adapted to the selection of tactics but would be improved 
-%by a 
-%version that can learn to predict tactics and their arguments independently.
-
-\textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} is a powerful system able to 
-generate
-proof scripts from previous \coq proof examples.
-Its strength lies in its ability to produce likely sequences 
-of tactics for solving domain specific goals. It operates by creating a model 
-for common sequences of tactics for a specific library.
-This means that in order to propose the following tactic, only the previously 
-called tactics
-are considered.
-%intuition tells us that it should not be the main factor
-Our algorithm, on the other hand, relies mainly on the characteristics of the 
-current goal 
-to decide
-which tactics to apply next. In this way, our learning mechanism has to 
-rediscover why each 
-tactic was applied for the current subgoals. It may lack some useful bias for 
-common sequences 
-of tactics, but is more reactive to subtle changes. Indeed, it can be trained 
-on a large library and only tactics relevant to the current subgoal will be 
-selected. 
-Concerning the proof search, \textsf{SEPIA}'s %simple 
-breadth-first search is replaced by MCTS which allows for heuristic 
-guidance in 
-the exploration of the search tree.
-Finally, \textsf{SEPIA} was evaluated on three chosen parts (totaling 2382 
-theorems) of the 
-\coq library demonstrating that it globally outperforms individual \coq 
-tactics. In contrast, we demonstrate the competitiveness of our system against 
-the successful general-purpose hammers on the \holfour standard library.
-A recent improvement on this system~\cite{} includes the possibility to replace 
-theorems in tactics by ones belonging to the same cluster, independently of the 
-current goal. We have the opposite approach, we forget about the original 
-theorems in the tactic creating an more general abstract tactic
-and only use the goal to guide predictions. Finding a way to combine those two 
-approaches could be the key to stronger theorem predictions.
-
-A similar effort for stronger automation is performed in \isabelle. Nagashima 
-developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the user to 
-program with regular tactics and combine them with tools such as 
-\sledgehammer~\cite{sledgehammer10} or Nitpick~\cite{Nitpick10}. 
-Selection of tactics from recorded proofs has yet to be implemented and now it 
-is up to come up with a good meta-tactic.
-
-%In \holfour, 
-%a tactic is a just a \sml function of a special type and \holyhammer can 
-%easily 
-%be modified to be a tactic. So this meta-level is not 
-%necessary, all programming can occur at the tactic level and even \tactictoe  
-%is a tactic.
-
-%* Theory Exploration (Moa Johanson+, ITP 2017)  I think that is more related 
-%to conjeturing and do not think it fits here.
-
-
-Machine learning has also been used to advise the best library lemmas for new 
-ITP goals.
-This can be done either in an interactive way, when the user completes the 
-proof based on the recommended lemmas, as in the \textsc{Mizar Proof 
-Advisor}~\cite{Urb04-MPTP0}, or attempted fully automatically, where such lemma 
-selection is handed over to the ATP component of a \emph{hammer} 
-system~\cite{hammers4qed,tgck-cpp15,holyhammer,BlanchetteGKKU16,mizAR40}.
-
-Internal learning-based selection of tactical steps inside an ITP is analogous 
-to internal learning-based selection of clausal steps inside ATPs such as 
-\textsc{MaLeCoP}~\cite{malecop} and \textsc{FEMaLeCoP}~\cite{femalecop}. These 
-systems
-use the naive Bayes classifier to  select clauses for the extension steps in
-tableaux proof search based on many previous proofs. Satallax~\cite{Brown2012a} 
-can guide its
-search internally~\cite{mllax} using a command classifier, which can estimate 
-the priority of the 11 kinds of
-commands in the priority queue based on positive and negative examples.
-
-
 
 
 \section{Proof Recording}\label{sec:recording}
@@ -1707,7 +1522,8 @@ structures.
 
 
 \begin{definition}(Tactical search tree)\\
-A tactical search tree is a sixtuple $(\mathbb{A},\mathbb{G},\mathbb{T},A,G,T)$ 
+A tactical search tree $\mathfrak{T}$ is a sixtuple 
+$(\mathbb{A},\mathbb{G},\mathbb{T},A,G,T)$ 
 that respects the following conditions:
 \begin{itemize}
 \item $\mathbb{A}$ is a set of nodes, $\mathbb{G}$ is a set of goals 
@@ -1773,7 +1589,7 @@ its goal}
 
 Starting from the bottom parent node, we can construct children of a goal of 
 this node by 
-choosing a goal $g_i^0$ on this node and choosing tactics $t1,t2,\ldots$ to 
+choosing a goal $g_i^0$ on this node and choosing tactics $t_1,t_2,\ldots$ to 
 apply to this goal. Here the result produces new nodes each containing a list 
 of goals to be proven. 
 
@@ -1785,7 +1601,8 @@ open goals per node at once. A goal that was not explored yet is called a
 pending goal.
 
 \begin{definition}(Solved node and solved goal)
-Let $\mathbb{T}$ be a search tree. The set of solved nodes $\mathbb{A}^\infty$ 
+Let $\mathfrak{T}$ be a search tree. The set of solved nodes 
+$\mathbb{A}^\infty$ 
 and 
 the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
 
@@ -1809,10 +1626,10 @@ applied to this goal that produces no goals.
 
 \end{definition}
 
-Since there is a bijection between tactics of the tree search 
-and the node they 
-produced, any function define on tactics of the tree search can be map to a 
-function defined on nodes. 
+%Since the support of A gives us a bijection between tactics of the tree search 
+%and the node they 
+%produced, any function define on tactics of the tree search can be map to a 
+%function defined on nodes. 
 
 Definition of solved goals, open goals  and pending goals.
 Supervised learning introduction.
@@ -2634,14 +2451,20 @@ referred to as \tactictoe(SH) (``small hammer'').
    \eprover &  106 \\
    \tactictoe &  139 \\
    \tactictoe + \metis & 182 \\
-   \tactictoe + asynchronous \eprover & 182 \\
-%x tactictoe + async holyhammer 10 & 183 \\
-   \tactictoe + \metis + asynchronous \eprover & 190 \\
+   \tactictoe + \eprover & 182 \\
+   %x tactictoe + async holyhammer (10 thread) & 183 \\
+   \tactictoe + \metis + \eprover & 190 \\
   
 \bottomrule
 \end{tabular}
 \caption{Experiments with a timeout of 60 seconds \label{tab:param}}
 \end{table}
+
+Slight error in this experiments were eprover predictions have been made from 
+the preselected 500 theorems instead of the full library. But even with the 
+added overhead, we already see 
+the benefit of using stronger external prover than \metis.
+
 
 \subsection{Full-scale experiment}
 
@@ -2649,7 +2472,7 @@ Mention the conflicts.
 Theorem orthogonalization is not turn on during instantiation of tacitcs except 
 for the metis tactic.
 Best parameters + comparison with holyhammer.
-
+asynchronous eprover is not used  for fairer comparison with eprover.
 
 10 seconds experiment:
 
@@ -3111,7 +2934,193 @@ If a discovered proof is short, fast, maintainable and
 understandable, it could replace its original in the \holfour standard library.
 
 
+\section{Related Work}\todo{TG reorganise + other motivation?}
+There are several essential components of our work that are comparable to 
+previous approaches: tactic-level proof recording, tactic 
+selection through machine learning techniques and automatic tactic-based proof 
+search. Our work is also related to previous approaches that use machine 
+learning to select premises for the ATP systems and guide ATP proof search 
+internally.
 
+For \hollight, the Tactician tool~\cite{DBLP:conf/sefm/Adams15} 
+can transform a packed tactical proof into a series of interactive tactic 
+calls. Its principal application 
+was so far refactoring the library and teaching common proof techniques to new 
+ITP users. In our work, the splitting of a proof into a sequence of tactics is 
+essential for the
+tactic recording procedure, used to train our tactic prediction module.
+
+The system 
+\textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
+ 
+groups related proofs thanks to its clustering 
+algorithms. It allows \coq users to inspire themselves from similar proofs and 
+notice 
+duplicated proofs. Our predictions comes from a much more detailed description 
+of the open goal.
+However, we simply create a single label for each tactic call whereas each of 
+its
+arguments is treated independently in \textsf{ML4PG}. 
+Our choice is motivated by the k-NN algorithm already used in
+\holyhammer for the selection of theorems.
+%, which can be easly adapted to the selection of tactics but would be improved 
+%by a 
+%version that can learn to predict tactics and their arguments independently.
+
+\textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} is a powerful system able to 
+generate
+proof scripts from previous \coq proof examples.
+Its strength lies in its ability to produce likely sequences 
+of tactics for solving domain specific goals. It operates by creating a model 
+for common sequences of tactics for a specific library.
+This means that in order to propose the following tactic, only the previously 
+called tactics
+are considered.
+%intuition tells us that it should not be the main factor
+Our algorithm, on the other hand, relies mainly on the characteristics of the 
+current goal 
+to decide
+which tactics to apply next. In this way, our learning mechanism has to 
+rediscover why each 
+tactic was applied for the current subgoals. It may lack some useful bias for 
+common sequences 
+of tactics, but is more reactive to subtle changes. Indeed, it can be trained 
+on a large library and only tactics relevant to the current subgoal will be 
+selected. 
+Concerning the proof search, \textsf{SEPIA}'s %simple 
+breadth-first search is replaced by an A*-algorithm which allows for heuristic 
+guidance in 
+the exploration of the search tree.
+Finally, \textsf{SEPIA} was evaluated on three chosen parts (totaling 2382 
+theorems) of the 
+\coq library demonstrating that it globally outperforms individual \coq 
+tactics. In contrast, we demonstrate the competitiveness of our system against 
+the successful general-purpose hammers on the \holfour standard library (7902 
+theorems).
+
+Machine learning has also been used to advise the best library lemmas for new 
+ITP goals.
+This can be done either in an interactive way, when the user completes the 
+proof based on the recommended lemmas, as in the \textsc{Mizar Proof 
+Advisor}~\cite{Urb04-MPTP0}, or attempted fully automatically, where such lemma 
+selection is handed over to the ATP component of a \emph{hammer} 
+system~\cite{hammers4qed,tgck-cpp15,holyhammer,BlanchetteGKKU16,mizAR40}.
+
+Internal learning-based selection of tactical steps inside an ITP is analogous 
+to internal learning-based selection of clausal steps inside ATPs such as 
+\textsc{MaLeCoP}~\cite{malecop} and \textsc{FEMaLeCoP}~\cite{femalecop}. These 
+systems
+use the naive Bayes classifier to  select clauses for the extension steps in
+tableaux proof search based on many previous proofs. Satallax~\cite{Brown2012a} 
+can guide its
+search internally~\cite{mllax} using a command classifier, which can estimate 
+the priority of the 11 kinds of
+commands in the priority queue based on positive and negative examples.
+There are several essential components of our work that are comparable to 
+previous approaches: tactic-level proof recording, tactic 
+selection through machine learning techniques and automatic tactic-based proof 
+search. Our work is also related to previous approaches that use machine 
+learning to select premises for the ATP systems and guide ATP proof search 
+internally.
+
+For \hollight, the Tactician tool~\cite{DBLP:conf/sefm/Adams15} 
+can transform a packed tactical proof into a series of interactive tactic 
+calls. Its principal application 
+was so far refactoring the library and teaching common proof techniques to new 
+ITP users. In our work, the splitting of a proof into a sequence of tactics is 
+essential for the
+tactic recording procedure, used to train our tactic prediction mechanism.
+
+The system 
+\textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
+ 
+groups related proofs thanks to its clustering 
+algorithms. It allows \coq users to inspire themselves from similar proofs and 
+notice 
+duplicated proofs. Our predictions comes from a much more detailed description 
+of the open goal.
+However, we simply create a single label for each tactic call whereas each of 
+its
+arguments is treated independently in \textsf{ML4PG}. 
+Our choice is motivated by the k-NN algorithm already used in
+\holyhammer for the selection of theorems.
+%, which can be easly adapted to the selection of tactics but would be improved 
+%by a 
+%version that can learn to predict tactics and their arguments independently.
+
+\textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} is a powerful system able to 
+generate
+proof scripts from previous \coq proof examples.
+Its strength lies in its ability to produce likely sequences 
+of tactics for solving domain specific goals. It operates by creating a model 
+for common sequences of tactics for a specific library.
+This means that in order to propose the following tactic, only the previously 
+called tactics
+are considered.
+%intuition tells us that it should not be the main factor
+Our algorithm, on the other hand, relies mainly on the characteristics of the 
+current goal 
+to decide
+which tactics to apply next. In this way, our learning mechanism has to 
+rediscover why each 
+tactic was applied for the current subgoals. It may lack some useful bias for 
+common sequences 
+of tactics, but is more reactive to subtle changes. Indeed, it can be trained 
+on a large library and only tactics relevant to the current subgoal will be 
+selected. 
+Concerning the proof search, \textsf{SEPIA}'s %simple 
+breadth-first search is replaced by MCTS which allows for heuristic 
+guidance in 
+the exploration of the search tree.
+Finally, \textsf{SEPIA} was evaluated on three chosen parts (totaling 2382 
+theorems) of the 
+\coq library demonstrating that it globally outperforms individual \coq 
+tactics. In contrast, we demonstrate the competitiveness of our system against 
+the successful general-purpose hammers on the \holfour standard library.
+A recent improvement on this system~\cite{} includes the possibility to replace 
+theorems in tactics by ones belonging to the same cluster, independently of the 
+current goal. We have the opposite approach, we forget about the original 
+theorems in the tactic creating an more general abstract tactic
+and only use the goal to guide predictions. Finding a way to combine those two 
+approaches could be the key to stronger theorem predictions.
+
+A similar effort for stronger automation is performed in \isabelle. Nagashima 
+developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the 
+user to 
+program with regular tactics and combine them with tools such as 
+\sledgehammer~\cite{sledgehammer10} or Nitpick~\cite{Nitpick10}. 
+Selection of tactics from recorded proofs has yet to be implemented and now it 
+is up to come up with a good meta-tactic.
+
+%In \holfour, 
+%a tactic is a just a \sml function of a special type and \holyhammer can 
+%easily 
+%be modified to be a tactic. So this meta-level is not 
+%necessary, all programming can occur at the tactic level and even \tactictoe  
+%is a tactic.
+
+%* Theory Exploration (Moa Johanson+, ITP 2017)  I think that is more related 
+%to conjeturing and do not think it fits here.
+
+
+Machine learning has also been used to advise the best library lemmas for new 
+ITP goals.
+This can be done either in an interactive way, when the user completes the 
+proof based on the recommended lemmas, as in the \textsc{Mizar Proof 
+Advisor}~\cite{Urb04-MPTP0}, or attempted fully automatically, where such lemma 
+selection is handed over to the ATP component of a \emph{hammer} 
+system~\cite{hammers4qed,tgck-cpp15,holyhammer,BlanchetteGKKU16,mizAR40}.
+
+Internal learning-based selection of tactical steps inside an ITP is analogous 
+to internal learning-based selection of clausal steps inside ATPs such as 
+\textsc{MaLeCoP}~\cite{malecop} and \textsc{FEMaLeCoP}~\cite{femalecop}. These 
+systems
+use the naive Bayes classifier to  select clauses for the extension steps in
+tableaux proof search based on many previous proofs. Satallax~\cite{Brown2012a} 
+can guide its
+search internally~\cite{mllax} using a command classifier, which can estimate 
+the priority of the 11 kinds of
+commands in the priority queue based on positive and negative examples.
 
 
 \section{Conclusion}\label{sec:concl}\todo{TG + JU or CK review}
