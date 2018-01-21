@@ -1702,10 +1702,17 @@ structures.
 %%The process stops if the root goal is solved, the time limit is exceeded or 
 %%there is no more tactic to be applied to an active node.
 
-\subsection{A proof tree with two branching factors}
+\subsection{A search tree: data structures and definitions}
 
-A tactical proof tree is a set of nodes containing a list of goals where each 
-goal $g$ of a node $n$ is linked to a node $m$ when the list of 
+
+
+\begin{definition}(Tactical search tree)
+A tactical search tree (or search tree) is a set of nodes containing a list of 
+goals where each goal $g$ of a node $n$ is linked to a node $m$ when the list 
+of 
+\end{definition}
+
+
 
 \begin{figure}{}
 \begin{center}
@@ -1742,16 +1749,44 @@ goal $g$ of a node $n$ is linked to a node $m$ when the list of
 \draw[-to,dotted,thick] (0) to (3b);
 \end{tikzpicture}
 \end{center}
-\caption{The two branching factors: choice of a goal $g_0^i$ and choice of a 
-tactic $t_j$.}
+\caption{A node of a search tree and its relation with the children of one of 
+its goal}
 \label{fig:choice}
 \end{figure}
 
-Starting from the bottom node, we can construct descendant of this node by 
+Starting from the bottom parent node, we can construct children of a goal of 
+this node by 
 choosing a goal $g_i^0$ on this node and choosing tactics $t1,t2,\ldots$ to 
 apply to this goal. Here the result produces new nodes each containing a list 
 of goals to be proven. 
 
+In each node can either be solved, open or pending. The definition of a solved 
+goal is expressed through mutual recursion with a 
+solved node and is given in ~\ref{def:solved_goal}. An open goal is goal that 
+was tried at least once by a tactic. In our implementation we have only one 
+open goals per node at once. A goal that was not explored yet is called a 
+pending goal.
+
+\begin{definition}(Solved node and solved goal)
+Let $\mathbb{T}$ be a search tree. The set of solved nodes $\mathbb{A}^*$ and 
+the set of solved goals $\mathbb{G}^*$ are the smallest set verifying the 
+following equations:
+
+\todo{should I make a constructive definition with $A^n+1$ in terms of $G^n$ 
+instead?}
+\begin{align*}
+\mathbb{A}^* &= \lbrace a \in \mathbb{A}\ |\ \forall g \in G(a).\ g \in 
+\mathbb{G}^* \rbrace\\
+\mathbb{G}^* &= \lbrace g \in \mathbb{G}\ |\ \exists t \in T(g).\ t(g) \in 
+\mathbb{A}^* \rbrace
+\end{align*}
+
+By the base case of these definition, a goal is solved if there exists a tactic 
+applied to this goal that produces no goals.
+
+
+
+\end{definition}
 
 Since there is a bijection between tactics of the tree search 
 and the node they 
@@ -1773,11 +1808,7 @@ Supervised learning introduction.
 %inductive 
 %case.
 
-\paragraph{Solving a goal and a node}
-Describe the case where a proof for a goal in a node is found.
-If one of those list where empty, the goal $g_i^0$ would 
-be proved.
-A node is solved when every of its goal are solved.
+
 
 
 
@@ -1857,16 +1888,18 @@ evaluations of descendants of $a_i$.
 
 
 
-\[Exploration(a_i) = \frac{PriorPolicy(a_i)}{Policy(a_i)}\]
+\[Exploration(a_i) = \frac{PriorPolicy(a_i)}{CurPolicy(a_i)}\]
 
-\[Policy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(p))}}\]
+\[CurPolicy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(p))}}\]
 The policy is approximatively the  percentage of time a node was visited.The 
 square root skews this probability to favor even more exploration of nodes with 
 few visits. 
 
-The exploitation function $Exploitation$ is the average of the evaluation of 
-all nodes descendant of $a_i$ (itself included) in the current search tree.   
-\[Exploitation(a_i) = Average_{b \in Desc(a_i))} {PriorEvaluation(b)}\]
+The exploitation term is the average of the evaluation of 
+all nodes descendant of $a_i$ (itself included) in the current search tree. It 
+is also called the current evaluation of $a_i$.   
+\[Exploitation(a_i) = CurEvaluation(a_i) = 
+  Average_{b \in Desc(a_i)} {PriorEvaluation(b)}\]
 
 
 MCTS with prior policy
@@ -1951,10 +1984,6 @@ to the number of proof attempts.
 %evaluation function that takes into account the productivity of tactics such 
 %as 
 %$E_{productive}$ or $E_r$.
-
-
-
-
 
 %Obviously, we can consider the 
 %trivial evaluation function where 
@@ -2849,12 +2878,6 @@ which improves readability and prevents duplication of this declarations.
 %that can be chosen by the user. Those tactics are curated so that only 
 %productive tactics are returned. (define productive)
 
-
-
-
-
-
-
 \section{Case study: comparison with original proofs}\todo{
   TG + RK: find describe examples.
   RK: After implementation and small experiment is done (in about 1 week) 
@@ -2999,7 +3022,8 @@ REPEAT Cases THENL
    METIS_TAC [LESS_EQUAL_ANTISYM, DIVIDES_LE, LESS_0]]
 \end{lstlisting}
 
-tacictoe is resourceful.
+TacicToe is resourceful. Changing the shape of the feature of the theorems
+to get better predictions.
 
 Goal: \texttt{SURJ\_INJ\_INV} in theory \texttt{pred\_set})
 \begin{lstlisting}[language=SMLSmall,frame=tb]
@@ -3009,26 +3033,24 @@ Goal: \texttt{SURJ\_INJ\_INV} in theory \texttt{pred\_set})
 Original \holfour proof script (2.03 milliseconds)
 \begin{lstlisting}[language=SMLSmall,frame=tb]
 REWRITE_TAC [IMAGE_SURJ] THEN
-  DISCH_TAC THEN Q.EXISTS_TAC `THE o LINV_OPT f s` THEN
-  BasicProvers.VAR_EQ_TAC THEN REPEAT STRIP_TAC
-  THENL [
-  irule INJ_COMPOSE THEN Q.EXISTS_TAC `IMAGE SOME s` THEN
-    REWRITE_TAC [INJ_LINV_OPT_IMAGE] THEN REWRITE_TAC [INJ_DEF, IN_IMAGE] THEN
-    REPEAT STRIP_TAC THEN REPEAT BasicProvers.VAR_EQ_TAC THEN
-    FULL_SIMP_TAC std_ss [THE_DEF],
-  ASM_REWRITE_TAC [LINV_OPT_def, o_THM, THE_DEF] THEN
-    RULE_ASSUM_TAC (Ho_Rewrite.REWRITE_RULE
-      [IN_IMAGE', GSYM SELECT_THM, BETA_THM]) THEN ASM_REWRITE_TAC [] ]
+DISCH_TAC THEN Q.EXISTS_TAC `THE o LINV_OPT f s` THEN
+BasicProvers.VAR_EQ_TAC THEN REPEAT STRIP_TAC THENL 
+  [irule INJ_COMPOSE THEN Q.EXISTS_TAC `IMAGE SOME s` THEN
+     REWRITE_TAC [INJ_LINV_OPT_IMAGE] THEN REWRITE_TAC [INJ_DEF, IN_IMAGE] THEN
+     REPEAT STRIP_TAC THEN REPEAT BasicProvers.VAR_EQ_TAC THEN
+     FULL_SIMP_TAC std_ss [THE_DEF],
+   ASM_REWRITE_TAC [LINV_OPT_def, o_THM, THE_DEF] THEN
+     RULE_ASSUM_TAC (Ho_Rewrite.REWRITE_RULE
+       [IN_IMAGE', GSYM SELECT_THM, BETA_THM]) THEN ASM_REWRITE_TAC []]
 \end{lstlisting}
 
 \vspace{5mm}
 
+Make it match the new version.
 \tactictoe proof script (50.85 milliseconds)
 \begin{lstlisting}[language=SMLSmall,frame=tb]
 SRW_TAC [] [SURJ_DEF, INJ_DEF] THEN METIS_TAC []
 \end{lstlisting}
-
-
 
 
 Goal
@@ -3058,20 +3080,19 @@ Original \holfour proof script (62.69 milliseconds)
 %      (LUPDATE x n (l1 ++ l2) = l1 ++ (LUPDATE x (n-LENGTH l1) l2))`,
 %);
 \vspace{5mm}
-
+Make it match the new version.
 \tactictoe proof script (17.16 milliseconds)
 \begin{lstlisting}[language=SMLSmall,frame=tb]
 Induct_on `l1` THENL [SRW_TAC [] [],
   Cases_on `n` THENL [SRW_TAC [] [],
     FULL_SIMP_TAC (srw_ss ()) [] THEN METIS_TAC [LUPDATE_def]]]
 \end{lstlisting}
+fs () is short for FULL\_SIMP\_TAC (srw\_ss ()) and rw is short for ??.
 
 
-If a discovered proof is reasonable short, fast, maintainable  and 
-understandable, they could 
-replace its original in the \holfour standard library. In the first case the 
-tactictoe proof is slower but could still be considered becaues it is much more 
-readable. In the second case, it is faster and more readable.
+
+If a discovered proof is short, fast, maintainable and 
+understandable, it could replace its original in the \holfour standard library.
 
 
 
@@ -3084,6 +3105,9 @@ Future work:
   + Orthogonalization of theorems~\cite{ckju-jsc15}. 
   + Try harder and smarted on term predictions. \cite{latest version of sepia}. 
   \cite{conjecturing}
+  + Self-learning.  
++ MCTS was presented in manner that we only did the first step of reinforcement 
+learning. CurrentPolicy becomes PriorPolicy.
  
 More training than just orthogonalization of tactics.
 
