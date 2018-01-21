@@ -1238,7 +1238,7 @@ inductively defined by:
 D_0 &=_{def} \lbrace f \rbrace \\
 D_{n+1} &=_{def} D_n \cup \lbrace (t,g)\in \mathfrak{F}\  |\ \exists 
 (\hat{t},\hat{g}) \in D_n.\ g \in \hat{t}(\hat{g}) \rbrace  \\
-D_\infty &=_{def} \bigcup_{i \in \mathbb{N}^*} D_i\\
+D_\infty &=_{def} \bigcup_{i \in \mathbb{N}} D_i\\
 \end{align*}
 where $\hat{t}(\hat{g})$ denotes the resulting set of goals produced by the 
 application 
@@ -1706,13 +1706,30 @@ structures.
 
 
 
-\begin{definition}(Tactical search tree)
-A tactical search tree (or search tree) is a set of nodes containing a list of 
-goals where each goal $g$ of a node $n$ is linked to a node $m$ when the list 
-of 
+\begin{definition}(Tactical search tree)\\
+A tactical search tree is a sixtuple $(\mathbb{A},\mathbb{G},\mathbb{T},A,G,T)$ 
+that respects the following conditions:
+\begin{itemize}
+\item $\mathbb{A}$ is a set of nodes, $\mathbb{G}$ is a set of goals 
+ and $\mathbb{T}$ is a set of tactics.
+\item $A$ is a partial function from $\mathbb{G} \times \mathbb{T}$ to 
+$\mathbb{A}$.
+\item $T$ is a total function from $\mathbb{G}$ to $P(\mathbb{T})$.
+\item $G$ is a total function from $\mathbb{A}$ to $P(\mathbb{G})$.
+\item $Support(A) = \lbrace (g,t)\ |\ t \in T(g) \rbrace$.
+\item if $t \in T(g)$ and $A(g,t) = a$ then $t(g) = G(a)$.
+\end{itemize}
+
+Additional constraints such as acyclicity and the fact that there is exactly 
+one root node are properties of this graph that are preserved during the 
+application of the MCTS algorithm. That is why we call it a tree although this 
+we do not specify it in this definition.
 \end{definition}
 
-
+We assume that any set is numbered and that we can access a nth member of set 
+$s$ by writing $s_n$. For readability in the next figure $(G(a_j))_i$ is 
+written 
+$g_j^i$.
 
 \begin{figure}{}
 \begin{center}
@@ -1768,17 +1785,21 @@ open goals per node at once. A goal that was not explored yet is called a
 pending goal.
 
 \begin{definition}(Solved node and solved goal)
-Let $\mathbb{T}$ be a search tree. The set of solved nodes $\mathbb{A}^*$ and 
-the set of solved goals $\mathbb{G}^*$ are the smallest set verifying the 
-following equations:
+Let $\mathbb{T}$ be a search tree. The set of solved nodes $\mathbb{A}^\infty$ 
+and 
+the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
 
-\todo{should I make a constructive definition with $A^n+1$ in terms of $G^n$ 
-instead?}
 \begin{align*}
-\mathbb{A}^* &= \lbrace a \in \mathbb{A}\ |\ \forall g \in G(a).\ g \in 
-\mathbb{G}^* \rbrace\\
-\mathbb{G}^* &= \lbrace g \in \mathbb{G}\ |\ \exists t \in T(g).\ t(g) \in 
-\mathbb{A}^* \rbrace
+\mathbb{A}^{0} &=_{def} 
+\lbrace a \in \mathbb{A}\ |\ G(a) = \emptyset \rbrace \\ 
+\mathbb{G}^{0} &=_{def} \lbrace g \in \mathbb{G}\ |\ 
+\exists a \in A(g).\ a \in \mathbb{A}^{0} \rbrace\\
+\mathbb{A}^{n+1} &=_{def} \lbrace a \in \mathbb{A}\ |\ 
+\forall g \in G(a).\ g \in \mathbb{G}^{n} \rbrace\\
+\mathbb{G}^{n+1} &=_{def} \lbrace g \in \mathbb{G}\ |\ 
+\exists a \in A(g).\ a \in \mathbb{A}^{n+1} \rbrace \\
+\mathbb{A}^\infty &=_{def} \bigcup_{i \in \mathbb{N}} \mathbb{A}^n\\
+\mathbb{G}^\infty &=_{def} \bigcup_{i \in \mathbb{N}} \mathbb{G}^n\\
 \end{align*}
 
 By the base case of these definition, a goal is solved if there exists a tactic 
@@ -1808,22 +1829,17 @@ Supervised learning introduction.
 %inductive 
 %case.
 
-
-
-
-
 \subsection{Prior tactic policy}
-
 The estimation through the distance produced by the tactic selectors are hard 
 to translate into a prior tactic policy, so we rely only on the order of 
 tactics to estimate the probability with which a tactic should be tried.
 Let $t_0,\ldots,t_500$ be the list of preselected tactics ordered by their 
-distance to a goal $g$. Let $c_policy$ be a constant heuristic that estimates 
+distance to a goal $g$. Let $c_{policy}$ be a constant heuristic that estimates 
 how likely a tactic $t_i$ is to prove the goal compared to the rest of the 
 tactics $t_{i+1},\ldots,t_500$. We make the strong assumption that $c_policy$ 
 is constant across the search. We can now calculate the prior policy by:
-
-\[PriorPolicy(t_{i}) = (1 - c_policy)^{i} * c_policy\]
+   
+\[PriorPolicy(t_{i}) = (1 - c_{policy})^{i} * c_{policy}\]
 
 The first term of the multiplication is the probability that none of the better 
 ranked tactic is selected. 
