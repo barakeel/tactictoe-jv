@@ -211,10 +211,15 @@ the relevance of tactics in particular proof situations.
 % steps, 
 This learned knowledge is then used in a Monte Carlo tree search algorithm that explores the most promising tactic-level proof paths. 
 Experiments on the \holfour standard 
-library show that TacticToe is able to re-prove 59\% of 7088 theorems in less 
-than 10 seconds. This is to be compared with the 29\% proved by the ATP Eprover 
-in auto-schedule mode with 128 lemmas predicted and translated by HolyHammer.
+library show that TacticToe is able to re-prove 66.6\% of 7123 theorems in less 
+than 60 seconds. 
+This is to be compared with the 42.8\% proved in the same amount of time by a 
+a barebone version of TacticToe.
 
+In the same condtion the ATP Eprover proves ..., when it is run in 
+auto-schedule mode with 128 lemmas predicted and 
+translated by HolyHammer.
+\todo{to do eprover results running}
 
 %on their first-order translations?
 
@@ -241,8 +246,7 @@ in auto-schedule mode with 128 lemmas predicted and translated by HolyHammer.
 %5 seconds whereas the best single HOL(y)Hammer strategy solves 32\% in the 
 %same 
 %amount of time.
-\todo{include latest results: 66.56 percent of 7123 theorems in 60 seconds and
-do a similar experiment for hh with minimization}
+
 
 \end{abstract}
 
@@ -1556,32 +1560,40 @@ the node extension (+ case of solved goal) + backpropagation.
 add description of end of the algorithm.
 }
 Despite the best efforts of the prediction algorithms, the selected tactic may 
-not 
-solve the current goal, proceed in the wrong direction
+not solve the current goal, proceed in the wrong direction
 or even loop. For that reason, the prediction needs to be accompanied by a  
 proof search mechanism that allows for backtracking and 
-can choose which proof tree to extend next and in 
-which direction.
-Our search algorithm is an advanced tree search algorithm that relies on 
-evaluation and policy functions to guide the search.
+can choose which proof tree to extend next and in which direction.
+Our search algorithm is a monte carlo tree search (MCTS) algorithm that relies 
+on prior evaluation and policy functions. Those priors are learned through 
+direct supervised learning in the case of the policy and via the data 
+accumulated during orthogonalization for the evaluation.
 
-\todo{TG: add transition}
-A proof is in general not a path but a tree. This means that our search space 
-has two branching factors: 
-the choice of a tactic, and the number of goals produced by each tactic.
-The first one can be thought as a disjunction of tactics. Indeed, 
-if there exists a tactic that solves a goal then it is solved. And 
-conversely, the second branching factor is a conjunction of goals. All pending 
-goals must be proven in order to prove the parent goal. For example, in the 
-case of induction tactics the pending goals are the base case and the inductive 
-case.
+So, we first give a static description of the proof tree and its component.
+Then we explain how we compute the evaluation and policy functions from learned 
+data. And finally, we show how one MCTS step changes the proof tree data 
+structures.
 
-\todo{TG: add general overview of the algorithm and describe the plan}
-If we suppose that each tactic produces at most one goal, then the standard 
-monte carlo tree search algorithm applies. So we will first discuss how our 
-algorithm works in this case. And then explain how we extend it to support 
-tactics producing 
-multiple goals.
+%A proof is in general not a path but a tree. This means that our search space 
+%has two branching factors: 
+%the choice of a tactic, and the number of goals produced by each tactic.
+%The first one can be thought as a disjunction of tactics. Indeed, 
+%if there exists a tactic that solves a goal then it is solved. And 
+%conversely, the second branching factor is a conjunction of goals. All pending 
+%goals must be proven in order to prove the parent goal. For example, in the 
+%case of induction tactics the pending goals are the base case and the 
+%inductive 
+%case.
+
+
+
+
+
+%If we suppose that each tactic produces at most one goal, then the standard 
+%monte carlo tree search algorithm applies. So we will first discuss how our 
+%algorithm works in this case. And then explain how we extend it to support 
+%tactics producing 
+%multiple goals.
 
 %Our search algorithm takes inspiration from the A*-algorithm~\cite{HartNR68} 
 %which uses 
@@ -1746,8 +1758,29 @@ and the node they
 produced, any function define on tactics of the tree search can be map to a 
 function defined on nodes. 
 
-
+Definition of solved goals, open goals  and pending goals.
 Supervised learning introduction.
+
+
+%A proof is in general not a path but a tree. This means that our search space 
+%has two branching factors: 
+%the choice of a tactic, and the number of goals produced by each tactic.
+%The first one can be thought as a disjunction of tactics. Indeed, 
+%if there exists a tactic that solves a goal then it is solved. And 
+%conversely, the second branching factor is a conjunction of goals. All pending 
+%goals must be proven in order to prove the parent goal. For example, in the 
+%case of induction tactics the pending goals are the base case and the 
+%inductive 
+%case.
+
+\paragraph{Solving a goal and a node}
+Describe the case where a proof for a goal in a node is found.
+If one of those list where empty, the goal $g_i^0$ would 
+be proved.
+A node is solved when every of its goal are solved.
+
+
+
 \subsection{Prior tactic policy}
 
 The estimation through the distance produced by the tactic selectors are hard 
@@ -1833,7 +1866,7 @@ few visits.
 
 The exploitation function $Exploitation$ is the average of the evaluation of 
 all nodes descendant of $a_i$ (itself included) in the current search tree.   
-\[Exploitation{a_i} = Average_{b \in Desc(a_i))} {PriorEvaluation(b)}\]
+\[Exploitation(a_i) = Average_{b \in Desc(a_i))} {PriorEvaluation(b)}\]
 
 
 MCTS with prior policy
@@ -1878,13 +1911,6 @@ tactic cache which memorizes tactic effects on goals. Similarly there is also a
 prediction cache, which memorize the tactic predictions for each goal. Those 
 two caches allow a fast exploration of confluent branches but they remain 
 separated in our search tree.
-
-\paragraph{Solving a goal and a node}
-Describe the case where a proof for a goal in a node is found.
-If one of those list where empty, the goal $g_i^0$ would 
-be proved.
-A node is solved when every of its goal are solved.
-
 
 \subsection{End of the proof search}
 The proof search stops when one of these 3 conditions is realized:
@@ -2580,7 +2606,7 @@ for the metis tactic.
 Best parameters + comparison with holyhammer.
 
 
-
+10 seconds experiment:
 
 Until now, all our feature vectors were learned form human proofs. 
 human proofs. We can also add to this tactics that were part of a proof found 
@@ -2592,9 +2618,6 @@ The hope is that the algorithm will improve faster by learning from its own
 discovered proofs than from the human proof 
 scripts~\cite{DBLP:conf/cade/Urban07}. It is also the first step toward 
 self-reinforcement learning.
-
-
-
 
 
 \begin{table}[h!]
@@ -2643,7 +2666,7 @@ most proofs are usually completed by rewriting tactics.
 & {meas} \\
 \midrule
 \tactictoe & 74.6 & 67.3 & 77.3 & 28.2\\
-\eprover & 50.8 & 67.6 & 63.4 & 10.8 \\
+\eprover & 50.8 & 67.6 & 63.4 & 10.8\\
 \midrule
 \phantom{abc}  & {proba} & {list} & {sort} & {f\_map} \\
 \midrule
@@ -2730,11 +2753,16 @@ proof}
 % \caption{\label{tab:stats} old search statistics}
 %\end{table*}
 
-Constant progress: 
-  From 45 percent on the same dataset in 5 seconds 
-       59 percent in december in 10 seconds
-  Probably 65-70 percent en of January in 60 seconds.      
+60 seconds experiment + 
+adding theorems from the namespace and removing 
+additionally saved theorems + 
+recording proofs from Prove.
 
+Constant progress: 
++45 percent in Septermber in 5 seconds.
++59 percent in December in 10 seconds.
++66.6 percent in January in 60 seconds.
+ 
 The progress cannot be attributed only to the time increase but to testing and 
 debugging of parameters.
 
@@ -2828,7 +2856,7 @@ which improves readability and prevents duplication of this declarations.
 
 
 \section{Case study: comparison with original proofs}\todo{
-  TG + RK: describe the two examples.
+  TG + RK: find describe examples.
   RK: After implementation and small experiment is done (in about 1 week) 
       Test tactictoe find new examples on new goals and manual exploration mode.
       Give feedback.
@@ -2948,9 +2976,9 @@ Goal: \texttt{IS\_GCD\_UNIQUE} in theory \texttt{pred\_set}).
 !a b c d. is_gcd a b c wedge is_gcd a b d ==> (c = d)
 \end{lstlisting}
 
-Original \holfour proof script (2.03 milliseconds)
+Original \holfour proof script
 \begin{lstlisting}[language=SMLSmall,frame=tb]
-PROVE_TAC[IS_GCD,DIVIDES_ANTISYM]
+PROVE_TAC[IS_GCD, DIVIDES_ANTISYM]
 \end{lstlisting}
 
 \vspace{5mm}
