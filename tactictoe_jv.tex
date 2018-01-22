@@ -315,6 +315,8 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
 %approach.
 
 
+\subsection{The problem}
+
 
 
 \todo{JU or CK review}
@@ -347,6 +349,10 @@ applied on the generated proof.
 \item The internal ATP \metis used during proof search can be complemented 
 by asynchronous calls to \eprover.
 \end{itemize}
+
+
+
+
 
 
 \section{Proof Recording}\label{sec:recording}
@@ -412,7 +418,34 @@ val MAP_APPEND = store_thm("MAP_APPEND",
 \end{lstlisting}
 \end{example} 
 
-\subsection{Minimal \sml Code Trees}
+%\subsection{Minimal \sml Code Trees}
+%
+%
+%Using the standard types $string$ and $list$ and their type constructors,
+%we define a minimal code tree by the following AST:
+%\begin{align*}
+%M &=_{def} string \\
+%I &=_{def} string\ \vert\ Module(M,I)\\
+%D &=_{def} Open(M)\ \vert\  Val(I,E) \\
+%E &=_{def} Code(I\ list)\ \vert\   Let (D,E)
+%\end{align*}
+%
+%In this AST, the constructors $Let$, $Val$ and $Open$ correspond to
+%the reserved \sml tokens \texttt{let}, \texttt{val} and \texttt{open} 
+%respectively. $Module(M,I)$ refers to the \sml token \texttt{M.I} where 
+%\texttt{M} is a module (also called structure in \sml) and \texttt{I} is an 
+%identifier. $D$ is a declaration, $E$ an expression. Inside a 
+%declaration $val(I,E)$, $E$ is a definition for $I$.
+%To construct such an AST for a theory file, we rely on a custom parser. It 
+%transform a source file into a 
+%minimal code tree taking into account the scope of each constructor.
+%An additional reason to refrain from the use of the interpreter in our case, 
+%is that
+%the \polyml compiler needs to execute the code preceding an expression 
+%before parsing it, which is significantly slower than a custom parser.
+
+\subsection{Globalization}
+
 \holfour proofs are organized in theory files.
 Each theory file contains definitions and statements of theorems together with
 their proofs. Those theories and the contained proofs
@@ -420,42 +453,26 @@ are written
 in the functional programming language \sml. To automate
 proof search strategies a user can implement programming language functions
 that correspond to more involved proofs.
-Functions that correspond to backward proofs, called tactics, are combined with each other with the help of 
+Functions that correspond to backward proofs, called tactics, are combined with 
+each other with the help of 
 tacticals (functions that takes
-tactics as arguments). Such a combination of tactics will be called a \emph{proof script} when it
+tactics as arguments). Such a combination of tactics will be called a 
+\emph{proof script} when it
 proves a theorem stated in a theory.
 
-In order to apply machine learning to the existing proof scripts, we will need to
+In order to apply machine learning to the existing proof scripts, we will need 
+to
 parse and modify them, which involves parsing and modification of \sml code.
 Acquiring access to the string representation of a tactic (code for the tactic) 
 allows us generating
 proof scripts that can be inspected by a human.
 As some \holfour theories are built in separate sessions, it is not possible
-to transfer \sml values directly, but instead tactic code needs to transferred instead.
+to transfer \sml values directly, but instead tactic code needs to transferred 
+instead.
 To do this, the transferred information will be saved externally.
 
-Using the standard types $string$ and $list$ and their type constructors,
-we define a minimal code tree by the following AST:
-\begin{align*}
-M &=_{def} string \\
-I &=_{def} string\ \vert\ Module(M,I)\\
-D &=_{def} Open(M)\ \vert\  Val(I,E) \\
-E &=_{def} Code(I\ list)\ \vert\   Let (D,E)
-\end{align*}
 
-In this AST, the constructors $Let$, $Val$ and $Open$ correspond to
-the reserved \sml tokens \texttt{let}, \texttt{val} and \texttt{open} 
-respectively. $Module(M,I)$ refers to the \sml token \texttt{M.I} where 
-\texttt{M} is a module (also called structure in \sml) and \texttt{I} is an 
-identifier. $D$ is a declaration, $E$ an expression. Inside a 
-declaration $val(I,E)$, $E$ is a definition for $I$.
-To construct such an AST for a theory file, we rely on a custom parser. It transform a source file into a 
-minimal code tree taking into account the scope of each constructor.
-An additional reason to refrain from the use of the interpreter in our case, is that
-the \polyml compiler needs to execute the code preceding an expression 
-before parsing it, which is significantly slower than a custom parser.
-
-\subsection{Globalization}
+%\subsubsection {Unfolding locally declared values}
 To transfer \sml values as code across theories in a conservative manner, we 
 need to 
 globalize \sml identifiers. To this end, we replace each identifier by some 
@@ -469,53 +486,53 @@ by their definitions. Prefixing and
 unfolding are applied recursively in 
 the definitions.
 
-For a more formal explanation, we define a target AST build upon the original 
-one, where each identifer $I$ is replace by its globalized expression $E'$:
-
-\begin{align*}
-M' &=_{def} string \\
-I' &=_{def} string\ \vert\ Module(M',I')\\
-D' & =_{def} Open(M')\ \vert\  Val (I',E') \\
-E' &=_{def} Code(E'\ list)\ \vert\ Let (D',E') 
-\end{align*}
-
-Then, we express two mutually recursive functions $f_d$ and 
-$f_e$ that globalize the original representation. The 
-function $f_d$ modifies declaration and $f_e$ modifies expressions. Since a 
-\sml program is a list of declarations, we will be able transform it by 
-iteratively applying $f_d$. The stack 
-$\mathbb{S}$ keep track of each previous declaration: the identifier that is 
-declared and their globalized definition. To save a declaration to 
-the stack, we use the $push$ 
-function. Opening a module has the effect of pushing all identifiers with 
-their associated prefixed version to the stack. The scope of an identifier is 
-automatically handled by construction of the AST. To find the globalized 
-version of an identifier $i$, we use the $lookup$ function on a stack $s$, 
-which returns the globalization associated with $i$ appearing highest in $s$. 
-We then build $f_e$ and $f_d$ in the following way:
-\vspace{5mm}
-
-\begin{math}
-\begin{array}{lcl}
-f_d:& \mathbb{S} \times D &\rightarrow\ \ \mathbb{S} \times D'\\
-& (s, Open(m)) &\mapsto\ \ (push(m,s),\ Open(m)) \\
-& (s, Val(i,e)) &\mapsto\ \ (push ((i,\hat{e}),s),\ Val(i, \hat{e})) 
-\mbox{ where } \hat{e} = \pi_2^2 (f_e (s,e))
-\end{array}
-\end{math}
-
-\vspace{5mm}
-
-\begin{math}
-\begin{array}{lcl}
-f_e:& \mathbb{S} \times E &\rightarrow\ \ \mathbb{S} \times E'\\
-& (s, List(l))  &\mapsto\ \ (s,\ lookup(s,l))\\
-& (s, Let (d,e)) &\mapsto\ \ (\hat{s}, f_e (\hat{s}, e))
-\mbox{ where } \hat{s} = \pi_1^2 (f_d (s,d))
-\end{array}
-\end{math}
-
-\vspace{5mm}
+%For a more formal explanation, we define a target AST build upon the original 
+%one, where each identifer $I$ is replace by its globalized expression $E'$:
+%
+%\begin{align*}
+%M' &=_{def} string \\
+%I' &=_{def} string\ \vert\ Module(M',I')\\
+%D' & =_{def} Open(M')\ \vert\  Val (I',E') \\
+%E' &=_{def} Code(E'\ list)\ \vert\ Let (D',E') 
+%\end{align*}
+%
+%Then, we express two mutually recursive functions $f_d$ and 
+%$f_e$ that globalize the original representation. The 
+%function $f_d$ modifies declaration and $f_e$ modifies expressions. Since a 
+%\sml program is a list of declarations, we will be able transform it by 
+%iteratively applying $f_d$. The stack 
+%$\mathbb{S}$ keep track of each previous declaration: the identifier that is 
+%declared and their globalized definition. To save a declaration to 
+%the stack, we use the $push$ 
+%function. Opening a module has the effect of pushing all identifiers with 
+%their associated prefixed version to the stack. The scope of an identifier is 
+%automatically handled by construction of the AST. To find the globalized 
+%version of an identifier $i$, we use the $lookup$ function on a stack $s$, 
+%which returns the globalization associated with $i$ appearing highest in $s$. 
+%We then build $f_e$ and $f_d$ in the following way:
+%\vspace{5mm}
+%
+%\begin{math}
+%\begin{array}{lcl}
+%f_d:& \mathbb{S} \times D &\rightarrow\ \ \mathbb{S} \times D'\\
+%& (s, Open(m)) &\mapsto\ \ (push(m,s),\ Open(m)) \\
+%& (s, Val(i,e)) &\mapsto\ \ (push ((i,\hat{e}),s),\ Val(i, \hat{e})) 
+%\mbox{ where } \hat{e} = \pi_2^2 (f_e (s,e))
+%\end{array}
+%\end{math}
+%
+%\vspace{5mm}
+%
+%\begin{math}
+%\begin{array}{lcl}
+%f_e:& \mathbb{S} \times E &\rightarrow\ \ \mathbb{S} \times E'\\
+%& (s, List(l))  &\mapsto\ \ (s,\ lookup(s,l))\\
+%& (s, Let (d,e)) &\mapsto\ \ (\hat{s}, f_e (\hat{s}, e))
+%\mbox{ where } \hat{s} = \pi_1^2 (f_d (s,d))
+%\end{array}
+%\end{math}
+%
+%\vspace{5mm}
 
 %\begin{example} Example
 %\small
@@ -548,51 +565,63 @@ f_e:& \mathbb{S} \times E &\rightarrow\ \ \mathbb{S} \times E'\\
 %let val x = 5;  end;
 %substructres
 
-Thanks to the simplicity of the minimal AST, we are able to present our 
-recursive unfolding algorithm in a concise and formal manner. But for practical 
-purpose, the minimal AST is not sufficient. So, we extend the scope of our 
-algorithm by enumerating common \sml constructions and explain 
-independently how we globalize them. We first start by mentioning additional 
-details about module and value declarations.
+%Thanks to the simplicity of the minimal AST, we are able to present our 
+%recursive unfolding algorithm in a concise and formal manner. But for 
+%practical 
+%purpose, the minimal AST is not sufficient. 
 
-\paragraph{Modules}
-Declaring a module is made through the keyword 
-\texttt{open}. We can fetch 
-the values declared in a module \texttt{m} by first erasing all elements from 
-\texttt{PolyML.NameSpace} and then calling \texttt{open m}. Additionally, it 
-gives us the information of whether a value is a constructor or an exception. 
-This will prove to be particularly useful to handle pattern matching 
-construction correctly. During the opening of a module, nested modules can be 
-declared and push to the stack. In this way, we can globalize them by prefixing 
-them by their parent modules when they appear in the program.
 
-\paragraph{Values}
-The standard ML language allows to declare multiple values in a single $let$ 
-construction. In effect, this list of declarations is equivalent to nested 
-declarations. 
+We present the tactical proof recording mechanism in details here because it 
+can help 
+another researcher to produce a tactical export in other interactive theorem 
+provers.
+We now enumerate common \sml constructions and explain 
+independently how we globalize them. We use a stack to keep track of previous 
+identifier declaration and their globalization.
 
-Because we do not want to unfold proofs into other proofs, we 
-make an exception 
-for values of type theorem and do not replace them by their definition.
-Instead, we fetch theorems from the 
-database by looking for its formula in the database of theorems.
-Because this database is reconstructed from files saved on disk, a call to 
-the function \texttt{DB.fetch} works across theories.
+%We first start by mentioning additional 
+%details about module and value declarations.
 
-\paragraph{Functions}
-To globalize a function identifier, we include 
-its declaration in the globalized expression. 
-Given a declaration \texttt{fun f v = e}, the globalized 
+
+
+
+
+\subsection{Storing Declaration}
+
+\paragraph{Reserved tokens}
+
+
+\paragraph{Module}
+
+
+
+\paragraph{Global identifier}
+
+
+
+
+\paragraph{Local identifier}
+
+To globalize a identifier, we include 
+the code of its declaration in the globalized expression. 
+Given a declaration \texttt{fun f v = e} or \texttt{val f = e}, the globalized 
 expression for the identifier \texttt{f} is \texttt{let fun f v = e' in f 
-end}, where \texttt{e'} is the globalized version of \texttt{e}. The function 
-\texttt{f} and its argument \texttt{v} are binders. So, we prevent our 
-algorithm from trying to globalize them during the construction of \texttt{e'}.
-This approach is slightly more verbose than using an 
-anonymous function construction. But it is prettier as 
-we regroup declarations at the top of the proof expression before returning it
-to the user (see Section~\ref{sec:proofdisplay}).
+end} respectively \texttt{let val f = e' in f end}
+The expression \texttt{e'} is the globalized version of \texttt{e}. That is to 
+say, it is the expression \texttt{e} where each of its tokens has been replaced 
+its globalized expressions as constructed in Section~\ref{}.
 
-\paragraph{Pattern matching}
+
+In the case of value, we can simplify the globalized expression further and 
+replace it by \texttt{e'}.
+In the case of a function, \texttt{f} and its argument \texttt{v} are binders. 
+So, we prevent their globalization during the construction of \texttt{e'}.
+%This approach is slightly more verbose than using an 
+%anonymous function construction. But it is prettier as 
+%we regroup declarations at the top of the proof expression before returning it
+%to the user (see Section~\ref{sec:proofdisplay}).
+
+\paragraph{Bound variables}
 A pattern is an \sml expression that 
 contains \sml 
 constructors (or exceptions in the case of \texttt{handle}) and binding 
@@ -607,13 +636,51 @@ version of each construction, we globalize constructors (or exception) in the
 pattern \texttt{p} and we protect binding variables in \texttt{e} to prevent 
 their modification. When a value identifier \texttt{x} is declared in a pattern 
 \texttt{p}, the globalized expression \texttt{e'} for \texttt{x} becomes 
-\texttt{let val p = e' in x end}.
+\texttt{let val p = e' in x 
+end}.                                                                           
+                                                                                
+\paragraph{Infixity}                                                            
+In \sml, it is possible to declare infixity rules for a string $s$ that 
+is not prefixed by a module. The infixity applies only when an identifier 
+exactly match $s$.                
+                                                                                
+\subsection{Globalizing Expression}
+
+\paragraph{Reserved tokens}
+
+\paragraph{Modules}
+Declaring a module is made through the keyword 
+\texttt{open}. We can fetch 
+the values declared in a module \texttt{m} by first erasing all elements from 
+\texttt{PolyML.NameSpace} and then calling \texttt{open m}. Additionally, it 
+gives us the information of whether a value is a constructor or an exception. 
+This will prove to be particularly useful to handle pattern matching 
+construction correctly. During the opening of a module, nested modules can be 
+declared and push to the stack. In this way, we can globalize them by prefixing 
+them by their parent modules when they appear in the program.
+
+\paragraph{Global identifier}
+Global values and functions are prefixed by the modules and submodules where 
+they were declared. This information obtained by looking up the first 
+identifier that corresponds to the values at the top of the stack.
+
+\paragraph{Local identifier}
+Each local identifier is replaced by its globalized expression.
+
+We do not unfold local and global values of type theorem. Indeed, we do not 
+want to 
+unfold proofs into other proofs. Instead, we fetch theorems by looking for its 
+formula in the global database of 
+theorems. If it does not exists, we consider the tactic to be local and not 
+transferable to other theories.
+
+\paragraph{Bound variables}
+binding variables are not globalized
+
 
 
 \paragraph{Infixity}
-In \sml, it is possible to declare infixity rules for a string $s$ that 
-is not prefixed by a module. The infixity applies only when an identifier 
-exactly match $s$. Therefore, an identifier \texttt{x} could have been treated 
+ Therefore, an identifier \texttt{x} could have been treated 
 as infix in an original expression \texttt{E} but when 
 we substitute it locally by its 
 globalized version \texttt{e'}, \texttt{e'} is now considered with prefix 
@@ -633,17 +700,10 @@ Definitions for the infix guards depend on their associativity:
 
 \begin{definition}(Code of infix guards)
 \begin{lstlisting}
-fun a infixlX_open f = fn x => f (a,x)  
-fun g infixlX_close b = g b
-
-fun f infixrX_close b = fn x => f (x,b)
-fun a infixrX_open g = g a
+fun a infixlX_open f = fn x ==> f (a,x)      fun g infixlX_close b = g b
+fun a infixrX_open g = g a      fun f infixrX_close b = fn x ==> f (x,b) 
 \end{lstlisting}
 \end{definition}
-
-\begin{proof}(Does anyone want a proof that this functions are correctly 
-reproducing the original function?)
-\end{proof}
 
 The previously decribed transformation affects each identifier in a theory 
 file. However, when we 
@@ -1708,6 +1768,8 @@ node selection to keep the estimation of the algorithm balanced.
 The input of the algorithm is a goal $g$ that we want to prove.
 Therefore the search tree starts with only one node containing the singleton 
 $g$ and an ordered list of predicted tactics for the goal $g$.
+Then, the MCTS algorithm alternates node selection steps and node extension 
+steps which grow the search tree.
 
 \subsection{Node selection}
 
@@ -1748,8 +1810,9 @@ is also called the current evaluation of $a_i$.
   \average_{b \in Descendant(a_i)} {PriorEvaluation(b)}\]
 
 \subsection{Node extension}
-Once a node is selected, we applied the best not-yet-applied tactics to
-the open goal this node. If the tactic is productive then the we create a new 
+Once a node is selected, we applied the best not-yet-applied tactics according 
+to the prediction order to the open goal this node. If the tactic is productive 
+then the we create a new 
 node and calculate and save its prior evaluation. Otherwise, we create a 
 non-accessible node that holds a value of 0 to notice the value function that 
 node selection was a failure. This dummy node is only there to update the 
@@ -1780,10 +1843,6 @@ tactic cache which memorizes tactic effects on goals. Similarly there is also a
 prediction cache, which memorize the tactic predictions for each goal. Those 
 two caches allow a fast exploration of confluent branches but they remain 
 separated in our search tree.
-
-
-
-
 
 
 \subsection{End of the search}
