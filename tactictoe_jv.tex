@@ -212,14 +212,11 @@ the relevance of tactics in particular proof situations.
 % steps, 
 This learned knowledge is then used in a Monte Carlo tree search algorithm that explores the most promising tactic-level proof paths. 
 Experiments on the \holfour standard 
-library show that TacticToe is able to re-prove 66.2\% of all 7164 theorems in 
-less 
-than 60 seconds. 
-This is to be compared with the 42.9\% proved in the same amount of time by 
+library show that TacticToe is able to re-prove 66.0\% of 
+all theorems proven by a tactical script in the standard library.
+This is to be compared with the 34.5\% proved in the same amount of time by 
 Eprover in auto-schedule mode with 128 lemmas predicted and 
 translated by HolyHammer.
-\todo{run experiments including proof scripts containing let
-     run experiments without prove on 1/10th of the library.}
 
 %on their first-order translations?
 
@@ -675,7 +672,7 @@ theorems. If it does not exists, we consider the tactic to be local and not
 transferable to other theories.
 
 \paragraph{Bound variables}
-binding variables are not globalized
+Binding variables are not globalized
 
 
 
@@ -699,7 +696,7 @@ $\texttt{A}\in[l,r]$ (right or left) as \texttt{x}.
 Definitions for the infix guards depend on their associativity: 
 
 \begin{definition}(Code of infix guards)
-\begin{lstlisting}
+\begin{lstlisting}[language=SMLSmall,frame=tb]
 fun a infixlX_open f = fn x ==> f (a,x)      fun g infixlX_close b = g b
 fun a infixrX_open g = g a      fun f infixrX_close b = fn x ==> f (x,b) 
 \end{lstlisting}
@@ -715,7 +712,7 @@ Example~\ref{ex:global}.
 
 
 \begin{example} (Globalization)
-\begin{lstlisting}
+\begin{lstlisting}[language=SMLSmall,frame=tb]
 Tactic.STRIP_TAC 
   infixl0_open boolLib.THEN infixl0_close
 Prim_rec.INDUCT_THEN (DB.fetch "list" "list_INDUCT") Tactic.ASSUME_TAC
@@ -784,10 +781,10 @@ version of the proof script
 \texttt{p}. 
 .
 \begin{example}(Proof script transformation)
-\begin{alltt}
-original declaration: val id = store_thm (name, term, p)
-modified declaration: val id = store_thm (name, term, Split "p'")
-\end{alltt}
+\begin{lstlisting}[language=SMLSmall,frame=tb]
+original file: val id = store_thm (name, term, p)
+modified file: val id = store_thm (name, term, Split "p'")
+\end{lstlisting}
 \end{example}
 
 
@@ -799,7 +796,7 @@ level of tactics, (i.e
 tactics that contain tactics as subexpressions), we choose one that is
 close to what a human understand to be a tactic unit. 
 Most tacticals are infix, and we do not want to consider combination of 
-tactics to be a tactic unit. For our wrapper \texttt{Split}, a tactic unit is a 
+tactics to be a tactic unit. For \texttt{Split}, a tactic unit is a 
 subterm of 
 type tactics that do not contain a infix operator as its top symbol. Thanks to
 globalized infixity, we just have to verify that the expression 
@@ -809,14 +806,14 @@ detailed code tree of the expression. Each tactic unit is then substituted
 by a wrapped version to produce the final proof script.
 
 \begin{example} (Wrap)
-\begin{alltt}\small
+\begin{lstlisting}[language=SMLSmall,frame=tb]
 R "Tactic.STRIP_TAC"
   infixl0_open boolLib.THEN infixl0_close
-R "Prim_rec.INDUCT_THEN (DB.fetch \bq{list}\bq{INDUCT}) Tactic.ASSUME_TAC"
+R "Prim_rec.INDUCT_THEN (DB.fetch \"list\" \"INDUCT\") Tactic.ASSUME_TAC"
   infixl0_open boolLib.THEN infixl0_close
 R "Rewrite.ASM_REWRITE_TAC 
-     [DB.fetch \bq{list} \bq{MAP}, DB.fetch \bq{list} \bq{APPEND}]"
-\end{alltt}
+     [DB.fetch \"list\" \"MAP\", DB.fetch \"list\" \"APPEND\"]"
+\end{lstlisting}
 \end{example}   
 
 During its execution, the recording function \texttt{R} (as coded in 
@@ -831,9 +828,9 @@ tactic and its code and call both of them tactics.
 
 
 \begin{example}\label{ex:record} (Code of the recording function)
-\begin{lstlisting}
+\begin{lstlisting}[language=SMLSmall,frame=tb]
 fun R tactic_string goal = 
-  (save (tactic_string, goal); (read_tactic tactic\_string) goal)
+  (save (tactic_string, goal); tactic_of_sml tactic_string goal)
 \end{lstlisting}
 \end{example} 
 
@@ -844,13 +841,14 @@ During saving, we add fields to the input pair $(tactic,goal)$ to record
 precomputed information in order to make the prediction faster. The final 
 feature vector is the tuple $(tactic,time,goal,goal\_list,features)$.
 The time $time$ taken by $tactic$ is not currently used by our 
-predictor. The list of goals $goal list$ is the output produced by $tactic$ on 
+predictor. The list of goals $goal list$ is the output of $tactic$ on 
 $goal$. And the features $features$ of the goal $goal$ are extracted and hashed 
 as described in Section~\ref{sec:features}. 
 
 \begin{remark}
 To simplify the description of our machine learning algorithms in future 
-sections, we consider a feature vector to be a pair $(tactic,goal)$ and only 
+sections, we consider a tactic feature vector to be a pair $(tactic,goal)$ and 
+only 
 explicitly rely on the 
 other fields when necessary.
 \end{remark}
@@ -2163,19 +2161,31 @@ proofs.
 
 \paragraph{Dataset}
 
-All top-level theorems in the standard library are considered except:
-\begin{itemize}
-\item the 619 calls to store\_thm that contains a let binding, these are 
-typically 
-harder for \tactictoe as it may not have seen the particular local declaration 
-before and therefore would have to find an alternative proofs. We also do not 
-learn from these proofs because they were explictly local.
-\item the 1175 calls to save\_thm. These are typically mostly trivial and easy 
+7000+ top-level theorems that were created by . 
+In this evaluation, we do not include the 250 theorems created by
+
+All top-level theorems created by a call to 
+\texttt{store\_thm}, 
+\texttt{Q.store\_thm} or \texttt{maybe\_thm} are considered with the exception 
+of 440 calls that contains a let binding. They are typically harder to re-prove.
+We also ignore the 1175 \texttt{save\_thm} calls. Most of them are easily 
+provable theorems using instantiations or conjuncts of previous 
 theorems.
-The remaining 7088 top-level theorems are evaluated in the full scale 
-evaluation and the level of difficulty of these problem is assessed by a 
-comparison with \eprover.
-\end{itemize}
+
+%\begin{itemize}
+%%\item the , these are 
+%%typically 
+%%harder for \tactictoe as it may not have seen the particular local 
+%%declaration 
+%%before and therefore would have to find an alternative proofs. We also do not 
+%%learn from these proofs because they were explictly local.
+%%\item the 1175 calls to save\_thm. These are typically mostly trivial and 
+%%easy 
+%%theorems.
+%%The remaining 7088 top-level theorems are evaluated in the full scale 
+%%evaluation and the level of difficulty of these problem is assessed by a 
+%%comparison with \eprover.
+%\end{itemize}
 
 Among these types of theorems, every tenth theorems of the first third of the 
 library is evaluated during tuning, which give us a total of 273 theorems to 
@@ -2562,9 +2572,9 @@ self-reinforcement learning.
 \toprule
   & & Small(273) & Big(7088) \\
 \midrule
-  & \eprover (auto-schedule + 128 premises) & 86 & 2069 (29.19\%)\\ 
+  & \eprover & 86 & 2069 (29.19\%)\\ 
 %  & \tactictoe (without special care for metis) & 154 & 3868 (\\
-  & \tactictoe (best parameters) & 187 & 4186 (59.06\%) \\
+  & \tactictoe & 187 & 4186 (59.06\%) \\
 %  & \tactictoe (+ self-learning) & 187 (187) &  4201 (59.27\%) \\
 \bottomrule
 \end{tabular}
@@ -3001,88 +3011,7 @@ If a discovered proof is short, fast, maintainable and
 understandable, it could replace its original in the \holfour standard library.
 
 
-\section{Related Work}\todo{TG reorganise + other motivation?}
-There are several essential components of our work that are comparable to 
-previous approaches: tactic-level proof recording, tactic 
-selection through machine learning techniques and automatic tactic-based proof 
-search. Our work is also related to previous approaches that use machine 
-learning to select premises for the ATP systems and guide ATP proof search 
-internally.
-
-For \hollight, the Tactician tool~\cite{DBLP:conf/sefm/Adams15} 
-can transform a packed tactical proof into a series of interactive tactic 
-calls. Its principal application 
-was so far refactoring the library and teaching common proof techniques to new 
-ITP users. In our work, the splitting of a proof into a sequence of tactics is 
-essential for the
-tactic recording procedure, used to train our tactic prediction module.
-
-The system 
-\textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
- 
-groups related proofs thanks to its clustering 
-algorithms. It allows \coq users to inspire themselves from similar proofs and 
-notice 
-duplicated proofs. Our predictions comes from a much more detailed description 
-of the open goal.
-However, we simply create a single label for each tactic call whereas each of 
-its
-arguments is treated independently in \textsf{ML4PG}. 
-Our choice is motivated by the k-NN algorithm already used in
-\holyhammer for the selection of theorems.
-%, which can be easly adapted to the selection of tactics but would be improved 
-%by a 
-%version that can learn to predict tactics and their arguments independently.
-
-\textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} is a powerful system able to 
-generate
-proof scripts from previous \coq proof examples.
-Its strength lies in its ability to produce likely sequences 
-of tactics for solving domain specific goals. It operates by creating a model 
-for common sequences of tactics for a specific library.
-This means that in order to propose the following tactic, only the previously 
-called tactics
-are considered.
-%intuition tells us that it should not be the main factor
-Our algorithm, on the other hand, relies mainly on the characteristics of the 
-current goal 
-to decide
-which tactics to apply next. In this way, our learning mechanism has to 
-rediscover why each 
-tactic was applied for the current subgoals. It may lack some useful bias for 
-common sequences 
-of tactics, but is more reactive to subtle changes. Indeed, it can be trained 
-on a large library and only tactics relevant to the current subgoal will be 
-selected. 
-Concerning the proof search, \textsf{SEPIA}'s %simple 
-breadth-first search is replaced by an A*-algorithm which allows for heuristic 
-guidance in 
-the exploration of the search tree.
-Finally, \textsf{SEPIA} was evaluated on three chosen parts (totaling 2382 
-theorems) of the 
-\coq library demonstrating that it globally outperforms individual \coq 
-tactics. In contrast, we demonstrate the competitiveness of our system against 
-the successful general-purpose hammers on the \holfour standard library (7902 
-theorems).
-
-Machine learning has also been used to advise the best library lemmas for new 
-ITP goals.
-This can be done either in an interactive way, when the user completes the 
-proof based on the recommended lemmas, as in the \textsc{Mizar Proof 
-Advisor}~\cite{Urb04-MPTP0}, or attempted fully automatically, where such lemma 
-selection is handed over to the ATP component of a \emph{hammer} 
-system~\cite{hammers4qed,tgck-cpp15,holyhammer,BlanchetteGKKU16,mizAR40}.
-
-Internal learning-based selection of tactical steps inside an ITP is analogous 
-to internal learning-based selection of clausal steps inside ATPs such as 
-\textsc{MaLeCoP}~\cite{malecop} and \textsc{FEMaLeCoP}~\cite{femalecop}. These 
-systems
-use the naive Bayes classifier to  select clauses for the extension steps in
-tableaux proof search based on many previous proofs. Satallax~\cite{Brown2012a} 
-can guide its
-search internally~\cite{mllax} using a command classifier, which can estimate 
-the priority of the 11 kinds of
-commands in the priority queue based on positive and negative examples.
+\section{Related Work}
 There are several essential components of our work that are comparable to 
 previous approaches: tactic-level proof recording, tactic 
 selection through machine learning techniques and automatic tactic-based proof 
@@ -3100,7 +3029,6 @@ tactic recording procedure, used to train our tactic prediction mechanism.
 
 The system 
 \textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
- 
 groups related proofs thanks to its clustering 
 algorithms. It allows \coq users to inspire themselves from similar proofs and 
 notice 
@@ -3136,38 +3064,28 @@ of tactics, but is more reactive to subtle changes. Indeed, it can be trained
 on a large library and only tactics relevant to the current subgoal will be 
 selected. 
 Concerning the proof search, \textsf{SEPIA}'s %simple 
-breadth-first search is replaced by MCTS which allows for heuristic 
-guidance in 
-the exploration of the search tree.
-Finally, \textsf{SEPIA} was evaluated on three chosen parts (totaling 2382 
-theorems) of the 
+breadth-first search is replaced by MCTS which allows for supervised learning
+guidance in the exploration of the search tree.
+Finally, \textsf{SEPIA} was evaluated on three chosen parts of the 
 \coq library demonstrating that it globally outperforms individual \coq 
 tactics. In contrast, we demonstrate the competitiveness of our system against 
-the successful general-purpose hammers on the \holfour standard library.
-A recent improvement on this system~\cite{} includes the possibility to replace 
-theorems in tactics by ones belonging to the same cluster, independently of the 
-current goal. We have the opposite approach, we forget about the original 
-theorems in the tactic creating an more general abstract tactic
-and only use the goal to guide predictions. Finding a way to combine those two 
-approaches could be the key to stronger theorem predictions.
+the ATP \eprover on the \holfour standard library.
+A recent improvement on this system~\cite{}\todo{Cezary: could not remember the 
+reference that you gave me here i think it was CICM 2017} includes the 
+possibility to 
+substitute theorems appearing in tactics by ones belonging to the same cluster. 
+In this work, we are also able to predict theorems appearing as arguments of 
+tactics but we rely only on information from the current goal. Combining the 
+two approaches by predicting from the goal and from the original tactic 
+arguments is more difficult but is likely to produce more suitable lemmas.
 
 A similar effort for stronger automation is performed in \isabelle. Nagashima 
 developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the 
 user to 
 program with regular tactics and combine them with tools such as 
 \sledgehammer~\cite{sledgehammer10} or Nitpick~\cite{Nitpick10}. 
-Selection of tactics from recorded proofs has yet to be implemented and now it 
-is up to come up with a good meta-tactic.
-
-%In \holfour, 
-%a tactic is a just a \sml function of a special type and \holyhammer can 
-%easily 
-%be modified to be a tactic. So this meta-level is not 
-%necessary, all programming can occur at the tactic level and even \tactictoe  
-%is a tactic.
-
-%* Theory Exploration (Moa Johanson+, ITP 2017)  I think that is more related 
-%to conjeturing and do not think it fits here.
+Selection of tactics from data collected in recorded proofs is in development 
+but for now it is up to the user to come up with a good meta-tactic.
 
 
 Machine learning has also been used to advise the best library lemmas for new 
@@ -3188,6 +3106,8 @@ can guide its
 search internally~\cite{mllax} using a command classifier, which can estimate 
 the priority of the 11 kinds of
 commands in the priority queue based on positive and negative examples.
+
+
 
 
 \section{Conclusion}\label{sec:concl}\todo{TG + JU or CK review}
