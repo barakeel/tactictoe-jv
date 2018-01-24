@@ -2300,10 +2300,10 @@ All experiments in this table are using orthogonalization.
  ortho & 129\\
  ortho + term & 126\\    
  ortho + theorem list & 160\\
- ortho + metis & 162\\
+ ortho + \metis & 162\\
  %ortho + metis + thmortho & 155\\
  %ortho + metis + stacortho & 160\\
- ortho + metis + theorem list & 175\\ 
+ ortho + \metis + theorem list & 175\\ 
 \bottomrule
 \end{tabular}
 \caption{\label{tab:cfot_param}
@@ -2497,7 +2497,7 @@ Estimate the difficulty of the proof by the number of tactic units.
   legend style={anchor=north east, at={(0.9,0.9)}},
   width=0.5*\textwidth,
   height=0.5*\textwidth,
-  ymin=0, ymax=2000,
+  ymin=0, ymax=3000,
   xmin=0, xmax=10,
   xtick={},
   ytick={},
@@ -2518,24 +2518,21 @@ Estimate the difficulty of the proof by the number of tactic units.
   cycle list name=my black]
 \addplot table[x=length, y=proofs] {data/tactictoe_proof_length};
 \addplot table[x=length, y=proofs] {data/original_proof_length};
-\legend{\tactictoe,original}
+\legend{scaled \tactictoe,original}
 \end{axis}
 \end{tikzpicture}
-\caption{Distribution of the proof length in tactic unit of evaluated theorems.}
+\caption{Number of original proofs with a number $x$ of tactic units. 
+         Since there is about two-third of the original proofs that have a 
+         respective \tactictoe proofs, we scale the number of 
+         \tactictoe proofs by a factor of $\frac{1}{0.662}$.. 
+\tactictoe 
+ proofs.}
 \end{figure}
 
 
 
-
-Analysing failed proof attempt can give us an idea of the behaviour of the 
-algorithm. In a proof search of 10 seconds, in average 500 (todo: real 
-estimation) tactics are applied.
-The productive tactics create an average of 100 (todo: real estimation) nodes. 
-This means that in this settings 1 out of 5 tactics are productive.
-
 Increasing the timeout to more than 10 seconds would probably be beneficial as 
 we can see that the slope of the curve is far for being flat in Fig~..
-
 
 
 \begin{figure}[h]
