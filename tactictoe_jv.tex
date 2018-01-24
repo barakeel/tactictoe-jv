@@ -312,8 +312,17 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
 %approach.
 
 
-\subsection{The problem}\todo{JU or CK review}
+\subsection{The problem}\todo{}
 
+
+
+
+
+
+Two ways of representing a formulas.
+
+Defintion of a tactic in \holfour. In this research, we will take the definition
+that a tactic takes a goal and returns a list of goals.
 
 
 
@@ -969,13 +978,15 @@ list of associated tactics. And tactics are tried in this order during the
 proof search. Therefore, to order the tactics correctly, it is crucial to 
 estimate the similarity between goals with mathematically relevant features.
 \item term:\\
-
+Predict the closest term in a tactic that appears in the goal.
 
 \item theorem:\\
-
+Predict the theorem the closest to the current goal. Theorem dependencies are 
+added during preselection.
 
 \item list of goals:\\
-
+Used for Monte Carlo Tree Search evaluation. Predict the closest list of goals
+to the list of goal produced by a tactic.
 \end{itemize}
 
 
@@ -1179,8 +1190,6 @@ $\mathfrak{F}$. Expressing this in a formula, we get:
 Intuitively, this notion estimates how general a tactic is by counting the 
 number of different goals it is useful for.
 \end{definition}
-
-
 
 
 \begin{definition} (Goal subsumption)\\ 
@@ -1446,146 +1455,18 @@ policy and evaluation are estimated by the simple supervised k-nn algorithm
 here instead of neural networks trained through reinforcement learning in 
 AlphaGo Zero~\cite{}. 
 
-%However for very large branching factor RTS Combinatorial 
-%Multi-armed Bandits
-%for Real-Time Strategy Games. The method of choice for solving those 
-%problems 
-%is monte carlo tree search~\cite{mcts} which is a way to assign probabilities 
-%to each branches
-
 So, we first give a static description of the proof tree and its component.
 Then we explain how we compute the evaluation and policy functions from learned 
 data. And finally, we show how the two MCTS step, node selection and node 
 extension changes the proof tree data structures.
-
-%A proof is in general not a path but a tree. This means that our search space 
-%has two branching factors: 
-%the choice of a tactic, and the number of goals produced by each tactic.
-%The first one can be thought as a disjunction of tactics. Indeed, 
-%if there exists a tactic that solves a goal then it is solved. And 
-%conversely, the second branching factor is a conjunction of goals. All pending 
-%goals must be proven in order to prove the parent goal. For example, in the 
-%case of induction tactics the pending goals are the base case and the 
-%inductive 
-%case.
-
-%If we suppose that each tactic produces at most one goal, then the standard 
-%monte carlo tree search algorithm applies. So we will first discuss how our 
-%algorithm works in this case. And then explain how we extend it to support 
-%tactics producing 
-%multiple goals.
-
-%Our search algorithm takes inspiration from the A*-algorithm~\cite{HartNR68} 
-%which uses 
-%a cost function and heuristics to estimate the total distance to the 
-%destination and
-%choose the shortest route.
-%The proof is not finished when the current tactic solves its goal because it 
-%often leaves new pending open goals along the current path. 
-
-%\subsection{Diagonalized tree search}
-%(Move this section to Monte Carlo tree search and simplify it) 
-%(Don't mention diagonlazied tree search)
-
-
-%%
-%%Our first attempt was to create a breadth first search algorithm with 
-%%preferences for the best predicted tactic for each goal. In 
-%%Figure~\ref{fig:br1}, we try to prove the goal $g$ using list of tactics 
-%%$t_1,t_2,t_3 \ldots$ ordered by the predictor. Those tactics produce 
-%%respectively the goals $g_1,g_2,g_3 \ldots$. By choosing tactics
-%%for each produced goal $g_i$, we can recursively construct the whole search 
-%%tree. We observe that if we apply the breadth first search algorithm to this 
-%%tree then the predictor preferences are of little use, as we will not explore 
-%%deeper more promising branches. Another related inconvenience is that we may 
-%%not ever be able to explore the tree at depth 2 since there maybe too many 
-%%tactics to try at depth 1. One way to solve those this problem is to 
-%%diagonalized our tree by adding dummy square nodes as presented in 
-%%Figure~\ref{fig:diag_choice}. The new branching factor of this tree is 
-%%constant 
-%%equal to two. The exploration of lower ranked tactics are delayed by the 
-%%diagonalization during breadth search. And after $2^n$ breadth-first steps, 
-%%the 
-%%most promising branch has been explored up to depth $n$.
-%%
-%%\begin{figure}{}
-%%\begin{center}
-%%\begin{tikzpicture}[node distance=2cm]
-%%\node [tcircle] (0) {$g$};
-%%\node [above of=0] (m0) {};
-%%\node [tcircle, left of=m0, node distance=1cm] (2) {$g_2$};
-%%\node [tcircle, left of=2] (1) {$g_1$};
-%%\node [tcircle, right of=m0,node distance=1cm] (3) {$g_3$};
-%%\node [right of=3] (inf) {};
-%%
-%%\draw[-to,thick] (0) to node[xshift=-10](t1){$t_1$} (1);
-%%\draw[-to,thick] (0) to node[xshift=-10](t2){$t_2$} (2);
-%%\draw[-to,thick] (0) to node[xshift=-10](t3){$t_3$} (3);
-%%\draw[-to,dotted,thick] (0) to (inf);
-%%\end{tikzpicture}
-%%%\end{center}
-%%%\caption{Choice of a tactic}
-%%%\label{fig:choice}
-%%%\end{figure}
-%%%\begin{figure}{}
-%%%\begin{center}
-%%\begin{tikzpicture}[node distance=1cm]
-%%\node [tcircle] (0) {$g$};
-%%\node [above of=0] (m0) {};
-%%\node [tcircle, left of=m0] (1) {$g_1$};
-%%\node [tsquare, right of=m0] (s1) {};
-%%\node [above of=s1] (m1) {};
-%%\node [tcircle, left of=m1] (2) {$g_2$};
-%%\node [tsquare, right of=m1] (s2) {};
-%%\node [above of=s2] (m2) {};
-%%\node [tcircle, left of=m2] (3) {$g_3$};
-%%\node [right of=m2] (s3) {};
-%%
-%%\draw[-to,thick] (0) to node[xshift=-5,yshift=-5](t1){$t_1$} (1);
-%%\draw[-to,thick] (0) to (s1);
-%%\draw[-to,thick] (s1) to node[xshift=-5,yshift=-5](t1){$t_2$} (2);
-%%\draw[-to,thick] (s1) to (s2);
-%%\draw[-to,thick] (s2) to node[xshift=-5,yshift=-5](t1){$t_3$} (3);
-%%\draw[-to,dotted,thick] (s2) to (s3);
-%%\end{tikzpicture}
-%%\end{center}
-%%\caption{Transformation of a search tree into a diagonalized search tree,
-%%caused   by a change in the relation between a node and its 
-%%children.}
-%%\label{fig:diag_choice}
-%%\end{figure}
-%%
-%%
-%%In the particular case where tactics produces at most one goal, a proof is 
-%%found in the search tree when a tactic $t$ does not produce any new goal. The 
-%%proof of the root goal can be reconstructed by extracting the path leading 
-%%to the final tactic $t$.
-%%
-%%
-%%
-%%\subsection{General case}
-%%We now tackle the more general case where tactics $t_i$ may produces multiple 
-%%goals $g_{i,1}$ $g_{i,2}$ $g_{i,n}$ from a parent goal $g_p$.
-%%
-%%All created node are kept in memory for later inspection but some of the 
-%%nodes 
-%%are deactivated which means they are removed from the proof search.
-%%
-%%Definition (deactivated node):
-%%  A solved node or a node that has a solved ancestor.
-%%
-%%Then at first, the breadth first search operates normally with only the first 
-%%goal $g_{i,1}$ is present in the search tree. 
-%%And as soon as a proof is found for the goal $g_{i,1}$, the subtree with root 
-%%$g_{i,1}$ is erased and replaced by a node containing $g_{i,2}$. The process 
-%%continues with node with the lowest depth being treated first.
-%%The process stops if the root goal is solved, the time limit is exceeded or 
-%%there is no more tactic to be applied to an active node.
+Intuitively, MCTS offers a good trade-off between exploitation and exploration. 
+It means that the algorithm will exploit deeper more promises branches but 
+leaving enough time for exploring less likely alternatives.
 
 \subsection{A search tree: data structures and definitions}
 
-\begin{definition}(Tactical search tree)\\
-A tactical search tree $\mathfrak{T}$ is a sixtuple 
+\begin{definition}(search tree)\\
+A search tree $\mathfrak{T}$ is a sixtuple 
 $(\mathbb{A},\mathbb{G},\mathbb{T},A,G,T)$ 
 that respects the following conditions:
 \begin{itemize}
@@ -1657,15 +1538,15 @@ of goals to be proven.
 
 In each node can either be solved, open or pending. The definition of a solved 
 goal is expressed through mutual recursion with a 
-solved node and is given in ~\ref{def:solved_goal}. An open goal is goal that 
+solved node and is given in Definition~\ref{def:solved_goal}. An open goal is 
+goal that 
 was tried at least once by a tactic. In our implementation we have only one 
 open goals per node at once. A goal that was not explored yet is called a 
 pending goal.
 
 \begin{definition}(Solved node and solved goal)
 Let $\mathfrak{T}$ be a search tree. The set of solved nodes 
-$\mathbb{A}^\infty$ 
-and 
+$\mathbb{A}^\infty$ and 
 the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
 
 \begin{align*}
@@ -1684,19 +1565,6 @@ the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
 By the base case of these definition, a goal is solved if there exists a tactic 
 applied to this goal that produces no goals.
 \end{definition}
-
-
-
-%A proof is in general not a path but a tree. This means that our search space 
-%has two branching factors: 
-%the choice of a tactic, and the number of goals produced by each tactic.
-%The first one can be thought as a disjunction of tactics. Indeed, 
-%if there exists a tactic that solves a goal then it is solved. And 
-%conversely, the second branching factor is a conjunction of goals. All pending 
-%goals must be proven in order to prove the parent goal. For example, in the 
-%case of induction tactics the pending goals are the base case and the 
-%inductive 
-%case.
 
 \subsection{Prior tactic policy}
 The estimation through the distance produced by the tactic selectors are hard 
@@ -1720,9 +1588,8 @@ Since the support of A induces a bijection between tactics of the tree
 search and the node they 
 produced, any function define on tactics of the tree search can be map to a 
 function defined on nodes. 
-Therefore, we define $PriorPolicy(a)=_def PriorPolicy(t)$, if $\exists g 
-A(g,t) = a$.
-
+Therefore, we define $PriorPolicy(a)$ as the $PriorPolicy(t)$ where $t$ is the 
+tactic that produced $a$.
 
 \subsection{Prior node evaluation}
 
@@ -1863,13 +1730,6 @@ to the number of proof attempts.
 
 
 \end{definition}
-
-
-
-
-
-\subsection{Evaluation} 
-
 
 
 
@@ -2545,14 +2405,69 @@ the benefit of using stronger external prover than \metis.
 
 \subsection{Full-scale experiment}
 
-Mention the conflicts.
-Theorem orthogonalization is not turn on during instantiation of tacitcs except 
-for the metis tactic.
-Best parameters + comparison with holyhammer.
-asynchronous eprover is not used  for fairer comparison with eprover.
+%Mention the conflicts.
+%Theorem orthogonalization is not turn on during instantiation of tacitcs 
+%except 
+%for the metis tactic.
+%Best parameters + comparison with holyhammer.
 
-10 seconds experiment:
+\eprover is not called by \tactictoe for fair comparison.
 
+
+
+\begin{table}[h!]
+\centering\ra{1.3}
+\small
+\begin{tabular}{lll}
+\toprule
+  & & 7164 theorems \\
+\midrule
+  & \eprover   & 2472 (34.5\%)\\ 
+  & \tactictoe & 4741 (66.2\%)\\
+  & combined   & 4946 (69.0\%)\\
+\bottomrule
+\end{tabular}
+\caption{Experiments with a timeout of 60 seconds \label{tab:_param}}
+\end{table}
+
+Table~\ref{theories} compares the success rates of re-proving for different
+\holfour theories. \tactictoe outperforms \eprover on every 
+considered theory.
+\eprover is more suited to deal with dense theories such as 
+\texttt{real} or \texttt{complex} where a lot of related theorems are available 
+and most proofs are usually completed by rewriting tactics.
+
+\begin{table}[]
+\centering
+\setlength{\tabcolsep}{3mm}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+\phantom{ab} & {arith} & {real} & {compl} & {meas} \\
+\midrule
+\tactictoe & 81.2 & 74.0 & 79.6 & 31.3\\
+\eprover & 59.9 & 72.0 & 67.1 & 12.8\\
+\midrule
+\phantom{abc} & {proba} & {list} & {sort} & {f\_map} \\
+\midrule
+\tactictoe & 45.8 & 79.5 & 65.3 & 82.0 \\
+\eprover & 24.1 & 26.5 & 15.8 & 24.7 \\
+\bottomrule
+\end{tabular}
+\caption{\label{theories}Percentage (\%) of re-proved theorems in the theories 
+\texttt{arithmetic}, \texttt{real}, \texttt{complex}, \texttt{measure},  
+\texttt{probability}, \texttt{list}, \texttt{sorting} and \texttt{finite\_map}. 
+}
+\end{table}  
+
+\subsection{Slight improvements}
+The final results could be improved by a few percent by including the 
+following additional techniques that are already available.
+
+\paragraph{Asynchronous calls to Eprover inside TacticToe}
+The technique already discussed in Section~ would most likely improve the 
+results by 2-3 percent.
+
+\paragraph{Self-learning}
 Until now, all our feature vectors were learned form human proofs. 
 human proofs. We can also add to this tactics that were part of a proof found 
 by our algorithm. To prevent duplication of effort, orthogonalization of those 
@@ -2562,71 +2477,55 @@ additional data is available for the next proof search.
 The hope is that the algorithm will improve faster by learning from its own 
 discovered proofs than from the human proof 
 scripts~\cite{DBLP:conf/cade/Urban07}. It is also the first step toward 
-self-reinforcement learning.
+self-reinforcement learning. Typically this technique improves the results by 
+less than a percent.
 
+\subsection{Complexity of the proofs}
 
-\begin{table}[h!]
-\centering\ra{1.3}
-\small
-\begin{tabular}{llll}
-\toprule
-  & & Small(273) & Big(7088) \\
-\midrule
-  & \eprover & 86 & 2069 (29.19\%)\\ 
-%  & \tactictoe (without special care for metis) & 154 & 3868 (\\
-  & \tactictoe & 187 & 4186 (59.06\%) \\
-%  & \tactictoe (+ self-learning) & 187 (187) &  4201 (59.27\%) \\
-\bottomrule
-\end{tabular}
-\caption{Experiments with a timeout of 10 seconds \label{tab:_param}}
-\end{table}
-
-It is learning to use \metis however it cannot automatically learn to give it 
-more time making it still a bit weaker than the adhoc startegy.
-
-
-
-Table~\ref{theories} compares the success rates of re-proving for different
-\holfour theories. \tactictoe(SH) outperforms \tactictoe(NH) on every 
-considered theory.
-Even if a lot weaker due to the missing premise selection component, 
-\tactictoe(NH)
-is hugely better than \holyhammer(blistr) in 4 theories: \texttt{measure}, 
-\texttt{list}, \texttt{sorting} and \texttt{finite\_map}. The main reason is 
-that 
-those theories are equipped with specialized tactics, performing complex 
-transformation such as structural induction and \tactictoe(NH) can reuse them. 
-Conversely, \holyhammer(blistr) is more suited to deal with dense theories such 
-as 
-\texttt{real} or \texttt{complex} where a lot of related theorems are available 
-and 
-most proofs are usually completed by rewriting tactics.
-
-\begin{table}[]
-\centering
-\setlength{\tabcolsep}{3mm}
-\begin{tabular}{@{}ccccc@{}}
-\toprule
-\phantom{ab} & {arith} & {real} & {compl} 
-& {meas} \\
-\midrule
-\tactictoe & 74.6 & 67.3 & 77.3 & 28.2\\
-\eprover & 50.8 & 67.6 & 63.4 & 10.8\\
-\midrule
-\phantom{abc}  & {proba} & {list} & {sort} & {f\_map} \\
-\midrule
-\tactictoe & 37.3 & 71.4 & 58.4 & 73.6 \\
-\eprover & 19.3 & 20.7 & 15.8 & 20.9 \\
-\bottomrule
-\end{tabular}
-\caption{\label{theories}Percentage (\%) of re-proved theorems in the theories 
-\texttt{arithmetic}, \texttt{real}, \texttt{complex}, \texttt{measure},  
-\texttt{probability}, \texttt{list}, \texttt{sorting} and \texttt{finite\_map}. 
+\pgfplotscreateplotcyclelist{my black}{
+solid, mark repeat=100, mark phase=0, black!100\\
+dashed, mark repeat=100, mark phase=0, black!100\\
 }
-\end{table}  
+
+Estimate the difficulty of the proof by the number of tactic units.
 
 
-\subsection{Time and space complexity}
+\begin{figure}[h]
+\centering           
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+  legend style={anchor=north east, at={(0.9,0.9)}},
+  width=0.5*\textwidth,
+  height=0.5*\textwidth,
+  ymin=0, ymax=2000,
+  xmin=0, xmax=10,
+  xtick={},
+  ytick={},
+  cycle list name=my black]
+\addplot table[x=length, y=proofs] {data/tactictoe_proof_length};
+\addplot table[x=length, y=proofs] {data/original_proof_length};
+\end{axis}
+\end{tikzpicture}     
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+  legend style={anchor=north east, at={(0.9,0.9)}},
+  width=0.5*\textwidth,
+  height=0.5*\textwidth,
+  ymin=0, ymax=120,
+  xmin=10, xmax=50,
+  xtick={},
+  ytick={},
+  cycle list name=my black]
+\addplot table[x=length, y=proofs] {data/tactictoe_proof_length};
+\addplot table[x=length, y=proofs] {data/original_proof_length};
+\legend{\tactictoe,original}
+\end{axis}
+\end{tikzpicture}
+\caption{Distribution of the proof length in tactic unit of evaluated theorems.}
+\end{figure}
+
+
+
 
 Analysing failed proof attempt can give us an idea of the behaviour of the 
 algorithm. In a proof search of 10 seconds, in average 500 (todo: real 
@@ -2637,10 +2536,7 @@ This means that in this settings 1 out of 5 tactics are productive.
 Increasing the timeout to more than 10 seconds would probably be beneficial as 
 we can see that the slope of the curve is far for being flat in Fig~..
 
-\pgfplotscreateplotcyclelist{my black}{
-solid, mark repeat=100, mark phase=0, black!100\\
-dashed, mark repeat=100, mark phase=0, black!100\\
-}
+
 
 \begin{figure}[h]
 \centering           
@@ -2648,18 +2544,21 @@ dashed, mark repeat=100, mark phase=0, black!100\\
 \begin{axis}[
   legend style={anchor=south east, at={(0.9,0.1)}},
   width=\textwidth,
-  height=0.7*\textwidth,xmin=0, xmax=10,
-  ymin=0, ymax=4500,
+  height=0.7*\textwidth,xmin=0, xmax=60,
+  ymin=0, ymax=4800,
   xtick={},
   ytick={},
   cycle list name=my black]
-\addplot table[x=time, y=solved] {data/tt_ptime};
-\addplot table[x=time, y=solved] {data/e_ptime};
+\addplot table[x=time, y=solved] {data/tactictoe_time};
+\addplot table[x=time, y=solved] {data/eprover_time};
 \legend{\tactictoe,\eprover}
 \end{axis}
 \end{tikzpicture}
 \caption{Number of problem solved in less than x seconds.}
 \end{figure}
+\eprover uses at least two strategies where as \tactictoe only uses one set 
+of parameters.
+
 
 \begin{figure}[h]
 \centering           
@@ -2667,13 +2566,13 @@ dashed, mark repeat=100, mark phase=0, black!100\\
 \begin{axis}[
   legend style={anchor=north east, at={(0.9,0.9)}},
   width=\textwidth,
-  height=0.7*\textwidth,xmin=0, xmax=10,
+  height=0.7*\textwidth,xmin=0, xmax=20,
   ymin=0, ymax=100,
   xtick={},
   ytick={},
   cycle list name=my black]
-\addplot table[x=size, y=solved] {data/tt_percent};
-\addplot table[x=size, y=solved] {data/e_percent};
+\addplot table[x=oplen, y=solved] {data/tactictoe_by_oplen};
+\addplot table[x=oplen, y=solved] {data/eprover_by_oplen};
 \legend{\tactictoe,\eprover}
 \end{axis}
 \end{tikzpicture}
@@ -2682,34 +2581,14 @@ original
 proof}
 \end{figure}
 
-%\begin{table*}[t]
-%\centering\ra{1.3}
-%\small
-%\begin{tabular}{llllll}
-%\toprule
-% ID & \multicolumn{2}{c}{nodes}   & \multicolumn{2}{c}{proof size} & 
-% \multicolumn{1}{c}{time}\\ \cmidrule(lr){2-3} \cmidrule(lr){4-5} 
-% \cmidrule(lr){6-6}
-%     & average & max & average & max & average \\
-%\midrule
-% \tactictoe & 94.66 & 421 & 3.34 & 39 & 0.66 \\
-%\bottomrule
-%\end{tabular}
-% \caption{\label{tab:stats} old search statistics}
-%\end{table*}
+%60 seconds experiment + 
+%adding theorems from the namespace and removing 
+%additionally saved theorems + 
+%recording proofs from Prove.
 
-60 seconds experiment + 
-adding theorems from the namespace and removing 
-additionally saved theorems + 
-recording proofs from Prove.
-
-Constant progress: 
-+45 percent in Septermber in 5 seconds.
-+59 percent in December in 10 seconds.
-+66.6 percent in January in 60 seconds.
- 
-The progress cannot be attributed only to the time increase but to testing and 
-debugging of parameters.
+% 
+%The progress cannot be attributed only to the time increase but to testing and 
+%debugging of parameters.
 
 \section{Proof Presentation}\label{sec:proofdisplay}\todo{MN + RK: add 
 motivations and transitions}
