@@ -2518,16 +2518,15 @@ Estimate the difficulty of the proof by the number of tactic units.
   cycle list name=my black]
 \addplot table[x=length, y=proofs] {data/tactictoe_proof_length};
 \addplot table[x=length, y=proofs] {data/original_proof_length};
-\legend{scaled \tactictoe,original}
+\legend{\tactictoe proofs,original proofs}
 \end{axis}
 \end{tikzpicture}
-\caption{Number of original human proofs with a number $x$ of tactic units. 
-         Since there is about two-third of the original proofs that have a 
-         respective \tactictoe proofs, we scale the number of 
-         \tactictoe proofs by a factor of $\frac{1}{0.662}$.}
+\caption{Number of original and \tactictoe proofs with a number $x$ of tactic 
+units. For comparing of the distribution, the number of \tactictoe proofs was 
+scaled by the inverse of \tactictoe's success rate $\frac{1}{0.662}$.}
 \end{figure}
 
-There are more in proportion \tactitoe small proofs than original human proofs.
+There are more in proportion \tactictoe small proofs than original human proofs.
 
 
 Increasing the timeout to more than 10 seconds would probably be beneficial as 
