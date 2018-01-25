@@ -269,9 +269,10 @@ translated by HolyHammer.
 %
 %\end{example}
 %
-\vspace{100mm}\tableofcontents
 
-\vspace{100mm}
+
+\tableofcontents
+
 \todo{TG : comparison with hammers and advantages for the user and over hammers}
 Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight}, 
@@ -314,22 +315,21 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
 
 \subsection{The problem}\todo{}
 
-
-
-
-
+How a user works with an ITP and how this gives rise to a machine learning problem.
 
 Two ways of representing a formulas.
 
-Defintion of a tactic in \holfour. In this research, we will take the definition
+Definition of a tactic in \holfour. In this research, we will take the definition
 that a tactic takes a goal and returns a list of goals.
 
 
 
 \subsection{Contributions}
-This project is an extension of the work described in \cite{tgckju-lpar17}. We 
-explain here the additional contributions and their effect across our system:
+This work is an extension of the work described in \cite{tgckju-lpar17}.
+There we proposed the idea of ... and achieved ...
+The additional contributions and their effect on our system are:
 
+\todoi{add prediction of 4 kinds of things}
 \begin{itemize}
 \item Proof recording at the tactic level is made more precise. Pattern 
 matching constructions, opening of submodules are supported. The different 
@@ -360,9 +360,8 @@ by asynchronous calls to \eprover.
 
 
 
-
 \section{Proof Recording}\label{sec:recording}
-\todo{MN + RK: comment technical and hard-to read presentation of the unfolding
+\todoi{MN + RK: comment technical and hard-to read presentation of the unfolding
 mechanism and replace by a high level abstraction. Alternatively, make the 
 current version more accessible.}
 
@@ -396,7 +395,7 @@ in this section.
 
 Rather than to rely on the underlying programming language, we parse the
 original theory file containing proof scripts into an
-abstract syntax tree (AST).\todo{reason: reading the proof as if you were a 
+abstract syntax tree (AST).\todoi{reason: reading the proof as if you were a 
 human ==> better for the machine learning algorithm (learn the right thing)}
 
 
@@ -1433,7 +1432,7 @@ coverage.
 
 
 \section{Proof Search}\label{sec:proofsearch}
-\todo
+\todoi
 {
 TG:
 describe the prior policy, the evaluation, 
@@ -1886,7 +1885,7 @@ to the number of proof attempts.
 %- Easy to link conjunction estimation   together.
 - 
 
-\section{ATP Integration}\todo{TG + JU + CK: rework and review}
+\subsection{ATP Integration}\todo{TG + JU + CK: rework and review}
 General-purpose proof automation mechanisms which combine proof translation to
 ATPs with machine learning (``hammers'') have become quite successful in
 enhancing the automation level in proof assistants~\cite{hammers4qed}.
@@ -2659,6 +2658,7 @@ local declaration. If local declaration can't be
 stripped, we try to group all local declarations under a single "let" binding 
 which improves readability and prevents duplication of this declarations.
 
+\todoi{Example prettified proof}
 
 %\paragraph{Step by step exploration.}
 %Because a human may have better insight on which tactic to chose next, we also 
@@ -2668,7 +2668,7 @@ which improves readability and prevents duplication of this declarations.
 %that can be chosen by the user. Those tactics are curated so that only 
 %productive tactics are returned. (define productive)
 
-\section{Case study: comparison with original proofs}\todo{
+\section{Comparison with Human Proofs}\todo{
   TG + RK: find describe examples.
   RK: After implementation and small experiment is done (in about 1 week) 
       Test tactictoe find new examples on new goals and manual exploration mode.
@@ -2987,7 +2987,7 @@ commands in the priority queue based on positive and negative examples.
 Future work:
   Promising techniques that could not be evaluated. 
   + Orthogonalization of theorems~\cite{ckju-jsc15}. 
-  + Try harder and smarted on term predictions. \cite{latest version of sepia}. 
+  + Try harder and smarted on term predictions. \cite{latest-version-of-sepia}. 
   \cite{conjecturing}
   + Self-learning.  
 + MCTS was presented in manner that we only did the first step of reinforcement 
