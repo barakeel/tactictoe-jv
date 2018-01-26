@@ -390,15 +390,14 @@ necessary to find the suitable arguments for abstracted tactics (see Section
 %theorems:
 %terms:
 %goal list: (product of tactics)
-\begin{itemize}
-\item term:\\
+\paragraph{term}
 Predict the closest term in a tactic that appears in the goal.
 
-\item :\\
+\paragraph{theorem}
 Predict the theorem the closest to the current goal. Theorem dependencies are 
 added during preselection.
 
-\item goal:\\
+\paragraph{tactic via goal}
 Given a goal $g$, the classifier selects a list of previously solved goals $l$
 ordered by their similarity to $g$. Since each solved goal is associated 
 with a tactic in our database, the ordered list of goals induces a ordered  
@@ -406,12 +405,21 @@ list of associated tactics. And tactics are tried in this order during the
 proof search. Therefore, to order the tactics correctly, it is crucial to 
 estimate the similarity between goals with mathematically relevant features.
 
-\item list of goals:\\
+In all proofs, we record each tactic invocation and link (associate) the 
+currently open goal with the tactic's name in our database.
+Given a new open goal $g$, the \emph{score of a tactic $T$ wrt. $g$} is defined 
+to be the score (similarity) of $T$'s 
+associated goal which is most similar to $g$.
+The idea is that tactics with high scores are more likely to solve the open 
+goal $g$, 
+since they were able to solve similar goals before.
+
+Whenever we mention that we want to predict a goal, we 
+actually intend to predict its associated tactics.
+
+\paragraph{list of goals}
 Used for Monte Carlo Tree Search evaluation. Predict the closest list of goals
 to the list of goal produced by a tactic.
-\end{itemize}
-
-
 
 %We will next discuss 
 %the extraction 
@@ -465,56 +473,43 @@ in the list.
 %logical structure gives a more detailed view of the relationship between those 
 %logical components.
 
-\subsection{Feature distance}\label{sec:predictions}
+\subsection{Similarity}\label{sec:predictions}
 
-In all proofs, we record each tactic invocation and link (associate) the 
-currently open goal with the tactic's name in our database.
-Given a new open goal $g$, the \emph{score of a tactic $T$ wrt. $g$} is defined 
-to be the score (similarity) of $T$'s 
-associated goal which is most similar to $g$.
-The idea is that tactics with high scores are more likely to solve the open 
-goal $g$, 
-since they were able to solve similar goals before.
+We estimate the similarity (or co-distance) between two objects $o_1$ and $o_2$ 
+through their respective feature sets $f_1$ and $f_2$.
+%The similarity function $sim$ computed by the k-NN algorithm is analogous 
+%to the one used in the premise selection task~\cite{ckju-pxtp13}.
+The estimation is based on the frequency of the features in the intersection of 
+$f_1$ and $f_2$. A good rule of thumb is that the rarer the shared features 
+are, the more similar two goals should be. This can be realized by 
+calculating TF-IDF weights for each feature~\cite{Jones72astatistical}.
+We additionally raise the weights to the sixth power giving even more credence 
+to rare features which was found experimentally optimal in \cite{cezary_cite}.
 
-We estimate the similarity (or co-distance) between an open goal $g_o$ and a 
-previously recorded goal $g_p$ using their respective feature sets $f_o$ and 
-$f_p$.
-The similarity function $sim$ computed by the k-NN algorithm is analogous 
-to the
-one used in the premise selection task~\cite{ckju-pxtp13}. The main idea 
-is to find the features shared by the two goals and estimate the rarity of 
-those features calculated via the TF-IDF~\cite{Jones72astatistical} heuristics.
+The first co-distance $sim_1$ adds a modified weight of each shared 
+features to compute the total score.
 In a second co-distance $sim_2$, we additionally take into account 
-the
-total number of 
-features to reduce the seemingly unfair advantage of big feature sets in the 
-first scoring function.
-\[sim_1 (f_o, f_p) = {\sum\nolimits_{\,f \in f_o \cap 
-f_p}{\text{tfidf}(f)^{\tau_1}}}\]
+the total number of features to reduce the seemingly unfair advantage of big 
+feature sets in the first scoring function.
+\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_o \cap 
+f_p}{\text{tfidf}(f)^{6}}}\]
 \[sim_2 (f_o, f_p) = \frac{{\sum\nolimits_{\,f \in f_o \cap 
-f_p}{\text{tfidf}(f)^{\tau_1}}}}
+f_p}{\text{tfidf}(f)^{6}}}}
 {ln (e + card(f_o) + card(f_p))}
 \]
 
-\begin{remark}
-We use $\tau_1 = 6$ because it was found optimal in previous experiments.
-\end{remark}
+Making prediction for an object $o$ consists sorting a set of objects 
+by their similarity to $o$.
+\todo{mention preselection and which dataset of objects?}
 
-
-
-In addition to predicting tactics, we also used these similarity function to 
-predict theorems and terms. Suprisingly, the first similarity function $sim_1$
-is best to predict tactics and theorems. It is probably because there exists 
-monotonocity heuristic where if a tactic can be effective on a large goal, it 
-will be also effective on smaller goals that contain subterms of the larger 
-goal. The same heuristic can be applied for theorems, when a large theorem 
-contains more information than a theorem which is a subformula of the larger 
-theorem. Nevertheless, we want to be able to predict variables (which are small 
-terms) during term argument prediction. So in this case, weight down big terms, 
-as implemented by the $sim_2$ function, should have a beneficial impact.
-The distance $sim_2$ is also used to evaluate list of goals for proof node 
-selection in the Monte Carlo tree search(MCTS) algorithm described in 
-Section~\ref{sec:proofsearch}.
+We use $sim_1$ for goals and theorems and $sim_2$ for terms and list of goals.
+The similarity $sim_1$ is used for predicting a tactic (via goals) because if a
+tactic is effective on large goal $g$ then it is often suitable for a goal $g'$ 
+containing sub-formulas of $g$. The same monotonicity heuristic can justify the 
+use of $sim_1$ in theorems. Indeed, in practice, a large theorem is often a 
+conjunction of small theorems from the same domain. And if a conjunction 
+contains a formula related to a problem, then the other conjuncts 
+from the same domain may also help.
 
 %\[tactic\_score_2 (f_o,f_p) = \frac{tactic\_score_1 (f_o,f_p)}{(1+ ln\ (1 + 
 %card\ f_o))} \]
