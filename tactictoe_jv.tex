@@ -1308,7 +1308,7 @@ During our experiments,
 We chose to distinguish two these general purpose tactic \metis and \eprover.
 \metis is integrated in \holfour, so can be call with frequently with low 
 timeout.
-And the strongest external provers according to past experiments \cite{hh4h4}.
+And the strongest external provers according to past experiments \cite{tgck-cpp15}.
 Where as...
 external calls to \eprover are computationally expensive (5 seconds at a 
 minimum +  128 premises), we  
@@ -2653,7 +2653,7 @@ $t$ and $t'$ have the same effect on $g$ then $t'$ can replace $t$ in the final
 proof.
 
 This is a generalization of the simplest method used for minimizing a list of 
-theorems in ``hammers'' \cite{}. The fact that lists are generally small
+theorems in ``hammers'' \cite{hammers4qed}. The fact that lists are generally small
 make this approach feasible.
 
 \paragraph{Prettification}
@@ -2959,6 +2959,8 @@ In this work, we are also able to predict theorems appearing as arguments of
 tactics but we rely only on information from the current goal. Combining the 
 two approaches by predicting from the goal and from the original tactic 
 arguments is more difficult but is likely to produce more suitable lemmas.
+
+Proof patching: \cite{RingerYLG18}
 
 A similar effort for stronger automation is performed in \isabelle. Nagashima 
 developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the 
