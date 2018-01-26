@@ -266,9 +266,10 @@ result of both provers.
 %
 %\end{example}
 %
-\vspace{100mm}\tableofcontents
 
-\vspace{100mm}
+
+\tableofcontents
+
 \todo{TG : comparison with hammers and advantages for the user and over hammers}
 Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight}, 
@@ -309,17 +310,23 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
 %approach.
 
 
-\subsection{The problem}\todo{Maybe should }
+\subsection{The problem}\todo{ }
 
+How a user works with an ITP and how this gives rise to a machine learning problem.
 
-Definitions of common concepts: goals, tactics, theorems, terms , etc
+Two ways of representing a formulas.
+
+Definition of a tactic in \holfour. In this research, we will take the definition
+that a tactic takes a goal and returns a list of goals.
 
 
 
 \subsection{Contributions}
-This project is an extension of the work described in \cite{tgckju-lpar17}. We 
-explain here the additional contributions and their effect across our system:
+This work is an extension of the work described in \cite{tgckju-lpar17}.
+There we proposed the idea of ... and achieved ...
+The additional contributions and their effect on our system are:
 
+\todoi{add prediction of 4 kinds of things}
 \begin{itemize}
 \item Proof recording at the tactic level is made more precise. Pattern 
 matching constructions, opening of submodules are supported. The different 
@@ -365,8 +372,6 @@ specificities associated with the prediction of each object: the data from
 which the feature vectors are build and the different use cases for the 
 prediction. 
  
-
-
 We derive from tactic selection a prior policy for 
 our search algorithm. Lists of goals (products of tactics) evaluate the success 
 of the policy and adapt it accordingly. Term and theorems predictions are 
@@ -377,6 +382,8 @@ necessary to find the suitable arguments for abstracted tactics (see Section
 %ATPs, which then try to solve the pruned problems on their own. 
 %the goal of predicting useful lemmas is to reduce the search space,
 % of the external ATPs called by a hammer,
+
+
 
 %Mention explictly all the predictors that will be using this distance.
 %tactics:
@@ -849,16 +856,8 @@ coverage.
 %estimate the difficulty of proving a conjunction of goals.
 %\end{remark}
 
-
 \section{Proof Search}\label{sec:proofsearch}
-\todo
-{
-TG:
-describe the prior policy, the evaluation, 
-the node selection algorithm,
-the node extension (+ case of solved goal) + backpropagation.
-add description of end of the algorithm.
-}
+
 Despite the best efforts of the prediction algorithms, the selected tactic may 
 not solve the current goal, proceed in the wrong direction
 or even loop. For that reason, the prediction needs to be accompanied by a  
@@ -1296,15 +1295,12 @@ to the number of proof attempts.
 %Full correlation: $(P1 * P2 * P3) ^{1/3}$
 %Min probabiity:
 
-
-
 %
 %\subsection{Advantage of Monte Carlo Tree Search over A*-search}
 %- Take into account all estimation along the proof and not only the last leaf.
 %- Easy to link conjunction estimation   together.
-- 
 
-\section{ATP Integration}\todo{TG + JU + CK: rework and review}
+\subsection{ATP Integration}
 General-purpose proof automation mechanisms which combine proof translation to
 ATPs with machine learning (``hammers'') have become quite successful in
 enhancing the automation level in proof assistants~\cite{hammers4qed}.
@@ -1326,6 +1322,7 @@ selection algorithm and
 a short call (0.1 seconds + 16 premises optimized by the previous paper) to the 
 internal prover \metis~\cite{metis} or a
 longer call to external prover \eprover. 
+
 
 
 
@@ -1910,9 +1907,8 @@ Self-learning improves the results by
 less than a percent.
 
 
-
-
 %It is also the first step toward self-reinforcement learning. 
+
 
 
 \subsection{Complexity of the proofs}
@@ -2059,7 +2055,7 @@ in this section.
 %labels and characteristics of their associated goals as features. 
 %These feature vectors constitute the training set for our selection algorithm.
 
-Rather than to rely on the underlying programming language, we parse the
+Rather than relying on the underlying programming language, we parse the
 original theory file containing proof scripts into an
 abstract syntax tree (AST).\todo{reason: reading the proof as if you were a 
 human ==> better for the machine learning algorithm (learn the right thing)}
@@ -2116,8 +2112,6 @@ val MAP_APPEND = store_thm("MAP_APPEND",
 %the \polyml compiler needs to execute the code preceding an expression 
 %before parsing it, which is significantly slower than a custom parser.
 
-\subsection{Globalization}
-
 \holfour proofs are organized in theory files.
 Each theory file contains definitions and statements of theorems together with
 their proofs. Those theories and the contained proofs
@@ -2143,7 +2137,7 @@ to transfer \sml values directly, but instead tactic code needs to transferred
 instead.
 To do this, the transferred information will be saved externally.
 
-
+\subsection{Globalization}
 %\subsubsection {Unfolding locally declared values}
 To transfer \sml values as code across theories in a conservative manner, we 
 need to 
@@ -2258,7 +2252,7 @@ identifier declaration and their globalization.
 
 
 
-\subsection{Storing Declaration}
+\subsubsection{Declaration}
 
 \paragraph{Reserved tokens}
 
@@ -2316,7 +2310,7 @@ In \sml, it is possible to declare infixity rules for a string $s$ that
 is not prefixed by a module. The infixity applies only when an identifier 
 exactly match $s$.                
                                                                                 
-\subsection{Globalizing Expression}
+\subsubsection{Expression}
 
 \paragraph{Reserved tokens}
 
@@ -2444,7 +2438,7 @@ Rewrite.ASM_REWRITE_TAC [DB.fetch "list" "MAP", DB.fetch "list" "APPEND"]
 %stateful tactics
 
 
-\subsection{Recording tactic calls}
+\subsection{Tactic wrap}
 
 We now restrict the definition of a proof script to being the third 
 argument of a call to \texttt{store\_thm}. And we precisely define the 
@@ -2509,8 +2503,8 @@ fun R tactic_string goal =
 \end{lstlisting}
 \end{example} 
 
-\subsection{Storing Training Data}
-We describe here the format preferred to store and load the 
+\subsection{Data Transfer}
+We describe here the format preferred to save and load the 
 data recorded by the function \texttt{save}. 
 During saving, we add fields to the input pair $(tactic,goal)$ to record 
 precomputed information in order to make the prediction faster. The final 
@@ -2678,6 +2672,7 @@ local declaration. If local declaration can't be
 stripped, we try to group all local declarations under a single "let" binding 
 which improves readability and prevents duplication of this declarations.
 
+\todoi{Example prettified proof}
 
 %\paragraph{Step by step exploration.}
 %Because a human may have better insight on which tactic to chose next, we also 
@@ -2687,7 +2682,7 @@ which improves readability and prevents duplication of this declarations.
 %that can be chosen by the user. Those tactics are curated so that only 
 %productive tactics are returned. (define productive)
 
-\section{Case study: comparison with original proofs}\todo{
+\section{Comparison with Human Proofs}\todo{
   TG + RK: find describe examples.
   RK: After implementation and small experiment is done (in about 1 week) 
       Test tactictoe find new examples on new goals and manual exploration mode.
@@ -3006,7 +3001,7 @@ commands in the priority queue based on positive and negative examples.
 Future work:
   Promising techniques that could not be evaluated. 
   + Orthogonalization of theorems~\cite{ckju-jsc15}. 
-  + Try harder and smarted on term predictions. \cite{latest version of sepia}. 
+  + Try harder and smarted on term predictions. \cite{latest-version-of-sepia}. 
   \cite{conjecturing}
   + Self-learning.  
 + MCTS was presented in manner that we only did the first step of reinforcement 
