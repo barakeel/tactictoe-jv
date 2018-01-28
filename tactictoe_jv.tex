@@ -357,7 +357,6 @@ the union of the features of each goal
 in the list. 
 
 \subsection{Similarity}\label{sec:predictions}
-
 We estimate the similarity (or co-distance) between two objects $o_1$ and $o_2$ 
 through their respective feature sets $f_1$ and $f_2$.
 %The similarity function $sim$ computed by the k-NN algorithm is analogous 
@@ -367,18 +366,19 @@ $f_1$ and $f_2$. A good rule of thumb is that the rarer the shared features
 are, the more similar two goals should be. This can be realized by 
 calculating TF-IDF weights for each feature~\cite{Jones72astatistical}.
 We additionally raise the weights to the sixth power giving even more credence 
-to rare features which was found experimentally optimal in \cite{cezary_cite}.
+to rare features which was found experimentally optimal in \cite{}.\todo{CK: 
+citation}
 
 The first co-distance $sim_1$ adds a modified weight of each shared 
 features to compute the total score.
 In a second co-distance $sim_2$, we additionally take into account 
 the total number of features to reduce the seemingly unfair advantage of big 
 feature sets in the first scoring function.
-\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_o \cap 
-f_p}{\text{tfidf}(f)^{6}}}\]
-\[sim_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_o \cap 
-f_p}{\text{tfidf}(f)^{6}}}}
-{ln (e + card(f_o) + card(f_p))}\]
+\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap 
+f_1}{\text{tfidf}(f)^{6}}}\]
+\[sim_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_0 \cap 
+f_1}{\text{tfidf}(f)^{6}}}}
+{ln (e + card(f_0) + card(f_1))}\]
 
 In our setting, making prediction for an object $o$ consists of sorting a set 
 of objects by their similarity to $o$. We use $sim_1$ for tactics and theorems 
