@@ -207,7 +207,7 @@ result of both provers.
 \section{Introduction}
 \tableofcontents
 
-\todo{TG : comparison with hammers in usability}
+\todo{Comparison with hammers in usability}
 Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight}, 
   \isabelle~\cite{isabelle} 
@@ -230,7 +230,7 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   the ITP proof, thus avoiding the translation and
   proof-reconstruction phases needed by the hammers.
 
-\todo{TG: rewrite the plan}
+\todo{Rewrite the plan}
   To do this, we \emph{extract and record} tactic invocations from the ITP 
   proofs (Section~\ref{sec:recording}) and
   \emph{build efficient machine learning classifiers} based on such training
@@ -245,21 +245,20 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
 
 
 \subsection{The problem}
-How a user works with an ITP and how this gives rise to a machine learning problem.
-
+How a user works with an ITP and how this gives rise to a machine learning 
+problem.
 Two ways of representing a formulas.
-
 Definition of a tactic in \holfour. In this research, we will take the definition
 that a tactic takes a goal and returns a list of goals.
-
 Input of the prediction: goal
+If a tactic produces no goals then its input goal is solved.
 
 \subsection{Contributions}
 This work is an extension of the work described in \cite{tgckju-lpar17}.
 There we proposed the idea of ... and achieved ...
 The additional contributions and their effect on our system are:
 
-\todoi{add prediction of 4 kinds of things}
+\todoi{add prediction of 3 kinds of things}
 \begin{itemize}
 \item Proof recording at the tactic level is made more precise. Pattern 
 matching constructions, opening of submodules are supported. The different 
@@ -282,79 +281,55 @@ applied on the generated proof.
 by asynchronous calls to \eprover.
 \end{itemize}
 
-
-
-
 \section{Prediction}\label{s:prediction}
 The learning-based selection of relevant lemmas significantly improves the 
 automation for hammers~\cite{BlanchetteGKKU16}. In \tactictoe, we adapt 
 one of the strongest lemma selection 
 methods: the modified distance-weighted \emph{$k$ nearest-neighbour} 
 classifier~\cite{ckju-pxtp13,DudaniS76} to predict three different objects: 
- goals, theorems and list of goals. 
+ tactics, theorems and list of goals. 
 
-We first introduce
-specificities associated with the prediction of each object: the dataset from
-which objects are selected and the different use cases for the 
-prediction. We then details how we predict objects suitable for the current 
-goal by comparing their features with the feature of the goal.
-
+We first introduce specificities associated with the prediction of each object. 
+In particular, we present the dataset from which objects are selected and the 
+purpose of the selection process. 
+We then explain the construction of the similarity measure by which relevant 
+objects are predicted.
 
 \paragraph{Tactics}
-Given a goal $g$, the classifier selects a list of input goals
-ordered by their similarity to $g$. Since each input goal is associated 
-with a tactic in our database, the ordered list of goals induces a ordered  
-list of associated tactics which gives us a prior policy function for  MCTS. 
-And tactics are tried in this order during the 
-proof search. Therefore, to order the tactics correctly, it is crucial to 
-estimate the similarity between goals with mathematically relevant features.
-
-In all proofs, we record each tactic invocation and link (associate) the 
-currently open goal with the tactic's name in our database.
-Given a new open goal $g$, the \emph{score of a tactic $T$ wrt. $g$} is defined 
-to be the score (similarity) of $T$'s 
-associated goal which is most similar to $g$.
-The idea is that tactics with high scores are more likely to solve the open 
-goal $g$, 
-since they were able to solve similar goals before.
-
-Whenever we mention that we want to predict a goal, we 
-actually intend to predict its associated tactics.
-We derive from tactic selection a prior policy for 
-our search algorithm. Lists of goals (products of tactics) evaluate the success 
-of the policy and adapt it accordingly. 
+To start with, we build a database of tactics consisting
+of (tactic,goal) pairs recorded from successful human proofs (see 
+Section~\ref{sec:recording}).
+Then, during proof search, we order recorded goals according to their 
+similarity with a targeted goal $g$. This induces through the recorded pairs an 
+order on tactics. The intuition is that tactics that have been successful on 
+goals similar $g$ should be tried first. 
+This predicted tactic order is translated into a prior policy for our MCTS 
+algorithm (see Section~\ref{sec:policy}).
+Additionally, tactic selection allows us to improve the quality of the database 
+of tactics during orthogonalization (see Section~\ref{sec:ortho}).
 
 
-\paragraph{Theorems}
-Because we may augment the dataset of tactics with abstracted tactics where 
-list of theorems have been erased, we need to find a way to instantiate them.
+\paragraph{Theorems as Argument of Tactics}
+We first collect a set of theorems from the \holfour theorem database and local 
+theorem values, for our theorem predictor to select from.
+Predicted tactics during proof search and orthogonalization may contain 
+abstracted tactics where list of theorems have been erased (see Section 
+\ref{sec:synthesis}).
+We instantiate those tactics by theorems that are syntactically the closest to 
+the targeted goal as they are more likely to help.
+The same algorithm selects suitable premises for ATPs integrated with  
+\tactictoe (see Section~\ref{sec:atp}).
 
-
-This algorithm is also useful for selecting premise to ATPs. (see 
-Section~\ref{sec:atp})
-
-
-Given a open goal $g$, the classifier selects a list of theorems ordered by 
-their 
-similarity to $g$.
-A dataset of theorems is constructed from the \holfour database and local 
-theorem values.
-We predict theorems most similar to the goal for instantiate list of theorems 
-that appears as arguments of abstracted tactics (see Section 
-\ref{sec:synthesis}). A list of 
-predicted theorems 
-are also given as input to ATPs. The number of predictions is 16 for tactic 
-arguments and \metis, but is increased to 128 for \eprover.
-
-
-
-\paragraph{List of goals}
-The dataset of learned list of goals is compiled during orthogonalization.
+\paragraph{List of Goals as Output of Tactics}
+A dataset of list of goals is compiled during orthogonalization (see 
+Section~\ref{sec:evaluation}).
 This set is separated into positive and negative examples.
-Given a list of goals outputted by a tactic,
-we compute the closest lists of goals in our dataset. The ratio of positive 
-examples from the total number of examples gives us a prior evaluation function 
-for MCTS (see Section~{}).
+List of goals that subsumes the result of the original tactic on a 
+targeted goal are considered positive. During proof search, given a list of 
+goals $l$ created by a tactic, we select lists of goals that are most similar 
+to $l$.
+The ratio of positive examples in the selection gives us a prior node 
+evaluation for MCTS.
 
 
 \subsection{Feature Extraction}\label{sec:features}
@@ -401,48 +376,52 @@ the total number of features to reduce the seemingly unfair advantage of big
 feature sets in the first scoring function.
 \[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_o \cap 
 f_p}{\text{tfidf}(f)^{6}}}\]
-\[sim_2 (f_o, f_p) = \frac{{\sum\nolimits_{\,f \in f_o \cap 
+\[sim_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_o \cap 
 f_p}{\text{tfidf}(f)^{6}}}}
-{ln (e + card(f_o) + card(f_p))}
-\]
+{ln (e + card(f_o) + card(f_p))}\]
 
-Making prediction for an object $o$ consists sorting a set of objects 
-by their similarity to $o$.
-
-We use $sim_1$ for goals and theorems and $sim_2$ for list of goals.
-The similarity $sim_1$ is used for predicting a tactic (via goals) because if a
+In our setting, making prediction for an object $o$ consists of sorting a set 
+of objects by their similarity to $o$. We use $sim_1$ for tactics and theorems 
+and $sim_2$ for list of goals. The similarity $sim_1$ is used for predicting a 
+tactic via its associated goal because if a
 tactic is effective on large goal $g$ then it is often suitable for a goal $g'$ 
 containing sub-formulas of $g$. The same monotonicity heuristic can justify the 
-use of $sim_1$ in theorems. Indeed, in practice, a large theorem is often a 
+use of $sim_1$ in theorems. Indeed in practice, a large theorem is often a 
 conjunction of small theorems from the same domain. And if a conjunction 
 contains a formula related to a problem, then the other conjuncts 
 from the same domain may also help.
 
 \subsection{Preselection}\label{sec:dependencies}
 
-The predictions algorithm is called many times during proof search to chose 
-suitable tactics, instantiate tactic arguments by terms and theorems and
-estimate the provability of a list of goals.
-In order to speed up the predictions, we preselect 500 features vectors of 
-tactics, theorems and list of goals.
+In order to speed up the predictions during the search for a proof of a 
+conjecture $c$, we preselect 500 tactic-goal pairs and theorems. 
+Preselection for list of goals is induced by the preselection of the input 
+goals in the tactic-goal pairs. Those will 
+be the only objects available to \tactictoe for proving $c$.
 
+The first idea is to select tactic-goal pairs and theorems by their distance to 
+the conjecture. However, this selection may not be adapted to later stages of 
+the proof where goals may have derived significantly from the 
+initial conjecture $c$. In order to 
+anticipate the production of diverse goals, our prediction during preselection 
+take into account dependencies between objects of the same dataset.
+The dependence relation is assymetric. Through the relation, each object has 
+multiple children and at most one parent.
+Once a dependency relation is established, we can calculate a dependency score 
+for each object which is the maximum of its similarity score and the similarity 
+score of its parent. In the end, the 500 feature vectors in each dataset with 
+the highest dependency score are preselected.
 
-We first rank feature vectors by their distance to the conjecture. But better 
-ranked vectors only contains symbols from 
-the conjecture and may not be suitable for later stages of the proof where the 
-goals may have derived significantly from the conjecture. To solve this 
-problem, we reorder the list so that descendants (see 
-Definition~\ref{def:recdep}) of vectors inherits the similarity of their 
-parent.
+In the following, we give a mathematical definition for the dependency relation 
+between labels for tactic-goal pairs and theorems.
 
-\begin{definition}(Recursive dependencies of a feature 
-vector)\label{def:recdep}
-Let $\mathfrak{F}$ be a set of recorded feature vectors. 
-The set of all recursive dependencies $D_\infty$ of a feature vector $f$ is 
+\begin{definition}(Dependencies of tactic-goal pairs)\\
+Let $\mathfrak{F}$ be the set of recorded tactic-goal pairs.
+The dependencies $D_\infty$ of a tactic-goal pair $(t_0,g_0)$ is 
 inductively defined by:
 
 \begin{align*}
-D_0 &=_{def} \lbrace f \rbrace \\
+D_0 &=_{def} \lbrace (t_0,g_0) \rbrace \\
 D_{n+1} &=_{def} D_n \cup \lbrace (t,g)\in \mathfrak{F}\  |\ \exists 
 (\hat{t},\hat{g}) \in D_n.\ g \in \hat{t}(\hat{g}) \rbrace  \\
 D_\infty &=_{def} \bigcup_{i \in \mathbb{N}} D_i\\
@@ -452,23 +431,25 @@ application
 of the tactic $\hat{t}$ to the goal $\hat{g}$.
 \end{definition}
 
-We augment the ordered predictions by inserting after each predicted vector 
-its descendants and removing lower ranked duplicates. 
-%This contrast with 
-%theorem predictions where we only select parents. 
- This phase is only applied 
-during preselection, so is of no great consequence as long as we select enough 
-theorems and tactics.
 
-Since predicting efficiently is crucial during proof 
-search, we preselect a number of tactics before the search.
-We take the first 500 vectors of the augmented ordered list. Only members of 
-this list can be predicted during proof search. When an 
-open goal $g$ is created, the scores of those 500 preselected tactics are
-recomputed which gives a preferential order of tactics to be tried on $g$.
+\begin{definition}(Dependencies of a theorem)\\
+Let $\mathfrak{T}$ be the set of recorded theorems.
+The dependencies $D_\infty$ of a theorem $t$ are the set of theorems in 
+$\mathfrak{T}$ appearing in the proof $t$ as recorded in \cite{hh4h4}.
+Contrarily to the dependency relation in tactic-goal pairs, this relation is 
+not a transitive closure.
+\end{definition}
 
 
-\section{Orthogonalization}\todo{MN + RK: review + fix typos}
+To preselect a list of goal $l$, we consider the tactic input $g$ that was 
+at the origin of the production of this list. If and only if there exists a 
+tactic $t$ such as $(t,g)$ is in the preselected tactic-goal pairs, the 
+list of goals $l$ is preselected. This has the desirable effect that
+negative and positive examples created during one orthogonalization 
+step are chosen or discarded together. \todo{problematic forward reference?}
+
+
+\section{Orthogonalization}\label{sec:ortho}
 
 Different tactics may transform a single goal in the same way. Exploring such 
 equivalent paths
@@ -621,11 +602,10 @@ previously required forcing.
 \end{remark}
 
 We made argument predictors for one type of arguments: list 
-of theorems. We choose this very common type because perfect instantiation of 
-those arguments would lead to the largest improvements (see 
-Section~\ref{sec:perfect_exp}). We plan to 
-extend our algorithm to term which is another frequent argument types.
-But term prediction have been so far proven to weak to positively 
+of theorems. We choose it is the most common type and the structure of theorems 
+are complex so they contain enough information to be predicted accurately. 
+We plan to extend our algorithm to term which is another frequent argument 
+types but term synthesis is so far too weak to positively 
 influence the proof search.
 
 
@@ -748,18 +728,15 @@ the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
 \forall g \in G(a).\ g \in \mathbb{G}^{n} \rbrace\\
 \mathbb{G}^{n+1} &=_{def} \lbrace g \in \mathbb{G}\ |\ 
 \exists a \in A(g).\ a \in \mathbb{A}^{n+1} \rbrace \\
-\mathbb{A}^\infty &=_{def} \bigcup_{i \in \mathbb{N}} \mathbb{A}^n\\
-\mathbb{G}^\infty &=_{def} \bigcup_{i \in \mathbb{N}} \mathbb{G}^n\\
+\mathbb{A}^\infty &=_{def} \bigcup_{i \in \mathbb{N}} \mathbb{A}^n \ \ \ \ \ 
+\mathbb{G}^\infty =_{def} \bigcup_{i \in \mathbb{N}} \mathbb{G}^n\\
 \end{align*}
-
-By the base case of these definition, a goal is solved if there exists a tactic 
-applied to this goal that produces no goals.
 \end{definition}
 
-\subsection{Prior tactic policy}
-The estimation through the distance produced by the tactic selectors are hard 
+\subsection{Prior tactic policy}\label{sec:policy}
+Distances between goals produced by the tactic predictor are hard 
 to translate into a prior tactic policy, so we rely only on the order of 
-tactics to estimate the probability with which a tactic should be tried.
+tactics to estimate the probability with which each tactic should be tried.
 Let $t_0,\ldots,t_500$ be the list of preselected tactics ordered by their 
 distance to a goal $g$. Let $c_{policy}$ be a constant heuristic that estimates 
 how likely a tactic $t_i$ is to prove the goal compared to the rest of the 
@@ -781,42 +758,38 @@ function defined on nodes.
 Therefore, we define $PriorPolicy(a)$ as the $PriorPolicy(t)$ where $t$ is the 
 tactic that produced $a$.
 
-\subsection{Prior node evaluation}
+\subsection{Prior node evaluation}\label{sec:evaluation}
 
 We now concentrate on defining a reasonable evaluation function that also 
 influences node selection in MCTS. Essentially, we estimate how 
-interesting is the list of goals of a tactic to determine if we should continue 
-searching in this direction. Theoretically, an interesting list of goal is one 
+interesting is a list of goals produced by a tactic. This way, we can determine 
+if we should continue searching in this direction. Theoretically, an 
+interesting list of goal is one 
 that has the shortest proof, and we could measure the likelihood of being 
 provable in a number of steps from previous proof search. However, this 
 approach produces a lot of negatives\todo{TG: cite Hard Negative mining (cite 
 Deep math)}. So to reduce this number, we limit 
-ourselves to feature vectors tested during orthogonalization. We declare a list 
+ourselves to tactics tested during orthogonalization. We declare a list 
 of goals l to be positive, noted $l \in Positive$, if it is has been 
-produced by the winner of an orthogonalization competition. We extend the 
-definition of a $distance$ to a list of goals by considering the union of the 
-features of the goals. The set of the $r$ set of goals closest to a set of 
-goal $l$ is noted $Neighbour(r,l)$. We can define the set of positives and 
-negatives within a radius $r$ of a 
-list of goals $l$ to be $Positive(r,l) = \lbrace m \in Neighbour(r,l)\ |\ m \in 
+produced by the winner of an orthogonalization competition. The set of the $r$ 
+goals closest to a list of goals $l$ is noted $Neighbour(r,l)$. We can 
+define the set of positives within a 
+radius $r$ of $l$ to be $Positive(r,l) = \lbrace m \in Neighbour(r,l)\ |\ m \in 
 Positive \rbrace$.
 
-During our experiments, we evaluate output goals in three different manners 
-with the following functions:
+During our experiments, we evaluate output goals with the following function:
 
 \begin{align*}
-PriorEvaluation_{none} (a_i) &= 0 \\
-PriorEvaluation_{productive} (a_i) &= 1\\
 PriorEvaluation_r (a_i) &= \frac{card\ Positive(r,a_i)}{r}\\
 \end{align*}
 
-For all evaluations functions, if a tactic is not productive then there is no 
-output to evaluate, so the result is a failure and a reward of $0$ will be 
-given for this node. The same thing happens if the node selected is already 
-proven or a descendant of a proven goal. 
-Experimentally, it is preferable not to 
-filter solved (or descendants of solved) nodes before 
-node selection to keep the estimation of the algorithm balanced.
+If a tactic is not productive then there is no output to evaluate, so the 
+result is a failure and a reward of $0$ will be 
+given for this node. Failure also happens if the node selected is already 
+a proven goal or a descendant of a proven goal. Experimentally, it is 
+preferable not 
+to filter solved nodes and descendants of solved nodes before node selection 
+to keep the estimations of the algorithm balanced.
 
 
 \subsection{Start of the search}
@@ -933,6 +906,7 @@ We chose to distinguish two these general purpose tactic \metis and \eprover.
 but we give it a boost as we are confident it is a strong tactic. The boos 
 consits in ...
 
+mention theorem dependencies for eprover but not for metis.
 
 can be call with frequently with low 
 timeout.
@@ -970,336 +944,247 @@ To integrate a general tactic that requires a higher time out such as \eprover,
 we make use of asynchronous calls via PolyML.fork to prevent the ATP 
 from slowing down the search. 
 
-\section{Experimental Evaluation}\label{s:experiments}\todo{TG: introduction + 
-consistent tables}
+\section{Experimental Evaluation}\label{s:experiments}
+\todo{Josef: give the specification} 
+Each re-proving experiment is performed on a single CPU of a server in Prague 
+with the exception of the experiments 
+relying on asynchronous \eprover calls that run on two CPUs.
 
-Disclaimer:
-Conditions of the experiments may vary slightly between different tables 
-because of various factors such 
-as overhead cost of additional features or the fact that they were run on 
-different machines on a local machine or on the server.
 
-\subsection{Methodology} \todo{TG: is copied, update references of sections and
-new algorithm + mention when orthogonalization is done}
-
+\subsection{Methodology} 
 The evaluation imitates the construction of the library: For each theorem only 
 the previous human proofs are known. These are used as the learning base for 
 the predictions.
 To achieve this scenario we re-prove all theorems during a modified build of 
 \holfour.
-As theorems are proved, their tactical proofs and their statements are recorded 
-and included in the 
-training examples.
+As theorems are proved, their tactical proofs and their statements are 
+recorded and included in the training examples.
 For each theorem we first attempt to run the \tactictoe search with a time 
-limit of 5 seconds,
-before processing the original proof script.
-In this way, the fairness of the
-experiments is guaranteed by construction. 
+limit of 60 seconds, before processing the original proof script.
+In this way, the fairness of the experiments is guaranteed by construction. 
 Only previously declared \sml 
 variables (essentially tactics, theorems and simpsets) are accessible. 
 And for each theorem to be re-proven \tactictoe is only trained on previous 
 proofs.
 
+\paragraph{Datasets: optimization and validation}\todo{rephrase to something 
+more 
+coherent}
+All top-level theorems from the standard library are considered with the 
+exception of 440 hard problems (containing a \texttt{let} construction in their 
+proof) and 1175 easy problems (build from \texttt{save\_thm} calls). 
+Therefore, during the full-scale experiments, we evaluate 7164 theorems.
+We use every tenth theorem of the first third of the standard library of 
+them for parameter optimization, which amounts to 273 theorems.
+Although the evaluation of each set of parameters on its own is fair, 
+the selection of the best strategy in Section~\ref{sec:tuning} should also be 
+considered as a learning process. To ensure the global fairness, the final 
+experiments in Section~\ref{sec:full_exp} runs the best strategy on the full 
+dataset which is about 30 times larger.
+
+\subsection{Tuning \tactictoe}~\label{sec:tuning}
+
+Fix parameters: not optimized here. 
+ - Features extraction method.
+ - k-nn distance.
+ - MCTS evaluation radius is set to 10. 
+ - Metis : 16 lemmas.
+ - Eprover: 64 lemmas and 5 seconds timeout 1 asynchronous call
 
 
-\paragraph{Dataset}
-
-7000+ top-level theorems that were created by . 
-In this evaluation, we do not include the 250 theorems created by
-
-All top-level theorems created by a call to 
-\texttt{store\_thm}, 
-\texttt{Q.store\_thm} or \texttt{maybe\_thm} are considered with the exception 
-of 440 calls that contains a let binding. They are typically harder to re-prove.
-We also ignore the 1175 \texttt{save\_thm} calls. Most of them are easily 
-provable theorems using instantiations or conjuncts of previous 
-theorems.
-
-%\begin{itemize}
-%%\item the , these are 
-%%typically 
-%%harder for \tactictoe as it may not have seen the particular local 
-%%declaration 
-%%before and therefore would have to find an alternative proofs. We also do not 
-%%learn from these proofs because they were explictly local.
-%%\item the 1175 calls to save\_thm. These are typically mostly trivial and 
-%%easy 
-%%theorems.
-%%The remaining 7088 top-level theorems are evaluated in the full scale 
-%%evaluation and the level of difficulty of these problem is assessed by a 
-%%comparison with \eprover.
-%\end{itemize}
-
-Among these types of theorems, every tenth theorems of the first third of the 
-library is evaluated during tuning, which give us a total of 273 theorems to 
-train different parameters on.
-
-\paragraph{Strategy selection}
-Although the training process in each strategy on its own is fair, the 
-selection of the 
-best strategy in Section~\ref{sec:sel_param} should also be considered as a 
-learning 
-process. To ensure the global fairness, the final experiments in 
-Section~\ref{sec:exp_full} 
-runs the best strategy on the full dataset which is about 10 times larger. The
-performance is minimally better on this validation set.
-
-\subsection{Tuning \tactictoe}
-
-\subsubsection{Prediction parameters}\todo{TG: remove this section or mention
-that parameters were optimized in the previous version}
-The first experiment concerns the choice of the right kind of features and 
-feature scoring 
-mechanism. The results are presented in Table~\ref{tab:feature_param}.
-We observe that the higher-order features and the feature of the top logical 
-structure increase minimally the number of problems solved. The attempted 
-length penalty on the total number of features is actually slightly harmful.
-We did not turn on the top feature flag in the next experiments because they 
-are slightly more expensive too compute.
-
-%
-%\begin{table}[t]
-%\centering\ra{1.3}
-%\small
-%\begin{tabular}{llll}
-%\toprule
-% ID & Learning parameter & Solved & $U(D_1)$ \\
-%\midrule
-% $D_0$ & $codist_1$ (length penalty) & 172 (20.0\%) & 5 \\
-% $D_1$ & $codist_0$ (default) & 179 (20.8\%) & 0 \\
-% $D_2$ & no top features & 175 (20.3\%) & 18 \\
-% $D_3$ & no higher-order features & 178 (20.7\%) & 8 \\
-%\bottomrule
-%\end{tabular}
-%\caption{\label{tab:feature_param}Success rate of strategies with different 
-%learning parameters on the training set.}
-%\end{table}
-%
-%\subsubsection{Search parameters}
-%
-%\paragraph{tactic timeout}
-%\begin{table}[t]
-%\centering\ra{1.3}
-%\small
-%\begin{tabular}{llll}
-%\toprule
-% ID & Searching parameter & Solved & $U(D_{9})$ \\
-%\midrule
-% $D_1$ & $codist_0$ (default)      & 179 (20.8\%) & 10 \\
-% $D_4$ & tactic timeout 0.004 sec & 175 (20.3\%) & 9 \\
-% $D_5$ & tactic timeout 0.1 sec   & 178 (20.7\%) & 10 \\
-%\bottomrule
-%\end{tabular}
-% \caption{\label{tab:search_param}Success rate of strategies with different 
-% search parameters on the training set.}
-%\end{table}
-
-\subsubsection{MCTS parameters: policy and evaluation}
-
-Width did include failing tactics in this experiments. $c_{exploration}$ = 1.
-$E_{none}$.
 
 \begin{table}[ht]
 \centering\ra{1.3}
 \small
-\begin{tabular}{ll}
+\begin{tabular}{llc}
 \toprule
- $c_{policy}$ & Solved \\
+ Technique & Parameters & Solved \\
 \midrule
- $2/3$ & 120\\
- $1/2$ & 125\\
- $1/3$ & 117\\
-% 1/2 & Productive & No & $E_{none}$ & 1 & 120\\
-% 1/2 & Productive & No & $E_{productive}$ & 1 & 127\\
+Tactic time out & 0.02s & 155 (56.8\%)\\
+                & 0.05s (default) & 155 (56.8\%)\\
+                & 0.1s & 153 (56.0\%)\\
+\midrule
+Orthogonalization & $radius = 20$ (default) & 155 (56.8\%)\\ 
+                  & $radius = 10$ & 125 (50\%)\\
+                  & $radius = 40$ & 125 (50\%)\\
+\midrule
+Abstraction       & none (default) & 125 (50\%)\\
+                  & $theorems = 8$ & 125 (50\%)\\
+                  & $theorems = 16$ & 125 (50\%)\\
+                  & $theorems = 32$ & 125 (50\%)\\
+\midrule
+MCTS Policy & $c_{policy} = 1/2$ (default) & 125 (50\%)\\
+            & $c_{policy} = 2/3$ & 125 (50\%)\\
+            & $c_{policy} = 1/3$ & 125 (50\%)\\
+\midrule
+MCTS Evaluation & none (default) & 125 (50\%) \\
+           & $c_{exploration} =\sqrt{2}$ & 125 (50\%)\\ 
+           & $c_{exploration} = 1$ & 125 (50\%)\\ 
+           & $c_{exploration} = 2$ & 125 (50\%)\\ 
+\midrule
+ATP integration & none (default) & 125 (50\%)\\
+                & \metis 0.1s & 125 (50\%)\\
+                & \metis 0.2s & 125 (50\%)\\
+                & \metis 0.4s & 125 (50\%)\\ 
+                & \eprover & 125 (50\%)\\
+                & \metis 0.1s + \eprover & 190\\
+\midrule
+All & best parameters (without \eprover) & \\ 
 \bottomrule
 \end{tabular}
-\caption{\label{tab:cost_param} 
-%on a local machine
-}
-\end{table}
- 
-
-
-
-%This experiments were performed without the square root in the policy 
-%function.
-
-This experiments are performed with orthogonalization on and policy coefficient 
-of $1/2$.
-
-\begin{table}[ht]
-\centering\ra{1.3}
-\small
-\begin{tabular}{lll}
-\toprule
- PriorEvaluation & $c_{exploration}$ & Solved \\
-\midrule
-% 1/2 & All & No & $E_{none}$ & 1 & 122\\
-% 1/2 & All & Yes & $E_{none}$ & 1 & 128\\
- none & 1 & 128\\
- productive & 1 & 134\\ 
- & 4 & 130\\
- radius = 1 & 1 & 127\\ 
- & 4 & 126\\ 
- radius = 10 & 1 & 136\\ 
- & 4 & 137\\ 
-\bottomrule
-\end{tabular}
-\caption{\label{tab:search_parameters}}
-%on the server
 \end{table}
 
-We settled for the first parameters where an evaluation function based on 
-machine learning was beneficial. It is highly likely than better parameters for 
-the policy, radius of evaluation and exploration coefficient can be found with 
-further investigation.
 
 
-\subsection{Increasing \tactictoe's knowledge}\label{sec:perfect_exp}
+%\subsection{Increasing \tactictoe's knowledge}\label{sec:perfect_exp}
+%
+%We investigate what are the limits of \tactictoe and what benefits additional 
+%knowledge could provide. To this end, we will modify the set of features to 
+%include features vectors that should not be known in a regular experiment. We  
+%include some vectors from the recorded human proof and perform the proof 
+%search 
+%after the recording instead of before in all other experiments. This 
+%experiment 
+%is not fair and should only be compared to 
+%experiments in the same settings.
+%
+%For clarity, we will name the set of feature vectors that can be recorded from 
+%the current human proof $\mathbb{H}$ and the set of vectors recorded from 
+%previous proofs $\mathbb{P}$ (consistent with previous notation?). We note 
+%$\pi_1^1$ the projection on the 
+%first component returning the label of a feature vector. And we define the 
+%function $T$ that takes a tactic and return the list of its tokens.
+%
+%We will progressively add bigger and bigger 
+%subset of $\mathbb{H}$ to $\mathbb{P}$ and observe the effect on the proof 
+%search success rates. 
+%
+%Here are the list of increasing non-trivial subsets of $\mathbb{H}$ we 
+%consider:
+%\begin{align*}
+%\mathbb{F}_1 &= \lbrace (t,g) \in \mathbb{H}\ |\ t \in \pi_1^1(\mathbb{P})  
+%   \rbrace \\
+%\mathbb{F}_2 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \rbrace\\
+%\mathbb{F}_3 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem} \rbrace\\
+%\mathbb{F}_4 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem or a term} 
+%\rbrace\\
+%\end{align*}
+%
+%
+%$\mathbb{F}_1$ is an approximation of what we could get if we had perfect 
+%prediction for those tactics.
+%
+%
+%\begin{table}[h]
+%\centering\ra{1.3}
+%\small
+%\begin{tabular}{lll}
+%\toprule
+% & Additional features & Solved \\
+%\midrule
+%$\emptyset$   & none & 119 (43.6\%) \\ %NONEv2
+%$\mathbb{F}_1$& tactic prediction & 121 (44.3\%) \\ %AFTERTACv2
+%$\mathbb{F}_2$& token recombination  & 137 (50.2\%) \\ %AFTERTOKENv2
+%$\mathbb{F}_3$& theorem prediction  & 207 (75.8\%) \\ %AFTERTHMTHMv2
+%$\mathbb{F}_4$& term prediction & 223 (81.7\%) \\ %AFTERALLv2
+%$\mathbb{H}$  & all & 239 (87.5\%) \\ %AFTERSMALLv2
+%% $AFTERv2$       & $\mathfrak{H}$ & 245 (89.7\%)  \\
+%\bottomrule
+%\end{tabular}
+%\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge 
+%with tactics from the proof of the tested theorem.} 
+%\end{table}
+%\todo{good title for this table Additional features}
+%
+%And we observe in Table~\ref{tab:featue_param} a 
+%slight increase compared to the default \tactictoe. We then included all 
+%vectors that contains tactics that can be rebuild from tokens of
+%tactics in our database. 
+%Our search algorithm proved two proofs less that if it had perfect prediction 
+%so it means that our prediction algorithm (policy) is doing a good  job at 
+%least in this early settings where proofs are easy. 
+%Suprisingly, being able to recombine tokens of tactics from the database is 
+%barely sufficient to prove more than half of the theorems in this dataset. The 
+%Therefore, additionally including in tactics theorems and terms that did not 
+%appear in previous tactics is essential. Creating from scratch other arguments 
+%may not help as much. This is why we restricted ourselves to predicting 
+%arguments of theorem list type and the term type during tactic synthesis. 
+%Finally our proof search algorithm sometimes fails even if it knows all the 
+%tactic necessary. The two main reasons are that either a crucial tactic 
+%exceeds 
+%its timeout or that the human proof is too deep to be rediscovered (more than 
+%10 steps long).In all those experiments orthogonalization is performed with 
+%radius 20.
+%
+%\subsubsection{Orthogonalization Abstraction}
+%Here, we test the benefit of different kind of tactic abstraction.
+%All experiments in this table are using orthogonalization.
+%
+%\begin{table}[t]
+%\centering\ra{1.3}
+%\small
+%\begin{tabular}{ll}
+%\toprule
+% Technique & Solved \\
+%\midrule
+%% holyhammer & 79 \\
+%  & 122\\
+% Orthogonalization & 129\\
+%% ortho + term & 126\\    
+% Orthogonalization + Abstraction & 160\\
+%% ortho + \metis & 162\\
+% %ortho + metis + thmortho & 155\\
+% %ortho + metis + stacortho & 160\\
+%% ortho + \metis + theorem list & 175\\ 
+%\bottomrule
+%\end{tabular}
+%\caption{\label{tab:cfot_param} 
+% Effect of orthogonalization and abstraction}
+%\end{table}
+%We want to know what the optimal number of predictions for tactics different 
+%from \metis since \metis has a special status in our algorithm is handled 
+%independently.
 
-We investigate what are the limits of \tactictoe and what benefits additional 
-knowledge could provide. To this end, we will modify the set of features to 
-include features vectors that should not be known in a regular experiment. We  
-include some vectors from the recorded human proof and perform the proof search 
-after the recording instead of before in all other experiments. This experiment 
-is not fair and should only be compared to 
-experiments in the same settings.
-
-For clarity, we will name the set of feature vectors that can be recorded from 
-the current human proof $\mathbb{H}$ and the set of vectors recorded from 
-previous proofs $\mathbb{P}$ (consistent with previous notation?). We note 
-$\pi_1^1$ the projection on the 
-first component returning the label of a feature vector. And we define the 
-function $T$ that takes a tactic and return the list of its tokens.
-
-We will progressively add bigger and bigger 
-subset of $\mathbb{H}$ to $\mathbb{P}$ and observe the effect on the proof 
-search success rates. 
-
-Here are the list of increasing non-trivial subsets of $\mathbb{H}$ we consider:
-\begin{align*}
-\mathbb{F}_1 &= \lbrace (t,g) \in \mathbb{H}\ |\ t \in \pi_1^1(\mathbb{P})  
-   \rbrace \\
-\mathbb{F}_2 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \rbrace\\
-\mathbb{F}_3 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem} \rbrace\\
-\mathbb{F}_4 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem or a term} 
-\rbrace\\
-\end{align*}
-
-
-$\mathbb{F}_1$ is an approximation of what we could get if we had perfect 
-prediction for those tactics.
-
-
-\begin{table}[h]
-\centering\ra{1.3}
-\small
-\begin{tabular}{lll}
-\toprule
- & Additional features & Solved \\
-\midrule
-$\emptyset$   & none & 119 (43.6\%) \\ %NONEv2
-$\mathbb{F}_1$& tactic prediction & 121 (44.3\%) \\ %AFTERTACv2
-$\mathbb{F}_2$& token recombination  & 137 (50.2\%) \\ %AFTERTOKENv2
-$\mathbb{F}_3$& theorem prediction  & 207 (75.8\%) \\ %AFTERTHMTHMv2
-$\mathbb{F}_4$& term prediction & 223 (81.7\%) \\ %AFTERALLv2
-$\mathbb{H}$  & all & 239 (87.5\%) \\ %AFTERSMALLv2
-% $AFTERv2$       & $\mathfrak{H}$ & 245 (89.7\%)  \\
-\bottomrule
-\end{tabular}
-\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge 
-with tactics from the proof of the tested theorem.} 
-\end{table}
-\todo{good title for this table Additional features}
-
-And we observe in Table~\ref{tab:featue_param} a 
-slight increase compared to the default \tactictoe. We then included all 
-vectors that contains tactics that can be rebuild from tokens of
-tactics in our database. 
-Our search algorithm proved two proofs less that if it had perfect prediction 
-so it means that our prediction algorithm (policy) is doing a good  job at 
-least in this early settings where proofs are easy. 
-Suprisingly, being able to recombine tokens of tactics from the database is 
-barely sufficient to prove more than half of the theorems in this dataset. The 
-Therefore, additionally including in tactics theorems and terms that did not 
-appear in previous tactics is essential. Creating from scratch other arguments 
-may not help as much. This is why we restricted ourselves to predicting 
-arguments of theorem list type and the term type during tactic synthesis. 
-Finally our proof search algorithm sometimes fails even if it knows all the 
-tactic necessary. The two main reasons are that either a crucial tactic exceeds 
-its timeout or that the human proof is too deep to be rediscovered (more than 
-10 steps long).In all those experiments orthogonalization is performed with 
-radius 20.
-
-\subsubsection{Orthogonalization Abstraction}
-Here, we test the benefit of different kind of tactic abstraction.
-All experiments in this table are using orthogonalization.
-
-\begin{table}[t]
-\centering\ra{1.3}
-\small
-\begin{tabular}{ll}
-\toprule
- Technique & Solved \\
-\midrule
-% holyhammer & 79 \\
-  & 122\\
- Orthogonalization & 129\\
-% ortho + term & 126\\    
- Orthogonalization + Abstraction & 160\\
-% ortho + \metis & 162\\
- %ortho + metis + thmortho & 155\\
- %ortho + metis + stacortho & 160\\
-% ortho + \metis + theorem list & 175\\ 
-\bottomrule
-\end{tabular}
-\caption{\label{tab:cfot_param} 
- Effect of orthogonalization and abstraction}
-\end{table}
-We want to know what the optimal number of predictions for tactics different 
-from \metis since \metis has a special status in our algorithm is handled 
-independently.
-
-\subsubsection{ATP integration}
+%\subsubsection{ATP integration}
+%
+%
+%\todo{paragraph is copied}
+%The best setting for \metis was to be in previous experiments to be 16
+%theorems an The best strategy which does not rely on the ``small hammer'' 
+%approach $D_9$ 
+%will be called \tactictoe(NH) (for no ``small hammer'') in the remaining part 
+%of the paper, and the best strategy relying on the approach, $D_{19}$, will be 
+%referred to as \tactictoe(SH) (``small hammer'').
+%
+%\begin{table}[h!]
+%\centering\ra{1.3}
+%\small
+%\begin{tabular}{ll}
+%\toprule
+%  & Solved \\
+%\midrule
+%   \eprover &  106 \\
+%   \tactictoe &  139 \\
+%   \tactictoe + \metis & 182 \\
+%   \tactictoe + \eprover & 182 \\
+%   %x tactictoe + async holyhammer (10 thread) & 183 \\
+%   \tactictoe + \metis + \eprover & 190 \\
+%  
+%\bottomrule
+%\end{tabular}
+%\caption{Experiments with a timeout of 60 seconds \label{tab:param}}
+%\end{table}
+%
+%Slight error in this experiments were eprover predictions have been made from 
+%the preselected 500 theorems instead of the full library. But even with the 
+%added overhead, we already see 
+%the benefit of using stronger external prover than \metis.
 
 
-\todo{paragraph is copied}
-The best setting for \metis was to be in previous experiments to be 16
-theorems an The best strategy which does not rely on the ``small hammer'' 
-approach $D_9$ 
-will be called \tactictoe(NH) (for no ``small hammer'') in the remaining part 
-of the paper, and the best strategy relying on the approach, $D_{19}$, will be 
-referred to as \tactictoe(SH) (``small hammer'').
-
-\begin{table}[h!]
-\centering\ra{1.3}
-\small
-\begin{tabular}{ll}
-\toprule
-  & Solved \\
-\midrule
-   \eprover &  106 \\
-   \tactictoe &  139 \\
-   \tactictoe + \metis & 182 \\
-   \tactictoe + \eprover & 182 \\
-   %x tactictoe + async holyhammer (10 thread) & 183 \\
-   \tactictoe + \metis + \eprover & 190 \\
-  
-\bottomrule
-\end{tabular}
-\caption{Experiments with a timeout of 60 seconds \label{tab:param}}
-\end{table}
-
-Slight error in this experiments were eprover predictions have been made from 
-the preselected 500 theorems instead of the full library. But even with the 
-added overhead, we already see 
-the benefit of using stronger external prover than \metis.
-
-
-\subsection{Full-scale experiment}
+\subsection{Full-scale experiment}~\label{sec:full_exp} 
 
 %Mention the conflicts.
 %Theorem orthogonalization is not turn on during instantiation of tacitcs 
@@ -1307,21 +1192,24 @@ the benefit of using stronger external prover than \metis.
 %for the metis tactic.
 %Best parameters + comparison with holyhammer.
 
-\eprover is not called by \tactictoe for fair comparison.
+The best \tactictoe parameters are chosen for the full-scale evaluation. Yet,
+\eprover calls are not included in the best \tactictoe strategy for fairer 
+comparison.
 
 \begin{table}[h!]
 \centering\ra{1.3}
 \small
-\begin{tabular}{lll}
+\begin{tabular}{llc}
 \toprule
-  & & 7164 theorems \\
+  & Parameters & Solved \\
 \midrule
-  & \eprover   & 2472 (34.5\%)\\ 
-  & \tactictoe & 4741 (66.2\%)\\
-  & combined   & 4946 (69.0\%)\\
+   \eprover   & 128 premises & 2472 (34.5\%)\\ 
+   \tactictoe & best parameters without \eprover & 4741 (66.2\%)\\
+   combined   &              & 4946 (69.0\%)\\
 \bottomrule
 \end{tabular}
-\caption{Experiments with a timeout of 60 seconds \label{tab:_param}}
+\caption{Evaluation on 7164 top-level theorems of the \holfour standard library 
+\label{tab:_param}}
 \end{table}
 
 Table~\ref{theories} compares the success rates of re-proving for different
