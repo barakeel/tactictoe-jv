@@ -570,11 +570,9 @@ To preselect a list of goal $l$, we consider the tactic input $g$ that was
 at the origin of the production of $l$. The list of goals $l$ is preselected if 
 and only if $g$ appears in the preselected tactic-goal pairs. This has the 
 desirable effect that negative and positive examples derived from the same 
-input goal are chosen or discarded together.
-
+input goal are chosen or discarded together.  
 
 \section{Orthogonalization}\label{sec:ortho}
-
 Different tactics may transform a single goal in the same way. Exploring such 
 equivalent paths
 is undesirable, as it leads to inefficiency in automated proof search.
@@ -590,7 +588,6 @@ considered only if they provide a different contribution. We also advantage
 tactics that have a large coverage. In the following, we give formal definition 
 of the concepts of subsumption and coverage that are required for expressing 
 the orthogonalization algorithm.
-
 
 \begin{definition} (Coverage)\\ 
 Let $\mathfrak{F}$ be a recorded set of feature vectors. We can define the 
@@ -616,19 +613,18 @@ Assuming we have a way to test if a goal is a consequence of another, a
 possibly useful subsumption definition would be: 
 \[g_1 \ge g_2  \Leftrightarrow_{def} g_1 \mbox{ is a consequence of } g_2\]
 In our experiments, we take a minimal subsumption defined by:
-\[g_1 \ge g_2  \Leftrightarrow_{def} g_1 \mbox{ is $\alpha$-equivalent to }  
- g_2\]
+\[g_1 \ge g_2  \Leftrightarrow_{def} g_1 \mbox{ is }\alpha\mbox{-equivalent 
+to } g_2\]
 \end{definition}
 
 We can naturally extend a goal subsumption to a set of goals.
-\begin{definition} (Goal set subsumption)\\
+\begin{definition} (Goal list subsumption)\\
 A goal set subsumption is an partial relation on a set of goals.
-Given two sets of goals $l_1$ and $l_2$, we can define it from goal 
+Given two list of goals $l_1$ and $l_2$, we can define it from goal 
 subsumption $\ge$ by:
 \[l_1 \ge l_2  \Leftrightarrow_{def} \forall g_2 \in l_2\ \exists g_1 \in l_1\ 
 g_1 \ge g_2\]
 \end{definition}
-
 
 We now build a subsumption on the tactic level.
 \begin{definition} (Tactic subsumption)\\  
@@ -721,8 +717,7 @@ thus can be predicted during a proof search.
 Forcing $A$ into the competition is necessary because it has never been seen 
 before so it has no coverage. But after the coverage $c_A$ of $A$ in the 
 database exceeds the coverage of $T$, $A$ will be selected before $T$ without 
-the 
-previously required forcing.
+the previously required forcing.
 \end{remark}
 
 We made argument predictors for one type of arguments: list 
@@ -732,30 +727,29 @@ We plan to extend our algorithm to term which is another frequent argument
 types but term synthesis is so far too weak to positively 
 influence the proof search.
 
-
 \section{Proof Search}\label{sec:proofsearch}
 
-Despite the best efforts of the prediction algorithms, the selected tactic may 
+Despite the best efforts of the prediction algorithms, a selected tactic may 
 not solve the current goal, proceed in the wrong direction
 or even loop. For that reason, the prediction needs to be accompanied by a  
 proof search mechanism that allows for backtracking and 
 can choose which proof tree to extend next and in which direction.
 Our search algorithm is a Monte Carlo tree search (MCTS) algorithm that relies 
-on prior evaluation and policy functions. Those priors are learned through 
-direct supervised learning in the case of the policy and via the data 
+on a prior evaluation function and a prior policy function. Those priors are 
+learned through direct supervised learning for the policy and via the data 
 accumulated during orthogonalization for the evaluation. Therefore, this MCTS 
 algorithm does not need to rely on roll outs for evaluation. The 
-policy and evaluation are estimated by the simple supervised k-nn algorithm 
+policy and evaluation are estimated by the simple supervised k-NN algorithm 
 here instead of neural networks trained through reinforcement learning in 
-AlphaGo Zero~\cite{}. 
+AlphaGo Zero~\cite{silver2017mastering}. 
 
 %In this section, we first give a static description of the proof tree and its 
 %component. 
-We first explain how we compute the evaluation and policy functions 
-from learned data. 
-And then during the application of the MCTS algorithm, we show how 
-node selection steps and node extension steps make the search tree
-(described in Section~\ref{sec:prelim}) evolve.
+We first explain how to compute the policy and evaluation functions that 
+influence the behaviour of the MCTS algorithm.
+Then we describe the five steps of the MCTS algorithm and their effect on 
+the search tree (described in Section~\ref{sec:prelim}): 
+initialization, node selection, node extension, backpropagation and resolution. 
 A characteristic of the MCTS algorithm is that it offers a good trade-off 
 between exploitation and exploration. This means that the algorithm searches
 deeper more promises branches and leaves enough time for the exploration 
@@ -821,7 +815,7 @@ to filter solved nodes and descendants of solved nodes before node selection
 to keep the estimations of the algorithm balanced.
 
 
-\subsection{Start of the search}
+\subsection{Initialization}
 The input of the algorithm is a goal $g$ that we want to prove.
 Therefore the search tree starts with only one node containing the singleton 
 $g$ and an ordered list of predicted tactics for the goal $g$.
@@ -918,22 +912,19 @@ the number of visits are backpropagated to the ancestors
 which update the current evaluation in each node.
 
 
-\subsection{End of the search}
-The proof search stops when one of these 3 conditions is realized:
+\subsection{Resolution}
+The search ends when the algorithm reaches one of these 3 conditions:
 \begin{itemize}
-\item It found a proof (i.e. the root node is solved). In this case, 
+\item It finds a proof (i.e. the root node is solved). In this case, 
 the search returns a minimized and 
 prettified proof script (see Section~\ref{sec:proofdisplay}).
-\item It has saturated. 
-There is no more tactics to be applied to any open goal. \todo{define open 
-goal}
-\item It exceeded a given time limit.
+\item It saturates. There is no tactics to be applied to any open goal.
+\item It exceeds a given time limit.
 \end{itemize}
 
-The second case happens very rarely (less than 10 times when evaluating 7088 
-theorems) and only at the beginning of the library when the learned dataset is 
-small. So in our experiments, we just give the number of proof found relative 
-to the number of proof attempts.
+The second case happens very rarely (less than 10 times in the full scale 
+experiment). So our experiments report only the number of proofs found relative 
+to the number of attempted problems.
 \end{definition}
 
 \subsection{ATP Integration}~\label{sec:atp}
@@ -949,11 +940,11 @@ Such a prover already exists in \holfour and is called \metis. It is already
 recognized by the tactic selection mechanism in \tactictoe and can have its 
 premises predicted dynamically when in an abstracted form. Nevertheless,
 we think that the performance of \tactictoe can be boosted by giving the ATP 
-\metis a special status. This arrangement consist in always predicting premises 
-for \metis, giving it a slightly higher timeout than other tactics and always 
-trying it first on each node. These modifications only induce a linear overhead 
-on the number nodes as a general purpose prover does not produce more goal 
-obligations.
+\metis a special status. This arrangement consists in always predicting 
+premises for \metis, giving it a slightly higher timeout than other tactics and 
+always trying it first on each node. These modifications only induce a
+overhead linear on the number nodes as a general purpose prover does not create
+goal obligations.
 
 The integration of an external prover is also possible and 
 \eprover~\cite{eprover} is the one we experimented with .
@@ -964,46 +955,49 @@ proof and reconstruct it with \metis. Giving a special status to external
 prover is really necessary as external provers calls do not appear in human 
 proof scripts. The setting in place is about the same as for \metis, the 
 difference being an even higher timeout (5 seconds) and a larger number of 
-predicted premises (128). Since those external calls to \eprover can be 
-computationally expensive, we call it in parallel and asynchronously. This 
-avoids slowing down \tactictoe's main loop. The number of asynchronous calls to 
-an external provers that can run at the same time is limited by the number of 
-cores available to the user.
+predicted premises (128). Since calls to \eprover are
+computationally, they are run in parallel and asynchronously. This 
+avoids slowing down \tactictoe's search loop. The number of asynchronous calls 
+to an external provers that can be executed at the same time is limited by the 
+number of cores available to the user.
 
 
 
-can be call with frequently with low 
-timeout.
-And the strongest external provers according to past experiments .
-Where as...
-
-experiment with a small hammer tactic comprised of: a faster premise 
-selection algorithm and
-a short call (0.1 seconds + 16 premises optimized by the previous paper) to the 
-internal prover \metis~\cite{metis} or a
-longer call to external prover \eprover. 
-
-
-\paragraph{Prediction of general purpose tactics}
-Since we do not always have the data to learn on which goal this general 
-tactics are successful, we assume as a first approximation that they are the 
-strongest all around. 
-
-And we try them first on each node during the proof search with the advantage 
-that if it succeeds the node is closed rapidly.
-
-This general tactics requires a list of relevant lemmas.
-
-This forced behavior could often be rediscovered from the training data for the 
-internal provers \metis by using theorem abstraction. essentially a call to 
-\metis where its 
-theorem list argument has been abstracted.
-
-
-\paragraph{Application of general purpose tactics}
-The slightly higher timeout of 0.1 seconds given to \metis does not slowdown 
-the proof too much but...
-To integrate a general tactic that requires a higher time out such as \eprover, 
+%can be call with frequently with low 
+%timeout.
+%And the strongest external provers according to past experiments .
+%Where as...
+%
+%experiment with a small hammer tactic comprised of: a faster premise 
+%selection algorithm and
+%a short call (0.1 seconds + 16 premises optimized by the previous paper) to 
+%the 
+%internal prover \metis~\cite{metis} or a
+%longer call to external prover \eprover. 
+%
+%
+%\paragraph{Prediction of general purpose tactics}
+%Since we do not always have the data to learn on which goal this general 
+%tactics are successful, we assume as a first approximation that they are the 
+%strongest all around. 
+%
+%And we try them first on each node during the proof search with the advantage 
+%that if it succeeds the node is closed rapidly.
+%
+%This general tactics requires a list of relevant lemmas.
+%
+%This forced behavior could often be rediscovered from the training data for 
+%the 
+%internal provers \metis by using theorem abstraction. essentially a call to 
+%\metis where its 
+%theorem list argument has been abstracted.
+%
+%
+%\paragraph{Application of general purpose tactics}
+%The slightly higher timeout of 0.1 seconds given to \metis does not slowdown 
+%the proof too much but...
+%To integrate a general tactic that requires a higher time out such as 
+%\eprover, 
 
 
 \section{Experimental Evaluation}\label{s:experiments}
