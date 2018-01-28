@@ -657,7 +657,7 @@ $\mathbb{A}$.
 Additional constraints such as acyclicity and the fact that there is exactly 
 one root node are properties of this graph that are preserved during the 
 application of the MCTS algorithm. That is why we call it a tree although this 
-we do not specify it in this definition.
+is not specified in this definition.
 \end{definition}
 
 Unless specified otherwise, we assume that any set is numbered arbitrarily and 
@@ -1040,88 +1040,93 @@ All & best parameters (without \eprover) & \\
 
 
 
-%\subsection{Increasing \tactictoe's knowledge}\label{sec:perfect_exp}
-%
-%We investigate what are the limits of \tactictoe and what benefits additional 
-%knowledge could provide. To this end, we will modify the set of features to 
-%include features vectors that should not be known in a regular experiment. We  
-%include some vectors from the recorded human proof and perform the proof 
-%search 
-%after the recording instead of before in all other experiments. This 
-%experiment 
-%is not fair and should only be compared to 
-%experiments in the same settings.
-%
-%For clarity, we will name the set of feature vectors that can be recorded from 
-%the current human proof $\mathbb{H}$ and the set of vectors recorded from 
-%previous proofs $\mathbb{P}$ (consistent with previous notation?). We note 
-%$\pi_1^1$ the projection on the 
-%first component returning the label of a feature vector. And we define the 
-%function $T$ that takes a tactic and return the list of its tokens.
-%
-%We will progressively add bigger and bigger 
-%subset of $\mathbb{H}$ to $\mathbb{P}$ and observe the effect on the proof 
-%search success rates. 
-%
-%Here are the list of increasing non-trivial subsets of $\mathbb{H}$ we 
-%consider:
-%\begin{align*}
-%\mathbb{F}_1 &= \lbrace (t,g) \in \mathbb{H}\ |\ t \in \pi_1^1(\mathbb{P})  
-%   \rbrace \\
-%\mathbb{F}_2 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \rbrace\\
-%\mathbb{F}_3 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem} \rbrace\\
-%\mathbb{F}_4 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem or a term} 
-%\rbrace\\
-%\end{align*}
-%
-%
-%$\mathbb{F}_1$ is an approximation of what we could get if we had perfect 
-%prediction for those tactics.
-%
-%
-%\begin{table}[h]
-%\centering\ra{1.3}
-%\small
-%\begin{tabular}{lll}
-%\toprule
-% & Additional features & Solved \\
-%\midrule
-%$\emptyset$   & none & 119 (43.6\%) \\ %NONEv2
-%$\mathbb{F}_1$& tactic prediction & 121 (44.3\%) \\ %AFTERTACv2
-%$\mathbb{F}_2$& token recombination  & 137 (50.2\%) \\ %AFTERTOKENv2
-%$\mathbb{F}_3$& theorem prediction  & 207 (75.8\%) \\ %AFTERTHMTHMv2
-%$\mathbb{F}_4$& term prediction & 223 (81.7\%) \\ %AFTERALLv2
-%$\mathbb{H}$  & all & 239 (87.5\%) \\ %AFTERSMALLv2
-%% $AFTERv2$       & $\mathfrak{H}$ & 245 (89.7\%)  \\
-%\bottomrule
-%\end{tabular}
-%\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge 
-%with tactics from the proof of the tested theorem.} 
-%\end{table}
-%\todo{good title for this table Additional features}
-%
-%And we observe in Table~\ref{tab:featue_param} a 
-%slight increase compared to the default \tactictoe. We then included all 
-%vectors that contains tactics that can be rebuild from tokens of
-%tactics in our database. 
-%Our search algorithm proved two proofs less that if it had perfect prediction 
-%so it means that our prediction algorithm (policy) is doing a good  job at 
-%least in this early settings where proofs are easy. 
-%Suprisingly, being able to recombine tokens of tactics from the database is 
-%barely sufficient to prove more than half of the theorems in this dataset. The 
-%Therefore, additionally including in tactics theorems and terms that did not 
-%appear in previous tactics is essential. Creating from scratch other arguments 
-%may not help as much. This is why we restricted ourselves to predicting 
-%arguments of theorem list type and the term type during tactic synthesis. 
-%Finally our proof search algorithm sometimes fails even if it knows all the 
-%tactic necessary. The two main reasons are that either a crucial tactic 
-%exceeds 
-%its timeout or that the human proof is too deep to be rediscovered (more than 
-%10 steps long).In all those experiments orthogonalization is performed with 
-%radius 20.
+\subsection{Increasing \tactictoe'sknowledge}\label{sec:perfect_exp}
+
+\todo{decide to keep this section or not}
+
+We investigate what are the limits of \tactictoe and what benefits additional 
+knowledge could provide. To this end, we will modify the set of features to 
+include features vectors that should not be known in a regular experiment. We  
+include some vectors from the recorded human proof and perform the proof 
+search 
+after the recording instead of before in all other experiments. This 
+experiment 
+is not fair and should only be compared to 
+experiments in the same settings.
+
+For clarity, we will name the set of feature vectors that can be recorded from 
+the current human proof $\mathbb{H}$ and the set of vectors recorded from 
+previous proofs $\mathbb{P}$ (consistent with previous notation?). We note 
+$\pi_1^1$ the projection on the 
+first component returning the label of a feature vector. And we define the 
+function $T$ that takes a tactic and return the list of its tokens.
+
+We will progressively add bigger and bigger 
+subset of $\mathbb{H}$ to $\mathbb{P}$ and observe the effect on the proof 
+search success rates. 
+
+Here are the list of increasing non-trivial subsets of $\mathbb{H}$ we 
+consider:
+\begin{align*}
+\mathbb{F}_1 &= \lbrace (t,g) \in \mathbb{H}\ |\ t \in \pi_1^1(\mathbb{P})  
+   \rbrace \\
+\mathbb{F}_2 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \rbrace\\
+\mathbb{F}_3 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem} \rbrace\\
+\mathbb{F}_4 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem or a term} 
+\rbrace\\
+\end{align*}
+
+
+$\mathbb{F}_1$ is an approximation of what we could get if we had perfect 
+prediction for those tactics.
+
+
+\begin{table}[h]
+\centering\ra{1.3}
+\small
+\begin{tabular}{lll}
+\toprule
+ & Additional features & Solved \\
+\midrule
+$\emptyset$   & none & 119 (43.6\%) \\ %NONEv2
+$\mathbb{F}_1$& tactic prediction & 121 (44.3\%) \\ %AFTERTACv2
+$\mathbb{F}_2$& token recombination  & 137 (50.2\%) \\ %AFTERTOKENv2
+$\mathbb{F}_3$& theorem prediction  & 207 (75.8\%) \\ %AFTERTHMTHMv2
+$\mathbb{F}_4$& term prediction & 223 (81.7\%) \\ %AFTERALLv2
+$\mathbb{H}$  & all & 239 (87.5\%) \\ %AFTERSMALLv2
+% $AFTERv2$       & $\mathfrak{H}$ & 245 (89.7\%)  \\
+\bottomrule
+\end{tabular}
+\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge 
+with tactics from the proof of the tested theorem. The experiments was run with 
+a time out of 5sec on an older version of \tactictoe, as can be seen in the low 
+success rate of the
+default strategy.} 
+\end{table}
+
+
+And we observe in Table~\ref{tab:featue_param} a 
+slight increase compared to the default \tactictoe. We then included all 
+vectors that contains tactics that can be rebuild from tokens of
+tactics in our database. 
+Our search algorithm proved two proofs less that if it had perfect prediction 
+so it means that our prediction algorithm (policy) is doing a good  job at 
+least in this early settings where proofs are easy. 
+Suprisingly, being able to recombine tokens of tactics from the database is 
+barely sufficient to prove more than half of the theorems in this dataset. The 
+Therefore, additionally including in tactics theorems and terms that did not 
+appear in previous tactics is essential. Creating from scratch other arguments 
+may not help as much. This is why we restricted ourselves to predicting 
+arguments of theorem list type and the term type during tactic synthesis. 
+Finally our proof search algorithm sometimes fails even if it knows all the 
+tactic necessary. The two main reasons are that either a crucial tactic 
+exceeds 
+its timeout or that the human proof is too deep to be rediscovered (more than 
+10 steps long).In all those experiments orthogonalization is performed with 
+radius 20.
 %
 %\subsubsection{Orthogonalization Abstraction}
 %Here, we test the benefit of different kind of tactic abstraction.
