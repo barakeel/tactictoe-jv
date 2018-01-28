@@ -415,7 +415,7 @@ the highest dependency score are preselected.
 In the following, we give a mathematical definition for the dependency relation 
 between labels for tactic-goal pairs and theorems.
 
-\begin{definition}(Dependencies of tactic-goal pairs)\\
+\begin{definition}(Dependencies of a tactic-goal pair)\\
 Let $\mathfrak{F}$ be the set of recorded tactic-goal pairs.
 The dependencies $D_\infty$ of a tactic-goal pair $(t_0,g_0)$ is 
 inductively defined by:
@@ -436,10 +436,13 @@ of the tactic $\hat{t}$ to the goal $\hat{g}$.
 Let $\mathfrak{T}$ be the set of recorded theorems.
 The dependencies of a theorem $t$ are the set of theorems in 
 $\mathfrak{T}$ appearing in the proof of $t$ as recorded in 
-\cite{hh4h4}.\todo{cite}
-Contrarily to the dependency relation in tactic-goal pairs, this relation is 
-not a transitive closure.
+\cite{hh4h4}.\todo{cite} 
 \end{definition}
+
+\begin{remark}
+We can note that the relation chosen for tactic-goal pairs is a transitive 
+closure, which is not the case for theorem dependencies.
+\end{remark}
 
 
 To preselect a list of goal $l$, we consider the tactic input $g$ that was 
