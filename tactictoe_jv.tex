@@ -363,8 +363,8 @@ through their respective feature sets $f_1$ and $f_2$.
 %to the one used in the premise selection task~\cite{ckju-pxtp13}.
 The estimation is based on the frequency of the features in the intersection of 
 $f_1$ and $f_2$. A good rule of thumb is that the rarer the shared features 
-are, the more similar two goals should be. This can be realized by 
-calculating TF-IDF weights for each feature~\cite{Jones72astatistical}.
+are, the more similar two goals should be. The relative rarity of each feature 
+can be estimated by calculating its TF-IDF weight~\cite{Jones72astatistical}.
 We additionally raise the weights to the sixth power giving even more credence 
 to rare features which was found experimentally optimal in \cite{}.\todo{CK: 
 citation}
@@ -434,8 +434,9 @@ of the tactic $\hat{t}$ to the goal $\hat{g}$.
 
 \begin{definition}(Dependencies of a theorem)\\
 Let $\mathfrak{T}$ be the set of recorded theorems.
-The dependencies $D_\infty$ of a theorem $t$ are the set of theorems in 
-$\mathfrak{T}$ appearing in the proof $t$ as recorded in \cite{hh4h4}.
+The dependencies of a theorem $t$ are the set of theorems in 
+$\mathfrak{T}$ appearing in the proof of $t$ as recorded in 
+\cite{hh4h4}.\todo{cite}
 Contrarily to the dependency relation in tactic-goal pairs, this relation is 
 not a transitive closure.
 \end{definition}
