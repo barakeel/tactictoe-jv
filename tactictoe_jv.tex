@@ -768,10 +768,7 @@ After many competitions, the coverage of $A$ may exceed the coverage of $T$. At
 this point, the coverage of $A$ is estimated on its own and not inherited from 
 $T$ anymore.
 
-
-
 \section{Proof Search}\label{sec:proofsearch}
-
 Despite the best efforts of the prediction algorithms, a selected tactic may 
 not solve the current goal, proceed in the wrong direction
 or even loop. For that reason, the prediction needs to be accompanied by a  
@@ -1815,8 +1812,8 @@ database which could compromise the prediction accuracy. In practice, this
 should rarely happen. Indeed, most tactics are stateless and an update on a 
 stateful tactic is usually improving it.
 
-\section{Proof Presentation}\label{sec:proofdisplay}\todo{MN + RK: add 
-motivations and transitions}
+\section{Proof Presentation}\label{sec:proofdisplay}
+
 
 Motivation: 
 + minimal effort to integrate the tactictoe results in proof scripts.
@@ -1889,7 +1886,7 @@ local declaration. If local declaration can't be
 stripped, we try to group all local declarations under a single "let" binding 
 which improves readability and prevents duplication of this declarations.
 
-\todoi{Example prettified proof}
+\todoi{Add an example}
 
 %\paragraph{Step by step exploration.}
 %Because a human may have better insight on which tactic to chose next, we also 
@@ -1899,12 +1896,9 @@ which improves readability and prevents duplication of this declarations.
 %that can be chosen by the user. Those tactics are curated so that only 
 %productive tactics are returned. (define productive)
 
-\section{Comparison with Human Proofs}\todo{
-  TG + RK: find describe examples.
-  RK: After implementation and small experiment is done (in about 1 week) 
-      Test tactictoe find new examples on new goals and manual exploration mode.
-      Give feedback.
-}
+\section{Comparison with Human Proofs}
+\todoi{Test tactictoe find new examples on new goals and manual exploration 
+mode.}
 
 Goal: \texttt{IS\_GCD\_UNIQUE} in theory \texttt{pred\_set}).
 \begin{lstlisting}[language=SMLSmall,frame=tb]
@@ -2118,7 +2112,7 @@ commands in the priority queue based on positive and negative examples.
 %``useful'' 
 %lemmas.
 
-\todo{is copied and modified}
+\todoi{Is copied and modified}
 We proposed a new proof assistant automation technique which combines 
 tactic-based proof search with machine learning tactic prediction
 Its implementation,
