@@ -638,18 +638,18 @@ input goal are chosen or discarded together.
 Different tactics may transform a single goal in the same way. Exploring such 
 equivalent paths
 is undesirable, as it leads to inefficiency in automated proof search.
-To solve this problem, we do not directly assign a goal to the associated 
-tactic, but organize a competition on the closest feature vectors. The number 
-of selected feature vectors is a parameter that is set for each experiment.
-The winner is the tactic appearing in the most feature vectors provided that it 
-has the 
-same effect as the original tactic. We associate this tactic with the features 
-of the targeted goal instead of the original in our feature database. As a 
-result, already successful tactics are preferred, and new tactics are 
-considered only if they provide a different contribution. We also advantage 
-tactics that have a large coverage. In the following, we give formal definition 
-of the concepts of subsumption and coverage that are required for expressing 
-the orthogonalization algorithm.
+To solve this problem, we do not directly assign an input goal $g$ to its 
+associated tactic $t$, but organize a competition between the $n$ closest 
+tactic-goal pairs, noted $P_n(g)$. 
+The winner is the tactic that subsumes the original tactic on $g$ and that
+appears in the largest number of tactic-goal pairs in the database.
+The winning tactic $w$ is then associated with $g$, producing the pair $(w,g)$ 
+that replaces the original pair $(t,g)$ in the database. As a 
+result, already successful tactics with a large coverage are preferred, and new 
+tactics are 
+considered only if they provide a different contribution. In the following, we 
+give a formal definition of the concepts of subsumption and coverage that are 
+required for expressing the orthogonalization algorithm.
 
 \begin{definition} (Coverage)\\ 
 Let $\mathfrak{F}$ be a recorded set of feature vectors. We can define the 
@@ -674,58 +674,44 @@ S$.\\
 Assuming we have a way to test if a goal is a consequence of another, a 
 possibly useful subsumption definition would be: 
 \[g_1 \ge g_2  \Leftrightarrow_{def} g_1 \mbox{ is a consequence of } g_2\]
-In our experiments, we take a minimal subsumption defined by:
+By default, we choose a minimal subsumption defined by:
 \[g_1 \ge g_2  \Leftrightarrow_{def} g_1 \mbox{ is }\alpha\mbox{-equivalent 
 to } g_2\]
 \end{definition}
 
-We can naturally extend a goal subsumption to a set of goals.
+We can naturally extend a goal subsumption to lists of goals.
 \begin{definition} (Goal list subsumption)\\
-A goal set subsumption is an partial relation on a set of goals.
+A goal list subsumption is an partial relation on lists of goals.
 Given two list of goals $l_1$ and $l_2$, we can define it from goal 
 subsumption $\ge$ by:
 \[l_1 \ge l_2  \Leftrightarrow_{def} \forall g_2 \in l_2\ \exists g_1 \in l_1\ 
 g_1 \ge g_2\]
 \end{definition}
 
-We now build a subsumption on the tactic level.
-\begin{definition} (Tactic subsumption)\\  
+This allows us to define subsumption for tactics.
+\begin{definition}(Tactic subsumption)\\  
 Given two non-failing tactics $t_1$ and $t_2$ on $g$, a tactic $t_1$ subsumes a 
 tactic $t_2$ on a goal $g$, noted $\ge_g$, when:
 
  \[t_1 \ge_g t_2 \Leftrightarrow_{def} t_1(g) \ge t_2(g)\]
 
-If one of the tactic is failing then the couple $(t_1,t_2)$ is not an element 
-of the 
-relation.
-Given the minimal subsumption on goals, a tactic $t_1$ subsumes another $t_2$ 
-on a goal 
-$g$ if and only if the resulting set of goals produced by $t_1$ is a subset 
-of the output of $t_2$ on $g$. 
+If one of the tactic is failing then $t_1$ and $t_2$ are not comparable through 
+this relation.
+Given the default subsumption on goals, $t_1$ subsumes $t_2$ on $g$ if and only 
+if $t_1(g)$ is a subset (modulo $\alpha$-equivalence) of $t_2(g)$. 
 \end{definition}
 
-We can now express the orthogonalization algorithm given in a single formula 
-with parameters: $P_n$ for the tactic predictor where $n$ for the number of 
-predicted
-tactics, $S$ for the tactic subsumption relation and $\textit{\mbox{Coverage}}$ 
-for the coverage of 
-a tactic. The orthogonalization process $\mathbb{O}$ is given as input a 
-recorded feature vector $(t,g)$ where $t$ is the tactic originally applied to 
-the goal $g$. The winning tactic of the competition is given by the formula:
-
+In the end, the winning tactic of the orthogonalization competition can be 
+expressed by the formula:
 
 \[\mathbb{O}(t,g) = \argmax_{x\ \in\ P_n(g) \cup \lbrace t \rbrace} \lbrace 
 \textit{\mbox{Coverage}}(x)\ 
 |\ x \ge_g t\rbrace\] 
                    
-After orthogonalization, because the orthogonalized tactic is supposedly 
-better, we record the feature vector $(\mathbb{O}(t,g),g)$ instead of 
-$(t,g)$. To sum up, the winning tactic is the one with the most coverage and 
-that is able to replicate the effect of the original tactic.
+As a consequence $(\mathbb{O}(t,g),g)$ replaces $(t,g)$ in the database of 
+tactics. 
 
-
-
-\section{Abstraction}\label{sec:synthesis}\todo{MN + RK: review + fix typos}
+\section{Abstraction}\label{sec:synthesis}
 One of the great weakness of the previous version of \tactictoe is that
 it could not create its own tactics. Indeed, sometimes no previous tactic is 
 adapted for a certain goal and creating a new tactic is necessary.
@@ -753,16 +739,22 @@ harder to predict suitable arguments.
 \paragraph{Instantiation of an Abstracted Tactic}
 An abstracted tactic is not immediately applicable to a goal, since it contains
 unspecified arguments. To apply an abstracted tactic $A$, we first need to 
-instantiate that should placeholders $h$ inside $A$. Because it is difficult to 
+instantiate the placeholders $h$ inside $A$. Because it is difficult to 
 build a general predictor that effective on each type of argument, we manually 
 design different argument predictors for each type. Those predictors are 
 usually given a goal has input and returns the best chosen argument for this 
-goal(see Section~\ref{sec:arg_pred}). All in all, an abstracted tactics has 
-dynamic arguments, it decides how to instantiate them depending on the given 
-goal. 
+goal. All in all, an abstracted tactics has 
+dynamical arguments, it instantiate them differently for different goals. 
+
+We made successful argument predictors for one type of arguments: list 
+of theorems. It is a very common type and the structure of theorems 
+are complex, thus they contain enough information to be predicted accurately. 
+We plan to extend our algorithm to term which is another frequent argument 
+types but term synthesis is so far too weak to positively 
+influence the proof search.
 
 \paragraph{Selection of Abstracted Tactics}
-As abstracted tactics are not used in human proofs, we need to find a way to 
+As abstracted tactics do not appear in human proof, we need to find a way to 
 predict them so that they can contribute to the \tactictoe proof search.
 A straightforward idea is to duplicate each tactic during the proof search by 
 creating an abstracted version of the tactic. However, this is computationally 
@@ -770,24 +762,14 @@ expensive when the tactic does not instantiate back to its original form, we
 risk doing unnecessary work as both version may have a similar effect.
 Therefore, we need to decide beforehand which of the two is better.
 In fact, we can re-use the orthogonalization module to do this task for us.
-During the orthogonalization competition on goal $g$, before trying a tactic 
-$T$, we now also try to apply its abstracted version $A$. If $A$ succeeds, it 
-becomes a a label for $g$ is including in the database of tactic features and 
-thus can be predicted during a proof search.
+We add $A$ to the competition, initially giving it the coverage of $T$. If $A$ 
+wins, it becomes a a label for $g$ is including in the database of tactic 
+features and thus can be predicted during a proof search.
+After many competitions, the coverage of $A$ may exceed the coverage of $T$. At 
+this point, the coverage of $A$ is estimated on its own and not inherited from 
+$T$ anymore.
 
-\begin{remark}
-Forcing $A$ into the competition is necessary because it has never been seen 
-before so it has no coverage. But after the coverage $c_A$ of $A$ in the 
-database exceeds the coverage of $T$, $A$ will be selected before $T$ without 
-the previously required forcing.
-\end{remark}
 
-We made argument predictors for one type of arguments: list 
-of theorems. We choose it is the most common type and the structure of theorems 
-are complex so they contain enough information to be predicted accurately. 
-We plan to extend our algorithm to term which is another frequent argument 
-types but term synthesis is so far too weak to positively 
-influence the proof search.
 
 \section{Proof Search}\label{sec:proofsearch}
 
