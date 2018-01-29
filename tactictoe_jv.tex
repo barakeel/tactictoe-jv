@@ -364,41 +364,20 @@ its goal.}
 \label{fig:choice}
 \end{figure}
 
-
-\begin{definition}\label{def:desc}(Children, Descendant)\\
-We now define what are the children and the descendants of a node $a$ in a 
-search tree $\mathfrak{T}$. The children of a relative to a goal $g$ in $G(a)$ 
-is the set of nodes produced by tactics applied to $g$:
-  \[Children(a,g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace \]
-
-From that, we define the children of a node $a$ by:
-  \[Children(a) = \bigcup_{g \in G(a)} Children(a,g) \]
-
-And descendants of $a$ by transitive closure:
-\begin{align*}
-Descendant^{0}(a) &=_{def} \lbrace a \rbrace \\ 
-Descendant^{n+1}(a) &=_{def} \bigcup_{a' \in Descendant^{n}(a)} 
-Children(a') \\
-Descendant(a) &=_{def} \bigcup_{n \in \mathbb{N}} Descendant^n(a)\\
-\end{align*}
-
-
-
-
 Starting from the bottom parent node, we can construct children of a goal of 
 this node by choosing a goal $g_i^0$ on this node and choosing tactics 
 $t_1,t_2,\ldots$ to 
 apply to this goal. Here the result produces new nodes each containing a list 
 of goals to be proven. In each node of the proof tree, a goal can either be 
 solved, open or pending (see Definition~\ref{def:solved}). 
-\end{definition}
 
+In the following, new concepts and properties are defined in the context of a 
+search tree $\mathfrak{T}$.
 
 
 \begin{definition}\label{def:solved}(Solved goal, solved nodes, open goal, 
-pending goal , active node)\\
-Let $\mathfrak{T}$ be a search tree. The set of solved nodes 
-$\mathbb{A}^\infty$ and 
+pending goal)\\
+The set of solved nodes $\mathbb{A}^\infty$ and 
 the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
 
 \begin{align*}
@@ -432,12 +411,6 @@ way, each unsolved node contains a unique open goal.
 \end{definition}
 
 
-
-\todo{make definition in preliminaries of active node and descendant?}
-
-
-
-
 We can also judge the productivity of a tactic by its contribution to the 
 search 
 tree. 
@@ -459,8 +432,37 @@ branches. The general case where two branches join after $n$ steps is handled
 by a tactic cache which memorizes tactic effects on goals. This
 cache allows faster re-exploration of confluent branches which remain 
 separated in the search tree.
+\end{definition}
 
-\todo{make definition in preliminaries of active node and descendant?}
+\begin{definition}\label{def:desc}(Children, descendant, active node)\\
+We now define what are the children and the descendants of a node $a$. The 
+children of a relative to a goal $g$ in $G(a)$ 
+is the set of nodes produced by tactics applied to $g$:
+  \[Children(a,g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace \]
+
+If $g$ is the open goal of $a$, then we simply call children of a the 
+children of $a$ relative to $g$. We define:\\
+
+Extended children of $a$ by:
+  \[ExtChildren(a) = \bigcup_{g \in G(a)} Children(a,g) \]
+
+Descendants of $a$ by:
+\begin{align*}
+Descendant^{0}(a) &=_{def} \lbrace a \rbrace \\ 
+Descendant^{n+1}(a) &=_{def} \bigcup_{a' \in Descendant^{n}(a)} 
+ExtChildren(a') \\
+Descendant(a) &=_{def} \bigcup_{n \in \mathbb{N}} Descendant^n(a)\\
+\end{align*}
+
+Descendants of $a$ through $g$ by:
+\[Descendant(a,g) =_{def} 
+  \lbrace a \rbrace \cup \bigcup_{a' \in Children(a,g)} Descendant(a')\]
+
+
+An active node is by definition a node that is not a descendant of a 
+solved node. Non-active nodes are not worth exploring.
+
+\end{definition}
 
 \section{Prediction}\label{s:prediction}
 The learning-based selection of relevant lemmas significantly improves the 
@@ -512,7 +514,7 @@ List of goals that subsumes the result of an original tactic on a
 targeted goal are considered positive. During proof search, given a list of 
 goals $l$ created by a tactic, we select a set of lists of goals that are most 
 similar to $l$. The ratio of positive examples in the selection gives us a 
-prior node evaluation for MCTS.
+prior evaluation for MCTS.
 
 
 \subsection{Feature Extraction}\label{sec:features}
@@ -816,63 +818,46 @@ deeper more promises branches and leaves enough time for the exploration
 of less likely alternatives.
 
 
-\subsection{Prior tactic policy}\label{sec:policy}
-
-\todoi{mention productive tactics}
-Distances between goals produced by the tactic predictor are hard 
-to translate into a prior tactic policy, so we rely solely on the order of 
+\subsection{Prior policy}\label{sec:policy}
+Co-distances between goals produced by the tactic predictor are hard 
+to translate into a prior policy, so we rely solely on the order of 
 tactics to estimate the probability with which each tactic should be tried.
-Let $t_0,\ldots,t_n$ be the list of preselected tactics ordered by their 
-distance to a goal $g$. Let $c_{policy}$ be a constant heuristic that estimates 
-how likely a tactic $t_i$ is to prove the goal compared to the rest of the 
-tactics $t_{i+1},\ldots,t_{500}$. We make the strong assumption that $c_policy$ 
-is constant across the search. We can now calculate the prior policy by:
-   
-\[PriorPolicy(a_i) = PriorPolicy(t_i) = PriorPolicy(i) = (1 - c_{policy})^{i} * 
-c_{policy}\]
+Let $\mathfrak{T}$ be a search tree after a number of MCTS steps.
+Let $p$ be a selected node on this tree and $g$ its open goal. By the 
+application of MCTS, $T(g)$ is the list of $n$ productive tactics already 
+applied to $g$. We order them by their prediction score so that $T(G)= \lbrace 
+t_0,\ldots,t_{n-1} \rbrace$. 
+Let $c_{policy}$ be a constant heuristic that estimates how likely a tactic 
+$t_i$ is to prove the goal. 
+We can now calculate of a prior policy of a child $a_i$ produced by the tactic 
+$t_i$ by:
 
-Widening policy for a node $a$.
+\[PriorPolicy(a_i) = (1 - c_{policy})^{i} * c_{policy}\]
 
-\[WideningPolicy(a) = \]
+In order to include the possibly of trying more tactic on $g$ we define the 
+widening policy on the parent $a$ for its open goal $g$ to be:
 
-The first term of the multiplication is the probability that none of the better 
-ranked tactic is selected. In fact, these probabilities are never used directly 
-and only serves as a guidance to our deterministic node selection algorithm 
-over many MCTS step.
+\[WideningPolicy(p) = (1 - c_{policy})^{n} * c_{policy}\]
 
-\subsection{Prior node evaluation}\label{sec:evaluation}
 
-We now concentrate on defining a reasonable evaluation function that also 
-influences node selection in MCTS. Essentially, we estimate how 
-interesting is a list of goals produced by a tactic. This way, we can determine 
-if we should continue searching in this direction. Theoretically, an 
-interesting list of goal is one 
-that has the shortest proof, and we could measure the likelihood of being 
+\subsection{Prior evaluation}\label{sec:evaluation}
+
+We now concentrate on the definition a reasonable evaluation function for the 
+output of tactics. Theoretically, an interesting list of goal is one 
+that has a short proof, and we could measure the likelihood of being 
 provable in a number of steps from previous proof search. However, this 
 approach produces a lot of negatives\todo{CK: cite hard negative mining 
 or/and deep math}. So to reduce this number, we limit 
-ourselves to tactics tested during orthogonalization. We declare a list 
-of goals l to be positive, noted $l \in Positive$, if it is has been 
-produced by the winner of an orthogonalization competition. The set of the $r$ 
-goals closest to a list of goals $l$ is noted $Neighbour(r,l)$. We can 
-define the set of positives within a 
-radius $r$ of $l$ to be $Positive(r,l) = \lbrace m \in Neighbour(r,l)\ |\ m \in 
-Positive \rbrace$.
-
-During our experiments, we evaluate output goals with the following function:
-
+ourselves to collect output of tactics tested during orthogonalization. We 
+declare a list of goals $l$ to be positive if it is has been produced by the 
+winner of an orthogonalization competition. The predictor with radius $r$ 
+\todo{define radius} produces a set of $r$ list of goals closest to $l$. The 
+number of positive example in this set is noted $Positive(r,l)$.
+During the proof search, we evaluate nodes through the list of goals they 
+contain using the following evaluation function:
 \begin{align*}
-PriorEvaluation_r (a_i) &= \frac{card\ Positive(r,a_i)}{r}\\
+PriorEvaluation_r (a_i) &= \frac{Positive(r,G(a_i))}{r}\\
 \end{align*}
-
-If a tactic is not productive then there is no output to evaluate, so the 
-result is a failure and a reward of $0$ will be 
-given for this node. Failure also happens if the node selected is already 
-a proven goal or a descendant of a proven goal. Experimentally, it is 
-preferable not 
-to filter solved nodes and descendants of solved nodes before node selection 
-to keep the estimations of the algorithm balanced.
-
 
 \subsection{Initialization}
 The input of the algorithm is a goal $g$ that we want to prove.
@@ -888,11 +873,28 @@ steps which grow the search tree.
 %simulations and do not reflect our exploration strategy that only 
 
 Through node extension steps the search tree grows and the number of paths to 
-explore increases. To decide which node to extend next, we proceed through the 
-node selection algorithm. Starting from the root node, we repeatedly chose the 
-children relative to the open goal with the highest value. 
+explore increases. To decide which node to extend next, a evolving value for 
+each node is given in Definition~\ref{def:value}. The algorithm that performs 
+node selection starts from the root of the search tree. X, it repeatedly choses 
+the children with the highest values. Depending on the widening policy, it can 
+stop at any chosen node on during its descent through the tree. We now give a 
+more precise description of 
+the algorithm with the following pseudo-code:  
 
-The value of a $a_i$ with respect to a search tree is determined by:
+\todoi{Replace alltt environment by something prettier}
+\begin{alltt}
+ChosenNode = Root(Tree);
+while true do
+  if Children(ChosenNode) = \(\emptyset\) then break;
+  (BestChild, BestValue) = CompareChildren (ChosenNode);
+  if WideningPolicy (ChosenNode) \(\geq\) BestValue then break;
+  ChosenNode = BestChild
+end;
+return ChosenNode;
+\end{alltt}
+
+\begin{definition}\label{def:value}(Value)
+The value of the $i^th$ child $a_i$ of a parent $p$ is determined by:
 \[Value(a_i) = CurEvaluation(a_i) + c_{exploration} * Exploration(a_i)\] 
 
 The exploration term is determined by the prior policy and the current policy 
@@ -905,59 +907,46 @@ The policy is approximatively the  percentage of time a node was visited.The
 square root skews this probability to favor even more exploration of nodes with 
 few visits. 
 
-The exploitation term $CurEvaluation(a_i)$ is the average of the evaluation of 
-all MCTS step that went through $a_i$ (itself included) in the current search 
-tree.
+The current evaluation $CurEvaluation(a_i)$ is the average evaluation of 
+all descendants of $a_i$, through its open goal $g_i$, including node extension 
+failures:
 
 \[CurEvaluation(a_i) = 
-  \sum_{a' \in Descendant(a_i)} \frac{PriorEvaluation(a')} {card\ 
-  Descendant(a_i) 
-  + card\ Failure(a_i)}\]
+  \sum_{a' \in Descendant(a_i,g_i)} \frac{PriorEvaluation(a')} {card\ 
+  Descendant(a_i,g_i) + Failure(a_i)}\]
 
-where $Failure(a_i)$ is the number of MCTS steps that went through $a_i$ which 
-ended in a failure.
-
-To allow the algorithm to select nodes that 
-are not leafs, we also assign a value to the possibility of stopping during the 
-descent of the tree. This value has an exploitation equal to 0 since it was 
-never explored and is given a prior policy equal to $PriorPolicy(n)$ where $n$ 
-is the 
-number of 
-tactics already tried on the open goal if there is one and $PriorPolicy(0)$ if 
-there is 
-none.
+The number $Failure(a_i)$ is the amount of failures that occurred during node 
+extension from descendants of $a_i$ .
+\end{definition}
 
 \subsection{Node extension}
-Once a node is selected, we first check if it is an active part of the search 
-tree (not a solved node . 
-
-If the selected node is not active, then the result of node extension is a 
-failure.
-Otherwise, we apply the best untested tactic on the open goal $g$ of this node  
-according to the prediction order for $g$.
-
-
-we apply the next tactic in the prediction order for 
-the open goal of this node.
-
-The result of the extension step is either a failure or a list of goals $l$.
-From $l$, we can assess if the tactic was productive. 
-If not, we also return a failure.
-Otherwise, the list of goals $l$ is used to create a new node in the search 
-tree. Give precise definition. 
-
-order of predicted tactics.
-
-During the creation of node, we predict tactics for the open goals
+Let $a$ be the result of node selection.
+If $a$ is not an active part of the search then extending $a$ is useless and 
+the algorithm reports a failure. In our experiments, filtering nodes that not 
+active before node selection is 
+not beneficial. It may be because it breaks some symmetry in the 
+$Value$ function. 
+Otherwise, it applies the best untested tactic $t$ on the open goal $g$ of this 
+node according to the prediction order for $g$. If no such tactic exists or if 
+$t$ is not productive, a failure is returned. 
+Otherwise, a new node $c$ is created that contains the list of goals $l$ 
+produced by $t$ and is added to the children of $a$.
+ 
 
 \subsection{Backpropagation}
+During backpropagation we update the statisitics of all the nodes traversed or 
+created during this MCTS step:
+\begin{itemize}
+\item Their number of visit is incremented.
+\item If node extension failed, their failure count is incremented.
+\item If node extension succeeded, they inherit the evaluation of the created 
+child. 
+\end{itemize}
 
-If node extension resulted in a failure, we increment the failure field of the 
-selected node and its parents. If node extension was successful, we 
-backpropagate the evaluation of the new nodes to their parents.
-In both cases, we increment the number of visits of all nodes traversed.
-This changes induce an update on the current evaluation and current policy for 
-each node. And the process loops back to the node selection step.
+These changes updates the current evaluation and the current policy of the 
+traversed nodes. 
+After completing backpropagation, the process loops back to node 
+selection.
 
 \subsection{Resolution}
 The search ends when the algorithm reaches one of these 3 conditions:
@@ -970,8 +959,6 @@ This happens less than 10 times in the full-scale experiment.
 \item It exceeds a given time limit set by default to 60 seconds.
 \end{itemize}
 
-
-\end{definition}
 
 \subsection{ATP Integration}~\label{sec:atp}
 General-purpose proof automation mechanisms which combine proof translation to
@@ -987,63 +974,26 @@ recognized by the tactic selection mechanism in \tactictoe and can have its
 premises predicted dynamically when in an abstracted form. Nevertheless,
 we think that the performance of \tactictoe can be boosted by giving the ATP 
 \metis a special status. This arrangement consists in always predicting 
-premises for \metis, giving it a slightly higher timeout than other tactics and 
-always trying it first on each node. These modifications only induce a
+premises for \metis, giving it a slightly higher timeout and 
+always trying it first on each node. These modifications only induce an
 overhead linear on the number nodes as a general purpose prover does not create
-goal obligations.
+goal obligations. \todoi{Define goal obligation in the introduction}
 
 The integration of an external prover is also possible and 
 \eprover~\cite{eprover} is the one we experimented with .
 To this end, we created a tactic which expects a number of premises as argument 
-and calls \eprover on a version of the problem (premises + goal) translated to 
-first order. We then extract the premises that were required in the \eprover 
-proof and reconstruct it with \metis. Giving a special status to external 
-prover is really necessary as external provers calls do not appear in human 
+and calls \eprover on the translated first order problem. We then extract the
+premises that were required in the \eprover 
+proof and reconstruct it inside \holfour with \metis. Giving a special status 
+to external 
+prover is essential as external provers calls do not appear in human
 proof scripts. The setting in place is about the same as for \metis, the 
 difference being an even higher timeout (5 seconds) and a larger number of 
 predicted premises (128). Since calls to \eprover are
-computationally, they are run in parallel and asynchronously. This 
+computationally expensive, they are run in parallel and asynchronously. This 
 avoids slowing down \tactictoe's search loop. The number of asynchronous calls 
 to an external provers that can be executed at the same time is limited by the 
 number of cores available to the user.
-
-
-
-%can be call with frequently with low 
-%timeout.
-%And the strongest external provers according to past experiments .
-%Where as...
-%
-%experiment with a small hammer tactic comprised of: a faster premise 
-%selection algorithm and
-%a short call (0.1 seconds + 16 premises optimized by the previous paper) to 
-%the 
-%internal prover \metis~\cite{metis} or a
-%longer call to external prover \eprover. 
-%
-%
-%\paragraph{Prediction of general purpose tactics}
-%Since we do not always have the data to learn on which goal this general 
-%tactics are successful, we assume as a first approximation that they are the 
-%strongest all around. 
-%
-%And we try them first on each node during the proof search with the advantage 
-%that if it succeeds the node is closed rapidly.
-%
-%This general tactics requires a list of relevant lemmas.
-%
-%This forced behavior could often be rediscovered from the training data for 
-%the 
-%internal provers \metis by using theorem abstraction. essentially a call to 
-%\metis where its 
-%theorem list argument has been abstracted.
-%
-%
-%\paragraph{Application of general purpose tactics}
-%The slightly higher timeout of 0.1 seconds given to \metis does not slowdown 
-%the proof too much but...
-%To integrate a general tactic that requires a higher time out such as 
-%\eprover, 
 
 
 \section{Experimental Evaluation}\label{s:experiments}
