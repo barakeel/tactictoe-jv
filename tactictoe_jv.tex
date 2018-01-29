@@ -261,38 +261,38 @@ This work is an extension of the work described in \cite{tgckju-lpar17}.
 There we proposed the idea of ... and achieved ...
 The additional contributions and their effect on our system are:
 
-\todoi{add prediction of 3 kinds of things}
 \begin{itemize}
 \item Proof recording at the tactic level is made more precise. Pattern 
 matching constructions, opening of submodules are supported. The different 
 recording steps (parsing, unfolding and replaying) are regrouped into a single 
-\sml function. So, our recording is more complete and fully automatized.
-\item Two types of arguments (list of theorems and terms) can be predicted 
-independently of the tactic. Combinatorial explosion in the number of tactics 
-is prevented through the introduction of abstracted tactics. As desired, their 
-instantiations is dependent on the target goal.
+\sml function.
 \item MCTS (Monte Carlo tree search) now replaces A* in our proof search 
 algorithm. MCTS gives a more balanced feedback to guide proof search by 
 comparing subtrees instead of leafs. The policy and evaluation are learned 
 through supervised learning.
-
-\item First evaluation of \tactictoe and \eprover success rates relative to 
+\item Proof guidance required by the MCTS algorithm is given by predictors for 
+three kind of objects: tactics, theorems and list of goals.
+\item The orthogonalization process that eliminates redundant tactics is 
+formally described.
+\item A tactic abstraction method is introduced. It enable us to create 
+more general and flexible tactics where tactic arguments are dynamically 
+predicted.
+\item The internal ATP \metis is complemented 
+by asynchronous calls to \eprover to help \tactictoe during proof search.
+\todoi{More on evaluation??}
+\item Evaluation of \tactictoe success rate relative to 
 the length of the original proofs.
 \item User interaction is enhanced by the minimization and prettification 
 applied on the generated proof.
-\item The internal ATP \metis used during proof search can be complemented 
-by asynchronous calls to \eprover.
 \end{itemize}
-
 
 
 \section{Preliminaries: Search Tree}\label{sec:prelim}
 \todoi{Print words correctly in math format by avoiding math format}  
 
-In order to be able to describe the different components of \tactictoe, 
-we need to give to describe what a search tree is, what are its elements and 
-how they are organized relative to one other. The following description is 
-static and the evolution of the search tree toward a proof is given in 
+The different components of \tactictoe revolves around the concept of a 
+search tree. The following definitions are made relative to a static search 
+tree, the description of its evolution during proof search will be given in 
 Section~\ref{sec:proofsearch}.
 
 \begin{definition}(search tree)\\
@@ -307,23 +307,24 @@ that respects the following conditions:
 goal and return the set of tactics already applied to this goal.
 \item $G$ is a total function from $\mathbb{A}$ to $P(\mathbb{G})$. It takes a 
 node a return the set of goals in this node.
-\item $Support(A) = \lbrace (g,t)\ |\ t \in T(g) \rbrace$.
+
 \item $A$ is a partial function from $\mathbb{G} \times \mathbb{T}$ to 
 $\mathbb{A}$. It takes a goal and a tactic and returns the node produced by the 
 application of the tactic to the goal, if this tactic has been applied to this 
-goal.
-\item if $t \in T(g)$ and $A(g,t) = a$ then $t(g) = G(a)$.
+goal. Its support $Support(A)$ is by definition $\lbrace (g,t)\ |\ t \in T(g) 
+\rbrace$.
+\item if $(g,t) \in Support (A)$ and $A(g,t) = a$, then $t(g) = G(a)$.
 \end{itemize}
 
 Additional constraints such as acyclicity and the fact that there is exactly 
 one root node are properties of this graph that are preserved during the 
-application of the MCTS algorithm. That is why we call it a tree although this 
+application of the MCTS algorithm. That is why we call it a tree, although this 
 is not specified in this definition.
 \end{definition}
 
 If no explicit order is given, we assume that any set is equipped with an 
-arbitrary order. In this way, we can access the nth member of set $s$ by 
-writing $s_n$. In Figure~\ref{fig:choice}, $(G(a_j))_i$ is written $g_j^i$.
+arbitrary order. In this way, we can access the $n^{th}$ member of a set $s$ by 
+writing $s_n$. In Figure~\ref{fig:choice}, $(G(a_j))_i$ is written a $g_j^i$.
 
 \begin{figure}{}
 \begin{center}
@@ -368,10 +369,11 @@ Starting from the bottom parent node, we can construct children of a goal of
 this node by choosing a goal $g_i^0$ on this node and choosing tactics 
 $t_1,t_2,\ldots$ to 
 apply to this goal. Here the result produces new nodes each containing a list 
-of goals to be proven. In each node of the proof tree, a goal can either be 
+of goals to be proven called obligations. In each node of the proof tree, 
+a goal can either be 
 solved, open or pending (see Definition~\ref{def:solved}). 
 
-In the following, new concepts and properties are defined in the context of a 
+In the following, concepts and properties are defined in the context of a 
 search tree $\mathfrak{T}$.
 
 
@@ -470,7 +472,8 @@ automation for hammers~\cite{BlanchetteGKKU16}. In \tactictoe, we adapt
 one of the strongest lemma selection 
 methods: the modified distance-weighted \emph{$k$ nearest-neighbour} 
 classifier~\cite{ckju-pxtp13,DudaniS76} to predict three different objects: 
- tactics, theorems and list of goals. 
+ tactics, theorems and list of goals. The number of predicted objects $k$ is 
+ called the prediction radius.
 
 We first introduce specificities associated with the prediction of each object. 
 In particular, we present the dataset from which objects are selected and the 
@@ -824,12 +827,13 @@ We now concentrate on the definition a reasonable evaluation function for the
 output of tactics. Theoretically, an interesting list of goal is one 
 that has a short proof, and we could measure the likelihood of being 
 provable in a number of steps from previous proof search. However, this 
-approach produces a lot of negatives\todo{CK: cite hard negative mining 
+approach produces a lot of negatives\todo{CK: cite millions lemma mining 
 or/and deep math}. So to reduce this number, we limit 
 ourselves to collect output of tactics tested during orthogonalization. We 
 declare a list of goals $l$ to be positive if it is has been produced by the 
-winner of an orthogonalization competition. The predictor with radius $r$ 
-\todo{define radius} produces a set of $r$ list of goals closest to $l$. The 
+winner of an orthogonalization competition. Our predictor with radius $r$ 
+produces a set of $r$ list of goals 
+closest to $l$. The 
 number of positive example in this set is noted $Positive(r,l)$.
 During the proof search, we evaluate nodes through the list of goals they 
 contain using the following evaluation function:
@@ -956,7 +960,7 @@ we think that the performance of \tactictoe can be boosted by giving the ATP
 premises for \metis, giving it a slightly higher timeout and 
 always trying it first on each node. These modifications only induce an
 overhead linear on the number nodes as a general purpose prover does not create
-goal obligations. \todoi{Define goal obligation in the introduction}
+goal obligations.
 
 The integration of an external prover is also possible and 
 \eprover~\cite{eprover} is the one we experimented with .
