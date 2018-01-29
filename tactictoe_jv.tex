@@ -207,7 +207,7 @@ result of both provers.
 \section{Introduction}
 \tableofcontents
 
-\todo{Comparison with hammers in usability}
+\todoi{Comparison with hammers in usability}
 Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight}, 
   \isabelle~\cite{isabelle} 
@@ -230,7 +230,7 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   the ITP proof, thus avoiding the translation and
   proof-reconstruction phases needed by the hammers.
 
-\todo{Rewrite the plan}
+\todoi{Rewrite the plan}
   To do this, we \emph{extract and record} tactic invocations from the ITP 
   proofs (Section~\ref{sec:recording}) and
   \emph{build efficient machine learning classifiers} based on such training
@@ -1410,7 +1410,7 @@ original proof until length 20.}
 %debugging of parameters.
 
 
-\todoi{remove feature vectors from the paper}
+\todoi{Remove feature vectors from the paper}
 \section{Proof Recording}\label{sec:recording}
 
 Recording proofs in an LCF-style proof assistant can be done at different 
@@ -1448,13 +1448,13 @@ These feature vectors constitute the training set for our selection algorithm.
 
 Rather than relying on the underlying programming language, we parse the
 original theory file containing proof scripts into an
-abstract syntax tree (AST).\todo{reason: reading the proof as if you were a 
+abstract syntax tree (AST).\todoi{reason: reading the proof as if you were a 
 human ==> better for the machine learning algorithm (learn the right thing)}
 
 
  The AST is then transformed into a globalized AST
 where every top-level value is made independent from
-the context. \todo{some reason why this is needed? easy transfer between 
+the context. \todoi{some reason why this is needed? easy transfer between 
 theories} We 
 split the proofs into a series of tactic units and wrap them 
 with a recording function.
@@ -1675,15 +1675,15 @@ fun a infixrX_open g = g a      fun f infixrX_close b = fn x ==> f (x,b)
 \end{definition}
 
 The previously decribed transformation affects each identifier in a theory 
-file. However, when we 
-create the recording theory file, only proof scripts are replaced by their 
+file. However, when creating the recording theory file, only proof scripts are 
+replaced by their 
 globalized version and the rest of the code is left unchanged. The effect on 
 the proof script contained in the running example is shown in 
 Example~\ref{ex:global}.
 
 
 
-\begin{example} (Globalization)
+\begin{example}\label{ex:global} (Globalization)
 \begin{lstlisting}[language=SMLSmall,frame=tb]
 Tactic.STRIP_TAC 
   infixl0_open boolLib.THEN infixl0_close
@@ -1696,7 +1696,8 @@ Rewrite.ASM_REWRITE_TAC [DB.fetch "list" "MAP", DB.fetch "list" "APPEND"]
 \subsection{Tactic wrap}
 
 We now restrict the definition of a proof script to being the third 
-argument of a call to \texttt{store\_thm}. And we precisely define the 
+argument of a call to 
+\texttt{store\_thm}. And we precisely define the 
 modification applied to the theory file. A modified theory file is identical to 
 the original theory file except every proof scripts \texttt{p} is
 replaced by \texttt{Split "p'"} where \texttt{Split} is the splitting function 
@@ -1819,11 +1820,8 @@ stateful tactic is usually improving it.
 \section{Proof Presentation}\label{sec:proofdisplay}
 
 
-Motivation: 
-+ minimal effort to integrate the tactictoe results in proof scripts.
-
-Side effect:
-+ could be also used to simplify existing proof scripts. 
+\todoi{Motivation: + minimal effort to integrate the tactictoe results in proof 
+scripts.}
 
 \paragraph{Reconstruction}
 When a proof search succeeds (there are no more pending goals at the root)
@@ -2002,6 +2000,9 @@ fs is a \sml binding for FULL\_SIMP\_TAC (srw\_ss ()) and rw is short for ??.
 If a discovered proof is short, fast, maintainable and 
 understandable, it could replace its original in the \holfour standard library.
 
+
+\todoi{Side effect:
++ could be also used to simplify existing proof scripts. }
 
 \section{Related Work}
 There are several essential components of our work that are comparable to 
