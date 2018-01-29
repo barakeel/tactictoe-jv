@@ -593,8 +593,8 @@ The dependence relation is assymetric. Through the relation, each object has
 multiple children and at most one parent.
 Once a dependency relation is established, we can calculate a dependency score 
 for each object which is the maximum of its similarity score and the similarity 
-score of its parent. In the end, the 500 feature vectors in each dataset with 
-the highest dependency score are preselected.
+score of its parent. In the end, the 500 entries with highest dependency score 
+are preselected in each dataset.
 
 In the following, we give a mathematical definition for the dependency relation 
 between labels for tactic-goal pairs and theorems.
@@ -652,7 +652,7 @@ give a formal definition of the concepts of subsumption and coverage that are
 required for expressing the orthogonalization algorithm.
 
 \begin{definition} (Coverage)\\ 
-Let $\mathfrak{F}$ be a recorded set of feature vectors. We can define the 
+Let $\mathfrak{F}$ be the database of tactics. We can define the 
 coverage $\textit{\mbox{Coverage}}(t)$ of a tactic $t$ by the number of times 
 this tactic 
 appears in 
@@ -756,15 +756,14 @@ influence the proof search.
 \paragraph{Selection of Abstracted Tactics}
 As abstracted tactics do not appear in human proof, we need to find a way to 
 predict them so that they can contribute to the \tactictoe proof search.
-A straightforward idea is to duplicate each tactic during the proof search by 
-creating an abstracted version of the tactic. However, this is computationally 
-expensive when the tactic does not instantiate back to its original form, we 
-risk doing unnecessary work as both version may have a similar effect.
-Therefore, we need to decide beforehand which of the two is better.
+A straightforward idea is to try $A$ before $T$ during the proof search. 
+However, this risks doing unnecessary work as they may have a similar effect. 
+Therefore, we would like to decide 
+beforehand if one is better than the other.
 In fact, we can re-use the orthogonalization module to do this task for us.
 We add $A$ to the competition, initially giving it the coverage of $T$. If $A$ 
 wins, it becomes a a label for $g$ is including in the database of tactic 
-features and thus can be predicted during a proof search.
+features and thus can be predicted during proof search.
 After many competitions, the coverage of $A$ may exceed the coverage of $T$. At 
 this point, the coverage of $A$ is estimated on its own and not inherited from 
 $T$ anymore.
@@ -1409,10 +1408,9 @@ original proof until length 20.}
 %The progress cannot be attributed only to the time increase but to testing and 
 %debugging of parameters.
 
+
+\todoi{remove feature vectors from the paper}
 \section{Proof Recording}\label{sec:recording}
-\todo{MN + RK: comment technical and hard-to read presentation of the unfolding
-mechanism and replace by a high level abstraction. Alternatively, make the 
-current version more accessible.}
 
 Recording proofs in an LCF-style proof assistant can be done at different 
 levels.
