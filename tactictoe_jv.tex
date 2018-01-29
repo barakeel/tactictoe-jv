@@ -287,6 +287,7 @@ by asynchronous calls to \eprover.
 
 
 \section{Preliminaries: Search Tree}\label{sec:prelim}
+\todoi{Print words correctly in math format by avoiding math format}  
 
 In order to be able to describe the different components of \tactictoe, 
 we need to give to describe what a search tree is, what are its elements and 
@@ -363,16 +364,39 @@ its goal.}
 \label{fig:choice}
 \end{figure}
 
+
+\begin{definition}\label{def:desc}(Children, Descendant)\\
+We now define what are the children and the descendants of a node $a$ in a 
+search tree $\mathfrak{T}$. The children of a relative to a goal $g$ in $G(a)$ 
+is the set of nodes produced by tactics applied to $g$:
+  \[Children(a,g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace \]
+
+From that, we define the children of a node $a$ by:
+  \[Children(a) = \bigcup_{g \in G(a)} Children(a,g) \]
+
+And descendants of $a$ by transitive closure:
+\begin{align*}
+Descendant^{0}(a) &=_{def} \lbrace a \rbrace \\ 
+Descendant^{n+1}(a) &=_{def} \bigcup_{a' \in Descendant^{n}(a)} 
+Children(a') \\
+Descendant(a) &=_{def} \bigcup_{n \in \mathbb{N}} Descendant^n(a)\\
+\end{align*}
+
+
+
+
 Starting from the bottom parent node, we can construct children of a goal of 
 this node by choosing a goal $g_i^0$ on this node and choosing tactics 
 $t_1,t_2,\ldots$ to 
 apply to this goal. Here the result produces new nodes each containing a list 
 of goals to be proven. In each node of the proof tree, a goal can either be 
 solved, open or pending (see Definition~\ref{def:solved}). 
+\end{definition}
+
 
 
 \begin{definition}\label{def:solved}(Solved goal, solved nodes, open goal, 
-pending goal)\\
+pending goal , active node)\\
 Let $\mathfrak{T}$ be a search tree. The set of solved nodes 
 $\mathbb{A}^\infty$ and 
 the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
@@ -386,8 +410,8 @@ the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
 \forall g \in G(a).\ g \in \mathbb{G}^{n} \rbrace\\
 \mathbb{G}^{n+1} &=_{def} \lbrace g \in \mathbb{G}\ |\ 
 \exists a \in A(g).\ a \in \mathbb{A}^{n+1} \rbrace \\
-\mathbb{A}^\infty &=_{def} \bigcup_{i \in \mathbb{N}} \mathbb{A}^n \ \ \ \ \ 
-\mathbb{G}^\infty =_{def} \bigcup_{i \in \mathbb{N}} \mathbb{G}^n\\
+\mathbb{A}^\infty &=_{def} \bigcup_{n \in \mathbb{N}} \mathbb{A}^n \ \ \ \ \ 
+\mathbb{G}^\infty =_{def} \bigcup_{n \in \mathbb{N}} \mathbb{G}^n\\
 \end{align*}
 
 An open goal is an unsolved goal that was tried at least once by a tactic. The 
@@ -399,8 +423,44 @@ The set of pending goals is the remaining set of goals in the tree. They are
 goal that were produced by tactics that were not explored yet. This set can 
 also be also defined by:
 \[\lbrace g \in G\ |\  T(g) = \emptyset \rbrace\]
+
+To facilitate the description  of our algorithms we make a slight adjustement 
+to the definition of an open goal. If a node $a$ does not contain any open 
+goal, the first pending goal (according 
+to some preset order) of $a$ is also considered to be an open goal. In this 
+way, each unsolved node contains a unique open goal.
 \end{definition}
 
+
+
+\todo{make definition in preliminaries of active node and descendant?}
+
+
+
+
+We can also judge the productivity of a tactic by its contribution to the 
+search 
+tree. 
+
+\begin{definition} (Productive tactic) 
+The application of a tactic on an open goal is called productive if and only if 
+all the following conditions are satisified:
+\begin{itemize}
+\item It does not fail or timeout. To prevent tactics from looping, we 
+interrupt tactics after a short amount of time (0.05 seconds). 
+\item It does not loop. Its output does not contain any goals that appears in 
+its ancestor nodes.
+\item It is not a parallel step. Its output is not equal or a superset 
+of a list of goals produced from the same open goal.
+\end{itemize}
+
+The third point of the definition is a partial attempt at preventing confluent 
+branches. The general case where two branches join after $n$ steps is handled 
+by a tactic cache which memorizes tactic effects on goals. This
+cache allows faster re-exploration of confluent branches which remain 
+separated in the search tree.
+
+\todo{make definition in preliminaries of active node and descendant?}
 
 \section{Prediction}\label{s:prediction}
 The learning-based selection of relevant lemmas significantly improves the 
@@ -746,10 +806,10 @@ AlphaGo Zero~\cite{silver2017mastering}.
 %In this section, we first give a static description of the proof tree and its 
 %component. 
 We first explain how to compute the policy and evaluation functions that 
-influence the behaviour of the MCTS algorithm.
-Then we describe the five steps of the MCTS algorithm and their effect on 
-the search tree (described in Section~\ref{sec:prelim}): 
-initialization, node selection, node extension, backpropagation and resolution. 
+influence the behavior of the MCTS algorithm.
+We then describe initialization and resolution of the search as well as the 
+different part of a step in the search loop: node selection, node 
+extension, backpropagation.
 A characteristic of the MCTS algorithm is that it offers a good trade-off 
 between exploitation and exploration. This means that the algorithm searches
 deeper more promises branches and leaves enough time for the exploration 
@@ -757,29 +817,28 @@ of less likely alternatives.
 
 
 \subsection{Prior tactic policy}\label{sec:policy}
+
+\todoi{mention productive tactics}
 Distances between goals produced by the tactic predictor are hard 
-to translate into a prior tactic policy, so we rely only on the order of 
+to translate into a prior tactic policy, so we rely solely on the order of 
 tactics to estimate the probability with which each tactic should be tried.
-Let $t_0,\ldots,t_500$ be the list of preselected tactics ordered by their 
+Let $t_0,\ldots,t_n$ be the list of preselected tactics ordered by their 
 distance to a goal $g$. Let $c_{policy}$ be a constant heuristic that estimates 
 how likely a tactic $t_i$ is to prove the goal compared to the rest of the 
 tactics $t_{i+1},\ldots,t_{500}$. We make the strong assumption that $c_policy$ 
 is constant across the search. We can now calculate the prior policy by:
    
-\[PriorPolicy(t_i) = PP(i) = (1 - c_{policy})^{i} * c_{policy}\]
+\[PriorPolicy(a_i) = PriorPolicy(t_i) = PriorPolicy(i) = (1 - c_{policy})^{i} * 
+c_{policy}\]
+
+Widening policy for a node $a$.
+
+\[WideningPolicy(a) = \]
 
 The first term of the multiplication is the probability that none of the better 
-ranked tactic is selected. 
-
-In fact, these probabilities are never used directly and only serves as a 
-guidance to our deterministic node selection algorithm over many simulations.
-
-Since the support of A induces a bijection between tactics of the tree 
-search and the node they 
-produced, any function define on tactics of the tree search can be map to a 
-function defined on nodes. 
-Therefore, we define $PriorPolicy(a)$ as the $PriorPolicy(t)$ where $t$ is the 
-tactic that produced $a$.
+ranked tactic is selected. In fact, these probabilities are never used directly 
+and only serves as a guidance to our deterministic node selection algorithm 
+over many MCTS step.
 
 \subsection{Prior node evaluation}\label{sec:evaluation}
 
@@ -790,8 +849,8 @@ if we should continue searching in this direction. Theoretically, an
 interesting list of goal is one 
 that has the shortest proof, and we could measure the likelihood of being 
 provable in a number of steps from previous proof search. However, this 
-approach produces a lot of negatives\todo{TG: cite Hard Negative mining (cite 
-Deep math)}. So to reduce this number, we limit 
+approach produces a lot of negatives\todo{CK: cite hard negative mining 
+or/and deep math}. So to reduce this number, we limit 
 ourselves to tactics tested during orthogonalization. We declare a list 
 of goals l to be positive, noted $l \in Positive$, if it is has been 
 produced by the winner of an orthogonalization competition. The set of the $r$ 
@@ -831,86 +890,74 @@ steps which grow the search tree.
 Through node extension steps the search tree grows and the number of paths to 
 explore increases. To decide which node to extend next, we proceed through the 
 node selection algorithm. Starting from the root node, we repeatedly chose the 
-children with the highest value. 
-
+children relative to the open goal with the highest value. 
 
 The value of a $a_i$ with respect to a search tree is determined by:
-\[Value(a_i) = CurrentEvaluation(a_i) + c_{exploration} * Exploration(a_i)\] 
+\[Value(a_i) = CurEvaluation(a_i) + c_{exploration} * Exploration(a_i)\] 
 
 The exploration term is determined by the prior policy and the current policy 
 where as the exploitation is exactly the current evaluation build from prior of 
 evaluations of descendants of $a_i$.
-\[Exploration(a_i) = \frac{PriorPolicy(a_i)}{CurrentPolicy(a_i)}\]
+\[Exploration(a_i) = \frac{PriorPolicy(a_i)}{CurPolicy(a_i)}\]
 
-\[CurrentPolicy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(p))}}\]
+\[CurPolicy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(p))}}\]
 The policy is approximatively the  percentage of time a node was visited.The 
 square root skews this probability to favor even more exploration of nodes with 
 few visits. 
 
-The exploitation term is the average of the evaluation of 
-all nodes descendant of $a_i$ (itself included) in the current search tree.
-This evaluation also include failures of the selection process.
+The exploitation term $CurEvaluation(a_i)$ is the average of the evaluation of 
+all MCTS step that went through $a_i$ (itself included) in the current search 
+tree.
 
- It 
-is also called the current evaluation of $a_i$.   
-\[CurrentEvaluation(a_i) = 
-  \sum_{b \in Desc(a_i)} \frac{PriorEvaluation(b)} {(card Desc(a_i) + card 
-  (Failure(a_i))}\]
+\[CurEvaluation(a_i) = 
+  \sum_{a' \in Descendant(a_i)} \frac{PriorEvaluation(a')} {card\ 
+  Descendant(a_i) 
+  + card\ Failure(a_i)}\]
 
-where $Failure(a_i)$ is the number of run that went through $a_i$ that ended in 
-a failure.
-
+where $Failure(a_i)$ is the number of MCTS steps that went through $a_i$ which 
+ended in a failure.
 
 To allow the algorithm to select nodes that 
 are not leafs, we also assign a value to the possibility of stopping during the 
 descent of the tree. This value has an exploitation equal to 0 since it was 
-never explored and is given a prior policy equal to $PP(n)$ where $n$ is the 
+never explored and is given a prior policy equal to $PriorPolicy(n)$ where $n$ 
+is the 
 number of 
-tactics already tried on the open goal if there is one and $PP(0)$ if there is 
+tactics already tried on the open goal if there is one and $PriorPolicy(0)$ if 
+there is 
 none.
 
 \subsection{Node extension}
-Once a node is selected, we applied the best not-yet-applied tactics according 
-to the prediction order for the open goal of this node.
-If no open goals exists we apply it to the first pending goal (according to 
-some arbitrary order). If the node is a solved node or (a descendant of a 
-solved node) then 
-If the tactic is productive then the we create a new 
-node and calculate and save its prior evaluation. Otherwise we evaluate the 
-output of the tactic to 0 and backpropagate the failure to the ancestries.
+Once a node is selected, we first check if it is an active part of the search 
+tree (not a solved node . 
 
-Maybe should move this definition in static description.
+If the selected node is not active, then the result of node extension is a 
+failure.
+Otherwise, we apply the best untested tactic on the open goal $g$ of this node  
+according to the prediction order for $g$.
 
-To prevent tactics from looping, we interrupt tactics after
-0.01 to 0.1 seconds. The optimal tactic timeout varies in function of the 
-search time limit.
 
-\begin{definition} (Productive tactic)
-During a proof search, after a tactic $t$ is applied to a node with active goal 
-$g$, $t$ is called 
-productive if and only if all the following conditions are satisified:
-\begin{itemize}
-\item It does not fail. We note $l$ the list of goals returned by the tactic.
-\item It does not loop. $l$ do not contain any goals that appears in its 
-ancestor nodes.
-\item It is not a parallel step. $l$ is not equal to or a superset of a list of 
-goals produced from the same node with the same active goal.
-\end{itemize}
+we apply the next tactic in the prediction order for 
+the open goal of this node.
 
-The third point of the definition is a partial attempt to prevent confluent 
-branches. The general 
-case where two branches becomes parallel after $n$ steps is handle by a
-tactic cache which memorizes tactic effects on goals. Similarly there is also a 
-prediction cache, which memorize the tactic predictions for each goal. Those 
-two caches allow a fast exploration of confluent branches but they remain 
-separated in our search tree.
+The result of the extension step is either a failure or a list of goals $l$.
+From $l$, we can assess if the tactic was productive. 
+If not, we also return a failure.
+Otherwise, the list of goals $l$ is used to create a new node in the search 
+tree. Give precise definition. 
+
+order of predicted tactics.
+
+During the creation of node, we predict tactics for the open goals
 
 \subsection{Backpropagation}
-Number of failed selection and 
-the number of visits are backpropagated to the ancestors
 
-which update the current evaluation in each node.
-
+If node extension resulted in a failure, we increment the failure field of the 
+selected node and its parents. If node extension was successful, we 
+backpropagate the evaluation of the new nodes to their parents.
+In both cases, we increment the number of visits of all nodes traversed.
+This changes induce an update on the current evaluation and current policy for 
+each node. And the process loops back to the node selection step.
 
 \subsection{Resolution}
 The search ends when the algorithm reaches one of these 3 conditions:
@@ -919,12 +966,11 @@ The search ends when the algorithm reaches one of these 3 conditions:
 the search returns a minimized and 
 prettified proof script (see Section~\ref{sec:proofdisplay}).
 \item It saturates. There is no tactics to be applied to any open goal.
-\item It exceeds a given time limit.
+This happens less than 10 times in the full-scale experiment.
+\item It exceeds a given time limit set by default to 60 seconds.
 \end{itemize}
 
-The second case happens very rarely (less than 10 times in the full scale 
-experiment). So our experiments report only the number of proofs found relative 
-to the number of attempted problems.
+
 \end{definition}
 
 \subsection{ATP Integration}~\label{sec:atp}
