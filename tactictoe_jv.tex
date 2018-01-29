@@ -897,16 +897,6 @@ return ChosenNode;
 The value of the $i^th$ child $a_i$ of a parent $p$ is determined by:
 \[Value(a_i) = CurEvaluation(a_i) + c_{exploration} * Exploration(a_i)\] 
 
-The exploration term is determined by the prior policy and the current policy 
-where as the exploitation is exactly the current evaluation build from prior of 
-evaluations of descendants of $a_i$.
-\[Exploration(a_i) = \frac{PriorPolicy(a_i)}{CurPolicy(a_i)}\]
-
-\[CurPolicy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(p))}}\]
-The policy is approximatively the  percentage of time a node was visited.The 
-square root skews this probability to favor even more exploration of nodes with 
-few visits. 
-
 The current evaluation $CurEvaluation(a_i)$ is the average evaluation of 
 all descendants of $a_i$, through its open goal $g_i$, including node extension 
 failures:
@@ -917,6 +907,17 @@ failures:
 
 The number $Failure(a_i)$ is the amount of failures that occurred during node 
 extension from descendants of $a_i$ .
+
+The exploration term is determined by the prior policy and the current policy.
+\[Exploration(a_i) = \frac{PriorPolicy(a_i)}{CurPolicy(a_i)}\]
+
+\[CurPolicy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(p))}}\]
+The policy is approximatively the  percentage of time a node was visited.The 
+square root skews this probability to favor even more exploration of nodes with 
+few visits. 
+
+The coefficient $c_{exploration}$ is experimentally determined and adjusts the 
+trade-off between exploitation and exploration.
 \end{definition}
 
 \subsection{Node extension}
