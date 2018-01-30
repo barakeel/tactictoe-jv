@@ -315,7 +315,7 @@ $\mathbb{A}$. It takes a goal and a tactic and returns the node produced by the
 application of the tactic to the goal, if this tactic has been applied to this 
 goal. Its support $Support(A)$ is by definition $\lbrace (g,t)\ |\ t \in T(g) 
 \rbrace$.
-\item if $(g,t) \in Support (A)$ and $A(g,t) = a$, then $t(g) = G(a)$.
+\item If $(g,t) \in Support (A)$, then $t(g) = G(A(g,t))$.
 \end{itemize}
 
 Additional constraints such as acyclicity and the fact that there is exactly 
@@ -1776,28 +1776,29 @@ By the design of the search, a single tactic combinator, \texttt{THENL}, is
 sufficient. It combines a tactic $t$ with a list of subsequent ones, in such a 
 way that after $t$ is called, for each created goal a respective 
 tactic from the list is called.
-Here is a formal description of the transformation $Proof$ defined by mutual 
-recursion on the goals and nodes of $\mathfrak{T}$:
+Here is a formal description of the transformation defined by mutual 
+recursion on goals and nodes of $\mathfrak{T}$ by the respective function 
+$P_goal$ and $P_node$:
 
-%\begin{equation*}
-%Proof(g) =_{def}
-%\begin{cases}
-%T(g) & \text{if $t$ is a root},\\
-%tac & \text{if $t$ is a leaf},\\
-%tac\ \texttt{THENL}\ [P(a_1),\ldots,t_{n-1}] & \text{otherwise.}
-%\end{cases}
+
+\begin{equation*}
+P_goal(g) =_{def}
+\begin{cases}
+T(g) & \text{if A(g,T(g)) = \emptyset},\\
+T(g) & \texttt{THENL}\ [P(a_1),\ldots,t_{n-1}] & \text{otherwise.}
+\end{cases}
 %
 %
-%\begin{cases}
-%tac & \text{if $t$ is a root and $g$ the unique goal of the root},\\
-%tac & \text{if $t$ is a leaf},\\
-%tac\ \texttt{THENL}\ [P(a_1),\ldots,t_{n-1}] & \text{otherwise.}
-%\end{cases}
-%
-%
-%
-%
-%\end{equation*}
+Proof(a) =_def{def}
+\begin{cases}
+tac & \text{if $t$ is a root and $g$ the unique goal of the root},\\
+tac & \text{if $t$ is a leaf},\\
+tac\ \texttt{THENL}\ [P(a_1),\ldots,t_{n-1}] & \text{otherwise.}
+\end{cases}
+\end{equation*}
+
+
+
 where $tac$ is the tactic that produced the node, $c$ is the
 only successful child of the root and $c_0, \ldots, c_n$ are the 
 children of the node produced by the successful tactic.
