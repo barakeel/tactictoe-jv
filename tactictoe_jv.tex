@@ -266,11 +266,14 @@ The additional contributions and their effect on our system are:
 matching constructions, opening of submodules are supported. The different 
 recording steps (parsing, unfolding and replaying) are regrouped into a single 
 \sml function.
-\item MCTS (Monte Carlo tree search) now replaces A* in our proof search 
-algorithm. MCTS gives a more balanced feedback to guide proof search by 
-comparing subtrees instead of leafs. The policy and evaluation are learned 
+\item Monte Carlo tree search~~\cite{montecarlo} (MCTS) replaces A* as our 
+search algorithm. The MCTS algorithm gives a more balanced feedback on 
+the success of 
+each proof step by
+comparing subtrees of the search tree instead of leafs. The policy and 
+evaluation are learned 
 through supervised learning.
-\item Proof guidance required by the MCTS algorithm is given by predictors for 
+\item Proof guidance required by MCTS is given by predictors for 
 three kind of objects: tactics, theorems and list of goals.
 \item The orthogonalization process that eliminates redundant tactics is 
 formally described.
@@ -456,10 +459,9 @@ ExtChildren(a') \\
 Descendant(a) &=_{def} \bigcup_{n \in \mathbb{N}} Descendant^n(a)\\
 \end{align*}
 
-Descendants of $a$ through $g$ by:
-\[Descendant(a,g) =_{def} 
-  \lbrace a \rbrace \cup \bigcup_{a' \in Children(a,g)} Descendant(a')\]
-
+%Descendants of $a$ through $g$ by:
+%\[Descendant(a,g) =_{def} 
+%  \lbrace a \rbrace \cup \bigcup_{a' \in Children(a,g)} Descendant(a')\]
 
 An active node is by definition a node that is not a descendant of a 
 solved node. Non-active nodes are not worth exploring.
@@ -880,12 +882,12 @@ The value of the $i^th$ child $a_i$ of a parent $p$ is determined by:
 \[Value(a_i) = CurEvaluation(a_i) + c_{exploration} * Exploration(a_i)\] 
 
 The current evaluation $CurEvaluation(a_i)$ is the average evaluation of 
-all descendants of $a_i$, through its open goal $g_i$, including node extension 
+all descendants of $a_i$ including node extension 
 failures:
 
 \[CurEvaluation(a_i) = 
-  \sum_{a' \in Descendant(a_i,g_i)} \frac{PriorEvaluation(a')} {card\ 
-  Descendant(a_i,g_i) + Failure(a_i)}\]
+  \sum_{a' \in Descendant(a_i)} \frac{PriorEvaluation(a')} {card\ 
+  Descendant(a_i) + Failure(a_i)}\]
 
 The number $Failure(a_i)$ is the amount of failures that occurred during node 
 extension from descendants of $a_i$ .
