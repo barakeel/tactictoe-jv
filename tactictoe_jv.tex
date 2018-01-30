@@ -290,9 +290,8 @@ applied on the generated proof.
 \end{itemize}
 
 
-\section{Preliminaries: Search Tree}\label{sec:prelim}
-\todoi{Print words correctly in math format by avoiding math format}  
-
+\section{Proof Search Tree}\label{sec:prelim}
+  
 The different components of \tactictoe revolves around the concept of a 
 search tree. The following definitions are made relative to a static search 
 tree, the description of its evolution during proof search will be given in 
@@ -408,7 +407,7 @@ goal that were produced by tactics that were not explored yet. This set can
 also be also defined by:
 \[\lbrace g \in G\ |\  T(g) = \emptyset \rbrace\]
 
-To facilitate the description  of our algorithms we make a slight adjustement 
+To facilitate the description  of our algorithms we make a slight adjustment 
 to the definition of an open goal. If a node $a$ does not contain any open 
 goal, the first pending goal (according 
 to some preset order) of $a$ is also considered to be an open goal. In this 
@@ -422,7 +421,7 @@ tree.
 
 \begin{definition} (Productive tactic) 
 The application of a tactic on an open goal is called productive if and only if 
-all the following conditions are satisified:
+all the following conditions are satisfied:
 \begin{itemize}
 \item It does not fail or timeout. To prevent tactics from looping, we 
 interrupt tactics after a short amount of time (0.05 seconds). 
@@ -438,6 +437,8 @@ by a tactic cache which memorizes tactic effects on goals. This
 cache allows faster re-exploration of confluent branches which remain 
 separated in the search tree.
 \end{definition}
+
+some text to add here.
 
 \begin{definition}\label{def:desc}(Children, descendant, active node)\\
 We now define what are the children and the descendants of a node $a$. The 
@@ -465,7 +466,6 @@ Descendant(a) &=_{def} \bigcup_{n \in \mathbb{N}} Descendant^n(a)\\
 
 An active node is by definition a node that is not a descendant of a 
 solved node. Non-active nodes are not worth exploring.
-
 \end{definition}
 
 \section{Prediction}\label{s:prediction}
@@ -1836,9 +1836,10 @@ which improves readability and prevents duplication of this declarations.
 %that can be chosen by the user. Those tactics are curated so that only 
 %productive tactics are returned. (define productive)
 
-\section{Comparison with Human Proofs}
+\section{Case Study}
 \todoi{Test tactictoe find new examples on new goals and manual exploration 
 mode.}
+In this section, we compare \tactictoe proof script with human proof script.
 
 Goal: \texttt{IS\_GCD\_UNIQUE} in theory \texttt{pred\_set}).
 \begin{lstlisting}[language=SMLSmall,frame=tb]
@@ -2041,8 +2042,6 @@ can guide its
 search internally~\cite{mllax} using a command classifier, which can estimate 
 the priority of the 11 kinds of
 commands in the priority queue based on positive and negative examples.
-
-
 
 
 \section{Conclusion}\label{sec:concl}
