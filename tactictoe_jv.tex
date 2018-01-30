@@ -731,11 +731,12 @@ ungeneralized one.
 \paragraph{Abstraction of Tactic Arguments}
 The first step is to abstract arguments of tactics by replacing them by a 
 place holder creating an tactic with an unspecified argument.
-Suppose we have a recorded tactic $T$. Since $T$ is a \sml code tree, we can 
+Suppose we have a recorded tactic $t$. Since $t$ is a \sml code tree, we can 
 try to abstract any of the 
-\sml subterms. Let $u$ be a \sml subterm of $T$, and $h$ a placeholder $u$, we 
+\sml subterms. Let $u$ be a \sml subterm of $t$, and $h$ a placeholder $u$, we 
 can substitute $u$ by $h$ to create an abstracted tactic.
-We note this intermediate tactic $T[h/u]$. By repeating the process, multiple 
+We note this intermediate tactic $t[h/u]$. By repeating the 
+process, multiple 
 arguments may be abstracted in the same tactic. Ultimately, the more 
 abstractions are performed the more general a tactic is, as many tactics 
 become instances of the same abstracted tactic. Yet, it becomes harder and 
@@ -743,8 +744,9 @@ harder to predict suitable arguments.
 
 \paragraph{Instantiation of an Abstracted Tactic}
 An abstracted tactic is not immediately applicable to a goal, since it contains
-unspecified arguments. To apply an abstracted tactic $A$, we first need to 
-instantiate the placeholders $h$ inside $A$. Because it is difficult to 
+unspecified arguments. To apply an abstracted tactic $\hat{t}$, we first need 
+to 
+instantiate the placeholders $h$ inside $\hat{t}$. Because it is difficult to 
 build a general predictor that effective on each type of argument, we manually 
 design different argument predictors for each type. Those predictors are 
 usually given a goal has input and returns the best chosen argument for this 
@@ -761,17 +763,20 @@ influence the proof search.
 \paragraph{Selection of Abstracted Tactics}
 As abstracted tactics do not appear in human proof, we need to find a way to 
 predict them so that they can contribute to the \tactictoe proof search.
-A straightforward idea is to try $A$ before $T$ during the proof search. 
+A straightforward idea is to try $\hat{t}$ before $t$ during the proof search. 
 However, this risks doing unnecessary work as they may have a similar effect. 
 Therefore, we would like to decide 
 beforehand if one is better than the other.
 In fact, we can re-use the orthogonalization module to do this task for us.
-We add $A$ to the competition, initially giving it the coverage of $T$. If $A$ 
+We add $\hat{t}$ to the competition, initially giving it the coverage of $t$. 
+If $\hat{t}$ 
 wins, it becomes a a label for $g$ is including in the database of tactic 
 features and thus can be predicted during proof search.
-After many competitions, the coverage of $A$ may exceed the coverage of $T$. At 
-this point, the coverage of $A$ is estimated on its own and not inherited from 
-$T$ anymore.
+After many competitions, the coverage of $\hat{t}$ may exceed the coverage of 
+$t$. At 
+this point, the coverage of $\hat{t}$ is estimated on its own and not inherited 
+from 
+$t$ anymore.
 
 \section{Proof Search}\label{sec:proofsearch}
 Despite the best efforts of the prediction algorithms, a selected tactic may 
@@ -1761,28 +1766,38 @@ stateful tactic is usually improving it.
 \todoi{Motivation: + minimal effort to integrate the tactictoe results in proof 
 scripts.}
 
-\paragraph{Reconstruction}
-When a proof search succeeds (there are no more pending goals at the root)
-we need to reconstruct a \holfour human-style proof.
-The saved nodes consist of a set of trees where each edge is a tactic and
-the proof tree is the one starting at the root.
-In order to obtain a single \holfour proof, we need to combine the tactics
-gathered in the trees using tacticals.
+When \tactictoe finds a proof of a goal, it returns a search tree 
+$\mathfrak{T}$ where the root node containing this goal is solved.
+In order to transform this search tree into a proof script, we need to extract 
+the tactics that contributed to the proof and combine them using tactic 
+combinators.
+\todoi{Define tactic combinators?}
 By the design of the search, a single tactic combinator, \texttt{THENL}, is 
-sufficient. It combines a tactic with a list of subsequent ones, in such a way 
-that after the parent tactic is called, for each created goal a respective 
+sufficient. It combines a tactic $t$ with a list of subsequent ones, in such a 
+way that after $t$ is called, for each created goal a respective 
 tactic from the list is called.
-The proof tree is transformed into a final single proof script
- by the following recursive function $P$ taking a
-tree node $t$ and returning a string:
-\begin{equation*}
-P(t) =
-\begin{cases}
-P(c) & \text{if $t$ is a root},\\
-tac & \text{if $t$ is a leaf},\\
-tac\ \texttt{THENL}\ [P(c_0),\ldots,P(c_n)] & \text{otherwise.}
-\end{cases}
-\end{equation*}
+Here is a formal description of the transformation $Proof$ defined by mutual 
+recursion on the goals and nodes of $\mathfrak{T}$:
+
+%\begin{equation*}
+%Proof(g) =_{def}
+%\begin{cases}
+%T(g) & \text{if $t$ is a root},\\
+%tac & \text{if $t$ is a leaf},\\
+%tac\ \texttt{THENL}\ [P(a_1),\ldots,t_{n-1}] & \text{otherwise.}
+%\end{cases}
+%
+%
+%\begin{cases}
+%tac & \text{if $t$ is a root and $g$ the unique goal of the root},\\
+%tac & \text{if $t$ is a leaf},\\
+%tac\ \texttt{THENL}\ [P(a_1),\ldots,t_{n-1}] & \text{otherwise.}
+%\end{cases}
+%
+%
+%
+%
+%\end{equation*}
 where $tac$ is the tactic that produced the node, $c$ is the
 only successful child of the root and $c_0, \ldots, c_n$ are the 
 children of the node produced by the successful tactic.
