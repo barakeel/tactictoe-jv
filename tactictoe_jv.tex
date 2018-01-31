@@ -1473,11 +1473,12 @@ consists of 4 phases: proof script extraction, proof script globalization,
 tactic unit wrapping and creation of tactic-goal pairs.
 
 Because of the large number of \sml constructions, we only describe the effect 
-of these steps in a running example that is representative of a typical proof 
-script. And we comment on the main steps that transforms the original proof 
-script into a modified version that is able to record the code of a tactic and 
-the goal(s) it processed during the proof. We omit more involved constructions 
-such as the globalization of infix operators.
+of these steps on a running example that contains selected parts of the theory
+of lists.
+
+%We comment on the treatment of global and local identifiers but  omit more 
+%involved constructions 
+%such as the globalization of infix operators.
 
 \begin{example}\label{ex:running}(Running example)
 \small
@@ -1492,6 +1493,22 @@ val MAP_APPEND = store_thm("MAP_APPEND",
 \end{lstlisting}
 \end{example} 
 
+The first line of this theory open modules (called structures in \sml). Each of 
+them contains a list of global identifiers which become directly accessible in 
+the rest of the theory.
+A local identifier \texttt{LIST\_INDUCT\_TAC} is declared after, which is a 
+tactic that performs induction on lists. And even further, the theorem 
+\texttt{MAP\_APPEND} is proven.
+The global tactic \texttt{STRIP\_TAC} first removes universal quantifiers. Then,
+the goal is split into a base case and a inductive case. And finally, both of 
+theses cases are solved by \texttt{ASM\_REWRITE\_TAC [MAP, APPEND]}, which 
+rewrites assumptions with the help of theorems previously declared in this 
+theory. 
+
+We first parse the theory to extract proof scripts. Each of them is found in 
+the third argument of a call to \texttt{store\_thm}. The result of proof script 
+extraction for the running example in presented in Example~\ref{ex:r0}.
+
 \begin{example}\label{ex:r0}(Proof script extraction)
 \small
 \begin{lstlisting}[language=SMLSmall]
@@ -1499,14 +1516,39 @@ STRIP_TAC THEN LIST_INDUCT_TAC THEN ASM_REWRITE_TAC [MAP, APPEND]
 \end{lstlisting}
 \end{example} 
 
+In the next phase, we globalize identifiers of the proof scripts. 
+Infix operators such as \texttt{THEN} need to be processed in a special way so 
+that they can keep their infixity after globalization. For simplicity, the 
+globalization of infix operators is omitted in Example~\ref{ex:r1}.
+In this example, the three main cases that can happen during the globalization
+are depicted. The first one is the globalization of identifiers declared in 
+modules. The global identifiers \texttt{STRIP\_TAC} and 
+\texttt{ASM\_REWRITE\_TAC} are prefixed by their module \texttt{Tactic}. In 
+this way, they will still be interpretable whether \texttt{Tactic} was open or 
+not. The local identifier \texttt{LIST\_INDUCT\_TAC} is replaced by its 
+definition which happens to contain two global identifiers.
+The previous paragraph describe the globalization for all identifiers except 
+local theorems.  We do not replace a local
+theorem by its definition because we want to avoid unfolding proof scripts into 
+other proof scripts.
+If the theorem is stored in the database of the current theory, we 
+can obtain the theorem value by calling \texttt{DB.fetch}. This happens for the 
+three theorems in our script. The internal database of \holfour is available 
+across \holfour developments. 
+Otherwise the globalization process fails and the local theorem identifier is 
+kept unchanged. A recorded tactic with an unchanged local theorem as argument 
+is only interpretable inside the current theory.
 
-\begin{example}\label{ex:global} (Globalization)
+\begin{example}\label{ex:r1} (Globalization)
 \begin{lstlisting}[language=SMLSmall]
 Tactic.STRIP_TAC THEN
 Prim_rec.INDUCT_THEN (DB.fetch "list" "list_INDUCT") Tactic.ASSUME_TAC THEN
 Rewrite.ASM_REWRITE_TAC [DB.fetch "list" "MAP", DB.fetch "list" "APPEND"]
 \end{lstlisting}
 \end{example} 
+
+
+\todo{rewrite this paragraph}
 
 The intended effect of the splitting function is to detect and wrap \sml 
 expressions of type tactics. Its aim is to is encapsulate each tactic 
@@ -1526,7 +1568,6 @@ To determine that, we run the \polyml compiler on \texttt{"p'"} to give us a
 detailed code tree of the expression. Each tactic unit is then substituted 
 by a wrapped version to produce the final proof script.
 
-
 \begin{definition}(Tactic unit)
 A tactic unit is an \sml expression of type tactics that does not contain a 
 infix operator at its root.
@@ -1542,6 +1583,7 @@ R "Rewrite.ASM_REWRITE_TAC
 \end{lstlisting}
 \end{example}   
 
+\todo{rewrite this paragraph}
 
 During its execution, the recording function \texttt{R} (as coded in 
 Definition~\ref{ex:record}) 
@@ -1557,83 +1599,19 @@ fun R stac goal = (save (stac,goal); tactic_of_sml stac goal)
 \end{lstlisting}
 \end{example} 
 
-The function save(stac,goal) save the pair to disk increasing the number of 
-tactic-goal pairs in our database.
+The function \texttt{save} writes the tactic-goal pairs to disk increasing the 
+number of entries in our database of tactics. The function 
+\texttt{tactic\_of\_sml} interprets \sml code \texttt{stac}. The tactic is then 
+applied to the input goal which replicates the original behavior.
                                                                      
-
-%\subsection{Data Transfer}
-%We describe here the format preferred to save and load the 
-%data recorded by the function \texttt{save}. 
-%During saving, we add fields to the input pair $(tactic,goal)$ to record 
-%precomputed information in order to make the prediction faster. The final 
-%feature vector is the tuple $(tactic,time,goal,goal\_list,features)$.
-%The time $time$ taken by $tactic$ is not currently used by our 
-%predictor. The list of goals $goal list$ is the output of $tactic$ on 
-%$goal$. And the features $features$ of the goal $goal$ are extracted and 
-%hashed 
-%as described in Section~\ref{sec:features}. 
-%
-%\begin{remark}
-%To simplify the description of our machine learning algorithms in future 
-%sections, we consider a tactic feature vector to be a pair $(tactic,goal)$ and 
-%only 
-%explicitly rely on the 
-%other fields when necessary.
-%\end{remark}
-%
-%We now discuss the type of file we want to store our feature vectors on and
-%how we plan to write and read \sml values. We start by taking 
-%inspiration from an existing implementation in \holfour.
-%
-%To avoid the computational cost of re-proving every theorems at the begining 
-%of 
-%each session, theorem values in \holfour are stored.
-%They are encoded them in to a string by calling \texttt{Term.write\_raw}.
-%Conversely, the function \texttt{Term.read\_raw} transforms the string back 
-%into the original term.
-%To have theorems binded to sml identifiers, it is necessary to create a 
-%\sml file where those binders are declared. And for simplicity sake, all 
-%theory 
-%data was fed into this \sml file. However, it is
-%more efficient to store theory data into a text file and make a custom 
-%parser which can be run faster than the \polyml compiler.
-%Thanks to this insight, we have 
-%modified the way in which \holfour theories are saved to include only \sml 
-%bindings in a \sml file. All other theory data is now stored separately 
-%into a text file. After integrating the changes, \holfour theories load three 
-%times faster in average.
-%
-%Our \tactictoe data management system do not need to create new \sml
-%bindings for the user. So we can store all \sml values into a text file which 
-%can be loaded rapidly.
-%Storing time, tactic string and features is easy since they are respectively 
-%floats, strings and integers. And because a goal is composed of terms, we can 
-%re-use the \holfour theory data reading and writing functions 
-%for the two other fields.
-%
-%Finally, we mention some limitations that comes with 
-%the need to record tactics as a string compared to being able to store a \sml 
-%value. Access to the name of the tactic enhances machine 
-%learning ability and user interaction. Yet, because some tactics 
-%depends on the state of \holfour, for example the state of the global 
-%simpset, a tactic is re-parsed before each proof attempt to be up-to-date.
-%As a result, a tactic may have different effect on goals than suggested by the 
-%database which could compromise the prediction accuracy. In practice, this 
-%should rarely happen. Indeed, most tactics are stateless and an update on a 
-%stateful tactic is usually improving it.
-
 \section{Proof Presentation}\label{sec:proofdisplay}
-
-
-\todoi{Motivation: + minimal effort to integrate the tactictoe results in proof 
-scripts.}
 
 When \tactictoe finds a proof of a goal $g_{root}$, it returns a search tree 
 $\mathfrak{T}$ where the root node containing $g_{root}$ is solved.
 In order to transform this search tree into a proof script, we need to extract 
 the tactics that contributed to the proof and combine them using tactic 
 combinators.
-\todoi{Define tactic combinators?}
+
 By the design of the search, a single tactic combinator, \texttt{THENL}, is 
 sufficient. It combines a tactic $t$ with a list of subsequent ones, in such a 
 way that after $t$ is called, for each created goal a respective 
@@ -1658,7 +1636,6 @@ extraction phase.
 Further post-processing such as
 eliminating unnecessary tactics and theorems has been developed and
 improve the user experience greatly~\cite{DBLP:conf/sefm/Adams15}.
-\todoi{Not sure if this reference is appropriate anymore}
 
 \paragraph{Minimizing length of the proof} 
 A fast and simple minimization is applied when processing the final proof. If 
