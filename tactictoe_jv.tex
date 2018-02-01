@@ -1397,27 +1397,6 @@ discuss recording proofs in an LCF-style proof assistant, with the focus on
 \holfour
 in this section.
 
-% Because our aim is to 
-% learn how to prove from existing examples, we record the proofs at 
-% an intermediate tactic level closest to the one presented to 
-% a user. Since human developers build almost all their proofs from tactics, 
-% we believe this is an appropriate level to apply machine learning on.
-
-%More information is contained in tactical scripts than 
-%in top-level dependencies on which was based machine-learning guidance in 
-%interactive theorem proving so far. Learning from atomic inferences would 
-%require better predictions and abstractions of rules to handle the larger 
-%search space.
-
-
-
-%We first discuss parsing proof scripts and identifying 
-%individual tactic calls. We next show how to record tactics calls are recorded 
-%with their corresponding goals using a modified proof script.
-%The recorded data which consists of tactic-goal pairs creates the raw 
-%knowledge 
-%necessary for our tactic selection algorithm.
-
 Rather than relying on the underlying programming language, we parse the
 original theory file containing proof scripts. This enables us to extract the 
 code of each tactic. 
@@ -1446,26 +1425,23 @@ achieved by using a reference to a tactic and update it with the function
 
 In order to transfer our tactic knowledge between theories, we want to be able 
 to re-use the code of a tactic recorded in one theory in an 
-other. We also would like to make sure that the code is interpretable and its 
-interpretation does not change in the other theory.
+other. We also would like to make sure that the code is interpretable and that 
+its interpretation does not change in the other theory.
 
-Even when developing one theory, the context is continually changing: the open 
-modules are different, global and local identifiers are defined and the local 
-ones can become out of scope. Therefore, it is unlikely that code extracted 
-from proof scripts is interpretable in any part of \holfour.
-To solve this issue, we prefix each global identifier by the module where it 
-was declared and we recursively unfold local declaration until a local 
-identifier can be expressed by through code containing only global identifiers.
+Even when developing one theory, the context is continually changing:
+modules are open and local identifiers are defined. Therefore, it is unlikely 
+that code extracted from proof scripts is interpretable in any other part of 
+\holfour without any post-processing.
+To solve this issue, we recursively replace each local identifier by its 
+definition until we are able to write any expression with global identifiers 
+only. And we prefix each global identifiers by its module.
 We call this process globalization. The result is a standalone \sml code 
-executable in any \holfour theories which will be interpreted in the same way 
-in the absence 
-of side effects.
-
-Therefore, we can guarantee that the behaviour of recorded stateless tactics 
-will not change. And because an update on a stateful tactic 
+executable in any \holfour theories.  In the absence of side effects, it is 
+interpreted in the same way across theories.
+Therefore, we can guarantee that the behavior of recorded stateless tactics 
+does not change. And because an update on a stateful tactic 
 generally increases its strength, our prediction algorithm based on past 
-examples will still be reasonably effective. 
-
+examples is still reasonably effective in this case. 
 
 \subsection{Implementation}
 We describe in more details the implementation of the recording algorithm which 
