@@ -253,6 +253,9 @@ Definition of a tactic in \holfour. In this research, we will take the definitio
 that a tactic takes a goal and returns a list of goals.
 Input of the prediction: goal
 If a tactic produces no goals then its input goal is solved.
+Define tactical etc maybe import graphic that explain how tactic works form the 
+presentations.
+
 
 \holfour proofs are organized in theory files.
 Each theory file contains definitions and statements of theorems together with
@@ -267,18 +270,6 @@ tacticals (functions that takes
 tactics as arguments). Such a combination of tactics will be called a 
 \emph{proof script} when it
 proves a theorem stated in a theory.
-
-In order to apply machine learning to the existing proof scripts, we will need 
-to
-parse and modify them, which involves parsing and modification of \sml code.
-Acquiring access to the string representation of a tactic (code for the tactic) 
-allows us generating
-proof scripts that can be inspected by a human.
-As some \holfour theories are built in separate sessions, it is not possible
-to transfer \sml values directly, but instead tactic code needs to transferred 
-instead.
-To do this, the transferred information will be saved externally.
-
 
 \subsection{Contributions}
 This work is an extension of the work described in \cite{tgckju-lpar17}.
@@ -1767,6 +1758,23 @@ understandable, it could replace its original in the \holfour standard library.
 \todoi{Side effect:
 + could be also used to simplify existing proof scripts. }
 
+Interactive usage example.
+
+\begin{lstlisting}[language=SMLSmall]
+tactictoe ([], ``countable (UNIV:num set)``);
+let fun RWTAC thms = SRW_TAC [] thms in RWTAC [(fetch "pred_set" 
+"countable_def"), (fetch "pred_set" "INJ_DEF")] THEN Q.EXISTS_TAC `\\x.x` THEN 
+METIS_TAC [] end
+\end{lstlisting}
+
+\begin{lstlisting}[language=SMLSmall]
+tactictoe ([], ``count (n+m) DIFF count n = IMAGE ($+n) (count m)``);
+SRW_TAC [ARITH_ss] [(fetch "pred_set" "EXTENSION"), EQ_IMP_THM] THEN 
+Q.EXISTS_TAC `x - n` THEN SRW_TAC [ARITH_ss] []
+\end{lstlisting}
+
+
+
 \section{Related Work}
 There are several essential components of our work that are comparable to 
 previous approaches: tactic-level proof recording, tactic 
@@ -1882,7 +1890,8 @@ commands in the priority queue based on positive and negative examples.
 We proposed a new proof assistant automation technique which combines 
 tactic-based proof search with machine learning tactic prediction
 Its implementation,
-\tactictoe, achieves an overall performance of 59\% theorems on 7088 theorems  
+\tactictoe, achieves an overall performance of 66.2\% theorems on 7164 
+theorems  
 of the \holfour standard library surpassing \eprover with 
 auto-schedule. Its 
 effectiveness is especially visible on 
