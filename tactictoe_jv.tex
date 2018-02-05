@@ -321,17 +321,17 @@ that respects the following conditions:
 \item $\mathbb{T}$ is a set of tactics, $\mathbb{G}$ is a set of goals
  and $\mathbb{A}$ is a set of nodes. These sets contains only objects
  appearing in the search tree.
-\item $T$ is a total function from $\mathbb{G}$ to $P(\mathbb{T})$. It takes a
+\item $T$ is a total function from $\mathbb{G}$ to $\mathcal{P}(\mathbb{T})$. It takes a
 goal and return the set of tactics already applied to this goal.
-\item $G$ is a total function from $\mathbb{A}$ to $P(\mathbb{G})$. It takes a
-node a return the set of goals in this node.
+\item $G$ is a total function from $\mathbb{A}$ to $\mathcal{P}(\mathbb{G})$. It takes a
+node and returns the set of goals in this node.
 
 \item $A$ is a partial function from $\mathbb{G} \times \mathbb{T}$ to
 $\mathbb{A}$. It takes a goal and a tactic and returns the node produced by the
 application of the tactic to the goal, if this tactic has been applied to this
-goal. Its support $Support(A)$ is by definition $\lbrace (g,t)\ |\ t \in T(g)
+goal. Its support $\mathit{Support}(A)$ is by definition $\lbrace (g,t)\ |\ t \in T(g)
 \rbrace$.
-\item If $(g,t) \in Support (A)$, then $t(g) = G(A(g,t))$.
+\item If $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$.
 \end{itemize}
 
 Additional constraints such as acyclicity and the fact that there is exactly
@@ -460,20 +460,20 @@ some text to add here.
 We now define what are the children and the descendants of a node $a$. The
 children of a relative to a goal $g$ in $G(a)$
 is the set of nodes produced by tactics applied to $g$:
-  \[Children(a,g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace \]
+  \[\mathit{Children}(a,g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace \]
 
 If $g$ is the open goal of $a$, then we simply call children of a the
 children of $a$ relative to $g$. We define:\\
 
 Extended children of $a$ by:
-  \[ExtChildren(a) = \bigcup_{g \in G(a)} Children(a,g) \]
+  \[\mathit{ExtChildren}(a) = \bigcup_{g \in G(a)} \mathit{Children}(a,g) \]
 
 Descendants of $a$ by:
 \begin{align*}
-Descendant^{0}(a) &=_{def} \lbrace a \rbrace \\
-Descendant^{n+1}(a) &=_{def} \bigcup_{a' \in Descendant^{n}(a)}
-ExtChildren(a') \\
-Descendant(a) &=_{def} \bigcup_{n \in \mathbb{N}} Descendant^n(a)\\
+\mathit{Descendant}^{0}(a) &=_{def} \lbrace a \rbrace \\
+\mathit{Descendant}^{n+1}(a) &=_{def} \bigcup_{a' \in \mathit{Descendant}^{n}(a)}
+\mathit{ExtChildren}(a') \\
+\mathit{Descendant}(a) &=_{def} \bigcup_{n \in \mathbb{N}} \mathit{Descendant}^n(a)\\
 \end{align*}
 
 %Descendants of $a$ through $g$ by:
@@ -857,11 +857,11 @@ declare a list of goals $l$ to be positive if it is has been produced by the
 winner of an orthogonalization competition. Our predictor with radius $r$
 produces a set of $r$ list of goals
 closest to $l$. The
-number of positive example in this set is noted $Positive(r,l)$.
+number of positive example in this set is noted $\mathit{Positive}(r,l)$.
 During the proof search, we evaluate nodes through the list of goals they
 contain using the following evaluation function:
 \begin{align*}
-PriorEvaluation_r (a_i) &= \frac{Positive(r,G(a_i))}{r}\\
+\mathit{PriorEvaluation}_r (a_i) &= \frac{\mathit{Positive}(r,G(a_i))}{r}\\
 \end{align*}
 
 \subsection{Initialization}
@@ -900,23 +900,23 @@ return ChosenNode;
 
 \begin{definition}\label{def:value}(Value)
 The value of the $i^th$ child $a_i$ of a parent $p$ is determined by:
-\[Value(a_i) = CurEvaluation(a_i) + c_{exploration} * Exploration(a_i)\]
+\[\mathit{Value}(a_i) = \mathit{CurEvaluation}(a_i) + c_{exploration} * \mathit{Exploration}(a_i)\]
 
 The current evaluation $CurEvaluation(a_i)$ is the average evaluation of
 all descendants of $a_i$ including node extension
 failures:
 
-\[CurEvaluation(a_i) =
-  \sum_{a' \in Descendant(a_i)} \frac{PriorEvaluation(a')} {card\
-  Descendant(a_i) + Failure(a_i)}\]
+\[\mathit{CurEvaluation}(a_i) =
+  \sum_{a' \in Descendant(a_i)} \frac{\mathit{PriorEvaluation}(a')} {card\
+  \mathit{Descendant}(a_i) + \mathit{Failure}(a_i)}\]
 
-The number $Failure(a_i)$ is the amount of failures that occurred during node
+The number $\mathit{Failure}(a_i)$ is the amount of failures that occurred during node
 extension from descendants of $a_i$ .
 
 The exploration term is determined by the prior policy and the current policy.
-\[Exploration(a_i) = \frac{PriorPolicy(a_i)}{CurPolicy(a_i)}\]
+\[\mathit{Exploration}(a_i) = \frac{\mathit{PriorPolicy}(a_i)}{\mathit{CurPolicy}(a_i)}\]
 
-\[CurPolicy(a_i) = \frac{1 + Visit(a_i))}{\sqrt{Visit(p))}}\]
+\[\mathit{CurPolicy}(a_i) = \frac{1 + \mathit{Visit}(a_i))}{\sqrt{\mathit{Visit}(p))}}\]
 The policy is approximatively the  percentage of time a node was visited.The
 square root skews this probability to favor even more exploration of nodes with
 few visits.
@@ -931,7 +931,7 @@ If $a$ is not an active part of the search then extending $a$ is useless and
 the algorithm reports a failure. In our experiments, filtering nodes that not
 active before node selection is
 not beneficial. It may be because it breaks some symmetry in the
-$Value$ function.
+$\mathit{Value}$ function.
 Otherwise, it applies the best untested tactic $t$ on the open goal $g$ of this
 node according to the prediction order for $g$. If no such tactic exists or if
 $t$ is not productive, a failure is returned.
