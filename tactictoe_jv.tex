@@ -1082,12 +1082,13 @@ MCTS policy & $c_{policy} = 0.4$ && 149\\
             & $c_{policy} = 0.5$ (default) && 156\\
             & $c_{policy} = 0.6$ && 153\\
 \midrule
-MCTS evaluation & none (best abstraction) && 199\\
+MCTS evaluation & none (default + best abstraction) && 199\\
 				& $c_{exploration} = 1$ && 201\\ 
 				& $c_{exploration} = 2$ && 203\\ 
 				& $c_{exploration} = 4$ && 198\\
 \midrule
-ATP integration & none (best MCTS evaluation) && 203\\
+ATP integration & none (default + best abstraction && 203\\
+                &  + best MCTS evaluation) &&\\
                 & \metis 0.1s && 216\\
                 & \metis 0.2s && 212\\
                 & \metis 0.4s && 212\\ 
@@ -1098,6 +1099,48 @@ ATP integration & none (best MCTS evaluation) && 203\\
 \caption{\label{tab:tuning} Number of problem solved with different set of 
 parameters for \tactictoe on a training set of 273 theorems.} 
 \end{table}
+
+In Table~\ref{tab:tuning}, we run \tactictoe with different parameters. 
+The first four techniques are tested relative to the same baseline indicated in 
+the table by the tag ``default''.  This default strategy relies on a tactic 
+time out of 0.05s, an orthogonalization radius of 20 and a policy coefficent of 
+0.5. 
+The two last techniques are tested relative 
+to a baseline consisting of the best set of parameters discovered so far and 
+are marked with the improvement over the ``default'' strategy.
+In each subtable, each experiment differs from the current baseline by exactly 
+one parameter.
+
+Thanks to the larger search time available in this experiment, the timeout for 
+each tactic can be raised from the 0.02 seconds used in \tactictoe's first 
+experiment~\cite{lpar} to 0.05 
+seconds. Removing tactics with similar effect as performed by the 
+orthogonalization process is only beneficial when running \tactictoe for short 
+period of time. It seems that the alloted time allows a strategy 
+running without orthogonalization to catch up. 
+It is best to predict a list of 16 theorems to instantiate arguments of type 
+theorem list in tactics. At any rate, argument prediction for abstracted 
+tactics is the technique that have the highest impact on the success of 
+\tactictoe. Integration of ATPs being a specialization of this technique 
+contributes significantly as well. Experiments involving \eprover, run the ATP
+on one thread asynchronously with a timeout of 5 seconds and 128 premises. 
+The fact that \metis outperforms \eprover in this setting is due to the fact 
+that \metis is run with a very short timeout, allowing to close different part 
+of search tree quickly. Because \metis is weaker that \tactictoe as an ATP, it 
+is given less predictions. But even if a lemma essential for the proof of a 
+goal is not predicted, a modification on the goal performed by a tactic can 
+change its prediction to include the necessary lemma. 
+This effect minimizes the drawback of relying on a small number of predictions. 
+
+
+The MCTS evaluation, despite relying on the largest amount of collected data, 
+does not provide a significant improvement over a strategy relying on no 
+evaluation. One one hand, our predictor learning abilities is 
+limited. On the other hand, the evaluation function was designed to estimate 
+the provability of a goal. A more accurate evaluation could be based on an 
+estimation of the length of the proof required to close a goal.
+
+
 
 %\subsection{Increasing \tactictoe's knowledge}\label{sec:perfect_exp}
 %\todoi{decide to keep or not}
