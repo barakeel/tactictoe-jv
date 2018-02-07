@@ -243,8 +243,15 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
 
 
 \subsection{The problem}
-How a user works with an ITP and how this gives rise to a machine learning
-problem.
+% How a user works with an ITP and how this gives rise to a machine learning problem.
+\todo{RK: this is just a first draft -- feel free to edit lots!}
+An ITP is a development environment for the construction of formal proofs in which it is possible, but not common, to write a proof as a sequence of applications of primitive inference rules.
+The common approach, however, is to use and devise high-level tools and automation that abstract over useful ways of producing proof pieces.
+A specific, prevalent instance of this approach is the use of \emph{tactics} for \emph{backward} or goal-directed proof.
+Here, the ITP user operates on a proof state, initially the desired conjecture, and applies tactics that transform the proof state until it is solved (or until giving up).
+Each tactic performs a sound transformation of the proof state: essentially, it promises that if the resulting proof state can be solved, then so can the starting one.
+This gives rise to a machine learning problem: can we learn a mapping from a given proof state to the next tactic (or sequence of tactics) that will productively advance the proof towards a solution?
+
 Two ways of representing a formulas.
 Definition of a tactic in \holfour. In this research, we will take the definition
 that a tactic takes a goal and returns a list of goals.
@@ -324,14 +331,14 @@ node and returns the set of goals in this node.
 
 \item $A$ is a partial function from $\mathbb{G} \times \mathbb{T}$ to
 $\mathbb{A}$. It takes a goal and a tactic and returns the node produced by the
-application of the tactic to the goal. Its support $\mathit{Support}(A)$ is by 
-definition $\lbrace (g,t) \in 
+application of the tactic to the goal. Its support $\mathit{Support}(A)$ is by
+definition $\lbrace (g,t) \in
 \mathbb{G} \times \mathbb{T}\ |\ t \in T(g)
 \rbrace$.
-\item If $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$. This is the 
-main condition. The result of the application of a tactic $t$ 
-to a goal $g$ is exactly the list of goals contained in the node produced by 
-$t$ from 
+\item If $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$. This is the
+main condition. The result of the application of a tactic $t$
+to a goal $g$ is exactly the list of goals contained in the node produced by
+$t$ from
 $g$.
 \end{itemize}
 
@@ -1067,10 +1074,10 @@ Tactic time out & 0.02s && 154\\
 \midrule
 Orthogonalization & none & 105 & 156 \\
                   & $radius = 10$ & 121 & 156 \\
-                  & $radius = 20$ (default) & 121 & 156 \\ 
+                  & $radius = 20$ (default) & 121 & 156 \\
                   & $radius = 40$ & 124 & 156 \\
 \midrule
-Abstraction       & none (default)  && 156\\ 
+Abstraction       & none (default)  && 156\\
                   & $theorems = 8$  && 195\\
                   & $theorems = 16$ && 199\\
                   & $theorems = 32$ && 195\\
@@ -1080,61 +1087,61 @@ MCTS policy & $c_{policy} = 0.4$ && 149\\
             & $c_{policy} = 0.6$ && 153\\
 \midrule
 MCTS evaluation & none (default + best abstraction) && 199\\
-				& $c_{exploration} = 1$ && 201\\ 
-				& $c_{exploration} = 2$ && 203\\ 
+				& $c_{exploration} = 1$ && 201\\
+				& $c_{exploration} = 2$ && 203\\
 				& $c_{exploration} = 4$ && 198\\
 \midrule
 ATP integration & none (default + best abstraction && 203\\
                 &  + best MCTS evaluation) &&\\
                 & \metis 0.1s && 216\\
                 & \metis 0.2s && 212\\
-                & \metis 0.4s && 212\\ 
+                & \metis 0.4s && 212\\
                 & \eprover && 213\\
                 & \metis 0.1s + \eprover && 218\\
 \bottomrule
 \end{tabular}
-\caption{\label{tab:tuning} Number of problem solved with different set of 
-parameters for \tactictoe on a training set of 273 theorems.} 
+\caption{\label{tab:tuning} Number of problem solved with different set of
+parameters for \tactictoe on a training set of 273 theorems.}
 \end{table}
 
-In Table~\ref{tab:tuning}, we run \tactictoe with different parameters. 
-The first four techniques are tested relative to the same baseline indicated in 
-the table by the tag ``default''.  This default strategy relies on a tactic 
-time out of 0.05s, an orthogonalization radius of 20 and a policy coefficent of 
-0.5. 
-The two last techniques are tested relative 
-to a baseline consisting of the best set of parameters discovered so far and 
+In Table~\ref{tab:tuning}, we run \tactictoe with different parameters.
+The first four techniques are tested relative to the same baseline indicated in
+the table by the tag ``default''.  This default strategy relies on a tactic
+time out of 0.05s, an orthogonalization radius of 20 and a policy coefficent of
+0.5.
+The two last techniques are tested relative
+to a baseline consisting of the best set of parameters discovered so far and
 are marked with the improvement over the ``default'' strategy.
-In each subtable, each experiment differs from the current baseline by exactly 
+In each subtable, each experiment differs from the current baseline by exactly
 one parameter.
 
-Thanks to the larger search time available in this experiment, the timeout for 
-each tactic can be raised from the 0.02 seconds used in \tactictoe's first 
-experiment~\cite{lpar} to 0.05 
-seconds. Removing tactics with similar effect as performed by the 
-orthogonalization process is only beneficial when running \tactictoe for short 
-period of time. It seems that the alloted time allows a strategy 
-running without orthogonalization to catch up. 
-It is best to predict a list of 16 theorems to instantiate arguments of type 
-theorem list in tactics. At any rate, argument prediction for abstracted 
-tactics is the technique that have the highest impact on the success of 
-\tactictoe. Integration of ATPs being a specialization of this technique 
+Thanks to the larger search time available in this experiment, the timeout for
+each tactic can be raised from the 0.02 seconds used in \tactictoe's first
+experiment~\cite{lpar} to 0.05
+seconds. Removing tactics with similar effect as performed by the
+orthogonalization process is only beneficial when running \tactictoe for short
+period of time. It seems that the alloted time allows a strategy
+running without orthogonalization to catch up.
+It is best to predict a list of 16 theorems to instantiate arguments of type
+theorem list in tactics. At any rate, argument prediction for abstracted
+tactics is the technique that have the highest impact on the success of
+\tactictoe. Integration of ATPs being a specialization of this technique
 contributes significantly as well. Experiments involving \eprover, run the ATP
-on one thread asynchronously with a timeout of 5 seconds and 128 premises. 
-The fact that \metis outperforms \eprover in this setting is due to the fact 
-that \metis is run with a very short timeout, allowing to close different part 
-of search tree quickly. Because \metis is weaker that \tactictoe as an ATP, it 
-is given less predictions. But even if a lemma essential for the proof of a 
-goal is not predicted, a modification on the goal performed by a tactic can 
-change its prediction to include the necessary lemma. 
-This effect minimizes the drawback of relying on a small number of predictions. 
+on one thread asynchronously with a timeout of 5 seconds and 128 premises.
+The fact that \metis outperforms \eprover in this setting is due to the fact
+that \metis is run with a very short timeout, allowing to close different part
+of search tree quickly. Because \metis is weaker that \tactictoe as an ATP, it
+is given less predictions. But even if a lemma essential for the proof of a
+goal is not predicted, a modification on the goal performed by a tactic can
+change its prediction to include the necessary lemma.
+This effect minimizes the drawback of relying on a small number of predictions.
 
 
-The MCTS evaluation, despite relying on the largest amount of collected data, 
-does not provide a significant improvement over a strategy relying on no 
-evaluation. One one hand, our predictor learning abilities is 
-limited. On the other hand, the evaluation function was designed to estimate 
-the provability of a goal. A more accurate evaluation could be based on an 
+The MCTS evaluation, despite relying on the largest amount of collected data,
+does not provide a significant improvement over a strategy relying on no
+evaluation. One one hand, our predictor learning abilities is
+limited. On the other hand, the evaluation function was designed to estimate
+the provability of a goal. A more accurate evaluation could be based on an
 estimation of the length of the proof required to close a goal.
 
 
@@ -1196,11 +1203,11 @@ estimation of the length of the proof required to close a goal.
 %% $AFTERv2$   & $\mathfrak{H}$ & 245 (89.7\%)  \\
 %\bottomrule
 %\end{tabular}
-%\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge 
-%with tactics from the proof of the tested theorem. The experiments was run 
-%with 
-%a time out of 5 seconds on an older version of \tactictoe, as can be seen in 
-%the low success rate of thedefault strategy.} 
+%\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge
+%with tactics from the proof of the tested theorem. The experiments was run
+%with
+%a time out of 5 seconds on an older version of \tactictoe, as can be seen in
+%the low success rate of thedefault strategy.}
 %\end{table}
 %
 %
@@ -1235,7 +1242,7 @@ estimation of the length of the proof required to close a goal.
 %Best parameters + comparison with holyhammer.
 
 The best \tactictoe parameters are chosen for the full-scale evaluation. Yet,
-\eprover asynchronous calls are not included in the best \tactictoe strategy 
+\eprover asynchronous calls are not included in the best \tactictoe strategy
 for fairer comparison.
 
 
@@ -1246,7 +1253,7 @@ for fairer comparison.
 \toprule
   & Solved (60s) \\
 \midrule
-   \eprover   & 2472 (34.5\%)\\ 
+   \eprover   & 2472 (34.5\%)\\
    \tactictoe & 4741 (66.2\%)\\
 \midrule
    Total  & 4946 (69.0\%)\\
@@ -1350,8 +1357,8 @@ Estimate the difficulty of the proof by the number of tactic units.
 \legend{\tactictoe proofs,original proofs}
 \end{axis}
 \end{tikzpicture}
-\caption{Number of original human proofs and (minimized see Section) \tactictoe 
-proofs with 
+\caption{Number of original human proofs and (minimized see Section) \tactictoe
+proofs with
 a number $x$ of tactic
 units. For easier comparison of the distributions, the number of \tactictoe
 proofs was
@@ -1693,17 +1700,17 @@ Example~\ref{ex:pretty}.
 \begin{example}\label{ex:pretty}\ \\
 Discovered proof script for the theorem \texttt{EVERY\_MAP}
 \begin{lstlisting}[language=SMLSmall]
-boolLib.REWRITE_TAC [DB.fetch "list" "EVERY_CONJ", DB.fetch "list" "EVERY_MEM", 
-  DB.fetch "list" "EVERY_EL", ldots ,  combinTheory.o_DEF] THEN 
+boolLib.REWRITE_TAC [DB.fetch "list" "EVERY_CONJ", DB.fetch "list" "EVERY_MEM",
+  DB.fetch "list" "EVERY_EL", ldots ,  combinTheory.o_DEF] THEN
 BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 11380*)l"] THENL
   [BasicProvers.SRW_TAC [] [],
-   simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss ()) [boolLib.DISJ_IMP_THM, 
+   simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss ()) [boolLib.DISJ_IMP_THM,
      DB.fetch "list" "MAP", DB.fetch "list" "CONS_11", boolLib.FORALL_AND_THM]]
 
 \end{lstlisting}
 Minimized and prettified proof script:
 \begin{lstlisting}[language=SMLSmall]
-Induct_on `l` THENL 
+Induct_on `l` THENL
   [SRW_TAC [] [], ASM_SIMP_TAC (srw_ss ()) [DISJ_IMP_THM, FORALL_AND_THM]]
 \end{lstlisting}
 \end{example}
@@ -1818,8 +1825,8 @@ Interactive usage example.
 \begin{lstlisting}[language=SMLSmall]
 tactictoe ([], ``countable (UNIV:num set)``);
 
-let fun RWTAC thms = SRW_TAC [] thms in 
-  RWTAC [fetch "pred_set""countable_def", fetch "pred_set" "INJ_DEF"] THEN 
+let fun RWTAC thms = SRW_TAC [] thms in
+  RWTAC [fetch "pred_set""countable_def", fetch "pred_set" "INJ_DEF"] THEN
   Q.EXISTS_TAC `\\x.x` THEN
   METIS_TAC []
 end
@@ -1829,7 +1836,7 @@ end
 tactictoe ([], ``count (n+m) DIFF count n = IMAGE ($+n) (count m)``);
 
 SRW_TAC [ARITH_ss] [fetch "pred_set" "EXTENSION", EQ_IMP_THM] THEN
-Q.EXISTS_TAC `x - n` THEN 
+Q.EXISTS_TAC `x - n` THEN
 SRW_TAC [ARITH_ss] []
 \end{lstlisting}
 
@@ -1971,20 +1978,20 @@ available in today's large formal proof corpora.
 There is plenty of future work in the directions opened here.
 
 To improve the quality of the predicted tactics,
-we would like to predict other type of arguments independently, as it was done 
-for theorems. In this direction, the most interesting type of arguments to 
+we would like to predict other type of arguments independently, as it was done
+for theorems. In this direction, the most interesting type of arguments to
 predict next are terms as they are ubiquitous in tactics. Further along the way,
-we would like to be to able to create new tactics not only by changing their 
+we would like to be to able to create new tactics not only by changing their
 arguments but also by programming it with any construction available in a
 programming language such as \sml.
 
-There is still something to be gain by having a better guidance for the search. 
-That is why se also want to experiment with stronger machine learning algorithm 
+There is still something to be gain by having a better guidance for the search.
+That is why se also want to experiment with stronger machine learning algorithm
 such as deep neural networks as a model for the policy and evaluation in MCTS.
-This quality of this model could be enhanced by additional data augmentation by 
+This quality of this model could be enhanced by additional data augmentation by
 training and testing existing and synthesized tactics.
-Another possible way to guide the proof search is by conjecturing intermediate 
-steps \cite{}, allowing to prove a difficult theorem by decomposing it into 
+Another possible way to guide the proof search is by conjecturing intermediate
+steps \cite{}, allowing to prove a difficult theorem by decomposing it into
 multiple easy steps.
 
 
@@ -2001,7 +2008,7 @@ multiple easy steps.
 
 \paragraph{Acknowledgments}\label{sect:acks}
 We would like to thank Lasse Blaauwbroek for his insightful comments which
-contributed to improve the quality of this paper. This work has been supported 
+contributed to improve the quality of this paper. This work has been supported
 by the ERC Consolidator grant no.\ 649043 \textit{AI4REASON} and ERC starting
 grant no.\ 714034 \textit{SMART}.
 
