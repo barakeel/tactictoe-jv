@@ -319,8 +319,7 @@ $(\mathbb{T},\mathbb{G},\mathbb{A},T,G,A)$
 that respects the following conditions:
 \begin{itemize}
 \item $\mathbb{T}$ is a set of tactics, $\mathbb{G}$ is a set of goals
- and $\mathbb{A}$ is a set of nodes. These sets contains only objects
- appearing in the search tree.
+ and $\mathbb{A}$ is a set of nodes.
 \item $T$ is a total function from $\mathbb{G}$ to $\mathcal{P}(\mathbb{T})$. It takes a
 goal and return the set of tactics already applied to this goal.
 \item $G$ is a total function from $\mathbb{A}$ to $\mathcal{P}(\mathbb{G})$. It takes a
@@ -328,10 +327,14 @@ node and returns the set of goals in this node.
 
 \item $A$ is a partial function from $\mathbb{G} \times \mathbb{T}$ to
 $\mathbb{A}$. It takes a goal and a tactic and returns the node produced by the
-application of the tactic to the goal, if this tactic has been applied to this
-goal. Its support $\mathit{Support}(A)$ is by definition $\lbrace (g,t)\ |\ t \in T(g)
+application of the tactic to the goal. Its support $\mathit{Support}(A)$ is by 
+definition $\lbrace (g,t) \in 
+\mathbb{G} \times \mathbb{T}\ |\ t \in T(g)
 \rbrace$.
-\item If $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$.
+\item If $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$. This is the 
+main condition. The result of the application of a tactic $t$ 
+to a goal $g$ is the list of goals contained in the node produced by $t$ from 
+$g$.
 \end{itemize}
 
 Additional constraints such as acyclicity and the fact that there is exactly
@@ -352,16 +355,19 @@ writing $s_n$. In Figure~\ref{fig:choice}, $(G(a_j))_i$ is written a $g_j^i$.
 \node [tcircle,right of=0r] (0rr) {$g_0^n$};
 \node [left of=0] (0l) {.\ .\ .};
 \node [tcircle,left of=0l] (0ll) {$g_0^1$};
-\node [draw,fit=(0rr) (0ll)] {};
+\node [draw,fit=(0rr) (0ll)] (0b) {};
+\node [left of=0ll] {$a_0$};
 \node [above of=0,node distance=2cm] (2) {.\ .\ .};
 \node [left of=2, tcircle] (2l) {$g_j^1$};
 \node [tcircle,right of=2] (2r) {$g_j^p$};
 \node [draw, fit=(2l) (2r)] (2b) {};
+\node [left of=2l] {$a_j$};
 
 \node [tcircle, left of=2l, node distance=3cm] (1r) {$g_1^q$};
 \node [left of=1r] (1) {.\ .\ .};
 \node [tcircle, left of=1] (1l) {$g_1^1$};
 \node [draw, fit=(1l) (1r)] (1b) {};
+\node [left of=1l] {$a_1$};
 
 \node [right of=2r,node distance=3cm] (3l) {$\phantom{g_3^p}$};
 \node [right of=3l] (3) {\phantom{.\ .\ .}};
@@ -1303,7 +1309,9 @@ Estimate the difficulty of the proof by the number of tactic units.
 \legend{\tactictoe proofs,original proofs}
 \end{axis}
 \end{tikzpicture}
-\caption{Number of original and \tactictoe proofs with a number $x$ of tactic
+\caption{Number of original human proofs and (minimized see Section) \tactictoe 
+proofs with 
+a number $x$ of tactic
 units. For easier comparison of the distributions, the number of \tactictoe
 proofs was
 scaled by the inverse of \tactictoe's success rate $\frac{1}{0.662}$.}
@@ -1642,11 +1650,20 @@ The total effect on the readability of a proof script is depicted in
 Example~\ref{ex:pretty}.
 \todo{run without prettification}
 \begin{example}\label{ex:pretty}\ \\
-Extracted proof script:
+Discovered proof script for the theorem \texttt{EVERY\_MAP}
 \begin{lstlisting}[language=SMLSmall]
+boolLib.REWRITE_TAC [DB.fetch "list" "EVERY_CONJ", DB.fetch "list" "EVERY_MEM", 
+  DB.fetch "list" "EVERY_EL", ldots ,  combinTheory.o_DEF] THEN 
+BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 11380*)l"] THENL
+  [BasicProvers.SRW_TAC [] [],
+   simpLib.ASM_SIMP_TAC (BasicProvers.srw_ss ()) [boolLib.DISJ_IMP_THM, 
+     DB.fetch "list" "MAP", DB.fetch "list" "CONS_11", boolLib.FORALL_AND_THM]]
+
 \end{lstlisting}
 Minimized and prettified proof script:
 \begin{lstlisting}[language=SMLSmall]
+Induct_on `l` THENL 
+  [SRW_TAC [] [], ASM_SIMP_TAC (srw_ss ()) [DISJ_IMP_THM, FORALL_AND_THM]]
 \end{lstlisting}
 \end{example}
 
