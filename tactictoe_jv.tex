@@ -205,38 +205,35 @@ Eprover solves 34.5\%. The success rate rises to 69.0\% by combining the
 results of both provers.
 \end{abstract}
 
-\section{Introduction}
 \tableofcontents
-
 \todoi{Comparison with hammers in usability}
+
+\section{Introduction}
+
 Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight},
   \isabelle~\cite{isabelle}
-  and \coq~\cite{coq-book}
-  provide high-level parameterizable tactics for constructing the
-  proofs.  Such tactics typically analyze the current goal state and
-  assumptions, apply nontrivial proof transformations, which get
-  expanded into possibly many basic kernel-level inferences or significant
-  parts of the proof term.
+  and \coq~\cite{coq-book} provide high-level parameterizable tactics for constructing proofs.
+  Such tactics typically analyze the current proof state (goal and
+  assumptions), then apply non-trivial proof transformations that get
+  expanded into many basic kernel-level inferences or large parts of a proof term.
 %\marginpar{not Coq}
-  In this
-  work we develop a tactic-level automation procedure for the \holfour ITP
-  which guides selection of the tactics by learning from previous
+  In this work we develop a tactic-level automation procedure for the \holfour ITP
+  which guides the selection of tactics by learning from previous
   proofs.  Instead of relying on translation to first-order automated
   theorem provers (ATPs) as done by the hammer
-  systems~\cite{hammers4qed,tgck-cpp15}, the technique
+  systems~\cite{hammers4qed,tgck-cpp15}, our technique
 %\marginpar{too many cites?}
 %BlanchetteGKKU16,holyhammer,mizAR40
-  directly searches for sequences of tactic applications that lead to
-  the ITP proof, thus avoiding the translation and
-  proof-reconstruction phases needed by the hammers.
+  searches directly for sequences of tactic applications that lead to
+  an ITP proof, thus avoiding the translation and proof-reconstruction phases needed by the hammers.
 
 \todoi{Rewrite the plan}
   To do this, we \emph{extract and record} tactic invocations from the ITP
   proofs (Section~\ref{sec:recording}) and
   \emph{build efficient machine learning classifiers} based on such training
-  examples (Section~\ref{s:prediction}).  The learned data serves as a
-  guidance for a \emph{Monte Carlo tree search} that explores the different
+  examples (Section~\ref{s:prediction}).  The learned data serves as
+  guidance for a \emph{Monte Carlo tree search} that explores different
   proof paths (Section~\ref{sec:proofsearch}). The result, if
   successful, is a certified human-level proof composed of \holfour
   tactics.  The system is evaluated on a large set of theorems originating
