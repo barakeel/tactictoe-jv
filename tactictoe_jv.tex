@@ -1050,139 +1050,194 @@ Fix parameters: not optimized here.
  - Eprover: 128 lemmas and 5 seconds timeout 1 asynchronous call
 
 
+%sh stats.sh MNM_AE2I
+%273 203 3 67 0
+%thibault@grid02:~/big$ sh stats.sh MNM_AE2
+%273 203 3 67 0
+%thibault@grid02:~/big$ sh stats.sh MNM_AE4
+%273 201 3 69 0
+%thibault@grid02:~/big$ sh stats.sh MNM_AE4I
+%273 200 3 70 0
+%thibault@grid02:~/big$ sh stats.sh MNM_AE1
+%273 198 3 72 0
+%thibault@grid02:~/big$ sh stats.sh MNM_AE1I
+%273 200 3 70 0
+
+
+%thibault@grid02:~/big$ sh stats.sh MNM_ATPE
+%273 213 3 57 0
+%thibault@grid02:~/big$ sh stats.sh MNM_ATPM01
+%273 216 3 54 0
+%thibault@grid02:~/big$ sh stats.sh MNM_ATPM01E
+%273 218 3 52 0
+%thibault@grid02:~/big$ sh stats.sh MNM_ATPM02
+%273 212 3 58 0
+%thibault@grid02:~/big$ sh stats.sh MNM_ATPM04
+%273 212 3 58 0
+
+
+%thibault@grid02:~/big$ sh ftim.sh MNM_O40
+%127
+%9
+%8
+%2
+%2
+%148
+%thibault@grid02:~/big$ sh ftim.sh MNM_O10
+%124
+%15
+%5
+%3
+%1
+%148
+%thibault@grid02:~/big$ sh ftim.sh MNM_ON
+%108
+%16
+%6
+%3
+%6
+%thibault@grid02:~/big$ sh ftim.sh MNM_T005
+%124
+%13
+%5
+%2
+%3
+
+
+
 
 \begin{table}[ht]
 \centering\ra{1.3}
 \small
-\begin{tabular}{llc}
+\begin{tabular}{llcc}
 \toprule
- Technique & Parameters & Solved \\
+ Technique & Parameters & Solved (1s) & Solved (60s)\\
 \midrule
-Tactic time out & 0.02s & 154 (56.8\%)\\
-                & 0.05s (default) & 156 (56.8\%)\\
-                & 0.1s & 154 (56.0\%)\\
+Tactic time out & 0.02s && 154\\
+                & 0.05s (default) && 156\\
+                & 0.1s && 154\\
 \midrule
-Orthogonalization & none & 156 \\
-                  & $radius = 10$ & 156 \\
-                  & $radius = 20$ (default) & 156 \\ 
-                  & $radius = 40$ & 156 \\
-                  
+Orthogonalization & none & 105 & 156 \\
+                  & $radius = 10$ & 121 & 156 \\
+                  & $radius = 20$ (default) & 121 & 156 \\ 
+                  & $radius = 40$ & 124 & 156 \\
 \midrule
-Abstraction       & none (default)  & 156 (\%)\\ 
-                  & $theorems = 8$  & 195 (\%)\\
-                  & $theorems = 16$ & 199 (72.9\%)\\
-                  & $theorems = 32$ & 195 (\%)\\
+Abstraction       & none (default)  && 156\\ 
+                  & $theorems = 8$  && 195\\
+                  & $theorems = 16$ && 199\\
+                  & $theorems = 32$ && 195\\
 \midrule
-MCTS Policy & $c_{policy} = 0.4$ & 149 (\%)\\
-            & $c_{policy} = 0.5$ (default) & 155 (\%)\\
-            & $c_{policy} = 0.6$ & 153 (\%)\\
+MCTS policy & $c_{policy} = 0.4$ && 149\\
+            & $c_{policy} = 0.5$ (default) && 156\\
+            & $c_{policy} = 0.6$ && 153\\
+
 \midrule
-MCTS Evaluation & none (default) & 156 (50\%) \\
-				& $c_{exploration} = 0.25$ & 153 153 (50\%)\\ 
-				& $c_{exploration} = 0.5$ & 153 155 (50\%)\\ 
-				& $c_{exploration} = 1$ & 154 (50\%)\\
-				& $c_{exploration} =\sqrt{2}$ & 154 154 (50\%)\\ 
-				& $c_{exploration} = 2$ & 152 (50\%)\\ 
+MCTS evaluation & none (best abstraction) && 199\\
+				& $c_{exploration} = 1$ && 201\\ 
+				& $c_{exploration} = 2$ && 203\\ 
+				& $c_{exploration} = 4$ && 198\\
 \midrule
-ATP integration & none (default) & 156 (50\%)\\
-                & \metis 0.1s & 125 (50\%)\\
-                & \metis 0.2s & 125 (50\%)\\
-                & \metis 0.4s & 125 (50\%)\\ 
-                & asynchronous \eprover & 125 (50\%)\\
-                & \metis 0.1s + asynchronous \eprover & 190\\
-\midrule
-All & best parameters (without \eprover) & \\ 
+ATP integration & none (best MCTS evaluation) && 203\\
+                & \metis 0.1s && 216\\
+                & \metis 0.2s && 212\\
+                & \metis 0.4s && 212\\ 
+                & \eprover && 213\\
+                & \metis 0.1s + \eprover && 218\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Increasing \tactictoe's knowledge}\label{sec:perfect_exp}
-
-\todo{decide to keep this section or not}
-
-We investigate what are the limits of \tactictoe and what benefits additional 
-knowledge could provide. To this end, we will modify the set of features to 
-include features vectors that should not be known in a regular experiment. We  
-include some vectors from the recorded human proof and perform the proof 
-search 
-after the recording instead of before in all other experiments. This 
-experiment 
-is not fair and should only be compared to 
-experiments in the same settings.
-
-For clarity, we will name the set of feature vectors that can be recorded from 
-the current human proof $\mathbb{H}$ and the set of vectors recorded from 
-previous proofs $\mathbb{P}$ (consistent with previous notation?). We note 
-$\pi_1^1$ the projection on the 
-first component returning the label of a feature vector. And we define the 
-function $T$ that takes a tactic and return the list of its tokens.
-
-We will progressively add bigger and bigger 
-subset of $\mathbb{H}$ to $\mathbb{P}$ and observe the effect on the proof 
-search success rates. 
-
-Here are the list of increasing non-trivial subsets of $\mathbb{H}$ we 
-consider:
-\begin{align*}
-\mathbb{F}_1 &= \lbrace (t,g) \in \mathbb{H}\ |\ t \in \pi_1^1(\mathbb{P})  
-   \rbrace \\
-\mathbb{F}_2 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \rbrace\\
-\mathbb{F}_3 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem} \rbrace\\
-\mathbb{F}_4 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
-t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem or a term} 
-\rbrace\\
-\end{align*}
+Say the respective percentage after 5seconds for orthogonalization.
 
 
-$\mathbb{F}_1$ is an approximation of what we could get if we had perfect 
-prediction for those tactics.
-
-\begin{table}[h]
-\centering\ra{1.3}
-\small
-\begin{tabular}{lll}
-\toprule
- & Additional features & Solved \\
-\midrule
-$\emptyset$   & none & 119 (43.6\%) \\ %NONEv2
-$\mathbb{F}_1$& tactic prediction & 121 (44.3\%) \\ %AFTERTACv2
-$\mathbb{F}_2$& token recombination  & 137 (50.2\%) \\ %AFTERTOKENv2
-$\mathbb{F}_3$& theorem prediction  & 207 (75.8\%) \\ %AFTERTHMTHMv2
-$\mathbb{F}_4$& term prediction & 223 (81.7\%) \\ %AFTERALLv2
-$\mathbb{H}$  & all & 239 (87.5\%) \\ %AFTERSMALLv2
-% $AFTERv2$       & $\mathfrak{H}$ & 245 (89.7\%)  \\
-\bottomrule
-\end{tabular}
-\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge 
-with tactics from the proof of the tested theorem. The experiments was run with 
-a time out of 5 seconds on an older version of \tactictoe, as can be seen in 
-the low 
-success rate of the
-default strategy.} 
-\end{table}
-
-
-And we observe in Table~\ref{tab:featue_param} a 
-slight increase compared to the default \tactictoe. We then included all 
-vectors that contains tactics that can be rebuild from tokens of
-tactics in our database. 
-Our search algorithm proved two proofs less that if it had perfect prediction 
-so it means that our prediction algorithm (policy) is doing a good  job at 
-least in this early settings where proofs are easy. 
-Suprisingly, being able to recombine tokens of tactics from the database is 
-barely sufficient to prove more than half of the theorems in this dataset. The 
-Therefore, additionally including in tactics theorems and terms that did not 
-appear in previous tactics is essential. Creating from scratch other arguments 
-may not help as much. This is why we restricted ourselves to predicting 
-arguments of theorem list type and the term type during tactic synthesis. 
-Finally our proof search algorithm sometimes fails even if it knows all the 
-tactic necessary. The two main reasons are that either a crucial tactic 
-exceeds its timeout or that the human proof is too deep to be rediscovered 
-(more than 10 steps long).In all those experiments orthogonalization is 
-performed with 
-radius 20.
+%\subsection{Increasing \tactictoe's knowledge}\label{sec:perfect_exp}
+%
+%\todo{decide to keep this section or not}
+%
+%We investigate what are the limits of \tactictoe and what benefits additional 
+%knowledge could provide. To this end, we will modify the set of features to 
+%include features vectors that should not be known in a regular experiment. We  
+%include some vectors from the recorded human proof and perform the proof 
+%search 
+%after the recording instead of before in all other experiments. This 
+%experiment 
+%is not fair and should only be compared to 
+%experiments in the same settings.
+%
+%For clarity, we will name the set of feature vectors that can be recorded from 
+%the current human proof $\mathbb{H}$ and the set of vectors recorded from 
+%previous proofs $\mathbb{P}$ (consistent with previous notation?). We note 
+%$\pi_1^1$ the projection on the 
+%first component returning the label of a feature vector. And we define the 
+%function $T$ that takes a tactic and return the list of its tokens.
+%
+%We will progressively add bigger and bigger 
+%subset of $\mathbb{H}$ to $\mathbb{P}$ and observe the effect on the proof 
+%search success rates. 
+%
+%Here are the list of increasing non-trivial subsets of $\mathbb{H}$ we 
+%consider:
+%\begin{align*}
+%\mathbb{F}_1 &= \lbrace (t,g) \in \mathbb{H}\ |\ t \in \pi_1^1(\mathbb{P})  
+%   \rbrace \\
+%\mathbb{F}_2 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \rbrace\\
+%\mathbb{F}_3 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem} \rbrace\\
+%\mathbb{F}_4 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists 
+%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem or a term} 
+%\rbrace\\
+%\end{align*}
+%
+%
+%$\mathbb{F}_1$ is an approximation of what we could get if we had perfect 
+%prediction for those tactics.
+%
+%\begin{table}[h]
+%\centering\ra{1.3}
+%\small
+%\begin{tabular}{lll}
+%\toprule
+% & Additional features & Solved \\
+%\midrule
+%$\emptyset$   & none & 119 (43.6\%) \\ %NONEv2
+%$\mathbb{F}_1$& tactic prediction & 121 (44.3\%) \\ %AFTERTACv2
+%$\mathbb{F}_2$& token recombination  & 137 (50.2\%) \\ %AFTERTOKENv2
+%$\mathbb{F}_3$& theorem prediction  & 207 (75.8\%) \\ %AFTERTHMTHMv2
+%$\mathbb{F}_4$& term prediction & 223 (81.7\%) \\ %AFTERALLv2
+%$\mathbb{H}$  & all & 239 (87.5\%) \\ %AFTERSMALLv2
+%% $AFTERv2$       & $\mathfrak{H}$ & 245 (89.7\%)  \\
+%\bottomrule
+%\end{tabular}
+%\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge 
+%with tactics from the proof of the tested theorem. The experiments was run 
+%with 
+%a time out of 5 seconds on an older version of \tactictoe, as can be seen in 
+%the low 
+%success rate of the
+%default strategy.} 
+%\end{table}
+%
+%
+%And we observe in Table~\ref{tab:featue_param} a 
+%slight increase compared to the default \tactictoe. We then included all 
+%vectors that contains tactics that can be rebuild from tokens of
+%tactics in our database. 
+%Our search algorithm proved two proofs less that if it had perfect prediction 
+%so it means that our prediction algorithm (policy) is doing a good  job at 
+%least in this early settings where proofs are easy. 
+%Suprisingly, being able to recombine tokens of tactics from the database is 
+%barely sufficient to prove more than half of the theorems in this dataset. The 
+%Therefore, additionally including in tactics theorems and terms that did not 
+%appear in previous tactics is essential. Creating from scratch other arguments 
+%may not help as much. This is why we restricted ourselves to predicting 
+%arguments of theorem list type and the term type during tactic synthesis. 
+%Finally our proof search algorithm sometimes fails even if it knows all the 
+%tactic necessary. The two main reasons are that either a crucial tactic 
+%exceeds its timeout or that the human proof is too deep to be rediscovered 
+%(more than 10 steps long).In all those experiments orthogonalization is 
+%performed with 
+%radius 20.
 
 
 \subsection{Full-scale experiment}~\label{sec:full_exp} 
@@ -1194,20 +1249,20 @@ radius 20.
 %Best parameters + comparison with holyhammer.
 
 The best \tactictoe parameters are chosen for the full-scale evaluation. Yet,
-\eprover calls are not included in the best \tactictoe strategy for fairer 
-comparison.
+\eprover asynchronous calls are not included in the best \tactictoe strategy 
+for fairer comparison.
 
 \begin{table}[h!]
 \centering\ra{1.3}
 \small
-\begin{tabular}{llc}
+\begin{tabular}{lc}
 \toprule
-  & Parameters & Solved \\
+  & Solved (60s) \\
 \midrule
-   \eprover   & & 2472 (34.5\%)\\ 
-   \tactictoe & best parameters without \eprover & 4741 (66.2\%)\\
+   \eprover   & 2472 (34.5\%)\\ 
+   \tactictoe & 4741 (66.2\%)\\
 \midrule
-   Total  &              & 4946 (69.0\%)\\
+   Total  & 4946 (69.0\%)\\
 \bottomrule
 \end{tabular}
 \caption{Evaluation on 7164 top-level theorems of the \holfour standard library 
@@ -1253,17 +1308,18 @@ and most proofs are usually completed by rewriting tactics.
 %also probably give a 3 percent increase in the number of proven theorems as 
 %shown by a recent 1 in 10 evaluation on the full library.
 
-\paragraph{Self-learning}\todo{explain better or remove or move to future work}
-All our feature vectors have been learned form human proofs. We now can now 
-also add tactic-goal pairs that appears in final \tactictoe's proof. To prevent 
-duplication of effort, orthogonalization of those 
-tactics is essential to have a beneficial effect.
-Since recording and re-proving are intertwined, the additional data is 
-available for the next proof search.
-The hope is that the algorithm will improve faster by learning from its own 
-discovered proofs than from the human proof 
-scripts~\cite{DBLP:conf/cade/Urban07}. Side experiments indicate that 
-self-learning improves \tactictoe's success rate by less than one percent.
+%\paragraph{Self-learning}\todo{explain better or remove or move to future work}
+%All our feature vectors have been learned form human proofs. We now can now 
+%also add tactic-goal pairs that appears in final \tactictoe's proof. To 
+%prevent 
+%duplication of effort, orthogonalization of those 
+%tactics is essential to have a beneficial effect.
+%Since recording and re-proving are intertwined, the additional data is 
+%available for the next proof search.
+%The hope is that the algorithm will improve faster by learning from its own 
+%discovered proofs than from the human proof 
+%scripts~\cite{DBLP:conf/cade/Urban07}. Side experiments indicate that 
+%self-learning improves \tactictoe's success rate by less than one percent.
 
 
 \subsection{Complexity of the proofs}
@@ -1938,8 +1994,9 @@ ITP and ATP proofs, and reused in high-level proof search.
 % + More training than just orthogonalization of tactics.
 
 \paragraph{Acknowledgments}\label{sect:acks}
-This work has been supported by the
-ERC Consolidator grant no.\ 649043 \textit{AI4REASON} and ERC starting
+We would like to thank Lasse Blaauwbroek for his insightful comments which
+contributed to improve the quality of this paper. This work has been supported 
+by the ERC Consolidator grant no.\ 649043 \textit{AI4REASON} and ERC starting
 grant no.\ 714034 \textit{SMART}.
 
 \bibliographystyle{plain}
