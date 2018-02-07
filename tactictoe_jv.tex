@@ -126,7 +126,7 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
 %\usepackage[scaled=.95]{couriers}
 \lstdefinelanguage{SML}%
 {columns=fullflexible,
-  keywords={THEN,THENL,val,open,store_thm,fun,fn},%
+  keywords={THEN,THENL,val,open,store_thm,fun,fn,let,in,end},%
   frame=none,
   sensitive=true,
   keywordstyle=\fontfamily{lmss}\footnotesize\selectfont,%
@@ -150,7 +150,7 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
 
 \lstdefinelanguage{SMLSmall}%
 {columns=fullflexible,
-  keywords={THEN,THENL,val,open,store_thm,fun,fn},%
+  keywords={THEN,THENL,val,open,store_thm,fun,fn,let,in,end},%
   frame=none,
   sensitive=true,
   keywordstyle=\fontfamily{lmss}\scriptsize\selectfont,%
@@ -1776,15 +1776,20 @@ Interactive usage example.
 
 \begin{lstlisting}[language=SMLSmall]
 tactictoe ([], ``countable (UNIV:num set)``);
-let fun RWTAC thms = SRW_TAC [] thms in RWTAC [(fetch "pred_set"
-"countable_def"), (fetch "pred_set" "INJ_DEF")] THEN Q.EXISTS_TAC `\\x.x` THEN
-METIS_TAC [] end
+
+let fun RWTAC thms = SRW_TAC [] thms in 
+  RWTAC [fetch "pred_set""countable_def", fetch "pred_set" "INJ_DEF"] THEN 
+  Q.EXISTS_TAC `\\x.x` THEN
+  METIS_TAC []
+end
 \end{lstlisting}
 
 \begin{lstlisting}[language=SMLSmall]
 tactictoe ([], ``count (n+m) DIFF count n = IMAGE ($+n) (count m)``);
-SRW_TAC [ARITH_ss] [(fetch "pred_set" "EXTENSION"), EQ_IMP_THM] THEN
-Q.EXISTS_TAC `x - n` THEN SRW_TAC [ARITH_ss] []
+
+SRW_TAC [ARITH_ss] [fetch "pred_set" "EXTENSION", EQ_IMP_THM] THEN
+Q.EXISTS_TAC `x - n` THEN 
+SRW_TAC [ARITH_ss] []
 \end{lstlisting}
 
 
@@ -1923,20 +1928,23 @@ available in today's large formal proof corpora.
 
 
 There is plenty of future work in the directions opened here.
+
 To improve the quality of the predicted tactics,
-we would like to predict their arguments independently.
-To be even more precise, the relation between the
-tactic arguments and their respective goals could be used.
-Additionally, we could aim for a tighter combination with the ATP-based hammer
-systems. This would perhaps make \tactictoe slower, but it might allow
-finding proofs that are so far both beyond the ATPs and \tactictoe's
-powers. The idea of reusing high-level blocks of reasoning and
-then learning their selection could also be explored
-further in various contexts. Larger frequent blocks of (instantiated) tactics
-in ITPs as well as blocks of inference patterns in ATPs could be detected
-automatically, their
-usefulness in particular proof situations learned from the large corpora of
-ITP and ATP proofs, and reused in high-level proof search.
+we would like to predict other type of arguments independently, as it was done 
+for theorems. In this direction, the most interesting type of arguments to 
+predict next are terms as they are ubiquitous in tactics. Further along the way,
+we would like to be to able to create new tactics not only by changing their 
+arguments but also by programming it with any construction available in a
+programming language such as \sml.
+
+There is still something to be gain by having a better guidance for the search. 
+That is why se also want to experiment with stronger machine learning algorithm 
+such as deep neural networks as a model for the policy and evaluation in MCTS.
+This quality of this model could be enhanced by additional data augmentation by 
+training and testing existing and synthesized tactics.
+Another possible way to guide the proof search is by conjecturing intermediate 
+steps \cite{}, allowing to prove a difficult theorem by decomposing it into 
+multiple easy steps.
 
 
 %Future work:
