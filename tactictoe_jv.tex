@@ -253,7 +253,11 @@ Here, the ITP user operates on a proof state, initially the desired conjecture, 
 Each tactic performs a sound transformation of the proof state: essentially, it promises that if the resulting proof state can be solved, then so can the starting one.
 This gives rise to a machine learning problem: can we learn a mapping from a given proof state to the next tactic (or sequence of tactics) that will productively advance the proof towards a solution?
 
-\paragraph{Two ways of representing a formulas.}\todo{RK: Actually I don't know what two ways you mean...?}
+\paragraph{Goals and theorems.} 
+A goal is represented as a sequent. Each sequent is composed of 
+a list of assumptions and a conclusion which are higher-order logic formulas. 
+When a goal is proven, it becomes a theorem. And if the developer gives it a 
+name then we refer to it as a top-level theorem.
 
 \paragraph{Theories and script files.}
 Formal developments in \holfour are organized into named theories, which are concretely implemented by \emph{script} files defining modules in the functional programming language \sml.
@@ -266,12 +270,10 @@ However, the full power of \sml is always available for users to define their ow
 %Such a combination of tactics will be called a \emph{proof script} when it proves a theorem stated in a theory.
 
 \paragraph{Tactics in \holfour.}
-Considering concrete implementation details now, a \emph{tactic} is a function that takes a goal (or proof obligation) and returns a list of goals together with a validation function.
-\todo{flesh the below out}
-Input of the prediction: goal If a tactic produces no goals then its input goal is solved.
-Define tactical etc maybe import graphic that explain how tactic works form the
-presentations.
-mention proof obligations (use this word) return by a tactic.
+Considering concrete implementation details now, a \emph{tactic} is a function 
+that takes a goal (or proof obligation) and returns a list of goals together 
+with a validation function. \todoi{do not mention validation?}
+
 
 \subsection{Contributions}
 This work is an extension of the work described in \cite{tgckju-lpar17}.
@@ -307,7 +309,7 @@ applied on the generated proof.
 \end{itemize}
 
 
-\section{Proof Search Tree}\label{sec:prelim}
+\section{Preliminaries}\label{sec:prelim}
 
 The different components of \tactictoe revolves around the concept of a
 search tree. The following definitions are made relative to a static search
@@ -438,9 +440,35 @@ way, each unsolved node contains a unique open goal.
 \end{definition}
 
 
-We can also judge the productivity of a tactic by its contribution to the
-search
-tree.
+
+some text to add here.
+
+\begin{definition}\label{def:desc}(Children, descendant, active node)\\
+The children of a goal $g$ is a set of nodes defined by:
+\[\mathit{Children}(g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace\]
+
+By extension, we define the children of a node $a$ by:
+\[\mathit{Children}(a) = \bigcup_{g \in G(a)} \mathit{Children}(g) \]
+
+The descendants of $a$ by:
+\begin{align*}
+\mathit{Descendant}^{0}(a) &=_{def} \lbrace a \rbrace \\
+\mathit{Descendant}^{n+1}(a) &=_{def} \bigcup_{a' \in \mathit{Descendant}^{n}(a)}
+\mathit{Children}(a') \\
+\mathit{Descendant}(a) &=_{def} \bigcup_{n \in \mathbb{N}} \mathit{Descendant}^n(a)\\
+\end{align*}
+
+And the ancestors of $a$ by:
+\[\mathit{Ancestors}(a) =_{def} \lbrace b \in \mathbb{A} \ | \ a \in 
+Descendant(b) \rbrace\]
+
+An active node is by definition a node that is not a descendant of a
+solved node. Non-active nodes are not worth exploring.
+\end{definition}
+
+
+We can now judge the productivity of a tactic by its contribution to the
+search tree.
 
 \begin{definition} (Productive tactic)
 The application of a tactic on an open goal is called productive if and only if
@@ -449,7 +477,8 @@ all the following conditions are satisfied:
 \item It does not fail or timeout. To prevent tactics from looping, we
 interrupt tactics after a short amount of time (0.05 seconds).
 \item It does not loop. Its output does not contain any goals that appears in
-its ancestor nodes.
+the ancestor of the node of the current 
+goal.
 \item It is not a parallel step. Its output is not equal or a superset
 of a list of goals produced from the same open goal.
 \end{itemize}
@@ -461,28 +490,9 @@ cache allows faster re-exploration of confluent branches which remain
 separated in the search tree.
 \end{definition}
 
-some text to add here.
 
-\begin{definition}\label{def:desc}(Children, descendant, active node)\\
-We now define what are the children and the descendants of a node $a$. The
-children of a relative to a goal $g$ in $G(a)$
-is the set of nodes produced by tactics applied to $g$:
-\[\mathit{Children}(g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace\]
 
-We define the children of a node $a$ by:
-\[\mathit{Children}(a) = \bigcup_{g \in G(a)} \mathit{Children}(g) \]
 
-And the descendants of $a$ by:
-\begin{align*}
-\mathit{Descendant}^{0}(a) &=_{def} \lbrace a \rbrace \\
-\mathit{Descendant}^{n+1}(a) &=_{def} \bigcup_{a' \in \mathit{Descendant}^{n}(a)}
-\mathit{Children}(a') \\
-\mathit{Descendant}(a) &=_{def} \bigcup_{n \in \mathbb{N}} \mathit{Descendant}^n(a)\\
-\end{align*}
-
-An active node is by definition a node that is not a descendant of a
-solved node. Non-active nodes are not worth exploring.
-\end{definition}
 
 \section{Prediction}\label{s:prediction}
 The learning-based selection of relevant lemmas significantly improves the
@@ -540,8 +550,8 @@ prior evaluation for MCTS.
 
 \subsection{Feature Extraction}\label{sec:features}
 The three objects considered are different representation of mathematical
-formulas. Therefore, we start by describing which features we extract can
-extract terms. From there, we extend the extraction mechanism
+formulas. Therefore, we start by describing features for terms. From there, we 
+extend the extraction mechanism
 to goals, theorems and lists of goals. Duplicated features are always removed
 so that each object has an associated set of features.
 
@@ -599,10 +609,10 @@ conjuncts from the same domain may also help to solve it.
 \subsection{Preselection}\label{sec:dependencies}
 
 In order to speed up the predictions during the search for a proof of a
-conjecture $c$, we preselect 500 tactic-goal pairs and theorems.
-Preselection for list of goals is induced by the preselection of input
-goals in tactic-goal pairs. Those will be the only objects available to
-\tactictoe's search algorithm for proving $c$.
+conjecture $c$, we preselect 500 tactic-goal pairs and 500 theorems and a 
+larger number of list of goals induced by the selection of tactic-goal pairs. 
+Preselected objects will 
+be the only objects available to \tactictoe's search algorithm for proving $c$.
 
 The first idea is to select tactic-goal pairs and theorems by their distance to
 the conjecture. However, this selection may not be adapted to later stages of
