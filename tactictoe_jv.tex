@@ -1325,6 +1325,38 @@ dashed, mark repeat=100, mark phase=0, black!100\\
 Estimate the difficulty of the proof by the number of tactic units.
 
 
+
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+  legend style={anchor=south east, at={(0.9,0.1)}},
+  width=\textwidth,
+  height=0.7*\textwidth,xmin=0, xmax=60,
+  ymin=0, ymax=4800,
+  xtick={},
+  ytick={},
+  cycle list name=my black]
+\addplot table[x=time, y=solved] {data/tactictoe_time};
+\addplot table[x=time, y=solved] {data/eprover_time};
+\legend{\tactictoe,\eprover}
+\end{axis}
+\end{tikzpicture}
+\caption{Number of problem solved in less than x seconds.}
+\end{figure}
+\eprover uses at least two strategies where as \tactictoe only uses one set
+of parameters.
+
+
+
+
+
+
+
+
+
+
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=1]
@@ -1353,45 +1385,29 @@ Estimate the difficulty of the proof by the number of tactic units.
   cycle list name=my black]
 \addplot table[x=length, y=proofs] {data/tactictoe_proof_length};
 \addplot table[x=length, y=proofs] {data/original_proof_length};
-\legend{\tactictoe proofs,original proofs}
+\legend{\tactictoe proofs,human proofs}
 \end{axis}
 \end{tikzpicture}
-\caption{Number of original human proofs and (minimized see Section) \tactictoe
-proofs with
-a number $x$ of tactic
-units. For easier comparison of the distributions, the number of \tactictoe
-proofs was
-scaled by the inverse of \tactictoe's success rate $\frac{1}{0.662}$.}
+\caption{\label{fig:distrib}Number of proofs (y axis) with respect to their 
+length (x axis) in 
+number of tactic units. Comparison between the set of \tactictoe proofs and the 
+set of human proofs.}
 \end{figure}
 
-There are more in proportion \tactictoe small proofs than original human proofs.
-
-
-Increasing the timeout to more than 10 seconds would probably be beneficial as
-we can see that the slope of the curve is far for being flat in Fig~..
-
-
-\begin{figure}[h]
-\centering
-\begin{tikzpicture}[scale=1]
-\begin{axis}[
-  legend style={anchor=south east, at={(0.9,0.1)}},
-  width=\textwidth,
-  height=0.7*\textwidth,xmin=0, xmax=60,
-  ymin=0, ymax=4800,
-  xtick={},
-  ytick={},
-  cycle list name=my black]
-\addplot table[x=time, y=solved] {data/tactictoe_time};
-\addplot table[x=time, y=solved] {data/eprover_time};
-\legend{\tactictoe,\eprover}
-\end{axis}
-\end{tikzpicture}
-\caption{Number of problem solved in less than x seconds.}
-\end{figure}
-\eprover uses at least two strategies where as \tactictoe only uses one set
-of parameters.
-
+In order to appreciate the difficulty of the evaluation set from a human 
+perspective, the length distribution of human proofs in the 
+validation set is shown in Figure~\ref{fig:distrib}.  It is clear from the 
+graph that most of the proofs are short. The proofs found by tactictoe follows 
+about the same 
+distribution. This means that if \tactictoe finds a proof, there is about a 50 
+percent chance that it will be shorter than what a human would come up with.
+In Figure~\ref{fig:percentage}, we regroup the human proofs by their length to 
+see how well \tactictoe and \eprover performs on increased level of 
+difficulties. As expected, the longer the original proof is, the harder it is 
+for \tactictoe and \eprover to re-prove the theorem by their own mean. 
+The performance of \tactictoe is compelling with more than half of the theorem 
+that required a proof of length six being reproven. It is also consistently 
+better than \eprover for any proof length.
 
 \begin{figure}[h]
 \centering
@@ -1409,23 +1425,13 @@ of parameters.
 \legend{\tactictoe,\eprover}
 \end{axis}
 \end{tikzpicture}
-\caption{Percentage of problem solved with respect to the length of the
+\caption{\label{fig:percentage}Percentage of problem solved with respect to the 
+length of the
 original proof until length 20.}
 \end{figure}
 
-%60 seconds experiment +
-%adding theorems from the namespace and removing
-%additionally saved theorems +
-%recording proofs from Prove.
 
-%
-%The progress cannot be attributed only to the time increase but to testing and
-%debugging of parameters.
-
-
-\todoi{Remove feature vectors from the paper}
 \section{Proof Recording}\label{sec:recording}
-
 Recording proofs in an LCF-style proof assistant can be done at different
 levels.
 In \holfour all existing approaches relied on modifying the kernel. This was
@@ -1439,7 +1445,7 @@ therefore
 discuss recording proofs in an LCF-style proof assistant, with the focus on
 \holfour
 in this section.
-
+<
 Rather than relying on the underlying programming language, we parse the
 original theory file containing proof scripts. This enables us to extract the
 code of each tactic.
