@@ -149,7 +149,8 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
 
 \lstdefinelanguage{SMLSmall}%
 {columns=fullflexible,
-  keywords={THEN,THENL,val,open,store_thm,fun,fn,let,in,end},%
+  keywords={THEN,THENL,val,open,store_thm,fun,fn,let,in,end,true,
+  while,do,if,then,else,break,return,;},%
   frame=none,
   sensitive=true,
   keywordstyle=\fontfamily{lmss}\scriptsize\selectfont,%
@@ -168,6 +169,7 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
    {'a}{{$\alpha$}}1%
    {'b}{{$\beta$}}1%
    {ldots}{$\ldots$}1%
+   {emptyset}{$\emptyset$}1%
    {!}{$\forall$}1%
    {fff}{{DB.fetch}}1%
    {``}{\hspace{-.5mm}`\hspace{-1mm}`}1%
@@ -198,7 +200,7 @@ of the HOL4 ITP.
 TacticToe first learns from many proof scripts
 the relevance of tactics in particular proof situations.
 This learned knowledge is then used in a Monte Carlo tree search algorithm that explores the most promising tactic-level proof paths.
-On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.2\%
+On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.4\%
 of the 7164 theorems in HOL4's standard library whereas
 Eprover solves 34.5\%. The success rate rises to 69.0\% by combining the
 results of both provers.
@@ -322,12 +324,11 @@ $(\mathbb{T},\mathbb{G},\mathbb{A},T,G,A)$
 that respects the following conditions:
 \begin{itemize}
 \item $\mathbb{T}$ is a set of tactics, $\mathbb{G}$ is a set of goals
- and $\mathbb{A}$ is a set of nodes.
+ and $\mathbb{A}$ is a set of nodes representing lists of goals.
 \item $T$ is a total function from $\mathbb{G}$ to $\mathcal{P}(\mathbb{T})$. It takes a
 goal and return the set of tactics already applied to this goal.
 \item $G$ is a total function from $\mathbb{A}$ to $\mathcal{P}(\mathbb{G})$. It takes a
-node and returns the set of goals in this node.
-
+node and returns the list of goals of this node.
 \item $A$ is a partial function from $\mathbb{G} \times \mathbb{T}$ to
 $\mathbb{A}$. It takes a goal and a tactic and returns the node produced by the
 application of the tactic to the goal. Its support $\mathit{Support}(A)$ is by
@@ -337,9 +338,9 @@ definition $\lbrace (g,t) \in
 \item If $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$. This is the
 main condition. The result of the application of a tactic $t$
 to a goal $g$ is exactly the list of goals contained in the node produced by
-$t$ from
-$g$.
+$t$ from $g$.
 \end{itemize}
+
 
 Additional constraints such as acyclicity and the fact that there is exactly
 one root node are properties of this graph that are preserved during the
@@ -349,7 +350,7 @@ is not specified in this definition.
 
 If no explicit order is given, we assume that any set is equipped with an
 arbitrary order. In this way, we can access the $n^{th}$ member of a set $s$ by
-writing $s_n$. In Figure~\ref{fig:choice}, $(G(a_j))_i$ is written a $g_j^i$.
+writing $s_n$. In Figure~\ref{fig:choice}, $(G(a_j))_i$ is written as $g_j^i$.
 
 \begin{figure}{}
 \begin{center}
@@ -393,7 +394,7 @@ its goal.}
 \label{fig:choice}
 \end{figure}
 
-Starting from the bottom parent node, we can construct children of a goal of
+Starting from the parent node, we can construct children of a goal of
 this node by choosing a goal $g_i^0$ on this node and choosing tactics
 $t_1,t_2,\ldots$ to
 apply to this goal. Here the result produces new nodes each containing a list
@@ -470,25 +471,18 @@ some text to add here.
 We now define what are the children and the descendants of a node $a$. The
 children of a relative to a goal $g$ in $G(a)$
 is the set of nodes produced by tactics applied to $g$:
-  \[\mathit{Children}(a,g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace \]
+\[\mathit{Children}(g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace\]
 
-If $g$ is the open goal of $a$, then we simply call children of a the
-children of $a$ relative to $g$. We define:\\
+We define the children of a node $a$ by:
+\[\mathit{Children}(a) = \bigcup_{g \in G(a)} \mathit{Children}(g) \]
 
-Extended children of $a$ by:
-  \[\mathit{ExtChildren}(a) = \bigcup_{g \in G(a)} \mathit{Children}(a,g) \]
-
-Descendants of $a$ by:
+And the descendants of $a$ by:
 \begin{align*}
 \mathit{Descendant}^{0}(a) &=_{def} \lbrace a \rbrace \\
 \mathit{Descendant}^{n+1}(a) &=_{def} \bigcup_{a' \in \mathit{Descendant}^{n}(a)}
-\mathit{ExtChildren}(a') \\
+\mathit{Children}(a') \\
 \mathit{Descendant}(a) &=_{def} \bigcup_{n \in \mathbb{N}} \mathit{Descendant}^n(a)\\
 \end{align*}
-
-%Descendants of $a$ through $g$ by:
-%\[Descendant(a,g) =_{def}
-%  \lbrace a \rbrace \cup \bigcup_{a' \in Children(a,g)} Descendant(a')\]
 
 An active node is by definition a node that is not a descendant of a
 solved node. Non-active nodes are not worth exploring.
@@ -890,23 +884,23 @@ steps which grow the search tree.
 Through node extension steps the search tree grows and the number of paths to
 explore increases. To decide which node to extend next, a evolving value for
 each node is given in Definition~\ref{def:value}. The algorithm that performs
-node selection starts from the root of the search tree. X, it repeatedly choses
-the children with the highest values. Depending on the widening policy, it can
-stop at any chosen node on during its descent through the tree. We now give a
-more precise description of
-the algorithm with the following pseudo-code:
+node selection starts from the root of the search tree. From its current node,
+it choses among the children of the open goal the one with the highest value. 
+If its value is higher than the widening policy, then the selected child 
+becomes the current node, otherwise the final result of node selection is the 
+current node. The node selection algorithm can be written as the following 
+pseudo-code:
 
-\todoi{Replace alltt environment by something prettier}
-\begin{alltt}
-ChosenNode = Root(Tree);
+\begin{lstlisting}[language=SMLSmall]
+CurrentNode = Root(Tree);
 while true do
-  if Children(ChosenNode) = \(\emptyset\) then break;
-  (BestChild, BestValue) = CompareChildren (ChosenNode);
-  if WideningPolicy (ChosenNode) \(\geq\) BestValue then break;
-  ChosenNode = BestChild
+  if Children(CurrentNode) = emptyset then break;
+  (BestChild, BestValue) = CompareChildren (CurrentNode);
+  if WideningPolicy (ChosenNode) >= BestValue then break;
+  CurrentNode = BestChild
 end;
-return ChosenNode;
-\end{alltt}
+return CurrentNode;
+\end{lstlisting}
 
 \begin{definition}\label{def:value}(Value)
 The value of the $i^th$ child $a_i$ of a parent $p$ is determined by:
@@ -1253,7 +1247,7 @@ for fairer comparison.
   & Solved (60s) \\
 \midrule
    \eprover   & 2472 (34.5\%)\\
-   \tactictoe & 4741 (66.2\%)\\
+   \tactictoe & 4760 (66.4\%)\\
 \midrule
    Total  & 4946 (69.0\%)\\
 \bottomrule
@@ -1350,13 +1344,6 @@ of parameters.
 
 
 
-
-
-
-
-
-
-
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}[scale=1]
@@ -1388,10 +1375,7 @@ of parameters.
 \legend{\tactictoe proofs,human proofs}
 \end{axis}
 \end{tikzpicture}
-\caption{\label{fig:distrib}Number of proofs (y axis) with respect to their 
-length (x axis) in 
-number of tactic units. Comparison between the set of \tactictoe proofs and the 
-set of human proofs.}
+\caption{\label{fig:distrib}Number of proof scripts with $x$ tactic units.}
 \end{figure}
 
 In order to appreciate the difficulty of the evaluation set from a human 
@@ -1962,7 +1946,7 @@ commands in the priority queue based on positive and negative examples.
 We proposed a new proof assistant automation technique which combines
 tactic-based proof search with machine learning tactic prediction
 Its implementation,
-\tactictoe, achieves an overall performance of 66.2\% theorems on 7164
+\tactictoe, achieves an overall performance of 66.4\% theorems on 7164
 theorems
 of the \holfour standard library surpassing \eprover with
 auto-schedule. Its
