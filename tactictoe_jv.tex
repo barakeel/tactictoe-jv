@@ -253,29 +253,25 @@ Here, the ITP user operates on a proof state, initially the desired conjecture, 
 Each tactic performs a sound transformation of the proof state: essentially, it promises that if the resulting proof state can be solved, then so can the starting one.
 This gives rise to a machine learning problem: can we learn a mapping from a given proof state to the next tactic (or sequence of tactics) that will productively advance the proof towards a solution?
 
-Two ways of representing a formulas.
-Definition of a tactic in \holfour. In this research, we will take the definition
-that a tactic takes a goal and returns a list of goals.
-Input of the prediction: goal
-If a tactic produces no goals then its input goal is solved.
+\paragraph{Two ways of representing a formulas.}\todo{RK: Actually I don't know what two ways you mean...?}
+
+\paragraph{Theories and script files.}
+Formal developments in \holfour are organized into named theories, which are concretely implemented by \emph{script} files defining modules in the functional programming language \sml.
+Each script file corresponds to a single theory, and contains definitions of types and constants as well as statements of theorems together with their proofs.
+In practice, tactic-based proofs are written in an informally specified \emph{embedded domain-specific language}: the language consisting of pre-defined tactics and \emph{tacticals} (functions that operate on tactics).
+However, the full power of \sml is always available for users to define their own tactics or combinations thereof.
+%To automate proof search strategies a user can implement programming language functions that correspond to more involved proofs.
+%Functions that correspond to backward proofs, called tactics, are combined with each other with the help of tacticals (functions that takes
+%tactics as arguments).
+%Such a combination of tactics will be called a \emph{proof script} when it proves a theorem stated in a theory.
+
+\paragraph{Tactics in \holfour.}
+Considering concrete implementation details now, a \emph{tactic} is a function that takes a goal (or proof obligation) and returns a list of goals together with a validation function.
+\todo{flesh the below out}
+Input of the prediction: goal If a tactic produces no goals then its input goal is solved.
 Define tactical etc maybe import graphic that explain how tactic works form the
 presentations.
-
 mention proof obligations (use this word) return by a tactic.
-
-\holfour proofs are organized in theory files.
-Each theory file contains definitions and statements of theorems together with
-their proofs. Those theories and the contained proofs
-are written
-in the functional programming language \sml. To automate
-proof search strategies a user can implement programming language functions
-that correspond to more involved proofs.
-Functions that correspond to backward proofs, called tactics, are combined with
-each other with the help of
-tacticals (functions that takes
-tactics as arguments). Such a combination of tactics will be called a
-\emph{proof script} when it
-proves a theorem stated in a theory.
 
 \subsection{Contributions}
 This work is an extension of the work described in \cite{tgckju-lpar17}.
@@ -1378,19 +1374,19 @@ of parameters.
 \caption{\label{fig:distrib}Number of proof scripts with $x$ tactic units.}
 \end{figure}
 
-In order to appreciate the difficulty of the evaluation set from a human 
-perspective, the length distribution of human proofs in the 
-validation set is shown in Figure~\ref{fig:distrib}.  It is clear from the 
-graph that most of the proofs are short. The proofs found by tactictoe follows 
-about the same 
-distribution. This means that if \tactictoe finds a proof, there is about a 50 
+In order to appreciate the difficulty of the evaluation set from a human
+perspective, the length distribution of human proofs in the
+validation set is shown in Figure~\ref{fig:distrib}.  It is clear from the
+graph that most of the proofs are short. The proofs found by tactictoe follows
+about the same
+distribution. This means that if \tactictoe finds a proof, there is about a 50
 percent chance that it will be shorter than what a human would come up with.
-In Figure~\ref{fig:percentage}, we regroup the human proofs by their length to 
-see how well \tactictoe and \eprover performs on increased level of 
-difficulties. As expected, the longer the original proof is, the harder it is 
-for \tactictoe and \eprover to re-prove the theorem by their own mean. 
-The performance of \tactictoe is compelling with more than half of the theorem 
-that required a proof of length six being reproven. It is also consistently 
+In Figure~\ref{fig:percentage}, we regroup the human proofs by their length to
+see how well \tactictoe and \eprover performs on increased level of
+difficulties. As expected, the longer the original proof is, the harder it is
+for \tactictoe and \eprover to re-prove the theorem by their own mean.
+The performance of \tactictoe is compelling with more than half of the theorem
+that required a proof of length six being reproven. It is also consistently
 better than \eprover for any proof length.
 
 \begin{figure}[h]
@@ -1409,7 +1405,7 @@ better than \eprover for any proof length.
 \legend{\tactictoe,\eprover}
 \end{axis}
 \end{tikzpicture}
-\caption{\label{fig:percentage}Percentage of problem solved with respect to the 
+\caption{\label{fig:percentage}Percentage of problem solved with respect to the
 length of the
 original proof until length 20.}
 \end{figure}
@@ -1684,7 +1680,7 @@ All in all, if a prettified tactic $t_p$ has the same effect its original
 $t_o$, we replace $t_p$ by $t_o$ in the proof.\\
 
 The total effect on the readability of a proof script is depicted in
-Example~\ref{ex:pretty}. 
+Example~\ref{ex:pretty}.
 \todo{run without prettification}
 \begin{example}\label{ex:pretty}\ \\
 Discovered proof script for the theorem \texttt{EVERY\_MAP}
