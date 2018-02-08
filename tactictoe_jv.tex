@@ -95,14 +95,13 @@
 %\title{TacticToe: Smart guidance in tactical proof search}
 %\title{TacticToe: Proof  by Tactic Selection}
 \title{TacticToe: Learning the Game of Tactics}
-%\title{TacticToe: Learning the Tactic Game}
 %\title{TacticToe: Automatic tactic-level proof generation}
 
 \author{\mbox{Thibault Gauthier} \and \mbox{Cezary Kaliszyk} \and \mbox{Josef
 Urban} \and \mbox{Ramana Kumar} \and \mbox{Michael Norrish}}
 
 \authorrunning{Gauthier et al.}
-%\titlerunning{TacticToe: Learning to Reason with HOL4 Tactics}
+%\titlerunning{TacticToe: Learning the Game of Tactics}
 
 \institute{Thibault Gauthier and Cezary Kaliszyk \at
 Department of Computer Science, University of Innsbruck,
@@ -873,8 +872,8 @@ contain using the following evaluation function:
 
 \subsection{Initialization}
 The input of the algorithm is a goal $g$ that we want to prove.
-Therefore the search tree starts with only one node containing the singleton
-$g$ and an ordered list of predicted tactics for the goal $g$.
+Therefore the search tree starts with only one node the list of goals
+$[g]$ and an ordered list of predicted tactics for the goal $g$.
 Then, the MCTS algorithm alternates node selection steps and node extension
 steps which grow the search tree.
 
@@ -1578,7 +1577,7 @@ advice for something close to their common input goal. The tactic
 the tactic \texttt{REPEAT A} that is repetitively calling the tactic \texttt{A}
 until
 \texttt{A} has no effect. In this situation, it is often preferable to record
-only \texttt{REPEAT A} and any call to \texttt{A}. Otherwise during the
+only \texttt{REPEAT A} than calls to \texttt{A}. Otherwise during the
 proof search, we would have to make a branches created after each call of
 \texttt{A}.
 To sum up, we would like to record only the most general tactics which
@@ -1691,7 +1690,7 @@ All in all, if a prettified tactic $t_p$ has the same effect its original
 $t_o$, we replace $t_p$ by $t_o$ in the proof.\\
 
 The total effect on the readability of a proof script is depicted in
-Example~\ref{ex:pretty}.
+Example~\ref{ex:pretty}. 
 \todo{run without prettification}
 \begin{example}\label{ex:pretty}\ \\
 Discovered proof script for the theorem \texttt{EVERY\_MAP}

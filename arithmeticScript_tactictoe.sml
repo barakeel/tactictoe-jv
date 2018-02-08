@@ -9798,4 +9798,7 @@ end )
 ;
 val _ = ( )
 ;
-val _ = hhsRecord.end_thy "arithmetic"
+val _ = hhsRecord.end_thy "arithmetic";
+val _ = hhsTools.writel "arithmetic.analysis" ["test"]
+
+
