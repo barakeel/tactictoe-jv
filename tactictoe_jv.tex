@@ -1710,7 +1710,7 @@ Induct_on `l` THENL
 \end{lstlisting}
 \end{example}
 
-\section{Case Study}
+\section{Case Study}\todo{comment on the case study}
 In this section, we compare \tactictoe proof script with human proof script.
 
 Goal: \texttt{IS\_GCD\_UNIQUE} in theory \texttt{pred\_set}).
@@ -1940,22 +1940,11 @@ commands in the priority queue based on positive and negative examples.
 
 \section{Conclusion}\label{sec:concl}
 
-%A first successful use of orthogonalization techniques for theorems appeared in
-%a work on lemma mining~\cite{ckju-jsc15} in \hollight. Theorems were mined
-%from
-%proofs recorded at the kernel level. Because the number of recorded lemmas was
-%in millions, page ranking techniques was used as a filter to extract
-%``useful''
-%lemmas.
-
-\todoi{Is copied and modified}
 We proposed a new proof assistant automation technique which combines
-tactic-based proof search with machine learning tactic prediction
-Its implementation,
-\tactictoe, achieves an overall performance of 66.4\% theorems on 7164
-theorems
-of the \holfour standard library surpassing \eprover with
-auto-schedule. Its
+tactic-based proof search with machine learning prediction
+Its implementation, \tactictoe, achieves an overall performance of 66.4\% 
+theorems on 7164 theorems of the \holfour standard library surpassing \eprover 
+with auto-schedule. Its
 effectiveness is especially visible on
 theories which use inductive data structures, specialized decision procedures,
 and custom built simplification sets.
@@ -1965,41 +1954,21 @@ We therefore believe that predicting ITP tactics based on the current goal
 features is a very reasonable approach to automatically guiding proof search,
 and that accurate predictions can be obtained by learning from the knowledge
 available in today's large formal proof corpora.
-%And it seems to get us
-%closer to the way how humans learn to do theorem proving.
-
-
-
-There is plenty of future work in the directions opened here.
 
 To improve the quality of the predicted tactics,
 we would like to predict other type of arguments independently, as it was done
-for theorems. In this direction, the most interesting type of arguments to
+for theorems. In this direction, the most interesting arguments to
 predict next are terms as they are ubiquitous in tactics. Further along the way,
-we would like to be to able to create new tactics not only by changing their
-arguments but also by programming it with any construction available in a
-programming language such as \sml.
-
-There is still something to be gain by having a better guidance for the search.
+new tactics could be created by programming them with any construction 
+available in \sml. There is also something to be gain by 
+having a better guidance for the search.
 That is why se also want to experiment with stronger machine learning algorithm
 such as deep neural networks as a model for the policy and evaluation in MCTS.
 This quality of this model could be enhanced by additional data augmentation by
 training and testing existing and synthesized tactics.
-Another possible way to guide the proof search is by conjecturing intermediate
-steps \cite{}, allowing to prove a difficult theorem by decomposing it into
-multiple easy steps.
-
-
-%Future work:
-%  Promising techniques that could not be evaluated.
-%  + Orthogonalization of theorems~\cite{ckju-jsc15}.
-%  + Try harder and smarted on term predictions.
-%  \cite{conjecturing}
-%  + Self-learning.
-%+ MCTS was presented in manner that we only did the first step of
-%reinforcement
-%learning. CurrentPolicy becomes PriorPolicy.
-% + More training than just orthogonalization of tactics.
+Conjecturing suitable intermediate steps could also allow \tactictoe to solve 
+a problem which requires a long proof by decomposing it into multiple easy 
+steps.
 
 \paragraph{Acknowledgments}\label{sect:acks}
 We would like to thank Lasse Blaauwbroek for his insightful comments which
