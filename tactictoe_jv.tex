@@ -496,12 +496,14 @@ separated in the search tree.
 
 \section{Prediction}\label{s:prediction}
 The learning-based selection of relevant lemmas significantly improves the
-automation for hammers~\cite{BlanchetteGKKU16}. In \tactictoe, we adapt
-one of the strongest lemma selection
-methods: the modified distance-weighted \emph{$k$ nearest-neighbour}
-classifier~\cite{ckju-pxtp13,DudaniS76} to predict three different objects:
+automation for hammers~\cite{BlanchetteGKKU16}. In \tactictoe, we use the
+distance-weighted \emph{$k$ nearest-neighbour} classifier~\cite{DudaniS76}
+adapted for lemma selection~\cite{ckju-pxtp13}. It allows for hundreds of
+predictions per second, while maintaining very high prediction quality~\cite{femalecop}.
+Here it is used
+to predict three different kinds of objects:
  tactics, theorems and list of goals. The number of predicted objects $k$ is
- called the prediction radius.
+ called the \emph{prediction radius}.
 
 We first introduce specificities associated with the prediction of each object.
 In particular, we present the dataset from which objects are selected and the
@@ -516,8 +518,7 @@ proofs (see
 Section~\ref{sec:recording}).
 Then, during proof search, we order recorded goals according to their
 similarity with a targeted goal $g$ (usually the first pending goal of a node).
-This induces
-through the recorded pairs an
+The recorded pairs induce an
 order on tactics. The intuition is that tactics which have been successful on
 goals similar to $g$ should be tried first, since they are more likely to lead
 to a proof.
@@ -526,14 +527,14 @@ algorithm (see Section~\ref{sec:policy}).
 Tactic selection is also used to improve the quality of the database
 of tactics during orthogonalization (see Section~\ref{sec:ortho}).
 
-\paragraph{Theorems as Argument of Tactics}
+\paragraph{Theorems as Arguments of Tactics}
 We first collect a set of theorems for our theorem predictor to select from.
 It includes the \holfour theorem database and theorems from the local namespace.
 Predicted tactics during proof search and orthogonalization may include
 tactics where arguments (list of theorems) have been erased (see Section
 \ref{sec:synthesis}).
 We instantiate those tactics by theorems that are syntactically the closest to
-the targeted goal as they are more likely to help.
+the goal as they are more likely to help.
 The same algorithm selects suitable premises for ATPs integrated with
 \tactictoe (see Section~\ref{sec:atp}).
 
@@ -549,8 +550,9 @@ prior evaluation for MCTS.
 
 
 \subsection{Feature Extraction}\label{sec:features}
-The three objects considered are different representation of mathematical
-formulas. Therefore, we start by describing features for terms. From there, we 
+All the three kinds of considered objects to predict correspond to (different representations of)
+mathematical
+formulas. Therefore, we start by describing features for terms. From there, we
 extend the extraction mechanism
 to goals, theorems and lists of goals. Duplicated features are always removed
 so that each object has an associated set of features.
