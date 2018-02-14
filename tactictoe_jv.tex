@@ -1800,30 +1800,30 @@ understandable, it could replace its original in the \holfour standard library.
 
 
 
-To conclude, we also demonstrate the capabilities of \tactictoe on two goals 
-that do not have a proof in \holfour. 
+To conclude, we also demonstrate the capabilities of \tactictoe on a goal
+that did not have a proof in \holfour. 
 
+\todoi{commented out because the theorem exists in hoL4}.
+%The first goal, in Example~, states that the set of 
+%natural numbers is countable. \tactictoe starts from the definition of 
+%countability and injection then instantiate the result with the trivial 
+%injection and finalize the proof using the \metis. Here,
+%\tactictoe is able to find an instantiation for an existential quantifier 
+%because it is a common one. If a more complicated term was needed, \tactictoe 
+%would try to find an alternative proof that do not rely on an original
+%instantiation. This weakness could be mitigated by the introduction of term 
+%prediction in a future version of \tactictoe.
 
-The first goal, in Example~, states that the set of 
-natural numbers is countable. \tactictoe starts from the definition of 
-countability and injection then instantiate the result with the trivial 
-injection and finalize the proof using the \metis. Here,
-\tactictoe is able to find an instantiation for an existential quantifier 
-because it is a common one. If a more complicated term was needed, \tactictoe 
-would try to find an alternative proof that do not rely on an original
-instantiation. This weakness could be mitigated by the introduction of term 
-prediction in a future version of \tactictoe.
+%\begin{example}
+%\begin{lstlisting}[language=SMLSmall]
+%countable (UNIV:num set)
+%let fun RWTAC thms = SRW_TAC [] thms in
+%  RWTAC [countable_def, INJ_DEF] THEN Q.EXISTS_TAC `\\x.x` THEN METIS_TAC []
+%end
+%\end{lstlisting}
+%\end{example}
 
-\begin{example}
-\begin{lstlisting}[language=SMLSmall]
-countable (UNIV:num set)
-let fun RWTAC thms = SRW_TAC [] thms in
-  RWTAC [countable_def, INJ_DEF] THEN Q.EXISTS_TAC `\\x.x` THEN METIS_TAC []
-end
-\end{lstlisting}
-\end{example}
-
-The second goal, in Example~, \todoi{TG to RK: I am not sure what the count 
+In Example~, \todoi{TG to RK: I am not sure what the count 
 constant is doing.}
 
 \begin{example}
