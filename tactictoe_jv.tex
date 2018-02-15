@@ -181,17 +181,14 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
 \todo{JU review: Still feels more like an intro than an abstract. Could be
 shorter and punchier.}
 \begin{abstract}
-Formalization of mathematics in interactive theorem provers (ITPs)
-relies today on many proof automation methods.
-Some of these methods are general-purpose and with enough time they can prove any
-theorem. Many formalized proof scripts however also
-take advantage of specialized rules and theory-based strategies.
+Formalization of mathematics in interactive theorem provers (ITPs) relies today on many proof automation methods.
+Some of these methods are general-purpose and with enough time they can prove any provable conjecture.
+Many formalized proof scripts however also take advantage of specialized rules and theory-based strategies.
 In the HOL4 ITP system, practically all of them are implemented as \emph{tactics}.
 
 Automated theorem provers (ATPs) rely on parameterizable general
 strategies. Sometimes, a strategy can be specialized for only one theory as in
-SMT solving. But it is difficult for an automated theorem prover to rely on
-rules tailored for a particular case.
+SMT solving. But it is difficult for an ATP to rely on rules tailored for a particular case.
 Indeed, this would require implementing many specific rules and more
 importantly figuring out in which cases they can be applied.
 
@@ -253,10 +250,10 @@ Here, the ITP user operates on a proof state, initially the desired conjecture, 
 Each tactic performs a sound transformation of the proof state: essentially, it promises that if the resulting proof state can be solved, then so can the starting one.
 This gives rise to a machine learning problem: can we learn a mapping from a given proof state to the next tactic (or sequence of tactics) that will productively advance the proof towards a solution?
 
-\paragraph{Goals and theorems.} 
-A goal is represented as a sequent. Each sequent is composed of 
-a list of assumptions and a conclusion which are higher-order logic formulas. 
-When a goal is proven, it becomes a theorem. And if the developer gives it a 
+\paragraph{Goals and theorems.}
+A goal is represented as a sequent. Each sequent is composed of
+a list of assumptions and a conclusion which are higher-order logic formulas.
+When a goal is proven, it becomes a theorem. And if the developer gives it a
 name then we refer to it as a top-level theorem.
 
 \paragraph{Theories and script files.}
@@ -270,13 +267,16 @@ However, the full power of \sml is always available for users to define their ow
 %Such a combination of tactics will be called a \emph{proof script} when it proves a theorem stated in a theory.
 
 \paragraph{Tactics in \holfour.}
-Considering concrete implementation details now, a \emph{tactic} is a function 
-that takes a goal (or proof obligation) and returns a list of goals together 
-with a validation function. \todoi{do not mention validation?}
-
+Considering concrete implementation details now, a \emph{tactic} is a function
+that takes a goal (or proof obligation) and returns a list of goals (subgoals of the original goal) together
+with a validation function.
+Calling the validation function on a list of \emph{theorems}, corresponding to the list of subgoals, results in a theorem corresponding to the original goal.
+For example, if the list of subgoals is empty, then calling the validation function on the empty list yields the originally goal sequent as a theorem.
+In this way, tactics implement the plumbing of backwards, goal-directed, proof construction.
+\todo{do not mention validation? RK: it depends whether these details are helpful for understanding or not}
 
 \subsection{Contributions}
-This work is an extension of the work described in \cite{tgckju-lpar17}.
+This paper extends the work described in \cite{tgckju-lpar17}.
 There we proposed the idea of ... and achieved ...
 The additional contributions and their effect on our system are:
 
@@ -458,7 +458,7 @@ The descendants of $a$ by:
 \end{align*}
 
 And the ancestors of $a$ by:
-\[\mathit{Ancestors}(a) =_{def} \lbrace b \in \mathbb{A} \ | \ a \in 
+\[\mathit{Ancestors}(a) =_{def} \lbrace b \in \mathbb{A} \ | \ a \in
 Descendant(b) \rbrace\]
 
 An active node is by definition a node that is not a descendant of a
@@ -476,7 +476,7 @@ all the following conditions are satisfied:
 \item It does not fail or timeout. To prevent tactics from looping, we
 interrupt tactics after a short amount of time (0.05 seconds).
 \item It does not loop. Its output does not contain any goals that appears in
-the ancestor of the node of the current 
+the ancestor of the node of the current
 goal.
 \item It is not a parallel step. Its output is not equal or a superset
 of a list of goals produced from the same open goal.
@@ -609,9 +609,9 @@ conjuncts from the same domain may also help to solve it.
 \subsection{Preselection}\label{sec:dependencies}
 
 In order to speed up the predictions during the search for a proof of a
-conjecture $c$, we preselect 500 tactic-goal pairs and 500 theorems and a 
-larger number of list of goals induced by the selection of tactic-goal pairs. 
-Preselected objects will 
+conjecture $c$, we preselect 500 tactic-goal pairs and 500 theorems and a
+larger number of list of goals induced by the selection of tactic-goal pairs.
+Preselected objects will
 be the only objects available to \tactictoe's search algorithm for proving $c$.
 
 The first idea is to select tactic-goal pairs and theorems by their distance to
@@ -891,10 +891,10 @@ Through node extension steps the search tree grows and the number of paths to
 explore increases. To decide which node to extend next, a evolving value for
 each node is given in Definition~\ref{def:value}. The algorithm that performs
 node selection starts from the root of the search tree. From its current node,
-it choses among the children of the open goal the one with the highest value. 
-If its value is higher than the widening policy, then the selected child 
-becomes the current node, otherwise the final result of node selection is the 
-current node. The node selection algorithm can be written as the following 
+it choses among the children of the open goal the one with the highest value.
+If its value is higher than the widening policy, then the selected child
+becomes the current node, otherwise the final result of node selection is the
+current node. The node selection algorithm can be written as the following
 pseudo-code:
 
 \begin{lstlisting}[language=SMLSmall]
@@ -1138,11 +1138,11 @@ This effect minimizes the drawback of relying on a small number of predictions.
 
 The MCTS evaluation, despite relying on the largest amount of collected data,
 does not provide a significant improvement over a strategy relying on no
-evaluation. The minor improvement seen in the table is most likely due to some 
+evaluation. The minor improvement seen in the table is most likely due to some
 variability in our experiments.
 The main reason is that our predictor learning abilities is
-limited and we are using the provability of lists of goals for evaluation. A 
-more accurate evaluation could be based on an estimation of the length of the 
+limited and we are using the provability of lists of goals for evaluation. A
+more accurate evaluation could be based on an estimation of the length of the
 proof required to close a list of goals.
 
 
@@ -1549,7 +1549,7 @@ The previous paragraph describe the globalization for all identifiers except
 local theorems.  We do not replace a local
 theorem by its definition because we want to avoid unfolding proof scripts into
 other proof scripts.
-If the theorem is stored in the \holfour database available across \holfour 
+If the theorem is stored in the \holfour database available across \holfour
 developments, we can obtain the theorem value by calling \texttt{DB.fetch}.
 Otherwise the globalization process fails and the local theorem identifier is
 kept unchanged. A recorded tactic with an unchanged local theorem as argument
@@ -1711,20 +1711,20 @@ Induct_on `l` THENL
 \end{example}
 
 \section{Case Study}\todo{comment on the case study}
-Since the proofs generated by \tactictoe are meant to be part of a \holfour 
-development, it interesting to compare their quality with the original human 
-proofs. The quality of a proof in \holfour can be measured in terms of length, 
-, readability, maintainability and verification speed. We study these 
-properties 
-in three examples taken from our full-scale experiment. The time needed by 
+Since the proofs generated by \tactictoe are meant to be part of a \holfour
+development, it interesting to compare their quality with the original human
+proofs. The quality of a proof in \holfour can be measured in terms of length,
+, readability, maintainability and verification speed. We study these
+properties
+in three examples taken from our full-scale experiment. The time needed by
 \holfour to check a proof is shown in parentheses.
 
-In Example~\ref{ex:cs1}, the uniqueness of the greatest common divisor is 
+In Example~\ref{ex:cs1}, the uniqueness of the greatest common divisor is
 proven. The human developer recognizes that it follows easily from two theorems.
-Our prover \tactictoe is not able to find that \texttt{DIVIDES\_ANTISYM} is 
-necessary directly from the shape of the original theorems so it rewrites the 
-goal and split the goal into multiple cases until goal obligations are similar 
-to \texttt{DIVIDES\_ANTISYM} to be predicted. As expected, \tactictoe's proof 
+Our prover \tactictoe is not able to find that \texttt{DIVIDES\_ANTISYM} is
+necessary directly from the shape of the original theorems so it rewrites the
+goal and split the goal into multiple cases until goal obligations are similar
+to \texttt{DIVIDES\_ANTISYM} to be predicted. As expected, \tactictoe's proof
 also takes much longer to check.
 
 \begin{example}\label{ex:cs1} \texttt{IS\_GCD\_UNIQUE} in theory \texttt{gcd}
@@ -1741,7 +1741,7 @@ STRIP_TAC THEN
 REWRITE_TAC [fetch "gcd" "is_gcd_def"] THEN
 REPEAT Cases THENL
   [METIS_TAC [],
-   REWRITE_TAC [SUC_NOT, ALL_DIVIDES_0, compute_divides] THEN 
+   REWRITE_TAC [SUC_NOT, ALL_DIVIDES_0, compute_divides] THEN
      METIS_TAC [NOT_SUC],
    METIS_TAC [NOT_SUC, DIVIDES_ANTISYM],
    METIS_TAC [LESS_EQUAL_ANTISYM, DIVIDES_LE, LESS_0],
@@ -1752,17 +1752,17 @@ REPEAT Cases THENL
 \end{lstlisting}
 \end{example}
 
-In Example~\ref{ex:cs2}, we try to prove that for any surjective function $f$ 
-from $s$ to $t$, there exists an injective function $g$ from $t$ to $s$ such 
-that $f\ o\ g$ is the identity function. The human proof is quite complicated. 
-In 
-contrast, \tactictoe finds a much smaller proof that expands the 
-definition of injectivity and surjectivity and calls \metis. However, the 
-\tactictoe's script does take much longer to check due to the proof search 
-happening inside 
+In Example~\ref{ex:cs2}, we try to prove that for any surjective function $f$
+from $s$ to $t$, there exists an injective function $g$ from $t$ to $s$ such
+that $f\ o\ g$ is the identity function. The human proof is quite complicated.
+In
+contrast, \tactictoe finds a much smaller proof that expands the
+definition of injectivity and surjectivity and calls \metis. However, the
+\tactictoe's script does take much longer to check due to the proof search
+happening inside
 \metis.
 
-\begin{example}\label{ex:cs2} \texttt{SURJ\_INJ\_INV} in theory 
+\begin{example}\label{ex:cs2} \texttt{SURJ\_INJ\_INV} in theory
 \texttt{pred\_set}
 \begin{lstlisting}[language=SMLSmall]
 !f s t. SURJ f s t ==> ?g. INJ g t s wedge !y. y IN t ==> (f (g y) = y)
@@ -1786,23 +1786,23 @@ SRW_TAC [] [SURJ_DEF, INJ_DEF] THEN METIS_TAC []
 \end{lstlisting}
 \end{example}
 
-In Example~\ref{ex:cs3}, we prove a theorem about lists which is domain where 
-\tactictoe excels compared to ATPs. 
-Given two list $l_1$ and $l_2$ where the length of $l_1$ (noted $p$) is less 
-than a natural 
-number $n$, the theorem states updating the $n^{th}$ 
+In Example~\ref{ex:cs3}, we prove a theorem about lists which is domain where
+\tactictoe excels compared to ATPs.
+Given two list $l_1$ and $l_2$ where the length of $l_1$ (noted $p$) is less
+than a natural
+number $n$, the theorem states updating the $n^{th}$
 element of the concatenation of $l_1$ and $l_2$ is the same as
-updating the $m^{th}$ element of $l_2$ where $m = n - p$. Again, 
-\tactictoe's proof is 
-much more readable starting with applying induction on $l$. It solves the base 
-case of the induction by rewriting and distinguish cases where $n=0$ or $n>0$ 
-in the inductive hypothesis. It finalizes the proof with a short call to \metis 
-using the definition of 
-$LUPDATE$. Here, \tactictoe's proof is arguably smaller, faster and easier to 
-understand and maintain. Such proofs after an expert review could replace the 
+updating the $m^{th}$ element of $l_2$ where $m = n - p$. Again,
+\tactictoe's proof is
+much more readable starting with applying induction on $l$. It solves the base
+case of the induction by rewriting and distinguish cases where $n=0$ or $n>0$
+in the inductive hypothesis. It finalizes the proof with a short call to \metis
+using the definition of
+$LUPDATE$. Here, \tactictoe's proof is arguably smaller, faster and easier to
+understand and maintain. Such proofs after an expert review could replace the
 their respective original human proofs in the \holfour repository.
 
-\begin{example}\label{ex:cs3} \texttt{LUPDATE\_APPEND2} in theory 
+\begin{example}\label{ex:cs3} \texttt{LUPDATE\_APPEND2} in theory
 \texttt{rich\_list}
 \begin{lstlisting}[language=SMLSmall]
 !l1 l2 n x. LENGTH l1 <= n ==>
@@ -1823,10 +1823,10 @@ Induct_on `l1` THENL [SRW_TAC [] [],
 \end{lstlisting}
 \end{example}
 
-In Example~\ref{ex:cs4}, we demonstrate the capabilities of 
-\tactictoe on a goal that did not have a proof in \holfour. 
+In Example~\ref{ex:cs4}, we demonstrate the capabilities of
+\tactictoe on a goal that did not have a proof in \holfour.
 
-\todoi{TG to RK: I am not sure what the count 
+\todoi{TG to RK: I am not sure what the count
 constant is doing. Feel free to add more examples.}
 
 \begin{example}\label{ex:cs4}
@@ -1944,8 +1944,8 @@ commands in the priority queue based on positive and negative examples.
 
 We proposed a new proof assistant automation technique which combines
 tactic-based proof search with machine learning prediction
-Its implementation, \tactictoe, achieves an overall performance of 66.4\% 
-theorems on 7164 theorems of the \holfour standard library surpassing \eprover 
+Its implementation, \tactictoe, achieves an overall performance of 66.4\%
+theorems on 7164 theorems of the \holfour standard library surpassing \eprover
 with auto-schedule. Its
 effectiveness is especially visible on
 theories which use inductive data structures, specialized decision procedures,
@@ -1961,15 +1961,15 @@ To improve the quality of the predicted tactics,
 we would like to predict other type of arguments independently, as it was done
 for theorems. In this direction, the most interesting arguments to
 predict next are terms as they are ubiquitous in tactics. Further along the way,
-new tactics could be created by programming them with any construction 
-available in \sml. There is also something to be gain by 
+new tactics could be created by programming them with any construction
+available in \sml. There is also something to be gain by
 having a better guidance for the search.
 That is why se also want to experiment with stronger machine learning algorithm
 such as deep neural networks as a model for the policy and evaluation in MCTS.
 This quality of this model could be enhanced by additional data augmentation by
 training and testing existing and synthesized tactics.
-Conjecturing suitable intermediate steps could also allow \tactictoe to solve 
-a problem which requires a long proof by decomposing it into multiple easy 
+Conjecturing suitable intermediate steps could also allow \tactictoe to solve
+a problem which requires a long proof by decomposing it into multiple easy
 steps.
 
 \paragraph{Acknowledgments}\label{sect:acks}
