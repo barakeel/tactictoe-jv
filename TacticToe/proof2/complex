@@ -2,1186 +2,1428 @@
 Name: 0 COMPLEX_LEMMA1
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032183
+Recording proof time: 0.083013
 
 Name: 1 COMPLEX_LEMMA2
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.398587
+Recording proof time: 0.458068
 
 Name: 2 COMPLEX
-hh_eval 405269965228456
-Time: 0.282015
-Reconstructed: 0.004007
-Proof found: METIS_TAC [fetch "complex" "RE", fetch "complex" "IM", PAIR]
+proof length: 1
+proof time: 0.00074
+Statistics
+  infstep : 9
+  nodes   : 3
+  maxdepth: 2
+Time: 0.238373
+  inferstep time: 0.214571
+  node_find time: 0.000062
+  node_crea time: 0.02366
+    pred time: 0.012375
+    thmpred time: 0.000001
+    mc time: 0.008541
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "complex" "IM", fetch "complex" "RE"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005029
+Recording proof time: 0.008166
 
 Name: 3 COMPLEX_RE_IM_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004784
+Recording proof time: 0.005401
 
 Name: 4 RE_COMPLEX_OF_REAL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003638
+Recording proof time: 0.003018
 
 Name: 5 IM_COMPLEX_OF_REAL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004317
+Recording proof time: 0.004543
 
 Name: 6 COMPLEX_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002848
+Recording proof time: 0.002876
 
 Name: 7 COMPLEX_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003981
+Recording proof time: 0.002939
 
 Name: 8 COMPLEX_10
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013697
+Recording proof time: 0.006766
 
 Name: 9 COMPLEX_0_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006528
+Recording proof time: 0.00671
 
 Name: 10 COMPLEX_ADD_COMM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029083
+Recording proof time: 0.047433
 
 Name: 11 COMPLEX_ADD_ASSOC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034892
+Recording proof time: 0.031168
 
 Name: 12 COMPLEX_ADD_RID
-hh_eval 405269965228457
-Time: 1.147178
-Reconstructed: 0.053576
-Proof found: METIS_TAC [fetch "complex" "complex_of_num", fetch "complex" "complex_of_real", PAIR_EQ, fetch "complex" "complex_add", fetch "complex" "IM", fetch "complex" "RE", REAL_ADD_RID, PAIR]
+proof length: 2
+proof time: 0.00228
+Statistics
+  infstep : 18
+  nodes   : 8
+  maxdepth: 2
+Time: 0.661607
+  inferstep time: 0.580793
+  node_find time: 0.000423
+  node_crea time: 0.080048
+    pred time: 0.025497
+    thmpred time: 0.000001
+    mc time: 0.040468
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "complex" "complex_of_num"), (fetch "complex" "complex_of_real"), PAIR_FST_SND_EQ] THEN SRW_TAC [] [fetch "complex" "complex_add", fetch "complex" "IM", fetch "complex" "RE"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006471
+Recording proof time: 0.006631
 
 Name: 13 COMPLEX_ADD_LID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004971
+Recording proof time: 0.005869
 
 Name: 14 COMPLEX_ADD_RINV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007111
+Recording proof time: 0.009208
 
 Name: 15 COMPLEX_ADD_LINV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004961
+Recording proof time: 0.005563
 
 Name: 16 COMPLEX_MUL_COMM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.118478
+Recording proof time: 0.058431
 
 Name: 17 COMPLEX_MUL_ASSOC
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.266942
+Recording proof time: 0.289714
 
 Name: 18 COMPLEX_MUL_RID
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029106
+Recording proof time: 0.046923
 
 Name: 19 COMPLEX_MUL_LID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00591
+Recording proof time: 0.005383
 
 Name: 20 COMPLEX_MUL_RINV
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 1.13147
+Recording proof time: 0.228933
 
 Name: 21 COMPLEX_MUL_LINV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006441
+Recording proof time: 0.005103
 
 Name: 22 COMPLEX_ADD_LDISTRIB
-hh_eval 405269965228458
-Time: 60.253675
-Proof status: Time Out
+proof length: 6
+proof time: 0.008517
+Statistics
+  infstep : 326
+  nodes   : 77
+  maxdepth: 5
+Time: 7.484198
+  inferstep time: 6.591163
+  node_find time: 0.01695
+  node_crea time: 0.872476
+    pred time: 0.219614
+    thmpred time: 0.000021
+    mc time: 0.327251
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "complex" "complex_add"), (fetch "complex" "RE"), (fetch "complex" "IM")] THEN REWRITE_TAC [(fetch "complex" "complex_mul"), (fetch "complex" "RE"), (fetch "complex" "IM"), REAL_ADD_LDISTRIB] THEN REWRITE_TAC [real_sub, REAL_NEG_ADD] THEN SRW_TAC [] [] THEN CONV_TAC (AC_CONV (REAL_ADD_ASSOC, REAL_ADD_SYM))
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.288858
+Recording proof time: 0.098708
 
 Name: 23 COMPLEX_ADD_RDISTRIB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008074
+Recording proof time: 0.005864
 
 Name: 24 COMPLEX_EQ_LADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007069
+Recording proof time: 0.006228
 
 Name: 25 COMPLEX_EQ_RADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031004
+Recording proof time: 0.054224
 
 Name: 26 COMPLEX_ADD_RID_UNIQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00896
+Recording proof time: 0.005505
 
 Name: 27 COMPLEX_ADD_LID_UNIQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031002
+Recording proof time: 0.061637
 
 Name: 28 COMPLEX_NEGNEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005404
+Recording proof time: 0.040648
 
 Name: 29 COMPLEX_NEG_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007877
+Recording proof time: 0.006756
 
 Name: 30 COMPLEX_EQ_NEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005673
+Recording proof time: 0.004281
 
 Name: 31 COMPLEX_RNEG_UNIQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03332
+Recording proof time: 0.046542
 
 Name: 32 COMPLEX_LNEG_UNIQ
-hh_eval 405269965228459
-Time: 0.55197
-Reconstructed: 0.042238
-Proof found: METIS_TAC [fetch "complex" "COMPLEX_ADD_RINV", fetch "complex" "COMPLEX_ADD_ASSOC", fetch "complex" "COMPLEX_ADD_RID"]
+proof length: 2
+proof time: 0.008996
+Statistics
+  infstep : 9
+  nodes   : 7
+  maxdepth: 2
+Time: 0.394079
+  inferstep time: 0.332591
+  node_find time: 0.000107
+  node_crea time: 0.061284
+    pred time: 0.019864
+    thmpred time: 0.000003
+    mc time: 0.028028
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "complex" "COMPLEX_RNEG_UNIQ"] THEN METIS_TAC [fetch "complex" "COMPLEX_NEGNEG"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007664
+Recording proof time: 0.029793
 
 Name: 33 COMPLEX_NEG_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005093
+Recording proof time: 0.010172
 
 Name: 34 COMPLEX_MUL_RZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007654
+Recording proof time: 0.007664
 
 Name: 35 COMPLEX_MUL_LZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005727
+Recording proof time: 0.004843
 
 Name: 36 COMPLEX_NEG_LMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.044926
+Recording proof time: 0.009089
 
 Name: 37 COMPLEX_NEG_RMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005489
+Recording proof time: 0.005836
 
 Name: 38 COMPLEX_NEG_MUL2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006805
+Recording proof time: 0.007671
 
 Name: 39 COMPLEX_ENTIRE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014495
+Recording proof time: 0.006392
 
 Name: 40 COMPLEX_NEG_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007023
+Recording proof time: 0.012275
 
 Name: 41 COMPLEX_NEG_EQ0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005542
+Recording proof time: 0.003794
 
 Name: 42 COMPLEX_SUB_REFL
-hh_eval 405269965228460
-Time: 0.436017
-Reconstructed: 0.007636
-Proof found: METIS_TAC [fetch "complex" "COMPLEX_ADD_RINV", fetch "complex" "complex_sub"]
+proof length: 1
+proof time: 0.007284
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.059274
+  inferstep time: 0.040643
+  node_find time: 0.000015
+  node_crea time: 0.018588
+    pred time: 0.007403
+    thmpred time: 0.0
+    mc time: 0.009197
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "complex" "complex_sub", fetch "complex" "COMPLEX_ADD_RINV"]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029497
+Recording proof time: 0.030005
 
 Name: 43 COMPLEX_SUB_RZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00586
+Recording proof time: 0.007681
 
 Name: 44 COMPLEX_SUB_LZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005567
+Recording proof time: 0.004352
 
 Name: 45 COMPLEX_SUB_LNEG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.063265
+Recording proof time: 0.112994
 
 Name: 46 COMPLEX_SUB_NEG2
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.065244
+Recording proof time: 0.037529
 
 Name: 47 COMPLEX_NEG_SUB
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031186
+Recording proof time: 0.033617
 
 Name: 48 COMPLEX_SUB_RNEG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033524
+Recording proof time: 0.029245
 
 Name: 49 COMPLEX_SUB_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008721
+Recording proof time: 0.008623
 
 Name: 50 COMPLEX_SUB_ADD2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.388574
+Recording proof time: 0.093566
 
 Name: 51 COMPLEX_ADD_SUB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.200431
+Recording proof time: 0.065552
 
 Name: 52 COMPLEX_SUB_SUB
-hh_eval 405269965228461
-Time: 0.678768
-Reconstructed: 0.013027
-Proof found: METIS_TAC [fetch "complex" "COMPLEX_ADD_SUB", fetch "complex" "complex_sub"]
+proof length: 1
+proof time: 0.017436
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.05179
+  inferstep time: 0.04155
+  node_find time: 0.000014
+  node_crea time: 0.010206
+    pred time: 0.003484
+    thmpred time: 0.0
+    mc time: 0.005097
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "complex" "COMPLEX_SUB_ADD2", fetch "complex" "COMPLEX_SUB_LNEG", fetch "complex" "COMPLEX_NEG_ADD", fetch "complex" "COMPLEX_LNEG_UNIQ"]
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.155778
+Recording proof time: 0.253941
 
 Name: 53 COMPLEX_SUB_SUB2
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.081768
+Recording proof time: 0.144954
 
 Name: 54 COMPLEX_ADD_SUB2
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.149197
+Recording proof time: 0.133647
 
 Name: 55 COMPLEX_ADD2_SUB2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.05532
+Recording proof time: 0.13204
 
 Name: 56 COMPLEX_SUB_TRIANGLE
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.09219
+Recording proof time: 0.160357
 
 Name: 57 COMPLEX_SUB_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006059
+Recording proof time: 0.006226
 
 Name: 58 COMPLEX_EQ_SUB_LADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.056871
+Recording proof time: 0.129523
 
 Name: 59 COMPLEX_EQ_SUB_RADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057733
+Recording proof time: 0.109605
 
 Name: 60 COMPLEX_MUL_RNEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004555
+Recording proof time: 0.087446
 
 Name: 61 COMPLEX_MUL_LNEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003936
+Recording proof time: 0.189645
 
 Name: 62 COMPLEX_SUB_LDISTRIB
-hh_eval 405269965228462
-Time: 0.873768
-Reconstructed: 0.01635
-Proof found: METIS_TAC [fetch "complex" "COMPLEX_NEG_RMUL", fetch "complex" "complex_sub", fetch "complex" "COMPLEX_ADD_LDISTRIB"]
+proof length: 1
+proof time: 0.019798
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.103067
+  inferstep time: 0.091884
+  node_find time: 0.000016
+  node_crea time: 0.011143
+    pred time: 0.003746
+    thmpred time: 0.0
+    mc time: 0.005567
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "complex" "COMPLEX_ADD_LDISTRIB", fetch "complex" "COMPLEX_MUL_RNEG", fetch "complex" "complex_sub"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007043
+Recording proof time: 0.01568
 
 Name: 63 COMPLEX_SUB_RDISTRIB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006627
+Recording proof time: 0.004356
 
 Name: 64 COMPLEX_DIFFSQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.059605
+Recording proof time: 0.057837
 
 Name: 65 COMPLEX_EQ_LMUL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032248
+Recording proof time: 0.048289
 
 Name: 66 COMPLEX_EQ_RMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008839
+Recording proof time: 0.019426
 
 Name: 67 COMPLEX_EQ_LMUL2
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.142102
+Recording proof time: 0.151364
 
 Name: 68 COMPLEX_EQ_RMUL_IMP
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.061479
+Recording proof time: 0.056452
 
 Name: 69 COMPLEX_EQ_LMUL_IMP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029935
+Recording proof time: 0.040607
 
 Name: 70 COMPLEX_NEG_INV
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032756
+Recording proof time: 0.234337
 
 Name: 71 COMPLEX_INV_MUL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.072719
+Recording proof time: 0.131122
 
 Name: 72 COMPLEX_INVINV
-hh_eval 405269965228463
-Time: 60.424124
+Statistics
+  infstep : 2845
+  nodes   : 453
+  maxdepth: 7
+Time: 60.038995
+  inferstep time: 46.882152
+  node_find time: 0.677242
+  node_crea time: 12.433713
+    pred time: 3.103183
+    thmpred time: 0.000104
+    mc time: 4.415707
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.267224
+Recording proof time: 0.325814
 
 Name: 73 COMPLEX_LINV_UNIQ
-Original proof time: 0.000474
+Original proof time: 0.000439
 
 Name: 74 COMPLEX_RINV_UNIQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057542
+Recording proof time: 0.064977
 
 Name: 75 COMPLEX_INV_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015539
+Recording proof time: 0.01021
 
 Name: 76 COMPLEX_INV1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013852
+Recording proof time: 0.008097
 
 Name: 77 COMPLEX_INV_INV
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.096939
+Recording proof time: 0.114021
 
 Name: 78 COMPLEX_INV_NEG
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.106602
+Recording proof time: 0.149451
 
 Name: 79 COMPLEX_INV_EQ_0
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.145688
+Recording proof time: 0.209693
 
 Name: 80 COMPLEX_INV_NZ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005878
+Recording proof time: 0.003253
 
 Name: 81 COMPLEX_INV_INJ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010376
+Recording proof time: 0.004358
 
 Name: 82 COMPLEX_NEG_LDIV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006003
+Recording proof time: 0.005984
 
 Name: 83 COMPLEX_NEG_RDIV
-hh_eval 405269965228464
-Time: 0.546368
-Reconstructed: 0.005732
-Proof found: METIS_TAC [fetch "complex" "complex_div", fetch "complex" "COMPLEX_INV_NEG", fetch "complex" "COMPLEX_NEG_RMUL"]
+proof length: 2
+proof time: 0.046763
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 2
+Time: 0.195625
+  inferstep time: 0.167986
+  node_find time: 0.000053
+  node_crea time: 0.027529
+    pred time: 0.008938
+    thmpred time: 0.000001
+    mc time: 0.014273
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "complex" "complex_div"), (fetch "complex" "COMPLEX_NEG_LMUL")] THEN METIS_TAC [fetch "complex" "COMPLEX_INV_NEG", fetch "complex" "COMPLEX_MUL_LNEG", fetch "complex" "COMPLEX_MUL_RNEG"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004137
+Recording proof time: 0.007298
 
 Name: 84 COMPLEX_NEG_DIV2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005776
+Recording proof time: 0.005061
 
 Name: 85 COMPLEX_INV_1OVER
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005906
+Recording proof time: 0.005382
 
 Name: 86 COMPLEX_DIV1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006225
+Recording proof time: 0.009334
 
 Name: 87 COMPLEX_DIV_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005904
+Recording proof time: 0.007349
 
 Name: 88 COMPLEX_DIV_SUB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006505
+Recording proof time: 0.007401
 
 Name: 89 COMPLEX_DIV_RMUL_CANCEL
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.201136
+Recording proof time: 0.208807
 
 Name: 90 COMPLEX_DIV_LMUL_CANCEL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.025672
+Recording proof time: 0.017267
 
 Name: 91 COMPLEX_DIV_DENOM_CANCEL
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.347908
+Recording proof time: 0.609469
 
 Name: 92 COMPLEX_DIV_INNER_CANCEL
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.200567
+Recording proof time: 0.310157
 
 Name: 93 COMPLEX_DIV_OUTER_CANCEL
-hh_eval 405269965228465
-Time: 60.535982
-Proof status: Time Out
+proof length: 6
+proof time: 0.007285
+Statistics
+  infstep : 228
+  nodes   : 84
+  maxdepth: 6
+Time: 6.613022
+  inferstep time: 5.306237
+  node_find time: 0.011418
+  node_crea time: 1.292517
+    pred time: 0.361909
+    thmpred time: 0.000022
+    mc time: 0.503643
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "complex" "complex_div")] THEN REWRITE_TAC [GSYM (fetch "complex" "COMPLEX_MUL_ASSOC")] THEN ONCE_REWRITE_TAC [(fetch "complex" "COMPLEX_MUL_COMM")] THEN RW_TAC bool_ss [(fetch "complex" "COMPLEX_EQ_LMUL"), GSYM (fetch "complex" "COMPLEX_MUL_ASSOC")] THEN SRW_TAC [] [fetch "complex" "COMPLEX_MUL_LINV", fetch "complex" "COMPLEX_INV_EQ_0"] THEN METIS_TAC [fetch "complex" "COMPLEX_MUL_RID"]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.049492
+Recording proof time: 0.053293
 
 Name: 94 COMPLEX_DIV_MUL2
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.126427
+Recording proof time: 0.123448
 
 Name: 95 COMPLEX_ADD_RAT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008507
+Recording proof time: 0.039455
 
 Name: 96 COMPLEX_SUB_RAT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.074026
+Recording proof time: 0.090265
 
 Name: 97 COMPLEX_DIV_LZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006511
+Recording proof time: 0.037844
 
 Name: 98 COMPLEX_DIV_REFL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00552
+Recording proof time: 0.0037
 
 Name: 99 COMPLEX_SUB_INV2
-Original proof time: 0.001065
+Original proof time: 0.000716
 
 Name: 100 COMPLEX_EQ_RDIV_EQ
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.249491
+Recording proof time: 0.337306
 
 Name: 101 COMPLEX_EQ_LDIV_EQ
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.246066
+Recording proof time: 0.407433
 
 Name: 102 COMPLEX_OF_REAL_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00914
+Recording proof time: 0.004275
 
 Name: 103 COMPLEX_OF_REAL_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00887
+Recording proof time: 0.032332
 
 Name: 104 COMPLEX_OF_REAL_NEG
-hh_eval 405269965228466
-Time: 1.278679
-Reconstructed: 0.016726
-Proof found: METIS_TAC [fetch "complex" "RE", FST, fetch "complex" "IM", SND, fetch "complex" "complex_of_real", fetch "complex" "complex_neg", REAL_NEG_0]
+proof length: 1
+proof time: 0.001401
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.124728
+  inferstep time: 0.113804
+  node_find time: 0.000022
+  node_crea time: 0.010877
+    pred time: 0.003404
+    thmpred time: 0.0
+    mc time: 0.005759
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "complex" "complex_of_real", fetch "complex" "IM_COMPLEX_OF_REAL", fetch "complex" "RE_COMPLEX_OF_REAL", fetch "complex" "complex_neg"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00721
+Recording proof time: 0.091277
 
 Name: 105 COMPLEX_OF_REAL_MUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008642
+Recording proof time: 0.109843
 
 Name: 106 COMPLEX_OF_REAL_INV
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.080365
+Recording proof time: 0.076089
 
 Name: 107 COMPLEX_OF_REAL_SUB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006191
+Recording proof time: 0.007058
 
 Name: 108 COMPLEX_OF_REAL_DIV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006484
+Recording proof time: 0.005454
 
 Name: 109 COMPLEX_OF_NUM_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004481
+Recording proof time: 0.014936
 
 Name: 110 COMPLEX_OF_NUM_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009395
+Recording proof time: 0.006457
 
 Name: 111 COMPLEX_OF_NUM_MUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004477
+Recording proof time: 0.00724
 
 Name: 112 COMPLEX_SCALAR_LMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005699
+Recording proof time: 0.00414
 
 Name: 113 COMPLEX_SCALAR_LMUL_NEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006481
+Recording proof time: 0.009649
 
 Name: 114 COMPLEX_NEG_SCALAR_LMUL
-hh_eval 405269965228467
-Time: 0.834884
-Reconstructed: 0.031705
-Proof found: METIS_TAC [fetch "complex" "complex_scalar_lmul", FST, fetch "complex" "complex_neg", fetch "complex" "RE", SND, fetch "complex" "IM", REAL_NEG_LMUL, REAL_MUL_RNEG]
+proof length: 2
+proof time: 0.006499
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.186444
+  inferstep time: 0.153265
+  node_find time: 0.000053
+  node_crea time: 0.033072
+    pred time: 0.010034
+    thmpred time: 0.0
+    mc time: 0.017548
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "complex" "complex_scalar_lmul"), (fetch "complex" "complex_neg"), (fetch "complex" "RE"), (fetch "complex" "IM")] THEN METIS_TAC [REAL_MUL_LNEG, REAL_NEG_RMUL]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006933
+Recording proof time: 0.005344
 
 Name: 115 COMPLEX_SCALAR_LMUL_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009075
+Recording proof time: 0.014692
 
 Name: 116 COMPLEX_SCALAR_LMUL_SUB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006717
+Recording proof time: 0.004448
 
 Name: 117 COMPLEX_ADD_SCALAR_LMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.0076
+Recording proof time: 0.008838
 
 Name: 118 COMPLEX_SUB_SCALAR_LMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005957
+Recording proof time: 0.008005
 
 Name: 119 COMPLEX_MUL_SCALAR_LMUL2
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.038222
+Recording proof time: 0.036759
 
 Name: 120 COMPLEX_LMUL_SCALAR_LMUL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.042195
+Recording proof time: 0.069818
 
 Name: 121 COMPLEX_RMUL_SCALAR_LMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006199
+Recording proof time: 0.005741
 
 Name: 122 COMPLEX_SCALAR_LMUL_ZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006251
+Recording proof time: 0.005596
 
 Name: 123 COMPLEX_ZERO_SCALAR_LMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008499
+Recording proof time: 0.009111
 
 Name: 124 COMPLEX_SCALAR_LMUL_ONE
-hh_eval 405269965228468
-Time: 60.643343
-Proof status: Time Out
+proof length: 2
+proof time: 0.00092
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.314691
+  inferstep time: 0.238997
+  node_find time: 0.000061
+  node_crea time: 0.075582
+    pred time: 0.020632
+    thmpred time: 0.0
+    mc time: 0.047619
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "complex" "complex_scalar_lmul")] THEN SRW_TAC [] [fetch "complex" "RE", fetch "complex" "IM"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013853
+Recording proof time: 0.00718
 
 Name: 125 COMPLEX_SCALAR_LMUL_NEG1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.048774
+Recording proof time: 0.063666
 
 Name: 126 COMPLEX_DOUBLE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058318
+Recording proof time: 0.106956
 
 Name: 127 COMPLEX_SCALAR_LMUL_ENTIRE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01161
+Recording proof time: 0.009972
 
 Name: 128 COMPLEX_EQ_SCALAR_LMUL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030672
+Recording proof time: 0.042018
 
 Name: 129 COMPLEX_SCALAR_LMUL_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031113
+Recording proof time: 0.029834
 
 Name: 130 COMPLEX_SCALAR_LMUL_EQ1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014964
+Recording proof time: 0.013463
 
 Name: 131 COMPLEX_INV_SCALAR_LMUL
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.478693
+Recording proof time: 0.611034
 
 Name: 132 COMPLEX_SCALAR_LMUL_DIV2
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.117221
+Recording proof time: 0.217367
 
 Name: 133 COMPLEX_SCALAR_MUL_COMM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.0068
+Recording proof time: 0.008546
 
 Name: 134 COMPLEX_SCALAR_RMUL
-hh_eval 405269965228469
-Time: 0.864368
-Reconstructed: 0.018998
-Proof found: METIS_TAC [fetch "complex" "COMPLEX_SCALAR_MUL_COMM", fetch "complex" "COMPLEX_SCALAR_LMUL", REAL_MUL_COMM]
+proof length: 3
+proof time: 0.004533
+Statistics
+  infstep : 19
+  nodes   : 5
+  maxdepth: 2
+Time: 0.642967
+  inferstep time: 0.595417
+  node_find time: 0.000241
+  node_crea time: 0.047178
+    pred time: 0.016503
+    thmpred time: 0.000001
+    mc time: 0.022714
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "complex" "complex_scalar_rmul", REAL_MUL_ASSOC] THENL [REWRITE_TAC [(fetch "complex" "RE")], REWRITE_TAC [(fetch "complex" "IM")]]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007376
+Recording proof time: 0.008022
 
 Name: 135 COMPLEX_SCALAR_RMUL_NEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011478
+Recording proof time: 0.010904
 
 Name: 136 COMPLEX_NEG_SCALAR_RMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012176
+Recording proof time: 0.00475
 
 Name: 137 COMPLEX_SCALAR_RMUL_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008625
+Recording proof time: 0.004209
 
 Name: 138 COMPLEX_RSCALAR_RMUL_SUB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008152
+Recording proof time: 0.005014
 
 Name: 139 COMPLEX_ADD_RSCALAR_RMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007498
+Recording proof time: 0.005845
 
 Name: 140 COMPLEX_SUB_SCALAR_RMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00645
+Recording proof time: 0.005845
 
 Name: 141 COMPLEX_SCALAR_RMUL_ZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005962
+Recording proof time: 0.005409
 
 Name: 142 COMPLEX_ZERO_SCALAR_RMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006329
+Recording proof time: 0.004411
 
 Name: 143 COMPLEX_SCALAR_RMUL_ONE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005452
+Recording proof time: 0.005538
 
 Name: 144 COMPLEX_SCALAR_RMUL_NEG1
-hh_eval 405269965228470
-Time: 0.791956
-Reconstructed: 0.010452
-Proof found: METIS_TAC [fetch "complex" "COMPLEX_SCALAR_RMUL_NEG", fetch "complex" "COMPLEX_SCALAR_RMUL_ONE"]
+proof length: 1
+proof time: 0.004845
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.064595
+  inferstep time: 0.042335
+  node_find time: 0.000015
+  node_crea time: 0.022217
+    pred time: 0.005426
+    thmpred time: 0.0
+    mc time: 0.014754
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "complex" "COMPLEX_SCALAR_MUL_COMM", fetch "complex" "COMPLEX_SCALAR_LMUL_NEG1"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005898
+Recording proof time: 0.005618
 
 Name: 145 CONJ_REAL_REFL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005193
+Recording proof time: 0.006422
 
 Name: 146 CONJ_NUM_REFL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004048
+Recording proof time: 0.007685
 
 Name: 147 CONJ_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010928
+Recording proof time: 0.005537
 
 Name: 148 CONJ_NEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008686
+Recording proof time: 0.005558
 
 Name: 149 CONJ_SUB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00469
+Recording proof time: 0.00434
 
 Name: 150 CONJ_MUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007319
+Recording proof time: 0.012101
 
 Name: 151 CONJ_INV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015515
+Recording proof time: 0.016866
 
 Name: 152 CONJ_DIV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007486
+Recording proof time: 0.008525
 
 Name: 153 CONJ_SCALAR_LMUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007736
+Recording proof time: 0.009854
 
 Name: 154 CONJ_CONJ
-hh_eval 405269965228471
-Time: 11.295027
-Reconstructed: 0.435276
-Proof found: METIS_TAC [REAL_NEG_LMUL, fetch "complex" "complex_mul", real_sub, FST, fetch "complex" "conj", fetch "complex" "RE", SND, fetch "complex" "IM", REAL_NEG_MUL2, fetch "complex" "COMPLEX_MUL_RID", fetch "complex" "COMPLEX_MUL_COMM"]
+proof length: 1
+proof time: 0.00172
+Statistics
+  infstep : 8
+  nodes   : 3
+  maxdepth: 1
+Time: 0.200191
+  inferstep time: 0.174092
+  node_find time: 0.000059
+  node_crea time: 0.025985
+    pred time: 0.008677
+    thmpred time: 0.0
+    mc time: 0.014238
+    inst time: 0.0
+Proof found: RW_TAC real_ss [(fetch "complex" "conj"), (fetch "complex" "RE"), (fetch "complex" "IM")]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005441
+Recording proof time: 0.007664
 
 Name: 155 CONJ_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007098
+Recording proof time: 0.009912
 
 Name: 156 CONJ_EQ2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006172
+Recording proof time: 0.004168
 
 Name: 157 COMPLEX_MUL_RCONJ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035674
+Recording proof time: 0.076129
 
 Name: 158 COMPLEX_MUL_RCONJ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006623
+Recording proof time: 0.006866
 
 Name: 159 CONJ_ZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009433
+Recording proof time: 0.004041
 
 Name: 160 MODU_POW2
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.036974
+Recording proof time: 0.055326
 
 Name: 161 RE_IM_LE_MODU
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.147525
+Recording proof time: 0.216695
 
 Name: 162 MODU_POS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.114212
+Recording proof time: 0.143183
 
 Name: 163 COMPLEX_MUL_RCONJ1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004769
+Recording proof time: 0.004231
 
 Name: 164 COMPLEX_MUL_LCONJ1
-hh_eval 405269965228472
-Time: 0.930987
-Reconstructed: 0.010848
-Proof found: METIS_TAC [fetch "complex" "COMPLEX_MUL_RCONJ1", fetch "complex" "COMPLEX_MUL_COMM"]
+proof length: 1
+proof time: 0.011983
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.072965
+  inferstep time: 0.050067
+  node_find time: 0.000014
+  node_crea time: 0.022865
+    pred time: 0.00552
+    thmpred time: 0.000001
+    mc time: 0.015248
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "complex" "COMPLEX_MUL_RCONJ", fetch "complex" "MODU_POW2"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006504
+Recording proof time: 0.004671
 
 Name: 165 MODU_NEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006734
+Recording proof time: 0.005832
 
 Name: 166 MODU_SUB
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.136014
+Recording proof time: 0.134284
 
 Name: 167 MODU_CONJ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008203
+Recording proof time: 0.009791
 
 Name: 168 MODU_MUL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034013
+Recording proof time: 0.036097
 
 Name: 169 MODU_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009877
+Recording proof time: 0.013742
 
 Name: 170 MODU_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006452
+Recording proof time: 0.007287
 
 Name: 171 MODU_COMPLEX_INV
-Original proof time: 0.000146
+Original proof time: 0.00016
 
 Name: 172 MODU_DIV
-Original proof time: 0.000222
+Original proof time: 0.00032
 
 Name: 173 MODU_SCALAR_LMUL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057834
+Recording proof time: 0.079999
 
 Name: 174 MODU_REAL
-Original proof time: 0.000647
+Original proof time: 0.00083
 
 Name: 175 MODU_NUM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003834
+Recording proof time: 0.006569
 
 Name: 176 MODU_ZERO
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.085414
+Recording proof time: 0.117752
 
 Name: 177 MODU_NZ
-hh_eval 405269965228473
-Time: 1.044307
-Reconstructed: 0.029606
-Proof found: METIS_TAC [real_lt, REAL_LE_ANTISYM, fetch "complex" "MODU_ZERO", fetch "complex" "MODU_POS"]
+Statistics
+  infstep : 4594
+  nodes   : 912
+  maxdepth: 9
+Time: 60.011329
+  inferstep time: 44.3926
+  node_find time: 1.799399
+  node_crea time: 13.761688
+    pred time: 3.48751
+    thmpred time: 0.000174
+    mc time: 6.215569
+    inst time: 0.0
+Proof status: Time Out
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.809526
+Recording proof time: 0.316613
 
 Name: 178 MODU_CASES
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.088992
+Recording proof time: 0.179074
 
 Name: 179 RE_DIV_MODU_BOUNDS
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.313448
+Recording proof time: 0.362477
 
 Name: 180 IM_DIV_MODU_BOUNDS
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.348684
+Recording proof time: 0.487537
 
 Name: 181 RE_DIV_MODU_ACS_BOUNDS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.097593
+Recording proof time: 0.134387
 
 Name: 182 IM_DIV_MODU_ASN_BOUNDS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.10646
+Recording proof time: 0.150571
 
 Name: 183 RE_DIV_MODU_ACS_COS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.111893
+Recording proof time: 0.17705
 
 Name: 184 IM_DIV_MODU_ASN_SIN
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.113455
+Recording proof time: 0.136728
 
 Name: 185 ARG_COS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.169073
+Recording proof time: 0.216569
 
 Name: 186 ARG_SIN
-Original proof time: 0.009442
+Original proof time: 0.011856
 
 Name: 187 RE_MODU_ARG
-Original proof time: 0.000317
+Original proof time: 0.000229
 
 Name: 188 IM_MODU_ARG
-Original proof time: 0.000303
+Original proof time: 0.000223
 
 Name: 189 COMPLEX_TRIANGLE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010524
+Recording proof time: 0.013373
 
 Name: 190 COMPLEX_MODU_ARG_EQ
-hh_eval 405269965228474
-Time: 0.959534
-Reconstructed: 0.011383
-Proof found: METIS_TAC [fetch "complex" "COMPLEX_TRIANGLE"]
+proof length: 6
+proof time: 0.013863
+Statistics
+  infstep : 123
+  nodes   : 42
+  maxdepth: 4
+Time: 3.488347
+  inferstep time: 2.888647
+  node_find time: 0.005033
+  node_crea time: 0.592834
+    pred time: 0.186019
+    thmpred time: 0.00001
+    mc time: 0.241824
+    inst time: 0.0
+Proof found: REPEAT STRIP_TAC THEN EQ_TAC THENL [REPEAT STRIP_TAC THEN METIS_TAC [], METIS_TAC [fetch "complex" "COMPLEX_TRIANGLE"]]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.081633
+Recording proof time: 0.14523
 
 Name: 191 MODU_UNIT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060247
+Recording proof time: 0.10287
 
 Name: 192 COMPLEX_MUL_ARG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031004
+Recording proof time: 0.032393
 
 Name: 193 COMPLEX_INV_ARG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.065641
+Recording proof time: 0.06524
 
 Name: 194 COMPLEX_DIV_ARG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006865
+Recording proof time: 0.006346
 
 Name: 195 COMPLEX_POW_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.052601
+Recording proof time: 0.037777
 
 Name: 196 COMPLEX_POW_NZ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.119869
+Recording proof time: 0.151567
 
 Name: 197 COMPLEX_POWINV
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.328651
+Recording proof time: 0.46988
 
 Name: 198 MODU_COMPLEX_POW
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069541
+Recording proof time: 0.069738
 
 Name: 199 COMPLEX_POW_ADD
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.109908
+Recording proof time: 0.142366
 
 Name: 200 COMPLEX_POW_1
-hh_eval 405269965228475
-Time: 1.241299
-Reconstructed: 0.008213
-Proof found: METIS_TAC [fetch "complex" "complex_pow_def", fetch "complex" "COMPLEX_MUL_RID", ONE]
+proof length: 1
+proof time: 0.000998
+Statistics
+  infstep : 6
+  nodes   : 3
+  maxdepth: 2
+Time: 0.318655
+  inferstep time: 0.262973
+  node_find time: 0.000136
+  node_crea time: 0.055381
+    pred time: 0.013886
+    thmpred time: 0.000001
+    mc time: 0.036445
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "complex" "complex_pow_def_compute", fetch "complex" "COMPLEX_MUL_RID"]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.05537
+Recording proof time: 0.121922
 
 Name: 201 COMPLEX_POW_2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.054536
+Recording proof time: 0.14483
 
 Name: 202 COMPLEX_POW_ONE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.022938
+Recording proof time: 0.103118
 
 Name: 203 COMPLEX_POW_MUL
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.109392
+Recording proof time: 0.120741
 
 Name: 204 COMPLEX_POW_INV
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.283751
+Recording proof time: 0.416544
 
 Name: 205 COMPLEX_POW_DIV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007024
+Recording proof time: 0.041031
 
 Name: 206 COMPLEX_POW_L
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.111224
+Recording proof time: 0.146004
 
 Name: 207 COMPLEX_POW_ZERO
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.167817
+Recording proof time: 0.243712
 
 Name: 208 COMPLEX_POW_ZERO_EQ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.113862
+Recording proof time: 0.309135
 
 Name: 209 COMPLEX_POW_POW
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082394
+Recording proof time: 0.166847
 
 Name: 210 DE_MOIVRE_LEMMA
-hh_eval 405269965228476
-Time: 61.312998
+Statistics
+  infstep : 5750
+  nodes   : 823
+  maxdepth: 8
+Time: 60.000543
+  inferstep time: 41.391059
+  node_find time: 2.09763
+  node_crea time: 16.432556
+    pred time: 4.093359
+    thmpred time: 0.000151
+    mc time: 7.809154
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.129906
+Recording proof time: 0.195103
 
 Name: 211 DE_MOIVRE_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006984
+Recording proof time: 0.007341
 
 Name: 212 EXP_IMAGINARY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014222
+Recording proof time: 0.008017
 
 Name: 213 EULER_FORMULE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012707
+Recording proof time: 0.016537
 
 Name: 214 COMPLEX_EXP_ADD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016255
+Recording proof time: 0.012861
 
 Name: 215 COMPLEX_EXP_NEG
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.113351
+Recording proof time: 0.216592
 
 Name: 216 COMPLEX_EXP_SUB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01121
+Recording proof time: 0.007044
 
 Name: 217 COMPLEX_EXP_N
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037632
+Recording proof time: 0.034416
 
 Name: 218 COMPLEX_EXP_N2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01175
+Recording proof time: 0.018896
 
 Name: 219 COMPLEX_EXP_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008572
+Recording proof time: 0.007574
 
 Name: 220 COMPLEX_EXP_NZ
-hh_eval 405269965228477
-Time: 61.302913
-Proof status: Time Out
+proof length: 3
+proof time: 0.00058
+Statistics
+  infstep : 269
+  nodes   : 62
+  maxdepth: 4
+Time: 4.91863
+  inferstep time: 3.816442
+  node_find time: 0.020002
+  node_crea time: 1.078826
+    pred time: 0.33626
+    thmpred time: 0.000013
+    mc time: 0.54238
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "complex" "complex_exp"), (fetch "complex" "RE"), (fetch "complex" "IM")] THEN REWRITE_TAC [(fetch "complex" "COMPLEX_SCALAR_LMUL_ENTIRE")] THEN REWRITE_TAC [EXP_NZ, (fetch "complex" "MODU_NZ"), (fetch "complex" "MODU_UNIT"), REAL_LT_01]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.049445
+Recording proof time: 0.032844
 
 Name: 221 COMPLEX_EXP_ADD_MUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009893
+Recording proof time: 0.013678
 
 Name: 222 COMPLEX_EXP_NEG_MUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006116
+Recording proof time: 0.012712
 
 Name: 223 COMPLEX_EXP_NEG_MUL2
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.028898
-Bad stac: 0
+Recording proof time: 0.058623
+Bad stac: 23

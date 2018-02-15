@@ -1,159 +1,191 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.000329
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00406
 
 Name: 1 tactictoe_prove_1
-Original proof time: 0.000053
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.081877
 
 Name: 2 tactictoe_prove_2
-Original proof time: 0.000817
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.055196
 
 Name: 3 tactictoe_prove_3
-Original proof time: 0.00011
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.029983
 
 Name: 4 TOPOLOGY
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.072052
+Recording proof time: 0.063269
 
 Name: 5 TOPOLOGY_UNION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00509
+Recording proof time: 0.008947
 
 Name: 6 OPEN_OWN_NEIGH
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.101581
+Recording proof time: 0.106558
 
 Name: 7 OPEN_UNOPEN
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.429845
+Recording proof time: 0.578532
 
 Name: 8 OPEN_SUBOPEN
 Org tac number: 20
 Original proof time: 0.0
-Recording proof time: 0.531199
+Recording proof time: 0.705115
 
 Name: 9 OPEN_NEIGH
-Original proof time: 0.000767
+Original proof time: 0.000373
 
 Name: 10 CLOSED_LIMPT
-Original proof time: 0.001344
+Original proof time: 0.001069
 
 Name: 11 tactictoe_prove_11
-Original proof time: 0.000757
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.590587
 
 Name: 12 METRIC_ISMET
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.024505
+Recording proof time: 0.025817
 
 Name: 13 METRIC_ZERO
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082079
+Recording proof time: 0.171024
 
 Name: 14 METRIC_SAME
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.026551
+Recording proof time: 0.035524
 
 Name: 15 METRIC_POS
-hh_eval 166467792142136
-Time: 13.955176
-Reconstructed: 0.099263
-Proof found: METIS_TAC [REAL_LE_TOTAL, REAL_LE_TRANS, fetch "topology" "ismet", fetch "topology" "METRIC_ISMET", REAL_LE_ADDL]
+proof length: 5
+proof time: 0.050096
+Statistics
+  infstep : 283
+  nodes   : 63
+  maxdepth: 5
+Time: 4.957709
+  inferstep time: 4.010588
+  node_find time: 0.013229
+  node_crea time: 0.930383
+    pred time: 0.325324
+    thmpred time: 0.000017
+    mc time: 0.301975
+    inst time: 0.0
+Proof found: REPEAT GEN_TAC THEN ASSUME_TAC (SPEC (-- `m:('a)metric` --) (fetch "topology" "METRIC_ISMET")) THEN MP_TAC (SPEC (-- `x:real` --) (fetch "real" "REAL_LE_NEGTOTAL")) THEN RULE_ASSUM_TAC (REWRITE_RULE [(fetch "topology" "ismet")]) THEN METIS_TAC [REAL_LE_NEGTOTAL, REAL_LE_NEGL, REAL_LE_LNEG]
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.243134
+Recording proof time: 0.349342
 
 Name: 16 METRIC_SYM
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.173186
+Recording proof time: 0.217466
 
 Name: 17 METRIC_TRIANGLE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.110055
+Recording proof time: 0.166092
 
 Name: 18 METRIC_NZ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.127972
+Recording proof time: 0.139695
 
 Name: 19 mtop_istopology
-Original proof time: 0.017637
+Original proof time: 0.030625
 
 Name: 20 MTOP_OPEN
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.110952
+Recording proof time: 0.218187
 
 Name: 21 BALL_OPEN
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.425911
+Recording proof time: 0.862885
 
 Name: 22 BALL_NEIGH
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.255323
+Recording proof time: 0.265986
 
 Name: 23 MTOP_LIMPT
-Original proof time: 0.001015
+Original proof time: 0.00219
 
 Name: 24 ISMET_R1
-Original proof time: 0.000368
+Original proof time: 0.000548
 
 Name: 25 MR1_DEF
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.081648
+Recording proof time: 0.095372
 
 Name: 26 MR1_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.0302
+Recording proof time: 0.027071
 
 Name: 27 MR1_SUB
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030213
+Recording proof time: 0.029675
 
 Name: 28 MR1_ADD_POS
-hh_eval 166467792142137
-Time: 0.477762
-Reconstructed: 0.01091
-Proof found: METIS_TAC [fetch "topology" "MR1_DEF", REAL_ADD_SUB, abs]
+proof length: 2
+proof time: 0.004988
+Statistics
+  infstep : 6
+  nodes   : 5
+  maxdepth: 3
+Time: 0.328208
+  inferstep time: 0.278989
+  node_find time: 0.00007
+  node_crea time: 0.049043
+    pred time: 0.019092
+    thmpred time: 0.000002
+    mc time: 0.022612
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "topology" "MR1_DEF"), REAL_ADD_SUB] THEN METIS_TAC [abs]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.051389
+Recording proof time: 0.060548
 
 Name: 29 MR1_SUB_LE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060305
+Recording proof time: 0.054788
 
 Name: 30 MR1_ADD_LT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.053741
+Recording proof time: 0.065084
 
 Name: 31 MR1_SUB_LT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.05545
+Recording proof time: 0.073306
 
 Name: 32 MR1_BETWEEN1
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.027066
+Recording proof time: 0.047865
 
 Name: 33 MR1_LIMPT
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.439502
+Recording proof time: 0.643084
 Bad stac: 0

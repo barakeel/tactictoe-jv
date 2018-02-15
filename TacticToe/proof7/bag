@@ -2,1207 +2,1490 @@
 Name: 0 EMPTY_BAG_alt
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004783
+Recording proof time: 0.004379
 
 Name: 1 BAG_cases
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.202233
+Recording proof time: 0.251022
 
 Name: 2 BAG_MERGE_IDEM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009972
+Recording proof time: 0.005118
 
 Name: 3 BAG_INN_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00541
+Recording proof time: 0.098958
 
 Name: 4 BAG_INN_LESS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009713
+Recording proof time: 0.00715
 
 Name: 5 BAG_IN_BAG_INSERT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.073623
+Recording proof time: 0.090689
 
 Name: 6 BAG_INN_BAG_INSERT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013631
+Recording proof time: 0.039958
 
 Name: 7 BAG_INN_BAG_INSERT_STRONG
-hh_eval 6804177
-Time: 60.422651
-Proof status: Time Out
+proof length: 2
+proof time: 0.008398
+Statistics
+  infstep : 54
+  nodes   : 14
+  maxdepth: 3
+Time: 1.540614
+  inferstep time: 1.234609
+  node_find time: 0.00107
+  node_crea time: 0.304393
+    pred time: 0.093792
+    thmpred time: 0.000005
+    mc time: 0.15793
+    inst time: 0.0
+Proof found: SIMP_TAC std_ss [(fetch "bag" "BAG_INSERT")] THEN SRW_TAC [ARITH_ss] [fetch "bag" "BAG_INN"]
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.374426
+Recording proof time: 0.346527
 
 Name: 8 BAG_UNION_EQ_LCANCEL1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012628
+Recording proof time: 0.01451
 
 Name: 9 BAG_UNION_EQ_RCANCEL1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012951
+Recording proof time: 0.007956
 
 Name: 10 BAG_IN_BAG_UNION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008268
+Recording proof time: 0.01785
 
 Name: 11 BAG_INN_BAG_UNION
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.427608
+Recording proof time: 0.439166
 
 Name: 12 BAG_INN_BAG_MERGE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013909
+Recording proof time: 0.007912
 
 Name: 13 BAG_IN_BAG_MERGE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006361
+Recording proof time: 0.005865
 
 Name: 14 BAG_EXTENSION
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.10786
+Recording proof time: 0.143431
 
 Name: 15 BAG_UNION_INSERT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.060397
+Recording proof time: 0.050942
 
 Name: 16 BAG_INSERT_DIFF
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016735
+Recording proof time: 0.010861
 
 Name: 17 BAG_INSERT_NOT_EMPTY
-hh_eval 6804178
-Time: 37.492318
-Reconstructed: 0.40028
-Proof found: METIS_TAC [numeralTheory.numeral_distrib, LESS_EQ, fetch "bag" "BAG_INN", fetch "bag" "BAG_IN", fetch "bag" "EMPTY_BAG_alt", fetch "bag" "BAG_IN_BAG_INSERT"]
+proof length: 3
+proof time: 0.006256
+Statistics
+  infstep : 6
+  nodes   : 5
+  maxdepth: 3
+Time: 0.353162
+  inferstep time: 0.296694
+  node_find time: 0.000089
+  node_crea time: 0.05619
+    pred time: 0.020047
+    thmpred time: 0.0
+    mc time: 0.029061
+    inst time: 0.0
+Proof found: SRW_TAC [COND_elim_ss] [FUN_EQ_THM, (fetch "bag" "BAG_INSERT")] THEN SIMP_TAC std_ss [(fetch "bag" "EMPTY_BAG")] THEN METIS_TAC []
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.017044
+Recording proof time: 0.009068
 
 Name: 18 BAG_INSERT_ONE_ONE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.081227
+Recording proof time: 0.076146
 
 Name: 19 C_BAG_INSERT_ONE_ONE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.062848
+Recording proof time: 0.111216
 
 Name: 20 BAG_INSERT_commutes
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.108574
+Recording proof time: 0.103453
 
 Name: 21 BAG_DECOMPOSE
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.097372
+Recording proof time: 0.120569
 
 Name: 22 BAG_UNION_LEFT_CANCEL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009256
+Recording proof time: 0.006317
 
 Name: 23 COMM_BAG_UNION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006218
+Recording proof time: 0.008964
 
 Name: 24 BAG_UNION_RIGHT_CANCEL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.043819
+Recording proof time: 0.019549
 
 Name: 25 ASSOC_BAG_UNION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009252
+Recording proof time: 0.007763
 
 Name: 26 BAG_UNION_EMPTY
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.044054
+Recording proof time: 0.058328
 
 Name: 27 BAG_DELETE_EMPTY
-hh_eval 6804179
-Time: 0.414437
-Reconstructed: 0.007838
+proof length: 1
+proof time: 0.005448
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.051
+  inferstep time: 0.042116
+  node_find time: 0.000011
+  node_crea time: 0.008857
+    pred time: 0.002678
+    thmpred time: 0.0
+    mc time: 0.005092
+    inst time: 0.0
 Proof found: METIS_TAC [fetch "bag" "BAG_DELETE", fetch "bag" "BAG_INSERT_NOT_EMPTY"]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029397
+Recording proof time: 0.030271
 
 Name: 28 BAG_DELETE_commutes
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.028889
+Recording proof time: 0.023996
 
 Name: 29 BAG_DELETE_11
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.026102
+Recording proof time: 0.045714
 
 Name: 30 BAG_INN_BAG_DELETE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.160813
+Recording proof time: 0.174195
 
 Name: 31 BAG_IN_BAG_DELETE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009225
+Recording proof time: 0.014565
 
 Name: 32 BAG_DELETE_INSERT
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.212683
+Recording proof time: 0.20211
 
 Name: 33 BAG_DELETE_BAG_IN_up
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.075812
+Recording proof time: 0.099503
 
 Name: 34 BAG_DELETE_BAG_IN_down
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008946
+Recording proof time: 0.021968
 
 Name: 35 BAG_DELETE_BAG_IN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004835
+Recording proof time: 0.005301
 
 Name: 36 BAG_DELETE_concrete
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.044578
+Recording proof time: 0.087229
 
 Name: 37 tactictoe_prove_37
-Original proof time: 0.057476
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 0.58516
 
 Name: 38 tactictoe_prove_38
-Original proof time: 0.009903
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.065429
 
 Name: 39 BAG_UNION_DIFF_eliminate
-hh_eval 6804180
-Time: 60.380849
-Proof status: Time Out
+proof length: 1
+proof time: 0.002366
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.130115
+  inferstep time: 0.11784
+  node_find time: 0.00002
+  node_crea time: 0.012226
+    pred time: 0.003999
+    thmpred time: 0.000001
+    mc time: 0.006961
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "bag" "BAG_UNION"), (fetch "bag" "BAG_DIFF"), FUN_EQ_THM]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013856
+Recording proof time: 0.005488
 
 Name: 40 tactictoe_prove_40
-Original proof time: 0.023677
+Org tac number: 13
+Original proof time: 0.0
+Recording proof time: 0.54775
 
 Name: 41 BAG_DELETE_TWICE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.169789
+Recording proof time: 0.284004
 
 Name: 42 SING_BAG_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005904
+Recording proof time: 0.004906
 
 Name: 43 EL_BAG_11
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008211
+Recording proof time: 0.003452
 
 Name: 44 EL_BAG_INSERT_squeeze
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010283
+Recording proof time: 0.009665
 
 Name: 45 SING_EL_BAG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005603
+Recording proof time: 0.003267
 
 Name: 46 BAG_INSERT_UNION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005161
+Recording proof time: 0.006465
 
 Name: 47 BAG_INSERT_EQ_UNION
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.053548
+Recording proof time: 0.050508
 
 Name: 48 BAG_DELETE_SING
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006248
+Recording proof time: 0.00728
 
 Name: 49 NOT_IN_EMPTY_BAG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004974
+Recording proof time: 0.005373
 
 Name: 50 BAG_INN_EMPTY_BAG
-hh_eval 6804181
-Time: 20.276628
-Reconstructed: 0.134226
-Proof found: METIS_TAC [numeralTheory.numeral_distrib, fetch "bag" "BAG_INN", fetch "bag" "EMPTY_BAG_alt"]
+proof length: 2
+proof time: 0.001353
+Statistics
+  infstep : 29
+  nodes   : 6
+  maxdepth: 2
+Time: 0.576015
+  inferstep time: 0.480292
+  node_find time: 0.000352
+  node_crea time: 0.094923
+    pred time: 0.029661
+    thmpred time: 0.000002
+    mc time: 0.050807
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "bag" "BAG_INN"), GREATER_EQ] THEN SIMP_TAC std_ss [(fetch "bag" "EMPTY_BAG")]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006447
+Recording proof time: 0.009255
 
 Name: 51 MEMBER_NOT_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.04855
+Recording proof time: 0.026904
 
 Name: 52 SUB_BAG_LEQ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.099362
+Recording proof time: 0.116559
 
 Name: 53 SUB_BAG_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005698
+Recording proof time: 0.007266
 
 Name: 54 SUB_BAG_REFL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00428
+Recording proof time: 0.00599
 
 Name: 55 PSUB_BAG_IRREFL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.020275
+Recording proof time: 0.003637
 
 Name: 56 SUB_BAG_ANTISYM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013506
+Recording proof time: 0.029815
 
 Name: 57 PSUB_BAG_ANTISYM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007605
+Recording proof time: 0.005366
 
 Name: 58 SUB_BAG_TRANS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008639
+Recording proof time: 0.007973
 
 Name: 59 PSUB_BAG_TRANS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.021802
+Recording proof time: 0.015001
 
 Name: 60 PSUB_BAG_SUB_BAG
-hh_eval 6804182
-Time: 0.694551
-Reconstructed: 0.005644
+proof length: 1
+proof time: 0.003719
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.03696
+  inferstep time: 0.026084
+  node_find time: 0.00001
+  node_crea time: 0.01085
+    pred time: 0.003188
+    thmpred time: 0.0
+    mc time: 0.006486
+    inst time: 0.0
 Proof found: METIS_TAC [fetch "bag" "PSUB_BAG"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007926
+Recording proof time: 0.004726
 
 Name: 61 PSUB_BAG_NOT_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007052
+Recording proof time: 0.004775
 
 Name: 62 BAG_DIFF_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006287
+Recording proof time: 0.006234
 
 Name: 63 BAG_DIFF_EQ_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01381
+Recording proof time: 0.00994
 
 Name: 64 BAG_DIFF_INSERT_same
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.035238
+Recording proof time: 0.025678
 
 Name: 65 BAG_DIFF_INSERT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.085175
+Recording proof time: 0.041092
 
 Name: 66 NOT_IN_BAG_DIFF
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.043052
+Recording proof time: 0.017634
 
 Name: 67 BAG_IN_DIFF_I
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009016
+Recording proof time: 0.006815
 
 Name: 68 BAG_IN_DIFF_E
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008164
+Recording proof time: 0.007471
 
 Name: 69 BAG_UNION_DIFF
-Original proof time: 0.016471
+Original proof time: 0.01257
 
 Name: 70 BAG_DIFF_2L
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009463
+Recording proof time: 0.00655
 
 Name: 71 BAG_DIFF_2R
-Original proof time: 0.01743
+Original proof time: 0.009917
 
 Name: 72 SUB_BAG_BAG_DIFF
-hh_eval 6804183
-Time: 60.529911
-Proof status: Time Out
+proof length: 4
+proof time: 0.012709
+Statistics
+  infstep : 210
+  nodes   : 48
+  maxdepth: 4
+Time: 3.701071
+  inferstep time: 3.10877
+  node_find time: 0.006261
+  node_crea time: 0.584416
+    pred time: 0.189774
+    thmpred time: 0.000012
+    mc time: 0.271394
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "bag" "SUB_BAG_LEQ"), (fetch "bag" "BAG_DIFF")] THEN SIMP_TAC arith_ss [(fetch "bag" "BAG_UNION")] THEN REPEAT (FIRST_X_ASSUM (Q.SPEC_THEN `x` MP_TAC)) THEN SIMP_TAC arith_ss []
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.17484
+Recording proof time: 0.143173
 
 Name: 73 BAG_DIFF_UNION_eliminate
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03889
+Recording proof time: 0.047306
 
 Name: 74 SUB_BAG_UNION_eliminate
-Original proof time: 0.009144
+Original proof time: 0.005209
 
 Name: 75 move_BAG_UNION_over_eq
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00931
+Recording proof time: 0.004919
 
 Name: 76 SUB_BAG_EL_BAG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011781
+Recording proof time: 0.015983
 
 Name: 77 SUB_BAG_INSERT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.163063
+Recording proof time: 0.071657
 
 Name: 78 SUB_BAG_INSERT_I
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.070895
+Recording proof time: 0.114918
 
 Name: 79 NOT_IN_SUB_BAG_INSERT
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.254072
+Recording proof time: 0.411531
 
 Name: 80 SUB_BAG_BAG_IN
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.088713
+Recording proof time: 0.111637
 
 Name: 81 SUB_BAG_EXISTS
-Original proof time: 0.006955
+Original proof time: 0.005196
 
 Name: 82 SUB_BAG_UNION_DIFF
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.167247
+Recording proof time: 0.185756
 
 Name: 83 SUB_BAG_UNION_down
-Original proof time: 0.01244
+Original proof time: 0.004605
 
 Name: 84 SUB_BAG_DIFF
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.107103
+Recording proof time: 0.097217
 
 Name: 85 SUB_BAG_PSUB_BAG
-hh_eval 6804184
-Time: 1.056427
-Reconstructed: 0.020828
-Proof found: METIS_TAC [fetch "bag" "PSUB_BAG", fetch "bag" "SUB_BAG_REFL"]
+proof length: 2
+proof time: 60.0
+Statistics
+  infstep : 7
+  nodes   : 4
+  maxdepth: 2
+Time: 0.408752
+  inferstep time: 0.366561
+  node_find time: 0.000108
+  node_crea time: 0.041938
+    pred time: 0.018125
+    thmpred time: 0.000002
+    mc time: 0.015285
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "bag" "SUB_BAG_LEQ"), FUN_EQ_THM, DECIDE (``(x:num = y) <=> x <= y /\\ y <= x``)] THEN METIS_TAC [fetch "bag" "PSUB_BAG", fetch "bag" "SUB_BAG_LEQ"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.030335
+Recording proof time: 0.040442
 
 Name: 86 BAG_DELETE_PSUB_BAG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008093
+Recording proof time: 0.009722
 
 Name: 87 SET_OF_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004536
+Recording proof time: 0.007826
 
 Name: 88 BAG_IN_BAG_OF_SET
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016538
+Recording proof time: 0.009957
 
 Name: 89 BAG_OF_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004486
+Recording proof time: 0.007512
 
 Name: 90 SET_BAG_I
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.02513
+Recording proof time: 0.03797
 
 Name: 91 SUB_BAG_SET
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00806
+Recording proof time: 0.00659
 
 Name: 92 SET_OF_BAG_UNION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031571
+Recording proof time: 0.031167
 
 Name: 93 SET_OF_BAG_MERGE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031123
+Recording proof time: 0.040733
 
 Name: 94 SET_OF_BAG_INSERT
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.113125
+Recording proof time: 0.199021
 
 Name: 95 SET_OF_EL_BAG
-hh_eval 6804185
-Time: 2.713435
-Reconstructed: 0.008908
-Proof found: METIS_TAC [fetch "bag" "SET_OF_BAG_INSERT", fetch "bag" "EL_BAG", fetch "bag" "BAG_OF_EMPTY"]
+proof length: 1
+proof time: 0.007612
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.041534
+  inferstep time: 0.029974
+  node_find time: 0.000012
+  node_crea time: 0.01153
+    pred time: 0.00332
+    thmpred time: 0.000001
+    mc time: 0.006865
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "bag" "EL_BAG", fetch "bag" "SET_OF_BAG_INSERT", fetch "bag" "BAG_OF_EMPTY"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008233
+Recording proof time: 0.005716
 
 Name: 96 SET_OF_BAG_DIFF_SUBSET_down
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034245
+Recording proof time: 0.048382
 
 Name: 97 SET_OF_BAG_DIFF_SUBSET_up
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034146
+Recording proof time: 0.042628
 
 Name: 98 IN_SET_OF_BAG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004855
+Recording proof time: 0.005095
 
 Name: 99 SET_OF_BAG_EQ_EMPTY
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058648
+Recording proof time: 0.306323
 
 Name: 100 BAG_DISJOINT_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005949
+Recording proof time: 0.007274
 
 Name: 101 BAG_DISJOINT_DIFF
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.039331
+Recording proof time: 0.054735
 
 Name: 102 BAG_DISJOINT_BAG_IN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004884
+Recording proof time: 0.00565
 
 Name: 103 BAG_DISJOINT_BAG_INSERT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.069965
+Recording proof time: 0.056033
 
 Name: 104 BAG_DISJOINT_BAG_UNION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.062285
+Recording proof time: 0.049683
 
 Name: 105 FINITE_EMPTY_BAG
-hh_eval 6804186
-Time: 0.912376
-Reconstructed: 0.009242
+proof length: 1
+proof time: 0.008262
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.039205
+  inferstep time: 0.028775
+  node_find time: 0.000013
+  node_crea time: 0.010397
+    pred time: 0.00301
+    thmpred time: 0.0
+    mc time: 0.006345
+    inst time: 0.0
 Proof found: METIS_TAC [fetch "bag" "FINITE_BAG"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006037
+Recording proof time: 0.004712
 
 Name: 106 FINITE_BAG_INSERT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035797
+Recording proof time: 0.11349
 
 Name: 107 FINITE_BAG_INDUCT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.116649
+Recording proof time: 0.092452
 
 Name: 108 tactictoe_prove_108
-Original proof time: 0.007425
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.653842
 
 Name: 109 tactictoe_prove_109
-Original proof time: 0.007144
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007843
 
 Name: 110 FINITE_BAG_DIFF
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.157528
+Recording proof time: 0.184923
 
 Name: 111 FINITE_BAG_DIFF_dual
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.178245
+Recording proof time: 0.189243
 
 Name: 112 tactictoe_prove_112
-Original proof time: 0.001174
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.033518
 
 Name: 113 tactictoe_prove_113
-Original proof time: 0.036535
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.234018
 
 Name: 114 FINITE_BAG_UNION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007472
+Recording proof time: 0.009726
 
 Name: 115 FINITE_SUB_BAG
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.190617
+Recording proof time: 0.257556
 
 Name: 116 tactictoe_prove_116
-Original proof time: 0.007237
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.029585
 
 Name: 117 tactictoe_prove_117
-Original proof time: 0.004861
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.034681
 
 Name: 118 tactictoe_prove_118
-Original proof time: 0.00901
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.132905
 
 Name: 119 tactictoe_prove_119
-Original proof time: 0.113834
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.211987
 
 Name: 120 tactictoe_prove_120
-Original proof time: 0.021621
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.556852
 
 Name: 121 tactictoe_prove_121
-Original proof time: 0.000743
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.029135
 
 Name: 122 tactictoe_prove_122
-Original proof time: 0.003386
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.167405
 
 Name: 123 tactictoe_prove_123
-Original proof time: 0.006666
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.294564
 
 Name: 124 tactictoe_prove_124
-Original proof time: 0.002185
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.066796
 
 Name: 125 BCARD_0
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.156647
+Recording proof time: 0.167017
 
 Name: 126 tactictoe_prove_126
-Original proof time: 0.005003
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.172405
 
 Name: 127 tactictoe_prove_127
-Original proof time: 0.005421
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.18476
 
 Name: 128 BAG_CARD_UNION
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.067017
+Recording proof time: 0.067793
 
 Name: 129 BCARD_SUC
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.297617
+Recording proof time: 0.334243
 
 Name: 130 BAG_CARD_BAG_INN
-hh_eval 6804187
-Time: 60.793563
+Statistics
+  infstep : 2390
+  nodes   : 731
+  maxdepth: 8
+Time: 60.005875
+  inferstep time: 44.380328
+  node_find time: 0.834476
+  node_crea time: 14.747878
+    pred time: 3.815701
+    thmpred time: 0.000175
+    mc time: 5.062532
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.206314
+Recording proof time: 0.192231
 
 Name: 131 SUB_BAG_DIFF_EQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.104798
+Recording proof time: 0.142823
 
 Name: 132 tactictoe_prove_132
-Original proof time: 0.002047
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010024
 
 Name: 133 SUB_BAG_CARD
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.407347
+Recording proof time: 0.551695
 
 Name: 134 BAG_CARD_DIFF
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.673656
+Recording proof time: 0.685702
 
 Name: 135 BAG_FILTER_EMPTY
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029066
+Recording proof time: 0.027725
 
 Name: 136 BAG_FILTER_BAG_INSERT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069437
+Recording proof time: 0.060151
 
 Name: 137 FINITE_BAG_FILTER
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.054723
+Recording proof time: 0.137216
 
 Name: 138 BAG_INN_BAG_FILTER
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01069
+Recording proof time: 0.008648
 
 Name: 139 BAG_IN_BAG_FILTER
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003268
+Recording proof time: 0.011696
 
 Name: 140 BAG_FILTER_FILTER
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.102863
+Recording proof time: 0.269464
 
 Name: 141 BAG_FILTER_SUB_BAG
-hh_eval 6804188
-Time: 60.911542
-Proof status: Time Out
+proof length: 2
+proof time: 0.002409
+Statistics
+  infstep : 30
+  nodes   : 12
+  maxdepth: 3
+Time: 0.567562
+  inferstep time: 0.501764
+  node_find time: 0.000392
+  node_crea time: 0.065171
+    pred time: 0.021334
+    thmpred time: 0.000002
+    mc time: 0.031116
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "bag" "BAG_FILTER_DEF")] THEN SRW_TAC [COND_elim_ss] [(fetch "bag" "SUB_BAG_LEQ")]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015889
+Recording proof time: 0.00896
 
 Name: 142 SET_OF_BAG_EQ_INSERT
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.558167
+Recording proof time: 0.699814
 
 Name: 143 FINITE_SET_OF_BAG
 Org tac number: 30
 Original proof time: 0.0
-Recording proof time: 1.126438
+Recording proof time: 1.461354
 
 Name: 144 BAG_IMAGE_EMPTY
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.028948
+Recording proof time: 0.030843
 
 Name: 145 BAG_IMAGE_FINITE_INSERT
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.192884
+Recording proof time: 0.224501
 
 Name: 146 BAG_IMAGE_FINITE_UNION
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.113498
+Recording proof time: 0.300236
 
 Name: 147 BAG_IMAGE_FINITE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029161
+Recording proof time: 0.029285
 
 Name: 148 BAG_IMAGE_COMPOSE
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.088472
+Recording proof time: 0.083688
 
 Name: 149 BAG_IMAGE_FINITE_I
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.026063
+Recording proof time: 0.032828
 
 Name: 150 BAG_IN_FINITE_BAG_IMAGE
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.997387
+Recording proof time: 1.655249
 
 Name: 151 BAG_IMAGE_EQ_EMPTY
-hh_eval 6804189
-Time: 60.956682
-Proof status: Time Out
+proof length: 1
+proof time: 0.029912
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.106411
+  inferstep time: 0.094741
+  node_find time: 0.000011
+  node_crea time: 0.011642
+    pred time: 0.003988
+    thmpred time: 0.000001
+    mc time: 0.006373
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "bag" "BAG_IN_FINITE_BAG_IMAGE", fetch "bag" "MEMBER_NOT_EMPTY"]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.065081
+Recording proof time: 0.079015
 
 Name: 152 tactictoe_prove_152
-Original proof time: 0.00161
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005402
 
 Name: 153 BAG_INSERT_CHOICE_REST
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.080525
+Recording proof time: 0.081105
 
 Name: 154 BAG_CHOICE_SING
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.027825
+Recording proof time: 0.02712
 
 Name: 155 BAG_REST_SING
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005505
+Recording proof time: 0.003714
 
 Name: 156 SUB_BAG_REST
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.021247
+Recording proof time: 0.023919
 
 Name: 157 PSUB_BAG_REST
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.15132
+Recording proof time: 0.158977
 
 Name: 158 tactictoe_prove_158
-Original proof time: 0.003737
+Original proof time: 0.006887
 
 Name: 159 tactictoe_prove_159
-Original proof time: 0.001765
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.010358
 
 Name: 160 PSUB_BAG_CARD
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.460103
+Recording proof time: 0.633889
 
 Name: 161 EL_BAG_BAG_INSERT
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.468774
+Recording proof time: 0.614999
 
 Name: 162 EL_BAG_SUB_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.058208
+Recording proof time: 0.065244
 
 Name: 163 COMMUTING_ITBAG_INSERT
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.739174
+Recording proof time: 1.310266
 
 Name: 164 COMMUTING_ITBAG_RECURSES
-hh_eval 6804190
-Time: 61.073798
+Statistics
+  infstep : 4276
+  nodes   : 1489
+  maxdepth: 9
+Time: 60.035841
+  inferstep time: 41.237083
+  node_find time: 2.588619
+  node_crea time: 16.162719
+    pred time: 2.845841
+    thmpred time: 0.000119
+    mc time: 4.568701
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.30088
+Recording proof time: 0.315063
 
 Name: 165 BAG_GEN_SUM_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003893
+Recording proof time: 0.003745
 
 Name: 166 BAG_GEN_PROD_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003967
+Recording proof time: 0.006975
 
 Name: 167 BAG_GEN_SUM_TAILREC
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.111864
+Recording proof time: 0.247455
 
 Name: 168 BAG_GEN_SUM_REC
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.111928
+Recording proof time: 0.125525
 
 Name: 169 BAG_GEN_PROD_TAILREC
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.105405
+Recording proof time: 0.134511
 
 Name: 170 BAG_GEN_PROD_REC
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.118963
+Recording proof time: 0.172979
 
 Name: 171 BAG_GEN_PROD_EQ_1
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.264236
+Recording proof time: 0.241284
 
 Name: 172 BAG_GEN_PROD_ALL_ONES
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.565894
+Recording proof time: 0.588985
 
 Name: 173 BAG_GEN_PROD_POSITIVE
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.320216
+Recording proof time: 0.411401
 
 Name: 174 BAG_EVERY_THM
-hh_eval 6804191
-Time: 61.103137
-Proof status: Time Out
+proof length: 7
+proof time: 0.038325
+Statistics
+  infstep : 4022
+  nodes   : 959
+  maxdepth: 9
+Time: 41.517119
+  inferstep time: 32.286096
+  node_find time: 1.202562
+  node_crea time: 7.996431
+    pred time: 1.825895
+    thmpred time: 0.000087
+    mc time: 2.519597
+    inst time: 0.0
+Proof found: SRW_TAC [] [] THENL [SRW_TAC [] [fetch "bag" "BAG_EVERY"], Cases_on `BAG_IN e c` THEN SRW_TAC [] [fetch "bag" "BAG_EVERY"] THEN METIS_TAC []]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.059894
+Recording proof time: 0.050005
 
 Name: 175 BAG_EVERY_UNION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.045911
+Recording proof time: 0.063212
 
 Name: 176 BAG_EVERY_MERGE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005996
+Recording proof time: 0.005429
 
 Name: 177 BAG_EVERY_SET
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.017671
+Recording proof time: 0.005941
 
 Name: 178 BAG_FILTER_EQ_EMPTY
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.706399
+Recording proof time: 1.291928
 
 Name: 179 SET_OF_BAG_IMAGE
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.481634
+Recording proof time: 0.613062
 
 Name: 180 BAG_IMAGE_FINITE_RESTRICTED_I
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.074692
+Recording proof time: 0.054082
 
 Name: 181 BAG_ALL_DISTINCT_THM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.22071
+Recording proof time: 0.197806
 
 Name: 182 tactictoe_prove_182
-Original proof time: 0.000082
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.030153
 
 Name: 183 BAG_ALL_DISTINCT_BAG_MERGE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.13217
+Recording proof time: 0.271194
 
 Name: 184 BAG_ALL_DISTINCT_BAG_UNION
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.154181
+Recording proof time: 0.183587
 
 Name: 185 BAG_ALL_DISTINCT_DIFF
-hh_eval 6804192
-Time: 61.320081
-Proof status: Time Out
+proof length: 5
+proof time: 0.004643
+Statistics
+  infstep : 444
+  nodes   : 80
+  maxdepth: 5
+Time: 5.484605
+  inferstep time: 4.771381
+  node_find time: 0.0167
+  node_crea time: 0.693597
+    pred time: 0.203506
+    thmpred time: 0.000015
+    mc time: 0.299722
+    inst time: 0.0
+Proof found: SIMP_TAC arith_ss [(fetch "bag" "BAG_ALL_DISTINCT")] THEN SRW_TAC [] [fetch "bag" "BAG_DIFF"] THEN REPEAT (POP_ASSUM (MP_TAC o SPEC_ALL)) THEN SRW_TAC [] [] THEN SRW_TAC [ARITH_ss] []
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.183019
+Recording proof time: 0.1873
 
 Name: 186 BAG_ALL_DISTINCT_DELETE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.062434
+Recording proof time: 0.059476
 
 Name: 187 BAG_ALL_DISTINCT_SET
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.153749
+Recording proof time: 0.198847
 
 Name: 188 BAG_ALL_DISTINCT_BAG_OF_SET
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002942
+Recording proof time: 0.003954
 
 Name: 189 BAG_IN_BAG_DIFF_ALL_DISTINCT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.151553
+Recording proof time: 0.209328
 
 Name: 190 SUB_BAG_ALL_DISTINCT
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.427966
+Recording proof time: 0.524387
 
 Name: 191 BAG_ALL_DISTINCT_BAG_INN
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.288948
+Recording proof time: 0.27355
 
 Name: 192 BAG_ALL_DISTINCT_EXTENSION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.347441
+Recording proof time: 0.032745
 
 Name: 193 NOT_BAG_IN
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.510138
+Recording proof time: 0.252607
 
 Name: 194 BAG_UNION_EQ_LEFT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004884
+Recording proof time: 0.008242
 
 Name: 195 tactictoe_prove_195
-Original proof time: 0.020834
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.334939
 
 Name: 196 BAG_IN_DIVIDES
-hh_eval 6804193
-Time: 1.363228
-Reconstructed: 0.005809
+proof length: 1
+proof time: 0.005908
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.056094
+  inferstep time: 0.042306
+  node_find time: 0.000012
+  node_crea time: 0.013758
+    pred time: 0.003436
+    thmpred time: 0.0
+    mc time: 0.008908
+    inst time: 0.0
 Proof found: METIS_TAC [lem]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016343
+Recording proof time: 0.01174
 
 Name: 197 BAG_GEN_PROD_UNION_LEM
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.590018
+Recording proof time: 0.552181
 
 Name: 198 BAG_GEN_PROD_UNION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.029721
+Recording proof time: 0.028475
 
 Name: 199 BIG_BAG_UNION_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004016
+Recording proof time: 0.00617
 
 Name: 200 BIG_BAG_UNION_INSERT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005625
+Recording proof time: 0.006313
 
 Name: 201 BIG_BAG_UNION_DELETE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033878
+Recording proof time: 0.05889
 
 Name: 202 BIG_BAG_UNION_ITSET_BAG_UNION
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.419324
+Recording proof time: 0.461996
 
 Name: 203 FINITE_BIG_BAG_UNION
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.19693
+Recording proof time: 0.130305
 
 Name: 204 BAG_IN_BIG_BAG_UNION
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.818279
+Recording proof time: 0.948525
 
 Name: 205 BIG_BAG_UNION_EQ_EMPTY_BAG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.09598
+Recording proof time: 0.198775
 
 Name: 206 BIG_BAG_UNION_UNION
-hh_eval 6804194
-Time: 61.184077
-Proof status: Time Out
+proof length: 3
+proof time: 0.003545
+Statistics
+  infstep : 875
+  nodes   : 228
+  maxdepth: 6
+Time: 16.370246
+  inferstep time: 12.456738
+  node_find time: 0.088058
+  node_crea time: 3.817277
+    pred time: 0.873926
+    thmpred time: 0.00004
+    mc time: 1.226191
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "bag" "BIG_BAG_UNION_def"), (fetch "bag" "BAG_UNION"), (fetch "bag" "BAG_DIFF"), FUN_EQ_THM] THEN NTAC 2 (POP_ASSUM MP_TAC) THEN SRW_TAC [] [(fetch "pred_set" "SUM_IMAGE_UNION")]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015166
+Recording proof time: 0.007645
 
 Name: 207 BIG_BAG_UNION_EQ_ELEMENT
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 1.449114
+Recording proof time: 1.203823
 
 Name: 208 BAG_NOT_LESS_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005863
+Recording proof time: 0.005122
 
 Name: 209 NOT_mlt_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007483
+Recording proof time: 0.015928
 
 Name: 210 BAG_LESS_ADD
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.304416
+Recording proof time: 0.429438
 
 Name: 211 tactictoe_prove_211
-Original proof time: 0.004441
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.043766
 
 Name: 212 tactictoe_prove_212
-Original proof time: 0.069818
+Org tac number: 21
+Original proof time: 0.0
+Recording proof time: 1.667119
 
 Name: 213 mlt1_all_accessible
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.735206
+Recording proof time: 0.882444
 
 Name: 214 WF_mlt1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013301
+Recording proof time: 0.00978
 
 Name: 215 TC_mlt1_FINITE_BAG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058269
+Recording proof time: 0.053077
 
 Name: 216 TC_mlt1_UNION2_I
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.625784
+Recording proof time: 0.711312
 
 Name: 217 TC_mlt1_UNION1_I
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.019083
+Recording proof time: 0.016135
 
 Name: 218 mlt_NOT_REFL
-hh_eval 6804195
-Time: 30.722411
-Reconstructed: 0.00739
-Proof found: METIS_TAC [relationTheory.WF_noloops, fetch "bag" "WF_mlt1"]
+proof length: 1
+proof time: 0.016726
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.072158
+  inferstep time: 0.057875
+  node_find time: 0.000015
+  node_crea time: 0.01425
+    pred time: 0.003278
+    thmpred time: 0.0
+    mc time: 0.009757
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "bag" "WF_mlt1", relationTheory.WF_TC_EQN, relationTheory.WF_DEF]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014248
+Recording proof time: 0.020453
 
 Name: 219 mlt_INSERT_CANCEL_I
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.145241
+Recording proof time: 0.142516
 
 Name: 220 mlt1_INSERT_CANCEL
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.918546
+Recording proof time: 1.345888
 
 Name: 221 dominates_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011208
+Recording proof time: 0.007195
 
 Name: 222 tactictoe_prove_222
-Original proof time: 0.149009
+Org tac number: 28
+Original proof time: 0.0
+Recording proof time: 1.716659
 
 Name: 223 dominates_SUBSET
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 1.022069
+Recording proof time: 0.984917
 
 Name: 224 mlt_dominates_thm1
-Original proof time: 2.229153
+Original proof time: 2.587267
 
 Name: 225 dominates_DIFF
 Org tac number: 24
 Original proof time: 0.0
-Recording proof time: 0.935933
+Recording proof time: 1.569816
 
 Name: 226 BAG_INSERT_SUB_BAG_E
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.266126
+Recording proof time: 0.325665
 
 Name: 227 bdominates_BAG_DIFF
 Org tac number: 45
 Original proof time: 0.0
-Recording proof time: 1.97744
+Recording proof time: 3.71977
 
 Name: 228 BAG_INTER_SUB_BAG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014854
+Recording proof time: 0.016437
 
 Name: 229 BAG_INTER_FINITE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.029007
+Recording proof time: 0.032125
 
 Name: 230 mlt_dominates_thm2
-Original proof time: 0.11582
+Original proof time: 0.153805
 
 Name: 231 BAG_DIFF_INSERT_SUB_BAG
-hh_eval 6804196
-Time: 61.653265
-Proof status: Time Out
+proof length: 5
+proof time: 0.029233
+Statistics
+  infstep : 148
+  nodes   : 30
+  maxdepth: 5
+Time: 3.021485
+  inferstep time: 2.583755
+  node_find time: 0.00355
+  node_crea time: 0.432857
+    pred time: 0.140804
+    thmpred time: 0.000006
+    mc time: 0.21234
+    inst time: 0.0
+Proof found: SRW_TAC [COND_elim_ss] [FUN_EQ_THM, (fetch "bag" "BAG_DIFF"), (fetch "bag" "BAG_INSERT"), Cong (local_tag or_cong)] THEN REPEAT (POP_ASSUM (MP_TAC o SPEC_ALL)) THEN SRW_TAC [] [fetch "bag" "BAG_UNION", fetch "bag" "SUB_BAG_EXISTS"] THEN SRW_TAC [] [] THEN DECIDE_TAC
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.201644
+Recording proof time: 0.184387
 
 Name: 232 mlt_INSERT_CANCEL
 Org tac number: 25
 Original proof time: 0.0
-Recording proof time: 1.171655
+Recording proof time: 1.579104
 
 Name: 233 mlt_UNION_RCANCEL_I
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.205939
+Recording proof time: 0.162468
 
 Name: 234 mlt_UNION_RCANCEL
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.337672
+Recording proof time: 0.40928
 
 Name: 235 tactictoe_prove_235
-Original proof time: 0.008109
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.470036
 
 Name: 236 mlt_UNION_CANCEL_EQN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.176351
+Recording proof time: 0.160028
 
 Name: 237 SUB_BAG_SING
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.382938
+Recording proof time: 0.650106
 
 Name: 238 SUB_BAG_DIFF_simple
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006475
+Recording proof time: 0.032718
 
 Name: 239 mltLT_SING0
 Org tac number: 25
 Original proof time: 0.0
-Recording proof time: 0.949378
+Recording proof time: 1.137812
 
 Name: 240 BAG_SIZE_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.019406
+Recording proof time: 0.021749
 
 Name: 241 tactictoe_prove_241
-Original proof time: 0.004489
-Bad stac: 0
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007837
+Bad stac: 1

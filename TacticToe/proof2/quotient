@@ -2,480 +2,581 @@
 Name: 0 EQUIV_IMP_PARTIAL_EQUIV
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.085027
+Recording proof time: 0.065549
 
 Name: 1 QUOTIENT_ABS_REP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034227
+Recording proof time: 0.037883
 
 Name: 2 QUOTIENT_REP_REFL
-hh_eval 230370473412235
-Time: 0.548767
-Reconstructed: 0.030542
+proof length: 1
+proof time: 0.014758
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.111809
+  inferstep time: 0.104129
+  node_find time: 0.000008
+  node_crea time: 0.007652
+    pred time: 0.002818
+    thmpred time: 0.0
+    mc time: 0.003756
+    inst time: 0.0
 Proof found: METIS_TAC [fetch "quotient" "QUOTIENT_def"]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.023676
+Recording proof time: 0.03275
 
 Name: 3 QUOTIENT_REL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.027707
+Recording proof time: 0.050117
 
 Name: 4 QUOTIENT_REL_ABS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.055957
+Recording proof time: 0.058664
 
 Name: 5 QUOTIENT_REL_ABS_EQ
-Original proof time: 0.000455
+Original proof time: 0.000192
 
 Name: 6 QUOTIENT_REL_REP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.09142
+Recording proof time: 0.106533
 
 Name: 7 QUOTIENT_REP_ABS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.092501
+Recording proof time: 0.117917
 
 Name: 8 IDENTITY_EQUIV
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.086144
+Recording proof time: 0.091421
 
 Name: 9 IDENTITY_QUOTIENT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.026346
+Recording proof time: 0.033932
 
 Name: 10 EQUIV_REFL_SYM_TRANS
 Org tac number: 20
 Original proof time: 0.0
-Recording proof time: 0.447476
+Recording proof time: 0.523204
 
 Name: 11 QUOTIENT_SYM
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.092867
+Recording proof time: 0.09447
 
 Name: 12 QUOTIENT_TRANS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.112107
+Recording proof time: 0.14329
 
 Name: 13 FUN_MAP_THM
-hh_eval 230370473412236
-Time: 0.277814
-Reconstructed: 0.00484
-Proof found: METIS_TAC [fetch "quotient" "FUN_MAP"]
+proof length: 2
+proof time: 0.001558
+Statistics
+  infstep : 5
+  nodes   : 3
+  maxdepth: 2
+Time: 0.267445
+  inferstep time: 0.241504
+  node_find time: 0.000333
+  node_crea time: 0.025541
+    pred time: 0.009776
+    thmpred time: 0.0
+    mc time: 0.012607
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "quotient" "FUN_MAP"] THEN PROVE_TAC []
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083585
+Recording proof time: 0.084958
 
 Name: 14 FUN_MAP_I
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.105333
+Recording proof time: 0.111146
 
 Name: 15 IN_FUN
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.081221
+Recording proof time: 0.088346
 
 Name: 16 FUN_REL_EQ
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.154273
+Recording proof time: 0.377076
 
 Name: 17 FUN_QUOTIENT
-Original proof time: 0.102519
+Original proof time: 0.10537
 
 Name: 18 RESPECTS
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.038999
+Recording proof time: 0.028895
 
 Name: 19 IN_RESPECTS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004878
+Recording proof time: 0.004773
 
 Name: 20 RESPECTS_THM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029795
+Recording proof time: 0.036728
 
 Name: 21 RESPECTS_MP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.078634
+Recording proof time: 0.09086
 
 Name: 22 RESPECTS_REP_ABS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.108004
+Recording proof time: 0.140891
 
 Name: 23 RESPECTS_o
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.127668
+Recording proof time: 0.172586
 
 Name: 24 RES_EXISTS_EQUIV
-hh_eval 230370473412237
-Time: 60.279949
-Proof status: Time Out
+proof length: 3
+proof time: 0.001733
+Statistics
+  infstep : 83
+  nodes   : 33
+  maxdepth: 4
+Time: 1.698294
+  inferstep time: 1.394371
+  node_find time: 0.002726
+  node_crea time: 0.29972
+    pred time: 0.119884
+    thmpred time: 0.000047
+    mc time: 0.101733
+    inst time: 0.0
+Proof found: ASM_REWRITE_TAC [fetch "quotient" "RES_EXISTS_EQUIV_DEF"] THEN CONV_TAC (REDEPTH_CONV (BETA_CONV ORELSEC FUN_EQ_CONV)) THEN METIS_TAC []
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.104485
+Recording proof time: 0.11153
 
 Name: 25 FUN_REL_EQ_REL
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.143438
+Recording proof time: 0.244722
 
 Name: 26 FUN_REL_MP
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.051306
+Recording proof time: 0.058878
 
 Name: 27 FUN_REL_IMP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.08292
+Recording proof time: 0.074752
 
 Name: 28 FUN_REL_EQUALS
-Original proof time: 0.005963
+Original proof time: 0.002583
 
 Name: 29 FUN_REL_IMP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031215
+Recording proof time: 0.030978
 
 Name: 30 EQUALS_PRS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.051184
+Recording proof time: 0.104958
 
 Name: 31 EQUALS_RSP
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.11719
+Recording proof time: 0.109186
 
 Name: 32 LAMBDA_PRS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.144723
+Recording proof time: 0.211227
 
 Name: 33 LAMBDA_PRS1
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.211356
+Recording proof time: 0.20807
 
 Name: 34 LAMBDA_RSP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005487
+Recording proof time: 0.01968
 
 Name: 35 ABSTRACT_PRS
-hh_eval 230370473412238
-Time: 60.292959
-Proof status: Time Out
+proof length: 5
+proof time: 0.011531
+Statistics
+  infstep : 2581
+  nodes   : 532
+  maxdepth: 7
+Time: 30.61828
+  inferstep time: 20.548464
+  node_find time: 0.621683
+  node_crea time: 9.414548
+    pred time: 1.180274
+    thmpred time: 0.000093
+    mc time: 1.590171
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "quotient" "FUN_MAP"] THEN IMP_RES_TAC (fetch "quotient" "QUOTIENT_REP_REFL") THEN SRW_TAC [] [fetch "quotient" "IN_RESPECTS", RES_ABSTRACT_DEF] THEN IMP_RES_THEN (fn th => REWRITE_TAC [th]) (fetch "quotient" "QUOTIENT_ABS_REP") THEN METIS_TAC []
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.467007
+Recording proof time: 0.420373
 
 Name: 36 RES_ABSTRACT_RSP
-Original proof time: 0.001159
+Original proof time: 0.001322
 
 Name: 37 LET_RES_ABSTRACT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.137708
+Recording proof time: 0.149156
 
 Name: 38 LAMBDA_REP_ABS_RSP
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.259975
+Recording proof time: 0.313831
 
 Name: 39 REP_ABS_RSP
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.198415
+Recording proof time: 0.49511
 
 Name: 40 FORALL_PRS
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.486412
+Recording proof time: 0.45683
 
 Name: 41 RES_FORALL_RSP
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.23982
+Recording proof time: 0.429388
 
 Name: 42 RES_FORALL_PRS
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.268923
+Recording proof time: 0.437361
 
 Name: 43 EXISTS_PRS
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.520392
+Recording proof time: 0.490362
 
 Name: 44 RES_EXISTS_RSP
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.402724
+Recording proof time: 0.453271
 
 Name: 45 RES_EXISTS_PRS
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.485823
+Recording proof time: 0.326454
 
 Name: 46 EXISTS_UNIQUE_PRS
-hh_eval 230370473412239
-Time: 60.333661
+Statistics
+  infstep : 4565
+  nodes   : 1386
+  maxdepth: 9
+Time: 60.086624
+  inferstep time: 45.683538
+  node_find time: 1.890411
+  node_crea time: 12.464757
+    pred time: 3.074548
+    thmpred time: 0.000223
+    mc time: 3.796532
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 32
 Original proof time: 0.0
-Recording proof time: 1.536617
+Recording proof time: 0.987669
 
 Name: 47 RES_EXISTS_EQUIV_RSP
-Original proof time: 0.006849
+Original proof time: 0.004735
 
 Name: 48 COND_PRS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.083674
+Recording proof time: 0.097385
 
 Name: 49 COND_RSP
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.23984
+Recording proof time: 0.241842
 
 Name: 50 LET_PRS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.135383
+Recording proof time: 0.212142
 
 Name: 51 LET_RSP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.085021
+Recording proof time: 0.092975
 
 Name: 52 literal_case_PRS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.145811
+Recording proof time: 0.191831
 
 Name: 53 literal_case_RSP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.13363
+Recording proof time: 0.082193
 
 Name: 54 APPLY_PRS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.117161
+Recording proof time: 0.104986
 
 Name: 55 APPLY_RSP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.038107
+Recording proof time: 0.06379
 
 Name: 56 I_PRS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.083579
+Recording proof time: 0.292783
 
 Name: 57 I_RSP
-hh_eval 230370473412240
-Time: 0.686635
-Reconstructed: 0.002126
-Proof found: METIS_TAC [I_THM]
+proof length: 1
+proof time: 0.000307
+Statistics
+  infstep : 5
+  nodes   : 4
+  maxdepth: 2
+Time: 0.240994
+  inferstep time: 0.213269
+  node_find time: 0.000044
+  node_crea time: 0.02761
+    pred time: 0.010613
+    thmpred time: 0.0
+    mc time: 0.010617
+    inst time: 0.0
+Proof found: REWRITE_TAC [I_THM]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.073473
+Recording proof time: 0.083568
 
 Name: 58 K_PRS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.051323
+Recording proof time: 0.060118
 
 Name: 59 K_RSP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.02871
+Recording proof time: 0.027593
 
 Name: 60 o_PRS
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.245415
+Recording proof time: 0.221606
 
 Name: 61 o_RSP
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.350776
+Recording proof time: 0.393951
 
 Name: 62 C_PRS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.135673
+Recording proof time: 0.141795
 
 Name: 63 C_RSP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.079197
+Recording proof time: 0.096389
 
 Name: 64 W_PRS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.124825
+Recording proof time: 0.183523
 
 Name: 65 W_RSP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.073015
+Recording proof time: 0.097466
 
 Name: 66 EQ_IMPLIES
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033005
+Recording proof time: 0.037496
 
 Name: 67 EQUALS_IMPLIES
-hh_eval 230370473412241
-Time: 0.400338
-Reconstructed: 0.003661
+proof length: 1
+proof time: 0.002493
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.108162
+  inferstep time: 0.100095
+  node_find time: 0.000009
+  node_crea time: 0.008039
+    pred time: 0.002729
+    thmpred time: 0.0
+    mc time: 0.004101
+    inst time: 0.0
 Proof found: METIS_TAC []
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.083355
+Recording proof time: 0.095027
 
 Name: 68 CONJ_IMPLIES
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.042796
+Recording proof time: 0.023793
 
 Name: 69 DISJ_IMPLIES
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.134347
+Recording proof time: 0.116591
 
 Name: 70 IMP_IMPLIES
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.177792
+Recording proof time: 0.102409
 
 Name: 71 NOT_IMPLIES
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.134329
+Recording proof time: 0.146468
 
 Name: 72 EQUALS_EQUIV_IMPLIES
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.205728
+Recording proof time: 0.089222
 
 Name: 73 ABSTRACT_RES_ABSTRACT
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.262319
+Recording proof time: 0.316116
 
 Name: 74 RES_ABSTRACT_ABSTRACT
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.271765
+Recording proof time: 0.252152
 
 Name: 75 EQUIV_RES_ABSTRACT_LEFT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.111083
+Recording proof time: 0.083352
 
 Name: 76 EQUIV_RES_ABSTRACT_RIGHT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.178357
+Recording proof time: 0.105706
 
 Name: 77 EQUIV_RES_FORALL
-hh_eval 230370473412242
-Time: 60.390721
-Proof status: Time Out
+proof length: 2
+proof time: 0.020215
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.287619
+  inferstep time: 0.264136
+  node_find time: 0.000093
+  node_crea time: 0.023338
+    pred time: 0.008685
+    thmpred time: 0.000001
+    mc time: 0.011604
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "quotient" "EQUIV_def")] THEN METIS_TAC [fetch "quotient" "RES_FORALL_RSP", FORALL_THM, fetch "quotient" "IN_RESPECTS"]
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.18461
+Recording proof time: 0.135611
 
 Name: 78 EQUIV_RES_EXISTS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.144895
+Recording proof time: 0.148518
 
 Name: 79 EQUIV_RES_EXISTS_UNIQUE
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.198682
+Recording proof time: 0.212006
 
 Name: 80 FORALL_REGULAR
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.163131
+Recording proof time: 0.198386
 
 Name: 81 EXISTS_REGULAR
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.186839
+Recording proof time: 0.269732
 
 Name: 82 RES_FORALL_REGULAR
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.19404
+Recording proof time: 0.419452
 
 Name: 83 RES_EXISTS_REGULAR
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.294313
+Recording proof time: 0.332262
 
 Name: 84 LEFT_RES_FORALL_REGULAR
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.334222
+Recording proof time: 0.32195
 
 Name: 85 RIGHT_RES_FORALL_REGULAR
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.338476
+Recording proof time: 0.329744
 
 Name: 86 LEFT_RES_EXISTS_REGULAR
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.21336
+Recording proof time: 0.269783
 
 Name: 87 RIGHT_RES_EXISTS_REGULAR
-hh_eval 230370473412243
-Time: 0.552468
-Reconstructed: 0.004138
-Proof found: METIS_TAC [SPECIFICATION, EXISTS_DEF]
+proof length: 2
+proof time: 0.008924
+Statistics
+  infstep : 23
+  nodes   : 9
+  maxdepth: 3
+Time: 0.73878
+  inferstep time: 0.664176
+  node_find time: 0.000397
+  node_crea time: 0.074015
+    pred time: 0.026669
+    thmpred time: 0.000002
+    mc time: 0.02774
+    inst time: 0.0
+Proof found: RW_TAC bool_ss [(fetch "res_quan" "RES_EXISTS"), EXISTS_DEF, SPECIFICATION] THEN METIS_TAC []
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.249853
+Recording proof time: 0.283265
 
 Name: 88 EXISTS_UNIQUE_REGULAR
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.272625
+Recording proof time: 0.280032
 
 Name: 89 RES_EXISTS_UNIQUE_RESPECTS_REGULAR
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.412535
+Recording proof time: 0.582432
 
 Name: 90 RES_EXISTS_UNIQUE_REGULAR
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.544621
+Recording proof time: 0.389034
 
 Name: 91 RES_EXISTS_UNIQUE_REGULAR_SAME
-Original proof time: 0.001269
+Original proof time: 0.001323
 Bad stac: 0

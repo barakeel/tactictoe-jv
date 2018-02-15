@@ -2,933 +2,1135 @@
 Name: 0 ONE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005036
+Recording proof time: 0.011848
 
 Name: 1 TWO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004708
+Recording proof time: 0.00681
 
 Name: 2 NORM_0
-hh_eval 257645705352108
-Time: 0.247828
-Reconstructed: 0.002438
+proof length: 1
+proof time: 0.003064
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.069846
+  inferstep time: 0.05649
+  node_find time: 0.000033
+  node_crea time: 0.013288
+    pred time: 0.002889
+    thmpred time: 0.0
+    mc time: 0.009358
+    inst time: 0.0
 Proof found: METIS_TAC [fetch "arithmetic" "ALT_ZERO", fetch "arithmetic" "NUMERAL_DEF"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005963
+Recording proof time: 0.016925
 
 Name: 3 num_case_compute
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.049882
+Recording proof time: 0.081339
 
 Name: 4 ADD_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029775
+Recording proof time: 0.034902
 
 Name: 5 ADD_SUC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03057
+Recording proof time: 0.027708
 
 Name: 6 ADD_CLAUSES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00505
+Recording proof time: 0.009467
 
 Name: 7 ADD_SYM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.036979
+Recording proof time: 0.040921
 
 Name: 8 ADD_ASSOC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03535
+Recording proof time: 0.048133
 
 Name: 9 num_CASES
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.09086
+Recording proof time: 0.291708
 
 Name: 10 NOT_ZERO_LT_ZERO
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057147
+Recording proof time: 0.146682
 
 Name: 11 NOT_LT_ZERO_EQ_ZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006346
+Recording proof time: 0.006189
 
 Name: 12 LESS_OR_EQ_ALT
-hh_eval 257645705352109
-Time: 60.198242
-Proof status: Time Out
+proof length: 7
+proof time: 0.096377
+Statistics
+  infstep : 290
+  nodes   : 65
+  maxdepth: 6
+Time: 6.956166
+  inferstep time: 5.980394
+  node_find time: 0.014367
+  node_crea time: 0.957385
+    pred time: 0.38343
+    thmpred time: 0.000021
+    mc time: 0.346675
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in REWRITE_TAC [FUN_EQ_THM] THEN INDUCT_TAC THENL [REWRITE_TAC [relationTheory.RTC_CASES_TC] THEN INDUCT_TAC THENL [METIS_TAC [fetch "arithmetic" "LESS_OR_EQ", numTheory.ZERO_DEF, prim_recTheory.PRE_DEF], REWRITE_TAC [fetch "arithmetic" "SUC_NOT", LESS_ALT, fetch "arithmetic" "LESS_OR_EQ"]], METIS_TAC [TC_IM_RTC_SUC, fetch "arithmetic" "LESS_OR_EQ", prim_recTheory.WF_PRED, LESS_ALT, prim_recTheory.PRE_DEF, fetch "arithmetic" "num_CASES", bool_case_CONG, SimpLHS, prim_recTheory.SIMP_REC_REL_UNIQUE_RESULT, LESS_THM]] end
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.102721
+Recording proof time: 0.087473
 
 Name: 13 LESS_ADD
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.268841
+Recording proof time: 0.867871
 
 Name: 14 transitive_LESS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006117
+Recording proof time: 0.066564
 
 Name: 15 LESS_TRANS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006649
+Recording proof time: 0.006079
 
 Name: 16 LESS_ANTISYM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.070063
+Recording proof time: 0.168472
 
 Name: 17 LESS_EQ_MONO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004117
+Recording proof time: 0.008989
 
 Name: 18 LESS_LESS_SUC
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069151
+Recording proof time: 0.068058
 
 Name: 19 transitive_measure
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.065347
+Recording proof time: 0.054176
 
 Name: 20 LESS_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004331
+Recording proof time: 0.004488
 
 Name: 21 LESS_OR
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004011
+Recording proof time: 0.005514
 
 Name: 22 OR_LESS
-hh_eval 257645705352110
-Time: 0.310943
-Reconstructed: 0.002961
-Proof found: METIS_TAC [fetch "arithmetic" "LESS_EQ"]
+proof length: 1
+proof time: 0.016894
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.05806
+  inferstep time: 0.041425
+  node_find time: 0.00002
+  node_crea time: 0.016584
+    pred time: 0.005725
+    thmpred time: 0.000001
+    mc time: 0.009241
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "arithmetic" "LESS_OR_EQ", prim_recTheory.LESS_LEMMA2, fetch "arithmetic" "LESS_MONO_EQ"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.021261
+Recording proof time: 0.033541
 
 Name: 23 LESS_EQ_IFF_LESS_SUC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007872
+Recording proof time: 0.0209
 
 Name: 24 LESS_EQ_IMP_LESS_SUC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00401
+Recording proof time: 0.048546
 
 Name: 25 ZERO_LESS_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003782
+Recording proof time: 0.054671
 
 Name: 26 LESS_SUC_EQ_COR
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.08259
+Recording proof time: 0.610628
 
 Name: 27 LESS_NOT_SUC
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057098
+Recording proof time: 0.131881
 
 Name: 28 LESS_0_CASES
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.395375
+Recording proof time: 0.049075
 
 Name: 29 LESS_CASES_IMP
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057563
+Recording proof time: 0.090183
 
 Name: 30 LESS_CASES
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069583
+Recording proof time: 0.082459
 
 Name: 31 ADD_INV_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030001
+Recording proof time: 0.035818
 
 Name: 32 LESS_EQ_ADD
-hh_eval 257645705352111
-Time: 60.263346
-Proof status: Time Out
+proof length: 3
+proof time: 0.021732
+Statistics
+  infstep : 17
+  nodes   : 9
+  maxdepth: 3
+Time: 0.606616
+  inferstep time: 0.503558
+  node_find time: 0.000405
+  node_crea time: 0.102382
+    pred time: 0.046667
+    thmpred time: 0.000005
+    mc time: 0.043424
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in INDUCT_TAC THENL [METIS_TAC [fetch "arithmetic" "ZERO_LESS_EQ"], METIS_TAC [fetch "arithmetic" "ADD_CLAUSES", fetch "arithmetic" "LESS_OR", fetch "arithmetic" "LESS_EQ_IMP_LESS_SUC"]] end
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.247314
+Recording proof time: 0.864093
 
 Name: 33 LESS_EQ_ADD_EXISTS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.086341
+Recording proof time: 0.202319
 
 Name: 34 LESS_STRONG_ADD
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.113773
+Recording proof time: 0.494396
 
 Name: 35 LESS_EQ_SUC_REFL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.0363
+Recording proof time: 0.05795
 
 Name: 36 LESS_ADD_NONZERO
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.19036
+Recording proof time: 0.238939
 
 Name: 37 NOT_SUC_LESS_EQ_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006124
+Recording proof time: 0.007662
 
 Name: 38 NOT_LESS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058202
+Recording proof time: 0.110859
 
 Name: 39 NOT_LESS_EQUAL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004463
+Recording proof time: 0.004486
 
 Name: 40 LESS_EQ_ANTISYM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060398
+Recording proof time: 0.065589
 
 Name: 41 LESS_EQ_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002806
+Recording proof time: 0.024298
 
 Name: 42 SUB_0
-hh_eval 257645705352112
-Time: 60.286343
-Proof status: Time Out
+proof length: 4
+proof time: 0.029951
+Statistics
+  infstep : 168
+  nodes   : 36
+  maxdepth: 4
+Time: 2.284843
+  inferstep time: 1.890988
+  node_find time: 0.004907
+  node_crea time: 0.387264
+    pred time: 0.135057
+    thmpred time: 0.000002
+    mc time: 0.146978
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in INDUCT_TAC THENL [METIS_TAC [fetch "arithmetic" "SUB", prim_recTheory.SIMP_REC_THM, PRE], ASM_REWRITE_TAC [fetch "arithmetic" "SUB"] THEN METIS_TAC [NOT_LESS_0]] end
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031675
+Recording proof time: 0.085704
 
 Name: 43 SUB_MONO_EQ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.147966
+Recording proof time: 0.167998
 
 Name: 44 SUB_EQ_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037713
+Recording proof time: 0.049965
 
 Name: 45 ADD1
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.08882
+Recording proof time: 0.126201
 
 Name: 46 SUC_SUB1
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.095056
+Recording proof time: 0.157944
 
 Name: 47 PRE_SUB1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.073462
+Recording proof time: 0.08327
 
 Name: 48 MULT_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.088101
+Recording proof time: 0.098087
 
 Name: 49 MULT_SUC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.060038
+Recording proof time: 0.064265
 
 Name: 50 MULT_LEFT_1
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.137097
+Recording proof time: 0.181791
 
 Name: 51 MULT_RIGHT_1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.102391
+Recording proof time: 0.48909
 
 Name: 52 MULT_CLAUSES
-hh_eval 257645705352113
-Time: 0.800157
-Reconstructed: 0.066798
-Proof found: METIS_TAC [fetch "arithmetic" "ONE", fetch "arithmetic" "MULT_LEFT_1", fetch "arithmetic" "MULT", fetch "arithmetic" "ADD_COMM", fetch "arithmetic" "MULT_0", fetch "arithmetic" "MULT_SUC"]
+proof length: 2
+proof time: 0.024527
+Statistics
+  infstep : 9
+  nodes   : 6
+  maxdepth: 2
+Time: 0.501103
+  inferstep time: 0.425007
+  node_find time: 0.00025
+  node_crea time: 0.075639
+    pred time: 0.027731
+    thmpred time: 0.000001
+    mc time: 0.033392
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "arithmetic" "ONE"), (fetch "arithmetic" "MULT"), (fetch "arithmetic" "ADD_CLAUSES")] THEN METIS_TAC [fetch "arithmetic" "MULT_SUC", fetch "arithmetic" "MULT_0", fetch "arithmetic" "ADD_0"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005255
+Recording proof time: 0.006825
 
 Name: 53 MULT_SYM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.076256
+Recording proof time: 0.06971
 
 Name: 54 RIGHT_ADD_DISTRIB
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.180986
+Recording proof time: 0.384665
 
 Name: 55 LEFT_ADD_DISTRIB
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.165675
+Recording proof time: 0.266557
 
 Name: 56 MULT_ASSOC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030747
+Recording proof time: 0.093619
 
 Name: 57 SUB_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.043803
+Recording proof time: 0.121584
 
 Name: 58 PRE_SUB
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.111286
+Recording proof time: 0.263347
 
 Name: 59 ADD_EQ_0
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058782
+Recording proof time: 0.242724
 
 Name: 60 ADD_EQ_1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.050215
+Recording proof time: 0.134785
 
 Name: 61 ADD_INV_0_EQ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.111038
+Recording proof time: 0.560786
 
 Name: 62 PRE_SUC_EQ
-hh_eval 257645705352114
-Time: 0.655159
-Reconstructed: 0.022499
-Proof found: METIS_TAC [PRE, fetch "arithmetic" "num_CASES", NOT_LESS_EQ]
+proof length: 4
+proof time: 0.028366
+Statistics
+  infstep : 61
+  nodes   : 25
+  maxdepth: 4
+Time: 3.45827
+  inferstep time: 3.055026
+  node_find time: 0.003829
+  node_crea time: 0.397748
+    pred time: 0.164639
+    thmpred time: 0.000006
+    mc time: 0.167406
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in STRIP_TAC THEN INDUCT_TAC THENL [METIS_TAC [fetch "arithmetic" "NOT_ZERO_LT_ZERO"], METIS_TAC [PRE]] end
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.083966
+Recording proof time: 0.179613
 
 Name: 63 INV_PRE_EQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.123903
+Recording proof time: 0.231459
 
 Name: 64 LESS_SUC_NOT
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.119541
+Recording proof time: 0.234616
 
 Name: 65 ADD_EQ_SUB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.076472
+Recording proof time: 0.243186
 
 Name: 66 LESS_MONO_ADD
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.139508
+Recording proof time: 0.2595
 
 Name: 67 LESS_MONO_ADD_INV
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.080423
+Recording proof time: 0.49826
 
 Name: 68 LESS_MONO_ADD_EQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058097
+Recording proof time: 0.074475
 
 Name: 69 EQ_MONO_ADD_EQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.088875
+Recording proof time: 0.428857
 
 Name: 70 LESS_EQ_MONO_ADD_EQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.091554
+Recording proof time: 0.17693
 
 Name: 71 LESS_EQ_TRANS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004585
+Recording proof time: 0.006524
 
 Name: 72 LESS_EQ_LESS_TRANS
-hh_eval 257645705352115
-Time: 49.30771
-Reconstructed: 0.019927
-Proof found: METIS_TAC [fetch "arithmetic" "LESS_OR_EQ", fetch "arithmetic" "LESS_TRANS"]
+proof length: 1
+proof time: 0.004332
+Statistics
+  infstep : 3
+  nodes   : 3
+  maxdepth: 1
+Time: 0.192395
+  inferstep time: 0.136337
+  node_find time: 0.000044
+  node_crea time: 0.055954
+    pred time: 0.022441
+    thmpred time: 0.0
+    mc time: 0.027154
+    inst time: 0.0
+Proof found: PROVE_TAC [fetch "arithmetic" "NOT_LESS_EQUAL", fetch "arithmetic" "LESS_EQ_TRANS"]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.100369
+Recording proof time: 0.274617
 
 Name: 73 LESS_LESS_EQ_TRANS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083113
+Recording proof time: 0.086973
 
 Name: 74 LESS_EQ_LESS_EQ_MONO
-Original proof time: 0.000629
+Original proof time: 0.000769
 
 Name: 75 LESS_EQ_REFL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030161
+Recording proof time: 0.260482
 
 Name: 76 LESS_IMP_LESS_OR_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031113
+Recording proof time: 0.393427
 
 Name: 77 LESS_MONO_MULT
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.265453
+Recording proof time: 0.354051
 
 Name: 78 LESS_MONO_MULT2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009735
+Recording proof time: 0.010596
 
 Name: 79 RIGHT_SUB_DISTRIB
-Original proof time: 0.000513
+Original proof time: 0.000609
 
 Name: 80 LEFT_SUB_DISTRIB
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.063947
+Recording proof time: 0.101356
 
 Name: 81 LESS_ADD_1
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.384503
+Recording proof time: 0.246059
 
 Name: 82 EXP_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.081048
+Recording proof time: 0.059059
 
 Name: 83 NOT_ODD_EQ_EVEN
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.171552
+Recording proof time: 0.119913
 
 Name: 84 LESS_EQUAL_ANTISYM
-hh_eval 257645705352116
-Time: 0.618238
-Reconstructed: 0.013278
-Proof found: METIS_TAC [fetch "arithmetic" "SUB_EQ_0", fetch "arithmetic" "SUB_ADD", fetch "arithmetic" "ADD"]
+proof length: 1
+proof time: 0.010383
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.093767
+  inferstep time: 0.082897
+  node_find time: 0.000011
+  node_crea time: 0.01066
+    pred time: 0.00387
+    thmpred time: 0.0
+    mc time: 0.005794
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "arithmetic" "LESS_OR_EQ", fetch "arithmetic" "LESS_EQ_ANTISYM"]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.076552
+Recording proof time: 0.153606
 
 Name: 85 LESS_ADD_SUC
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.118623
+Recording proof time: 0.276799
 
 Name: 86 LESS_OR_EQ_ADD
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.286441
+Recording proof time: 1.206078
 
 Name: 87 tactictoe_prove_87
-Original proof time: 0.000618
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.514022
 
 Name: 88 WOP
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.172053
+Recording proof time: 0.276349
 
 Name: 89 COMPLETE_INDUCTION
-Original proof time: 0.000331
+Original proof time: 0.000347
 
 Name: 90 FORALL_NUM_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.022771
+Recording proof time: 0.039585
 
 Name: 91 SUC_SUB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.046315
+Recording proof time: 0.443458
 
 Name: 92 SUB_PLUS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.112442
+Recording proof time: 0.182977
 
 Name: 93 INV_PRE_LESS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.088435
+Recording proof time: 0.102616
 
 Name: 94 INV_PRE_LESS_EQ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.119171
+Recording proof time: 0.164173
 
 Name: 95 PRE_LESS_EQ
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.16277
+Recording proof time: 0.411623
 
 Name: 96 SUB_LESS_EQ
-hh_eval 257645705352117
-Time: 0.657077
-Reconstructed: 0.020031
-Proof found: METIS_TAC [fetch "arithmetic" "SUB_EQ_0", fetch "arithmetic" "SUB_PLUS", fetch "arithmetic" "ADD_COMM", fetch "arithmetic" "LESS_EQ_ADD"]
+proof length: 5
+proof time: 0.084668
+Statistics
+  infstep : 14
+  nodes   : 9
+  maxdepth: 2
+Time: 0.563292
+  inferstep time: 0.475743
+  node_find time: 0.000435
+  node_crea time: 0.086806
+    pred time: 0.040855
+    thmpred time: 0.000002
+    mc time: 0.034176
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in REPEAT INDUCT_TAC THENL [METIS_TAC [fetch "arithmetic" "SUB_EQ_0", fetch "arithmetic" "LESS_EQ_0"], METIS_TAC [fetch "arithmetic" "SUB_0"], METIS_TAC [fetch "arithmetic" "SUC_SUB1", fetch "arithmetic" "SUC_SUB", fetch "arithmetic" "SUB_EQ_0", fetch "arithmetic" "SUB_0", fetch "arithmetic" "PRE_SUB", fetch "arithmetic" "PRE_SUB1"], METIS_TAC [fetch "arithmetic" "SUB_MONO_EQ", fetch "arithmetic" "SUC_SUB", fetch "arithmetic" "SUB_EQ_0", fetch "arithmetic" "PRE_SUB", fetch "arithmetic" "SUB_0", fetch "arithmetic" "PRE_SUB1"]] end
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060511
+Recording proof time: 0.067111
 
 Name: 97 SUB_EQ_EQ_0
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.305213
+Recording proof time: 0.543471
 
 Name: 98 SUB_LESS_0
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.64823
+Recording proof time: 0.535241
 
 Name: 99 SUB_LESS_OR
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.187276
+Recording proof time: 0.12438
 
 Name: 100 LESS_SUB_ADD_LESS
-Original proof time: 0.000924
+Original proof time: 0.001127
 
 Name: 101 TIMES2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010281
+Recording proof time: 0.010028
 
 Name: 102 LESS_MULT_MONO
-Original proof time: 0.001271
+Original proof time: 0.001473
 
 Name: 103 MULT_MONO_EQ
-Original proof time: 0.001326
+Original proof time: 0.001895
 
 Name: 104 MULT_SUC_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030224
+Recording proof time: 0.040198
 
 Name: 105 MULT_EXP_MONO
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.050101
+Recording proof time: 0.393577
 
 Name: 106 EQ_ADD_LCANCEL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030022
+Recording proof time: 0.07928
 
 Name: 107 EQ_ADD_RCANCEL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030173
+Recording proof time: 0.056709
 
 Name: 108 EQ_MULT_LCANCEL
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.120347
+Recording proof time: 0.276819
 
 Name: 109 EQ_MULT_RCANCEL
-hh_eval 257645705352118
-Time: 2.037465
-Reconstructed: 0.041783
-Proof found: METIS_TAC [fetch "arithmetic" "MULT_COMM", fetch "arithmetic" "EQ_MULT_LCANCEL"]
+proof length: 4
+proof time: 0.000617
+Statistics
+  infstep : 14
+  nodes   : 8
+  maxdepth: 3
+Time: 0.757425
+  inferstep time: 0.617282
+  node_find time: 0.000228
+  node_crea time: 0.139706
+    pred time: 0.066423
+    thmpred time: 0.000002
+    mc time: 0.041737
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in INDUCT_TAC THENL [REWRITE_TAC [fetch "arithmetic" "MULT_0"], ONCE_REWRITE_TAC [(fetch "arithmetic" "MULT_COMM")] THEN REWRITE_TAC [fetch "arithmetic" "EQ_MULT_LCANCEL"]] end
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.046835
+Recording proof time: 0.067043
 
 Name: 110 ADD_SUB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.06679
+Recording proof time: 0.239189
 
 Name: 111 LESS_EQ_ADD_SUB
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.043937
+Recording proof time: 0.121779
 
 Name: 112 LESS_EQ_SUB_LESS
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035007
+Recording proof time: 0.124631
 
 Name: 113 NOT_SUC_LESS_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009373
+Recording proof time: 0.010008
 
 Name: 114 SUB_SUB
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034489
+Recording proof time: 0.053526
 
 Name: 115 LESS_IMP_LESS_ADD
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.180676
+Recording proof time: 0.455696
 
 Name: 116 SUB_LESS_EQ_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.074319
+Recording proof time: 0.044931
 
 Name: 117 SUB_LESS_SUC
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.136068
+Recording proof time: 0.485007
 
 Name: 118 SUB_CANCEL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.040437
+Recording proof time: 0.049346
 
 Name: 119 CANCEL_SUB
-hh_eval 257645705352119
-Time: 0.607221
-Reconstructed: 0.011258
-Proof found: METIS_TAC [fetch "arithmetic" "SUB_ADD"]
+proof length: 9
+proof time: 0.104294
+Statistics
+  infstep : 26
+  nodes   : 17
+  maxdepth: 3
+Time: 1.798326
+  inferstep time: 1.520747
+  node_find time: 0.000875
+  node_crea time: 0.275796
+    pred time: 0.143605
+    thmpred time: 0.000009
+    mc time: 0.063029
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in REPEAT INDUCT_TAC THENL [METIS_TAC [], METIS_TAC [fetch "arithmetic" "SUB_ADD"], METIS_TAC [fetch "arithmetic" "SUB_0"], ASM_REWRITE_TAC [(fetch "arithmetic" "SUB_0")], METIS_TAC [], METIS_TAC [fetch "arithmetic" "LESS_0_CASES", fetch "arithmetic" "NOT_SUC_LESS_EQ", fetch "arithmetic" "LESS_EQ", fetch "arithmetic" "SUB_EQ_0"], METIS_TAC [fetch "arithmetic" "NOT_SUC_LESS_EQ_0"], ASM_REWRITE_TAC [fetch "arithmetic" "SUB_MONO_EQ", fetch "arithmetic" "LESS_EQ_MONO", INV_SUC_EQ]] end
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.038828
+Recording proof time: 0.131743
 
 Name: 120 NOT_EXP_0
-Original proof time: 0.000397
+Original proof time: 0.000401
 
 Name: 121 ZERO_LESS_EXP
-Original proof time: 0.000106
+Original proof time: 0.000217
 
 Name: 122 ODD_OR_EVEN
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.173471
+Recording proof time: 0.242004
 
 Name: 123 LESS_EXP_SUC_MONO
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.076465
+Recording proof time: 0.106851
 
 Name: 124 LESS_LESS_CASES
-Original proof time: 0.000201
+Original proof time: 0.000189
 
 Name: 125 GREATER_EQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082352
+Recording proof time: 0.171514
 
 Name: 126 LESS_EQ_CASES
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.05446
+Recording proof time: 0.122844
 
 Name: 127 LESS_EQUAL_ADD
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.138453
+Recording proof time: 0.161084
 
 Name: 128 LESS_EQ_EXISTS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.115842
+Recording proof time: 0.132938
 
 Name: 129 MULT_EQ_0
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060023
+Recording proof time: 0.138848
 
 Name: 130 MULT_EQ_1
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.150024
+Recording proof time: 0.290942
 
 Name: 131 MULT_EQ_ID
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.155447
+Recording proof time: 0.239881
 
 Name: 132 LESS_MULT2
-hh_eval 257645705352120
-Time: 0.726455
-Reconstructed: 0.010528
+proof length: 1
+proof time: 0.014314
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.094365
+  inferstep time: 0.083887
+  node_find time: 0.00001
+  node_crea time: 0.010445
+    pred time: 0.003609
+    thmpred time: 0.0
+    mc time: 0.005627
+    inst time: 0.0
 Proof found: METIS_TAC [fetch "arithmetic" "NOT_ZERO_LT_ZERO", fetch "arithmetic" "MULT_EQ_0"]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058243
+Recording proof time: 0.087567
 
 Name: 133 ZERO_LESS_MULT
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.123708
+Recording proof time: 0.177862
 
 Name: 134 ZERO_LESS_ADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057313
+Recording proof time: 0.070473
 
 Name: 135 FACT_LESS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082428
+Recording proof time: 0.189183
 
 Name: 136 EVEN_ODD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032216
+Recording proof time: 0.046619
 
 Name: 137 ODD_EVEN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005211
+Recording proof time: 0.008137
 
 Name: 138 EVEN_OR_ODD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00642
+Recording proof time: 0.044707
 
 Name: 139 EVEN_AND_ODD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005147
+Recording proof time: 0.006919
 
 Name: 140 EVEN_ADD
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.08692
+Recording proof time: 0.136061
 
 Name: 141 EVEN_MULT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082487
+Recording proof time: 0.142352
 
 Name: 142 ODD_ADD
-hh_eval 257645705352121
-Time: 2.154583
-Reconstructed: 0.030436
-Proof found: METIS_TAC [fetch "arithmetic" "EVEN_ODD", fetch "arithmetic" "EVEN_ADD"]
+proof length: 3
+proof time: 0.108153
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 2
+Time: 0.517012
+  inferstep time: 0.4409
+  node_find time: 0.000096
+  node_crea time: 0.075648
+    pred time: 0.037676
+    thmpred time: 0.000002
+    mc time: 0.02566
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in INDUCT_TAC THENL [METIS_TAC [fetch "arithmetic" "ODD", fetch "arithmetic" "ADD_CLAUSES", fetch "arithmetic" "EVEN_OR_ODD"], metisTools.METIS_TAC [DB.fetch "arithmetic" "ODD", DB.fetch "arithmetic" "ADD", DB.fetch "arithmetic" "LESS_STRONG_ADD", DB.fetch "arithmetic" "ADD_CLAUSES", DB.fetch "arithmetic" "EVEN_ODD", DB.fetch "arithmetic" "ODD_EVEN", DB.fetch "arithmetic" "EVEN_AND_ODD", DB.fetch "arithmetic" "EVEN_OR_ODD", DB.fetch "arithmetic" "MULT_CLAUSES", DB.fetch "arithmetic" "ADD_SUC", DB.fetch "arithmetic" "MULT", DB.fetch "arithmetic" "ADD1", DB.fetch "arithmetic" "ODD_OR_EVEN"]] end
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.085624
+Recording proof time: 0.144647
 
 Name: 143 ODD_MULT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03088
+Recording proof time: 0.030608
 
 Name: 144 tactictoe_prove_144
-Original proof time: 0.000215
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.122862
 
 Name: 145 EVEN_DOUBLE
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.08603
+Recording proof time: 0.108394
 
 Name: 146 ODD_DOUBLE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03696
+Recording proof time: 0.05402
 
 Name: 147 EVEN_ODD_EXISTS
-Original proof time: 0.001221
+Original proof time: 0.00067
 
 Name: 148 EVEN_EXISTS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.109536
+Recording proof time: 0.452439
 
 Name: 149 ODD_EXISTS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.100973
+Recording proof time: 0.106414
 
 Name: 150 EVEN_EXP_IFF
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.149779
+Recording proof time: 0.204636
 
 Name: 151 EVEN_EXP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.020235
+Recording proof time: 0.056081
 
 Name: 152 ODD_EXP_IFF
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007911
+Recording proof time: 0.010456
 
 Name: 153 ODD_EXP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015384
+Recording proof time: 0.02019
 
 Name: 154 EQ_LESS_EQ
-hh_eval 257645705352122
-Time: 0.628138
-Reconstructed: 0.033164
-Proof found: METIS_TAC [fetch "arithmetic" "GREATER_EQ", fetch "arithmetic" "GREATER_OR_EQ", fetch "arithmetic" "LESS_EQUAL_ANTISYM"]
+proof length: 1
+proof time: 0.006863
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.169539
+  inferstep time: 0.158107
+  node_find time: 0.000025
+  node_crea time: 0.011362
+    pred time: 0.003721
+    thmpred time: 0.0
+    mc time: 0.006284
+    inst time: 0.0
+Proof found: PROVE_TAC [fetch "arithmetic" "LESS_OR_EQ", fetch "arithmetic" "NOT_LESS"]
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.099309
+Recording proof time: 0.272601
 
 Name: 155 ADD_MONO_LESS_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03032
+Recording proof time: 0.080376
 
 Name: 156 NOT_LEQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030356
+Recording proof time: 0.030099
 
 Name: 157 NOT_NUM_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029477
+Recording proof time: 0.061549
 
 Name: 158 NOT_GREATER
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005455
+Recording proof time: 0.010561
 
 Name: 159 NOT_GREATER_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00524
+Recording proof time: 0.00516
 
 Name: 160 SUC_ONE_ADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.054578
+Recording proof time: 0.183881
 
 Name: 161 SUC_ADD_SYM
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082828
+Recording proof time: 0.133362
 
 Name: 162 NOT_SUC_ADD_LESS_EQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060272
+Recording proof time: 0.085181
 
 Name: 163 MULT_LESS_EQ_SUC
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.34516
+Recording proof time: 0.995238
 
 Name: 164 LE_MULT_LCANCEL
-hh_eval 257645705352123
-Time: 19.730235
-Reconstructed: 0.064341
-Proof found: METIS_TAC [fetch "arithmetic" "LESS_MONO_MULT2", fetch "arithmetic" "LESS_OR_EQ", fetch "arithmetic" "NOT_LESS", fetch "arithmetic" "EQ_MULT_LCANCEL"]
+proof length: 4
+proof time: 0.116376
+Statistics
+  infstep : 62
+  nodes   : 20
+  maxdepth: 3
+Time: 2.441072
+  inferstep time: 2.083451
+  node_find time: 0.004744
+  node_crea time: 0.351691
+    pred time: 0.162415
+    thmpred time: 0.000006
+    mc time: 0.131078
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in INDUCT_TAC THENL [REWRITE_TAC [(fetch "arithmetic" "MULT_CLAUSES")] THEN METIS_TAC [fetch "arithmetic" "LESS_OR_EQ"], metisTools.METIS_TAC [DB.fetch "arithmetic" "LESS_MULT_MONO", numTheory.NOT_SUC, DB.fetch "arithmetic" "MULT_CLAUSES", DB.fetch "arithmetic" "MULT", DB.fetch "arithmetic" "MULT_LESS_EQ_SUC", DB.fetch "arithmetic" "MULT_MONO_EQ", DB.fetch "arithmetic" "FACT", DB.fetch "arithmetic" "LESS_SUC_EQ_COR", prim_recTheory.EQ_LESS, DB.fetch "arithmetic" "PRE_SUC_EQ", prim_recTheory.SUC_ID, numTheory.INV_SUC, DB.fetch "arithmetic" "ADD1", numTheory.SUC_DEF, DB.fetch "arithmetic" "SUC_ONE_ADD"]] end
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.086043
+Recording proof time: 0.140498
 
 Name: 165 LE_MULT_RCANCEL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029877
+Recording proof time: 0.043549
 
 Name: 166 LT_MULT_LCANCEL
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.075809
+Recording proof time: 0.108724
 
 Name: 167 LT_MULT_RCANCEL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029866
+Recording proof time: 0.085745
 
 Name: 168 tactictoe_prove_168
-Original proof time: 0.000182
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.042971
 
 Name: 169 tactictoe_prove_169
-Original proof time: 0.000049
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.01009
 
 Name: 170 SUB_LEFT_ADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.054045
+Recording proof time: 0.685637
 
 Name: 171 SUB_RIGHT_ADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069832
+Recording proof time: 0.471671
 
 Name: 172 SUB_LEFT_SUB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.077555
+Recording proof time: 0.085783
 
 Name: 173 SUB_RIGHT_SUB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.075002
+Recording proof time: 0.179591
 
 Name: 174 SUB_LEFT_SUC
-Original proof time: 0.000338
+Original proof time: 0.000355
 
 Name: 175 tactictoe_prove_175
-Original proof time: 0.000188
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.17268
 
 Name: 176 SUB_LEFT_LESS_EQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.095664
+Recording proof time: 0.140263
 
 Name: 177 SUB_RIGHT_LESS_EQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.077786
+Recording proof time: 0.681168
 
 Name: 178 SUB_LEFT_LESS
-hh_eval 257645705352124
-Time: 44.0623
-Reconstructed: 0.201908
-Proof found: METIS_TAC [fetch "arithmetic" "SUB_LESS_0", fetch "arithmetic" "SUB_PLUS", fetch "arithmetic" "ADD_COMM"]
+proof length: 11
+proof time: 0.112519
+Statistics
+  infstep : 1118
+  nodes   : 230
+  maxdepth: 6
+Time: 22.164533
+  inferstep time: 18.368498
+  node_find time: 0.216656
+  node_crea time: 3.553264
+    pred time: 1.445017
+    thmpred time: 0.000069
+    mc time: 1.366013
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in REPEAT INDUCT_TAC THENL [METIS_TAC [fetch "arithmetic" "SUB", fetch "arithmetic" "ADD", fetch "arithmetic" "ZERO_LESS_ADD"], ASM_REWRITE_TAC [(fetch "arithmetic" "SUB"), NOT_LESS_0], ASM_REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES"), (fetch "arithmetic" "SUB_0")], ASM_REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES"), (fetch "arithmetic" "SUB_MONO_EQ")] THEN METIS_TAC [fetch "arithmetic" "LESS_SUC_EQ_COR", SUC_LESS, prim_recTheory.LESS_LEMMA2, LESS_SUC_IMP], METIS_TAC [fetch "arithmetic" "SUB_0", fetch "arithmetic" "ADD", fetch "arithmetic" "LESS_MONO_EQ", fetch "arithmetic" "LESS_NOT_SUC", fetch "arithmetic" "LESS_SUC_EQ_COR", SUC_LESS, fetch "arithmetic" "LESS_SUB_ADD_LESS"], ASM_REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES"), (fetch "arithmetic" "SUB_0")] THEN ASM_REWRITE_TAC [NOT_LESS_0], ASM_REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES"), (fetch "arithmetic" "SUB_0")], ASM_REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES"), (fetch "arithmetic" "SUB_MONO_EQ"), (fetch "arithmetic" "LESS_MONO_EQ")]] end
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.120366
+Recording proof time: 0.252272
 
 Name: 179 tactictoe_prove_179
-Original proof time: 0.000091
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.65515
 
 Name: 180 SUB_RIGHT_LESS
 Org tac number: 4
@@ -936,974 +1138,1199 @@ Org tac number: 4
 Name: 181 SUB_LEFT_GREATER_EQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.092781
+Recording proof time: 0.12022
 
 Name: 182 SUB_RIGHT_GREATER_EQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.089434
+Recording proof time: 0.193267
 
 Name: 183 SUB_LEFT_GREATER
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.081585
+Recording proof time: 0.300563
 
 Name: 184 SUB_RIGHT_GREATER
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.084007
+Recording proof time: 0.205581
 
 Name: 185 SUB_LEFT_EQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.06009
+Recording proof time: 0.094673
 
 Name: 186 SUB_RIGHT_EQ
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.174577
+Recording proof time: 0.450823
 
 Name: 187 tactictoe_prove_187
-Original proof time: 0.000078
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.204229
 
 Name: 188 tactictoe_prove_188
-Original proof time: 0.00004
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.108348
 
 Name: 189 tactictoe_prove_189
-Original proof time: 0.000269
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.272029
 
 Name: 190 tactictoe_prove_190
-Original proof time: 0.000094
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011144
 
 Name: 191 tactictoe_prove_191
-Original proof time: 0.000157
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.184894
 
 Name: 192 DA
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.185756
+Recording proof time: 0.427176
 
 Name: 193 tactictoe_prove_193
-Original proof time: 0.000289
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.408328
 
 Name: 194 tactictoe_prove_194
-Original proof time: 0.000418
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.837398
 
 Name: 195 MOD_ONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058663
+Recording proof time: 0.102068
 
 Name: 196 DIV_LESS_EQ
-Original proof time: 0.000498
+Original proof time: 0.000443
 
 Name: 197 tactictoe_prove_197
-Original proof time: 0.000201
-
-Name: 198 DIV_UNIQUE
-Original proof time: 0.002107
-
-Name: 199 tactictoe_prove_199
-Original proof time: 0.000216
-
-Name: 200 MOD_UNIQUE
-Original proof time: 0.000505
-
-Name: 201 DIV_MULT
-hh_eval 257645705352125
-Time: 60.624153
-Proof status: Time Out
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.1723
+Recording proof time: 0.277741
+
+Name: 198 DIV_UNIQUE
+Original proof time: 0.003005
+
+Name: 199 tactictoe_prove_199
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.138455
+
+Name: 200 MOD_UNIQUE
+Original proof time: 0.000665
+
+Name: 201 DIV_MULT
+proof length: 1
+proof time: 0.008164
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.104074
+  inferstep time: 0.090093
+  node_find time: 0.00002
+  node_crea time: 0.013937
+    pred time: 0.006197
+    thmpred time: 0.0
+    mc time: 0.006076
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "arithmetic" "DIV_UNIQUE"]
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.462869
 
 Name: 202 LESS_MOD
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.079996
+Recording proof time: 0.212317
 
 Name: 203 MOD_EQ_0
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.163308
+Recording proof time: 0.364724
 
 Name: 204 ZERO_MOD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.064224
+Recording proof time: 0.089635
 
 Name: 205 ZERO_DIV
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082972
+Recording proof time: 0.102742
 
 Name: 206 MOD_MULT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.123525
+Recording proof time: 0.139959
 
 Name: 207 MOD_TIMES
-Original proof time: 0.000418
+Original proof time: 0.000333
 
 Name: 208 MOD_TIMES_SUB
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.164822
+Recording proof time: 0.263995
 
 Name: 209 MOD_PLUS
-Original proof time: 0.000472
+Original proof time: 0.00048
 
 Name: 210 MOD_MOD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.062697
+Recording proof time: 0.098914
 
 Name: 211 ADD_DIV_ADD_DIV
-Original proof time: 0.000752
+Original proof time: 0.00066
 
 Name: 212 ADD_DIV_RWT
-Original proof time: 0.004013
+Original proof time: 0.003828
 
 Name: 213 tactictoe_prove_213
-Original proof time: 0.000803
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.172332
 
 Name: 214 MOD_MULT_MOD
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.384318
+Recording proof time: 0.605672
 
 Name: 215 DIVMOD_ID
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.166524
+Recording proof time: 0.184964
 
 Name: 216 tactictoe_prove_216
-Original proof time: 0.000654
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.337394
 
 Name: 217 tactictoe_prove_217
-Original proof time: 0.000768
+Original proof time: 0.000567
 
 Name: 218 tactictoe_prove_218
-Original proof time: 0.000599
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.627812
 
 Name: 219 DIV_DIV_DIV_MULT
-Original proof time: 0.003815
+Original proof time: 0.002403
 
 Name: 220 tactictoe_prove_220
-Original proof time: 0.000472
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.120769
 
 Name: 221 tactictoe_prove_221
-Original proof time: 0.000706
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.128798
 
 Name: 222 SUC_PRE
-hh_eval 257645705352126
-Time: 1.3541
-Reconstructed: 0.012258
-Proof found: METIS_TAC [LESS_0, fetch "arithmetic" "PRE_SUC_EQ"]
+proof length: 3
+proof time: 0.036351
+Statistics
+  infstep : 29
+  nodes   : 8
+  maxdepth: 2
+Time: 0.735819
+  inferstep time: 0.62423
+  node_find time: 0.001223
+  node_crea time: 0.108849
+    pred time: 0.047884
+    thmpred time: 0.000001
+    mc time: 0.047352
+    inst time: 0.0
+Proof found: STRUCT_CASES_TAC (SPEC ((``m:num``)) (fetch "arithmetic" "num_CASES")) THENL [METIS_TAC [fetch "arithmetic" "PRE_SUC_EQ", LESS_0], METIS_TAC [LESS_0, fetch "arithmetic" "PRE_SUC_EQ"]]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.041846
+Recording proof time: 0.063748
 
 Name: 223 DIV_LESS
-Original proof time: 0.000967
+Original proof time: 0.001554
 
 Name: 224 MOD_LESS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.019503
+Recording proof time: 0.019888
 
 Name: 225 ADD_MODULUS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.103104
+Recording proof time: 0.112431
 
 Name: 226 DIV_P
-Original proof time: 0.001061
+Original proof time: 0.001383
 
 Name: 227 DIV_P_UNIV
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.341036
+Recording proof time: 0.732136
 
 Name: 228 MOD_P
-Original proof time: 0.001175
+Original proof time: 0.001323
 
 Name: 229 MOD_P_UNIV
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.379777
+Recording proof time: 0.617378
 
 Name: 230 MOD_TIMES2
-Original proof time: 0.001883
+Original proof time: 0.002342
 
 Name: 231 MOD_COMMON_FACTOR
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.572621
+Recording proof time: 0.782043
 
 Name: 232 X_MOD_Y_EQ_X
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.165967
+Recording proof time: 0.298813
 
 Name: 233 DIV_LE_MONOTONE
-Original proof time: 0.004778
+Original proof time: 0.005217
 
 Name: 234 LE_LT1
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.110858
+Recording proof time: 0.221284
 
 Name: 235 X_LE_DIV
 Org tac number: 20
 Original proof time: 0.0
-Recording proof time: 0.548191
+Recording proof time: 1.23221
 
 Name: 236 X_LT_DIV
 Org tac number: 22
 Original proof time: 0.0
-Recording proof time: 0.585179
+Recording proof time: 1.582754
 
 Name: 237 DIV_LT_X
-hh_eval 257645705352127
-Time: 60.909333
+Statistics
+  infstep : 2585
+  nodes   : 736
+  maxdepth: 8
+Time: 60.000686
+  inferstep time: 45.125609
+  node_find time: 0.989093
+  node_crea time: 13.803767
+    pred time: 4.543113
+    thmpred time: 0.000197
+    mc time: 5.888066
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.134851
+Recording proof time: 0.12278
 
 Name: 238 DIV_LE_X
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.415707
+Recording proof time: 0.161284
 
 Name: 239 DIV_EQ_X
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015089
+Recording proof time: 0.018082
 
 Name: 240 DIV_MOD_MOD_DIV
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.616025
+Recording proof time: 1.209954
 
 Name: 241 MULT_EQ_DIV
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.316346
+Recording proof time: 1.559118
 
 Name: 242 NUMERAL_MULT_EQ_DIV
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.061175
+Recording proof time: 0.08452
 
 Name: 243 MOD_EQ_0_DIVISOR
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.268509
+Recording proof time: 0.475957
 
 Name: 244 MOD_SUC
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.567471
+Recording proof time: 2.364144
 
 Name: 245 MOD_SUC_IFF
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011569
+Recording proof time: 0.046266
 
 Name: 246 ONE_MOD
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.282505
+Recording proof time: 0.997715
 
 Name: 247 ONE_MOD_IFF
-hh_eval 257645705352128
-Time: 1.168407
-Reconstructed: 0.093342
-Proof found: METIS_TAC [fetch "arithmetic" "ADD1", fetch "arithmetic" "ONE_MOD", fetch "arithmetic" "LE_LT1", fetch "arithmetic" "DIVISION", fetch "arithmetic" "LESS_ADD_1", LESS_0, fetch "arithmetic" "ADD_EQ_0", fetch "arithmetic" "LESS_OR_EQ"]
+proof length: 7
+proof time: 0.015856
+Statistics
+  infstep : 702
+  nodes   : 119
+  maxdepth: 5
+Time: 15.963018
+  inferstep time: 13.593275
+  node_find time: 0.120792
+  node_crea time: 2.221578
+    pred time: 0.785285
+    thmpred time: 0.000036
+    mc time: 1.164532
+    inst time: 0.0
+Proof found: EQ_TAC THENL [REPEAT STRIP_TAC THENL [MATCH_MP_TAC (fetch "arithmetic" "LESS_TRANS") THEN EXISTS_TAC (``1``) THEN METIS_TAC [lt1_eq0], ASM_SIMP_TAC bool_ss [fetch "arithmetic" "ONE_MOD"]], METIS_TAC [fetch "arithmetic" "DIVISION"]]
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.85976
+Recording proof time: 0.730798
 
 Name: 248 MOD_LESS_EQ
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.528199
+Recording proof time: 0.852811
 
 Name: 249 MOD_LIFT_PLUS
 Org tac number: 23
 Original proof time: 0.0
-Recording proof time: 0.949665
+Recording proof time: 2.561011
 
 Name: 250 MOD_LIFT_PLUS_IFF
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.018331
+Recording proof time: 0.020389
 
 Name: 251 SUC_ELIM_THM
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.324121
+Recording proof time: 0.956045
 
 Name: 252 SUC_ELIM_NUMERALS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.191041
+Recording proof time: 0.462359
 
 Name: 253 tactictoe_prove_253
-Original proof time: 0.000071
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011979
 
 Name: 254 SUB_ELIM_THM
-Original proof time: 0.000838
+Original proof time: 0.001916
 
 Name: 255 PRE_ELIM_THM
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.22061
+Recording proof time: 0.288442
 
 Name: 256 MULT_INCREASES
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.284902
+Recording proof time: 0.612389
 
 Name: 257 EXP_ALWAYS_BIG_ENOUGH
 Org tac number: 20
 Original proof time: 0.0
-Recording proof time: 0.508254
+Recording proof time: 1.252445
 
 Name: 258 EXP_EQ_0
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.221045
+Recording proof time: 0.423116
 
 Name: 259 ZERO_LT_EXP
-hh_eval 257645705352129
-Time: 1.343956
-Reconstructed: 0.030273
-Proof found: METIS_TAC [fetch "arithmetic" "NOT_ZERO_LT_ZERO", fetch "arithmetic" "EXP_EQ_0"]
+proof length: 3
+proof time: 0.005436
+Statistics
+  infstep : 377
+  nodes   : 68
+  maxdepth: 5
+Time: 8.219001
+  inferstep time: 6.655764
+  node_find time: 0.042296
+  node_crea time: 1.509918
+    pred time: 0.636219
+    thmpred time: 0.000024
+    mc time: 0.664415
+    inst time: 0.0
+Proof found: Q.SPEC_THEN `x` STRUCT_CASES_TAC (fetch "arithmetic" "num_CASES") THENL [PROVE_TAC [fetch "arithmetic" "EXP_EQ_0", fetch "arithmetic" "NOT_LT_ZERO_EQ_ZERO"], REWRITE_TAC [fetch "arithmetic" "ZERO_LESS_EXP", LESS_0]]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.042738
+Recording proof time: 0.063973
 
 Name: 260 EXP_1
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.092919
+Recording proof time: 0.230442
 
 Name: 261 EXP_EQ_1
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.242633
+Recording proof time: 1.051965
 
 Name: 262 tactictoe_prove_262
-Original proof time: 0.017767
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.425254
 
 Name: 263 tactictoe_prove_263
-Original proof time: 0.042273
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 1.278449
 
 Name: 264 EXP_BASE_LE_MONO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.047061
+Recording proof time: 0.047269
 
 Name: 265 EXP_BASE_LT_MONO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.053265
+Recording proof time: 0.04529
 
 Name: 266 EXP_BASE_INJECTIVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.046454
+Recording proof time: 0.034921
 
 Name: 267 EXP_BASE_LEQ_MONO_IMP
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.169172
+Recording proof time: 0.320673
 
 Name: 268 EXP_BASE_LE_IFF
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.397629
+Recording proof time: 1.293981
 
 Name: 269 X_LE_X_EXP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.124005
+Recording proof time: 0.20312
 
 Name: 270 X_LT_EXP_X
 Org tac number: 29
 Original proof time: 0.0
-Recording proof time: 1.408142
+Recording proof time: 1.651915
 
 Name: 271 ZERO_EXP
-hh_eval 257645705352130
-Time: 1.270738
-Reconstructed: 0.079699
-Proof found: METIS_TAC [fetch "arithmetic" "EXP", fetch "arithmetic" "MULT_CLAUSES", fetch "arithmetic" "num_CASES"]
+proof length: 4
+proof time: 0.008944
+Statistics
+  infstep : 106
+  nodes   : 18
+  maxdepth: 4
+Time: 1.897959
+  inferstep time: 1.531218
+  node_find time: 0.00321
+  node_crea time: 0.361756
+    pred time: 0.140632
+    thmpred time: 0.000004
+    mc time: 0.172446
+    inst time: 0.0
+Proof found: COND_CASES_TAC THENL [METIS_TAC [fetch "arithmetic" "ONE", fetch "arithmetic" "EXP"], REWRITE_TAC [fetch "arithmetic" "EXP_EQ_0"] THEN PROVE_TAC [(fetch "arithmetic" "NOT_ZERO_LT_ZERO")]]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.042955
+Recording proof time: 0.042982
 
 Name: 272 X_LT_EXP_X_IFF
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.478631
+Recording proof time: 0.62805
 
 Name: 273 tactictoe_prove_273
-Original proof time: 0.023336
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.212375
 
 Name: 274 tactictoe_prove_274
-Original proof time: 0.036973
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.072737
 
 Name: 275 tactictoe_prove_275
-Original proof time: 0.004955
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.19069
 
 Name: 276 tactictoe_prove_276
-Original proof time: 0.003654
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.18546
 
 Name: 277 EXP_EXP_LT_MONO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.083945
+Recording proof time: 0.100719
 
 Name: 278 EXP_EXP_LE_MONO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.093479
+Recording proof time: 0.079163
 
 Name: 279 EXP_EXP_INJECTIVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.055801
+Recording proof time: 0.070613
 
 Name: 280 EXP_SUB
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.292512
+Recording proof time: 0.446873
 
 Name: 281 EXP_SUB_NUMERAL
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.457097
+Recording proof time: 0.372513
 
 Name: 282 EXP_BASE_MULT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.052888
+Recording proof time: 0.111675
 
 Name: 283 EXP_EXP_MULT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.146521
+Recording proof time: 0.075024
 
 Name: 284 MAX_COMM
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.196583
+Recording proof time: 0.282061
 
 Name: 285 MIN_COMM
-hh_eval 257645705352131
-Time: 6.482721
-Reconstructed: None
-Proof found: METIS_TAC [fetch "arithmetic" "LESS_EQ_MONO", fetch "arithmetic" "LESS_EQ", fetch "arithmetic" "SUB_LEFT_GREATER_EQ", fetch "arithmetic" "GREATER_EQ", fetch "arithmetic" "MULT", fetch "arithmetic" "EQ_MULT_RCANCEL", NOT_LESS_0, EQ_CLAUSES, fetch "arithmetic" "ZERO_LESS_EQ", LESS_NOT_EQ, fetch "arithmetic" "SUB_LESS_SUC", fetch "arithmetic" "LESS_EQ_REFL", fetch "arithmetic" "SUB_EQ_0", fetch "arithmetic" "LESS_MULT_MONO", fetch "arithmetic" "MIN_DEF", fetch "arithmetic" "MULT_LESS_EQ_SUC", fetch "arithmetic" "ADD_CLAUSES", fetch "arithmetic" "ADD_EQ_SUB", COND_CLAUSES, LESS_REFL, fetch "arithmetic" "num_CASES", INV_SUC_EQ, fetch "arithmetic" "NOT_LT_ZERO_EQ_ZERO", fetch "arithmetic" "NOT_LESS", fetch "arithmetic" "LT_ADD_RCANCEL", fetch "arithmetic" "ADD", fetch "arithmetic" "SUB_ADD", fetch "arithmetic" "ADD_COMM", fetch "arithmetic" "LESS_EQ_MONO_ADD_EQ", fetch "arithmetic" "SUB_0", fetch "arithmetic" "SUB_MONO_EQ", fetch "arithmetic" "SUB_LEFT_LESS", fetch "arithmetic" "LESS_OR_EQ"]
+proof length: 2
+proof time: 0.069513
+Statistics
+  infstep : 62
+  nodes   : 14
+  maxdepth: 3
+Time: 1.907953
+  inferstep time: 1.635555
+  node_find time: 0.003145
+  node_crea time: 0.267598
+    pred time: 0.109307
+    thmpred time: 0.000006
+    mc time: 0.11095
+    inst time: 0.0
+Proof found: ASM_REWRITE_TAC [fetch "arithmetic" "MIN_DEF", fetch "arithmetic" "LESS_EQ"] THEN METIS_TAC [fetch "arithmetic" "NOT_SUC_LESS_EQ", fetch "arithmetic" "NOT_NUM_EQ", fetch "arithmetic" "SUB_LEFT_SUC", fetch "arithmetic" "SUB", fetch "arithmetic" "SUB_RIGHT_ADD"]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.369195
+Recording proof time: 0.145774
 
 Name: 286 MAX_ASSOC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.095801
+Recording proof time: 0.133313
 
 Name: 287 MIN_ASSOC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.11698
+Recording proof time: 0.100113
 
 Name: 288 MIN_MAX_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.142506
+Recording proof time: 0.131798
 
 Name: 289 MIN_MAX_LT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.100093
+Recording proof time: 0.104072
 
 Name: 290 MIN_MAX_LE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.053107
+Recording proof time: 0.056369
 
 Name: 291 MIN_MAX_PRED
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014832
+Recording proof time: 0.015792
 
 Name: 292 MIN_LT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.070407
+Recording proof time: 0.091899
 
 Name: 293 MAX_LT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.082799
+Recording proof time: 0.158507
 
 Name: 294 MIN_LE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.10162
+Recording proof time: 0.171306
 
 Name: 295 MAX_LE
-hh_eval 257645705352132
-Time: 61.043984
-Proof status: Time Out
+proof length: 2
+proof time: 0.020827
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.324501
+  inferstep time: 0.285151
+  node_find time: 0.000072
+  node_crea time: 0.039207
+    pred time: 0.01327
+    thmpred time: 0.0
+    mc time: 0.021533
+    inst time: 0.0
+Proof found: ASM_REWRITE_TAC [fetch "arithmetic" "MAX_DEF"] THEN PROVE_TAC [(fetch "arithmetic" "NOT_LESS"), (fetch "arithmetic" "LESS_EQ_TRANS"), (fetch "arithmetic" "LESS_TRANS")]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.068947
+Recording proof time: 0.126568
 
 Name: 296 MIN_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.126543
+Recording proof time: 0.079925
 
 Name: 297 MAX_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.154457
+Recording proof time: 0.08506
 
 Name: 298 MAX_EQ_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035353
+Recording proof time: 0.080282
 
 Name: 299 MIN_EQ_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032457
+Recording proof time: 0.049
 
 Name: 300 MIN_IDEM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007526
+Recording proof time: 0.015182
 
 Name: 301 MAX_IDEM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009943
+Recording proof time: 0.007088
 
 Name: 302 EXISTS_GREATEST
-Original proof time: 0.002139
+Original proof time: 0.001703
 
 Name: 303 EXISTS_NUM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010276
+Recording proof time: 0.008958
 
 Name: 304 FORALL_NUM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007771
+Recording proof time: 0.012395
 
 Name: 305 BOUNDED_FORALL_THM
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.266249
+Recording proof time: 0.885684
 
 Name: 306 BOUNDED_EXISTS_THM
-hh_eval 257645705352133
-Time: 61.06914
-Proof status: Time Out
+proof length: 5
+proof time: 0.112921
+Statistics
+  infstep : 1539
+  nodes   : 348
+  maxdepth: 6
+Time: 30.325066
+  inferstep time: 23.338692
+  node_find time: 0.357017
+  node_crea time: 6.587505
+    pred time: 2.066142
+    thmpred time: 0.000065
+    mc time: 2.846102
+    inst time: 0.0
+Proof found: REPEAT GEN_TAC THEN DISCH_THEN (STRIP_THM_THEN SUBST1_TAC o MATCH_MP (fetch "arithmetic" "LESS_ADD_1")) THEN REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES"), (fetch "arithmetic" "ONE")] THEN ASM_REWRITE_TAC [fetch "arithmetic" "LESS_MONO_EQ", fetch "arithmetic" "SUB_MONO_EQ"] THEN METIS_TAC [fetch "arithmetic" "SUB_0", LESS_THM, prim_recTheory.LESS_LEMMA1, fetch "arithmetic" "LESS_LESS_SUC", LESS_SUC_IMP, LESS_SUC, fetch "arithmetic" "LESS_EQ_IFF_LESS_SUC", LESS_SUC_REFL, fetch "arithmetic" "SUB", fetch "arithmetic" "BOUNDED_FORALL_THM", fetch "arithmetic" "SUB_LESS_0"]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.273782
+Recording proof time: 0.37696
 
 Name: 307 transitive_monotone
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.284086
+Recording proof time: 0.844368
 
 Name: 308 tactictoe_prove_308
-Original proof time: 0.012423
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020811
 
 Name: 309 STRICTLY_INCREASING_ONE_ONE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.053371
+Recording proof time: 0.100483
 
 Name: 310 ONE_ONE_INV_IMAGE_BOUNDED
 Org tac number: 27
 Original proof time: 0.0
-Recording proof time: 0.786482
+Recording proof time: 3.043143
 
 Name: 311 ONE_ONE_UNBOUNDED
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.643128
+Recording proof time: 0.305059
 
 Name: 312 STRICTLY_INCREASING_UNBOUNDED
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.020208
+Recording proof time: 0.026224
 
 Name: 313 tactictoe_prove_313
-Original proof time: 0.007314
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 1.058084
 
 Name: 314 tactictoe_prove_314
-Original proof time: 0.028037
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.124722
 
 Name: 315 NOT_STRICTLY_DECREASING
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 1.524278
+Recording proof time: 0.472615
 
 Name: 316 ABS_DIFF_SYM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.113541
+Recording proof time: 0.285313
 
 Name: 317 ABS_DIFF_EQS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007002
+Recording proof time: 0.013511
 
 Name: 318 ABS_DIFF_EQ_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.069377
+Recording proof time: 0.074146
 
 Name: 319 ABS_DIFF_ZERO
-hh_eval 257645705352134
-Time: 1.401117
-Reconstructed: 0.023626
-Proof found: METIS_TAC [NOT_LESS_0, fetch "arithmetic" "ABS_DIFF_def", fetch "arithmetic" "SUB_0", fetch "arithmetic" "ABS_DIFF_COMM"]
+proof length: 6
+proof time: 0.022298
+Statistics
+  infstep : 17
+  nodes   : 12
+  maxdepth: 3
+Time: 1.033896
+  inferstep time: 0.843423
+  node_find time: 0.001913
+  node_crea time: 0.184612
+    pred time: 0.063656
+    thmpred time: 0.000005
+    mc time: 0.089549
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "arithmetic" "ABS_DIFF_def")] THENL [FULL_SIMP_TAC (srw_ss ()) [NOT_LESS_0], METIS_TAC [fetch "arithmetic" "SUB_0"], METIS_TAC [fetch "arithmetic" "SUB_0", fetch "arithmetic" "SUB_EQ_0"], ASM_REWRITE_TAC [(fetch "arithmetic" "SUB_0")] THEN METIS_TAC [fetch "arithmetic" "LESS_0_CASES"]]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.046027
+Recording proof time: 0.058378
 
 Name: 320 ABS_DIFF_SUC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009366
+Recording proof time: 0.014695
 
 Name: 321 ABS_DIFF_SUC_LE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.047655
+Recording proof time: 0.056279
 
 Name: 322 ABS_DIFF_PLUS_LE
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.142015
+Recording proof time: 0.315362
 
 Name: 323 ABS_DIFF_LE_SUM
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.252367
+Recording proof time: 0.286968
 
 Name: 324 ABS_DIFF_TRIANGLE_lem
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.123041
+Recording proof time: 0.065635
 
 Name: 325 ABS_DIFF_TRIANGLE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.057532
+Recording proof time: 0.093871
 
 Name: 326 ABS_DIFF_ADD_SAME
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.136632
+Recording proof time: 0.298983
 
 Name: 327 LE_SUB_RCANCEL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.070616
+Recording proof time: 0.135777
 
 Name: 328 LT_SUB_RCANCEL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.123531
+Recording proof time: 0.073493
 
 Name: 329 LE_SUB_LCANCEL
-hh_eval 257645705352135
-Time: 44.488305
-Reconstructed: 1.805456
-Proof found: METIS_TAC [fetch "arithmetic" "SUB_LEFT_GREATER_EQ", fetch "arithmetic" "GREATER_EQ", fetch "arithmetic" "SUB_RIGHT_LESS_EQ", fetch "arithmetic" "SUB_LEFT_LESS_EQ", fetch "arithmetic" "SUB_0", fetch "arithmetic" "LESS_OR_EQ", EQ_CLAUSES, fetch "arithmetic" "NOT_LESS", fetch "arithmetic" "ABS_DIFF_def", fetch "arithmetic" "SUB_EQ_0", fetch "arithmetic" "ADD_EQ_0", fetch "arithmetic" "ADD_COMM", fetch "arithmetic" "SUB_LEFT_LESS", NOT_LESS_0, fetch "arithmetic" "LESS_EQ_EXISTS", fetch "arithmetic" "ADD_SUB", fetch "arithmetic" "LESS_EQ_CASES", fetch "arithmetic" "LESS_EQ_ADD_SUB", fetch "arithmetic" "SUB_ADD", fetch "arithmetic" "SUB_SUB", fetch "arithmetic" "NOT_LESS_EQUAL", fetch "arithmetic" "SUB_RIGHT_GREATER", fetch "arithmetic" "GREATER_DEF", fetch "arithmetic" "SUB_LEFT_EQ"]
+proof length: 11
+proof time: 0.055798
+Statistics
+  infstep : 33
+  nodes   : 20
+  maxdepth: 3
+Time: 2.394296
+  inferstep time: 2.087985
+  node_find time: 0.001532
+  node_crea time: 0.303735
+    pred time: 0.14638
+    thmpred time: 0.00001
+    mc time: 0.103068
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN INDUCTION ASSUME_TAC g in REPEAT INDUCT_TAC THENL [REWRITE_TAC [fetch "arithmetic" "LE_SUB_RCANCEL"], METIS_TAC [fetch "arithmetic" "NOT_NUM_EQ", fetch "arithmetic" "NOT_SUC_LESS_EQ"], REWRITE_TAC [fetch "arithmetic" "ZERO_LESS_EQ", fetch "arithmetic" "SUB_0"], ASM_REWRITE_TAC [(fetch "arithmetic" "ZERO_LESS_EQ"), (fetch "arithmetic" "SUB_MONO_EQ"), (fetch "arithmetic" "SUB_0")] THEN METIS_TAC [fetch "arithmetic" "SUB_MONO_EQ", fetch "arithmetic" "SUB_LESS_SUC", fetch "arithmetic" "SUB", fetch "arithmetic" "SUB_EQ_0"], METIS_TAC [fetch "arithmetic" "SUB", fetch "arithmetic" "LESS_EQ"], ASM_REWRITE_TAC [(fetch "arithmetic" "SUB_0"), (fetch "arithmetic" "SUB_MONO_EQ"), (fetch "arithmetic" "NOT_SUC_LESS_EQ_0")] THEN METIS_TAC [fetch "arithmetic" "NOT_SUC_LESS_EQ", fetch "arithmetic" "LESS_OR", fetch "arithmetic" "SUB_LESS_SUC"], REWRITE_TAC [fetch "arithmetic" "ZERO_LESS_EQ", fetch "arithmetic" "SUB_0"], ASM_REWRITE_TAC [fetch "arithmetic" "SUB_MONO_EQ", fetch "arithmetic" "LESS_EQ_MONO"]] end
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.043318
+Recording proof time: 0.160815
 
 Name: 330 LT_SUB_LCANCEL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00804
+Recording proof time: 0.008284
 
 Name: 331 ABS_DIFF_SUMS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.133585
+Recording proof time: 0.230011
 
 Name: 332 FUNPOW_SUC
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.100323
+Recording proof time: 0.248109
 
 Name: 333 FUNPOW_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005501
+Recording proof time: 0.005831
 
 Name: 334 FUNPOW_ADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.096495
+Recording proof time: 0.105099
 
 Name: 335 FUNPOW_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006035
+Recording proof time: 0.010855
 
 Name: 336 NRC_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008219
+Recording proof time: 0.011759
 
 Name: 337 NRC_ADD_I
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.08058
+Recording proof time: 0.101943
 
 Name: 338 NRC_ADD_E
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.132226
+Recording proof time: 0.11158
 
 Name: 339 NRC_ADD_EQN
-hh_eval 257645705352136
-Time: 61.282572
-Proof status: Time Out
+proof length: 1
+proof time: 0.01481
+Statistics
+  infstep : 7
+  nodes   : 2
+  maxdepth: 1
+Time: 0.286963
+  inferstep time: 0.272819
+  node_find time: 0.000052
+  node_crea time: 0.01371
+    pred time: 0.004386
+    thmpred time: 0.000001
+    mc time: 0.007779
+    inst time: 0.0
+Proof found: PROVE_TAC [fetch "arithmetic" "NRC_ADD_E", fetch "arithmetic" "NRC_ADD_I"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.122053
+Recording proof time: 0.144852
 
 Name: 340 NRC_SUC_RECURSE_LEFT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.055338
+Recording proof time: 0.073719
 
 Name: 341 NRC_RTC
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069803
+Recording proof time: 0.171836
 
 Name: 342 RTC_NRC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.043171
+Recording proof time: 0.081254
 
 Name: 343 RTC_eq_NRC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009398
+Recording proof time: 0.016099
 
 Name: 344 TC_eq_NRC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032772
+Recording proof time: 0.111349
 
 Name: 345 LESS_EQUAL_DIFF
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.178562
+Recording proof time: 0.265017
 
 Name: 346 MOD_2
-Original proof time: 0.027959
+Original proof time: 0.027833
 
 Name: 347 EVEN_MOD2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01829
+Recording proof time: 0.01627
 
 Name: 348 tactictoe_prove_348
-Original proof time: 0.002488
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.904402
 
 Name: 349 SUC_MOD
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.177354
+Recording proof time: 0.396152
 
 Name: 350 ADD_MOD
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.109395
+Recording proof time: 0.200433
 
 Name: 351 MOD_ELIM
-hh_eval 257645705352137
-Time: 61.342555
+Statistics
+  infstep : 3973
+  nodes   : 708
+  maxdepth: 7
+Time: 60.042782
+  inferstep time: 45.067773
+  node_find time: 1.598942
+  node_crea time: 13.284243
+    pred time: 3.352289
+    thmpred time: 0.000144
+    mc time: 5.986051
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 1.452132
+Recording proof time: 2.161771
 
 Name: 352 DOUBLE_LT
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.234347
+Recording proof time: 0.395088
 
 Name: 353 EXP2_LT
-Original proof time: 0.00667
+Original proof time: 0.006727
 
 Name: 354 SUB_LESS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.244016
+Recording proof time: 0.385443
 
 Name: 355 SUB_MOD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.044244
+Recording proof time: 0.05124
 
 Name: 356 ONE_LT_MULT_IMP
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.186917
+Recording proof time: 0.350702
 
 Name: 357 ONE_LT_MULT
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.248596
+Recording proof time: 0.80167
 
 Name: 358 ONE_LT_EXP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.107549
+Recording proof time: 0.156348
 
 Name: 359 tactictoe_prove_359
-Original proof time: 0.012873
+Org tac number: 21
+Original proof time: 0.0
+Recording proof time: 1.450894
 
 Name: 360 tactictoe_prove_360
-Original proof time: 0.01108
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.278802
 
 Name: 361 findq_eq_0
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.28648
+Recording proof time: 0.794535
 
 Name: 362 findq_divisor
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.519729
+Recording proof time: 1.962747
 
 Name: 363 tactictoe_prove_363
-Original proof time: 0.00253
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.968208
 
 Name: 364 tactictoe_prove_364
-Original proof time: 0.001274
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006044
 
 Name: 365 tactictoe_prove_365
-Original proof time: 0.018462
+Org tac number: 15
+Original proof time: 0.0
+Recording proof time: 0.781089
 
 Name: 366 MOD_SUB
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.212422
+Recording proof time: 0.255017
 
 Name: 367 DIV_SUB
-hh_eval 257645705352138
-Time: 61.571902
+Statistics
+  infstep : 1888
+  nodes   : 789
+  maxdepth: 8
+Time: 60.026079
+  inferstep time: 37.904875
+  node_find time: 0.784848
+  node_crea time: 21.280802
+    pred time: 5.176911
+    thmpred time: 0.000134
+    mc time: 10.975388
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.438916
+Recording proof time: 0.398068
 
 Name: 368 DIVMOD_CORRECT
 Org tac number: 32
 Original proof time: 0.0
-Recording proof time: 1.033376
+Recording proof time: 2.107664
 
 Name: 369 DIVMOD_CALC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006584
+Recording proof time: 0.009528
 
 Name: 370 MODEQ_0_CONG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005421
+Recording proof time: 0.01533
 
 Name: 371 MODEQ_NONZERO_MODEQUALITY
-Original proof time: 0.00384
+Original proof time: 0.008175
 
 Name: 372 MODEQ_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.060166
+Recording proof time: 0.076762
 
 Name: 373 MODEQ_INTRO_CONG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016669
+Recording proof time: 0.023393
 
 Name: 374 MODEQ_PLUS_CONG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.087671
+Recording proof time: 0.313432
 
 Name: 375 MODEQ_MULT_CONG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.095808
+Recording proof time: 0.294094
 
 Name: 376 MODEQ_REFL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007937
+Recording proof time: 0.007391
 
 Name: 377 MODEQ_SUC_CONG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.054873
+Recording proof time: 0.073986
 
 Name: 378 MODEQ_EXP_CONG
-hh_eval 257645705352139
-Time: 61.70509
+Statistics
+  infstep : 3011
+  nodes   : 533
+  maxdepth: 7
+Time: 60.000737
+  inferstep time: 47.44454
+  node_find time: 1.061985
+  node_crea time: 11.400763
+    pred time: 3.02755
+    thmpred time: 0.000117
+    mc time: 5.259414
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.136111
+Recording proof time: 0.51383
 
 Name: 379 MODEQ_SYM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.056873
+Recording proof time: 0.143947
 
 Name: 380 MODEQ_TRANS
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.039977
+Recording proof time: 0.145289
 
 Name: 381 MODEQ_NUMERAL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.026573
+Recording proof time: 0.031722
 
 Name: 382 MODEQ_MOD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010375
+Recording proof time: 0.01528
 
 Name: 383 MODEQ_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010445
+Recording proof time: 0.018068
 
 Name: 384 datatype_num
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005657
-Bad stac: 0
+Recording proof time: 0.010705
+Bad stac: 2

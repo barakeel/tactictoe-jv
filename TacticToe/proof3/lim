@@ -2,292 +2,336 @@
 Name: 0 LIM
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.128944
+Recording proof time: 0.166128
 
 Name: 1 LIM_CONST
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.400873
+Recording proof time: 0.417912
 
 Name: 2 LIM_ADD
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.126032
+Recording proof time: 0.092808
 
 Name: 3 LIM_MUL
-hh_eval 7497977
-Time: 60.26085
-Proof status: Time Out
+proof length: 4
+proof time: 0.005082
+Statistics
+  infstep : 16
+  nodes   : 9
+  maxdepth: 4
+Time: 0.618722
+  inferstep time: 0.505322
+  node_find time: 0.000236
+  node_crea time: 0.112917
+    pred time: 0.035266
+    thmpred time: 0.000003
+    mc time: 0.051975
+    inst time: 0.0
+Proof found: REPEAT GEN_TAC THEN ASM_REWRITE_TAC [fetch "lim" "tends_real_real"] THEN MATCH_MP_TAC NET_MUL THEN metisTools.METIS_TAC [DORDER_TENDSTO]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083353
+Recording proof time: 0.120207
 
 Name: 4 LIM_NEG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.089153
+Recording proof time: 0.082676
 
 Name: 5 LIM_INV
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.091079
+Recording proof time: 0.088294
 
 Name: 6 LIM_SUB
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082831
+Recording proof time: 0.160707
 
 Name: 7 LIM_DIV
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.084686
+Recording proof time: 0.082134
 
 Name: 8 LIM_NULL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.056775
+Recording proof time: 0.08542
 
 Name: 9 LIM_X
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.374586
+Recording proof time: 0.282128
 
 Name: 10 LIM_UNIQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.113163
+Recording proof time: 0.079079
 
 Name: 11 LIM_EQUAL
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.841598
+Recording proof time: 0.714696
 
 Name: 12 LIM_TRANSFORM
 Org tac number: 31
 Original proof time: 0.0
-Recording proof time: 1.323327
+Recording proof time: 0.947816
 
 Name: 13 DIFF_UNIQ
-hh_eval 7497978
-Time: 60.266463
-Proof status: Time Out
+proof length: 1
+proof time: 0.015528
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.119687
+  inferstep time: 0.104531
+  node_find time: 0.00001
+  node_crea time: 0.015116
+    pred time: 0.004717
+    thmpred time: 0.0
+    mc time: 0.008426
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "lim" "diffl", fetch "lim" "LIM_UNIQ"]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058966
+Recording proof time: 0.071564
 
 Name: 14 DIFF_CONT
-Original proof time: 0.001244
+Original proof time: 0.001041
 
 Name: 15 CONTL_LIM
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.649213
+Recording proof time: 0.73314
 
 Name: 16 DIFF_CARAT
-Original proof time: 0.001915
+Original proof time: 0.002267
 
 Name: 17 CONT_CONST
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.307388
+Recording proof time: 0.054107
 
 Name: 18 CONT_ADD
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.080241
+Recording proof time: 0.088896
 
 Name: 19 CONT_MUL
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.091443
+Recording proof time: 0.113383
 
 Name: 20 CONT_NEG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083673
+Recording proof time: 0.083952
 
 Name: 21 CONT_INV
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083291
+Recording proof time: 0.115492
 
 Name: 22 CONT_SUB
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082975
+Recording proof time: 0.078624
 
 Name: 23 CONT_DIV
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083709
+Recording proof time: 0.089
 
 Name: 24 CONT_COMPOSE
-Original proof time: 0.001996
+Original proof time: 0.002375
 
 Name: 25 IVT
-Original proof time: 0.00422
+Original proof time: 0.005423
 
 Name: 26 IVT2
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.273676
+Recording proof time: 0.309908
 
 Name: 27 DIFF_CONST
-hh_eval 7497979
-Time: 60.278884
+Statistics
+  infstep : 5872
+  nodes   : 1363
+  maxdepth: 9
+Time: 60.011613
+  inferstep time: 37.301082
+  node_find time: 2.566503
+  node_crea time: 20.078086
+    pred time: 2.956202
+    thmpred time: 0.000166
+    mc time: 3.647623
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.143599
+Recording proof time: 0.087352
 
 Name: 28 DIFF_ADD
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.336501
+Recording proof time: 0.301461
 
 Name: 29 DIFF_MUL
-Original proof time: 0.001416
+Original proof time: 0.001436
 
 Name: 30 DIFF_CMUL
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.263505
+Recording proof time: 0.308131
 
 Name: 31 DIFF_NEG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.072613
+Recording proof time: 0.06319
 
 Name: 32 DIFF_SUB
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.091342
+Recording proof time: 0.08098
 
 Name: 33 DIFF_CHAIN
-Original proof time: 0.003533
+Original proof time: 0.003528
 
 Name: 34 DIFF_X
-Original proof time: 0.00065
+Original proof time: 0.000469
 
 Name: 35 DIFF_POW
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.653745
+Recording proof time: 0.624577
 
 Name: 36 DIFF_XM1
-Original proof time: 0.003255
+Original proof time: 0.002951
 
 Name: 37 DIFF_INV
-Original proof time: 0.000496
+Original proof time: 0.000242
 
 Name: 38 DIFF_DIV
-Original proof time: 0.000987
+Original proof time: 0.00063
 
 Name: 39 DIFF_SUM
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.833636
+Recording proof time: 0.556923
 
 Name: 40 CONT_BOUNDED
-Original proof time: 0.003295
+Original proof time: 0.003775
 
 Name: 41 CONT_HASSUP
-Original proof time: 0.00105
+Original proof time: 0.001161
 
 Name: 42 CONT_ATTAINS
 Org tac number: 114
 Original proof time: 0.0
-Recording proof time: 4.48457
+Recording proof time: 4.093249
 
 Name: 43 CONT_ATTAINS2
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.494371
+Recording proof time: 0.694586
 
 Name: 44 CONT_ATTAINS_ALL
 Org tac number: 36
 Original proof time: 0.0
-Recording proof time: 2.64879
+Recording proof time: 1.071948
 
 Name: 45 DIFF_LINC
-Original proof time: 0.000738
+Original proof time: 0.000967
 
 Name: 46 DIFF_LDEC
-Original proof time: 0.001146
+Original proof time: 0.001517
 
 Name: 47 DIFF_LMAX
-hh_eval 7497980
-Time: 60.337986
+Statistics
+  infstep : 5386
+  nodes   : 780
+  maxdepth: 7
+Time: 60.010245
+  inferstep time: 41.092133
+  node_find time: 1.864997
+  node_crea time: 16.985299
+    pred time: 4.129586
+    thmpred time: 0.00017
+    mc time: 6.460578
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 43
 Original proof time: 0.0
-Recording proof time: 1.668943
+Recording proof time: 1.767609
 
 Name: 48 DIFF_LMIN
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.222027
+Recording proof time: 0.261619
 
 Name: 49 DIFF_LCONST
-Original proof time: 0.000327
+Original proof time: 0.000309
 
 Name: 50 INTERVAL_LEMMA
-Original proof time: 0.000801
+Original proof time: 0.000617
 
 Name: 51 ROLLE
-Original proof time: 0.009726
+Original proof time: 0.015259
 
 Name: 52 MVT_LEMMA
-Original proof time: 0.001028
+Original proof time: 0.00129
 
 Name: 53 MVT
-Original proof time: 0.00306
+Original proof time: 0.002062
 
 Name: 54 DIFF_ISCONST_END
-Original proof time: 0.000708
+Original proof time: 0.000548
 
 Name: 55 DIFF_ISCONST
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.534532
+Recording proof time: 0.686515
 
 Name: 56 DIFF_ISCONST_ALL
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.51495
+Recording proof time: 0.64329
 
 Name: 57 INTERVAL_ABS
 Org tac number: 23
 Original proof time: 0.0
-Recording proof time: 1.183533
+Recording proof time: 0.698256
 
 Name: 58 CONT_INJ_LEMMA
-Original proof time: 0.003465
+Original proof time: 0.002436
 
 Name: 59 CONT_INJ_LEMMA2
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.277971
+Recording proof time: 0.48707
 
 Name: 60 CONT_INJ_RANGE
-Original proof time: 0.004896
+Original proof time: 0.004871
 
 Name: 61 CONT_INVERSE
-Original proof time: 0.002918
+Original proof time: 0.005538
 
 Name: 62 DIFF_INVERSE
-Original proof time: 0.022476
+Original proof time: 0.024207
 
 Name: 63 DIFF_INVERSE_LT
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.235206
+Recording proof time: 0.257159
 
 Name: 64 INTERVAL_CLEMMA
 Org tac number: 22
 Original proof time: 0.0
-Recording proof time: 1.68767
+Recording proof time: 0.704437
 
 Name: 65 DIFF_INVERSE_OPEN
-Original proof time: 0.001888
-Bad stac: 0
+Original proof time: 0.000577
+Bad stac: 2

@@ -1,428 +1,519 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.000057
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.136775
 
 Name: 1 tactictoe_prove_1
-Original proof time: 0.000965
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.006857
 
 Name: 2 tactictoe_prove_2
-Original proof time: 0.000796
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014635
 
 Name: 3 tactictoe_prove_3
-Original proof time: 0.000649
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.008934
 
 Name: 4 tactictoe_prove_4
-Original proof time: 0.002269
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007672
 
 Name: 5 tactictoe_prove_5
-Original proof time: 0.000943
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.020943
 
 Name: 6 tactictoe_prove_6
-Original proof time: 0.001804
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.165515
 
 Name: 7 tactictoe_prove_7
-Original proof time: 0.00081
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011599
 
 Name: 8 tactictoe_prove_8
-Original proof time: 0.000601
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007076
 
 Name: 9 tactictoe_prove_9
-Original proof time: 0.00026
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017006
 
 Name: 10 tactictoe_prove_10
-Original proof time: 0.000983
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007949
 
 Name: 11 tactictoe_prove_11
-Original proof time: 0.001321
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.004077
 
 Name: 12 tactictoe_prove_12
-Original proof time: 0.001928
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.191613
 
 Name: 13 POLY_ADD_CLAUSES
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.109287
+Recording proof time: 0.123695
 
 Name: 14 POLY_CMUL_CLAUSES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002722
+Recording proof time: 0.002865
 
 Name: 15 POLY_NEG_CLAUSES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003189
+Recording proof time: 0.003267
 
 Name: 16 POLY_MUL_CLAUSES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003367
+Recording proof time: 0.004966
 
 Name: 17 POLY_DIFF_CLAUSES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003644
+Recording proof time: 0.003042
 
 Name: 18 POLY_ADD
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.168097
+Recording proof time: 0.222386
 
 Name: 19 POLY_CMUL
-hh_eval 2045148349
-Time: 60.214279
-Proof status: Time Out
+proof length: 5
+proof time: 0.006809
+Statistics
+  infstep : 69
+  nodes   : 15
+  maxdepth: 4
+Time: 2.02313
+  inferstep time: 1.824722
+  node_find time: 0.001182
+  node_crea time: 0.196466
+    pred time: 0.078323
+    thmpred time: 0.000007
+    mc time: 0.080436
+    inst time: 0.0
+Proof found: let fun LIST_INDUCT_TAC g = ((CONV_TAC (GEN_ALPHA_CONV (mk_var ("t", type_of ((fst o dest_forall o snd) g)))) THEN INDUCT_THEN list_INDUCT ASSUME_TAC THENL [ALL_TAC, GEN_TAC]) g) in LIST_INDUCT_TAC THENL [boolLib.REWRITE_TAC [fetch "poly" "poly_def", fetch "poly" "POLY_CMUL_CLAUSES"] THEN metisTools.METIS_TAC [REAL_MUL_RZERO], BasicProvers.SRW_TAC [] [fetch "poly" "poly_def", fetch "poly" "POLY_CMUL_CLAUSES", REAL_ADD_LDISTRIB] THEN REAL_ARITH_TAC] end
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.084508
+Recording proof time: 0.084372
 
 Name: 20 POLY_NEG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030188
+Recording proof time: 0.060644
 
 Name: 21 POLY_MUL
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.267905
+Recording proof time: 0.256588
 
 Name: 22 POLY_EXP
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.119879
+Recording proof time: 0.159174
 
 Name: 23 POLY_DIFF_LEMMA
-Original proof time: 0.001549
+Original proof time: 0.000854
 
 Name: 24 POLY_DIFF
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.354342
+Recording proof time: 0.503929
 
 Name: 25 POLY_DIFFERENTIABLE
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.171518
+Recording proof time: 0.117462
 
 Name: 26 POLY_CONT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.091396
+Recording proof time: 0.107957
 
 Name: 27 POLY_IVT_POS
-Original proof time: 0.003891
+Original proof time: 0.002341
 
 Name: 28 POLY_IVT_NEG
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.138368
+Recording proof time: 0.209783
 
 Name: 29 POLY_MVT
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.944893
+Recording proof time: 0.359127
 
 Name: 30 POLY_ADD_RZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005752
+Recording proof time: 0.00566
 
 Name: 31 POLY_MUL_ASSOC
-hh_eval 2045148350
-Time: 60.296232
-Proof status: Time Out
+proof length: 8
+proof time: 60.0
+Statistics
+  infstep : 1400
+  nodes   : 435
+  maxdepth: 8
+Time: 41.778908
+  inferstep time: 31.088755
+  node_find time: 0.284249
+  node_crea time: 10.384741
+    pred time: 2.664155
+    thmpred time: 0.000185
+    mc time: 4.219123
+    inst time: 0.0
+Proof found: let fun LIST_INDUCT_TAC g = ((CONV_TAC (GEN_ALPHA_CONV (mk_var ("t", type_of ((fst o dest_forall o snd) g)))) THEN INDUCT_THEN list_INDUCT ASSUME_TAC THENL [ALL_TAC, GEN_TAC]) g) in LIST_INDUCT_TAC THENL [metisTools.METIS_TAC [fetch "poly" "POLY_MUL_CLAUSES"], ONCE_REWRITE_TAC [SYM (ETA_CONV (``\\x. poly l x``))] THEN boolLib.REWRITE_TAC [fetch "poly" "POLY_MUL", fetch "poly" "poly_def"] THEN LIST_INDUCT_TAC THENL [BasicProvers.SRW_TAC [] [fetch "poly" "poly_def"], boolLib.REWRITE_TAC [fetch "poly" "poly_def", REAL_ADD_LDISTRIB, REAL_ADD_RDISTRIB] THEN metisTools.METIS_TAC [REAL_MUL_ASSOC]]] end
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008133
+Recording proof time: 0.012705
 
 Name: 32 POLY_EXP_ADD
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.092623
+Recording proof time: 0.130047
 
 Name: 33 POLY_DIFF_AUX_ADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.076736
+Recording proof time: 0.067397
 
 Name: 34 POLY_DIFF_AUX_CMUL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.047337
+Recording proof time: 0.049312
 
 Name: 35 POLY_DIFF_AUX_NEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005456
+Recording proof time: 0.003453
 
 Name: 36 POLY_DIFF_AUX_MUL_LEMMA
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.096384
+Recording proof time: 0.176176
 
 Name: 37 POLY_DIFF_ADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.062514
+Recording proof time: 0.070285
 
 Name: 38 POLY_DIFF_CMUL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.059264
+Recording proof time: 0.068429
 
 Name: 39 POLY_DIFF_NEG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00483
+Recording proof time: 0.004115
 
 Name: 40 POLY_DIFF_MUL_LEMMA
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.153473
+Recording proof time: 0.284686
 
 Name: 41 POLY_DIFF_MUL
-hh_eval 2045148351
-Time: 60.294044
+Statistics
+  infstep : 2239
+  nodes   : 1056
+  maxdepth: 12
+Time: 60.01147
+  inferstep time: 44.194012
+  node_find time: 1.011007
+  node_crea time: 14.766486
+    pred time: 3.396535
+    thmpred time: 0.000302
+    mc time: 2.404998
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.460138
+Recording proof time: 0.37388
 
 Name: 42 POLY_DIFF_EXP
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.315592
+Recording proof time: 0.369238
 
 Name: 43 POLY_DIFF_EXP_PRIME
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.153177
+Recording proof time: 0.228613
 
 Name: 44 POLY_LINEAR_REM
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.563631
+Recording proof time: 0.690568
 
 Name: 45 POLY_LINEAR_DIVIDES
 Org tac number: 32
 Original proof time: 0.0
-Recording proof time: 0.81318
+Recording proof time: 0.922627
 
 Name: 46 POLY_LENGTH_MUL
-Original proof time: 0.000383
+Original proof time: 0.000427
 
 Name: 47 POLY_ROOTS_INDEX_LEMMA
-Original proof time: 0.018268
+Original proof time: 0.016722
 
 Name: 48 POLY_ROOTS_INDEX_LENGTH
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01155
+Recording proof time: 0.010926
 
 Name: 49 POLY_ROOTS_FINITE_LEMMA
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011239
+Recording proof time: 0.00996
 
 Name: 50 FINITE_LEMMA
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.414803
+Recording proof time: 0.598251
 
 Name: 51 POLY_ROOTS_FINITE
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.178272
+Recording proof time: 0.354019
 
 Name: 52 POLY_ENTIRE_LEMMA
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.353754
+Recording proof time: 0.512421
 
 Name: 53 POLY_ENTIRE
-hh_eval 2045148352
-Time: 44.194334
-Reconstructed: 0.067141
-Proof found: metisTools.METIS_TAC [fetch "poly" "POLY_ENTIRE_LEMMA", fetch "poly" "poly_def", fetch "poly" "POLY_MUL", REAL_MUL_RZERO, REAL_MUL_LZERO]
+proof length: 7
+proof time: 0.032085
+Statistics
+  infstep : 2296
+  nodes   : 601
+  maxdepth: 7
+Time: 51.27576
+  inferstep time: 38.663606
+  node_find time: 0.545709
+  node_crea time: 12.035856
+    pred time: 3.104426
+    thmpred time: 0.000152
+    mc time: 5.169021
+    inst time: 0.0
+Proof found: REPEAT GEN_TAC THEN EQ_TAC THENL [metisTools.METIS_TAC [fetch "poly" "POLY_ENTIRE_LEMMA"], REWRITE_TAC [(local_tag FUN_EQ_THM), (fetch "poly" "POLY_MUL")] THEN BasicProvers.SRW_TAC [] [fetch "poly" "poly_def", fetch "poly" "POLY_LINEAR_DIVIDES"] THEN metisTools.METIS_TAC []]
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.133626
+Recording proof time: 0.43914
 
 Name: 54 POLY_MUL_LCANCEL
-Original proof time: 0.000371
+Original proof time: 0.000407
 
 Name: 55 POLY_EXP_EQ_0
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.243532
+Recording proof time: 0.330644
 
 Name: 56 POLY_PRIME_EQ_0
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082757
+Recording proof time: 0.142805
 
 Name: 57 POLY_EXP_PRIME_EQ_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006584
+Recording proof time: 0.097669
 
 Name: 58 POLY_ZERO_LEMMA
-Original proof time: 0.017635
+Original proof time: 0.018746
 
 Name: 59 POLY_ZERO
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.207776
+Recording proof time: 0.293348
 
 Name: 60 POLY_DIFF_AUX_ISZERO
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030053
+Recording proof time: 0.046495
 
 Name: 61 POLY_DIFF_ISZERO
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.265387
+Recording proof time: 0.383969
 
 Name: 62 POLY_DIFF_ZERO
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.373764
+Recording proof time: 1.063392
 
 Name: 63 POLY_DIFF_WELLDEF
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.137928
+Recording proof time: 0.204869
 
 Name: 64 POLY_PRIMES
 Org tac number: 25
 Original proof time: 0.0
-Recording proof time: 0.737028
+Recording proof time: 0.85355
 
 Name: 65 POLY_DIVIDES_REFL
-hh_eval 2045148353
-Time: 60.475405
+Statistics
+  infstep : 4811
+  nodes   : 759
+  maxdepth: 7
+Time: 60.073339
+  inferstep time: 46.520611
+  node_find time: 1.494748
+  node_crea time: 11.996197
+    pred time: 3.012315
+    thmpred time: 0.000144
+    mc time: 5.780254
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.109975
+Recording proof time: 0.111734
 
 Name: 66 POLY_DIVIDES_TRANS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.203606
+Recording proof time: 0.228148
 
 Name: 67 POLY_DIVIDES_EXP
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.340057
+Recording proof time: 0.717217
 
 Name: 68 POLY_EXP_DIVIDES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007804
+Recording proof time: 0.016229
 
 Name: 69 POLY_DIVIDES_ADD
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.196619
+Recording proof time: 0.26356
 
 Name: 70 POLY_DIVIDES_SUB
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.318288
+Recording proof time: 0.721356
 
 Name: 71 POLY_DIVIDES_SUB2
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.280745
+Recording proof time: 0.433812
 
 Name: 72 POLY_DIVIDES_ZERO
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.126882
+Recording proof time: 0.209346
 
 Name: 73 POLY_ORDER_EXISTS
 Org tac number: 62
 Original proof time: 0.0
-Recording proof time: 1.667858
+Recording proof time: 3.809858
 
 Name: 74 POLY_ORDER
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016622
+Recording proof time: 0.022939
 
 Name: 75 ORDER
-hh_eval 2045148354
-Time: 60.491766
+Statistics
+  infstep : 3676
+  nodes   : 1029
+  maxdepth: 9
+Time: 60.074468
+  inferstep time: 37.222171
+  node_find time: 1.341516
+  node_crea time: 21.46765
+    pred time: 4.253501
+    thmpred time: 0.00017
+    mc time: 9.116471
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.938149
+Recording proof time: 0.637425
 
 Name: 76 ORDER_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00908
+Recording proof time: 0.011828
 
 Name: 77 ORDER_UNIQUE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006085
+Recording proof time: 0.009785
 
 Name: 78 ORDER_POLY
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.040538
+Recording proof time: 0.147663
 
 Name: 79 ORDER_ROOT
 Org tac number: 29
 Original proof time: 0.0
-Recording proof time: 0.84158
+Recording proof time: 0.996881
 
 Name: 80 ORDER_DIVIDES
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.228457
+Recording proof time: 0.176055
 
 Name: 81 ORDER_DECOMP
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.406567
+Recording proof time: 0.565015
 
 Name: 82 ORDER_MUL
-Original proof time: 0.027976
+Original proof time: 0.027621
 
 Name: 83 ORDER_DIFF
-Original proof time: 0.015513
+Original proof time: 0.02833
 
 Name: 84 POLY_SQUAREFREE_DECOMP_ORDER
-Original proof time: 0.029855
+Original proof time: 0.027674
 
 Name: 85 RSQUAREFREE_ROOTS
-Original proof time: 0.019624
+Original proof time: 0.013504
 
 Name: 86 RSQUAREFREE_DECOMP
 Org tac number: 30
 Original proof time: 0.0
-Recording proof time: 1.564191
+Recording proof time: 1.344876
 
 Name: 87 POLY_SQUAREFREE_DECOMP
-Original proof time: 0.004369
+Original proof time: 0.004524
 
 Name: 88 POLY_NORMALIZE
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.290973
+Recording proof time: 0.330499
 
 Name: 89 DEGREE_ZERO
-Original proof time: 0.001062
+Original proof time: 0.000995
 
 Name: 90 POLY_ROOTS_FINITE_SET
-Original proof time: 0.010833
+Original proof time: 0.014784
 
 Name: 91 POLY_MONO
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.327064
-Bad stac: 0
+Recording proof time: 0.390895
+Bad stac: 7

@@ -2,441 +2,525 @@
 Name: 0 POSITIVE_PROB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005972
+Recording proof time: 0.005212
 
 Name: 1 INCREASING_PROB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006088
+Recording proof time: 0.025585
 
 Name: 2 ADDITIVE_PROB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01016
+Recording proof time: 0.004841
 
 Name: 3 COUNTABLY_ADDITIVE_PROB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007716
+Recording proof time: 0.045973
 
 Name: 4 PROB_SPACE
-hh_eval 334579469367180
-Time: 60.376788
-Proof status: Time Out
+proof length: 4
+proof time: 0.013919
+Statistics
+  infstep : 900
+  nodes   : 164
+  maxdepth: 6
+Time: 18.261808
+  inferstep time: 12.60768
+  node_find time: 0.095242
+  node_crea time: 5.548441
+    pred time: 1.132572
+    thmpred time: 0.000033
+    mc time: 3.438886
+    inst time: 0.0
+Proof found: RW_TAC std_ss [(fetch "probability" "prob_def"), (fetch "probability" "events_def")] THEN FULL_SIMP_TAC std_ss [fetch "probability" "prob_space_def", measure_space_def, countably_additive_def, fetch "probability" "p_space_def"] THEN RW_TAC std_ss [SUMS_EQ, IN_FUNSET, IN_UNIV, (fetch "measure" "positive_def")] THEN REWRITE_TAC [GSYM CONJ_ASSOC]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.049879
+Recording proof time: 0.046974
 
 Name: 5 EVENTS_SIGMA_ALGEBRA
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003936
+Recording proof time: 0.004335
 
 Name: 6 EVENTS_ALGEBRA
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00766
+Recording proof time: 0.005966
 
 Name: 7 PROB_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011214
+Recording proof time: 0.008116
 
 Name: 8 PROB_UNIV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008789
+Recording proof time: 0.005332
 
 Name: 9 PROB_SPACE_POSITIVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006981
+Recording proof time: 0.003372
 
 Name: 10 PROB_SPACE_COUNTABLY_ADDITIVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007061
+Recording proof time: 0.003735
 
 Name: 11 PROB_SPACE_ADDITIVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.019192
+Recording proof time: 0.007845
 
 Name: 12 PROB_SPACE_INCREASING
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012755
+Recording proof time: 0.008754
 
 Name: 13 PROB_POSITIVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012207
+Recording proof time: 0.01098
 
 Name: 14 PROB_INCREASING
-hh_eval 334579469367181
-Time: 1.708917
-Reconstructed: 0.023232
-Proof found: METIS_TAC [fetch "probability" "INCREASING_PROB", fetch "probability" "PROB_SPACE_INCREASING"]
+Statistics
+  infstep : 1918
+  nodes   : 507
+  maxdepth: 8
+Time: 60.029444
+  inferstep time: 36.185824
+  node_find time: 0.472995
+  node_crea time: 23.33107
+    pred time: 4.849319
+    thmpred time: 0.000128
+    mc time: 8.241286
+    inst time: 0.0
+Proof status: Time Out
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006832
+Recording proof time: 0.011816
 
 Name: 15 PROB_ADDITIVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010802
+Recording proof time: 0.062803
 
 Name: 16 PROB_COUNTABLY_ADDITIVE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.164034
+Recording proof time: 0.190261
 
 Name: 17 PROB_COMPL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.024466
+Recording proof time: 0.019724
 
 Name: 18 PROB_INDEP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009549
+Recording proof time: 0.005806
 
 Name: 19 PSPACE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.0038
+Recording proof time: 0.005916
 
 Name: 20 EVENTS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002819
+Recording proof time: 0.005739
 
 Name: 21 PROB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003905
+Recording proof time: 0.005884
 
 Name: 22 EVENTS_INTER
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057915
+Recording proof time: 0.085313
 
 Name: 23 EVENTS_EMPTY
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.070184
+Recording proof time: 0.079035
 
 Name: 24 EVENTS_SPACE
-hh_eval 334579469367182
-Time: 60.370072
+Statistics
+  infstep : 3965
+  nodes   : 675
+  maxdepth: 8
+Time: 60.026108
+  inferstep time: 36.441064
+  node_find time: 1.258454
+  node_crea time: 22.271665
+    pred time: 4.234534
+    thmpred time: 0.000154
+    mc time: 9.702954
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058173
+Recording proof time: 0.073839
 
 Name: 25 EVENTS_UNION
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.067495
+Recording proof time: 0.070726
 
 Name: 26 INDEP_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005756
+Recording proof time: 0.048873
 
 Name: 27 INTER_PSPACE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.063986
+Recording proof time: 0.243857
 
 Name: 28 INDEP_SPACE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008871
+Recording proof time: 0.01252
 
 Name: 29 EVENTS_DIFF
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.066206
+Recording proof time: 0.08215
 
 Name: 30 EVENTS_COMPL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069288
+Recording proof time: 0.114823
 
 Name: 31 EVENTS_COUNTABLE_UNION
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060568
+Recording proof time: 0.199914
 
 Name: 32 PROB_ZERO_UNION
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.775691
+Recording proof time: 2.072834
 
 Name: 33 PROB_EQ_COMPL
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.194714
+Recording proof time: 0.20158
 
 Name: 34 PROB_ONE_INTER
-hh_eval 334579469367183
-Time: 60.490994
+Statistics
+  infstep : 1560
+  nodes   : 542
+  maxdepth: 8
+Time: 60.003802
+  inferstep time: 35.825072
+  node_find time: 0.418719
+  node_crea time: 23.725512
+    pred time: 4.62114
+    thmpred time: 0.000119
+    mc time: 8.162583
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.339856
+Recording proof time: 0.405202
 
 Name: 35 EVENTS_COUNTABLE_INTER
 Org tac number: 32
 Original proof time: 0.0
-Recording proof time: 1.000568
+Recording proof time: 1.557202
 
 Name: 36 ABS_PROB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005719
+Recording proof time: 0.039407
 
 Name: 37 PROB_COMPL_LE1
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.027962
+Recording proof time: 0.072106
 
 Name: 38 PROB_LE_1
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.143657
+Recording proof time: 0.135713
 
 Name: 39 PROB_EQ_BIGUNION_IMAGE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.129799
+Recording proof time: 0.10417
 
 Name: 40 PROB_FINITELY_ADDITIVE
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.50436
+Recording proof time: 0.682809
 
 Name: 41 ABS_1_MINUS_PROB
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.280462
+Recording proof time: 0.298683
 
 Name: 42 PROB_INCREASING_UNION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007235
+Recording proof time: 0.006323
 
 Name: 43 PROB_SUBADDITIVE
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.511632
+Recording proof time: 0.825405
 
 Name: 44 PROB_COUNTABLY_SUBADDITIVE
-hh_eval 334579469367184
-Time: 60.542275
+Statistics
+  infstep : 1980
+  nodes   : 482
+  maxdepth: 7
+Time: 60.042366
+  inferstep time: 33.376379
+  node_find time: 0.476063
+  node_crea time: 26.130348
+    pred time: 5.682491
+    thmpred time: 0.000112
+    mc time: 13.522981
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 40
 Original proof time: 0.0
-Recording proof time: 1.356654
+Recording proof time: 2.079672
 
 Name: 45 PROB_COUNTABLY_ZERO
 Org tac number: 25
 Original proof time: 0.0
-Recording proof time: 0.837048
+Recording proof time: 1.481326
 
 Name: 46 INDEP_SYM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037271
+Recording proof time: 0.040234
 
 Name: 47 INDEP_REFL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037724
+Recording proof time: 0.032605
 
 Name: 48 PROB_REAL_SUM_IMAGE
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.616718
+Recording proof time: 0.81413
 
 Name: 49 PROB_EQUIPROBABLE_FINITE_UNIONS
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.41863
+Recording proof time: 0.514889
 
 Name: 50 PROB_REAL_SUM_IMAGE_FN
 Org tac number: 80
 Original proof time: 0.0
-Recording proof time: 4.285077
+Recording proof time: 7.195558
 
 Name: 51 PROB_REAL_SUM_IMAGE_SPACE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.052481
+Recording proof time: 0.073564
 
 Name: 52 PROB_DISCRETE_EVENTS
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.520866
+Recording proof time: 0.684054
 
 Name: 53 PROB_DISCRETE_EVENTS_COUNTABLE
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.550329
+Recording proof time: 0.847373
 
 Name: 54 marginal_joint_zero
-hh_eval 334579469367185
-Time: 60.667708
+Statistics
+  infstep : 2521
+  nodes   : 599
+  maxdepth: 8
+Time: 60.006225
+  inferstep time: 35.91939
+  node_find time: 0.783588
+  node_crea time: 23.240661
+    pred time: 4.307385
+    thmpred time: 0.000137
+    mc time: 6.86868
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.760332
+Recording proof time: 0.692675
 
 Name: 55 marginal_joint_zero3
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.997785
+Recording proof time: 1.237062
 
 Name: 56 distribution_prob_space
 Org tac number: 22
 Original proof time: 0.0
-Recording proof time: 1.087596
+Recording proof time: 1.273368
 
 Name: 57 uniform_distribution_prob_space
 Org tac number: 24
 Original proof time: 0.0
-Recording proof time: 1.469942
+Recording proof time: 1.816799
 
 Name: 58 distribution_partition
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.766396
+Recording proof time: 0.909699
 
 Name: 59 distribution_lebesgue_thm1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.017746
+Recording proof time: 0.013065
 
 Name: 60 distribution_lebesgue_thm2
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.371963
+Recording proof time: 0.40514
 
 Name: 61 finite_expectation1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.061451
+Recording proof time: 0.062805
 
 Name: 62 finite_expectation2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.064312
+Recording proof time: 0.064277
 
 Name: 63 finite_expectation
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.057481
+Recording proof time: 0.053506
 
 Name: 64 finite_support_expectation
-hh_eval 334579469367186
-Time: 60.738014
-Proof status: Time Out
+proof length: 1
+proof time: 0.003477
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.143148
+  inferstep time: 0.125286
+  node_find time: 0.000028
+  node_crea time: 0.017528
+    pred time: 0.005487
+    thmpred time: 0.0
+    mc time: 0.009406
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "probability" "finite_expectation2", fetch "probability" "distribution_def"]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.080915
+Recording proof time: 0.054625
 
 Name: 65 finite_marginal_product_space_POW
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.883579
+Recording proof time: 0.724622
 
 Name: 66 finite_marginal_product_space_POW2
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.690963
+Recording proof time: 0.802991
 
 Name: 67 finite_marginal_product_space_POW3
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.744665
+Recording proof time: 0.866904
 
 Name: 68 prob_x_eq_1_imp_prob_y_eq_0
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.217225
+Recording proof time: 0.206174
 
 Name: 69 distribution_x_eq_1_imp_distribution_y_eq_0
 Org tac number: 20
 Original proof time: 0.0
-Recording proof time: 0.841956
+Recording proof time: 1.292722
 
 Name: 70 joint_distribution_sym
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.238096
+Recording proof time: 0.547699
 
 Name: 71 joint_distribution_pos
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.067015
+Recording proof time: 0.066853
 
 Name: 72 joint_distribution_le_1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.056773
+Recording proof time: 0.129275
 
 Name: 73 joint_distribution_le
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.086441
+Recording proof time: 0.149041
 
 Name: 74 joint_distribution_le2
-hh_eval 334579469367187
-Time: 48.408788
-Reconstructed: 0.036049
-Proof found: METIS_TAC [fetch "probability" "joint_distribution_sym", fetch "probability" "joint_distribution_le"]
+proof length: 1
+proof time: 0.026919
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.145525
+  inferstep time: 0.108097
+  node_find time: 0.000014
+  node_crea time: 0.037383
+    pred time: 0.006101
+    thmpred time: 0.0
+    mc time: 0.029193
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "probability" "joint_distribution_le", fetch "probability" "joint_distribution_sym"]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083537
+Recording proof time: 0.087605
 
 Name: 75 joint_conditional
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.185925
+Recording proof time: 0.204438
 
 Name: 76 distribution_pos
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.05812
+Recording proof time: 0.065849
 
 Name: 77 conditional_distribution_pos
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006851
+Recording proof time: 0.00799
 
 Name: 78 conditional_distribution_le_1
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.198005
+Recording proof time: 0.216082
 
 Name: 79 marginal_distribution1
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.650773
+Recording proof time: 1.423519
 
 Name: 80 marginal_distribution2
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.637519
+Recording proof time: 0.973176
 
 Name: 81 joint_distribution_sums_1
 Org tac number: 20
 Original proof time: 0.0
-Recording proof time: 1.236427
+Recording proof time: 1.721347
 
 Name: 82 joint_distribution_sum_mul1
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.928759
-Bad stac: 0
+Recording proof time: 1.642333
+Bad stac: 4

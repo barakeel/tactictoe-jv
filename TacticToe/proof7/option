@@ -1,289 +1,361 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.000039
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.066315
 
 Name: 1 option_Axiom
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.133914
+Recording proof time: 0.237105
 
 Name: 2 option_induction
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.224055
+Recording proof time: 0.328611
 
 Name: 3 FORALL_OPTION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012424
+Recording proof time: 0.014162
 
 Name: 4 EXISTS_OPTION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.018792
+Recording proof time: 0.143229
 
 Name: 5 SOME_11
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002988
+Recording proof time: 0.002989
 
 Name: 6 tactictoe_prove_6
-Original proof time: 0.000064
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003109
 
 Name: 7 OPTION_MAP2_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004594
+Recording proof time: 0.003268
 
 Name: 8 tactictoe_prove_8
-Original proof time: 0.000017
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.139374
 
 Name: 9 IS_SOME_EXISTS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.056993
+Recording proof time: 0.055973
 
 Name: 10 IS_NONE_EQ_NONE
-hh_eval 140207510690006
-Time: 1.345448
-Reconstructed: 0.009739
-Proof found: METIS_TAC [fetch "option" "IS_NONE_DEF", fetch "option" "option_nchotomy"]
+proof length: 1
+proof time: 0.012487
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.064035
+  inferstep time: 0.06091
+  node_find time: 0.000007
+  node_crea time: 0.003099
+    pred time: 0.001009
+    thmpred time: 0.000001
+    mc time: 0.001524
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "option" "option_nchotomy", fetch "option" "IS_NONE_DEF"]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.072178
+Recording proof time: 0.061911
 
 Name: 11 NOT_IS_SOME_EQ_NONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.100269
+Recording proof time: 0.261475
 
 Name: 12 tactictoe_prove_12
-Original proof time: 0.000577
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.275925
 
 Name: 13 tactictoe_prove_13
-Original proof time: 0.000437
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.132361
 
 Name: 14 option_case_ID
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.071281
+Recording proof time: 0.101777
 
 Name: 15 tactictoe_prove_15
-Original proof time: 0.000322
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.194287
 
 Name: 16 option_case_SOME_ID
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.066326
+Recording proof time: 0.183799
 
 Name: 17 tactictoe_prove_17
-Original proof time: 0.000386
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.093639
 
 Name: 18 tactictoe_prove_18
-Original proof time: 0.000387
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.149709
 
 Name: 19 option_case_compute
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037093
+Recording proof time: 0.05503
 
 Name: 20 IF_EQUALS_OPTION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00531
+Recording proof time: 0.024979
 
 Name: 21 IF_NONE_EQUALS_OPTION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.041008
+Recording proof time: 0.043285
 
 Name: 22 OPTION_MAP_EQ_SOME
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.089631
+Recording proof time: 0.344372
 
 Name: 23 OPTION_MAP_EQ_NONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.055875
+Recording proof time: 0.140228
 
 Name: 24 OPTION_MAP_EQ_NONE_both_ways
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.055716
+Recording proof time: 0.240031
 
 Name: 25 OPTION_MAP_COMPOSE
-hh_eval 140207510690007
-Time: 60.258368
-Proof status: Time Out
+proof length: 3
+proof time: 0.014457
+Statistics
+  infstep : 69
+  nodes   : 9
+  maxdepth: 3
+Time: 0.676144
+  inferstep time: 0.632778
+  node_find time: 0.001343
+  node_crea time: 0.041543
+    pred time: 0.023136
+    thmpred time: 0.000001
+    mc time: 0.0117
+    inst time: 0.0
+Proof found: let fun OPTION_CASES_TAC t = STRUCT_CASES_TAC (ISPEC t ((fetch "option" "option_nchotomy"))) in OPTION_CASES_TAC (-- `x:'a option` --) THENL [METIS_TAC [fetch "option" "OPTION_MAP_EQ_NONE_both_ways", combinTheory.o_THM], simpLib.SIMP_TAC (srw_ss ()) []] end
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035865
+Recording proof time: 0.084175
 
 Name: 26 OPTION_MAP_CONG
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.894568
+Recording proof time: 0.653618
 
 Name: 27 IS_SOME_MAP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.080743
+Recording proof time: 0.051251
 
 Name: 28 OPTION_JOIN_EQ_SOME
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.307744
+Recording proof time: 0.235441
 
 Name: 29 OPTION_MAP2_SOME
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.083232
+Recording proof time: 0.066616
 
 Name: 30 OPTION_MAP2_NONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.065233
+Recording proof time: 0.102181
 
 Name: 31 OPTION_MAP2_cong
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.09898
+Recording proof time: 0.119355
 
 Name: 32 OPTION_MAP_CASE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.028565
+Recording proof time: 0.04689
 
 Name: 33 OPTION_BIND_cong
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014308
+Recording proof time: 0.009579
 
 Name: 34 OPTION_BIND_EQUALS_OPTION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.055454
+Recording proof time: 0.051355
 
 Name: 35 IS_SOME_BIND
-hh_eval 140207510690008
-Time: 0.487975
-Reconstructed: 0.011175
-Proof found: METIS_TAC [fetch "option" "NOT_IS_SOME_EQ_NONE", fetch "option" "OPTION_BIND_def"]
+proof length: 1
+proof time: 0.009857
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.107014
+  inferstep time: 0.102642
+  node_find time: 0.000008
+  node_crea time: 0.004348
+    pred time: 0.001586
+    thmpred time: 0.000001
+    mc time: 0.002156
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "option" "OPTION_BIND_def", fetch "option" "NOT_IS_SOME_EQ_NONE"]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030288
+Recording proof time: 0.051339
 
 Name: 36 OPTION_IGNORE_BIND_thm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008688
+Recording proof time: 0.003462
 
 Name: 37 OPTION_IGNORE_BIND_EQUALS_OPTION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.052961
+Recording proof time: 0.038717
 
 Name: 38 OPTION_GUARD_COND
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035816
+Recording proof time: 0.036647
 
 Name: 39 OPTION_GUARD_EQ_THM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.052577
+Recording proof time: 0.04343
 
 Name: 40 OPTION_CHOICE_EQ_NONE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035914
+Recording proof time: 0.036082
 
 Name: 41 OPTION_CHOICE_NONE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032606
+Recording proof time: 0.051198
 
 Name: 42 OPTION_MCOMP_ASSOC
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.120904
+Recording proof time: 0.119029
 
 Name: 43 OPTION_MCOMP_ID
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.089981
+Recording proof time: 0.113988
 
 Name: 44 OPTION_APPLY_MAP2
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.168795
+Recording proof time: 0.10093
 
 Name: 45 SOME_SOME_APPLY
-hh_eval 140207510690009
-Time: 0.619327
-Reconstructed: 0.004212
-Proof found: METIS_TAC [fetch "option" "OPTION_APPLY_def", fetch "option" "OPTION_MAP_DEF"]
+proof length: 1
+proof time: 0.015477
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.092873
+  inferstep time: 0.088171
+  node_find time: 0.000008
+  node_crea time: 0.004676
+    pred time: 0.001858
+    thmpred time: 0.0
+    mc time: 0.002234
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "option" "OPTION_APPLY_MAP2", fetch "option" "option_case_def", fetch "option" "OPTION_MAP_EQ_SOME", fetch "option" "OPTION_MAP2_SOME"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004196
+Recording proof time: 0.00244
 
 Name: 46 SOME_APPLY_PERMUTE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.049075
+Recording proof time: 0.033606
 
 Name: 47 OPTION_APPLY_o
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.230869
+Recording proof time: 0.235528
 
 Name: 48 OPTREL_MONO
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.057963
+Recording proof time: 0.033938
 
 Name: 49 OPTREL_refl
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.146215
+Recording proof time: 0.246843
 
 Name: 50 some_intro
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.04953
+Recording proof time: 0.042892
 
 Name: 51 some_elim
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.052075
+Recording proof time: 0.052877
 
 Name: 52 some_F
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.075405
+Recording proof time: 0.028124
 
 Name: 53 some_EQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.136225
+Recording proof time: 0.098475
 
 Name: 54 OPTION_ALL_MONO
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.090565
+Recording proof time: 0.329725
 
 Name: 55 OPTION_ALL_CONG
-hh_eval 140207510690010
-Time: 18.577081
-Reconstructed: 0.109417
-Proof found: METIS_TAC [fetch "option" "OPTION_ALL_def", fetch "option" "IS_NONE_EQ_NONE", fetch "option" "option_CLAUSES"]
+proof length: 1
+proof time: 0.005803
+Statistics
+  infstep : 8
+  nodes   : 3
+  maxdepth: 1
+Time: 0.191655
+  inferstep time: 0.180497
+  node_find time: 0.000066
+  node_crea time: 0.011006
+    pred time: 0.004448
+    thmpred time: 0.0
+    mc time: 0.00463
+    inst time: 0.0
+Proof found: simpLib.SIMP_TAC (srw_ss ()) [fetch "option" "FORALL_OPTION"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007637
+Recording proof time: 0.042918
 
 Name: 56 datatype_option
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003183
+Recording proof time: 0.00467
 Bad stac: 0

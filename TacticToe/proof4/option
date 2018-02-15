@@ -1,286 +1,359 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.00002
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.086942
 
 Name: 1 option_Axiom
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.143849
+Recording proof time: 0.157398
 
 Name: 2 option_induction
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.23104
+Recording proof time: 0.296372
 
 Name: 3 FORALL_OPTION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01165
+Recording proof time: 0.01919
 
 Name: 4 EXISTS_OPTION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.069325
+Recording proof time: 0.014516
 
 Name: 5 SOME_11
-hh_eval 140207510690006
-Time: 2.909859
-Reconstructed: 0.028564
-Proof found: METIS_TAC [fetch "option" "option_REP_ABS_DEF", fetch "option" "SOME_DEF", sumTheory.INL_11]
+proof length: 1
+proof time: 0.006097
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.053033
+  inferstep time: 0.048778
+  node_find time: 0.000009
+  node_crea time: 0.004224
+    pred time: 0.001566
+    thmpred time: 0.000001
+    mc time: 0.001821
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "option" "option_case_def"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003622
+Recording proof time: 0.019207
 
 Name: 6 tactictoe_prove_6
-Original proof time: 0.000078
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00867
 
 Name: 7 OPTION_MAP2_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004554
+Recording proof time: 0.005831
 
 Name: 8 tactictoe_prove_8
-Original proof time: 0.000013
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.441357
 
 Name: 9 IS_SOME_EXISTS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058379
+Recording proof time: 0.164402
 
 Name: 10 IS_NONE_EQ_NONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.065492
+Recording proof time: 0.283243
 
 Name: 11 NOT_IS_SOME_EQ_NONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.063028
+Recording proof time: 0.119834
 
 Name: 12 tactictoe_prove_12
-Original proof time: 0.00042
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.12683
 
 Name: 13 tactictoe_prove_13
-Original proof time: 0.000316
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.215687
 
 Name: 14 option_case_ID
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.06416
+Recording proof time: 0.084641
 
 Name: 15 tactictoe_prove_15
-Original proof time: 0.000402
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.147785
 
 Name: 16 option_case_SOME_ID
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.065313
+Recording proof time: 0.129829
 
 Name: 17 tactictoe_prove_17
-Original proof time: 0.000504
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.079001
 
 Name: 18 tactictoe_prove_18
-Original proof time: 0.000487
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.150686
 
 Name: 19 option_case_compute
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03928
+Recording proof time: 0.406216
 
 Name: 20 IF_EQUALS_OPTION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006281
+Recording proof time: 0.007153
 
 Name: 21 IF_NONE_EQUALS_OPTION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033797
+Recording proof time: 0.117595
 
 Name: 22 OPTION_MAP_EQ_SOME
-hh_eval 140207510690007
-Time: 60.249328
-Proof status: Time Out
+proof length: 4
+proof time: 0.008253
+Statistics
+  infstep : 1077
+  nodes   : 217
+  maxdepth: 7
+Time: 13.383921
+  inferstep time: 11.77207
+  node_find time: 0.141997
+  node_crea time: 1.45822
+    pred time: 0.388302
+    thmpred time: 0.000052
+    mc time: 0.487945
+    inst time: 0.0
+Proof found: let fun OPTION_CASES_TAC t = STRUCT_CASES_TAC (ISPEC t ((fetch "option" "option_nchotomy"))) in REPEAT STRIP_TAC THEN OPTION_CASES_TAC (-- `(x :'a option)` --) THENL [SRW_TAC [] ((local_tag option_rws)), SRW_TAC [] [EQ_IMP_THM]] end
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.16668
+Recording proof time: 0.301131
 
 Name: 23 OPTION_MAP_EQ_NONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.12349
+Recording proof time: 0.112858
 
 Name: 24 OPTION_MAP_EQ_NONE_both_ways
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.123852
+Recording proof time: 0.278047
 
 Name: 25 OPTION_MAP_COMPOSE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.039125
+Recording proof time: 0.044511
 
 Name: 26 OPTION_MAP_CONG
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.141851
+Recording proof time: 0.261011
 
 Name: 27 IS_SOME_MAP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030667
+Recording proof time: 0.142608
 
 Name: 28 OPTION_JOIN_EQ_SOME
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.184542
+Recording proof time: 0.532488
 
 Name: 29 OPTION_MAP2_SOME
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.071739
+Recording proof time: 0.379088
 
 Name: 30 OPTION_MAP2_NONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.067589
+Recording proof time: 0.061312
 
 Name: 31 OPTION_MAP2_cong
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.094742
+Recording proof time: 0.233929
 
 Name: 32 OPTION_MAP_CASE
-hh_eval 140207510690008
-Time: 60.277931
-Proof status: Time Out
+proof length: 3
+proof time: 0.033657
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.266577
+  inferstep time: 0.254932
+  node_find time: 0.000031
+  node_crea time: 0.011563
+    pred time: 0.005713
+    thmpred time: 0.0
+    mc time: 0.003979
+    inst time: 0.0
+Proof found: let fun OPTION_CASES_TAC t = STRUCT_CASES_TAC (ISPEC t ((fetch "option" "option_nchotomy"))) in OPTION_CASES_TAC (-- `(x :'a option)` --) THENL [METIS_TAC [fetch "option" "option_case_def", fetch "option" "OPTION_MAP_EQ_NONE_both_ways"], METIS_TAC [fetch "option" "option_case_def", fetch "option" "OPTION_MAP_COMPOSE", fetch "option" "OPTION_MAP_EQ_SOME"]] end
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033313
+Recording proof time: 0.035209
 
 Name: 33 OPTION_BIND_cong
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010914
+Recording proof time: 0.007028
 
 Name: 34 OPTION_BIND_EQUALS_OPTION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037802
+Recording proof time: 0.110078
 
 Name: 35 IS_SOME_BIND
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033772
+Recording proof time: 0.038119
 
 Name: 36 OPTION_IGNORE_BIND_thm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002874
+Recording proof time: 0.002695
 
 Name: 37 OPTION_IGNORE_BIND_EQUALS_OPTION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03839
+Recording proof time: 0.040552
 
 Name: 38 OPTION_GUARD_COND
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.460716
+Recording proof time: 0.071037
 
 Name: 39 OPTION_GUARD_EQ_THM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.036996
+Recording proof time: 0.031693
 
 Name: 40 OPTION_CHOICE_EQ_NONE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.204228
+Recording proof time: 0.153648
 
 Name: 41 OPTION_CHOICE_NONE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.040816
+Recording proof time: 0.085569
 
 Name: 42 OPTION_MCOMP_ASSOC
-hh_eval 140207510690009
-Time: 60.278073
+Statistics
+  infstep : 948
+  nodes   : 84
+  maxdepth: 5
+Time: 60.000188
+  inferstep time: 5.580336
+  node_find time: 0.047327
+  node_crea time: 0.49398
+    pred time: 0.189755
+    thmpred time: 0.00002
+    mc time: 0.150014
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.094176
+Recording proof time: 0.09563
 
 Name: 43 OPTION_MCOMP_ID
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.091442
+Recording proof time: 0.114634
 
 Name: 44 OPTION_APPLY_MAP2
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.747039
+Recording proof time: 0.102104
 
 Name: 45 SOME_SOME_APPLY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004794
+Recording proof time: 0.06195
 
 Name: 46 SOME_APPLY_PERMUTE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.049994
+Recording proof time: 0.16059
 
 Name: 47 OPTION_APPLY_o
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.302486
+Recording proof time: 0.402523
 
 Name: 48 OPTREL_MONO
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.042939
+Recording proof time: 0.029987
 
 Name: 49 OPTREL_refl
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.117588
+Recording proof time: 0.195355
 
 Name: 50 some_intro
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.054592
+Recording proof time: 0.086643
 
 Name: 51 some_elim
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.046174
+Recording proof time: 0.061175
 
 Name: 52 some_F
-hh_eval 140207510690010
-Time: 60.249807
-Proof status: Time Out
+proof length: 1
+proof time: 0.000996
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.114296
+  inferstep time: 0.109438
+  node_find time: 0.000013
+  node_crea time: 0.004819
+    pred time: 0.001886
+    thmpred time: 0.0
+    mc time: 0.002427
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "option" "some_def"]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.044322
+Recording proof time: 0.044827
 
 Name: 53 some_EQ
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.062032
+Recording proof time: 0.067249
 
 Name: 54 OPTION_ALL_MONO
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.089908
+Recording proof time: 0.171857
 
 Name: 55 OPTION_ALL_CONG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010565
+Recording proof time: 0.053966
 
 Name: 56 datatype_option
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004082
+Recording proof time: 0.005294
 Bad stac: 0

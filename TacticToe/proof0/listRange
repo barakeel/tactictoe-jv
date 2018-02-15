@@ -1,62 +1,86 @@
 
 Name: 0 listRangeINC_SING
-hh_eval 289379096645310
-Time: 60.174172
-Proof status: Time Out
+proof length: 2
+proof time: 0.001316
+Statistics
+  infstep : 23
+  nodes   : 4
+  maxdepth: 2
+Time: 0.426259
+  inferstep time: 0.377083
+  node_find time: 0.000135
+  node_crea time: 0.048895
+    pred time: 0.021412
+    thmpred time: 0.000001
+    mc time: 0.019344
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "listRange" "listRangeINC_def"] THEN SIMP_TAC (srw_ss () ++ boolSimps.DNF_ss) []
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.08255
+Recording proof time: 0.017647
 
 Name: 1 MEM_listRangeINC
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.112884
+Recording proof time: 0.132913
 
 Name: 2 listRangeINC_CONS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.220781
+Recording proof time: 0.247435
 
 Name: 3 listRangeINC_EMPTY
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.10371
+Recording proof time: 0.112169
 
 Name: 4 listRangeLHI_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003691
+Recording proof time: 0.002544
 
 Name: 5 MEM_listRangeLHI
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.070979
+Recording proof time: 0.092657
 
 Name: 6 listRangeLHI_EMPTY
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.103869
+Recording proof time: 0.169902
 
 Name: 7 listRangeLHI_CONS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.129827
+Recording proof time: 0.165893
 
 Name: 8 listRangeLHI_ALL_DISTINCT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.158382
+Recording proof time: 0.287943
 
 Name: 9 LENGTH_listRangeLHI
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004101
+Recording proof time: 0.003924
 
 Name: 10 EL_listRangeLHI
-hh_eval 289379096645311
-Time: 60.217287
-Proof status: Time Out
+proof length: 2
+proof time: 0.002425
+Statistics
+  infstep : 4
+  nodes   : 3
+  maxdepth: 2
+Time: 0.261477
+  inferstep time: 0.221221
+  node_find time: 0.000063
+  node_crea time: 0.040144
+    pred time: 0.019246
+    thmpred time: 0.000001
+    mc time: 0.016635
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "listRange" "listRangeLHI_def"] THEN ASM_SIMP_TAC (srw_ss () ++ ARITH_ss) []
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.600066
+Recording proof time: 0.288229
 Bad stac: 0

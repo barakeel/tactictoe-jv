@@ -2,115 +2,138 @@
 Name: 0 LIST_TO_BAG_alt
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011053
+Recording proof time: 0.01342
 
 Name: 1 BAG_TO_LIST_INV
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.156093
+Recording proof time: 0.164771
 
 Name: 2 BAG_IN_MEM
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.143693
+Recording proof time: 0.195853
 
 Name: 3 MEM_BAG_TO_LIST
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008381
+Recording proof time: 0.008919
 
 Name: 4 FINITE_LIST_TO_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.047392
+Recording proof time: 0.03951
 
 Name: 5 EVERY_LIST_TO_BAG
-hh_eval 338089487106922
-Time: 60.242446
-Proof status: Time Out
+proof length: 3
+proof time: 0.015116
+Statistics
+  infstep : 7
+  nodes   : 5
+  maxdepth: 2
+Time: 0.330779
+  inferstep time: 0.287938
+  node_find time: 0.000145
+  node_crea time: 0.042549
+    pred time: 0.012533
+    thmpred time: 0.000002
+    mc time: 0.023925
+    inst time: 0.0
+Proof found: Induct_on `ls` THENL [METIS_TAC [fetch "container" "LIST_TO_BAG_def", EVERY_DEF, BAG_EVERY_THM], SRW_TAC [] []]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.040725
+Recording proof time: 0.027859
 
 Name: 6 LIST_TO_BAG_APPEND
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.051184
+Recording proof time: 0.048135
 
 Name: 7 LIST_TO_BAG_MAP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016385
+Recording proof time: 0.007447
 
 Name: 8 LIST_TO_BAG_FILTER
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015657
+Recording proof time: 0.021942
 
 Name: 9 IN_LIST_TO_BAG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.091442
+Recording proof time: 0.07725
 
 Name: 10 IN_LIST_TO_BAG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.059955
+Recording proof time: 0.062073
 
 Name: 11 LIST_TO_BAG_DISTINCT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.042671
+Recording proof time: 0.101438
 
 Name: 12 LIST_TO_BAG_EQ_EMPTY
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.050457
+Recording proof time: 0.035946
 
 Name: 13 PERM_LIST_TO_BAG
-Original proof time: 0.002616
+Original proof time: 0.001939
 
 Name: 14 CARD_LIST_TO_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.043751
+Recording proof time: 0.035156
 
 Name: 15 BAG_TO_LIST_CARD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009464
+Recording proof time: 0.009274
 
 Name: 16 BAG_TO_LIST_EQ_NIL
-hh_eval 338089487106923
-Time: 43.67042
-Reconstructed: 0.046718
-Proof found: METIS_TAC [fetch "container" "BAG_TO_LIST_INV", fetch "container" "LIST_TO_BAG_def", BAG_TO_LIST_EQN]
+proof length: 6
+proof time: 0.038573
+Statistics
+  infstep : 507
+  nodes   : 78
+  maxdepth: 5
+Time: 8.078689
+  inferstep time: 6.640157
+  node_find time: 0.026945
+  node_crea time: 1.406224
+    pred time: 0.402799
+    thmpred time: 0.000072
+    mc time: 0.464253
+    inst time: 0.0
+Proof found: qid_spec_tac `b` THEN recInduct (fetch "container" "BAG_TO_LIST_IND") THEN REPEAT STRIP_TAC THENL [METIS_TAC [BAG_TO_LIST_EQN, list_distinct], ONCE_REWRITE_TAC [UNDISCH (fetch "container" "BAG_TO_LIST_THM")] THEN SRW_TAC [] []]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.025603
+Recording proof time: 0.040408
 
 Name: 17 LIST_ELEM_COUNT_LIST_TO_BAG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.09573
+Recording proof time: 0.12381
 
 Name: 18 WF_mlt_list
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.325136
+Recording proof time: 0.516049
 
 Name: 19 BAG_OF_FMAP_THM
 Org tac number: 30
 Original proof time: 0.0
-Recording proof time: 1.040201
+Recording proof time: 1.272012
 
 Name: 20 BAG_IN_BAG_OF_FMAP
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.555617
+Recording proof time: 0.577142
 
 Name: 21 FINITE_BAG_OF_FMAP
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.127075
+Recording proof time: 0.065289
 Bad stac: 0

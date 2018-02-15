@@ -2,452 +2,550 @@
 Name: 0 extend_cons
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.153974
+Recording proof time: 0.083369
 
 Name: 1 pad_left_extend
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.382214
+Recording proof time: 0.524554
 
 Name: 2 extend
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010315
+Recording proof time: 0.01592
 
 Name: 3 fixwidth
-hh_eval 533866437659775
-Time: 60.327878
-Proof status: Time Out
+proof length: 1
+proof time: 0.034563
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.076124
+  inferstep time: 0.057833
+  node_find time: 0.000034
+  node_crea time: 0.018149
+    pred time: 0.004583
+    thmpred time: 0.000001
+    mc time: 0.011145
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "bitstring" "fixwidth_def", fetch "bitstring" "extend"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.019185
+Recording proof time: 0.009979
 
 Name: 4 fixwidth_id
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007727
+Recording proof time: 0.00627
 
 Name: 5 boolify_reverse_map
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.052787
+Recording proof time: 0.040792
 
 Name: 6 bitify_reverse_map
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.061853
+Recording proof time: 0.046361
 
 Name: 7 every_bit_bitify
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.080551
+Recording proof time: 0.064823
 
 Name: 8 length_pad_left
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.02506
+Recording proof time: 0.01425
 
 Name: 9 length_pad_right
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.020265
+Recording proof time: 0.010824
 
 Name: 10 length_zero_extend
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012804
+Recording proof time: 0.00698
 
 Name: 11 length_sign_extend
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014789
+Recording proof time: 0.007918
 
 Name: 12 length_fixwidth
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.03151
+Recording proof time: 0.016989
 
 Name: 13 length_field
-hh_eval 533866437659776
-Time: 60.385457
+Statistics
+  infstep : 2184
+  nodes   : 483
+  maxdepth: 7
+Time: 60.064808
+  inferstep time: 42.368025
+  node_find time: 0.633051
+  node_crea time: 17.015944
+    pred time: 4.579574
+    thmpred time: 0.000131
+    mc time: 7.03003
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010664
+Recording proof time: 0.007456
 
 Name: 14 length_bitify
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007803
+Recording proof time: 0.008067
 
 Name: 15 length_bitify_null
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004994
+Recording proof time: 0.006225
 
 Name: 16 length_shiftr
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.0046
+Recording proof time: 0.052341
 
 Name: 17 length_rev_count_list
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032665
+Recording proof time: 0.039947
 
 Name: 18 length_w2v
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011495
+Recording proof time: 0.014506
 
 Name: 19 length_rotate
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.099995
+Recording proof time: 0.136596
 
 Name: 20 el_rev_count_list
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033065
+Recording proof time: 0.041399
 
 Name: 21 tactictoe_prove_21
-Original proof time: 0.007815
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016635
 
 Name: 22 el_zero_extend
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.124996
+Recording proof time: 0.099145
 
 Name: 23 el_sign_extend
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.02793
+Recording proof time: 0.035631
 
 Name: 24 el_fixwidth
-hh_eval 533866437659777
-Time: 60.417212
-Proof status: Time Out
+proof length: 5
+proof time: 0.017475
+Statistics
+  infstep : 137
+  nodes   : 40
+  maxdepth: 4
+Time: 3.995439
+  inferstep time: 2.70488
+  node_find time: 0.006371
+  node_crea time: 1.282166
+    pred time: 0.32046
+    thmpred time: 0.000012
+    mc time: 0.542208
+    inst time: 0.0
+Proof found: lrw [] THENL [lrw [fetch "bitstring" "fixwidth_def", fetch "bitstring" "el_zero_extend"], SRW_TAC [] [fetch "bitstring" "fixwidth_def"] THEN lrw [] THEN ASM_SIMP_TAC ((numLib.arith_ss ++ listSimps.LIST_ss) ++ boolSimps.EQUIV_EXTRACT_ss) [rich_listTheory.EL_DROP]]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.131078
+Recording proof time: 0.026519
 
 Name: 25 el_field
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.522399
+Recording proof time: 0.455794
 
 Name: 26 tactictoe_prove_26
-Original proof time: 0.028479
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.192432
 
 Name: 27 el_w2v
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016613
+Recording proof time: 0.013785
 
 Name: 28 el_shiftr
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.153332
+Recording proof time: 0.109895
 
 Name: 29 shiftr_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005341
+Recording proof time: 0.006639
 
 Name: 30 field_fixwidth
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004737
+Recording proof time: 0.007104
 
 Name: 31 testbit
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.579825
+Recording proof time: 0.44547
 
 Name: 32 testbit_geq_len
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013449
+Recording proof time: 0.018435
 
 Name: 33 testbit_el
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009476
+Recording proof time: 0.019074
 
 Name: 34 bit_v2w
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.26991
+Recording proof time: 0.289604
 
 Name: 35 word_index_v2w
-hh_eval 533866437659778
-Time: 43.676136
-Reconstructed: 0.016449
-Proof found: METIS_TAC [combinTheory.FAIL_THM, fetch "bitstring" "bit_v2w", word_bit]
+proof length: 1
+proof time: 0.001781
+Statistics
+  infstep : 4
+  nodes   : 4
+  maxdepth: 2
+Time: 0.237068
+  inferstep time: 0.188433
+  node_find time: 0.000046
+  node_crea time: 0.048531
+    pred time: 0.013345
+    thmpred time: 0.000001
+    mc time: 0.025897
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "bitstring" "v2w_def", fcpTheory.index_comp]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010199
+Recording proof time: 0.021018
 
 Name: 36 testbit_w2v
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.224604
+Recording proof time: 0.369315
 
 Name: 37 w2v_v2w
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.179706
+Recording proof time: 0.327333
 
 Name: 38 v2w_w2v
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.029343
+Recording proof time: 0.046867
 
 Name: 39 v2w_fixwidth
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.135815
+Recording proof time: 0.172629
 
 Name: 40 fixwidth_fixwidth
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.069912
+Recording proof time: 0.080023
 
 Name: 41 bitstring_nchotomy
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008947
+Recording proof time: 0.007367
 
 Name: 42 ranged_bitstring_nchotomy
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.09416
+Recording proof time: 0.083418
 
 Name: 43 tactictoe_prove_43
-Original proof time: 0.026989
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.368581
 
 Name: 44 fixwidth_eq
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.272424
+Recording proof time: 0.317128
 
 Name: 45 v2w_11
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011683
+Recording proof time: 0.013151
 
 Name: 46 field_concat_right
-hh_eval 533866437659779
-Time: 60.463123
+Statistics
+  infstep : 4479
+  nodes   : 809
+  maxdepth: 8
+Time: 60.002327
+  inferstep time: 41.010656
+  node_find time: 1.676994
+  node_crea time: 17.241881
+    pred time: 4.287895
+    thmpred time: 0.000146
+    mc time: 5.286769
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.059654
+Recording proof time: 0.056594
 
 Name: 47 field_concat_left
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.259937
+Recording proof time: 0.305424
 
 Name: 48 field_id_imp
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010526
+Recording proof time: 0.009731
 
 Name: 49 shiftl_replicate_F
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.108708
+Recording proof time: 0.101874
 
 Name: 50 word_lsb_v2w
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.083789
+Recording proof time: 0.077436
 
 Name: 51 word_msb_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010101
+Recording proof time: 0.010187
 
 Name: 52 w2w_v2w
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.68748
+Recording proof time: 0.615953
 
 Name: 53 sw2sw_v2w
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.779228
+Recording proof time: 0.926086
 
 Name: 54 n2w_v2n
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.392627
+Recording proof time: 0.364955
 
 Name: 55 tactictoe_prove_55
-Original proof time: 0.011053
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.035533
 
 Name: 56 v2n_n2v
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009544
+Recording proof time: 0.010392
 
 Name: 57 v2w_n2v
-hh_eval 533866437659780
-Time: 1.385518
-Reconstructed: 0.003966
-Proof found: METIS_TAC [fetch "bitstring" "n2w_v2n", fetch "bitstring" "v2n_n2v"]
+proof length: 1
+proof time: 0.002819
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.055712
+  inferstep time: 0.035435
+  node_find time: 0.000012
+  node_crea time: 0.020246
+    pred time: 0.003355
+    thmpred time: 0.0
+    mc time: 0.014986
+    inst time: 0.0
+Proof found: METIS_TAC [fetch "bitstring" "v2n_n2v", fetch "bitstring" "n2w_v2n"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013592
+Recording proof time: 0.005375
 
 Name: 58 w2n_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008691
+Recording proof time: 0.009103
 
 Name: 59 v2n_lt
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.020186
+Recording proof time: 0.047011
 
 Name: 60 word_and_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.394725
+Recording proof time: 0.39843
 
 Name: 61 word_or_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.246888
+Recording proof time: 0.209225
 
 Name: 62 word_xor_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.202238
+Recording proof time: 0.329051
 
 Name: 63 word_nand_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.140732
+Recording proof time: 0.158547
 
 Name: 64 word_nor_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.105428
+Recording proof time: 0.09974
 
 Name: 65 word_xnor_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.081035
+Recording proof time: 0.087755
 
 Name: 66 word_1comp_v2w
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.114625
+Recording proof time: 0.114406
 
 Name: 67 word_lsl_v2w
-hh_eval 533866437659781
-Time: 60.702272
+Statistics
+  infstep : 1949
+  nodes   : 988
+  maxdepth: 9
+Time: 60.002269
+  inferstep time: 33.484049
+  node_find time: 0.733526
+  node_crea time: 25.75333
+    pred time: 4.897259
+    thmpred time: 0.000145
+    mc time: 11.495884
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.296567
+Recording proof time: 0.331298
 
 Name: 68 word_lsr_v2w
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.274312
+Recording proof time: 0.251312
 
 Name: 69 word_modify_v2w
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.47577
+Recording proof time: 0.540213
 
 Name: 70 word_bits_v2w
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.365893
+Recording proof time: 0.486355
 
 Name: 71 word_extract_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003699
+Recording proof time: 0.006381
 
 Name: 72 word_slice_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006127
+Recording proof time: 0.008115
 
 Name: 73 tactictoe_prove_73
-Original proof time: 0.048373
+Original proof time: 0.05689
 
 Name: 74 word_asr_v2w
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 1.199659
+Recording proof time: 1.294587
 
 Name: 75 word_ror_v2w
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 2.261687
+Recording proof time: 2.810275
 
 Name: 76 word_reverse_v2w
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.195805
+Recording proof time: 0.25059
 
 Name: 77 word_join_v2w
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.264893
+Recording proof time: 0.357552
 
 Name: 78 word_concat_v2w
-hh_eval 533866437659782
-Time: 60.856725
+Statistics
+  infstep : 2739
+  nodes   : 927
+  maxdepth: 9
+Time: 60.110843
+  inferstep time: 30.685343
+  node_find time: 0.930351
+  node_crea time: 28.462366
+    pred time: 3.800357
+    thmpred time: 0.00012
+    mc time: 8.578339
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.041399
+Recording proof time: 0.015969
 
 Name: 79 word_join_v2w_rwt
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011343
+Recording proof time: 0.008042
 
 Name: 80 word_concat_v2w_rwt
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.021058
+Recording proof time: 0.014372
 
 Name: 81 tactictoe_prove_81
-Original proof time: 0.058053
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.183746
 
 Name: 82 word_reduce_v2w
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.141757
+Recording proof time: 0.1174
 
 Name: 83 extract_v2w
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 2.478305
+Recording proof time: 2.7222
 
 Name: 84 tactictoe_prove_84
-Original proof time: 0.008107
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.192746
 
 Name: 85 word_bit_last_shiftr
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.284785
+Recording proof time: 0.360052
 
 Name: 86 ops_to_v2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003582
+Recording proof time: 0.006079
 
 Name: 87 ops_to_n2w
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00505
-Bad stac: 0
+Recording proof time: 0.005694
+Bad stac: 1

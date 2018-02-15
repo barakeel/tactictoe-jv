@@ -1,215 +1,290 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.000911
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.063834
 
 Name: 1 numeral_suc
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014509
+Recording proof time: 0.003902
 
 Name: 2 numeral_distrib
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.058209
+Recording proof time: 0.085279
 
 Name: 3 numeral_iisuc
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006783
+Recording proof time: 0.033987
 
 Name: 4 numeral_add
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.084484
+Recording proof time: 0.086038
 
 Name: 5 tactictoe_prove_5
-Original proof time: 0.004032
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.176704
 
 Name: 6 numeral_eq
-hh_eval 90002877228761
-Time: 60.155177
+Statistics
+  infstep : 4255
+  nodes   : 1076
+  maxdepth: 8
+Time: 60.055812
+  inferstep time: 42.364279
+  node_find time: 1.976682
+  node_crea time: 15.662468
+    pred time: 4.293127
+    thmpred time: 0.000152
+    mc time: 6.387636
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.206125
+Recording proof time: 0.184623
 
 Name: 7 tactictoe_prove_7
-Original proof time: 0.002134
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.145481
 
 Name: 8 tactictoe_prove_8
-Original proof time: 0.004352
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.149993
 
 Name: 9 tactictoe_prove_9
-Original proof time: 0.000204
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.064836
 
 Name: 10 numeral_lt
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.028329
+Recording proof time: 0.019251
 
 Name: 11 numeral_lte
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.065108
+Recording proof time: 0.042364
 
 Name: 12 numeral_pre
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011238
+Recording proof time: 0.019938
 
 Name: 13 bit_initiality
-Original proof time: 0.010376
+Original proof time: 0.009583
 
 Name: 14 tactictoe_prove_14
-Original proof time: 0.001173
+Org tac number: 16
+Original proof time: 0.0
+Recording proof time: 0.764827
 
 Name: 15 tactictoe_prove_15
-Original proof time: 0.003418
+Org tac number: 25
+Original proof time: 0.0
+Recording proof time: 1.623129
 
 Name: 16 tactictoe_prove_16
-Original proof time: 0.000859
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.164063
 
 Name: 17 iSUB_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013196
+Recording proof time: 0.039096
 
 Name: 18 tactictoe_prove_18
-Original proof time: 0.001826
+Org tac number: 27
+Original proof time: 0.0
+Recording proof time: 1.225823
 
 Name: 19 tactictoe_prove_19
-Original proof time: 0.006624
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.145669
 
 Name: 20 tactictoe_prove_20
-Original proof time: 0.000302
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.120863
 
 Name: 21 tactictoe_prove_21
-Original proof time: 0.071798
+Org tac number: 24
+Original proof time: 0.0
+Recording proof time: 0.962664
 
 Name: 22 numeral_sub
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008987
+Recording proof time: 0.055955
 
 Name: 23 iDUB_removal
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013901
+Recording proof time: 0.079768
 
 Name: 24 numeral_mult
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057805
+Recording proof time: 0.067118
 
 Name: 25 numeral_exp
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069281
+Recording proof time: 0.251779
 
 Name: 26 numeral_evenodd
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00496
+Recording proof time: 0.007007
 
 Name: 27 numeral_fact
-hh_eval 90002877228762
-Time: 60.27671
-Proof status: Time Out
+proof length: 7
+proof time: 0.075675
+Statistics
+  infstep : 365
+  nodes   : 111
+  maxdepth: 5
+Time: 7.738353
+  inferstep time: 6.569325
+  node_find time: 0.02263
+  node_crea time: 1.142345
+    pred time: 0.282115
+    thmpred time: 0.000014
+    mc time: 0.591663
+    inst time: 0.0
+Proof found: CONJ_TAC THENL [REWRITE_TAC [(fetch "arithmetic" "FACT")], CONJ_TAC THENL [SIMP_TAC bool_ss [(fetch "arithmetic" "NUMERAL_DEF"), (fetch "arithmetic" "BIT1"), (fetch "arithmetic" "ADD_CLAUSES")] THEN METIS_TAC [FACT, ADD, PRE], SIMP_TAC bool_ss [(fetch "arithmetic" "NUMERAL_DEF"), (fetch "arithmetic" "BIT1"), (fetch "arithmetic" "BIT2"), (fetch "arithmetic" "ADD_CLAUSES")] THEN metisTools.METIS_TAC [double_2suc_less, DOUBLE_FACTS, arithmeticTheory.FACT, arithmeticTheory.FACT_LESS, DB.fetch "numeral" "numeral_add", arithmeticTheory.ADD, arithmeticTheory.ADD_SUC, arithmeticTheory.ADD_CLAUSES]]]
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.1612
+Recording proof time: 0.284912
 
 Name: 28 numeral_funpow
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.153658
+Recording proof time: 0.571112
 
 Name: 29 numeral_MIN
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.023261
+Recording proof time: 0.042378
 
 Name: 30 numeral_MAX
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.087946
+Recording proof time: 0.040805
 
 Name: 31 divmod_POS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009652
+Recording proof time: 0.031959
 
 Name: 32 DIVMOD_NUMERAL_CALC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.181539
+Recording proof time: 0.116853
 
 Name: 33 numeral_div2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.787457
+Recording proof time: 0.555401
 
 Name: 34 texp_help_thm
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.203799
+Recording proof time: 0.279058
 
 Name: 35 texp_help0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010268
+Recording proof time: 0.064453
 
 Name: 36 numeral_texp_help
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007495
+Recording proof time: 0.064354
 
 Name: 37 TWO_EXP_THM
-hh_eval 90002877228763
-Time: 1.230379
-Reconstructed: 0.083322
-Proof found: METIS_TAC [fetch "numeral" "numeral_suc", NUMERAL_DEF, EXP, BIT1, ALT_ZERO, ADD_CLAUSES, PRE, fetch "numeral" "texp_help0"]
+proof length: 4
+proof time: 0.009453
+Statistics
+  infstep : 379
+  nodes   : 130
+  maxdepth: 5
+Time: 8.93939
+  inferstep time: 6.711334
+  node_find time: 0.034324
+  node_crea time: 2.187832
+    pred time: 0.630793
+    thmpred time: 0.000031
+    mc time: 1.225621
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "numeral" "texp_help_thm"), EXP_ADD, EXP_1, MULT_COMM] THENL [SRW_TAC [] [EXP], SIMP_TAC bool_ss [NUMERAL_DEF, ADD_CLAUSES, ALT_ZERO, MULT_CLAUSES, EXP, PRE, BIT1], SIMP_TAC bool_ss [NUMERAL_DEF, ADD_CLAUSES, ALT_ZERO, MULT_CLAUSES, EXP, BIT1, BIT2]]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.054235
+Recording proof time: 0.166504
 
 Name: 38 tactictoe_prove_38
-Original proof time: 0.001825
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.235896
 
 Name: 39 tactictoe_prove_39
-Original proof time: 0.002778
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.212517
 
 Name: 40 tactictoe_prove_40
-Original proof time: 0.00483
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.084957
 
 Name: 41 tactictoe_prove_41
-Original proof time: 0.011328
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.355424
 
 Name: 42 tactictoe_prove_42
-Original proof time: 0.003069
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.098969
 
 Name: 43 onecount_characterisation
 Org tac number: 28
 Original proof time: 0.0
-Recording proof time: 1.116998
+Recording proof time: 1.845133
 
 Name: 44 exactlog_characterisation
-Original proof time: 0.028269
+Original proof time: 0.019429
 
 Name: 45 DIV2_BIT1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004425
+Recording proof time: 0.003562
 
 Name: 46 tactictoe_prove_46
-Original proof time: 0.002027
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.03027
 
 Name: 47 tactictoe_prove_47
-Original proof time: 0.01957
+Org tac number: 18
+Original proof time: 0.0
+Recording proof time: 0.740765
 
 Name: 48 tactictoe_prove_48
-Original proof time: 0.000037
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.003887
 
 Name: 49 tactictoe_prove_49
-Original proof time: 0.000031
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.034584
 Bad stac: 0

@@ -2,359 +2,433 @@
 Name: 0 not_less
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.250505
+Recording proof time: 0.259526
 
 Name: 1 elim_eq
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.15899
+Recording proof time: 0.139293
 
 Name: 2 less_to_leq_samel
-hh_eval 440130193188932
-Time: 7.485785
-Reconstructed: 0.100512
-Proof found: metisTools.METIS_TAC [INT_EQ_SUB_LADD, INT_NEG_SUB, INT_SUB_ADD2, arithmeticTheory.NUMERAL_DEF, numeralTheory.numeral_lt, INT_LE_LT1]
+proof length: 5
+proof time: 0.029327
+Statistics
+  infstep : 602
+  nodes   : 93
+  maxdepth: 5
+Time: 12.492507
+  inferstep time: 10.005253
+  node_find time: 0.039066
+  node_crea time: 2.43976
+    pred time: 0.880394
+    thmpred time: 0.00003
+    mc time: 0.904995
+    inst time: 0.0
+Proof found: SRW_TAC [] [] THEN REWRITE_TAC [GSYM (fetch "integer" "int_sub"), (fetch "integer" "INT_LE_SUB_LADD")] THEN EQ_TAC THENL [metisTools.METIS_TAC [fetch "int_arith" "not_less", INT_LE_LT1], metisTools.METIS_TAC [INT_LT_LE1, fetch "int_arith" "elim_eq", INT_LT_LADD]]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006165
+Recording proof time: 0.067744
 
 Name: 3 less_to_leq_samer
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003997
+Recording proof time: 0.002839
 
 Name: 4 lt_move_all_right
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00426
+Recording proof time: 0.005608
 
 Name: 5 lt_move_all_left
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003628
+Recording proof time: 0.005894
 
 Name: 6 lt_move_left_left
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.084168
+Recording proof time: 0.232277
 
 Name: 7 lt_move_left_right
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.103409
+Recording proof time: 0.084796
 
 Name: 8 le_move_right_left
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005352
+Recording proof time: 0.018342
 
 Name: 9 le_move_all_right
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005376
+Recording proof time: 0.003666
 
 Name: 10 eq_move_all_right
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.08888
+Recording proof time: 0.160913
 
 Name: 11 eq_move_all_left
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008415
+Recording proof time: 0.006913
 
 Name: 12 eq_move_left_left
-hh_eval 440130193188933
-Time: 0.336784
-Reconstructed: 0.020963
-Proof found: metisTools.METIS_TAC [INT_ADD_SYM, INT_SUB_CALCULATE, INT_ADD_SUB]
+proof length: 2
+proof time: 0.00524
+Statistics
+  infstep : 14
+  nodes   : 6
+  maxdepth: 3
+Time: 0.694869
+  inferstep time: 0.632875
+  node_find time: 0.000396
+  node_crea time: 0.061291
+    pred time: 0.020019
+    thmpred time: 0.000002
+    mc time: 0.031262
+    inst time: 0.0
+Proof found: REWRITE_TAC [GSYM (fetch "integer" "int_sub")] THEN PROVE_TAC [INT_EQ_SUB_RADD, INT_SUB_ADD2]
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.29988
+Recording proof time: 0.304748
 
 Name: 13 eq_move_left_right
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007448
+Recording proof time: 0.0084
 
 Name: 14 eq_move_right_left
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007525
+Recording proof time: 0.006412
 
 Name: 15 lcm_eliminate
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.07054
+Recording proof time: 0.088039
 
 Name: 16 lt_justify_multiplication
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.273764
+Recording proof time: 0.425917
 
 Name: 17 eq_justify_multiplication
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.047918
+Recording proof time: 0.052969
 
 Name: 18 justify_divides
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005508
+Recording proof time: 0.008565
 
 Name: 19 justify_divides2
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.358738
+Recording proof time: 0.441639
 
 Name: 20 justify_divides3
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.124765
+Recording proof time: 0.084226
 
 Name: 21 INT_SUB_SUB3
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035499
+Recording proof time: 0.061561
 
 Name: 22 can_get_small
-Original proof time: 0.068118
+Original proof time: 0.017798
 
 Name: 23 can_get_big
-hh_eval 440130193188934
-Time: 5.870788
-Reconstructed: 0.014138
-Proof found: metisTools.METIS_TAC [fetch "int_arith" "can_get_small", INT_LT_SUB_RADD]
+Statistics
+  infstep : 3013
+  nodes   : 767
+  maxdepth: 8
+Time: 60.09358
+  inferstep time: 42.389981
+  node_find time: 1.041768
+  node_crea time: 16.613337
+    pred time: 4.427468
+    thmpred time: 0.000182
+    mc time: 5.984078
+    inst time: 0.0
+Proof status: Time Out
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.066914
+Recording proof time: 0.087499
 
 Name: 24 positive_product_implication
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003529
+Recording proof time: 0.004541
 
 Name: 25 restricted_quantification_simp
-Original proof time: 0.014371
+Original proof time: 0.012933
 
 Name: 26 top_and_lessers
-Original proof time: 0.016102
+Original proof time: 0.013746
 
 Name: 27 bot_and_greaters
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069374
+Recording proof time: 0.073337
 
 Name: 28 in_additive_range
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.174901
+Recording proof time: 0.167597
 
 Name: 29 in_subtractive_range
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.18892
+Recording proof time: 0.239064
 
 Name: 30 subtract_to_small
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.634243
+Recording proof time: 0.796646
 
 Name: 31 add_to_great
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.158879
+Recording proof time: 0.150884
 
 Name: 32 INT_LT_ADD_NUMERAL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009197
+Recording proof time: 0.00727
 
 Name: 33 INT_NUM_FORALL
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.144243
+Recording proof time: 0.132671
 
 Name: 34 INT_NUM_EXISTS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.080234
+Recording proof time: 0.117058
 
 Name: 35 INT_NUM_UEXISTS
-hh_eval 440130193188935
-Time: 60.341295
-Proof status: Time Out
+proof length: 6
+proof time: 0.038578
+Statistics
+  infstep : 1968
+  nodes   : 397
+  maxdepth: 7
+Time: 32.813143
+  inferstep time: 25.66006
+  node_find time: 0.342956
+  node_crea time: 6.782606
+    pred time: 1.608907
+    thmpred time: 0.0001
+    mc time: 2.367513
+    inst time: 0.0
+Proof found: SIMP_TAC bool_ss [EXISTS_UNIQUE_THM] THEN SRW_TAC [] [fetch "int_arith" "INT_NUM_EXISTS"] THEN EQ_TAC THENL [SRW_TAC [] [] THEN PROVE_TAC [NUM_POSINT_EXISTS], metisLib.METIS_TAC [(fetch "integer" "NUM_OF_INT"), (fetch "integer" "INT_POS")]]
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.187861
+Recording proof time: 0.241537
 
 Name: 36 INT_NUM_SUB
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.115518
+Recording proof time: 0.110703
 
 Name: 37 INT_NUM_COND
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037905
+Recording proof time: 0.060103
 
 Name: 38 INT_NUM_ODD
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.719827
+Recording proof time: 0.913918
 
 Name: 39 INT_NUM_EVEN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006948
+Recording proof time: 0.004454
 
 Name: 40 HO_SUB_ELIM
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.129342
+Recording proof time: 0.177412
 
 Name: 41 CONJ_EQ_ELIM
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.123311
+Recording proof time: 0.127874
 
 Name: 42 elim_neg_ones
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00501
+Recording proof time: 0.028803
 
 Name: 43 elim_minus_ones
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007409
+Recording proof time: 0.0038
 
 Name: 44 INT_NUM_DIVIDES
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.204705
+Recording proof time: 0.379443
 
 Name: 45 INT_LINEAR_GCD
-hh_eval 440130193188936
-Time: 60.424035
+Statistics
+  infstep : 2334
+  nodes   : 549
+  maxdepth: 7
+Time: 60.016292
+  inferstep time: 46.738787
+  node_find time: 0.70161
+  node_crea time: 12.537247
+    pred time: 3.31695
+    thmpred time: 0.00018
+    mc time: 4.76309
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.801044
+Recording proof time: 0.540956
 
 Name: 46 INT_DIVIDES_LRMUL
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.704164
+Recording proof time: 0.250653
 
 Name: 47 INT_DIVIDES_RELPRIME_MUL
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.221748
+Recording proof time: 0.22206
 
 Name: 48 tactictoe_prove_48
-Original proof time: 0.00286
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.110855
 
 Name: 49 tactictoe_prove_49
-Original proof time: 0.00531
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.564785
 
 Name: 50 gcdthm2
-Original proof time: 0.135825
+Original proof time: 0.143246
 
 Name: 51 gcd1thm
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.841706
+Recording proof time: 0.594207
 
 Name: 52 gcd21_thm
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.319409
+Recording proof time: 0.320887
 
 Name: 53 elim_lt_coeffs1
 Org tac number: 30
 Original proof time: 0.0
-Recording proof time: 1.104518
+Recording proof time: 1.411748
 
 Name: 54 elim_lt_coeffs2
 Org tac number: 26
 Original proof time: 0.0
-Recording proof time: 1.114241
+Recording proof time: 1.31372
 
 Name: 55 elim_le_coeffs
 Org tac number: 22
 Original proof time: 0.0
-Recording proof time: 0.802859
+Recording proof time: 1.101638
 
 Name: 56 elim_eq_coeffs
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.334232
+Recording proof time: 0.4225
 
 Name: 57 tactictoe_prove_57
-Original proof time: 0.000786
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.016806
 
 Name: 58 tactictoe_prove_58
-Original proof time: 0.001042
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.011365
 
 Name: 59 cooper_lemma_1
 Org tac number: 93
 Original proof time: 0.0
-Recording proof time: 7.023241
+Recording proof time: 7.454129
 
 Name: 60 bmarker_rewrites
-hh_eval 440130193188937
-Time: 0.558735
-Reconstructed: 0.001201
+proof length: 1
+proof time: 0.001123
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.01784
+  inferstep time: 0.00558
+  node_find time: 0.000022
+  node_crea time: 0.012222
+    pred time: 0.003377
+    thmpred time: 0.0
+    mc time: 0.006837
+    inst time: 0.0
 Proof found: metisTools.METIS_TAC []
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.0491
+Recording proof time: 0.053329
 
 Name: 61 tactictoe_prove_61
-Original proof time: 0.002483
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.124909
 
 Name: 62 NOT_INT_DIVIDES
 Org tac number: 28
 Original proof time: 0.0
-Recording proof time: 1.684471
+Recording proof time: 1.467
 
 Name: 63 NOT_INT_DIVIDES_POS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.141756
+Recording proof time: 0.135916
 
 Name: 64 le_context_rwt1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013902
+Recording proof time: 0.012346
 
 Name: 65 le_context_rwt2
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.231289
+Recording proof time: 0.278915
 
 Name: 66 le_context_rwt3
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.052246
+Recording proof time: 0.091809
 
 Name: 67 le_context_rwt4
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.106634
+Recording proof time: 0.120923
 
 Name: 68 le_context_rwt5
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.187894
+Recording proof time: 0.224244
 
 Name: 69 eq_context_rwt1
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.029612
+Recording proof time: 0.036472
 
 Name: 70 eq_context_rwt2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.264598
-Bad stac: 0
+Recording proof time: 0.308122
+Bad stac: 6

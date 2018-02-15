@@ -1,157 +1,199 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.007485
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.041866
 
 Name: 1 tactictoe_prove_1
-Original proof time: 0.018635
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.200667
 
 Name: 2 sort2_perm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007496
+Recording proof time: 0.0041
 
 Name: 3 sort3_perm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.364758
+Recording proof time: 0.011825
 
 Name: 4 merge_perm
-hh_eval 85000299883997
-Time: 60.258239
+Statistics
+  infstep : 4871
+  nodes   : 764
+  maxdepth: 8
+Time: 60.001452
+  inferstep time: 43.827292
+  node_find time: 2.069941
+  node_crea time: 14.049775
+    pred time: 3.87644
+    thmpred time: 0.000158
+    mc time: 4.829979
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.191319
+Recording proof time: 0.071051
 
 Name: 5 mergesortN_perm
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.84035
+Recording proof time: 0.946906
 
 Name: 6 mergesort_perm
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.040541
+Recording proof time: 0.037972
 
 Name: 7 sort2_sorted
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034672
+Recording proof time: 0.038025
 
 Name: 8 sort3_sorted
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.070458
+Recording proof time: 0.121581
 
 Name: 9 merge_sorted
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.662018
+Recording proof time: 0.926018
 
 Name: 10 mergesortN_sorted
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.549986
+Recording proof time: 0.702856
 
 Name: 11 mergesort_sorted
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.020218
+Recording proof time: 0.013322
 
 Name: 12 stable_cong
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009809
+Recording proof time: 0.01009
 
 Name: 13 stable_trans
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007728
+Recording proof time: 0.006367
 
 Name: 14 sort2_stable
-hh_eval 85000299883998
-Time: 60.615553
-Proof status: Time Out
+proof length: 4
+proof time: 0.022439
+Statistics
+  infstep : 51
+  nodes   : 16
+  maxdepth: 3
+Time: 1.618605
+  inferstep time: 1.312326
+  node_find time: 0.001128
+  node_crea time: 0.304607
+    pred time: 0.107304
+    thmpred time: 0.000005
+    mc time: 0.085392
+    inst time: 0.0
+Proof found: srw_tac [] [(fetch "mergesort" "stable_def")] THEN SRW_TAC [] [fetch "mergesort" "sort2_def", FILTER_FOLDR] THEN METIS_TAC []
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.191488
+Recording proof time: 0.114708
 
 Name: 15 sort3_stable
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.5646
+Recording proof time: 0.529118
 
 Name: 16 filter_merge
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.568772
+Recording proof time: 0.667371
 
 Name: 17 merge_stable
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006181
+Recording proof time: 0.005597
 
 Name: 18 mergesortN_stable
 Org tac number: 24
 Original proof time: 0.0
-Recording proof time: 1.90893
+Recording proof time: 1.490232
 
 Name: 19 mergesort_stable
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.030352
+Recording proof time: 0.018303
 
 Name: 20 mergesort_STABLE_SORT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.108218
+Recording proof time: 0.105479
 
 Name: 21 mergesort_mem
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.051866
+Recording proof time: 0.042006
 
 Name: 22 sort2_tail_correct
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.061297
+Recording proof time: 0.058667
 
 Name: 23 sort3_tail_correct
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.151569
+Recording proof time: 0.168887
 
 Name: 24 merge_tail_correct1
-hh_eval 85000299883999
-Time: 60.420864
-Proof status: Time Out
+proof length: 8
+proof time: 0.026813
+Statistics
+  infstep : 621
+  nodes   : 87
+  maxdepth: 4
+Time: 7.476381
+  inferstep time: 6.601097
+  node_find time: 0.027281
+  node_crea time: 0.842982
+    pred time: 0.260743
+    thmpred time: 0.000015
+    mc time: 0.29125
+    inst time: 0.0
+Proof found: REV_FULL_SIMP_TAC (srw_ss ()) [] THEN ho_match_mp_tac (fetch "mergesort" "merge_ind") THEN srw_tac [] [(local_tag merge_def)] THENL [SRW_TAC [] [fetch "mergesort" "merge_tail_def"], SRW_TAC [] [fetch "mergesort" "merge_tail_def", REV_REVERSE_LEM], SRW_TAC [] [fetch "mergesort" "merge_tail_def", REV_REVERSE_LEM], SRW_TAC [] [fetch "mergesort" "merge_tail_def"], SRW_TAC [] [fetch "mergesort" "merge_tail_def"]]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.089158
+Recording proof time: 0.059554
 
 Name: 25 merge_empty
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033875
+Recording proof time: 0.034445
 
 Name: 26 tactictoe_prove_26
-Original proof time: 0.072923
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.177463
 
 Name: 27 tactictoe_prove_27
-Original proof time: 0.064208
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.180084
 
 Name: 28 merge_tail_correct2
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.84117
+Recording proof time: 1.114841
 
 Name: 29 mergesortN_correct
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.540848
+Recording proof time: 0.573288
 
 Name: 30 mergesort_tail_correct
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004765
-Bad stac: 0
+Recording proof time: 0.007253
+Bad stac: 1

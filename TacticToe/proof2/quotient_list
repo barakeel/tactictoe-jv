@@ -2,167 +2,201 @@
 Name: 0 LIST_MAP_I
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.130159
+Recording proof time: 0.078667
 
 Name: 1 LIST_REL_EQ
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.387698
+Recording proof time: 0.219154
 
 Name: 2 LIST_REL_REFL
-hh_eval 678251768582070
-Time: 0.505803
-Reconstructed: 0.008498
-Proof found: METIS_TAC [EVERY2_refl]
+proof length: 1
+proof time: 0.010026
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.105513
+  inferstep time: 0.095905
+  node_find time: 0.00001
+  node_crea time: 0.009575
+    pred time: 0.003152
+    thmpred time: 0.0
+    mc time: 0.005058
+    inst time: 0.0
+Proof found: METIS_TAC [EVERY2_refl, LIST_REL_ind]
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.174672
+Recording proof time: 0.251297
 
 Name: 3 LIST_EQUIV
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.562369
+Recording proof time: 0.79027
 
 Name: 4 LIST_REL_REL
-Original proof time: 0.028412
+Original proof time: 0.022166
 
 Name: 5 LIST_QUOTIENT
-Original proof time: 0.046235
+Original proof time: 0.037485
 
 Name: 6 CONS_PRS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.109746
+Recording proof time: 0.173123
 
 Name: 7 CONS_RSP
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.12734
+Recording proof time: 0.177702
 
 Name: 8 NIL_PRS
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034469
+Recording proof time: 0.022193
 
 Name: 9 NIL_RSP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031765
+Recording proof time: 0.037501
 
 Name: 10 MAP_PRS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.18585
+Recording proof time: 0.319871
 
 Name: 11 MAP_RSP
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.419496
+Recording proof time: 0.374977
 
 Name: 12 LENGTH_PRS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.129043
+Recording proof time: 0.08389
 
 Name: 13 LENGTH_RSP
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.322842
+Recording proof time: 0.294887
 
 Name: 14 APPEND_PRS
-hh_eval 678251768582071
-Time: 36.831807
-Reconstructed: 0.026502
-Proof found: METIS_TAC [MAP_APPEND, QUOTIENT_def, fetch "quotient_list" "LIST_QUOTIENT"]
+proof length: 2
+proof time: 0.007011
+Statistics
+  infstep : 21
+  nodes   : 9
+  maxdepth: 3
+Time: 0.790673
+  inferstep time: 0.721835
+  node_find time: 0.000265
+  node_crea time: 0.068217
+    pred time: 0.025758
+    thmpred time: 0.000002
+    mc time: 0.027167
+    inst time: 0.0
+Proof found: REWRITE_TAC [MAP_APPEND, APPEND_FOLDL] THEN METIS_TAC [MAP_MAP_o, fetch "quotient_list" "LIST_QUOTIENT", QUOTIENT_ABS_REP]
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.304482
+Recording proof time: 0.453067
 
 Name: 15 APPEND_RSP
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.31825
+Recording proof time: 0.39861
 
 Name: 16 FLAT_PRS
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.193065
+Recording proof time: 0.24565
 
 Name: 17 FLAT_RSP
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.396001
+Recording proof time: 0.470052
 
 Name: 18 REVERSE_PRS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.178011
+Recording proof time: 0.164858
 
 Name: 19 REVERSE_RSP
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.511197
+Recording proof time: 0.469378
 
 Name: 20 FILTER_PRS
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.364844
+Recording proof time: 0.505728
 
 Name: 21 FILTER_RSP
 Org tac number: 24
 Original proof time: 0.0
-Recording proof time: 0.965814
+Recording proof time: 1.171404
 
 Name: 22 NULL_PRS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.085014
+Recording proof time: 0.10559
 
 Name: 23 NULL_RSP
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.183437
+Recording proof time: 0.206249
 
 Name: 24 ALL_EL_PRS
-hh_eval 678251768582072
-Time: 60.289501
-Proof status: Time Out
+proof length: 4
+proof time: 0.002635
+Statistics
+  infstep : 595
+  nodes   : 117
+  maxdepth: 6
+Time: 4.636045
+  inferstep time: 3.680888
+  node_find time: 0.046514
+  node_crea time: 0.9025
+    pred time: 0.258654
+    thmpred time: 0.000016
+    mc time: 0.233738
+    inst time: 0.0
+Proof found: SRW_TAC [] [EVERY_FOLDL_MAP, FUN_MAP] THEN REWRITE_TAC [(fetch "rich_list" "FOLDL_MAP")] THEN BETA_TAC THEN IMP_RES_THEN (fn th => REWRITE_TAC [th]) (fetch "quotient" "QUOTIENT_ABS_REP")
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.192158
+Recording proof time: 0.163425
 
 Name: 25 ALL_EL_RSP
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.455183
+Recording proof time: 0.516905
 
 Name: 26 SOME_EL_PRS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.273404
+Recording proof time: 0.264522
 
 Name: 27 SOME_EL_RSP
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.699272
+Recording proof time: 0.476467
 
 Name: 28 FOLDL_PRS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.145075
+Recording proof time: 0.088471
 
 Name: 29 FOLDL_RSP
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.711849
+Recording proof time: 0.575375
 
 Name: 30 FOLDR_PRS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.233785
+Recording proof time: 0.095358
 
 Name: 31 FOLDR_RSP
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.617143
+Recording proof time: 0.765403
 Bad stac: 0

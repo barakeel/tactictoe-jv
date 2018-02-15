@@ -1,140 +1,175 @@
 
 Name: 0 biprefix_refl
-hh_eval 87349696849591
-Time: 60.157047
-Proof status: Time Out
+proof length: 1
+proof time: 0.000488
+Statistics
+  infstep : 9
+  nodes   : 3
+  maxdepth: 2
+Time: 0.303007
+  inferstep time: 0.273042
+  node_find time: 0.000066
+  node_crea time: 0.029847
+    pred time: 0.01182
+    thmpred time: 0.0
+    mc time: 0.014662
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "Encode" "biprefix_def"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00735
+Recording proof time: 0.21827
 
 Name: 1 biprefix_sym
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005791
+Recording proof time: 0.009425
 
 Name: 2 biprefix_append
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032242
+Recording proof time: 0.295116
 
 Name: 3 biprefix_cons
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.036685
+Recording proof time: 0.154322
 
 Name: 4 biprefix_appends
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004578
+Recording proof time: 0.003264
 
 Name: 5 wf_encoder_alt
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.022148
+Recording proof time: 0.012697
 
 Name: 6 wf_encoder_eq
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005797
+Recording proof time: 0.01778
 
 Name: 7 wf_encoder_total
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005051
+Recording proof time: 0.005914
 
 Name: 8 wf_encode_unit
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00468
+Recording proof time: 0.00598
 
 Name: 9 wf_encode_bool
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005135
+Recording proof time: 0.003842
 
 Name: 10 encode_prod_alt
-hh_eval 87349696849592
-Time: 0.38412
-Reconstructed: 0.006906
-Proof found: METIS_TAC [fetch "Encode" "encode_prod_def", PAIR]
+proof length: 2
+proof time: 0.008639
+Statistics
+  infstep : 77
+  nodes   : 15
+  maxdepth: 3
+Time: 1.261369
+  inferstep time: 1.027848
+  node_find time: 0.001133
+  node_crea time: 0.231321
+    pred time: 0.074052
+    thmpred time: 0.000004
+    mc time: 0.105737
+    inst time: 0.0
+Proof found: Cases_on `p` THEN METIS_TAC [fetch "Encode" "encode_prod_def", quantHeuristicsTheory.SND_PAIR_EQ]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.08101
+Recording proof time: 0.511541
 
 Name: 11 wf_encode_prod
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.515157
+Recording proof time: 0.202711
 
 Name: 12 wf_encode_sum
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.098957
+Recording proof time: 0.199192
 
 Name: 13 wf_encode_option
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.382853
+Recording proof time: 0.189767
 
 Name: 14 wf_encode_list
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.595626
+Recording proof time: 0.933134
 
 Name: 15 encode_list_cong
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.056754
+Recording proof time: 0.099814
 
 Name: 16 lift_blist_suc
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004426
+Recording proof time: 0.003976
 
 Name: 17 wf_encode_blist
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.599581
+Recording proof time: 1.034182
 
 Name: 18 wf_encode_num
-Original proof time: 0.108598
+Original proof time: 0.15902
 
 Name: 19 wf_pred_bnum_total
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.138252
+Recording proof time: 0.068978
 
 Name: 20 wf_pred_bnum
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.055326
+Recording proof time: 0.056158
 
 Name: 21 encode_bnum_length
-hh_eval 87349696849593
-Time: 60.373874
-Proof status: Time Out
+proof length: 3
+proof time: 0.027103
+Statistics
+  infstep : 20
+  nodes   : 8
+  maxdepth: 2
+Time: 0.62918
+  inferstep time: 0.541367
+  node_find time: 0.000209
+  node_crea time: 0.087368
+    pred time: 0.03387
+    thmpred time: 0.000001
+    mc time: 0.041641
+    inst time: 0.0
+Proof found: Induct THENL [METIS_TAC [fetch "Encode" "encode_bnum_def_compute", LENGTH_NIL_SYM], METIS_TAC [fetch "Encode" "encode_bnum_def", LENGTH_CONS]]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.100634
+Recording proof time: 0.02703
 
 Name: 22 encode_bnum_inj
-Original proof time: 0.01196
+Original proof time: 0.006609
 
 Name: 23 wf_encode_bnum_collision_free
-Original proof time: 0.164522
+Original proof time: 0.105312
 
 Name: 24 wf_encode_bnum
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004107
+Recording proof time: 0.004205
 
 Name: 25 tree_ind
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.266316
+Recording proof time: 0.517916
 
 Name: 26 wf_encode_tree
 Org tac number: 40
 Original proof time: 0.0
-Recording proof time: 2.033325
-Bad stac: 0
+Recording proof time: 2.338738
+Bad stac: 1

@@ -1,169 +1,206 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.109694
+Org tac number: 58
+Original proof time: 0.0
+Recording proof time: 2.652506
 
 Name: 1 UNIT_CURRY
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.093392
+Recording proof time: 0.059173
 
 Name: 2 MCOMP_ALT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007147
+Recording proof time: 0.003497
 
 Name: 3 MCOMP_ID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005565
+Recording proof time: 0.006137
 
 Name: 4 MCOMP_ASSOC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006168
+Recording proof time: 0.007091
 
 Name: 5 EXT_UNIT
-hh_eval 211701531388635
-Time: 60.293803
-Proof status: Time Out
+proof length: 4
+proof time: 0.000956
+Statistics
+  infstep : 116
+  nodes   : 22
+  maxdepth: 4
+Time: 1.55516
+  inferstep time: 1.345678
+  node_find time: 0.001708
+  node_crea time: 0.207076
+    pred time: 0.067928
+    thmpred time: 0.000005
+    mc time: 0.110793
+    inst time: 0.0
+Proof found: REWRITE_TAC [(fetch "state_transformer" "UNIT_CURRY")] THEN REWRITE_TAC [FUN_EQ_THM, I_THM] THEN SRW_TAC [] [] THEN REWRITE_TAC [fetch "state_transformer" "EXT_DEF", UNCURRY_CURRY_THM, I_o_ID]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.069834
+Recording proof time: 0.00665
 
 Name: 6 EXT_MCOMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01217
+Recording proof time: 0.004717
 
 Name: 7 EXT_o_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006473
+Recording proof time: 0.007542
 
 Name: 8 UNIT_o_MCOMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005809
+Recording proof time: 0.006378
 
 Name: 9 BIND_EXT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004932
+Recording proof time: 0.005401
 
 Name: 10 MMAP_EXT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005226
+Recording proof time: 0.003968
 
 Name: 11 JOIN_EXT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005447
+Recording proof time: 0.006058
 
 Name: 12 EXT_JM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007433
+Recording proof time: 0.007981
 
 Name: 13 BIND_LEFT_UNIT
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.108877
+Recording proof time: 0.13344
 
 Name: 14 UNIT_UNCURRY
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.063027
+Recording proof time: 0.051255
 
 Name: 15 BIND_RIGHT_UNIT
-hh_eval 211701531388636
-Time: 60.325578
-Proof status: Time Out
+proof length: 2
+proof time: 0.001324
+Statistics
+  infstep : 22
+  nodes   : 8
+  maxdepth: 3
+Time: 0.544028
+  inferstep time: 0.43884
+  node_find time: 0.000362
+  node_crea time: 0.104568
+    pred time: 0.032464
+    thmpred time: 0.000001
+    mc time: 0.0632
+    inst time: 0.0
+Proof found: FULL_SIMP_TAC (srw_ss ()) [(fetch "state_transformer" "BIND_DEF")] THEN FULL_SIMP_TAC (srw_ss ()) [fetch "state_transformer" "UNIT_CURRY"]
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.162627
+Recording proof time: 0.147803
 
 Name: 16 BIND_ASSOC
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.073874
+Recording proof time: 0.068459
 
 Name: 17 MMAP_ID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006725
+Recording proof time: 0.006136
 
 Name: 18 MMAP_COMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005196
+Recording proof time: 0.012032
 
 Name: 19 MMAP_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003637
+Recording proof time: 0.005333
 
 Name: 20 EXT_o_JOIN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007507
+Recording proof time: 0.004504
 
 Name: 21 MMAP_JOIN
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.027019
+Recording proof time: 0.049558
 
 Name: 22 JOIN_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003828
+Recording proof time: 0.003635
 
 Name: 23 JOIN_MMAP_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005365
+Recording proof time: 0.003754
 
 Name: 24 JOIN_MAP_JOIN
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037182
+Recording proof time: 0.028865
 
 Name: 25 JOIN_MAP
-hh_eval 211701531388637
-Time: 56.305445
-Reconstructed: 0.008424
-Proof found: METIS_TAC [o_DEF, fetch "state_transformer" "EXT_JM", fetch "state_transformer" "BIND_EXT"]
+proof length: 5
+proof time: 0.003861
+Statistics
+  infstep : 1212
+  nodes   : 287
+  maxdepth: 6
+Time: 13.243426
+  inferstep time: 10.546299
+  node_find time: 0.140544
+  node_crea time: 2.544303
+    pred time: 0.669959
+    thmpred time: 0.000048
+    mc time: 1.403638
+    inst time: 0.0
+Proof found: REWRITE_TAC [FUN_EQ_THM, (fetch "state_transformer" "MMAP_DEF"), (fetch "state_transformer" "BIND_EXT")] THEN REWRITE_TAC [(fetch "state_transformer" "UNIT_DEF"), o_DEF] THEN FULL_SIMP_TAC (srw_ss ()) [fetch "state_transformer" "EXT_DEF", fetch "state_transformer" "BIND_EXT", fetch "state_transformer" "JOIN_DEF"] THEN REWRITE_TAC [UNCURRY_VAR] THEN SRW_TAC [] []
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00511
+Recording proof time: 0.006617
 
 Name: 26 FST_o_UNIT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082903
+Recording proof time: 0.07782
 
 Name: 27 SND_o_UNIT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.096917
+Recording proof time: 0.168001
 
 Name: 28 FST_o_MMAP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083913
+Recording proof time: 0.137803
 
 Name: 29 sequence_nil
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004416
+Recording proof time: 0.005152
 
 Name: 30 mapM_nil
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003509
+Recording proof time: 0.003548
 
 Name: 31 mapM_cons
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008005
-Bad stac: 0
+Recording proof time: 0.006297
+Bad stac: 2

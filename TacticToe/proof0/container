@@ -1,118 +1,150 @@
 
 Name: 0 LIST_TO_BAG_alt
-hh_eval 338089487106922
-Time: 60.213029
+Statistics
+  infstep : 1242
+  nodes   : 210
+  maxdepth: 6
+Time: 60.000198
+  inferstep time: 16.263765
+  node_find time: 0.131087
+  node_crea time: 3.860685
+    pred time: 1.365807
+    thmpred time: 0.000051
+    mc time: 1.073144
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.027452
+Recording proof time: 0.013657
 
 Name: 1 BAG_TO_LIST_INV
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.179719
+Recording proof time: 0.174059
 
 Name: 2 BAG_IN_MEM
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.168935
+Recording proof time: 0.130375
 
 Name: 3 MEM_BAG_TO_LIST
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006923
+Recording proof time: 0.017993
 
 Name: 4 FINITE_LIST_TO_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.080318
+Recording proof time: 0.030992
 
 Name: 5 EVERY_LIST_TO_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.047622
+Recording proof time: 0.109129
 
 Name: 6 LIST_TO_BAG_APPEND
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.073538
+Recording proof time: 0.057664
 
 Name: 7 LIST_TO_BAG_MAP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009451
+Recording proof time: 0.007109
 
 Name: 8 LIST_TO_BAG_FILTER
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.0117
+Recording proof time: 0.01685
 
 Name: 9 IN_LIST_TO_BAG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.079581
+Recording proof time: 0.124422
 
 Name: 10 IN_LIST_TO_BAG
-hh_eval 338089487106923
-Time: 60.296203
-Proof status: Time Out
+proof length: 2
+proof time: 0.003688
+Statistics
+  infstep : 67
+  nodes   : 10
+  maxdepth: 2
+Time: 1.085337
+  inferstep time: 0.920592
+  node_find time: 0.000924
+  node_crea time: 0.163364
+    pred time: 0.051324
+    thmpred time: 0.000004
+    mc time: 0.078899
+    inst time: 0.0
+Proof found: SIMP_TAC numLib.arith_ss [(fetch "bag" "BAG_IN"), (fetch "bag" "BAG_INN")] THEN EVERY [REPEAT GEN_TAC, Induct_on `l`, SIMP_TAC list_ss [(fetch "container" "LIST_TO_BAG_def"), EMPTY_BAG_alt, BAG_INSERT], GEN_TAC, COND_CASES_TAC THENL [VAR_EQ_TAC, ALL_TAC], ASM_SIMP_TAC arith_ss [LENGTH]]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.070126
+Recording proof time: 0.075837
 
 Name: 11 LIST_TO_BAG_DISTINCT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033201
+Recording proof time: 0.038448
 
 Name: 12 LIST_TO_BAG_EQ_EMPTY
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034664
+Recording proof time: 0.050619
 
 Name: 13 PERM_LIST_TO_BAG
-Original proof time: 0.002285
+Original proof time: 0.001729
 
 Name: 14 CARD_LIST_TO_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.025845
+Recording proof time: 0.028614
 
 Name: 15 BAG_TO_LIST_CARD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008645
+Recording proof time: 0.005635
 
 Name: 16 BAG_TO_LIST_EQ_NIL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031922
+Recording proof time: 0.042619
 
 Name: 17 LIST_ELEM_COUNT_LIST_TO_BAG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.08862
+Recording proof time: 0.236172
 
 Name: 18 WF_mlt_list
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.327669
+Recording proof time: 0.356163
 
 Name: 19 BAG_OF_FMAP_THM
 Org tac number: 30
 Original proof time: 0.0
-Recording proof time: 1.378301
+Recording proof time: 1.790854
 
 Name: 20 BAG_IN_BAG_OF_FMAP
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.501899
+Recording proof time: 0.705449
 
 Name: 21 FINITE_BAG_OF_FMAP
-hh_eval 338089487106924
-Time: 60.368428
+Statistics
+  infstep : 6420
+  nodes   : 1331
+  maxdepth: 7
+Time: 60.001123
+  inferstep time: 40.594882
+  node_find time: 3.584059
+  node_crea time: 15.745814
+    pred time: 3.456914
+    thmpred time: 0.000163
+    mc time: 4.745165
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.145843
+Recording proof time: 0.097667
 Bad stac: 0

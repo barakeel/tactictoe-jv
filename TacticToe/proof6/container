@@ -2,114 +2,138 @@
 Name: 0 LIST_TO_BAG_alt
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012034
+Recording proof time: 0.014816
 
 Name: 1 BAG_TO_LIST_INV
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.28396
+Recording proof time: 0.169863
 
 Name: 2 BAG_IN_MEM
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.178973
+Recording proof time: 0.208332
 
 Name: 3 MEM_BAG_TO_LIST
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004768
+Recording proof time: 0.007701
 
 Name: 4 FINITE_LIST_TO_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.049839
+Recording proof time: 0.039355
 
 Name: 5 EVERY_LIST_TO_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.025045
+Recording proof time: 0.033895
 
 Name: 6 LIST_TO_BAG_APPEND
-hh_eval 338089487106922
-Time: 60.258369
-Proof status: Time Out
+proof length: 3
+proof time: 0.003096
+Statistics
+  infstep : 303
+  nodes   : 40
+  maxdepth: 5
+Time: 3.64003
+  inferstep time: 2.949569
+  node_find time: 0.010445
+  node_crea time: 0.67768
+    pred time: 0.218383
+    thmpred time: 0.000009
+    mc time: 0.269588
+    inst time: 0.0
+Proof found: SRW_TAC [] [FUN_EQ_THM] THEN SRW_TAC [] [fetch "container" "LIST_TO_BAG_alt", BAG_UNION] THEN ASM_SIMP_TAC list_ss [FILTER_APPEND_DISTRIB]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060247
+Recording proof time: 0.062253
 
 Name: 7 LIST_TO_BAG_MAP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012729
+Recording proof time: 0.008881
 
 Name: 8 LIST_TO_BAG_FILTER
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014414
+Recording proof time: 0.013257
 
 Name: 9 IN_LIST_TO_BAG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.081389
+Recording proof time: 0.082952
 
 Name: 10 IN_LIST_TO_BAG
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.063338
+Recording proof time: 0.060921
 
 Name: 11 LIST_TO_BAG_DISTINCT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.17749
+Recording proof time: 0.031864
 
 Name: 12 LIST_TO_BAG_EQ_EMPTY
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037684
+Recording proof time: 0.037256
 
 Name: 13 PERM_LIST_TO_BAG
-Original proof time: 0.00239
+Original proof time: 0.00164
 
 Name: 14 CARD_LIST_TO_BAG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.027384
+Recording proof time: 0.030096
 
 Name: 15 BAG_TO_LIST_CARD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009963
+Recording proof time: 0.006423
 
 Name: 16 BAG_TO_LIST_EQ_NIL
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037351
+Recording proof time: 0.052025
 
 Name: 17 LIST_ELEM_COUNT_LIST_TO_BAG
-hh_eval 338089487106923
-Time: 60.279762
-Proof status: Time Out
+proof length: 5
+proof time: 0.012012
+Statistics
+  infstep : 149
+  nodes   : 25
+  maxdepth: 3
+Time: 2.697992
+  inferstep time: 2.191287
+  node_find time: 0.004849
+  node_crea time: 0.50019
+    pred time: 0.185386
+    thmpred time: 0.000008
+    mc time: 0.202691
+    inst time: 0.0
+Proof found: Induct_on `ls` THENL [SIMP_TAC (numLib.arith_ss ++ LIST_ss ++ pred_setSimps.PRED_SET_ss) [(fetch "rich_list" "LIST_ELEM_COUNT_DEF")] THEN SRW_TAC [] [fetch "container" "LIST_TO_BAG_alt"], FULL_SIMP_TAC (numLib.arith_ss ++ LIST_ss ++ pred_setSimps.PRED_SET_ss) [(fetch "rich_list" "LIST_ELEM_COUNT_DEF"), COND_RAND, COND_RATOR] THEN ASM_SIMP_TAC list_ss [fetch "container" "LIST_TO_BAG_def", BAG_INSERT]]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.10323
+Recording proof time: 0.212656
 
 Name: 18 WF_mlt_list
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.312178
+Recording proof time: 0.34852
 
 Name: 19 BAG_OF_FMAP_THM
 Org tac number: 30
 Original proof time: 0.0
-Recording proof time: 1.083394
+Recording proof time: 1.36693
 
 Name: 20 BAG_IN_BAG_OF_FMAP
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.533575
+Recording proof time: 0.654755
 
 Name: 21 FINITE_BAG_OF_FMAP
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.064686
+Recording proof time: 0.0765
 Bad stac: 0

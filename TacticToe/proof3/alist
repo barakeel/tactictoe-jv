@@ -2,288 +2,346 @@
 Name: 0 fmap_to_alist_FEMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013072
+Recording proof time: 0.016494
 
 Name: 1 alist_to_fmap_thm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003246
+Recording proof time: 0.244114
 
 Name: 2 tactictoe_prove_2
-Original proof time: 0.00182
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.054841
 
 Name: 3 ALOOKUP_FAILS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.158274
+Recording proof time: 0.204802
 
 Name: 4 ALOOKUP_NONE
-hh_eval 466053973800
-Time: 60.213793
-Proof status: Time Out
+proof length: 4
+proof time: 0.004507
+Statistics
+  infstep : 14
+  nodes   : 9
+  maxdepth: 3
+Time: 0.736806
+  inferstep time: 0.558733
+  node_find time: 0.00026
+  node_crea time: 0.177574
+    pred time: 0.055884
+    thmpred time: 0.000002
+    mc time: 0.09679
+    inst time: 0.0
+Proof found: Induct_on `l` THENL [SRW_TAC [] [], Cases_on `h` THEN SRW_TAC [] []]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.094009
+Recording proof time: 0.00547
 
 Name: 5 ALOOKUP_TABULATE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034116
+Recording proof time: 0.031452
 
 Name: 6 ALOOKUP_EQ_FLOOKUP
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.280138
+Recording proof time: 0.306401
 
 Name: 7 MEM_fmap_to_alist
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.044023
+Recording proof time: 0.044117
 
 Name: 8 MEM_fmap_to_alist_FLOOKUP
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030753
+Recording proof time: 0.179142
 
 Name: 9 MEM_pair_fmap_to_alist_FLOOKUP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006994
+Recording proof time: 0.004495
 
 Name: 10 LENGTH_fmap_to_alist
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008211
+Recording proof time: 0.02744
 
 Name: 11 fmap_to_alist_to_fmap
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002892
+Recording proof time: 0.013687
 
 Name: 12 ALOOKUP_MEM
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.118516
+Recording proof time: 0.130867
 
 Name: 13 ALOOKUP_SOME_FAPPLY_alist_to_fmap
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.110096
+Recording proof time: 0.127248
 
 Name: 14 alist_to_fmap_FAPPLY_MEM
-hh_eval 466053973801
-Time: 0.869051
-Reconstructed: 0.011596
-Proof found: METIS_TAC [fetch "alist" "ALOOKUP_MEM", FLOOKUP_DEF, fetch "alist" "ALOOKUP_EQ_FLOOKUP"]
+proof length: 3
+proof time: 0.019481
+Statistics
+  infstep : 68
+  nodes   : 27
+  maxdepth: 4
+Time: 2.465744
+  inferstep time: 1.859968
+  node_find time: 0.002609
+  node_crea time: 0.602044
+    pred time: 0.224044
+    thmpred time: 0.000002
+    mc time: 0.260587
+    inst time: 0.0
+Proof found: HO_MATCH_MP_TAC (fetch "alist" "ALOOKUP_ind") THEN SRW_TAC [] [fetch "alist" "alist_to_fmap_thm", fetch "alist" "alist_to_fmap_def"] THEN METIS_TAC [FAPPLY_FUPDATE_THM]
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.113513
+Recording proof time: 0.167335
 
 Name: 15 ALOOKUP_MAP
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.162873
+Recording proof time: 0.163326
 
 Name: 16 FDOM_alist_to_fmap
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.088555
+Recording proof time: 0.07906
 
 Name: 17 alist_to_fmap_prefix
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.137657
+Recording proof time: 0.140654
 
 Name: 18 alist_to_fmap_APPEND
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.104303
+Recording proof time: 0.147655
 
 Name: 19 ALOOKUP_prefix
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.046809
+Recording proof time: 0.075047
 
 Name: 20 ALOOKUP_APPEND
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.058718
+Recording proof time: 0.135547
 
 Name: 21 FUPDATE_LIST_EQ_APPEND_REVERSE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.137757
+Recording proof time: 0.206034
 
 Name: 22 FLOOKUP_FUPDATE_LIST_ALOOKUP_SOME
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.064273
+Recording proof time: 0.081826
 
 Name: 23 FLOOKUP_FUPDATE_LIST_ALOOKUP_NONE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012389
+Recording proof time: 0.009473
 
 Name: 24 FUNION_alist_to_fmap
-hh_eval 466053973802
-Time: 2.545046
-Reconstructed: 0.015523
-Proof found: METIS_TAC [fetch "alist" "alist_to_fmap_APPEND", fetch "alist" "fmap_to_alist_to_fmap", fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE", REVERSE_REVERSE]
+proof length: 1
+proof time: 0.000787
+Statistics
+  infstep : 6
+  nodes   : 4
+  maxdepth: 2
+Time: 0.34874
+  inferstep time: 0.274842
+  node_find time: 0.00009
+  node_crea time: 0.073614
+    pred time: 0.019712
+    thmpred time: 0.000001
+    mc time: 0.043185
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "alist" "FUPDATE_LIST_EQ_APPEND_REVERSE")]
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.160238
+Recording proof time: 0.208308
 
 Name: 25 alist_to_fmap_MAP
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.355053
+Recording proof time: 0.454444
 
 Name: 26 alist_to_fmap_to_alist
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.16612
+Recording proof time: 0.202276
 
 Name: 27 alist_to_fmap_to_alist_PERM
 Org tac number: 23
 Original proof time: 0.0
-Recording proof time: 0.728291
+Recording proof time: 0.979821
 
 Name: 28 ALOOKUP_LEAST_EL
 Org tac number: 45
 Original proof time: 0.0
-Recording proof time: 2.069661
+Recording proof time: 2.335928
 
 Name: 29 ALOOKUP_ALL_DISTINCT_MEM
 Org tac number: 23
 Original proof time: 0.0
-Recording proof time: 1.167024
+Recording proof time: 1.283998
 
 Name: 30 ALL_DISTINCT_fmap_to_alist_keys
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.572455
+Recording proof time: 0.737291
 
 Name: 31 fmap_to_alist_inj
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.217177
+Recording proof time: 0.161011
 
 Name: 32 fmap_to_alist_preserves_FDOM
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.768598
+Recording proof time: 0.919468
 
 Name: 33 PERM_fmap_to_alist
 Org tac number: 31
 Original proof time: 0.0
-Recording proof time: 1.515106
+Recording proof time: 1.924695
 
 Name: 34 alist_to_fmap_PERM
-hh_eval 466053973803
-Time: 60.345065
+Statistics
+  infstep : 2845
+  nodes   : 623
+  maxdepth: 7
+Time: 60.007248
+  inferstep time: 39.610098
+  node_find time: 0.936218
+  node_crea time: 19.407023
+    pred time: 4.456
+    thmpred time: 0.000203
+    mc time: 7.455657
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.144607
+Recording proof time: 0.283589
 
 Name: 35 ALOOKUP_ALL_DISTINCT_EL
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.278105
+Recording proof time: 0.331792
 
 Name: 36 ALOOKUP_ZIP_MAP_SND
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.208777
+Recording proof time: 0.27819
 
 Name: 37 ALOOKUP_FILTER
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.204266
+Recording proof time: 0.221037
 
 Name: 38 ALOOKUP_APPEND_same
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006916
+Recording proof time: 0.00671
 
 Name: 39 ALOOKUP_IN_FRANGE
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.270951
+Recording proof time: 0.530375
 
 Name: 40 FRANGE_alist_to_fmap_SUBSET
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.119072
+Recording proof time: 0.127236
 
 Name: 41 IN_FRANGE_alist_to_fmap_suff
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.084998
+Recording proof time: 0.126911
 
 Name: 42 alist_to_fmap_MAP_matchable
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014947
+Recording proof time: 0.032725
 
 Name: 43 MAP_values_fmap_to_alist
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006905
+Recording proof time: 0.007036
 
 Name: 44 tactictoe_prove_44
-Original proof time: 0.001307
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.005517
 
 Name: 45 MAP_KEYS_I
-hh_eval 466053973804
-Time: 60.333641
+Statistics
+  infstep : 4567
+  nodes   : 668
+  maxdepth: 8
+Time: 60.080763
+  inferstep time: 44.364802
+  node_find time: 1.316896
+  node_crea time: 14.338822
+    pred time: 3.538294
+    thmpred time: 0.000208
+    mc time: 6.141386
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.186441
+Recording proof time: 0.039361
 
 Name: 46 alist_to_fmap_MAP_values
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.062574
+Recording proof time: 0.063787
 
 Name: 47 set_MAP_FST_fmap_to_alist
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013501
+Recording proof time: 0.012065
 
 Name: 48 alookup_distinct_reverse
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.567169
+Recording proof time: 0.327911
 
 Name: 49 flookup_fupdate_list
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.313738
+Recording proof time: 0.399522
 
 Name: 50 fupdate_list_funion
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.35168
+Recording proof time: 0.54848
 
 Name: 51 mem_to_flookup
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.500319
+Recording proof time: 0.868267
 
 Name: 52 alookup_filter
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.10131
+Recording proof time: 0.103065
 
 Name: 53 alookup_stable_sorted
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.330841
+Recording proof time: 0.568628
 
 Name: 54 ALOOKUP_ALL_DISTINCT_PERM_same
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.478247
+Recording proof time: 0.438295
 Bad stac: 0

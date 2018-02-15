@@ -1,450 +1,560 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.001119
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.061639
 
 Name: 1 tactictoe_prove_1
-Original proof time: 0.002353
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.094486
 
 Name: 2 some_var_bool_T
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.151682
+Recording proof time: 0.152472
 
 Name: 3 some_var_bool_F
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.153056
+Recording proof time: 0.221057
 
 Name: 4 tactictoe_prove_4
-Original proof time: 0.001006
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00618
 
 Name: 5 tactictoe_prove_5
-Original proof time: 0.001413
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007308
 
 Name: 6 tactictoe_prove_6
-Original proof time: 0.001475
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.247215
 
 Name: 7 tactictoe_prove_7
-Original proof time: 0.003827
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.077651
 
 Name: 8 PMATCH_ROW_CONG
-Original proof time: 0.002635
+Original proof time: 0.002338
 
 Name: 9 PMATCH_CONG
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005354
+Recording proof time: 0.005858
 
 Name: 10 PMATCH_ROW_EQ_AUX
-Original proof time: 0.019602
+Original proof time: 0.01234
 
 Name: 11 PMATCH_ROW_EQ_NONE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012102
+Recording proof time: 0.008189
 
 Name: 12 PMATCH_ROW_EQ_SOME
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.111312
+Recording proof time: 0.136847
 
 Name: 13 PMATCH_COND_SELECT_UNIQUE
-hh_eval 473892316473740
-Time: 60.223313
-Proof status: Time Out
+proof length: 2
+proof time: 0.014422
+Statistics
+  infstep : 180
+  nodes   : 35
+  maxdepth: 4
+Time: 3.398661
+  inferstep time: 2.799814
+  node_find time: 0.005597
+  node_crea time: 0.591385
+    pred time: 0.195523
+    thmpred time: 0.000014
+    mc time: 0.20281
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "patternMatches" "PMATCH_ROW_COND_def"] THEN METIS_TAC []
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.092755
+Recording proof time: 0.070443
 
 Name: 14 PMATCH_ROW_COND_DEF_GSYM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.045269
+Recording proof time: 0.033836
 
 Name: 15 PMATCH_EVAL
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.121333
+Recording proof time: 0.178716
 
 Name: 16 PMATCH_EVAL_MATCH
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006819
+Recording proof time: 0.005419
 
 Name: 17 PMATCH_EXTEND_BASE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005244
+Recording proof time: 0.005586
 
 Name: 18 PMATCH_EXTEND_BOTH
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006329
+Recording proof time: 0.005948
 
 Name: 19 PMATCH_EXTEND_BOTH_ID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007499
+Recording proof time: 0.012944
 
 Name: 20 PMATCH_EXTEND_OLD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005986
+Recording proof time: 0.004643
 
 Name: 21 PMATCH_ROW_REMOVE_FUN
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.131448
+Recording proof time: 0.134735
 
 Name: 22 PMATCH_ROW_EXTEND_INPUT
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.448234
+Recording proof time: 0.490184
 
 Name: 23 PMATCH_ROW_REMOVE_FUN_VAR
-hh_eval 473892316473741
-Time: 60.237467
-Proof status: Time Out
+proof length: 11
+proof time: 0.204789
+Statistics
+  infstep : 200
+  nodes   : 58
+  maxdepth: 4
+Time: 4.336399
+  inferstep time: 3.514627
+  node_find time: 0.006969
+  node_crea time: 0.812869
+    pred time: 0.256022
+    thmpred time: 0.000006
+    mc time: 0.239865
+    inst time: 0.0
+Proof found: Cases_on `PMATCH_ROW p g r v` THENL [FULL_SIMP_TAC std_ss [(fetch "patternMatches" "PMATCH_ROW_def"), some_def] THEN SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_COND_def"] THENL [METIS_TAC [], METIS_TAC [], METIS_TAC [fetch "patternMatches" "PMATCH_ROW_EXTEND_INPUT", fetch "patternMatches" "PMATCH_ROW_CONG", fetch "patternMatches" "PMATCH_ROW_EQ_AUX", arithmeticTheory.num_case_cong, fetch "patternMatches" "PMATCH_CONG", list_case_cong]], FULL_SIMP_TAC std_ss [(fetch "patternMatches" "PMATCH_ROW_def"), some_def] THEN SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_COND_def"] THEN METIS_TAC []]
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.449595
+Recording proof time: 0.47513
 
 Name: 24 PMATCH_EQUIV_ROWS_EQUIV_EXPAND
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.245707
+Recording proof time: 0.167143
 
 Name: 25 PMATCH_EQUIV_ROWS_is_equiv_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003767
+Recording proof time: 0.022867
 
 Name: 26 PMATCH_EQUIV_ROWS_is_equiv_2
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.079269
+Recording proof time: 0.077557
 
 Name: 27 PMATCH_EQUIV_ROWS_is_equiv_3
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005368
+Recording proof time: 0.007737
 
 Name: 28 PMATCH_EQUIV_ROWS_MATCH
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005898
+Recording proof time: 0.003599
 
 Name: 29 PMATCH_APPEND_SEM
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.185484
+Recording proof time: 0.201438
 
 Name: 30 PMATCH_EQUIV_APPEND
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037786
+Recording proof time: 0.055029
 
 Name: 31 PMATCH_EQUIV_ROWS_CONS_NONE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008465
+Recording proof time: 0.013773
 
 Name: 32 PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS_EQUIV
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.339076
+Recording proof time: 0.403115
 
 Name: 33 PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS
-hh_eval 473892316473742
-Time: 60.344926
-Proof status: Time Out
+proof length: 1
+proof time: 0.000845
+Statistics
+  infstep : 9
+  nodes   : 3
+  maxdepth: 2
+Time: 0.257038
+  inferstep time: 0.225799
+  node_find time: 0.000084
+  node_crea time: 0.031086
+    pred time: 0.012562
+    thmpred time: 0.0
+    mc time: 0.01434
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS_EQUIV", fetch "patternMatches" "PMATCH_EQUIV_ROWS_MATCH"]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.101945
+Recording proof time: 0.078645
 
 Name: 34 PMATCH_ROWS_DROP_REDUNDANT
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.248441
+Recording proof time: 0.306227
 
 Name: 35 PMATCH_ROWS_DROP_REDUNDANT_PMATCH_ROWS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.178749
+Recording proof time: 0.163578
 
 Name: 36 PMATCH_ROWS_DROP_SUBSUMED
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.42424
+Recording proof time: 0.433151
 
 Name: 37 PMATCH_ROWS_DROP_SUBSUMED_PMATCH_ROWS
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.434491
+Recording proof time: 0.598925
 
 Name: 38 PMATCH_REMOVE_ARB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.063442
+Recording proof time: 0.336353
 
 Name: 39 PMATCH_INTRO_CATCHALL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015149
+Recording proof time: 0.005016
 
 Name: 40 PMATCH_REMOVE_ARB_NO_OVERLAP
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.115339
+Recording proof time: 0.110501
 
 Name: 41 PMATCH_ROW_REDUNDANT_NIL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008006
+Recording proof time: 0.007102
 
 Name: 42 PMATCH_ROW_REDUNDANT_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007157
+Recording proof time: 0.013085
 
 Name: 43 PMATCH_ROW_REDUNDANT_SUC
-hh_eval 473892316473743
-Time: 60.374658
-Proof status: Time Out
+proof length: 16
+proof time: 0.045475
+Statistics
+  infstep : 3124
+  nodes   : 749
+  maxdepth: 7
+Time: 48.125638
+  inferstep time: 33.06673
+  node_find time: 0.903489
+  node_crea time: 14.113777
+    pred time: 4.289878
+    thmpred time: 0.000121
+    mc time: 4.050974
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_REDUNDANT_def"] THEN SRW_TAC [] [Once arithmeticTheory.EXISTS_NUM] THEN EQ_TAC THENL [SRW_TAC [] [] THEN METIS_TAC [IS_SOME_DEF], Cases_on `i` THENL [SRW_TAC [] [] THENL [METIS_TAC [], METIS_TAC [quantHeuristicsTheory.IS_SOME_EQ_NOT_NONE], METIS_TAC [], METIS_TAC [fetch "patternMatches" "PMATCH_ROWS_DROP_REDUNDANT", quantHeuristicsTheory.IS_SOME_EQ_NOT_NONE]], SRW_TAC [] [EL] THENL [METIS_TAC [], METIS_TAC [fetch "patternMatches" "PMATCH_ROWS_DROP_REDUNDANT_TRIVIAL_SOUNDNESS_EQUIV", NOT_IS_SOME_EQ_NONE], METIS_TAC [], SRW_TAC [] []]]]
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.473663
+Recording proof time: 0.623251
 
 Name: 44 PMATCH_ROW_REDUNDANT_APPEND_LT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.085497
+Recording proof time: 0.115786
 
 Name: 45 PMATCH_ROW_REDUNDANT_APPEND_GE
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.555799
+Recording proof time: 0.562509
 
 Name: 46 IS_REDUNDANT_ROWS_INFO_NIL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006368
+Recording proof time: 0.007153
 
 Name: 47 IS_REDUNDANT_ROWS_INFO_SNOC
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.313075
+Recording proof time: 0.331302
 
 Name: 48 IS_REDUNDANT_ROWS_INFO_SNOC_PMATCH_ROW
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.121996
+Recording proof time: 0.125294
 
 Name: 49 IS_REDUNDANT_ROWS_INFO_CONS
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.389863
+Recording proof time: 0.656911
 
 Name: 50 APPLY_REDUNDANT_ROWS_INFO_THMS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009331
+Recording proof time: 0.013752
 
 Name: 51 PMATCH_ROWS_DROP_REDUNDANT_ROWS_INFO_EQUIV
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.530662
+Recording proof time: 0.837622
 
 Name: 52 REDUNDANT_ROWS_INFO_TO_PMATCH_EQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.081422
+Recording proof time: 0.084097
 
 Name: 53 PMATCH_IS_EXHAUSTIVE_REWRITES
-hh_eval 473892316473744
-Time: 60.368005
-Proof status: Time Out
+proof length: 4
+proof time: 0.003744
+Statistics
+  infstep : 23
+  nodes   : 9
+  maxdepth: 3
+Time: 0.786055
+  inferstep time: 0.691037
+  node_find time: 0.000352
+  node_crea time: 0.094452
+    pred time: 0.041273
+    thmpred time: 0.000001
+    mc time: 0.037958
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "patternMatches" "PMATCH_IS_EXHAUSTIVE_def"] THEN Cases_on `r v` THENL [FULL_SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [], SRW_TAC [] []]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.017378
+Recording proof time: 0.015623
 
 Name: 54 IS_REDUNDANT_ROWS_INFO_EXTRACT_IS_EXHAUSTIVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014866
+Recording proof time: 0.008257
 
 Name: 55 REDUNDANT_ROWS_INFOS_CONJ_REWRITE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009815
+Recording proof time: 0.007392
 
 Name: 56 REDUNDANT_ROWS_INFOS_CONJ_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.019956
+Recording proof time: 0.02517
 
 Name: 57 REDUNDANT_ROWS_INFOS_DISJ_THM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.077668
+Recording proof time: 0.102109
 
 Name: 58 LENGTH_STRONGEST_REDUNDANT_ROWS_INFO_AUX
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.037071
+Recording proof time: 0.038248
 
 Name: 59 FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.039376
+Recording proof time: 0.054466
 
 Name: 60 EL1_STRONGEST_REDUNDANT_ROWS_INFO_AUX
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.044238
+Recording proof time: 0.038833
 
 Name: 61 EL2_STRONGEST_REDUNDANT_ROWS_INFO_AUX
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.521067
+Recording proof time: 0.559041
 
 Name: 62 LENGTH_STRONGEST_REDUNDANT_ROWS_INFO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011175
+Recording proof time: 0.011178
 
 Name: 63 FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX
-hh_eval 473892316473745
-Time: 60.489014
-Proof status: Time Out
+proof length: 3
+proof time: 0.002424
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 2
+Time: 0.408913
+  inferstep time: 0.346217
+  node_find time: 0.000088
+  node_crea time: 0.062467
+    pred time: 0.016512
+    thmpred time: 0.000001
+    mc time: 0.039205
+    inst time: 0.0
+Proof found: Induct_on `rows` THENL [SRW_TAC [] [fetch "patternMatches" "FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX"], ASM_SIMP_TAC ((arith_ss ++ listSimps.LIST_ss) ++ boolSimps.EQUIV_EXTRACT_ss) [fetch "patternMatches" "FST_STRONGEST_REDUNDANT_ROWS_INFO_AUX"]]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.050189
+Recording proof time: 0.045804
 
 Name: 64 EL_STRONGEST_REDUNDANT_ROWS_INFO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015384
+Recording proof time: 0.015996
 
 Name: 65 STRONGEST_REDUNDANT_ROWS_INFO_OK
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.450123
+Recording proof time: 0.544768
 
 Name: 66 PMATCH_ROW_COND_EX_FULL_DEF
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.044586
+Recording proof time: 0.048589
 
 Name: 67 PMATCH_ROW_COND_EX_WEAKEN
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.136071
+Recording proof time: 0.135745
 
 Name: 68 PMATCH_ROW_COND_EX_FALSE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009842
+Recording proof time: 0.00581
 
 Name: 69 PMATCH_ROW_COND_EX_IMP_REWRITE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.017564
+Recording proof time: 0.008895
 
 Name: 70 PMATCH_IS_EXHAUSTIVE_CONTRADICT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035633
+Recording proof time: 0.04815
 
 Name: 71 PMATCH_ROW_EVAL_COND_EX
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010027
+Recording proof time: 0.008572
 
 Name: 72 PMATCH_ROW_NEQ_NONE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00648
+Recording proof time: 0.005415
 
 Name: 73 PMATCH_ROW_REMOVE_DOUBLE_BINDS_THM
-hh_eval 473892316473746
-Time: 60.445317
-Proof status: Time Out
+proof length: 6
+proof time: 0.067872
+Statistics
+  infstep : 291
+  nodes   : 49
+  maxdepth: 4
+Time: 5.256634
+  inferstep time: 4.351567
+  node_find time: 0.011483
+  node_crea time: 0.890439
+    pred time: 0.263103
+    thmpred time: 0.000012
+    mc time: 0.253386
+    inst time: 0.0
+Proof found: SRW_TAC [] [FUN_EQ_THM] THEN SIMP_TAC std_ss [(fetch "patternMatches" "PMATCH_ROW_def"), some_def] THEN SRW_TAC [] [fetch "patternMatches" "PMATCH_ROW_COND_def"] THENL [METIS_TAC [fetch "patternMatches" "PMATCH_ROW_COND_EX_WEAKEN", fetch "patternMatches" "PMATCH_ROWS_DROP_SUBSUMED", fetch "patternMatches" "PMATCH_ROWS_DROP_REDUNDANT", ind_typeTheory.CONSTR_INJ, prim_recTheory.SIMP_REC_REL_UNIQUE, pairTheory.ELIM_PEXISTS, pairTheory.LAMBDA_PROD, pairTheory.ELIM_PFORALL, quantHeuristicsTheory.SND_PAIR_EQ_SYM, quantHeuristicsTheory.FST_PAIR_EQ_SYM], METIS_TAC [], METIS_TAC []]
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.388336
+Recording proof time: 0.418809
 
 Name: 74 GUARDS_ELIM_THM
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.356472
+Recording proof time: 0.404391
 
 Name: 75 tactictoe_prove_75
-Original proof time: 0.005262
+Org tac number: 9
+Original proof time: 0.0
+Recording proof time: 0.414754
 
 Name: 76 PMATCH_FLATTEN_THM_SINGLE
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.187766
+Recording proof time: 0.249252
 
 Name: 77 PMATCH_FLATTEN_THM
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.249077
+Recording proof time: 0.298954
 
 Name: 78 PMATCH_FLATTEN_FUN_PMATCH_ROW
-Original proof time: 0.019731
+Original proof time: 0.010225
 
 Name: 79 PMATCH_ROW_COND_NOT_EX_OR_EQ_FIRST_ROW
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.120745
+Recording proof time: 0.140369
 
 Name: 80 PMATCH_ROW_COND_NOT_EX_OR_EQ_NIL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012717
+Recording proof time: 0.008467
 
 Name: 81 PMATCH_ROW_COND_NOT_EX_OR_EQ_NOT_FIRST_ROW
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.120166
+Recording proof time: 0.133993
 
 Name: 82 PMATCH_PRED_UNROLL_NIL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007352
+Recording proof time: 0.010128
 
 Name: 83 PMATCH_PRED_UNROLL_CONS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.129878
+Recording proof time: 0.139741
 
 Name: 84 PMATCH_EXPAND_PRED_THM_GEN
 Org tac number: 26
 Original proof time: 0.0
-Recording proof time: 0.81078
+Recording proof time: 0.940736
 
 Name: 85 PMATCH_EXPAND_PRED_THM
-hh_eval 473892316473747
-Time: 60.502765
-Proof status: Time Out
+proof length: 4
+proof time: 0.00233
+Statistics
+  infstep : 2348
+  nodes   : 473
+  maxdepth: 7
+Time: 58.139506
+  inferstep time: 46.828188
+  node_find time: 0.473154
+  node_crea time: 10.812329
+    pred time: 3.449487
+    thmpred time: 0.000142
+    mc time: 4.524133
+    inst time: 0.0
+Proof found: Induct_on `rows` THENL [SIMP_TAC (arith_ss ++ listSimps.LIST_ss) [(fetch "patternMatches" "PMATCH_EXPAND_PRED_def"), (fetch "patternMatches" "PMATCH_IS_EXHAUSTIVE_def"), (fetch "patternMatches" "PMATCH_def"), (fetch "patternMatches" "PMATCH_INCOMPLETE_def")], POP_ASSUM (K ALL_TAC) THEN SRW_TAC [] [fetch "patternMatches" "PMATCH_EXPAND_PRED_THM_GEN"]]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.027522
+Recording proof time: 0.022391
 
 Name: 86 PMATCH_LIFT_THM
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.277042
+Recording proof time: 0.264481
 
 Name: 87 PMATCH_ROW_LIFT_THM
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.081379
+Recording proof time: 0.115255
 
 Name: 88 PMATCH_IS_EXHAUSTIVE_LIFT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01154
-Bad stac: 0
+Recording proof time: 0.010311
+Bad stac: 2

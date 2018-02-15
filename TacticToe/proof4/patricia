@@ -1,467 +1,594 @@
 
 Name: 0 tactictoe_prove_0
-Original proof time: 0.010488
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.343756
 
 Name: 1 tactictoe_prove_1
-Original proof time: 0.015334
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.075856
 
 Name: 2 tactictoe_prove_2
-Original proof time: 0.005324
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.217869
 
 Name: 3 tactictoe_prove_3
-Original proof time: 0.010304
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.052748
 
 Name: 4 tactictoe_prove_4
-Original proof time: 0.005714
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017596
 
 Name: 5 tactictoe_prove_5
-Original proof time: 0.012062
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.022825
 
 Name: 6 tactictoe_prove_6
-Original proof time: 0.006653
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.019813
 
 Name: 7 tactictoe_prove_7
-Original proof time: 0.00564
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.017156
 
 Name: 8 tactictoe_prove_8
-Original proof time: 0.010181
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.014345
 
 Name: 9 tactictoe_prove_9
-Original proof time: 0.016911
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.101772
 
 Name: 10 tactictoe_prove_10
-Original proof time: 0.002682
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.189624
 
 Name: 11 BRANCHING_BIT
-Original proof time: 0.038246
+Original proof time: 0.042857
 
 Name: 12 BRANCHING_BIT_ZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007925
+Recording proof time: 0.007995
 
 Name: 13 BRANCHING_BIT_SYM
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.489
+Recording proof time: 0.460711
 
 Name: 14 EVERY_LEAF_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.052753
+Recording proof time: 0.074998
 
 Name: 15 MONO_EVERY_LEAF
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.120695
+Recording proof time: 0.178617
 
 Name: 16 NOT_ADD_EMPTY
-hh_eval 111391323474495
-Time: 60.448439
-Proof status: Time Out
+proof length: 4
+proof time: 0.010505
+Statistics
+  infstep : 11
+  nodes   : 7
+  maxdepth: 2
+Time: 0.749124
+  inferstep time: 0.60213
+  node_find time: 0.000209
+  node_crea time: 0.146656
+    pred time: 0.054272
+    thmpred time: 0.000002
+    mc time: 0.056271
+    inst time: 0.0
+Proof found: Induct_on `t` THENL [SRW_TAC [] [fetch "patricia" "ADD_def"], SRW_TAC [boolSimps.LET_ss] [(local_tag ADD_def), (fetch "patricia" "JOIN_def")], SRW_TAC [boolSimps.LET_ss] [(local_tag ADD_def), (fetch "patricia" "JOIN_def")]]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.106356
+Recording proof time: 0.108444
 
 Name: 17 ADD_IS_PTREE
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 1.741258
+Recording proof time: 1.910874
 
 Name: 18 EVERY_LEAF_BRANCH
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.070169
+Recording proof time: 0.083144
 
 Name: 19 EVERY_LEAF_REMOVE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034797
+Recording proof time: 0.047373
 
 Name: 20 IS_PTREE_BRANCH
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.133408
+Recording proof time: 0.116804
 
 Name: 21 REMOVE_IS_PTREE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.137405
+Recording proof time: 0.142596
 
 Name: 22 PEEK_NONE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.081248
+Recording proof time: 0.089797
 
 Name: 23 PEEK_ADD
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.518806
+Recording proof time: 0.552309
 
 Name: 24 BRANCH
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.081141
+Recording proof time: 0.155807
 
 Name: 25 PEEK_REMOVE
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.387381
+Recording proof time: 0.424877
 
 Name: 26 EVERY_LEAF_TRANSFORM
-hh_eval 111391323474496
-Time: 60.547684
-Proof status: Time Out
+proof length: 5
+proof time: 0.015582
+Statistics
+  infstep : 459
+  nodes   : 69
+  maxdepth: 4
+Time: 12.087595
+  inferstep time: 9.239425
+  node_find time: 0.031935
+  node_crea time: 2.808526
+    pred time: 0.756405
+    thmpred time: 0.000044
+    mc time: 0.803568
+    inst time: 0.0
+Proof found: Induct_on `t` THENL [SRW_TAC [] [fetch "patricia" "TRANSFORM_def", fetch "patricia" "EVERY_LEAF_def"], SRW_TAC [] [fetch "patricia" "TRANSFORM_def", fetch "patricia" "EVERY_LEAF_def"], REWRITE_TAC [fetch "patricia" "TRANSFORM_def", fetch "patricia" "EVERY_LEAF_def"] THEN PROVE_TAC []]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.144338
+Recording proof time: 0.102553
 
 Name: 27 TRANSFORM_EMPTY
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.045769
+Recording proof time: 0.026239
 
 Name: 28 TRANSFORM_IS_PTREE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.155531
+Recording proof time: 0.158201
 
 Name: 29 PEEK_TRANSFORM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.041574
+Recording proof time: 0.06518
 
 Name: 30 ADD_TRANSFORM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.177225
+Recording proof time: 0.198191
 
 Name: 31 TRANSFORM_BRANCH
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.093454
+Recording proof time: 0.093443
 
 Name: 32 REMOVE_TRANSFORM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.053834
+Recording proof time: 0.049385
 
 Name: 33 REMOVE_ADD_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.134102
+Recording proof time: 0.108317
 
 Name: 34 ADD_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.182177
+Recording proof time: 0.137794
 
 Name: 35 EVERY_LEAF_PEEK
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034598
+Recording proof time: 0.198935
 
 Name: 36 IS_PTREE_PEEK
-hh_eval 111391323474497
-Time: 60.549724
+Statistics
+  infstep : 3239
+  nodes   : 338
+  maxdepth: 7
+Time: 60.01913
+  inferstep time: 42.102764
+  node_find time: 0.624675
+  node_crea time: 17.25091
+    pred time: 2.78123
+    thmpred time: 0.00011
+    mc time: 3.646948
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.906527
+Recording proof time: 1.439777
 
 Name: 37 tactictoe_prove_37
-Original proof time: 0.00291
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.070917
 
 Name: 38 tactictoe_prove_38
-Original proof time: 0.004571
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.007999
 
 Name: 39 PTREE_EQ
 Org tac number: 34
 Original proof time: 0.0
-Recording proof time: 3.247365
+Recording proof time: 3.64106
 
 Name: 40 REMOVE_REMOVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006496
+Recording proof time: 0.009368
 
 Name: 41 REMOVE_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.040919
+Recording proof time: 0.045044
 
 Name: 42 ADD_ADD_SYM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034396
+Recording proof time: 0.034191
 
 Name: 43 FILTER_ALL
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.360763
+Recording proof time: 0.423734
 
 Name: 44 TRAVERSE_TRANSFORM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032374
+Recording proof time: 0.052068
 
 Name: 45 MEM_TRAVERSE_PEEK
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.147684
+Recording proof time: 0.161537
 
 Name: 46 IN_NUMSET_OF_PTREE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003641
+Recording proof time: 0.007337
 
 Name: 47 tactictoe_prove_47
-Original proof time: 0.002106
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.036637
 
 Name: 48 ADD_LIST_IS_PTREE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.104512
+Recording proof time: 0.178375
 
 Name: 49 ADD_LIST_TO_EMPTY_IS_PTREE
-hh_eval 111391323474498
-Time: 1.076049
-Reconstructed: 0.00534
+proof length: 1
+proof time: 0.003808
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.11257
+  inferstep time: 0.094782
+  node_find time: 0.000011
+  node_crea time: 0.017754
+    pred time: 0.005604
+    thmpred time: 0.0
+    mc time: 0.009676
+    inst time: 0.0
 Proof found: METIS_TAC [fetch "patricia" "ADD_LIST_IS_PTREE", fetch "patricia" "EMPTY_IS_PTREE"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011778
+Recording proof time: 0.011187
 
 Name: 50 PTREE_OF_NUMSET_IS_PTREE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.055276
+Recording proof time: 0.065217
 
 Name: 51 NOT_KEY_LEFT_AND_RIGHT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.051173
+Recording proof time: 0.058106
 
 Name: 52 ALL_DISTINCT_TRAVERSE
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.211119
+Recording proof time: 0.234439
 
 Name: 53 MEM_ALL_DISTINCT_IMP_PERM
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.395949
+Recording proof time: 0.263104
 
 Name: 54 MEM_TRAVERSE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004515
+Recording proof time: 0.005664
 
 Name: 55 INSERT_PTREE_IS_PTREE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003032
+Recording proof time: 0.007043
 
 Name: 56 FINITE_NUMSET_OF_PTREE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004871
+Recording proof time: 0.003462
 
 Name: 57 tactictoe_prove_57
-Original proof time: 0.001831
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.048996
 
 Name: 58 MEM_TRAVERSE_INSERT_PTREE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007883
+Recording proof time: 0.010838
 
 Name: 59 tactictoe_prove_59
-Original proof time: 0.076833
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.15398
 
 Name: 60 tactictoe_prove_60
-Original proof time: 0.055526
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.366131
 
 Name: 61 IN_PTREE_OF_NUMSET
-Original proof time: 0.00258
+Original proof time: 0.00314
 
 Name: 62 tactictoe_prove_62
-Original proof time: 0.001079
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.074276
 
 Name: 63 PTREE_EXTENSION
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009631
+Recording proof time: 0.010185
 
 Name: 64 PTREE_OF_NUMSET_NUMSET_OF_PTREE
-hh_eval 111391323474499
-Time: 60.694079
+Statistics
+  infstep : 6356
+  nodes   : 906
+  maxdepth: 7
+Time: 60.00331
+  inferstep time: 41.534264
+  node_find time: 2.857721
+  node_crea time: 15.527414
+    pred time: 2.9565
+    thmpred time: 0.000124
+    mc time: 3.867781
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.066685
+Recording proof time: 0.040505
 
 Name: 65 NUMSET_OF_PTREE_PTREE_OF_NUMSET
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006843
+Recording proof time: 0.007985
 
 Name: 66 NUMSET_OF_PTREE_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005918
+Recording proof time: 0.006915
 
 Name: 67 PTREE_OF_NUMSET_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004728
+Recording proof time: 0.01346
 
 Name: 68 IN_PTREE_INSERT_PTREE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009104
+Recording proof time: 0.006227
 
 Name: 69 IN_PTREE_REMOVE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007523
+Recording proof time: 0.008289
 
 Name: 70 IN_PTREE_UNION_PTREE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030472
+Recording proof time: 0.047653
 
 Name: 71 UNION_PTREE_IS_PTREE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004081
+Recording proof time: 0.003906
 
 Name: 72 UNION_PTREE_COMM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.080352
+Recording proof time: 0.070891
 
 Name: 73 UNION_PTREE_EMPTY
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005937
+Recording proof time: 0.00528
 
 Name: 74 UNION_PTREE_ASSOC
-hh_eval 111391323474500
-Time: 60.726106
-Proof status: Time Out
+proof length: 3
+proof time: 0.058855
+Statistics
+  infstep : 74
+  nodes   : 27
+  maxdepth: 4
+Time: 2.310897
+  inferstep time: 1.592068
+  node_find time: 0.00274
+  node_crea time: 0.714759
+    pred time: 0.177103
+    thmpred time: 0.000004
+    mc time: 0.183422
+    inst time: 0.0
+Proof found: SRW_TAC [] [(fetch "patricia" "PTREE_EXTENSION")] THEN SRW_TAC [] [fetch "patricia" "IN_PTREE_UNION_PTREE", fetch "patricia" "IN_PTREE_def"] THEN METIS_TAC []
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.07829
+Recording proof time: 0.066831
 
 Name: 75 PTREE_OF_NUMSET_UNION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.080921
+Recording proof time: 0.126995
 
 Name: 76 PTREE_OF_NUMSET_INSERT
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.048062
+Recording proof time: 0.050523
 
 Name: 77 PTREE_OF_NUMSET_DELETE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.081636
+Recording proof time: 0.071174
 
 Name: 78 tactictoe_prove_78
-Original proof time: 0.016977
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.166463
 
 Name: 79 TRAVERSE_AUX
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.067399
+Recording proof time: 0.06644
 
 Name: 80 PTREE_TRAVERSE_EQ
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.32411
+Recording proof time: 0.332581
 
 Name: 81 KEYS_PEEK
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.176048
+Recording proof time: 0.238884
 
 Name: 82 tactictoe_prove_82
-Original proof time: 0.013277
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.130497
 
 Name: 83 PERM_ADD
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.405176
+Recording proof time: 0.424683
 
 Name: 84 tactictoe_prove_84
-Original proof time: 0.003182
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00996
 
 Name: 85 PERM_NOT_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.038606
+Recording proof time: 0.039971
 
 Name: 86 tactictoe_prove_86
-Original proof time: 0.002499
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.00994
 
 Name: 87 PERM_NOT_REMOVE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033106
+Recording proof time: 0.039081
 
 Name: 88 PERM_DELETE_PTREE
-hh_eval 111391323474501
-Time: 60.950777
+Statistics
+  infstep : 3798
+  nodes   : 565
+  maxdepth: 7
+Time: 60.080219
+  inferstep time: 38.464138
+  node_find time: 0.994782
+  node_crea time: 20.567084
+    pred time: 3.846354
+    thmpred time: 0.000087
+    mc time: 4.655961
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.204037
+Recording proof time: 0.214478
 
 Name: 89 FILTER_NONE
-Original proof time: 0.009493
+Original proof time: 0.005905
 
 Name: 90 tactictoe_prove_90
-Original proof time: 0.00097
+Org tac number: 2
+Original proof time: 0.0
+Recording proof time: 0.027379
 
 Name: 91 tactictoe_prove_91
-Original proof time: 0.026645
+Org tac number: 7
+Original proof time: 0.0
+Recording proof time: 0.226759
 
 Name: 92 PERM_REMOVE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.174526
+Recording proof time: 0.19455
 
 Name: 93 SIZE_ADD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.061258
+Recording proof time: 0.056929
 
 Name: 94 SIZE_REMOVE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.055879
+Recording proof time: 0.072336
 
 Name: 95 SIZE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006475
+Recording proof time: 0.007063
 
 Name: 96 tactictoe_prove_96
-Original proof time: 0.048935
+Org tac number: 6
+Original proof time: 0.0
+Recording proof time: 0.361021
 
 Name: 97 CARD_LIST_TO_SET
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.025424
+Recording proof time: 0.033914
 
 Name: 98 CARD_NUMSET_OF_PTREE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004889
+Recording proof time: 0.009379
 
 Name: 99 DELETE_UNION
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.041851
-Bad stac: 0
+Recording proof time: 0.043029
+Bad stac: 2

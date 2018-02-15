@@ -2,211 +2,256 @@
 Name: 0 ALL_DIVIDES_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.018268
+Recording proof time: 0.018261
 
 Name: 1 ZERO_DIVIDES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010828
+Recording proof time: 0.003727
 
 Name: 2 DIVIDES_REFL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.028299
+Recording proof time: 0.020404
 
 Name: 3 DIVIDES_TRANS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.023945
+Recording proof time: 0.020028
 
 Name: 4 ONE_DIVIDES_ALL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.018031
+Recording proof time: 0.027679
 
 Name: 5 DIVIDES_ONE
-hh_eval 728691935258570
-Time: 5.463417
-Reconstructed: 0.032786
-Proof found: METIS_TAC [fetch "divides" "divides_def", MULT_EQ_1]
+proof length: 1
+proof time: 0.000993
+Statistics
+  infstep : 2
+  nodes   : 2
+  maxdepth: 1
+Time: 0.120747
+  inferstep time: 0.107835
+  node_find time: 0.000027
+  node_crea time: 0.012855
+    pred time: 0.002843
+    thmpred time: 0.0
+    mc time: 0.009194
+    inst time: 0.0
+Proof found: SRW_TAC [] [fetch "divides" "divides_def"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.075141
+Recording proof time: 0.055232
 
 Name: 6 DIVIDES_ADD_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.02961
+Recording proof time: 0.037492
 
 Name: 7 DIVIDES_ADD_2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.074254
+Recording proof time: 0.177094
 
 Name: 8 DIVIDES_SUB
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.021058
+Recording proof time: 0.021379
 
 Name: 9 DIVIDES_LE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.129452
+Recording proof time: 0.235226
 
 Name: 10 DIVIDES_LEQ_OR_ZERO
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.078629
+Recording proof time: 0.0784
 
 Name: 11 NOT_LT_DIVIDES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.01669
+Recording proof time: 0.099364
 
 Name: 12 DIVIDES_ANTISYM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.074409
+Recording proof time: 0.092524
 
 Name: 13 DIVIDES_MULT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.050966
+Recording proof time: 0.057056
 
 Name: 14 DIVIDES_MULT_LEFT
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.384527
+Recording proof time: 0.574298
 
 Name: 15 tactictoe_prove_15
-Original proof time: 0.011241
-
-Name: 16 DIVIDES_FACT
-hh_eval 728691935258571
-Time: 4.560063
-Reconstructed: 0.070185
-Proof found: METIS_TAC [fetch "divides" "divides_def", MULT_COMM, FACT, num_CASES, LESS_EQ_ANTISYM, EQ_LESS_EQ]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.076964
+Recording proof time: 0.115428
+
+Name: 16 DIVIDES_FACT
+proof length: 4
+proof time: 0.003413
+Statistics
+  infstep : 87
+  nodes   : 25
+  maxdepth: 4
+Time: 2.353545
+  inferstep time: 1.976494
+  node_find time: 0.002776
+  node_crea time: 0.373446
+    pred time: 0.118201
+    thmpred time: 0.000006
+    mc time: 0.19879
+    inst time: 0.0
+Proof found: let fun INDUCT_TAC g = INDUCT_THEN numTheory.INDUCTION ASSUME_TAC g in INDUCT_TAC THENL [METIS_TAC [fetch "divides" "NOT_LT_DIVIDES", fetch "divides" "ALL_DIVIDES_0"], REWRITE_TAC [(fetch "arithmetic" "FACT")] THEN (RW_TAC arith_ss) [(fetch "divides" "divides_def")]] end
+Org tac number: 3
+Original proof time: 0.0
+Recording proof time: 0.215662
 
 Name: 17 LEQ_DIVIDES_FACT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.159637
+Recording proof time: 0.169482
 
 Name: 18 NOT_PRIME_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008738
+Recording proof time: 0.006053
 
 Name: 19 NOT_PRIME_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003961
+Recording proof time: 0.00505
 
 Name: 20 PRIME_2
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.185828
+Recording proof time: 0.180437
 
 Name: 21 PRIME_3
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.308079
+Recording proof time: 0.502694
 
 Name: 22 PRIME_POS
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.027711
+Recording proof time: 0.069224
 
 Name: 23 ONE_LT_PRIME
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.020911
+Recording proof time: 0.027409
 
 Name: 24 prime_divides_only_self
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.228885
+Recording proof time: 0.316021
 
 Name: 25 PRIME_FACTOR
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.290919
+Recording proof time: 0.299168
 
 Name: 26 EUCLID
-hh_eval 728691935258572
-Time: 60.232434
+Statistics
+  infstep : 2679
+  nodes   : 449
+  maxdepth: 7
+Time: 60.116341
+  inferstep time: 53.176067
+  node_find time: 0.636554
+  node_crea time: 6.276806
+    pred time: 1.830733
+    thmpred time: 0.000095
+    mc time: 2.811777
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 1.273589
+Recording proof time: 1.334645
 
 Name: 27 primePRIMES
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.121451
+Recording proof time: 0.144725
 
 Name: 28 INFINITE_PRIMES
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.091157
+Recording proof time: 0.166061
 
 Name: 29 LT_PRIMES
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.085316
+Recording proof time: 0.104303
 
 Name: 30 PRIMES_11
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.050202
+Recording proof time: 0.035132
 
 Name: 31 INDEX_LESS_PRIMES
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.16219
+Recording proof time: 0.286809
 
 Name: 32 EUCLID_PRIMES
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.079512
+Recording proof time: 0.630021
 
 Name: 33 NEXT_LARGER_PRIME
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.057732
+Recording proof time: 0.14953
 
 Name: 34 PRIMES_NO_GAP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.105479
+Recording proof time: 0.184486
 
 Name: 35 PRIMES_ONTO
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.264701
+Recording proof time: 0.249657
 
 Name: 36 PRIME_INDEX
-hh_eval 728691935258573
-Time: 0.475104
-Reconstructed: 0.010792
+proof length: 1
+proof time: 0.007207
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.060186
+  inferstep time: 0.034174
+  node_find time: 0.00002
+  node_crea time: 0.025967
+    pred time: 0.005774
+    thmpred time: 0.0
+    mc time: 0.018535
+    inst time: 0.0
 Proof found: METIS_TAC [fetch "divides" "PRIMES_ONTO", fetch "divides" "primePRIMES"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.016099
+Recording proof time: 0.014244
 
 Name: 37 ONE_LT_PRIMES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.025204
+Recording proof time: 0.044595
 
 Name: 38 ZERO_LT_PRIMES
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.025803
+Recording proof time: 0.019043
 
 Name: 39 compute_divides
-Original proof time: 0.062858
-Bad stac: 0
+Original proof time: 0.065394
+Bad stac: 2

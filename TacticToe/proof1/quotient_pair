@@ -2,95 +2,118 @@
 Name: 0 PAIR_MAP_I
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.06408
+Recording proof time: 0.069454
 
 Name: 1 PAIR_REL_THM
-hh_eval 678251840791874
-Time: 60.229455
-Proof status: Time Out
+proof length: 3
+proof time: 0.001116
+Statistics
+  infstep : 8
+  nodes   : 5
+  maxdepth: 3
+Time: 0.312431
+  inferstep time: 0.244789
+  node_find time: 0.000112
+  node_crea time: 0.067385
+    pred time: 0.024256
+    thmpred time: 0.000001
+    mc time: 0.034912
+    inst time: 0.0
+Proof found: REWRITE_TAC [fetch "quotient_pair" "PAIR_REL"] THEN NTAC 2 (REWRITE_TAC [(fetch "pair" "UNCURRY_VAR")] THEN BETA_TAC) THEN METIS_TAC []
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.260946
+Recording proof time: 0.119959
 
 Name: 2 PAIR_REL_EQ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.118055
+Recording proof time: 0.185813
 
 Name: 3 PAIR_REL_REFL
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.158806
+Recording proof time: 0.122876
 
 Name: 4 PAIR_EQUIV
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.445338
+Recording proof time: 0.582854
 
 Name: 5 PAIR_QUOTIENT
-Original proof time: 0.016079
+Original proof time: 0.017005
 
 Name: 6 FST_PRS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.166562
+Recording proof time: 0.208608
 
 Name: 7 FST_RSP
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.201517
+Recording proof time: 0.40691
 
 Name: 8 SND_PRS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.238429
+Recording proof time: 0.19081
 
 Name: 9 SND_RSP
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.185309
+Recording proof time: 0.212185
 
 Name: 10 COMMA_PRS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.066125
+Recording proof time: 0.104302
 
 Name: 11 COMMA_RSP
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.117326
+Recording proof time: 0.130086
 
 Name: 12 CURRY_PRS
-hh_eval 678251840791875
-Time: 0.696035
-Reconstructed: 0.073056
-Proof found: METIS_TAC [CURRY_DEF, FUN_MAP, PAIR_MAP_THM, QUOTIENT_def]
+proof length: 5
+proof time: 0.000998
+Statistics
+  infstep : 135
+  nodes   : 41
+  maxdepth: 5
+Time: 2.055296
+  inferstep time: 1.727084
+  node_find time: 0.003709
+  node_crea time: 0.32349
+    pred time: 0.082872
+    thmpred time: 0.000007
+    mc time: 0.078727
+    inst time: 0.0
+Proof found: REWRITE_TAC [CURRY_DEF] THEN REPEAT STRIP_TAC THEN REWRITE_TAC [(fetch "quotient" "FUN_MAP_THM")] THEN PURE_REWRITE_TAC [PAIR_MAP_THM] THEN IMP_RES_THEN (fn th => REWRITE_TAC [th]) (fetch "quotient" "QUOTIENT_ABS_REP")
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.352347
+Recording proof time: 0.884051
 
 Name: 13 CURRY_RSP
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.361044
+Recording proof time: 0.4105
 
 Name: 14 UNCURRY_PRS
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.193241
+Recording proof time: 0.183832
 
 Name: 15 UNCURRY_RSP
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.292205
+Recording proof time: 0.27978
 
 Name: 16 PAIR_MAP_PRS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.364202
+Recording proof time: 0.205687
 
 Name: 17 PAIR_MAP_RSP
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.371349
+Recording proof time: 0.436646
 Bad stac: 0

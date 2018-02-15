@@ -2,141 +2,165 @@
 Name: 0 BIND_LEFT_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.024222
+Recording proof time: 0.021753
 
 Name: 1 MCOMP_THM
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082997
+Recording proof time: 0.125237
 
 Name: 2 MCOMP_ASSOC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003949
+Recording proof time: 0.005183
 
 Name: 3 UNIT_CURRY
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.078725
+Recording proof time: 0.089999
 
 Name: 4 MCOMP_ID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004411
+Recording proof time: 0.003046
 
 Name: 5 BIND_RIGHT_UNIT
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.152679
+Recording proof time: 0.164695
 
 Name: 6 BIND_ASSOC
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.182422
+Recording proof time: 0.195404
 
 Name: 7 MMAP_ID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004488
+Recording proof time: 0.005646
 
 Name: 8 MMAP_COMP
-hh_eval 597296229879419
-Time: 60.230547
-Proof status: Time Out
+proof length: 6
+proof time: 0.045494
+Statistics
+  infstep : 347
+  nodes   : 85
+  maxdepth: 5
+Time: 6.205281
+  inferstep time: 5.332321
+  node_find time: 0.017313
+  node_crea time: 0.852055
+    pred time: 0.278678
+    thmpred time: 0.000023
+    mc time: 0.354479
+    inst time: 0.0
+Proof found: SRW_TAC [] [FUN_EQ_THM, (fetch "errorStateMonad" "MMAP_DEF")] THEN ASM_SIMP_TAC bool_ss [(fetch "errorStateMonad" "BIND_DEF"), pair_CASE_def] THEN Q.RENAME1_TAC `option_CASE (k v) NONE _` THEN Cases_on `k v` THENL [METIS_TAC [option_CLAUSES], SRW_TAC [] [fetch "errorStateMonad" "UNIT_CURRY"]]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.037133
+Recording proof time: 0.049756
 
 Name: 9 MMAP_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005122
+Recording proof time: 0.014073
 
 Name: 10 MMAP_JOIN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010692
+Recording proof time: 0.010403
 
 Name: 11 JOIN_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007142
+Recording proof time: 0.005652
 
 Name: 12 JOIN_MMAP_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007116
+Recording proof time: 0.006374
 
 Name: 13 JOIN_MAP_JOIN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008017
+Recording proof time: 0.008339
 
 Name: 14 JOIN_MAP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006585
+Recording proof time: 0.007536
 
 Name: 15 sequence_nil
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005504
+Recording proof time: 0.004351
 
 Name: 16 mapM_nil
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00449
+Recording proof time: 0.010141
 
 Name: 17 mapM_cons
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.0141
+Recording proof time: 0.005897
 
 Name: 18 ES_CHOICE_ASSOC
-hh_eval 597296229879420
-Time: 60.244122
-Proof status: Time Out
+proof length: 4
+proof time: 0.033751
+Statistics
+  infstep : 1026
+  nodes   : 133
+  maxdepth: 5
+Time: 10.03198
+  inferstep time: 8.096283
+  node_find time: 0.071374
+  node_crea time: 1.853942
+    pred time: 0.57753
+    thmpred time: 0.000033
+    mc time: 0.704091
+    inst time: 0.0
+Proof found: SRW_TAC [] [FUN_EQ_THM] THEN ONCE_REWRITE_TAC [fetch "errorStateMonad" "ES_CHOICE_DEF"] THEN SIMP_TAC (srw_ss ()) [fetch "errorStateMonad" "ES_CHOICE_DEF", option_case_eq] THEN METIS_TAC [(fetch "option" "option_nchotomy")]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.097835
+Recording proof time: 0.127307
 
 Name: 19 ES_CHOICE_FAIL_LID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004815
+Recording proof time: 0.003625
 
 Name: 20 ES_CHOICE_FAIL_RID
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.084841
+Recording proof time: 0.100512
 
 Name: 21 BIND_FAIL_L
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004956
+Recording proof time: 0.0152
 
 Name: 22 BIND_ESGUARD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005583
+Recording proof time: 0.004512
 
 Name: 23 IGNORE_BIND_ESGUARD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004301
+Recording proof time: 0.00385
 
 Name: 24 IGNORE_BIND_FAIL
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.202415
+Recording proof time: 0.206934
 
 Name: 25 APPLY_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004848
+Recording proof time: 0.00336
 
 Name: 26 APPLY_UNIT_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003702
+Recording proof time: 0.004973
 Bad stac: 0

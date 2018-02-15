@@ -2,195 +2,243 @@
 Name: 0 IS_GCD_UNIQUE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007326
+Recording proof time: 0.009838
 
 Name: 1 IS_GCD_REF
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010921
+Recording proof time: 0.006639
 
 Name: 2 IS_GCD_SYM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.042481
+Recording proof time: 0.044483
 
 Name: 3 IS_GCD_0R
-hh_eval 7150545
-Time: 60.156581
-Proof status: Time Out
+proof length: 1
+proof time: 0.040104
+Statistics
+  infstep : 1
+  nodes   : 2
+  maxdepth: 1
+Time: 0.086571
+  inferstep time: 0.073819
+  node_find time: 0.000019
+  node_crea time: 0.01268
+    pred time: 0.003655
+    thmpred time: 0.000001
+    mc time: 0.008084
+    inst time: 0.0
+Proof found: metisTools.METIS_TAC [fetch "gcd" "is_gcd_def", fetch "gcd" "IS_GCD_REF", compute_divides]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.017642
+Recording proof time: 0.013157
 
 Name: 4 IS_GCD_0L
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013924
+Recording proof time: 0.010613
 
 Name: 5 PRIME_IS_GCD
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.18632
+Recording proof time: 0.457116
 
 Name: 6 IS_GCD_MINUS_L
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069941
+Recording proof time: 0.079631
 
 Name: 7 IS_GCD_MINUS_R
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00916
+Recording proof time: 0.004122
 
 Name: 8 GCD_IS_GCD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.09379
+Recording proof time: 0.143644
 
 Name: 9 GCD_REF
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005065
+Recording proof time: 0.0059
 
 Name: 10 GCD_SYM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006799
+Recording proof time: 0.004611
 
 Name: 11 GCD_0R
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005328
+Recording proof time: 0.003903
 
 Name: 12 GCD_0L
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005271
+Recording proof time: 0.005131
 
 Name: 13 GCD_ADD_R
-hh_eval 7150546
-Time: 60.244246
-Proof status: Time Out
+proof length: 6
+proof time: 0.012699
+Statistics
+  infstep : 465
+  nodes   : 77
+  maxdepth: 5
+Time: 13.498961
+  inferstep time: 12.147435
+  node_find time: 0.026878
+  node_crea time: 1.318608
+    pred time: 0.471359
+    thmpred time: 0.000021
+    mc time: 0.558994
+    inst time: 0.0
+Proof found: recInduct (fetch "gcd" "gcd_ind") THEN ASM_REWRITE_TAC [(fetch "arithmetic" "ADD_CLAUSES")] THEN REPEAT STRIP_TAC THENL [metisTools.METIS_TAC [fetch "gcd" "GCD_0L", fetch "gcd" "GCD_SYM", fetch "gcd" "GCD_REF"], ONCE_REWRITE_TAC [GSYM (el 4 (CONJUNCTS ADD_CLAUSES))] THEN (RW_TAC (bool_ss ++ numSimps.ARITH_ss)) [(local_tag GCD)]]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.074868
+Recording proof time: 0.125704
 
 Name: 14 GCD_ADD_L
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007085
+Recording proof time: 0.002706
 
 Name: 15 GCD_EQ_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.064567
+Recording proof time: 0.059866
 
 Name: 16 GCD_1
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.10313
+Recording proof time: 0.11004
 
 Name: 17 PRIME_GCD
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007573
+Recording proof time: 0.004797
 
 Name: 18 tactictoe_prove_18
-Original proof time: 0.021733
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.869032
 
 Name: 19 L_EUCLIDES
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.154159
+Recording proof time: 0.458415
 
 Name: 20 P_EUCLIDES
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.172096
+Recording proof time: 0.236391
 
 Name: 21 FACTOR_OUT_GCD
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 1.220344
+Recording proof time: 1.566656
 
 Name: 22 GCD_SUCfree_ind
 Org tac number: 16
 Original proof time: 0.0
-Recording proof time: 0.582322
+Recording proof time: 0.846093
 
 Name: 23 tactictoe_prove_23
-Original proof time: 0.041354
+Org tac number: 17
+Original proof time: 0.0
+Recording proof time: 1.348553
 
 Name: 24 LINEAR_GCD
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.102502
+Recording proof time: 0.119467
 
 Name: 25 tactictoe_prove_25
-Original proof time: 0.038538
+Org tac number: 5
+Original proof time: 0.0
+Recording proof time: 0.17344
 
 Name: 26 tactictoe_prove_26
-Original proof time: 0.037918
+Org tac number: 8
+Original proof time: 0.0
+Recording proof time: 0.353793
 
 Name: 27 GCD_EFFICIENTLY
-hh_eval 7150547
-Time: 60.266645
+Statistics
+  infstep : 2854
+  nodes   : 553
+  maxdepth: 7
+Time: 60.021408
+  inferstep time: 50.639863
+  node_find time: 0.803463
+  node_crea time: 8.549255
+    pred time: 2.167225
+    thmpred time: 0.000136
+    mc time: 4.368691
+    inst time: 0.0
 Proof status: Time Out
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.659556
+Recording proof time: 0.832749
 
 Name: 28 LCM_IS_LEAST_COMMON_MULTIPLE
 Org tac number: 36
 Original proof time: 0.0
-Recording proof time: 1.763569
+Recording proof time: 2.698482
 
 Name: 29 LCM_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004245
+Recording proof time: 0.003122
 
 Name: 30 LCM_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006478
+Recording proof time: 0.04967
 
 Name: 31 LCM_COMM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009877
+Recording proof time: 0.006952
 
 Name: 32 LCM_LE
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.671551
+Recording proof time: 1.10462
 
 Name: 33 LCM_LEAST
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.333652
+Recording proof time: 0.395432
 
 Name: 34 GCD_COMMON_FACTOR
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.263877
+Recording proof time: 1.000906
 
 Name: 35 tactictoe_prove_35
-Original proof time: 0.01786
+Org tac number: 1
+Original proof time: 0.0
+Recording proof time: 0.051119
 
 Name: 36 tactictoe_prove_36
-Original proof time: 0.003249
+Org tac number: 4
+Original proof time: 0.0
+Recording proof time: 0.152396
 
 Name: 37 GCD_CANCEL_MULT
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.44452
+Recording proof time: 0.691353
 
 Name: 38 tactictoe_prove_38
-Original proof time: 0.000792
+Org tac number: 10
+Original proof time: 0.0
+Recording proof time: 0.615473
 
 Name: 39 BINARY_GCD
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.163225
+Recording proof time: 0.383613
 Bad stac: 0
