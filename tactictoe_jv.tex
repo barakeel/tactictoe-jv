@@ -1510,30 +1510,30 @@ val MAP_APPEND = store_thm("MAP_APPEND",
 \end{lstlisting}
 \end{example}
 
-The first line of this theory open modules (called structures in \sml). Each of
+The first line of this script file opens modules (called structures in \sml). Each of
 them contains a list of global identifiers which become directly accessible in
-the rest of the theory.
-A local identifier \texttt{LIST\_INDUCT\_TAC} is declared after, which is a
-tactic that performs induction on lists. And even further, the theorem
+the rest of the script.
+A local identifier \texttt{LIST\_INDUCT\_TAC} is declared next, which is a
+tactic that performs induction on lists. Below that, the theorem
 \texttt{MAP\_APPEND} is proven.
 The global tactic \texttt{STRIP\_TAC} first removes universal quantifiers. Then,
-the goal is split into a base case and a inductive case. And finally, both of
+the goal is split into a base case and a inductive case. Finally, both of
 theses cases are solved by \texttt{ASM\_REWRITE\_TAC [MAP, APPEND]}, which
 rewrites assumptions with the help of theorems previously declared in this
 theory.
 
-We first parse the theory to extract proof scripts. Each of them is found in
-the third argument of a call to \texttt{store\_thm}. The result of proof script
+We first parse the script file to extract tactic proofs. Each of them is found in
+the third argument of a call to \texttt{store\_thm}. The result of tactic proof
 extraction for the running example in presented in Example~\ref{ex:r0}.
 
-\begin{example}\label{ex:r0}(Proof script extraction)
+\begin{example}\label{ex:r0}(Tactic proof extraction)
 \small
 \begin{lstlisting}[language=SMLSmall]
 STRIP_TAC THEN LIST_INDUCT_TAC THEN ASM_REWRITE_TAC [MAP, APPEND]
 \end{lstlisting}
 \end{example}
 
-In the next phase, we globalize identifiers of the proof scripts.
+In the next phase, we globalize identifiers of the tactic proofs.
 Infix operators such as \texttt{THEN} need to be processed in a special way so
 that they keep their infixity status after globalization. For simplicity,
 the
@@ -1547,8 +1547,8 @@ not. The local identifier \texttt{LIST\_INDUCT\_TAC} is replaced by its
 definition which happens to contain two global identifiers.
 The previous paragraph describe the globalization for all identifiers except
 local theorems.  We do not replace a local
-theorem by its definition because we want to avoid unfolding proof scripts into
-other proof scripts.
+theorem by its definition because we want to avoid unfolding tactic proofs into
+other tactic proofs.
 If the theorem is stored in the \holfour database available across \holfour
 developments, we can obtain the theorem value by calling \texttt{DB.fetch}.
 Otherwise the globalization process fails and the local theorem identifier is
@@ -1563,14 +1563,14 @@ Rewrite.ASM_REWRITE_TAC [DB.fetch "list" "MAP", DB.fetch "list" "APPEND"]
 \end{lstlisting}
 \end{example}
 
-Running the globalized version of a proof script will have the exact same
+Running the globalized version of a tactic proof will have the exact same
 effect as the original. But since we want to extract information from this
 script in the form tactics and their input goals, we modify it further.
-In particular, we need to define at which level we should record the tactics of
-the proof scripts. The simplest idea would be to record all \sml subexpressions
-of type tactics. However, it will damage the quality of our data by
-dramatically increasing the number of tactic associated with a single goal.
-Imagine a proof script of the form \texttt{A THEN B THEN C} then the tactics
+In particular, we need to define at which level we should record the tactics in
+the tactic proof. The simplest idea would be to record all \sml subexpressions
+of type \texttt{tactic}. However, it will damage the quality of our data by
+dramatically increasing the number of tactics associated with a single goal.
+Imagine a proof script of the form \texttt{A THEN B THEN C}; then the tactics
 \texttt{A}, \texttt{A THEN B} and \texttt{A THEN B THEN C} would be valid
 advice for something close to their common input goal. The tactic
 \texttt{A THEN B THEN C} is likely to be specific. In contrast, we can consider
@@ -1582,15 +1582,15 @@ proof search, we would have to make a branches created after each call of
 \texttt{A}.
 To sum up, we would like to record only the most general tactics which
 make the most progress on a goal. As a trade-off between these two objectives,
-we split the proofs into tactic units.
+we split proofs into tactic units.
 
 \begin{definition}(Tactic unit)
-A tactic unit is an \sml expression of type tactics that does not contain a
+A tactic unit is an \sml expression of type \texttt{tactic} that does not contain a
 infix operator at its root.
 \end{definition}
 
 Because these tactic units are constructed from visual information present in
-the proof script, they often represent what a human consider to be one step of
+the tactic proof, they often represent what a human consider to be one step of
 the proof.
 
 To produce the final recording script, we encapsulate each tactic unit
@@ -1623,7 +1623,7 @@ number of entries in our database of tactics. The function
 \texttt{tactic\_of\_sml} interprets the \sml code \texttt{stac}. The tactic is
 then applied to the input goal to replicate the original behavior.
 After all modified theories are rebuild, each call to a wrapped tactic in a
-proof script is recorded as a pair containing its globalized code and its
+tactic proof is recorded as a pair containing its globalized code and its
 input goal.
 
 
