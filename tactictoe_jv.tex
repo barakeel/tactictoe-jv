@@ -301,7 +301,6 @@ more general and flexible tactics where tactic arguments are dynamically
 predicted.
 \item The internal ATP \metis is complemented
 by asynchronous calls to \eprover to help \tactictoe during proof search.
-\todoi{More on evaluation??}
 \item Evaluation of \tactictoe success rate relative to
 the length of the original proofs.
 \item User interaction is enhanced by the minimization and prettification
@@ -1720,9 +1719,13 @@ proofs. The quality of a proof in \holfour can be measured in terms of length,
 speed, readability and maintainability. We study these properties in three 
 examples taken from our full-scale experiment.
 
-In Example~\ref{ex:cs1}, 
-
-
+In Example~\ref{ex:cs1}, the uniqueness of the greatest common divisor is 
+proven. The human developer recognizes that it follows easily from two theorems.
+Our prover \tactictoe is not able to find that \texttt{DIVIDES\_ANTISYM} is 
+necessary directly from the shape of the original theorems so it rewrites the 
+goal and split the goal into multiple cases until goal obligations are similar 
+to \texttt{DIVIDES\_ANTISYM} to be predicted. As expected, \tactictoe's proof 
+also takes much longer to check.
 
 \begin{example}\label{ex:cs1} \texttt{IS\_GCD\_UNIQUE} in theory \texttt{gcd}
 \begin{lstlisting}[language=SMLSmall]
@@ -1749,10 +1752,16 @@ REPEAT Cases THENL
 \end{lstlisting}
 \end{example}
 
-TacicToe is resourceful. Changing the shape of the feature of the theorems
-to get better predictions.
+In Example~\ref{ex:cs2}, we try to prove that for any surjective function $f$ 
+from $s$ to $t$, there exists an injective function $g$ from $t$ to $s$ such 
+that $f o g$ is the identity function. The human proof is quite complicated. In 
+contrast, \tactictoe finds a proof that first expand the definition of 
+injectivity and surjectivity and then call \metis. However, the simpler script 
+does take much longer to execute due to the proof search happening inside 
+\metis.
 
-\begin{example} \texttt{SURJ\_INJ\_INV} in theory \texttt{pred\_set}
+\begin{example}\label{ex:cs2} \texttt{SURJ\_INJ\_INV} in theory 
+\texttt{pred\_set}
 \begin{lstlisting}[language=SMLSmall]
 !f s t. SURJ f s t ==> ?g. INJ g t s wedge !y. y IN t ==> (f (g y) = y)
 \end{lstlisting}
@@ -1775,7 +1784,22 @@ SRW_TAC [] [SURJ_DEF, INJ_DEF] THEN METIS_TAC []
 \end{lstlisting}
 \end{example}
 
-\begin{example} \texttt{LUPDATE\_APPEND2} in theory \texttt{rich\_list}
+In Example~\ref{ex:cs3}, we prove a theorem about lists which is domain where 
+\tactictoe excels compared to ATPs. 
+Given two list $l1$ and $l2$ where the length of $l1$ is less than a natural 
+number $n$, the theorem states that performing an update on the $n^{th}$ 
+element of the concatenation of $l1$ and $l2$ is the same as
+performing an update on the $m^{th}$ element of $l2$ where $m = n - 
+\mathit{length} l1$ followed by concatenation. Again, \tactictoe's proof is 
+much more readable starting with applying induction on $l$. It solves the base 
+case of the induction by rewriting and distinguish cases where $n=0$ or $n>0$ 
+in the inductive hypothesis. It finalizes the proof using the definition of 
+$LUPDATE$. Here, \tactictoe's proof is arguably smaller, faster and easier to 
+understand and maintain. Such proofs after an expert review could replace the 
+original human proofs in the \holfour repository.
+
+\begin{example}\label{ex:cs3} \texttt{LUPDATE\_APPEND2} in theory 
+\texttt{rich\_list}
 \begin{lstlisting}[language=SMLSmall]
 !l1 l2 n x. LENGTH l1 <= n ==>
   (LUPDATE x n (l1 ++ l2) = l1 ++ (LUPDATE x (n - LENGTH l1) l2))
@@ -1795,40 +1819,13 @@ Induct_on `l1` THENL [SRW_TAC [] [],
 \end{lstlisting}
 \end{example}
 
+In Example~\ref{ex:cs4}, we demonstrate the capabilities of 
+\tactictoe on a goal that did not have a proof in \holfour. 
 
-fs is a \sml binding for FULL\_SIMP\_TAC (srw\_ss ()) and rw is short for ??.
-If a discovered proof is short, fast, maintainable and
-understandable, it could replace its original in the \holfour standard library.
+\todoi{TG to RK: I am not sure what the count 
+constant is doing. Feel free to add more examples.}
 
-
-
-To conclude, we also demonstrate the capabilities of \tactictoe on a goal
-that did not have a proof in \holfour. 
-
-\todoi{commented out because the theorem exists in hoL4}.
-%The first goal, in Example~, states that the set of 
-%natural numbers is countable. \tactictoe starts from the definition of 
-%countability and injection then instantiate the result with the trivial 
-%injection and finalize the proof using the \metis. Here,
-%\tactictoe is able to find an instantiation for an existential quantifier 
-%because it is a common one. If a more complicated term was needed, \tactictoe 
-%would try to find an alternative proof that do not rely on an original
-%instantiation. This weakness could be mitigated by the introduction of term 
-%prediction in a future version of \tactictoe.
-
-%\begin{example}
-%\begin{lstlisting}[language=SMLSmall]
-%countable (UNIV:num set)
-%let fun RWTAC thms = SRW_TAC [] thms in
-%  RWTAC [countable_def, INJ_DEF] THEN Q.EXISTS_TAC `\\x.x` THEN METIS_TAC []
-%end
-%\end{lstlisting}
-%\end{example}
-
-In Example~, \todoi{TG to RK: I am not sure what the count 
-constant is doing.}
-
-\begin{example}
+\begin{example}\label{ex:cs4}
 \begin{lstlisting}[language=SMLSmall]
 count (n+m) DIFF count n = IMAGE ($+n) (count m)
 SRW_TAC [ARITH_ss] [fetch "pred_set" "EXTENSION", EQ_IMP_THM] THEN
