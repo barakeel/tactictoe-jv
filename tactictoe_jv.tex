@@ -1816,20 +1816,18 @@ Induct_on `l1` THENL [SRW_TAC [] [],
 \end{lstlisting}
 \end{example}
 
-In Example~\ref{ex:cs4}, we demonstrate the capabilities of
-\tactictoe on a goal that did not have a proof in \holfour.
-
-\todoi{TG to RK: I am not sure what the count
-constant is doing. Feel free to add more examples.}
+In Example~\ref{ex:cs4}, we demonstrate the capabilities of \tactictoe on a goal that was not already proved in the \holfour libraries: that the set of numbers $\{0,...,n+m-1\} \setminus \{0,...,n-1\}$ is the same as the set obtained by adding $n$ to everything in $\{0,...,m-1\}$.
 
 \begin{example}\label{ex:cs4}
 \begin{lstlisting}[language=SMLSmall]
-count (n+m) DIFF count n = IMAGE ($+n) (count m)
+count (n+m) DIFF count n = IMAGE ((+) n) (count m)
 SRW_TAC [ARITH_ss] [fetch "pred_set" "EXTENSION", EQ_IMP_THM] THEN
 Q.EXISTS_TAC `x - n` THEN
 SRW_TAC [ARITH_ss] []
 \end{lstlisting}
 \end{example}
+
+\todoi{TG to RK: Feel free to add more examples.}
 
 
 \section{Related Work}
