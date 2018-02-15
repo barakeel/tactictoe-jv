@@ -2,180 +2,144 @@
 Name: 0 MAPi_ACC_MAPi
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.180226
+Recording proof time: 0.230275
 
 Name: 1 MAPi_compute
-proof length: 4
-proof time: 0.0014
-Statistics
-  infstep : 16
-  nodes   : 10
-  maxdepth: 4
-Time: 0.936925
-  inferstep time: 0.805184
-  node_find time: 0.000242
-  node_crea time: 0.110444
-    pred time: 0.048261
-    thmpred time: 0.000003
-    mc time: 0.065457
-    inst time: 0.0
-Proof found: SRW_TAC [] [fetch "indexedLists" "MAPi_ACC_MAPi"] THEN REPEAT (AP_TERM_TAC ORELSE AP_THM_TAC) THEN SRW_TAC [] [combinTheory.o_DEF] THEN metisTools.METIS_TAC []
+hh_eval 472895957035517
+Time: 60.200259
+Proof status: Time Out
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.100716
+Recording proof time: 0.174558
 
 Name: 2 LT_SUC
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.098906
+Recording proof time: 0.093076
 
 Name: 3 MEM_MAPi
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.18721
+Recording proof time: 0.252606
 
 Name: 4 MAPi_CONG
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.045742
+Recording proof time: 0.052088
 
 Name: 5 MAPi_CONG'
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.074363
+Recording proof time: 0.08317
 
 Name: 6 LENGTH_MAPi
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.053985
+Recording proof time: 0.048868
 
 Name: 7 MAP_MAPi
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.038239
+Recording proof time: 0.045314
 
 Name: 8 EL_MAPi
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.096148
+Recording proof time: 0.069218
 
 Name: 9 MAPi_APPEND
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.259421
+Recording proof time: 0.130487
 
 Name: 10 MAPi_GENLIST
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.131414
+Recording proof time: 0.136941
 
 Name: 11 GENLIST_CONG
-proof length: 1
-proof time: 0.001141
-Statistics
-  infstep : 2
-  nodes   : 2
-  maxdepth: 1
-Time: 0.129323
-  inferstep time: 0.106973
-  node_find time: 0.000018
-  node_crea time: 0.017185
-    pred time: 0.005187
-    thmpred time: 0.000001
-    mc time: 0.015902
-    inst time: 0.0
-Proof found: SIMP_TAC bool_ss [(fetch "list" "LIST_EQ_REWRITE"), (fetch "list" "LENGTH_GENLIST"), (fetch "list" "EL_GENLIST")]
+hh_eval 472895957035518
+Time: 60.22569
+Proof status: Time Out
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069624
+Recording proof time: 0.164452
 
 Name: 12 FOLDR_MAPi
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031003
+Recording proof time: 0.040506
 
 Name: 13 FOLDRi_APPEND
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.407557
+Recording proof time: 0.40104
 
 Name: 14 FOLDRi_CONG
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.475984
+Recording proof time: 0.380275
 
 Name: 15 FOLDRi_CONG'
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.319079
+Recording proof time: 0.295393
 
 Name: 16 MEM_findi
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.092338
+Recording proof time: 0.06909
 
 Name: 17 findi_EL
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.278534
+Recording proof time: 0.26421
 
 Name: 18 EL_findi
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.097553
+Recording proof time: 0.074188
 
 Name: 19 delN_shortens
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.064638
+Recording proof time: 0.048535
 
 Name: 20 EL_delN_BEFORE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.156035
+Recording proof time: 0.141668
 
 Name: 21 EL_delN_AFTER
-proof length: 9
-proof time: 0.197102
-Statistics
-  infstep : 1339
-  nodes   : 339
-  maxdepth: 7
-Time: 35.148194
-  inferstep time: 25.048455
-  node_find time: 0.286893
-  node_crea time: 9.066257
-    pred time: 2.167488
-    thmpred time: 0.000104
-    mc time: 5.576318
-    inst time: 0.0
-Proof found: let fun dsimp thl = ASM_SIMP_TAC (srw_ss () ++ numSimps.ARITH_ss ++ boolSimps.DNF_ss) thl in Induct THENL [SRW_TAC [] [], dsimp [(fetch "indexedLists" "delN_def"), (fetch "indexedLists" "LT_SUC")] THEN map_every Q.X_GEN_TAC [`h`, `i`, `j`] THEN Cases_on `i` THENL [metisTools.METIS_TAC [DB.fetch "indexedLists" "delN_def", DB.fetch "indexedLists" "LT_SUC", DB.fetch "indexedLists" "EL_delN_BEFORE", listTheory.EL_restricted, listTheory.EL, numeralTheory.numeral_distrib, DB.fetch "indexedLists" "delN_shortens", arithmeticTheory.ADD_CLAUSES, listTheory.MEM_LUPDATE, arithmeticTheory.LESS_EQ_0, arithmeticTheory.LESS_MONO_MULT2, arithmeticTheory.MOD_PLUS, arithmeticTheory.MOD_TIMES2, listTheory.DROP_def, listTheory.TAKE_def, listTheory.EL_compute], SRW_TAC [] [arithmeticTheory.ADD_CLAUSES] THENL [metisTools.METIS_TAC [arithmeticTheory.ADD1, pred_setTheory.count_add1], dsimp []]]] end
+hh_eval 472895957035519
+Time: 60.293307
+Proof status: Time Out
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.410581
+Recording proof time: 0.390522
 
 Name: 22 fupdLast_EQ_NIL
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.111243
+Recording proof time: 0.109941
 
 Name: 23 fupdLast_FRONT_LAST
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.10802
+Recording proof time: 0.110591
 
 Name: 24 LIST_RELi_LENGTH
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.062355
+Recording proof time: 0.033575
 
 Name: 25 LIST_RELi_EL_EQN
 Org tac number: 24
 Original proof time: 0.0
-Recording proof time: 0.940638
+Recording proof time: 0.915632
 
 Name: 26 LIST_RELi_thm
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.294886
-Bad stac: 2
+Recording proof time: 0.353531
+Bad stac: 0

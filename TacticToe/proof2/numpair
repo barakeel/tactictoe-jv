@@ -2,203 +2,171 @@
 Name: 0 twotri_formula
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.098204
+Recording proof time: 0.067242
 
 Name: 1 tri_formula
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.118254
+Recording proof time: 0.082196
 
 Name: 2 tri_eq_0
-proof length: 3
-proof time: 0.001667
-Statistics
-  infstep : 27
-  nodes   : 12
-  maxdepth: 3
-Time: 1.011481
-  inferstep time: 0.724893
-  node_find time: 0.000582
-  node_crea time: 0.249672
-    pred time: 0.073701
-    thmpred time: 0.000002
-    mc time: 0.182392
-    inst time: 0.0
-Proof found: Induct_on `n` THENL [REWRITE_TAC [fetch "numpair" "tri_def_compute"], SRW_TAC [] [(fetch "numpair" "tri_def")]]
+hh_eval 90003076160915
+Time: 0.543764
+Reconstructed: 0.140371
+Proof found: METIS_TAC [fetch "numpair" "tri_def", ADD_CLAUSES, SUC_NOT, num_CASES]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.047816
+Recording proof time: 0.03576
 
 Name: 3 tri_LT_I
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.143464
+Recording proof time: 0.15178
 
 Name: 4 tri_LT
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.325507
+Recording proof time: 0.216606
 
 Name: 5 tri_11
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.114651
+Recording proof time: 0.134495
 
 Name: 6 tri_LE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003348
+Recording proof time: 0.002621
 
 Name: 7 invtri0_thm
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.259174
+Recording proof time: 0.218315
 
 Name: 8 SND_invtri0
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.190576
+Recording proof time: 0.125163
 
 Name: 9 invtri_lower
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.069097
+Recording proof time: 0.056025
 
 Name: 10 invtri_upper
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.134867
+Recording proof time: 0.087629
 
 Name: 11 invtri_linverse
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.040926
+Recording proof time: 0.03926
 
 Name: 12 invtri_unique
-Statistics
-  infstep : 1907
-  nodes   : 754
-  maxdepth: 8
-Time: 60.006169
-  inferstep time: 39.740413
-  node_find time: 0.866216
-  node_crea time: 19.304875
-    pred time: 3.560695
-    thmpred time: 0.000238
-    mc time: 11.922056
-    inst time: 0.0
+hh_eval 90003076160916
+Time: 60.229912
 Proof status: Time Out
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 1.367696
+Recording proof time: 0.529294
 
 Name: 13 invtri_linverse_r
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060735
+Recording proof time: 0.061103
 
 Name: 14 tri_le
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.061079
+Recording proof time: 0.029766
 
 Name: 15 invtri_le
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.174047
+Recording proof time: 0.08817
 
 Name: 16 nfst_npair
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.105026
+Recording proof time: 0.032887
 
 Name: 17 nsnd_npair
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.056422
+Recording proof time: 0.040721
 
 Name: 18 npair_cases
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.505244
+Recording proof time: 0.244335
 
 Name: 19 npair
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.054687
+Recording proof time: 0.062719
 
 Name: 20 npair_11
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.169372
+Recording proof time: 0.107505
 
 Name: 21 nfst_le
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.131171
+Recording proof time: 0.069038
 
 Name: 22 nsnd_le
-proof length: 2
-proof time: 0.001877
-Statistics
-  infstep : 6
-  nodes   : 5
-  maxdepth: 2
-Time: 0.279505
-  inferstep time: 0.230811
-  node_find time: 0.000075
-  node_crea time: 0.040137
-    pred time: 0.013126
-    thmpred time: 0.000001
-    mc time: 0.031433
-    inst time: 0.0
-Proof found: SRW_TAC [] [fetch "numpair" "nsnd_def", LESS_OR_EQ] THEN FULL_SIMP_TAC (srw_ss () ++ ARITH_ss) []
+hh_eval 90003076160917
+Time: 6.342604
+Reconstructed: 0.062384
+Proof found: METIS_TAC [LESS_EQ, SUB_EQ_0, ADD_SUB, ADD_CLAUSES, numTheory.NOT_SUC, fetch "numpair" "npair_def", fetch "numpair" "nsnd_npair", fetch "numpair" "npair_cases", MIN_LE, MIN_DEF]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012825
+Recording proof time: 0.002584
 
 Name: 23 ncons_11
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003019
+Recording proof time: 0.002671
 
 Name: 24 ncons_not_nnil
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008439
+Recording proof time: 0.00491
 
 Name: 25 nlistrec_thm
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.133893
+Recording proof time: 0.118184
 
 Name: 26 nlist_ind
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.539061
+Recording proof time: 0.434915
 
 Name: 27 nlen_thm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004233
+Recording proof time: 0.0052
 
 Name: 28 nmap_thm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005404
+Recording proof time: 0.004147
 
 Name: 29 nfoldl_thm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00433
+Recording proof time: 0.003632
 
 Name: 30 napp_thm
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002831
+Recording proof time: 0.015638
 
 Name: 31 nlist_cases
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.145765
-Bad stac: 2
+Recording proof time: 0.193295
+Bad stac: 0

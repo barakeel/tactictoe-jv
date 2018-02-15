@@ -1,526 +1,436 @@
 
 Name: 0 tactictoe_prove_0
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.003642
+Original proof time: 0.000632
 
 Name: 1 EQ_T_IMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011125
+Recording proof time: 0.002646
 
 Name: 2 IN_PAIR
-proof length: 1
-proof time: 0.001643
-Statistics
-  infstep : 2
-  nodes   : 2
-  maxdepth: 1
-Time: 0.125669
-  inferstep time: 0.108669
-  node_find time: 0.000026
-  node_crea time: 0.011906
-    pred time: 0.003295
-    thmpred time: 0.0
-    mc time: 0.011922
-    inst time: 0.0
-Proof found: SRW_TAC [] [fetch "util_prob" "pair_def", ELIM_UNCURRY]
+hh_eval 601026832896291
+Time: 60.208713
+Proof status: Time Out
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.042857
+Recording proof time: 0.044089
 
 Name: 3 PAIR_UNIV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.014486
+Recording proof time: 0.007136
 
 Name: 4 PAIRED_BETA_THM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057619
+Recording proof time: 0.051881
 
 Name: 5 MAX_LE_X
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003607
+Recording proof time: 0.006882
 
 Name: 6 X_LE_MAX
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006151
+Recording proof time: 0.008813
 
 Name: 7 TRANSFORM_2D_NUM
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.435502
+Recording proof time: 0.179442
 
 Name: 8 TRIANGLE_2D_NUM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030609
+Recording proof time: 0.038764
 
 Name: 9 lg_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005192
+Recording proof time: 0.003834
 
 Name: 10 logr_1
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004415
+Recording proof time: 0.005004
 
 Name: 11 lg_nonzero
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.196182
+Recording proof time: 0.20476
 
 Name: 12 lg_mul
-proof length: 3
-proof time: 0.014769
-Statistics
-  infstep : 65
-  nodes   : 28
-  maxdepth: 4
-Time: 1.726087
-  inferstep time: 1.183954
-  node_find time: 0.001513
-  node_crea time: 0.500264
-    pred time: 0.094814
-    thmpred time: 0.000005
-    mc time: 0.305511
-    inst time: 0.0
-Proof found: RW_TAC real_ss [(fetch "util_prob" "lg_def"), (fetch "util_prob" "logr_def")] THEN (MP_TAC o Q.SPECL [`2`, `1`]) LN_INJ THEN METIS_TAC [LN_MUL]
+hh_eval 601026832896292
+Time: 60.269256
+Proof status: Time Out
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012119
+Recording proof time: 0.009574
 
 Name: 13 logr_mul
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004805
+Recording proof time: 0.01788
 
 Name: 14 lg_2
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.200283
+Recording proof time: 0.220157
 
 Name: 15 lg_inv
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006879
+Recording proof time: 0.005226
 
 Name: 16 logr_inv
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005478
+Recording proof time: 0.005328
 
 Name: 17 logr_div
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012375
+Recording proof time: 0.012978
 
 Name: 18 neg_lg
-Original proof time: 0.003962
+Original proof time: 0.005423
 
 Name: 19 neg_logr
-Original proof time: 0.003196
+Original proof time: 0.004716
 
 Name: 20 lg_pow
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.290376
+Recording proof time: 0.245394
 
 Name: 21 NUM_2D_BIJ
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.344154
+Recording proof time: 0.353714
 
 Name: 22 NUM_2D_BIJ_INV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008896
+Recording proof time: 0.013201
 
 Name: 23 NUM_2D_BIJ_NZ
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.363738
+Recording proof time: 0.359028
 
 Name: 24 NUM_2D_BIJ_NZ_INV
-proof length: 1
-proof time: 0.011696
-Statistics
-  infstep : 1
-  nodes   : 2
-  maxdepth: 1
-Time: 0.062387
-  inferstep time: 0.042634
-  node_find time: 0.000019
-  node_crea time: 0.013973
-    pred time: 0.003521
-    thmpred time: 0.000001
-    mc time: 0.014306
-    inst time: 0.0
-Proof found: METIS_TAC [fetch "util_prob" "NUM_2D_BIJ_NZ", BIJ_SYM]
+hh_eval 601026832896293
+Time: 2.206968
+Reconstructed: 0.020009
+Proof found: METIS_TAC [BIJ_SYM, fetch "util_prob" "NUM_2D_BIJ_NZ"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008548
+Recording proof time: 0.017274
 
 Name: 25 NUM_2D_BIJ_NZ_ALT
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.620073
+Recording proof time: 0.775095
 
 Name: 26 NUM_2D_BIJ_NZ_ALT_INV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.020092
+Recording proof time: 0.011919
 
 Name: 27 NUM_2D_BIJ_NZ_ALT2
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.332761
+Recording proof time: 0.366335
 
 Name: 28 NUM_2D_BIJ_NZ_ALT2_INV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012452
+Recording proof time: 0.012071
 
 Name: 29 K_PARTIAL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002742
+Recording proof time: 0.003441
 
 Name: 30 IN_o
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004744
+Recording proof time: 0.008477
 
 Name: 31 IN_PROD_SETS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.198685
+Recording proof time: 0.21242
 
 Name: 32 NUM_2D_BIJ_SMALL_SQUARE
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.443184
+Recording proof time: 1.347133
 
 Name: 33 NUM_2D_BIJ_BIG_SQUARE
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.433283
+Recording proof time: 0.640591
 
 Name: 34 finite_enumeration_of_sets_has_max_non_empty
-Statistics
-  infstep : 3619
-  nodes   : 688
-  maxdepth: 7
-Time: 60.003715
-  inferstep time: 35.953792
-  node_find time: 1.374107
-  node_crea time: 22.604366
-    pred time: 3.493733
-    thmpred time: 0.000186
-    mc time: 9.70247
-    inst time: 0.0
+hh_eval 601026832896294
+Time: 60.281564
 Proof status: Time Out
 Org tac number: 38
 Original proof time: 0.0
-Recording proof time: 2.581358
+Recording proof time: 3.265345
 
 Name: 35 PREIMAGE_REAL_COMPL1
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.031422
+Recording proof time: 0.034161
 
 Name: 36 PREIMAGE_REAL_COMPL2
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.026329
+Recording proof time: 0.033962
 
 Name: 37 PREIMAGE_REAL_COMPL3
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034255
+Recording proof time: 0.034873
 
 Name: 38 PREIMAGE_REAL_COMPL4
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.035346
+Recording proof time: 0.028391
 
 Name: 39 GBIGUNION_IMAGE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005298
+Recording proof time: 0.004979
 
 Name: 40 LT_SUC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007001
+Recording proof time: 0.004765
 
 Name: 41 LE_SUC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006197
+Recording proof time: 0.00409
 
 Name: 42 HALF_POS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.021427
+Recording proof time: 0.009065
 
 Name: 43 HALF_LT_1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.049766
+Recording proof time: 0.060396
 
 Name: 44 HALF_CANCEL
-proof length: 1
-proof time: 0.001216
-Statistics
-  infstep : 2
-  nodes   : 2
-  maxdepth: 1
-Time: 0.151856
-  inferstep time: 0.120014
-  node_find time: 0.00003
-  node_crea time: 0.018138
-    pred time: 0.0043
-    thmpred time: 0.000001
-    mc time: 0.025911
-    inst time: 0.0
-Proof found: SRW_TAC [] []
+hh_eval 601026832896295
+Time: 3.526914
+Reconstructed: 0.12162
+Proof found: METIS_TAC [numeralTheory.numeral_distrib, REAL_ENTIRE, real_div, REAL_DIV_LMUL, REAL_THIRDS_BETWEEN, REAL_LT]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.07826
+Recording proof time: 0.374555
 
 Name: 45 X_HALF_HALF
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.083605
+Recording proof time: 0.0881
 
 Name: 46 ONE_MINUS_HALF
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.100376
+Recording proof time: 0.100842
 
 Name: 47 POW_HALF_POS
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.128718
+Recording proof time: 0.105129
 
 Name: 48 POW_HALF_SMALL
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.150586
+Recording proof time: 0.167405
 
 Name: 49 POW_HALF_MONO
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.713441
+Recording proof time: 0.59952
 
 Name: 50 REAL_LE_LT_MUL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.061413
+Recording proof time: 0.066112
 
 Name: 51 REAL_LT_LE_MUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007251
+Recording proof time: 0.003886
 
 Name: 52 REAL_MUL_IDEMPOT
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.308081
+Recording proof time: 0.241765
 
 Name: 53 REAL_SUP_LE_X
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.302212
+Recording proof time: 0.264977
 
 Name: 54 REAL_X_LE_SUP
-proof length: 1
-proof time: 0.000415
-Statistics
-  infstep : 664
-  nodes   : 154
-  maxdepth: 6
-Time: 13.326362
-  inferstep time: 9.618283
-  node_find time: 0.055261
-  node_crea time: 3.636078
-    pred time: 0.711834
-    thmpred time: 0.000048
-    mc time: 1.436905
-    inst time: 0.0
-Proof found: ASM_REWRITE_TAC [REAL_IMP_LE_SUP]
+hh_eval 601026832896296
+Time: 60.348093
+Proof status: Time Out
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.136763
+Recording proof time: 0.150761
 
 Name: 55 INF_DEF_ALT
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.150831
+Recording proof time: 0.148521
 
 Name: 56 LE_INF
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.210903
+Recording proof time: 0.207075
 
 Name: 57 INF_LE
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.201358
+Recording proof time: 0.192096
 
 Name: 58 INF_GREATER
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.262526
+Recording proof time: 0.215582
 
 Name: 59 INF_CLOSE
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.178232
+Recording proof time: 0.150777
 
 Name: 60 INCREASING_SEQ
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.72787
+Recording proof time: 0.681321
 
 Name: 61 SEQ_SANDWICH
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.462714
+Recording proof time: 0.391076
 
 Name: 62 SER_POS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.06094
+Recording proof time: 0.058013
 
 Name: 63 SER_POS_MONO
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.370438
+Recording proof time: 0.302179
 
 Name: 64 POS_SUMMABLE
-Statistics
-  infstep : 5199
-  nodes   : 903
-  maxdepth: 8
-Time: 60.014152
-  inferstep time: 34.583392
-  node_find time: 2.142714
-  node_crea time: 23.228118
-    pred time: 3.186018
-    thmpred time: 0.000247
-    mc time: 14.526401
-    inst time: 0.0
+hh_eval 601026832896297
+Time: 60.436012
 Proof status: Time Out
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.228286
+Recording proof time: 0.33726
 
 Name: 65 SUMMABLE_LE
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.6843
+Recording proof time: 0.838871
 
 Name: 66 SUMS_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013702
+Recording proof time: 0.012526
 
 Name: 67 SUMINF_POS
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.178489
+Recording proof time: 0.2236
 
 Name: 68 SUM_PICK
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.234698
+Recording proof time: 0.297031
 
 Name: 69 SUM_LT
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.497083
+Recording proof time: 0.608553
 
 Name: 70 SUM_CONST_R
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.09986
+Recording proof time: 0.093314
 
 Name: 71 SUMS_ZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010393
+Recording proof time: 0.007887
 
 Name: 72 SUMINF_ADD
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.208941
+Recording proof time: 0.193232
 
 Name: 73 SUMINF_2D
 Org tac number: 236
 Original proof time: 0.0
-Recording proof time: 15.93378
+Recording proof time: 16.595713
 
 Name: 74 POW_HALF_SER
-Statistics
-  infstep : 3463
-  nodes   : 977
-  maxdepth: 8
-Time: 60.014765
-  inferstep time: 25.318829
-  node_find time: 1.537904
-  node_crea time: 32.862457
-    pred time: 4.73897
-    thmpred time: 0.000185
-    mc time: 22.680107
-    inst time: 0.0
+hh_eval 601026832896298
+Time: 60.443871
 Proof status: Time Out
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.285298
+Recording proof time: 0.39991
 
 Name: 75 SER_POS_COMPARE
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.207328
+Recording proof time: 0.482348
 
 Name: 76 MINIMAL_EXISTS0
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.270569
+Recording proof time: 0.589022
 
 Name: 77 MINIMAL_EXISTS
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.061711
+Recording proof time: 0.437003
 
 Name: 78 MINIMAL_EXISTS_IMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009219
+Recording proof time: 0.010508
 
 Name: 79 MINIMAL_EQ_IMP
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.263552
+Recording proof time: 0.393424
 
 Name: 80 MINIMAL_SUC
 Org tac number: 21
 Original proof time: 0.0
-Recording proof time: 0.768391
+Recording proof time: 0.923321
 
 Name: 81 MINIMAL_EQ
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.260336
+Recording proof time: 0.311224
 
 Name: 82 MINIMAL_SUC_IMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010157
-Bad stac: 1
+Recording proof time: 0.007601
+Bad stac: 0

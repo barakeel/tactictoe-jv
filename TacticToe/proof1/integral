@@ -1,494 +1,410 @@
 
 Name: 0 SUM_SPLIT
-Original proof time: 0.002955
+Original proof time: 0.003521
 
 Name: 1 tactictoe_prove_1
-Org tac number: 59
-Original proof time: 0.0
-Recording proof time: 1.843576
+Original proof time: 0.001684
 
 Name: 2 tactictoe_prove_2
-Org tac number: 125
-Original proof time: 0.0
-Recording proof time: 4.157302
+Original proof time: 0.002664
 
 Name: 3 DIVISION_APPEND_EXPLICIT
-Original proof time: 0.044087
+Original proof time: 0.032342
 
 Name: 4 DIVISION_APPEND_STRONG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.175213
+Recording proof time: 0.147342
 
 Name: 5 DIVISION_APPEND
-proof length: 1
-proof time: 0.000282
-Statistics
-  infstep : 126
-  nodes   : 21
-  maxdepth: 3
-Time: 1.776052
-  inferstep time: 1.199245
-  node_find time: 0.002182
-  node_crea time: 0.560214
-    pred time: 0.107286
-    thmpred time: 0.000006
-    mc time: 0.29195
-    inst time: 0.0
-Proof found: REWRITE_TAC [DIVISION_APPEND]
+hh_eval 724993467297326
+Time: 60.204928
+Proof status: Time Out
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.024358
+Recording proof time: 0.135148
 
 Name: 6 INTEGRABLE_DINT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.167908
+Recording proof time: 0.087953
 
 Name: 7 DIVISION_BOUNDS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008607
+Recording proof time: 0.008175
 
 Name: 8 TDIV_BOUNDS
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.043148
+Recording proof time: 0.04546
 
 Name: 9 TDIV_LE
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015249
+Recording proof time: 0.013638
 
 Name: 10 DINT_WRONG
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.115841
+Recording proof time: 0.125344
 
 Name: 11 DINT_INTEGRAL
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.082902
+Recording proof time: 0.086775
 
 Name: 12 DINT_NEG
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.103675
+Recording proof time: 0.111798
 
 Name: 13 DINT_0
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.256861
+Recording proof time: 0.252965
 
 Name: 14 DINT_ADD
 Org tac number: 27
 Original proof time: 0.0
-Recording proof time: 0.912285
+Recording proof time: 0.746268
 
 Name: 15 DINT_SUB
-proof length: 2
-proof time: 0.002652
-Statistics
-  infstep : 230
-  nodes   : 66
-  maxdepth: 6
-Time: 5.871897
-  inferstep time: 3.927923
-  node_find time: 0.009665
-  node_crea time: 1.897265
-    pred time: 0.414688
-    thmpred time: 0.000016
-    mc time: 1.115691
-    inst time: 0.0
-Proof found: Ho_Rewrite.REWRITE_TAC [(fetch "real" "real_sub")] THEN SRW_TAC [] [fetch "integral" "DINT_ADD", fetch "integral" "DINT_NEG"]
+hh_eval 724993467297327
+Time: 60.258708
+Proof status: Time Out
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007075
+Recording proof time: 0.111533
 
 Name: 16 DSIZE_EQ
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.168322
+Recording proof time: 0.177003
 
 Name: 17 DINT_CONST
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.73455
+Recording proof time: 0.488327
 
 Name: 18 DINT_CMUL
-Original proof time: 0.014881
+Original proof time: 0.017015
 
 Name: 19 DINT_LINEAR
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.117669
+Recording proof time: 0.109205
 
 Name: 20 LT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012601
+Recording proof time: 0.011109
 
 Name: 21 LE_0
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030575
+Recording proof time: 0.024112
 
 Name: 22 LT_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004539
+Recording proof time: 0.005892
 
 Name: 23 EQ_SUC
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006924
+Recording proof time: 0.00682
 
 Name: 24 LE_LT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.068933
+Recording proof time: 0.077288
 
 Name: 25 LT_LE
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.171947
+Recording proof time: 0.171765
 
 Name: 26 REAL_LT_MIN
-proof length: 5
-proof time: 0.008134
-Statistics
-  infstep : 574
-  nodes   : 114
-  maxdepth: 6
-Time: 7.278968
-  inferstep time: 5.286284
-  node_find time: 0.035542
-  node_crea time: 1.845729
-    pred time: 0.40842
-    thmpred time: 0.000027
-    mc time: 0.995714
-    inst time: 0.0
-Proof found: RW_TAC bool_ss [] THEN MP_TAC (Q.SPECL [`x`, `y`] (fetch "real" "REAL_LE_TOTAL")) THEN RW_TAC bool_ss [(fetch "real" "min_def")] THEN PROVE_TAC [(fetch "real" "REAL_LTE_TRANS")]
+hh_eval 724993467297328
+Time: 1.486118
+Reconstructed: 0.026688
+Proof found: METIS_TAC [REAL_NOT_LT, REAL_MIN_LE]
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.085392
+Recording proof time: 0.077464
 
 Name: 27 REAL_LE_RMUL1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.12528
+Recording proof time: 0.047825
 
 Name: 28 REAL_LE_LMUL1
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.063186
+Recording proof time: 0.055657
 
 Name: 29 INTEGRAL_LE
 Org tac number: 51
 Original proof time: 0.0
-Recording proof time: 1.610519
+Recording proof time: 1.453177
 
 Name: 30 DINT_LE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.119046
+Recording proof time: 0.066585
 
 Name: 31 DINT_TRIANGLE
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.25416
+Recording proof time: 0.231321
 
 Name: 32 DINT_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.047478
+Recording proof time: 0.05322
 
 Name: 33 INTEGRAL_EQ
-Original proof time: 0.03292
+Original proof time: 0.030774
 
 Name: 34 INTEGRATION_BY_PARTS
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.140138
+Recording proof time: 0.120791
 
 Name: 35 DIVISION_LE_SUC
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032434
+Recording proof time: 0.041106
 
 Name: 36 DIVISION_MONO_LE
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.247292
+Recording proof time: 0.273514
 
 Name: 37 DIVISION_MONO_LE_SUC
-proof length: 1
-proof time: 0.004742
-Statistics
-  infstep : 1
-  nodes   : 2
-  maxdepth: 1
-Time: 0.093921
-  inferstep time: 0.05496
-  node_find time: 0.000017
-  node_crea time: 0.018063
-    pred time: 0.004685
-    thmpred time: 0.0
-    mc time: 0.032344
-    inst time: 0.0
+hh_eval 724993467297329
+Time: 4.23719
+Reconstructed: 0.007027
 Proof found: METIS_TAC [fetch "integral" "DIVISION_LE_SUC"]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011238
+Recording proof time: 0.01165
 
 Name: 38 DIVISION_DSIZE_LE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.033826
+Recording proof time: 0.027882
 
 Name: 39 DIVISION_DSIZE_GE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.055983
+Recording proof time: 0.032279
 
 Name: 40 DIVISION_DSIZE_EQ
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.034043
+Recording proof time: 0.037045
 
 Name: 41 DIVISION_DSIZE_EQ_ALT
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.333865
+Recording proof time: 0.268098
 
 Name: 42 num_MAX
-Original proof time: 0.001203
+Original proof time: 0.001051
 
 Name: 43 DIVISION_INTERMEDIATE
 Org tac number: 38
 Original proof time: 0.0
-Recording proof time: 1.520245
+Recording proof time: 1.124169
 
 Name: 44 DINT_COMBINE
-Original proof time: 0.640002
+Original proof time: 0.523862
 
 Name: 45 SUM_EQ_0
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.245713
+Recording proof time: 0.266265
 
 Name: 46 DINT_DELTA_LEFT
 Org tac number: 49
 Original proof time: 0.0
-Recording proof time: 1.494066
+Recording proof time: 1.358295
 
 Name: 47 DINT_DELTA_RIGHT
 Org tac number: 52
 Original proof time: 0.0
-Recording proof time: 1.609311
+Recording proof time: 1.800318
 
 Name: 48 DINT_DELTA
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.391348
+Recording proof time: 0.336476
 
 Name: 49 DINT_POINT_SPIKE
-Statistics
-  infstep : 2655
-  nodes   : 574
-  maxdepth: 8
-Time: 60.006003
-  inferstep time: 35.409441
-  node_find time: 0.733283
-  node_crea time: 23.826023
-    pred time: 4.938495
-    thmpred time: 0.000162
-    mc time: 14.094003
-    inst time: 0.0
+hh_eval 724993467297330
+Time: 60.430754
 Proof status: Time Out
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 0.469672
+Recording proof time: 0.489709
 
 Name: 50 DINT_FINITE_SPIKE
-Original proof time: 0.010515
+Original proof time: 0.022123
 
 Name: 51 REAL_POW_LBOUND
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.344313
+Recording proof time: 0.304761
 
 Name: 52 REAL_ARCH_POW
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.299773
+Recording proof time: 0.291606
 
 Name: 53 REAL_ARCH_POW2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005467
+Recording proof time: 0.012947
 
 Name: 54 REAL_POW_LE_1
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.258719
+Recording proof time: 0.268447
 
 Name: 55 REAL_POW_MONO
 Org tac number: 15
 Original proof time: 0.0
-Recording proof time: 0.433139
+Recording proof time: 0.380071
 
 Name: 56 REAL_LE_INV2
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.223231
+Recording proof time: 0.20368
 
 Name: 57 GAUGE_MIN_FINITE
 Org tac number: 19
 Original proof time: 0.0
-Recording proof time: 0.63694
+Recording proof time: 0.498637
 
 Name: 58 INTEGRABLE_CAUCHY
-Original proof time: 0.046117
+Original proof time: 0.059891
 
 Name: 59 SUM_DIFFS
-Original proof time: 0.0036
+Original proof time: 0.003719
 
 Name: 60 RSUM_BOUND
 Org tac number: 28
 Original proof time: 0.0
-Recording proof time: 0.795571
+Recording proof time: 1.079268
 
 Name: 61 RSUM_DIFF_BOUND
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.097419
+Recording proof time: 0.056934
 
 Name: 62 INTEGRABLE_LIMIT
-Original proof time: 0.063846
+Original proof time: 0.052336
 
 Name: 63 INTEGRABLE_CONST
-proof length: 1
-proof time: 0.011902
-Statistics
-  infstep : 1
-  nodes   : 2
-  maxdepth: 1
-Time: 0.097482
-  inferstep time: 0.074091
-  node_find time: 0.000018
-  node_crea time: 0.014348
-    pred time: 0.003718
-    thmpred time: 0.000001
-    mc time: 0.018015
-    inst time: 0.0
-Proof found: METIS_TAC [fetch "integral" "integrable_def", fetch "integral" "DINT_CONST"]
+hh_eval 724993467297331
+Time: 60.444652
+Proof status: Time Out
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.20049
+Recording proof time: 0.30689
 
 Name: 64 INTEGRABLE_ADD
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.178361
+Recording proof time: 0.354267
 
 Name: 65 INTEGRABLE_CMUL
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.235956
+Recording proof time: 0.260033
 
 Name: 66 INTEGRABLE_COMBINE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.043263
+Recording proof time: 0.066334
 
 Name: 67 INTEGRABLE_POINT_SPIKE
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.052776
+Recording proof time: 0.068894
 
 Name: 68 SUP_INTERVAL
 Org tac number: 17
 Original proof time: 0.0
-Recording proof time: 0.492012
+Recording proof time: 0.74241
 
 Name: 69 BOLZANO_LEMMA_ALT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.093637
+Recording proof time: 0.092883
 
 Name: 70 CONT_UNIFORM
-Original proof time: 0.142067
+Original proof time: 0.133252
 
 Name: 71 INTEGRABLE_CONTINUOUS
-Original proof time: 0.022439
+Original proof time: 0.027878
 
 Name: 72 INTEGRABLE_SPLIT_SIDES
 Org tac number: 13
 Original proof time: 0.0
-Recording proof time: 0.443671
+Recording proof time: 1.363206
 
 Name: 73 INTEGRABLE_SUBINTERVAL_LEFT
-Original proof time: 0.012095
+Original proof time: 0.019904
 
 Name: 74 INTEGRABLE_SUBINTERVAL_RIGHT
-Original proof time: 0.01037
+Original proof time: 0.009333
 
 Name: 75 INTEGRABLE_SUBINTERVAL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007934
+Recording proof time: 0.006451
 
 Name: 76 INTEGRAL_0
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060718
+Recording proof time: 0.057745
 
 Name: 77 INTEGRAL_CONST
-proof length: 1
-proof time: 0.03654
-Statistics
-  infstep : 1
-  nodes   : 2
-  maxdepth: 1
-Time: 0.130947
-  inferstep time: 0.0957
-  node_find time: 0.000014
-  node_crea time: 0.024167
-    pred time: 0.006717
-    thmpred time: 0.0
-    mc time: 0.02615
-    inst time: 0.0
-Proof found: METIS_TAC [fetch "integral" "DINT_INTEGRAL", fetch "integral" "INTEGRABLE_DINT", fetch "integral" "DINT_CONST", fetch "integral" "RSUM_DIFF_BOUND", BOLZANO_LEMMA]
+hh_eval 724993467297332
+Time: 60.418964
+Proof status: Time Out
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.065569
+Recording proof time: 0.113659
 
 Name: 78 INTEGRAL_CMUL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.056544
+Recording proof time: 0.058176
 
 Name: 79 INTEGRAL_ADD
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.054552
+Recording proof time: 0.057356
 
 Name: 80 INTEGRAL_SUB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.067192
+Recording proof time: 0.055843
 
 Name: 81 INTEGRAL_BY_PARTS
-Original proof time: 0.004619
+Original proof time: 0.008589
 
 Name: 82 INTEGRAL_COMBINE
 Org tac number: 28
 Original proof time: 0.0
-Recording proof time: 0.788447
+Recording proof time: 1.282084
 
 Name: 83 INTEGRAL_MVT1
 Org tac number: 52
 Original proof time: 0.0
-Recording proof time: 1.536355
+Recording proof time: 1.455476
 Bad stac: 0

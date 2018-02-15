@@ -2,726 +2,585 @@
 Name: 0 LESS_MULT_MONO2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.13925
+Recording proof time: 0.08116
 
 Name: 1 LOG2_TWOEXP
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.057597
+Recording proof time: 0.057161
 
 Name: 2 ONE_LE_TWOEXP
-proof length: 4
-proof time: 0.002463
-Statistics
-  infstep : 357
-  nodes   : 111
-  maxdepth: 5
-Time: 5.79518
-  inferstep time: 4.275306
-  node_find time: 0.017191
-  node_crea time: 1.378642
-    pred time: 0.268746
-    thmpred time: 0.000019
-    mc time: 1.106326
-    inst time: 0.0
-Proof found: REWRITE_TAC [(fetch "arithmetic" "ONE")] THEN STRIP_TAC THEN MATCH_MP_TAC (fetch "arithmetic" "LESS_OR") THEN METIS_TAC [fetch "bit" "ZERO_LT_TWOEXP"]
+hh_eval 6806294
+Time: 0.319693
+Reconstructed: 0.055355
+Proof found: METIS_TAC [numeralTheory.numeral_distrib, fetch "bit" "ZERO_LT_TWOEXP", LESS_EQ]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006552
+Recording proof time: 0.005829
 
 Name: 3 TWOEXP_MONO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.001923
+Recording proof time: 0.00226
 
 Name: 4 TWOEXP_MONO2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.013971
+Recording proof time: 0.006909
 
 Name: 5 EXP_SUB_LESS_EQ
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004988
+Recording proof time: 0.005183
 
 Name: 6 MOD_LEQ
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.165169
+Recording proof time: 0.109763
 
 Name: 7 BITSLT_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004285
+Recording proof time: 0.006777
 
 Name: 8 BITSLT_THM2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.180873
+Recording proof time: 0.163241
 
 Name: 9 tactictoe_prove_9
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.060688
+Original proof time: 0.001795
 
 Name: 10 tactictoe_prove_10
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.004977
+Original proof time: 0.002185
 
 Name: 11 tactictoe_prove_11
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.006374
+Original proof time: 0.002228
 
 Name: 12 tactictoe_prove_12
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.076295
+Original proof time: 0.00363
 
 Name: 13 tactictoe_prove_13
-Original proof time: 0.002303
+Original proof time: 0.004552
 
 Name: 14 BITS_THM2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003235
+Recording proof time: 0.004948
 
 Name: 15 BITS_LEQ
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.457451
+Recording proof time: 0.202394
 
 Name: 16 tactictoe_prove_16
-Original proof time: 0.030344
+Original proof time: 0.028381
 
 Name: 17 BITS_COMP_THM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.113191
+Recording proof time: 0.056989
 
 Name: 18 BITS_DIV_THM
-proof length: 2
-proof time: 0.002737
-Statistics
-  infstep : 10
-  nodes   : 3
-  maxdepth: 2
-Time: 0.316805
-  inferstep time: 0.248278
-  node_find time: 0.000128
-  node_crea time: 0.045895
-    pred time: 0.009579
-    thmpred time: 0.000001
-    mc time: 0.055894
-    inst time: 0.0
-Proof found: RW_TAC bool_ss [(fetch "bit" "BITS_THM"), (local_tag DIV_MOD_MOD_DIV3)] THEN SIMP_TAC bool_ss [DIV_DIV_DIV_MULT, (fetch "bit" "ZERO_LT_TWOEXP"), GSYM EXP_ADD]
+hh_eval 6806295
+Time: 47.793009
+Reconstructed: 0.038441
+Proof found: METIS_TAC [fetch "bit" "BITS_THM2", fetch "bit" "ZERO_LT_TWOEXP", DIV_DIV_DIV_MULT, EXP_ADD]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006377
+Recording proof time: 0.006283
 
 Name: 19 BITS_LT_HIGH
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005176
+Recording proof time: 0.137209
 
 Name: 20 BITS_ZERO
-Original proof time: 0.001993
+Original proof time: 0.002186
 
 Name: 21 BITS_ZERO2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003202
+Recording proof time: 0.00394
 
 Name: 22 BITS_ZERO4
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.012545
+Recording proof time: 0.011027
 
 Name: 23 BITS_ZEROL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.017897
+Recording proof time: 0.004664
 
 Name: 24 BITS_LOG2_ZERO_ID
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.052842
+Recording proof time: 0.128518
 
 Name: 25 BITS_LT_LOW
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.421188
+Recording proof time: 0.584092
 
 Name: 26 BIT_ZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004611
+Recording proof time: 0.008384
 
 Name: 27 BIT_B
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008139
+Recording proof time: 0.0083
 
 Name: 28 BIT_TWO_POW
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.325478
+Recording proof time: 0.615213
 
 Name: 29 BITS_COMP_THM2
-Original proof time: 0.043223
+Original proof time: 0.030134
 
 Name: 30 NOT_MOD2_LEM
-proof length: 1
-proof time: 0.003287
-Statistics
-  infstep : 2
-  nodes   : 2
-  maxdepth: 1
-Time: 0.155703
-  inferstep time: 0.113393
-  node_find time: 0.000014
-  node_crea time: 0.030719
-    pred time: 0.005508
-    thmpred time: 0.0
-    mc time: 0.0354
-    inst time: 0.0
-Proof found: PROVE_TAC [(fetch "arithmetic" "MOD_2"), (fetch "arithmetic" "SUC_NOT"), (fetch "arithmetic" "ONE")]
+hh_eval 6806296
+Time: 0.956357
+Reconstructed: 0.035941
+Proof found: METIS_TAC [ADD1, ADD_CLAUSES, MOD_2, SUC_NOT]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006033
+Recording proof time: 0.005444
 
 Name: 31 NOT_MOD2_LEM2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005506
+Recording proof time: 0.004679
 
 Name: 32 ODD_MOD2_LEM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.0037
+Recording proof time: 0.006946
 
 Name: 33 DIV_MULT_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004987
+Recording proof time: 0.004101
 
 Name: 34 LESS_EQ_EXP_MULT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.109615
+Recording proof time: 0.072682
 
 Name: 35 tactictoe_prove_35
-Org tac number: 4
-Original proof time: 0.0
-Recording proof time: 0.08815
+Original proof time: 0.002303
 
 Name: 36 tactictoe_prove_36
-Original proof time: 0.026475
+Original proof time: 0.029862
 
 Name: 37 tactictoe_prove_37
-Original proof time: 0.003996
+Original proof time: 0.003752
 
 Name: 38 SLICE_THM
-Original proof time: 0.005998
+Original proof time: 0.007692
 
 Name: 39 SLICELT_THM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.07106
+Recording proof time: 0.067181
 
 Name: 40 BITS_SLICE_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003874
+Recording proof time: 0.00655
 
 Name: 41 BITS_SLICE_THM2
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.508809
+Recording proof time: 0.314691
 
 Name: 42 MOD_2EXP_MONO
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.060049
+Recording proof time: 0.110242
 
 Name: 43 SLICE_COMP_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007427
+Recording proof time: 0.008014
 
 Name: 44 SLICE_COMP_RWT
-Statistics
-  infstep : 2537
-  nodes   : 779
-  maxdepth: 8
-Time: 60.022016
-  inferstep time: 42.796511
-  node_find time: 0.8752
-  node_crea time: 16.269313
-    pred time: 2.690325
-    thmpred time: 0.000123
-    mc time: 10.504478
-    inst time: 0.0
+hh_eval 6806297
+Time: 60.347327
 Proof status: Time Out
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005631
+Recording proof time: 0.015568
 
 Name: 45 SLICE_ZERO
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.069559
+Recording proof time: 0.006075
 
 Name: 46 BITS_SUM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006749
+Recording proof time: 0.006706
 
 Name: 47 BITS_SUM2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005083
+Recording proof time: 0.005349
 
 Name: 48 tactictoe_prove_48
-Org tac number: 4
-Original proof time: 0.0
-Recording proof time: 0.110386
+Original proof time: 0.011791
 
 Name: 49 SLICE_COMP_THM2
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.495836
+Recording proof time: 0.295002
 
 Name: 50 BITS_SUM3
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005087
+Recording proof time: 0.008802
 
 Name: 51 BITS_MUL
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007873
+Recording proof time: 0.014658
 
 Name: 52 tactictoe_prove_52
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.003197
+Original proof time: 0.001585
 
 Name: 53 tactictoe_prove_53
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.005894
+Original proof time: 0.000789
 
 Name: 54 tactictoe_prove_54
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.104431
+Original proof time: 0.001445
 
 Name: 55 BIT_COMP_THM3
-Original proof time: 0.007878
+Original proof time: 0.026385
 
 Name: 56 NOT_BIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00762
+Recording proof time: 0.016795
 
 Name: 57 NOT_BITS
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00644
+Recording proof time: 0.011148
 
 Name: 58 NOT_BITS2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004234
+Recording proof time: 0.008704
 
 Name: 59 BIT_SLICE
-proof length: 4
-proof time: 0.073851
-Statistics
-  infstep : 4957
-  nodes   : 848
-  maxdepth: 8
-Time: 52.447413
-  inferstep time: 39.783258
-  node_find time: 1.671953
-  node_crea time: 10.917262
-    pred time: 2.159413
-    thmpred time: 0.000146
-    mc time: 6.319538
-    inst time: 0.0
-Proof found: SRW_TAC [] [fetch "bit" "SLICE_THM", fetch "bit" "BIT_def"] THEN EQ_TAC THENL [METIS_TAC [fetch "bit" "NOT_BITS2"], METIS_TAC [fetch "bit" "NOT_BITS", fetch "bit" "NOT_BIT", fetch "bit" "BITS_LT_HIGH"]]
+hh_eval 6806298
+Time: 60.465268
+Proof status: Time Out
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.190334
+Recording proof time: 0.252104
 
 Name: 60 BIT_SLICE_LEM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.132541
+Recording proof time: 0.046876
 
 Name: 61 BIT_SLICE_THM2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004624
+Recording proof time: 0.008431
 
 Name: 62 BIT_SLICE_THM3
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.0047
+Recording proof time: 0.009391
 
 Name: 63 BIT_SLICE_THM4
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.551541
+Recording proof time: 0.553446
 
 Name: 64 tactictoe_prove_64
-Original proof time: 0.003495
+Original proof time: 0.00409
 
 Name: 65 SBIT_DIV
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010789
+Recording proof time: 0.010285
 
 Name: 66 BITS_SUC
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.280286
+Recording proof time: 0.272188
 
 Name: 67 BITS_SUC_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006517
+Recording proof time: 0.010637
 
 Name: 68 tactictoe_prove_68
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.00912
+Original proof time: 0.003616
 
 Name: 69 tactictoe_prove_69
-Original proof time: 0.007262
+Original proof time: 0.006171
 
 Name: 70 BIT_BITS_THM
-Original proof time: 0.028077
+Original proof time: 0.031408
 
 Name: 71 BITS_ZERO5
-Original proof time: 0.003923
+Original proof time: 0.001158
 
 Name: 72 BIT0_ODD
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.040152
+Recording proof time: 0.034048
 
 Name: 73 BITV_THM
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.048364
+Recording proof time: 0.080336
 
 Name: 74 ADD_BITS_SUC
-Original proof time: 0.173524
+Original proof time: 0.217502
 
 Name: 75 ADD_BIT_SUC
-Statistics
-  infstep : 4956
-  nodes   : 1058
-  maxdepth: 9
-Time: 60.004526
-  inferstep time: 36.542204
-  node_find time: 2.156369
-  node_crea time: 21.253475
-    pred time: 2.573044
-    thmpred time: 0.000144
-    mc time: 13.015542
-    inst time: 0.0
+hh_eval 6806299
+Time: 60.46777
 Proof status: Time Out
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.150785
+Recording proof time: 0.263099
 
 Name: 76 BITWISE_LT_2EXP
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.062243
+Recording proof time: 0.072643
 
 Name: 77 tactictoe_prove_77
-Org tac number: 4
-Original proof time: 0.0
-Recording proof time: 0.202716
+Original proof time: 0.00619
 
 Name: 78 tactictoe_prove_78
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.110713
+Original proof time: 0.006919
 
 Name: 79 BITWISE_THM
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 1.173436
+Recording proof time: 0.59213
 
 Name: 80 BITWISE_COR
-Original proof time: 0.000381
+Original proof time: 0.000851
 
 Name: 81 BITWISE_NOT_COR
-Original proof time: 0.000677
+Original proof time: 0.00093
 
 Name: 82 BITWISE_BITS
-Original proof time: 0.027503
+Original proof time: 0.026853
 
 Name: 83 NOT_BIT_GT_TWOEXP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00909
+Recording proof time: 0.00928
 
 Name: 84 BIT_IMP_GE_TWOEXP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.017027
+Recording proof time: 0.015085
 
 Name: 85 tactictoe_prove_85
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.005777
+Original proof time: 0.000982
 
 Name: 86 tactictoe_prove_86
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.006606
+Original proof time: 0.002448
 
 Name: 87 BITWISE_ONE_COMP_LEM
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 0.922454
+Recording proof time: 0.572002
 
 Name: 88 tactictoe_prove_88
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.003444
+Original proof time: 0.000831
 
 Name: 89 tactictoe_prove_89
-Org tac number: 6
-Original proof time: 0.0
-Recording proof time: 0.464409
+Original proof time: 0.050314
 
 Name: 90 BIT_COMPLEMENT
 Org tac number: 12
 Original proof time: 0.0
-Recording proof time: 1.272101
+Recording proof time: 0.502136
 
 Name: 91 BIT_OF_BITS_THM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008622
+Recording proof time: 0.009542
 
 Name: 92 BIT_SHIFT_THM
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.147077
+Recording proof time: 0.158424
 
 Name: 93 BIT_SHIFT_THM2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.008893
+Recording proof time: 0.014179
 
 Name: 94 BIT_SHIFT_THM3
-Statistics
-  infstep : 5522
-  nodes   : 1016
-  maxdepth: 8
-Time: 60.012572
-  inferstep time: 34.295756
-  node_find time: 2.418133
-  node_crea time: 23.184533
-    pred time: 2.884243
-    thmpred time: 0.000138
-    mc time: 16.777634
-    inst time: 0.0
+hh_eval 6806300
+Time: 60.535591
 Proof status: Time Out
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.718757
+Recording proof time: 0.267974
 
 Name: 95 BIT_OF_BITS_THM2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007603
+Recording proof time: 0.013733
 
 Name: 96 BIT_DIV2
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010523
+Recording proof time: 0.014228
 
 Name: 97 BIT_SHIFT_THM4
-Original proof time: 0.002419
+Original proof time: 0.002765
 
 Name: 98 tactictoe_prove_98
-Org tac number: 7
-Original proof time: 0.0
-Recording proof time: 0.262031
+Original proof time: 0.01723
 
 Name: 99 DIV_LT
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.939408
+Recording proof time: 0.268258
 
 Name: 100 MOD_ZERO_GT
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.437237
+Recording proof time: 0.040061
 
 Name: 101 DIV_GT0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.015622
+Recording proof time: 0.004326
 
 Name: 102 DIV_SUB1
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.966237
+Recording proof time: 0.543572
 
 Name: 103 tactictoe_prove_103
-Org tac number: 6
-Original proof time: 0.0
-Recording proof time: 0.49105
+Original proof time: 0.022787
 
 Name: 104 BIT_EXP_SUB1
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.680396
+Recording proof time: 0.426227
 
 Name: 105 BIT_SHIFT_THM5
-Original proof time: 0.179311
+Original proof time: 0.143835
 
 Name: 106 tactictoe_prove_106
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.385246
+Original proof time: 0.00117
 
 Name: 107 tactictoe_prove_107
-Org tac number: 2
-Original proof time: 0.0
-Recording proof time: 0.086678
+Original proof time: 0.000263
 
 Name: 108 SBIT_MULT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005779
+Recording proof time: 0.006408
 
 Name: 109 tactictoe_prove_109
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.101306
+Original proof time: 0.005838
 
 Name: 110 tactictoe_prove_110
-Original proof time: 0.002126
+Original proof time: 0.003465
 
 Name: 111 tactictoe_prove_111
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.093255
+Original proof time: 0.007668
 
 Name: 112 tactictoe_prove_112
-Org tac number: 6
-Original proof time: 0.0
-Recording proof time: 0.277064
+Original proof time: 0.011996
 
 Name: 113 BITWISE_EVAL
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.23875
+Recording proof time: 0.138862
 
 Name: 114 MOD_PLUS_RIGHT
-Original proof time: 0.000292
+Original proof time: 0.000428
 
 Name: 115 tactictoe_prove_115
-Org tac number: 1
-Original proof time: 0.0
-Recording proof time: 0.01133
+Original proof time: 0.001947
 
 Name: 116 tactictoe_prove_116
-Original proof time: 0.002098
+Original proof time: 0.002525
 
 Name: 117 tactictoe_prove_117
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.113738
+Original proof time: 0.008861
 
 Name: 118 MOD_PLUS_1
-Original proof time: 0.008104
+Original proof time: 0.005873
 
 Name: 119 MOD_ADD_1
-Original proof time: 0.003869
+Original proof time: 0.004802
 
 Name: 120 BIT_REVERSE_THM
-Statistics
-  infstep : 2377
-  nodes   : 887
-  maxdepth: 8
-Time: 60.07452
-  inferstep time: 38.133526
-  node_find time: 1.022959
-  node_crea time: 20.581323
-    pred time: 3.587724
-    thmpred time: 0.000188
-    mc time: 14.072496
-    inst time: 0.0
+hh_eval 6806301
+Time: 60.681502
 Proof status: Time Out
 Org tac number: 18
 Original proof time: 0.0
-Recording proof time: 1.847623
+Recording proof time: 1.254672
 
 Name: 121 NOT_BIT_GT_LOG2
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.507558
+Recording proof time: 0.485022
 
 Name: 122 NOT_BIT_GT_BITWISE
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.187802
+Recording proof time: 0.163753
 
 Name: 123 LT_TWOEXP
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.480702
+Recording proof time: 0.490124
 
 Name: 124 tactictoe_prove_124
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.064338
+Original proof time: 0.002124
 
 Name: 125 tactictoe_prove_125
-Org tac number: 3
-Original proof time: 0.0
-Recording proof time: 0.088368
+Original proof time: 0.00286
 
 Name: 126 BIT_MODIFY_THM
 Org tac number: 14
 Original proof time: 0.0
-Recording proof time: 0.645111
+Recording proof time: 0.55053
 
 Name: 127 tactictoe_prove_127
-Org tac number: 7
-Original proof time: 0.0
-Recording proof time: 0.321769
+Original proof time: 0.021573
 
 Name: 128 BIT_SIGN_EXTEND
 Org tac number: 32
 Original proof time: 0.0
-Recording proof time: 2.099555
+Recording proof time: 1.839234
 
 Name: 129 BIT_LOG2
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.404294
+Recording proof time: 0.256858
 
 Name: 130 EXISTS_BIT_IN_RANGE
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.208573
+Recording proof time: 0.170923
 
 Name: 131 LEAST_THM
 Org tac number: 6
 Original proof time: 0.0
-Recording proof time: 0.265565
+Recording proof time: 0.238427
 Bad stac: 0

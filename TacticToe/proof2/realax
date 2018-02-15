@@ -2,127 +2,104 @@
 Name: 0 HREAL_RDISTRIB
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.066016
+Recording proof time: 0.080948
 
 Name: 1 HREAL_EQ_ADDR
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.026081
+Recording proof time: 0.035551
 
 Name: 2 HREAL_EQ_ADDL
-proof length: 1
-proof time: 0.004656
-Statistics
-  infstep : 1
-  nodes   : 2
-  maxdepth: 1
-Time: 0.105828
-  inferstep time: 0.048712
-  node_find time: 0.000027
-  node_crea time: 0.050679
-    pred time: 0.005456
-    thmpred time: 0.0
-    mc time: 0.049391
-    inst time: 0.0
+hh_eval 143929389992806
+Time: 0.263317
+Reconstructed: 0.004286
 Proof found: metisTools.METIS_TAC [fetch "realax" "HREAL_EQ_ADDR"]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.079503
+Recording proof time: 0.053129
 
 Name: 3 HREAL_EQ_LADD
 Org tac number: 11
 Original proof time: 0.0
-Recording proof time: 0.303165
+Recording proof time: 0.234724
 
 Name: 4 HREAL_LT_REFL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.062629
+Recording proof time: 0.052918
 
 Name: 5 HREAL_LT_ADDL
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.091013
+Recording proof time: 0.080317
 
 Name: 6 HREAL_LT_NE
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.108364
+Recording proof time: 0.07907
 
 Name: 7 HREAL_LT_ADDR
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.0917
+Recording proof time: 0.060251
 
 Name: 8 HREAL_LT_GT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.100465
+Recording proof time: 0.08696
 
 Name: 9 HREAL_LT_ADD2
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.220654
+Recording proof time: 0.111473
 
 Name: 10 HREAL_LT_LADD
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.135081
+Recording proof time: 0.110857
 
 Name: 11 TREAL_EQ_REFL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.081638
+Recording proof time: 0.217124
 
 Name: 12 TREAL_EQ_SYM
-proof length: 6
-proof time: 0.007391
-Statistics
-  infstep : 468
-  nodes   : 70
-  maxdepth: 5
-Time: 6.754793
-  inferstep time: 4.90691
-  node_find time: 0.025191
-  node_crea time: 1.774706
-    pred time: 0.441568
-    thmpred time: 0.00002
-    mc time: 0.952005
-    inst time: 0.0
-Proof found: GEN_PAIR_TAC THEN GEN_PAIR_TAC THEN EQ_TAC THENL [BasicProvers.SRW_TAC [] [fetch "realax" "treal_eq"] THEN metisTools.METIS_TAC [], BasicProvers.SRW_TAC [] [fetch "realax" "treal_eq"]]
+hh_eval 143929389992807
+Time: 60.237907
+Proof status: Time Out
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.139615
+Recording proof time: 0.091373
 
 Name: 13 TREAL_EQ_TRANS
 
 Name: 14 TREAL_EQ_EQUIV
-Original proof time: 0.000198
+Original proof time: 0.000195
 
 Name: 15 TREAL_EQ_AP
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.068084
+Recording proof time: 0.055258
 
 Name: 16 TREAL_10
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.011473
+Recording proof time: 0.007811
 
 Name: 17 TREAL_ADD_SYM
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.095485
+Recording proof time: 0.083531
 
 Name: 18 TREAL_MUL_SYM
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.163711
+Recording proof time: 0.119016
 
 Name: 19 TREAL_ADD_ASSOC
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.097031
+Recording proof time: 0.088555
 
 Name: 20 TREAL_MUL_ASSOC
 
@@ -131,41 +108,29 @@ Name: 21 TREAL_LDISTRIB
 Name: 22 TREAL_ADD_LID
 
 Name: 23 TREAL_MUL_LID
-proof length: 7
-proof time: 0.00273
-Statistics
-  infstep : 559
-  nodes   : 102
-  maxdepth: 7
-Time: 7.817004
-  inferstep time: 6.064591
-  node_find time: 0.039177
-  node_crea time: 1.652894
-    pred time: 0.348774
-    thmpred time: 0.000032
-    mc time: 1.049586
-    inst time: 0.0
-Proof found: REWRITE_TAC [(fetch "realax" "treal_1")] THEN REPEAT GEN_PAIR_TAC THEN PURE_REWRITE_TAC [(fetch "realax" "treal_mul")] THEN BasicProvers.SRW_TAC [] [HREAL_MUL_LID, fetch "realax" "treal_eq", fetch "realax" "HREAL_RDISTRIB"] THEN REWRITE_TAC [HREAL_ADD_ASSOC] THEN GEN_REWR_TAC (RAND_CONV o ONCE_DEPTH_CONV) [HREAL_ADD_SYM] THEN REWRITE_TAC [HREAL_ADD_ASSOC]
+hh_eval 143929389992808
+Time: 60.256914
+Proof status: Time Out
 
 Name: 24 TREAL_ADD_LINV
 
 Name: 25 TREAL_INV_0
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010801
+Recording proof time: 0.005944
 
 Name: 26 TREAL_MUL_LINV
-Original proof time: 0.012011
+Original proof time: 0.011497
 
 Name: 27 TREAL_LT_TOTAL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.066057
+Recording proof time: 0.055601
 
 Name: 28 TREAL_LT_REFL
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.063165
+Recording proof time: 0.053764
 
 Name: 29 TREAL_LT_TRANS
 
@@ -178,80 +143,70 @@ Name: 32 TREAL_BIJ
 Name: 33 TREAL_ISO
 
 Name: 34 TREAL_BIJ_WELLDEF
-Statistics
-  infstep : 7568
-  nodes   : 918
-  maxdepth: 8
-Time: 60.098294
-  inferstep time: 37.221711
-  node_find time: 3.311036
-  node_crea time: 19.487319
-    pred time: 3.657999
-    thmpred time: 0.000191
-    mc time: 9.448386
-    inst time: 0.0
+hh_eval 143929389992809
+Time: 60.272189
 Proof status: Time Out
 
 Name: 35 TREAL_NEG_WELLDEF
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.088057
+Recording proof time: 0.086434
 
 Name: 36 TREAL_ADD_WELLDEFR
 
 Name: 37 TREAL_ADD_WELLDEF
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.215187
+Recording proof time: 0.227537
 
 Name: 38 TREAL_MUL_WELLDEFR
 Org tac number: 10
 Original proof time: 0.0
-Recording proof time: 0.368698
+Recording proof time: 0.268597
 
 Name: 39 TREAL_MUL_WELLDEF
 Org tac number: 9
 Original proof time: 0.0
-Recording proof time: 0.27335
+Recording proof time: 0.298689
 
 Name: 40 TREAL_LT_WELLDEFR
-Original proof time: 0.000769
+Original proof time: 0.001166
 
 Name: 41 TREAL_LT_WELLDEFL
-Original proof time: 0.00088
+Original proof time: 0.001061
 
 Name: 42 TREAL_LT_WELLDEF
 Org tac number: 8
 Original proof time: 0.0
-Recording proof time: 0.247704
+Recording proof time: 0.193279
 
 Name: 43 TREAL_INV_WELLDEF
-Original proof time: 0.001677
+Original proof time: 0.001099
 
 Name: 44 REAL_ISO_EQ
-Original proof time: 0.000298
+Original proof time: 0.000222
 
 Name: 45 REAL_POS
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.030233
+Recording proof time: 0.027814
 
 Name: 46 SUP_ALLPOS_LEMMA1
-Original proof time: 0.000297
+Original proof time: 0.000254
 
 Name: 47 SUP_ALLPOS_LEMMA2
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.056075
+Recording proof time: 0.134168
 
 Name: 48 SUP_ALLPOS_LEMMA3
-Original proof time: 0.000475
+Original proof time: 0.000432
 
 Name: 49 SUP_ALLPOS_LEMMA4
 Org tac number: 7
 Original proof time: 0.0
-Recording proof time: 0.284598
+Recording proof time: 0.18615
 
 Name: 50 REAL_SUP_ALLPOS
-Original proof time: 0.000696
+Original proof time: 0.000652
 Bad stac: 0

@@ -1,206 +1,171 @@
 
 Name: 0 tactictoe_prove_0
-Org tac number: 58
-Original proof time: 0.0
-Recording proof time: 2.885289
+Original proof time: 0.121467
 
 Name: 1 UNIT_CURRY
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.07637
+Recording proof time: 0.0906
 
 Name: 2 MCOMP_ALT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010605
+Recording proof time: 0.0058
 
 Name: 3 MCOMP_ID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005369
+Recording proof time: 0.004617
 
 Name: 4 MCOMP_ASSOC
-proof length: 2
-proof time: 0.000705
-Statistics
-  infstep : 10
-  nodes   : 7
-  maxdepth: 2
-Time: 0.435419
-  inferstep time: 0.342577
-  node_find time: 0.00014
-  node_crea time: 0.080137
-    pred time: 0.023161
-    thmpred time: 0.000002
-    mc time: 0.057775
-    inst time: 0.0
-Proof found: REWRITE_TAC [(fetch "state_transformer" "MCOMP_ALT"), UNCURRY_CURRY_THM] THEN REWRITE_TAC [CURRY_DEF, FUN_EQ_THM, o_THM]
+hh_eval 211701531388635
+Time: 29.837763
+Reconstructed: 0.059688
+Proof found: METIS_TAC [fetch "state_transformer" "MCOMP_ALT", UNCURRY_CURRY_THM, o_ASSOC]
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009629
+Recording proof time: 0.005378
 
 Name: 5 EXT_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005246
+Recording proof time: 0.005272
 
 Name: 6 EXT_MCOMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005194
+Recording proof time: 0.005169
 
 Name: 7 EXT_o_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003713
+Recording proof time: 0.005736
 
 Name: 8 UNIT_o_MCOMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.009359
+Recording proof time: 0.006072
 
 Name: 9 BIND_EXT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005666
+Recording proof time: 0.005761
 
 Name: 10 MMAP_EXT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004902
+Recording proof time: 0.027896
 
 Name: 11 JOIN_EXT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003475
+Recording proof time: 0.006361
 
 Name: 12 EXT_JM
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00662
+Recording proof time: 0.00998
 
 Name: 13 BIND_LEFT_UNIT
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.09378
+Recording proof time: 0.107586
 
 Name: 14 UNIT_UNCURRY
-proof length: 1
-proof time: 0.000559
-Statistics
-  infstep : 24
-  nodes   : 4
-  maxdepth: 2
-Time: 0.279349
-  inferstep time: 0.221566
-  node_find time: 0.000193
-  node_crea time: 0.039903
-    pred time: 0.013985
-    thmpred time: 0.0
-    mc time: 0.040456
-    inst time: 0.0
-Proof found: FULL_SIMP_TAC (srw_ss ()) [fetch "state_transformer" "UNIT_CURRY"]
+hh_eval 211701531388636
+Time: 1.030889
+Reconstructed: 0.00477
+Proof found: METIS_TAC [UNCURRY_CURRY_THM, fetch "state_transformer" "UNIT_CURRY", I_THM]
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.072106
+Recording proof time: 0.058762
 
 Name: 15 BIND_RIGHT_UNIT
 Org tac number: 5
 Original proof time: 0.0
-Recording proof time: 0.164677
+Recording proof time: 0.117161
 
 Name: 16 BIND_ASSOC
 Org tac number: 3
 Original proof time: 0.0
-Recording proof time: 0.0563
+Recording proof time: 0.064428
 
 Name: 17 MMAP_ID
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.003487
+Recording proof time: 0.003705
 
 Name: 18 MMAP_COMP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005593
+Recording proof time: 0.003658
 
 Name: 19 MMAP_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.00535
+Recording proof time: 0.002842
 
 Name: 20 EXT_o_JOIN
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.006163
+Recording proof time: 0.003726
 
 Name: 21 MMAP_JOIN
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.03149
+Recording proof time: 0.018951
 
 Name: 22 JOIN_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004228
+Recording proof time: 0.004933
 
 Name: 23 JOIN_MMAP_UNIT
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.010031
+Recording proof time: 0.003316
 
 Name: 24 JOIN_MAP_JOIN
-proof length: 1
-proof time: 0.008658
-Statistics
-  infstep : 1
-  nodes   : 2
-  maxdepth: 1
-Time: 0.038138
-  inferstep time: 0.021592
-  node_find time: 0.000011
-  node_crea time: 0.011249
-    pred time: 0.002884
-    thmpred time: 0.0
-    mc time: 0.012503
-    inst time: 0.0
-Proof found: METIS_TAC [fetch "state_transformer" "EXT_JM", fetch "state_transformer" "JOIN_EXT", fetch "state_transformer" "MMAP_ID", fetch "state_transformer" "MCOMP_DEF", fetch "state_transformer" "EXT_MCOMP"]
+hh_eval 211701531388637
+Time: 26.036232
+Reconstructed: 0.012175
+Proof found: METIS_TAC [fetch "state_transformer" "EXT_JM", fetch "state_transformer" "JOIN_EXT", fetch "state_transformer" "EXT_o_JOIN"]
 Org tac number: 2
 Original proof time: 0.0
-Recording proof time: 0.032684
+Recording proof time: 0.0336
 
 Name: 25 JOIN_MAP
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.004718
+Recording proof time: 0.00471
 
 Name: 26 FST_o_UNIT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.078338
+Recording proof time: 0.082024
 
 Name: 27 SND_o_UNIT
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.134725
+Recording proof time: 0.078938
 
 Name: 28 FST_o_MMAP
 Org tac number: 4
 Original proof time: 0.0
-Recording proof time: 0.094843
+Recording proof time: 0.082625
 
 Name: 29 sequence_nil
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.002386
+Recording proof time: 0.005193
 
 Name: 30 mapM_nil
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.005983
+Recording proof time: 0.004965
 
 Name: 31 mapM_cons
 Org tac number: 1
 Original proof time: 0.0
-Recording proof time: 0.007327
+Recording proof time: 0.007826
 Bad stac: 0
