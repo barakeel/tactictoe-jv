@@ -1821,7 +1821,7 @@ In Example~\ref{ex:cs4}, we demonstrate the capabilities of \tactictoe on a goal
 \begin{example}\label{ex:cs4}
 \begin{lstlisting}[language=SMLSmall]
 count (n+m) DIFF count n = IMAGE ((+) n) (count m)
-SRW_TAC [ARITH_ss] [fetch "pred_set" "EXTENSION", EQ_IMP_THM] THEN
+SRW_TAC [ARITH_ss] [EXTENSION, EQ_IMP_THM] THEN
 Q.EXISTS_TAC `x - n` THEN
 SRW_TAC [ARITH_ss] []
 \end{lstlisting}
