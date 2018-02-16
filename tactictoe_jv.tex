@@ -1236,16 +1236,16 @@ proof required to close a list of goals.
 
 \subsection{Full-scale experiment}~\label{sec:full_exp}
 
-%Mention the conflicts.
-%Theorem orthogonalization is not turn on during instantiation of tacitcs
-%except
-%for the metis tactic.
-%Best parameters + comparison with holyhammer.
-
-The best \tactictoe parameters are chosen for the full-scale evaluation. Yet,
-\eprover asynchronous calls are not included in the best \tactictoe strategy
-for fairer comparison.
-
+Based on the results of parameter tuning, we now evaluate a version of 
+\tactictoe with its best parameters on an evaluation set of 7164 theorems from 
+the \holfour standard library. We compare it with the performance of \eprover.
+For reasons of fairness, \eprover asynchronous calls are not included in the 
+best \tactictoe strategy. The ATP \eprover is run in auto-schedule mode with 
+128 premises. The settings for \tactictoe are the following:
+0.05 seconds tactic timeout, an orthogonalization radius of 20, theorem list 
+abstraction with 16 predicted theorems for instantiation, a prior policy 
+coefficient of 0.5, an evaluation radius of 10, an exploration coefficient of 2 
+and priority calls to \metis with a timeout of 0.1 seconds.
 
 \begin{table}[h!]
 \centering\ra{1.3}
@@ -1264,12 +1264,24 @@ for fairer comparison.
 \label{tab:_param}}
 \end{table}
 
-Table~\ref{theories} compares the success rates of re-proving for different
-\holfour theories. \tactictoe outperforms \eprover on every
-considered theory.
-\eprover is more suited to deal with dense theories such as
-\texttt{real} or \texttt{complex} where a lot of related theorems are available
-and most proofs are usually completed by rewriting tactics.
+The results shows that \tactictoe is able to prove almost twice as much 
+theorems as \eprover. Combining the results of \tactictoe and \eprover we get a 
+69.0\% success rate which is significantly above the 5O\% success rates 
+of hammers on this type of problems~\cite{tgck-cpp15}. Moreover, \tactictoe is 
+running a single set of parameters (strategy), where as hammers and ATPs have 
+been optimized and rely on a wide range of strategies. 
+
+
+\paragraph{Reconstruction}
+Tactic proofs produced by \tactictoe during this experiment are all verifiable 
+in \holfour. By the design of the proof search, reconstruction of \tactictoe 
+proof succeeds, unless one of the tactic modifies the state of \holfour in a 
+way that changes the behavior of a tactic used in the final proof. Such an 
+event has not yet occurred.
+More details on how a proof is extracted from the search tree is given in 
+Section~\ref{sec:proofdisplay}.
+For \eprover, reconstruction rate varies between 95 and 99 percent, depending 
+on the reconstruction method \cite{}\todo{CK}.
 
 \begin{table}[]
 \centering
@@ -1293,7 +1305,17 @@ and most proofs are usually completed by rewriting tactics.
 }
 \end{table}
 
-
+The Table~\ref{theories} compares the success rates of re-proving for different
+\holfour theories. \tactictoe outperforms \eprover on every
+considered theory.
+\eprover is more suited to deal with dense theories such as
+\texttt{real} or \texttt{complex} where a lot of related theorems are available
+and most proofs are usually completed by rewriting tactics. Thanks to its 
+ability to re-use custom-built tactics, \tactictoe 
+largely surpasses \eprover on theories relying on inductive terms and 
+simplifications sets such as \texttt{arithmetic}, \texttt{list} 
+and \texttt{f\_map}. Indeed, \tactictoe is able to recognize where and when to 
+apply induction, a task at which ATPs are known to struggle with.
 
 %\subsection{Recent improvements}\todo{maybe remove this subsection}
 %The final results could be improved by a few percent by including the
@@ -1317,15 +1339,12 @@ self-learning improves \tactictoe's success rate by less than one percent.
 
 
 
-\subsection{Complexity of the proofs}
+\subsection{Complexity of the proof search}
 
 \pgfplotscreateplotcyclelist{my black}{
 solid, mark repeat=100, mark phase=0, black!100\\
 dashed, mark repeat=100, mark phase=0, black!100\\
 }
-
-Estimate the difficulty of the proof by the number of tactic units.
-
 
 
 
@@ -1345,12 +1364,20 @@ Estimate the difficulty of the proof by the number of tactic units.
 \legend{\tactictoe,\eprover}
 \end{axis}
 \end{tikzpicture}
-\caption{Number of problem solved in less than x seconds.}
+\caption{\label{fig:c1} Number of problems solved in less than x seconds.}
 \end{figure}
-\eprover uses at least two strategies where as \tactictoe only uses one set
-of parameters.
 
-
+We first investigate how \tactictoe and \eprover scales as the search time 
+grows in Figure~\ref{fig:c1}.
+In 10 seconds, \tactictoe solves 90 percent of the problem it can 
+solve in 60 seconds. The analysis is a bit different for \eprover. Indeed,
+we can clearly deduce from the bump at 30 seconds that \eprover is using at 
+least two strategies and probably more. Strategies are a useful method to 
+fight the exponential decline in the number of newly proven theorems over 
+time. Therefore, integrating strategy scheduling in \tactictoe could be 
+something to be experimented with. Overall, we recommend using \tactictoe and 
+\eprover with a 10 seconds timeout. It is possible also to run them with a 
+longer time limit, but we advise to do so in parallel to avoid waiting time.
 
 \begin{figure}[h]
 \centering
@@ -1389,17 +1416,11 @@ of parameters.
 In order to appreciate the difficulty of the evaluation set from a human
 perspective, the length distribution of human proofs in the
 validation set is shown in Figure~\ref{fig:distrib}.  It is clear from the
-graph that most of the proofs are short. The proofs found by tactictoe follows
-about the same
+graph that most of the human proofs are short. The proofs found by tactictoe 
+follows about the same
 distribution. This means that if \tactictoe finds a proof, there is about a 50
 percent chance that it will be shorter than what a human would come up with.
-In Figure~\ref{fig:percentage}, we regroup the human proofs by their length to
-see how well \tactictoe and \eprover performs on increased level of
-difficulties. As expected, the longer the original proof is, the harder it is
-for \tactictoe and \eprover to re-prove the theorem by their own mean.
-The performance of \tactictoe is compelling with more than half of the theorem
-that required a proof of length six being reproven. It is also consistently
-better than \eprover for any proof length.
+
 
 \begin{figure}[h]
 \centering
@@ -1421,6 +1442,14 @@ better than \eprover for any proof length.
 length of the
 original proof until length 20.}
 \end{figure}
+
+In Figure~\ref{fig:percentage}, we regroup the human proofs by their length to
+see how well \tactictoe and \eprover performs on increased level of
+difficulties. As expected, the longer the original proof is, the harder it is
+for \tactictoe and \eprover to re-prove the theorem by their own mean.
+The performance of \tactictoe is compelling with more than half of the theorem
+that required a proof of length six being reproven. It is also consistently
+better than \eprover for any proof length.
 
 
 \section{Proof Recording}\label{sec:recording}
