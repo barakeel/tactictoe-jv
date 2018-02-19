@@ -1004,19 +1004,19 @@ All in all, a database build with the orthogonalization process contains
 $(\mathbb{O}(t,g),g)$ instead of $(t,g)$.
 
 \section{Abstraction}\label{sec:synthesis}
-One of the major weakness of the previous version of \tactictoe is that
+One of the major weakness of the previous version of \tactictoe was that
 it could not create its own tactics. Indeed, sometimes no previous tactic is
 adapted for a certain goal and creating a new tactic is necessary.
 %Experiments in section, show how different degrees of tactic synthesis could
 %improve the success rate of \tactictoe.
-We present a way to create tactics with different arguments
+In this section we present a way to create tactics with different arguments
 by abstracting them and re-instantiating them using a predictor for that kind
 of argument. In the spirit of the orthogonalization method, we will try to
 create tactics that are more general but have the same effect as the
 ungeneralized one. The generalized tactics are typically slower that their 
-counterpart, but the added flexibility is worthwhile in practice. Moreover, 
+original variants, but the added flexibility is worthwhile in practice. Moreover, 
 since we impose a timeout on each tactic (0.05 seconds by default), very slow 
-tactics fails and thus are not selected.
+tactics fail and thus are not selected.
 
 \paragraph{Abstraction of Tactic Arguments}
 The first step is to abstract arguments of tactics by replacing them by a
