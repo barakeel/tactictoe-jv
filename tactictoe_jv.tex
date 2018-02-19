@@ -94,7 +94,7 @@
 %\title{TacticToe: A theorem prover trained from formal proofs}
 %\title{TacticToe: Smart guidance in tactical proof search}
 %\title{TacticToe: Proof  by Tactic Selection}
-\title{TacticToe: Learning the Game of Tactics}
+\title{TacticToe: Learning to Prove with Tactics}
 %\title{TacticToe: Automatic tactic-level proof generation}
 
 \author{\mbox{Thibault Gauthier} \and \mbox{Cezary Kaliszyk} \and \mbox{Josef
@@ -178,8 +178,10 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
 \begin{document}
 \maketitle
 
-\todo{JU review: Still feels more like an intro than an abstract. Could be
+\todoi{JU review: Still feels more like an intro than an abstract. Could be
 shorter and punchier.}
+
+\todoi{Move part of the abstract to the introduction.}
 \begin{abstract}
 Formalization of mathematics in interactive theorem provers (ITPs) relies today on many proof automation methods.
 Some of these methods are general-purpose and with enough time they can prove any provable conjecture.
@@ -204,10 +206,7 @@ results of both provers.
 \end{abstract}
 
 \tableofcontents
-\todoi{Comparison with hammers in usability, easier reconstruction nice proofs}
-
 \section{Introduction}
-
 Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight},
   \isabelle~\cite{isabelle}
@@ -226,7 +225,6 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   searches directly for sequences of tactic applications that lead to
   an ITP proof, thus avoiding the translation and proof-reconstruction phases needed by the hammers.
 
-\todoi{Rewrite the plan}
   To do this, we \emph{extract and record} tactic invocations from the ITP
   proofs (Section~\ref{sec:recording}) and
   \emph{build efficient machine learning classifiers} based on such training
@@ -236,7 +234,6 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   successful, is a verified human-level proof composed of \holfour
   tactics.  The system is evaluated on a large set of theorems originating
   from \holfour (Section~\ref{s:experiments}).
-
 
 \subsection{The problem}
 % How a user works with an ITP and how this gives rise to a machine learning problem.
@@ -255,31 +252,46 @@ When a goal is proven, it becomes a theorem. And if the developer gives it a
 name then we refer to it as a top-level theorem.
 
 \paragraph{Theories and script files.}
-Formal developments in \holfour are organized into named theories, which are concretely implemented by \emph{script} files defining modules in the functional programming language \sml.
-Each script file corresponds to a single theory, and contains definitions of types and constants as well as statements of theorems together with their proofs.
-In practice, tactic-based proofs are written in an informally specified \emph{embedded domain-specific language}: the language consisting of pre-defined tactics and \emph{tacticals} (functions that operate on tactics).
-However, the full power of \sml is always available for users to define their own tactics or combinations thereof.
-%To automate proof search strategies a user can implement programming language functions that correspond to more involved proofs.
-%Functions that correspond to backward proofs, called tactics, are combined with each other with the help of tacticals (functions that takes
+Formal developments in \holfour are organized into named theories, which are 
+concretely implemented by \emph{script} files defining modules in the 
+functional programming language \sml.
+Each script file corresponds to a single theory, and contains definitions of 
+types and constants as well as statements of theorems together with their 
+proofs.
+In practice, tactic-based proofs are written in an informally specified 
+\emph{embedded domain-specific language}: the language consisting of 
+pre-defined tactics and \emph{tacticals} (functions that operate on tactics).
+However, the full power of \sml is always available for users to define their 
+own tactics or combinations thereof.
+%To automate proof search strategies a user can implement programming language 
+functions that correspond to more involved proofs.
+%Functions that correspond to backward proofs, called tactics, are combined 
+with each other with the help of tacticals (functions that takes
 %tactics as arguments).
-%Such a combination of tactics will be called a \emph{proof script} when it proves a theorem stated in a theory.
+%Such a combination of tactics will be called a \emph{proof script} when it 
+proves a theorem stated in a theory.
 
 \paragraph{Tactics in \holfour.}
 Considering concrete implementation details now, a \emph{tactic} is a function
-that takes a goal (or proof obligation) and returns a list of goals (subgoals of the original goal) together
+that takes a goal (or proof obligation) and returns a list of goals (subgoals 
+of the original goal) together
 with a validation function.
-Calling the validation function on a list of \emph{theorems}, corresponding to the list of subgoals, results in a theorem corresponding to the original goal.
-For example, if the list of subgoals is empty, then calling the validation function on the empty list yields the originally goal sequent as a theorem.
+Calling the validation function on a list of \emph{theorems}, corresponding to 
+the list of subgoals, results in a theorem corresponding to the original goal.
+For example, if the list of subgoals is empty, then calling the validation 
+function on the empty list yields the originally goal sequent as a theorem.
 In this way, tactics implement the plumbing of backwards, goal-directed, proof 
 construction. 
 Because validation functions are only important to check the final proof, we 
-omit them during the description of proof search algorithm. And we note $t(g)$ 
-the lists of goals produced by the application of the tactic $t$ to the goal 
+omit them during the description of proof search algorithm. We note $t(g)$ 
+the lists of goals produced by the application of a tactic $t$ to a goal 
 $g$.
 
 \subsection{Contributions}
 This paper extends the work described in \cite{tgckju-lpar17}.
-There we proposed the idea of ... and achieved ...
+There we proposed the idea of a tactic-based prover based on supervised 
+learning guidance. And we achieved a 39\% success rate on theorems of the 
+\holfour standard library by running \tactictoe with a 5 seconds timeout.
 The additional contributions and their effect on our system are:
 
 \begin{itemize}
@@ -303,6 +315,8 @@ more general and flexible tactics where tactic arguments are dynamically
 predicted.
 \item The internal ATP \metis is complemented
 by asynchronous calls to \eprover to help \tactictoe during proof search.
+\item Evaluation of \tactictoe with a 60 seconds timeout achieving a 66\% 
+success rate on the standard library.
 \item First evaluation of \tactictoe success rate relative to
 the length of the original human proofs.
 \item Minimization and prettification of the generated proof improves user 
@@ -1523,8 +1537,8 @@ code of each tactic.
 Working with the string representation of a tactic is better that working with
 its value:
 \begin{itemize}
-\item Equality between two functions is easy to do from
-their string representation. The direct consequence is that we can avoid
+\item Equality between two functions is easy to compute from
+their string representation and therefore we can avoid
 predicting the same tactic over and over again.
 \item
 The
@@ -1870,7 +1884,8 @@ much more readable starting with applying induction on $l$. It solves the base
 case of the induction by rewriting and distinguish cases where $n=0$ or $n>0$
 in the inductive hypothesis. It finalizes the proof with a short call to \metis
 using the definition of
-$LUPDATE$. Here, \tactictoe's proof is arguably smaller, faster and easier to
+\texttt{LUPDATE}. Here, \tactictoe's proof is arguably smaller, faster and 
+easier to
 understand and maintain. Such proofs after an expert review could replace the
 their respective original human proofs in the \holfour repository.
 
@@ -1895,7 +1910,13 @@ Induct_on `l1` THENL [SRW_TAC [] [],
 \end{lstlisting}
 \end{example}
 
-In Example~\ref{ex:cs4}, we demonstrate the capabilities of \tactictoe on a goal that was not already proved in the \holfour libraries: that the set of numbers $\{0,...,n+m-1\} \setminus \{0,...,n-1\}$ is the same as the set obtained by adding $n$ to everything in $\{0,...,m-1\}$.
+In Example~\ref{ex:cs4}, we demonstrate the capabilities of \tactictoe on a 
+goal that was not already proved in the \holfour libraries: that the set of 
+numbers $\{0,...,n+m-1\} \setminus \{0,...,n-1\}$ is the same as the set 
+obtained by adding $n$ to everything in $\{0,...,m-1\}$. In this example, 
+\tactictoe uses the simplification set \texttt{ARITH\_ss} to reduce arithmetic 
+formulas. This exemplifies an another advantage that \tactictoe has over ATPs, 
+mainly its ability to take advantage of user-defined simplification sets.
 
 \begin{example}\label{ex:cs4}
 \begin{lstlisting}[language=SMLSmall]
@@ -1905,8 +1926,6 @@ Q.EXISTS_TAC `x - n` THEN
 SRW_TAC [ARITH_ss] []
 \end{lstlisting}
 \end{example}
-
-\todoi{TG to RK: Feel free to add more examples.}
 
 
 \section{Related Work}
@@ -1978,8 +1997,7 @@ tactics. Here, we demonstrate the competitiveness of our system against
 %tactics but we rely only on information from the current goal. Combining the
 %two approaches by predicting from the goal and from the original tactic
 %arguments is more difficult but is likely to produce more suitable lemmas.
-
-Proof patching: \cite{RingerYLG18}
+%Proof patching: \cite{RingerYLG18}
 
 A similar effort for stronger automation is performed in \isabelle. Nagashima
 developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the
@@ -2009,13 +2027,11 @@ search internally~\cite{mllax} using a command classifier, which can estimate
 the priority of the 11 kinds of
 commands in the priority queue based on positive and negative examples.
 
-
 \section{Conclusion}\label{sec:concl}
-
 We proposed a new proof assistant automation technique which combines
 tactic-based proof search with machine learning prediction
-Its implementation, \tactictoe, achieves an overall performance of 66.4\%
-theorems on 7164 theorems of the \holfour standard library surpassing \eprover
+Its implementation, \tactictoe, achieves an overall success rate of 66.4\%
+on 7164 theorems of the \holfour standard library, surpassing \eprover
 with auto-schedule. Its
 effectiveness is especially visible on
 theories which use inductive data structures, specialized decision procedures,
