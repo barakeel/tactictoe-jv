@@ -567,7 +567,7 @@ prior evaluation for MCTS.
 Despite the best efforts of the prediction algorithms, a selected tactic may
 not solve the current goal, proceed in the wrong direction
 or even loop. For that reason, predictions need to be accompanied by a
-proof search mechanism that allows for backtrac king and
+proof search mechanism that allows for backtracking and
 can choose which proof tree to extend next and in which direction.
 Our search algorithm is a Monte Carlo tree search~\cite{montecarlo} algorithm 
 that relies
@@ -613,7 +613,7 @@ Through node extension steps the search tree grows and the number of paths to
 explore increases. To decide which node to extend next, a evolving value for
 each node is given in Definition~\ref{def:value}. The algorithm that performs
 node selection starts from the root of the search tree. From the current node,
-the function \texttt{CompareChildren} choses among the children of its open 
+the function \texttt{CompareChildren} chooses among the children of its open 
 goal the one with the highest value.
 
 If the highest children value is higher than the widening policy, then the 
@@ -681,7 +681,7 @@ children of $a$.
 
 
 \paragraph{Backpropagation}
-During backpropagation we update the statisitics of all the nodes traversed or
+During backpropagation we update the statistics of all the nodes traversed or
 created during this MCTS step:
 \begin{itemize}
 \item Their number of visit is incremented.
@@ -1639,7 +1639,7 @@ modules. The global identifiers \texttt{STRIP\_TAC} and
 this way, they will still be interpretable whether \texttt{Tactic} was open or
 not. The local identifier \texttt{LIST\_INDUCT\_TAC} is replaced by its
 definition which happens to contain two global identifiers.
-The previous paragraph describe the globalization for all identifiers except
+The previous paragraph describes the globalization for all identifiers except
 local theorems.  We do not replace a local
 theorem by its definition because we want to avoid unfolding tactic proofs into
 other tactic proofs.
