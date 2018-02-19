@@ -755,28 +755,29 @@ contains using the prior evaluation function:
 General-purpose proof automation mechanisms which combine proof translation to
 ATPs with machine learning (``hammers'') have become quite successful in
 enhancing the automation level in proof assistants~\cite{hammers4qed}.
-As external automated reasoning techniques sometimes outperform the combined
+Since external automated reasoning techniques sometimes outperform the combined
 power of tactics, we would like to combine the \tactictoe search with
 general purpose provers such as the ones found in \holyhammer for
 \holfour~\cite{tgck-cpp15}.
 
-Such a prover already exists in \holfour and is called \metis. It is already
-recognized by the tactic selection mechanism in \tactictoe and can have its
-premises predicted dynamically when in an abstracted form. Nevertheless,
+\holfour already integrates a superposition-based prover \metis for this purpose. It is already
+recognized by the tactic selection mechanism in \tactictoe and its
+premises can be predicted dynamically when in an abstracted form. Nevertheless,
 we think that the performance of \tactictoe can be boosted by giving the ATP
 \metis a special status. This arrangement consists of always predicting
 premises for \metis, giving it a slightly higher timeout and
 trying it first on each open goal. These modifications only induce an
-linear overhead on the number nodes as a general purpose prover does not create
-goal obligations.
+linear overhead on the number nodes as \metis does not create
+new goals.
 
-The integration of an external prover is also possible. And
-\eprover~\cite{eprover} is the one we experimented with.
-To this end, we created a tactic which expects a number of premises as an
+The integration of an external prover is also possible. For this purpose we experiment
+with 
+\eprover~\cite{eprover}.
+Namely, we developed a tactic which expects a list of premises as an
 argument
-and calls \eprover on the translated first order problem. We then extract the
-premises that were required in the \eprover
-proof and reconstruct it inside \holfour with \metis. Giving a special status
+and calls \eprover on the goal together with the premises translated to a first-order problem. If \eprover
+succeeds on the problem, the premises used in the external proof are used to
+reconstruct the proof inside \holfour with \metis. Giving a special status
 to external
 provers is essential as external ATP calls do not appear in human
 proof scripts. For external ATPs, we use an even higher timeout (5 seconds) and
@@ -2012,7 +2013,7 @@ This can be done either in an interactive way, when the user completes the
 proof based on the recommended lemmas, as in the Mizar proof advisor
 \textsc{MizAR}~\cite{Urb04-MPTP0,mizAR40}, or attempted fully automatically, where such lemma
 selection is handed over to the ATP component of a \emph{hammer}
-system~\cite{hammers4qed,tgck-cpp15,holyhammer,BlanchetteGKKU16}.
+system, as in the hammers for \holfour~\cite{tgck-cpp15}, \hollight~\cite{holyhammer} and \isabelle~\cite{BlanchetteGKKU16}.
 
 Internal learning-based selection of tactical steps inside an ITP is analogous
 to internal learning-based selection of clausal steps inside ATPs such as
