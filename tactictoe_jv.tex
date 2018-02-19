@@ -1039,9 +1039,9 @@ An abstracted tactic is not immediately applicable to a goal, since it contains
 unspecified arguments. To apply an abstracted tactic $\hat{t}$, we first need
 to
 instantiate the placeholders inside $\hat{t}$. Because it is difficult to
-build a general predictor that effective on each type of argument, we manually
+build a general predictor effective on each type of argument, we manually
 design different argument predictors for each type. Those predictors are
-given a goal $g$ as input and returns the best chosen argument for this
+given a goal $g$ as input and return the best predicted argument for this
 goal.
 
 Our default algorithm relies on argument predictions for theorems with a 
@@ -1049,7 +1049,7 @@ radius of 16. It uses the produced list
 $\mathit{Predictions}^{\mathit{tactic}}_{16}(g)$ to replace all the 
 placeholders 
 in $\hat{t}$. 
-List of theorems is a very common type in \holfour proofs and theorems contain 
+The type of theorem lists is a very common type in \holfour proofs and theorems contain 
 enough information to be predicted accurately.
 We also have positive results with term abstraction and plan to include it soon 
 in our default algorithm.
@@ -1058,7 +1058,7 @@ in our default algorithm.
 As abstracted tactics do not appear in human proofs, we need to find a way to
 predict them so that they can contribute to the \tactictoe proof search.
 A straightforward idea is to try $\hat{t}$ before $t$ during the proof search.
-However, this risks doing unnecessary work as they may have a similar effect.
+However, this risks doing unnecessary work as the two may perform similar steps.
 Therefore, we would like to decide
 beforehand if one is better than the other.
 In fact, we can re-use the orthogonalization module to do this task for us.
@@ -1369,7 +1369,7 @@ on the reconstruction method \cite{}\todo{CK}.
 }
 \end{table}
 
-The Table~\ref{theories} compares the success rates of re-proving for different
+Table~\ref{theories} compares the re-proving success rates for different
 \holfour theories. \tactictoe outperforms \eprover on every
 considered theory.
 \eprover is more suited to deal with dense theories such as
@@ -1377,7 +1377,7 @@ considered theory.
 and most proofs are usually completed by rewriting tactics. Thanks to its 
 ability to re-use custom-built tactics, \tactictoe 
 largely surpasses \eprover on theories relying on inductive terms and 
-simplifications sets such as \texttt{arithmetic}, \texttt{list} 
+simplification sets such as \texttt{arithmetic}, \texttt{list} 
 and \texttt{f\_map}. Indeed, \tactictoe is able to recognize where and when to 
 apply induction, a task at which ATPs are known to struggle with.
 
@@ -1431,9 +1431,9 @@ dashed, mark repeat=100, mark phase=0, black!100\\
 \caption{\label{fig:c1} Number of problems solved in less than x seconds.}
 \end{figure}
 
-We first investigate how \tactictoe and \eprover scales as the search time 
+We first investigate how \tactictoe and \eprover scale as the search time 
 grows in Figure~\ref{fig:c1}.
-In 10 seconds, \tactictoe solves 90 percent of the problem it can 
+In 10 seconds, \tactictoe solves 90 percent of the problems it can 
 solve in 60 seconds. The analysis is a bit different for \eprover. Indeed,
 we can clearly deduce from the bump at 30 seconds that \eprover is using at 
 least two strategies and probably more. Strategies are a useful method to 
@@ -1442,6 +1442,7 @@ time. Therefore, integrating strategy scheduling in \tactictoe could be
 something to be experimented with. Overall, we recommend using \tactictoe and 
 \eprover with a 10 seconds timeout. It is possible also to run them with a 
 longer time limit, but we advise to do so in parallel to avoid waiting time.
+\todo{its strange to ``advise'' in a paper?}
 
 \begin{figure}[h]
 \centering
@@ -1480,8 +1481,8 @@ longer time limit, but we advise to do so in parallel to avoid waiting time.
 In order to appreciate the difficulty of the evaluation set from a human
 perspective, the length distribution of human proofs in the
 validation set is shown in Figure~\ref{fig:distrib}.  It is clear from the
-graph that most of the human proofs are short. The proofs found by tactictoe 
-follows about the same
+graph that most of the human proofs are short. The proofs found by \tactictoe 
+follows a similar
 distribution. This means that if \tactictoe finds a proof, there is about a 50
 percent chance that it will be shorter than what a human would come up with.
 
@@ -1510,8 +1511,8 @@ original proof until length 20.}
 In Figure~\ref{fig:percentage}, we regroup the human proofs by their length to
 see how well \tactictoe and \eprover performs on increased level of
 difficulties. As expected, the longer the original proof is, the harder it is
-for \tactictoe and \eprover to re-prove the theorem by their own mean.
-The performance of \tactictoe is compelling with more than half of the theorem
+for \tactictoe and \eprover to re-prove the theorem on their own.
+The performance of \tactictoe is compelling with more than half of the theorems
 that required a proof of length six being reproven. It is also consistently
 better than \eprover for any proof length.
 
