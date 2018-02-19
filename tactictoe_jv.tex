@@ -283,7 +283,7 @@ function on the empty list yields the originally goal sequent as a theorem.
 In this way, tactics implement the plumbing of backwards, goal-directed, proof 
 construction. 
 Because validation functions are only important to check the final proof, we 
-omit them during the description of proof search algorithm. We note $t(g)$ 
+omit them during the description of proof search algorithm. We denote $t(g)$ 
 the lists of goals produced by the application of a tactic $t$ to a goal 
 $g$.
 
@@ -812,7 +812,7 @@ Here are the different kind of feature we extract from terms:
 \begin{itemize}
 \item names of constants, including the logical operators,
 \item type constructors present in the types of constants and variables,
-\item subterms with all variables replaced by a single place holder $V$,
+\item subterms with all variables replaced by a single placeholder $V$,
 \item names of the variables.
 \end{itemize} 
 Goals (respectively theorems) are represented by a couple of a list of 
@@ -1020,12 +1020,12 @@ tactics fail and thus are not selected.
 
 \paragraph{Abstraction of Tactic Arguments}
 The first step is to abstract arguments of tactics by replacing them by a
-place holder, creating a tactic with an unspecified argument.
+placeholder, creating a tactic with an unspecified argument.
 Suppose we have a recorded tactic $t$. Since $t$ is a \sml code tree, we can
 try to abstract any of the
-\sml subterms. Let $u$ be a \sml subterm of $t$, and $h$ a placeholder $u$, we
+\sml subterms. Let $u$ be a \sml subterm of $t$, and $h$ a placeholder in $u$, we
 can substitute $u$ by $h$ to create an abstracted tactic.
-We note this intermediate tactic $t[h/u]$. By repeating the
+We denote this intermediate tactic $t[h/u]$. By repeating the
 process, multiple
 arguments may be abstracted in the same tactic. Ultimately, the more
 abstractions are performed the more general a tactic is, as many tactics
