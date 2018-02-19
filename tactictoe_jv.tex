@@ -1659,7 +1659,7 @@ Rewrite.ASM_REWRITE_TAC [DB.fetch "list" "MAP", DB.fetch "list" "APPEND"]
 
 Running the globalized version of a tactic proof will have the exact same
 effect as the original. But since we want to extract information from this
-script in the form tactics and their input goals, we modify it further.
+script in the form of tactics and their input goals, we modify it further.
 In particular, we need to define at which level we should record the tactics in
 the tactic proof. The simplest idea would be to record all \sml subexpressions
 of type \texttt{tactic}. However, it will damage the quality of our data by
@@ -1667,30 +1667,30 @@ dramatically increasing the number of tactics associated with a single goal.
 Imagine a proof script of the form \texttt{A THEN B THEN C}; then the tactics
 \texttt{A}, \texttt{A THEN B} and \texttt{A THEN B THEN C} would be valid
 advice for something close to their common input goal. The tactic
-\texttt{A THEN B THEN C} is likely to be specific. In contrast, we can consider
+\texttt{A THEN B THEN C} is likely to be too specific. In contrast, we can consider
 the tactic \texttt{REPEAT A} that is repetitively calling the tactic \texttt{A}
 until
-\texttt{A} has no effect. In this situation, it is often preferable to record
-only \texttt{REPEAT A} than calls to \texttt{A}. Otherwise during the
-proof search, we would have to make a branches created after each call of
-\texttt{A}.
+\texttt{A} has no effect. For such calls, it is often preferable to record
+a single call to \texttt{REPEAT A} rather than multiple calls to \texttt{A}.
+Otherwise branches after each call to \texttt{A} would be necessary as part
+of proof search.
 To sum up, we would like to record only the most general tactics which
 make the most progress on a goal. As a trade-off between these two objectives,
 we split proofs into tactic units.
 
 \begin{definition}(Tactic unit)
-A tactic unit is an \sml expression of type \texttt{tactic} that does not contain a
+A tactic unit is an \sml expression of type \texttt{tactic} that does not contain an
 infix operator at its root.
 \end{definition}
 
-Because these tactic units are constructed from visual information present in
-the tactic proof, they often represent what a human consider to be one step of
+Because such tactic units are constructed from visual information present in
+the tactic proof, they often represent what a human user considers to be a single step of
 the proof.
 
 To produce the final recording script, we encapsulate each tactic unit
 in a recording function \texttt{R} (see Example~\ref{ex:wrap}). In order to
 record
-tacitcs in all \holfour theories, we replace the original proof by the
+tactics in all \holfour theories, we replace the original proof by the
 recording script in each theory and rebuild the \holfour library.
 
 \begin{example}\label{ex:wrap} (Tactic unit wrapping)
@@ -1716,7 +1716,7 @@ The function \texttt{save} writes the tactic-goal pair to disk increasing the
 number of entries in our database of tactics. The function
 \texttt{tactic\_of\_sml} interprets the \sml code \texttt{stac}. The tactic is
 then applied to the input goal to replicate the original behavior.
-After all modified theories are rebuild, each call to a wrapped tactic in a
+After all modified theories are rebuilt, each call to a wrapped tactic in a
 tactic proof is recorded as a pair containing its globalized code and its
 input goal.
 
