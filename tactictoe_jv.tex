@@ -483,15 +483,15 @@ Descendant(b) \rbrace\]
 In Definition~\ref{def:prod}, we judge if a tactic is productive from its 
 contribution to the search tree.
 
-\begin{definition}\label{def:prof} (Productive tactic)
+\begin{definition}\label{def:prod} (Productive tactic)
 The application of a tactic on an open goal is called productive if and only if
 all the following conditions are satisfied:
 \begin{itemize}
 \item It does not fail or timeout. To prevent tactics from looping, we
 interrupt tactics after a short amount of time (0.05 seconds).
-\item It does not loop, i.e its output does not contain any goals that appears 
+\item It does not loop, i.e. its output does not contain any goals that appears 
 in the ancestor of the node of the current goal.
-\item It is not a parallel step, i.e its output is not a superset
+\item It is not a parallel step, i.e. its output is not a superset
 of a list of goals produced from the same goal.
 \end{itemize}
 
