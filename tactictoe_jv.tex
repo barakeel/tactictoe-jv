@@ -233,7 +233,7 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   examples (Section~\ref{s:prediction}).  The learned data serves as
   guidance for a \emph{Monte Carlo tree search} that explores different
   proof paths (Section~\ref{sec:proofsearch}). The result, if
-  successful, is a certified human-level proof composed of \holfour
+  successful, is a verified human-level proof composed of \holfour
   tactics.  The system is evaluated on a large set of theorems originating
   from \holfour (Section~\ref{s:experiments}).
 
@@ -312,18 +312,18 @@ interaction.
 
 \section{Search tree}\label{sec:prelim}
 
-The application of tactic to a goal produces a list of goals. Each of the 
-created goals can in turn be the input other tactics. Moreover, it is possible 
-to try multiple tactics on the same goal. In order to keep track of the 
-progress made so far from the initial goal we want to solve, we organize
-goals and tactics into a graph with list of goals as nodes and tactics as edges
-(See Definition~\ref{def:stree}).
+The application of tactic to an initial conjecture produces a list of goals. 
+Each of the created goals can in turn be the input other tactics. Moreover, it 
+is possible to try multiple tactics on the same goal. In order to keep track of 
+the progress made so far from the initial conjecture we want to solve, we 
+organize goals and tactics into a graph with list of goals as nodes and tactics 
+as edges (See Definition~\ref{def:stree}).
 
 In this section, we only give a description of the graph at a given 
 moment of the search after a certain amount of tactic applications. 
 The exploration of the tree is decided by MCTS algorithm in 
-Section~\ref{sec:proofsearch}, which is guided by a tactic prediction algorithm 
-presented in Section~\ref{sec:features}.
+Section~\ref{sec:proofsearch}, which is guided by a prediction algorithms 
+presented in Section~\ref{sec:predictions}.
 
 
 \begin{definition}\label{def:stree}(search tree)\\
