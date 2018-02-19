@@ -679,13 +679,13 @@ children of $a$.
 During backpropagation we update the statistics of all the nodes traversed or
 created during this MCTS step:
 \begin{itemize}
-\item Their number of visit is incremented.
+\item Their visit number is incremented.
 \item If node extension failed, their failure count is incremented.
 \item If node extension succeeded, they inherit the evaluation of the created
 child.
 \end{itemize}
 
-These changes updates the current evaluation and the current policy of the
+These changes update the current evaluation and the current policy of the
 traversed nodes.
 After completing backpropagation, the process loops back to node
 selection.
@@ -696,14 +696,14 @@ The search ends when the algorithm reaches one of these 3 conditions:
 \item It finds a proof, i.e., the root node is solved. In this case,
 the search returns a minimized and
 prettified proof script (see Section~\ref{sec:proofdisplay}).
-\item It saturates, i.e., there is no tactics to be applied to any open goal.
-This happens less than 10 times in the full-scale experiment.
-\item It exceeds a given time limit set by default to 60 seconds.
+\item It saturates, i.e., there are no tactics to be applied to any open goal.
+This happens less than 10 times in the full-scale experiment. \todo{@TG: why don't we have the original tactics as options?}
+\item It exceeds a given time limit (default is set to 60 seconds).
 \end{itemize}
 
 \subsection{Supervised learning guidance}
-Our MCTS algorithm relies on the guidance of two supervised learning methods,
-the prior policy decides the order in which tactic should be tried and the
+Our MCTS algorithm relies on the guidance of two supervised learning methods.
+The prior policy decides the order in which tactic should be tried and the
 prior evaluation estimates if a branch is fruitful by analysing tactic
 outputs. Both priors influence the rates at which branches of the search tree
 are explored.
@@ -719,7 +719,7 @@ applied to $g$ by their similarity score so that $T(g)= \lbrace
 t_0,\ldots,t_{n-1} \rbrace$.
 Let $c_{policy}$ be a constant heuristic that estimates how likely a tactic
 $t_i$ is to prove the goal.
-We can now calculate of a prior policy of a child $a_i$ produced by the tactic
+We can now calculate the prior policy of a child $a_i$ produced by the tactic
 $t_i$ by:
 \[PriorPolicy(a_i) = (1 - c_{policy})^{i} * c_{policy}\]
 
@@ -731,12 +731,12 @@ widening policy on the parent $p$ for its open goal $g$ to be:
 
 \paragraph{Prior evaluation}\label{sec:evaluation}
 
-We now concentrate on the definition a reasonable evaluation function for the
-output of tactics. Theoretically, an interesting list of goals is one
-that has short proofs for each of its goals, and we could estimate their
-lengths from previous proof searches. However, this
+We now concentrate on the definition of a reasonable evaluation function for the
+output of tactics. Theoretically, a list of goals is interesting if short proofs
+are possible each the goals in the list, and the lengths of the proofs can be
+estimated from previous proof searches. However, this
 approach generates too much data and slows down the proof search. So, we only
-collect output of tactics tested during orthogonalization. We
+collect outputs of tactics tested during orthogonalization. We
 declare a list of goals $l$ to be positive if it is has been produced by the
 winner of an orthogonalization competition.
 The set of positive examples in
@@ -751,7 +751,7 @@ contains using the prior evaluation function:
 \end{align*}
 
 
-\subsection{ATP Integration}~\label{sec:atp}
+\subsection{ATP Integration}\label{sec:atp}
 General-purpose proof automation mechanisms which combine proof translation to
 ATPs with machine learning (``hammers'') have become quite successful in
 enhancing the automation level in proof assistants~\cite{hammers4qed}.
@@ -1109,7 +1109,7 @@ considered as a learning process. To ensure the global fairness, the final
 experiments in Section~\ref{sec:full_exp} runs the best strategy on the full
 dataset which is about 30 times larger.
 
-\subsection{Tuning \tactictoe}~\label{sec:tuning}
+\subsection{Tuning \tactictoe}\label{sec:tuning}
 
 Fix parameters: not optimized here.
  - Features extraction method.
@@ -1293,7 +1293,7 @@ proof required to close a list of goals.
 %radius 20.
 
 
-\subsection{Full-scale experiment}~\label{sec:full_exp}
+\subsection{Full-scale experiment}\label{sec:full_exp}
 
 Based on the results of parameter tuning, we now evaluate a version of
 \tactictoe with its best parameters on an evaluation set of 7164 theorems from
