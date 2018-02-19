@@ -1564,14 +1564,14 @@ other. We also would like to make sure that the code is interpretable and that
 its interpretation does not change in the other theory.
 
 Even when developing one theory, the context is continually changing:
-modules are open and local identifiers are defined. Therefore, it is unlikely
+modules are opened and local identifiers are defined. Therefore, it is unlikely
 that code extracted from proof scripts is interpretable in any other part of
 \holfour without any post-processing.
 To solve this issue, we recursively replace each local identifier by its
 definition until we are able to write any expression with global identifiers
-only. And we prefix each global identifiers by its module.
-We call this process globalization. The result is a standalone \sml code
-executable in any \holfour theories.  In the absence of side effects, it is
+only. Similarly, we prefix each global identifier by its module.
+We call this process \emph{globalization}. The result is a standalone \sml code
+executable in any \holfour theory.  In the absence of side effects, it is
 interpreted in the same way across theories.
 Therefore, we can guarantee that the behavior of recorded stateless tactics
 does not change. And because an update on a stateful tactic
@@ -1579,9 +1579,9 @@ generally increases its strength, our prediction algorithm based on past
 examples is still reasonably effective in this case.
 
 \subsection{Implementation}
-We describe in more details the implementation of the recording algorithm which
+We describe in more detail our implementation of the recording algorithm. It
 consists of 4 phases: proof script extraction, proof script globalization,
-tactic unit wrapping and creation of tactic-goal pairs.
+tactic unit wrapping, and creation of tactic-goal pairs.
 
 Because of the large number of \sml constructions, we only describe the effect
 of these steps on a running example that contains selected parts of the theory
@@ -1605,14 +1605,14 @@ val MAP_APPEND = store_thm("MAP_APPEND",
 \end{example}
 
 The first line of this script file opens modules (called structures in \sml). Each of
-them contains a list of global identifiers which become directly accessible in
+the modules contains a list of global identifiers which become directly accessible in
 the rest of the script.
 A local identifier \texttt{LIST\_INDUCT\_TAC} is declared next, which is a
 tactic that performs induction on lists. Below that, the theorem
 \texttt{MAP\_APPEND} is proven.
 The global tactic \texttt{STRIP\_TAC} first removes universal quantifiers. Then,
-the goal is split into a base case and a inductive case. Finally, both of
-theses cases are solved by \texttt{ASM\_REWRITE\_TAC [MAP, APPEND]}, which
+the goal is split into a base case and an inductive case. Finally, both
+of these cases are solved by \texttt{ASM\_REWRITE\_TAC [MAP, APPEND]}, which
 rewrites assumptions with the help of theorems previously declared in this
 theory.
 
