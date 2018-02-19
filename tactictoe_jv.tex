@@ -1941,13 +1941,12 @@ ITP users. In our work, the splitting of a proof into a sequence of tactics is
 essential for the
 tactic recording procedure, used to train our tactic prediction mechanism.
 
-The system
 \textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
-groups related proofs thanks to its clustering
+groups related proofs using clustering
 algorithms. It allows \coq users to inspire themselves from similar proofs and
 notice
 duplicated proofs. Comparatively, our predictions comes from a much more
-detailed description of the targeted goal.
+detailed description of the targeted goal.\todo{and can be used as an ATP}
 %However, we simply create a single label for each tactic call whereas each of
 %its
 %arguments is treated independently in \textsf{ML4PG}.
@@ -1957,13 +1956,13 @@ detailed description of the targeted goal.
 %by a
 %version that can learn to predict tactics and their arguments independently.
 
-\textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} is a powerful system able to
+\textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} can
 generate
 proof scripts from previous \coq proof examples.
-Its strength lies in its ability to produce likely sequences
+Its strength lies in the ability to produce likely sequences
 of tactics for solving domain specific goals. It operates by creating a model
 for common sequences of tactics for a specific library.
-This means that in order to propose the following tactic, only the previously
+This means that in order to propose the next tactic, only the previously
 called tactics
 are considered.
 %intuition tells us that it should not be the main factor
@@ -1996,6 +1995,7 @@ tactics. Here, we demonstrate the competitiveness of our system against
 %arguments is more difficult but is likely to produce more suitable lemmas.
 %Proof patching: \cite{RingerYLG18}
 
+\todoi{maybe the paragraph can be generally proof strategy languages including ltac and eisbach}
 A similar effort for stronger automation is performed in \isabelle. Nagashima
 developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the
 user to
@@ -2008,10 +2008,10 @@ but for now it is up to the user to come up with a good meta-tactic.
 Machine learning has also been used to advise the best library lemmas for new
 ITP goals.
 This can be done either in an interactive way, when the user completes the
-proof based on the recommended lemmas, as in the \textsc{Mizar Proof
-Advisor}~\cite{Urb04-MPTP0}, or attempted fully automatically, where such lemma
+proof based on the recommended lemmas, as in the Mizar proof advisor
+\textsc{MizAR}~\cite{Urb04-MPTP0,mizAR40}, or attempted fully automatically, where such lemma
 selection is handed over to the ATP component of a \emph{hammer}
-system~\cite{hammers4qed,tgck-cpp15,holyhammer,BlanchetteGKKU16,mizAR40}.
+system~\cite{hammers4qed,tgck-cpp15,holyhammer,BlanchetteGKKU16}.
 
 Internal learning-based selection of tactical steps inside an ITP is analogous
 to internal learning-based selection of clausal steps inside ATPs such as
@@ -2026,7 +2026,7 @@ commands in the priority queue based on positive and negative examples.
 
 \section{Conclusion}\label{sec:concl}
 We proposed a new proof assistant automation technique which combines
-tactic-based proof search with machine learning prediction
+tactic-based proof search with machine learning prediction.
 Its implementation, \tactictoe, achieves an overall success rate of 66.4\%
 on 7164 theorems of the \holfour standard library, surpassing \eprover
 with auto-schedule. Its
@@ -2034,7 +2034,7 @@ effectiveness is especially visible on
 theories which use inductive data structures, specialized decision procedures,
 and custom built simplification sets.
 Thanks to the learning abilities of \tactictoe, the generated proof scripts
-usually reveal the high-level structure of the proof. %For these reasons,
+often reveal the high-level structure of the proof. %For these reasons,
 We therefore believe that predicting ITP tactics based on the current goal
 features is a very reasonable approach to automatically guiding proof search,
 and that accurate predictions can be obtained by learning from the knowledge
