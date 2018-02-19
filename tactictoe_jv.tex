@@ -474,18 +474,18 @@ Descendant(b) \rbrace\]
 \end{definition}
 
 
-In Definition~\ref{def:prod}, we judge if a tactic is productive from its
+In Definition~\ref{def:prod}, we decide if a tactic is productive based on its
 contribution to the search tree.
 
-\begin{definition}\label{def:prod} (Productive tactic)
+\begin{definition}\label{def:prod} (productive tactic)
 The application of a tactic on an open goal is called productive if and only if
 all the following conditions are satisfied:
 \begin{itemize}
 \item It does not fail or timeout. To prevent tactics from looping, we
 interrupt tactics after a short amount of time (0.05 seconds).
-\item It does not loop, i.e. its output does not contain any goals that appears
+\item It does not loop, i.e., its output does not contain any goals that appear
 in the ancestor of the node of the current goal.
-\item It is not a parallel step, i.e. its output is not a superset
+\item It is not a parallel step, i.e., its output is not a superset
 of a list of goals produced from the same goal.
 \end{itemize}
 
@@ -692,10 +692,10 @@ selection.
 \paragraph{Resolution}
 The search ends when the algorithm reaches one of these 3 conditions:
 \begin{itemize}
-\item It finds a proof, i.e. the root node is solved. In this case,
+\item It finds a proof, i.e., the root node is solved. In this case,
 the search returns a minimized and
 prettified proof script (see Section~\ref{sec:proofdisplay}).
-\item It saturates, i.e. there is no tactics to be applied to any open goal.
+\item It saturates, i.e., there is no tactics to be applied to any open goal.
 This happens less than 10 times in the full-scale experiment.
 \item It exceeds a given time limit set by default to 60 seconds.
 \end{itemize}
@@ -864,7 +864,7 @@ algorithm for proving $c$.
 %Section~\ref{sec:policy}).
 
 The first idea is to select tactic-goal pairs and theorems by their similarity
-with $c$ (i.e $\mathit{Predictions}^{\mathit{tactic}}_{500} (c)$ and
+with $c$ (i.e. $\mathit{Predictions}^{\mathit{tactic}}_{500} (c)$ and
 $\mathit{Predictions}^{\mathit{theorem}}_{500} (c)$).
 However, this selection may not be adapted to later stages of
 the proof where goals may have drifted significantly from $c$. In order to
