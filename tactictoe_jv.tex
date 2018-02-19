@@ -512,9 +512,9 @@ $\mathit{Predictions}^{\mathit{theorem}}_k (g)$
 and $\mathit{Predictions}^{\mathit{goal\_list}}_k (g)$) the $k$ tactics
 (respectively theorems and lists of goals) selected by our prediction algorithm.
 
-We introduce specificities associated with the prediction of each object.
+We discuss below the specifics associated with the prediction of each kind of object.
 In particular, we present the dataset from which objects are selected and the
-purpose of the selection process. Details on the similarity measure backing the
+purpose of the selection process. The similarity measure backing the
 predictions is described in Section~\ref{sec:features} and two methods for
 improving the quality of the predictions are presented in
 Section~\ref{sec:ortho} and Section~\ref{sec:synthesis}.
@@ -522,10 +522,10 @@ Section~\ref{sec:ortho} and Section~\ref{sec:synthesis}.
 \paragraph{Tactics}
 To start with, we build a database of tactics consisting
 of tactic-goal pairs recorded from successful tactic applications in human
-proofs (see
+proofs (recording will be discussed in 
 Section~\ref{sec:recording}).
-Then, during proof search, we order recorded goals according to their
-similarity with a targeted goal $g$ (usually the first pending goal of a node).
+During proof search, the recorded goals will be reordered according to their
+similarity with a target goal $g$ (usually the first pending goal of a node).
 The recorded pairs induce an
 order on tactics. The intuition is that tactics which have been successful on
 goals similar to $g$ should be tried first, since they are more likely to lead
@@ -551,7 +551,7 @@ A dataset of tactic outputs is compiled during orthogonalization.
 This set is separated into positive and negative examples (see
 Section~\ref{sec:evaluation}).
 List of goals that are a subset of the result of a recorded tactic on a
-targeted goal are considered positive. During proof search, given a list of
+target goal are considered positive. During proof search, given a list of
 goals $l$ created by a tactic, we select a set of lists of goals that are most
 similar to $l$. The ratio of positive examples in the selection gives us a
 prior evaluation for MCTS.
@@ -1946,7 +1946,7 @@ groups related proofs using clustering
 algorithms. It allows \coq users to inspire themselves from similar proofs and
 notice
 duplicated proofs. Comparatively, our predictions comes from a much more
-detailed description of the targeted goal.\todo{and can be used as an ATP}
+detailed description of the target goal.\todo{and can be used as an ATP}
 %However, we simply create a single label for each tactic call whereas each of
 %its
 %arguments is treated independently in \textsf{ML4PG}.
