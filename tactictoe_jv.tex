@@ -289,7 +289,7 @@ The additional contributions and their effect on our system are:
 matching constructions, opening of submodules are supported. The different
 recording steps (parsing, unfolding and replaying) are regrouped into a single
 \sml function.
-\item Monte Carlo tree search~~\cite{montecarlo} (MCTS) replaces A* as our
+\item Monte Carlo tree search~\cite{montecarlo} (MCTS) replaces A* as our
 search algorithm. The MCTS algorithm gives a more balanced feedback on
 the success of
 each proof step by
@@ -557,7 +557,8 @@ not solve the current goal, proceed in the wrong direction
 or even loop. For that reason, predictions need to be accompanied by a
 proof search mechanism that allows for backtrac king and
 can choose which proof tree to extend next and in which direction.
-Our search algorithm is a Monte Carlo tree search~\cite{} algorithm that relies
+Our search algorithm is a Monte Carlo tree search~\cite{montecarlo} algorithm 
+that relies
 on a prior evaluation function and a prior policy function. Those priors are
 learned through direct supervised learning for the policy and via the data
 accumulated during orthogonalization for the evaluation. Therefore, this MCTS
