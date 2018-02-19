@@ -574,7 +574,7 @@ here instead of neural networks trained through reinforcement learning in
 AlphaGo Zero~\cite{silver2017mastering}.
 A characteristic of the MCTS algorithm is that it offers a good trade-off
 between exploitation and exploration. This means that the algorithm searches
-deeper more promises branches and leaves enough time for the exploration
+deeper more promising branches and leaves enough time for the exploration
 of less likely alternatives.
 
 
@@ -593,6 +593,7 @@ resolution.
 \paragraph{Initialization}
 The input of the algorithm is a goal $g$ (also called conjecture) that we
 want to prove.
+\todo{@TG: Check sentence below}
 Therefore the search tree starts with only one node the list of goals
 $[g]$ and an ordered list of predicted tactics for the goal $g$.
 %Then, the MCTS algorithm alternates node selection steps and node extension
@@ -604,7 +605,7 @@ $[g]$ and an ordered list of predicted tactics for the goal $g$.
 %simulations and do not reflect our exploration strategy that only
 \paragraph{Node selection}
 Through node extension steps the search tree grows and the number of paths to
-explore increases. To decide which node to extend next, a evolving value for
+explore increases. To decide which node to extend next, an evolving value for
 each node is given in Definition~\ref{def:value}. The algorithm that performs
 node selection starts from the root of the search tree. From the current node,
 the function \texttt{CompareChildren} choses among the children of its open
@@ -628,7 +629,7 @@ return CurrentNode;
 \end{lstlisting}
 
 \begin{definition}\label{def:value}(Value)
-The value of the $i^th$ child $a_i$ of the open goal of a parent node $p$
+The value of the $i^{th}$ child $a_i$ of the open goal of a parent node $p$
 is determined by:
 \[\mathit{Value}(a_i) = \mathit{CurEvaluation}(a_i) + c_{exploration} *
 \mathit{Exploration}(a_i)\]
@@ -652,7 +653,7 @@ traversed during node selection, noted $\mathit{Visit}(x)$.
 
 \[\mathit{CurPolicy}(a_i) = \frac{1 +
 \mathit{Visit}(a_i))}{\sqrt{\mathit{Visit}(p))}}\]
-The policy is approximatively the  percentage of time a node was visited.The
+The policy is approximately the  percentage of time a node was visited. The
 square root skews this probability to favor even more exploration of nodes with
 few visits.
 
@@ -1287,7 +1288,7 @@ proof required to close a list of goals.
 %Finally our proof search algorithm sometimes fails even if it knows all the
 %tactic necessary. The two main reasons are that either a crucial tactic
 %exceeds its timeout or that the human proof is too deep to be rediscovered
-%(more than 10 steps long).In all those experiments orthogonalization is
+%(more than 10 steps long). In all those experiments orthogonalization is
 %performed with
 %radius 20.
 
