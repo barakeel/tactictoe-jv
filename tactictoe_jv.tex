@@ -794,6 +794,7 @@ number of cores available to the user.
 
 
 \section{Feature Extraction}\label{sec:features}
+\todo{@TG: decide which of the next sentences}
 We explain the construction of the similarity measure by which relevant
 objects are predicted
 
@@ -804,20 +805,19 @@ there, we extend the extraction mechanism
 to goals, theorems and lists of goals. Duplicated features are always removed
 so that each object has an associated set of features.
 
-Here are the different kind of feature we extract from terms:
+Here are the different kinds of feature we extract from terms:
 \begin{itemize}
 \item names of constants, including the logical operators,
 \item type constructors present in the types of constants and variables,
 \item subterms with all variables replaced by a single placeholder $V$,
 \item names of the variables.
 \end{itemize}
-Goals (respectively theorems) are represented by a couple of a list of
-terms (assumptions) and a term (conclusion). So, we distinguish between
+Goals (respectively theorems) are represented by pairs consisting of a list of
+terms (assumptions) and a term (conclusion). We distinguish between
 features of the assumptions and features of the conclusion by adding a
-different tag to elements of each set. The union of all those
-features are considered the feature of a goal (respectively theorem). From
-that, we can construct features for a list of goals by
-from the union of the features of each goal in the list.
+different tag to elements of each set. The feature of a goal (respectively theorem)
+are the union of all these tagged features. From
+that, we can construct features for a list of goals by computing the union of the features of each goal in the list.
 
 \subsection{Similarity}\label{sec:predictions}
 We estimate the similarity (or co-distance) between two objects $o_1$ and $o_2$
@@ -826,12 +826,12 @@ The estimation is based on the frequency of the features in the intersection of
 $f_1$ and $f_2$. A good rule of thumb is that the rarer the shared features
 are, the more similar two goals should be. The relative rarity of each feature
 can be estimated by calculating its TF-IDF weight~\cite{Jones72astatistical}.
-We additionally modify the weight by raising them to the sixth power giving
-even more credence
+We additionally raise these weighs to the sixth power giving
+even more importance
 to rare features. This modification was found experimentally optimal in
 \cite{ckju-pxtp13}.
 
-The first co-distance $sim_1$ sums the weight of each shared
+The first co-distance $sim_1$ sums the weight of all shared
 features to compute the total score.
 In a second co-distance $sim_2$, we additionally take
 the total number of features into account, to reduce the seemingly unfair
@@ -868,15 +868,15 @@ algorithm for proving $c$.
 The first idea is to select tactic-goal pairs and theorems by their similarity
 with $c$ (i.e. $\mathit{Predictions}^{\mathit{tactic}}_{500} (c)$ and
 $\mathit{Predictions}^{\mathit{theorem}}_{500} (c)$).
-However, this selection may not be adapted to later stages of
+However, this selection may not be adapted at later stages of
 the proof where goals may have drifted significantly from $c$. In order to
 anticipate the production of diverse goals, our prediction during preselection
 takes dependencies between objects of the same dataset into account.
-This dependency relation is assymetric. Through the relation, each object has
+This dependency relation is asymmetric. Through the relation, each object has
 multiple children and at most one parent.
 Once a dependency relation is established we can calculate a dependency score
 for each object, which is the maximum of its similarity score
-and the similarity score of its parent. In the end, the 500 entries with
+and the similarity score of its parent. Finally, the 500 entries with
 highest dependency score are preselected in each dataset.
 
 We now give a mathematical definition of the dependency relation for each kind
@@ -884,7 +884,7 @@ of object.
 
 \begin{definition}(Dependencies of a tactic-goal pair)\\
 Let $\mathfrak{F}$ be the set of recorded tactic-goal pairs.
-The dependencies $D_\infty$ of a tactic-goal pair $(t_0,g_0)$ is
+The dependencies $D_\infty$ of a tactic-goal pair $(t_0,g_0)$ are
 inductively defined by:
 
 \begin{align*}
@@ -916,7 +916,7 @@ is preselected if and only if $g$ appears in the 500 preselected tactic-goal
 pairs. This has the
 desirable effect that negative and positive examples derived from the same
 input goal are chosen or discarded together.
-\todo{this paragraph was confusing for Lasse}
+\todo{this paragraph was confusing for Lasse and Cezary}
 
 \section{Orthogonalization}\label{sec:ortho}
 Different tactics may transform a single goal in the same way. Exploring such
