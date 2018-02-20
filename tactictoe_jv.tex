@@ -589,10 +589,9 @@ resolution.
 
 \paragraph{Initialization}
 The input of the algorithm is a goal $g$ (also called conjecture) that we
-want to prove.
-\todo{@TG: Check sentence below}
-Therefore the search tree starts with only one node the list of goals
-$[g]$ and an ordered list of predicted tactics for the goal $g$.
+want to prove. Therefore the search tree starts with only one node containing 
+the list of goals
+$[g]$.
 %Then, the MCTS algorithm alternates node selection steps and node extension
 %steps which grow the search tree.
 
@@ -694,7 +693,9 @@ The search ends when the algorithm reaches one of these 3 conditions:
 the search returns a minimized and
 prettified proof script (see Section~\ref{sec:proofdisplay}).
 \item It saturates, i.e., there are no tactics to be applied to any open goal.
-This happens less than 10 times in the full-scale experiment. \todo{@TG: why don't we have the original tactics as options?}
+This occurs less than 10 times in the full-scale experiment.
+This happens only at the beginning of \holfour library, where the training data 
+has very few tactics. 
 \item It exceeds a given time limit (default is set to 60 seconds).
 \end{itemize}
 
@@ -786,16 +787,11 @@ avoids slowing down \tactictoe's search loop. The number of asynchronous calls
 to external provers that can be executed at the same time is limited by the
 number of cores available to the user.
 
-
-
-
-
 \section{Feature Extraction}\label{sec:features}
-\todo{@TG: decide which of the next sentences}
-We explain the construction of the similarity measure by which relevant
-objects are predicted
+%We explain the construction of the similarity measure by which relevant
+%objects are predicted
 
-We predicts tactics through their associated goals. So, the features
+We predict tactics through their associated goals. So, the features
 for each kind of object can be extracted from (different representations of)
 mathematical formulas. We start by describing features for \holfour terms. From
 there, we extend the extraction mechanism
@@ -906,14 +902,14 @@ The relation chosen for tactic-goal pairs is transitively closed, which is not
 the case for theorem dependencies.
 \end{remark}
 
-To preselect a list of goal $l$ from our database of lists of goals, we
+We do preselection also for lists of goals.
+To preselect a list of goals $l$ from our database of lists of goals, we
 consider the tactic input $g$ that was at the origin of the production of $l$
-during orthogonalization. The list $l$
-is preselected if and only if $g$ appears in the 500 preselected tactic-goal
-pairs. This has the
-desirable effect that negative and positive examples derived from the same
-input goal are chosen or discarded together.
-\todo{this paragraph was confusing for Lasse and Cezary}
+during orthogonalization. The list $l$ is preselected if and only if $g$ 
+appears in the 500 preselected tactic-goal pairs. 
+%This has the
+%desirable effect that negative and positive examples derived from the same
+%input goal are chosen or discarded together.
 
 \section{Orthogonalization}\label{sec:ortho}
 Different tactics may transform a single goal in the same way. Exploring such
@@ -1110,12 +1106,18 @@ dataset which is about 30 times larger.
 
 \subsection{Tuning \tactictoe}\label{sec:tuning}
 
-Fix parameters: not optimized here.
- - Features extraction method.
- - k-nn distance.
- - MCTS evaluation radius is set to 10.
- - Metis : 16 lemmas.
- - Eprover: 128 lemmas and 5 seconds timeout 1 asynchronous call
+We optimize \tactictoe by tuning parameters of six different techniques:
+the timeout of tactics, orthogonalization, abstraction, MCTS policy, MCTS 
+evaluation and ATP integration. During training, optional techniques such as 
+orthogonalization may also be turned off completely.
+\tactictoe also includes other important techniques which are run with their 
+default parameters: features extraction, prediction 
+algorithms, number of premises for ATPs and MCTS evaluation radius (set to 
+10).
+By choosing a set of parameters, we create a strategy for 
+\tactictoe that is evaluated on our training set of 273 theorems. And the 
+strategy with the highest number of proven theorems is selected for 
+a full scale evaluation.
 
 
 \begin{table}[ht]
@@ -1161,7 +1163,8 @@ ATP integration & none (default + best abstraction && 203\\
 parameters for \tactictoe on a training set of 273 theorems.}
 \end{table}
 
-In Table~\ref{tab:tuning}, we run \tactictoe with different parameters.
+In Table~\ref{tab:tuning}, the success rate of the different \tactictoe  
+strategy is presented.
 The first four techniques are tested relative to the same baseline indicated in
 the table by the tag ``default''.  This default strategy relies on a tactic
 time out of 0.05s, an orthogonalization radius of 20 and a policy coefficent of
@@ -1192,7 +1195,6 @@ is given less predictions. But even if a lemma essential for the proof of a
 goal is not predicted, a modification on the goal performed by a tactic can
 change its prediction to include the necessary lemma.
 This effect minimizes the drawback of relying on a small number of predictions.
-
 
 The MCTS evaluation, despite relying on the largest amount of collected data,
 does not provide a significant improvement over a strategy relying on no
@@ -1933,22 +1935,6 @@ ITP users. In our work, the splitting of a proof into a sequence of tactics is
 essential for the
 tactic recording procedure, used to train our tactic prediction mechanism.
 
-\textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
-groups related proofs using clustering
-algorithms. It allows \coq users to inspire themselves from similar proofs and
-notice duplicated proofs. Comparatively, our predictions come from a much more
-detailed description of the target goal. \tactictoe can also organize the 
-predictions to produce verifiable proofs and is not restricted to user 
-advice.
-%However, we simply create a single label for each tactic call whereas each of
-%its
-%arguments is treated independently in \textsf{ML4PG}.
-%Our choice is motivated by the k-NN algorithm already used in
-%\holyhammer for the a of theorems.
-%, which can be easly adapted to the selection of tactics but would be improved
-%by a
-%version that can learn to predict tactics and their arguments independently.
-
 \textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} can
 generate
 proof scripts from previous \coq proof examples.
@@ -1976,6 +1962,25 @@ Finally, \textsf{SEPIA} was evaluated on three chosen parts of the
 \coq library demonstrating that it globally outperforms individual \coq
 tactics. Here, we demonstrate the competitiveness of our system against
 \eprover on the \holfour standard library.
+
+
+\textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
+groups related proofs using clustering
+algorithms. It allows \coq users to inspire themselves from similar proofs and
+notice duplicated proofs. Comparatively, our predictions come from a much more
+detailed description of the target goal. \tactictoe can also organize the 
+predictions to produce verifiable proofs and is not restricted to user 
+advice.
+%However, we simply create a single label for each tactic call whereas each of
+%its
+%arguments is treated independently in \textsf{ML4PG}.
+%Our choice is motivated by the k-NN algorithm already used in
+%\holyhammer for the a of theorems.
+%, which can be easly adapted to the selection of tactics but would be improved
+%by a
+%version that can learn to predict tactics and their arguments independently.
+
+
 %A recent improvement on this system~\cite{}\todo{Cezary: could not remember
 %the
 %reference that you gave me here i think it was CICM 2017} includes the
@@ -1986,14 +1991,15 @@ tactics. Here, we demonstrate the competitiveness of our system against
 %tactics but we rely only on information from the current goal. Combining the
 %two approaches by predicting from the goal and from the original tactic
 %arguments is more difficult but is likely to produce more suitable lemmas.
-%Proof patching: \cite{RingerYLG18}
+%
+Proof patching: \cite{RingerYLG18}
 
 \todoi{maybe the paragraph can be generally proof strategy languages including ltac and eisbach}
 A similar effort for stronger automation is performed in \isabelle. Nagashima
 developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the
 user to
 program with regular tactics and combine them with tools such as
-\sledgehammer~\cite{sledgehammer10} or Nitpick~\cite{Nitpick10}.
+\sledgehammer.
 Selection of tactics from data collected in recorded proofs is in development
 but for now it is up to the user to come up with a good meta-tactic.
 
