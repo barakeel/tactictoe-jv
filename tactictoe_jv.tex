@@ -1111,8 +1111,8 @@ the timeout of tactics, orthogonalization, abstraction, MCTS policy, MCTS
 evaluation and ATP integration. During training, optional techniques such as 
 orthogonalization may also be turned off completely.
 \tactictoe also includes other important techniques which are run with their 
-default parameters: features extraction, prediction 
-algorithms, number of premises for ATPs and MCTS evaluation radius (set to 
+default parameters: feature extraction, prediction 
+algorithms, number of premises for ATPs and MCTS evaluation radius (set by default to
 10).
 By choosing a set of parameters, we create a strategy for 
 \tactictoe that is evaluated on our training set of 273 theorems. And the 
@@ -1176,8 +1176,8 @@ In each subtable, each experiment differs from the current baseline by exactly
 one parameter.
 
 Thanks to the larger search time available in this experiment, the timeout for
-each tactic can be raised from the 0.02 seconds used in \tactictoe's first
-experiment~\cite{tgckju-lpar17} to 0.05
+each tactic can be increased from the 0.02 seconds used in \tactictoe's initial
+experiments~\cite{tgckju-lpar17} to 0.05
 seconds. Removing tactics with similar effect as performed by the
 orthogonalization process is only beneficial when running \tactictoe for short
 period of time. It seems that the alloted time allows a strategy
@@ -1187,11 +1187,11 @@ theorem list in tactics. At any rate, argument prediction for abstracted
 tactics is the technique that have the highest impact on the success of
 \tactictoe. Integration of ATPs being a specialization of this technique
 contributes significantly as well. Experiments involving \eprover, run the ATP
-on one thread asynchronously with a timeout of 5 seconds and 128 premises.
+using a separate proces asynchronously with a timeout of 5 seconds and 128 premises.
 The fact that \metis outperforms \eprover in this setting is due to the fact
 that \metis is run with a very short timeout, allowing to close different part
 of search tree quickly. Because \metis is weaker that \tactictoe as an ATP, it
-is given less predictions. But even if a lemma essential for the proof of a
+is given less predictions. But even if an essential lemma for the proof of a
 goal is not predicted, a modification on the goal performed by a tactic can
 change its prediction to include the necessary lemma.
 This effect minimizes the drawback of relying on a small number of predictions.
@@ -1324,9 +1324,9 @@ and priority calls to \metis with a timeout of 0.1 seconds.
 \label{tab:_param}}
 \end{table}
 
-The results shows that \tactictoe is able to prove almost twice as much
+The results shows that \tactictoe is able to prove almost twice as many
 theorems as \eprover. Combining the results of \tactictoe and \eprover we get a
-69.0\% success rate which is significantly above the 5O\% success rates
+69.0\% success rate which is significantly above the 50\% success rates
 of hammers on this type of problems~\cite{tgck-cpp15}. Moreover, \tactictoe is
 running a single set of parameters (strategy), where as hammers and ATPs have
 been optimized and rely on a wide range of strategies.
@@ -1336,8 +1336,8 @@ been optimized and rely on a wide range of strategies.
 Tactic proofs produced by \tactictoe during this experiment are all verifiable
 in \holfour. By the design of the proof search, reconstruction of \tactictoe
 proof succeeds, unless one of the tactic modifies the state of \holfour in a
-way that changes the behavior of a tactic used in the final proof. Such an
-event has not yet occurred.
+way that changes the behavior of a tactic used in the final proof. This has not
+occurred a single time in our experiments.
 More details on how a proof is extracted from the search tree is given in
 Section~\ref{sec:proofdisplay}.
 Comparatively, we achieve a reconstruction rate of 95 percent for \eprover,
