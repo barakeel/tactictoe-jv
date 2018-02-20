@@ -1723,8 +1723,8 @@ input goal.
 
 \section{Proof Presentation}\label{sec:proofdisplay}
 
-When \tactictoe finds a proof of a goal $g_{root}$, it returns a search tree
-$\mathfrak{T}$ where the root node containing $g_{root}$ is solved.
+When \tactictoe finds a proof of an initial goal, it returns a search tree
+$\mathfrak{T}$ where the root node containing the initial goal is solved.
 In order to transform this search tree into a proof script, we need to extract
 the tactics that contributed to the proof and combine them using tactic
 combinators.
@@ -1752,7 +1752,7 @@ list of goals is a singleton and removing \texttt{THENL []} during the
 extraction phase.
 Further post-processing such as
 eliminating unnecessary tactics and theorems has been developed and
-improve the user experience greatly~\cite{DBLP:conf/sefm/Adams15}.
+improves the user experience greatly~\cite{DBLP:conf/sefm/Adams15}.
 
 \paragraph{Minimizing length of the proof}
 A fast and simple minimization is applied when processing the final proof. If
