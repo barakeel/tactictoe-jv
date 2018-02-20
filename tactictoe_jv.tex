@@ -280,8 +280,9 @@ function on the empty list yields the originally goal sequent as a theorem.
 In this way, tactics implement the plumbing of backwards, goal-directed, proof
 construction.
 Because validation functions are only important to check the final proof, we
-omit them during the description of proof search algorithm. We denote by $t(g)$
-the list of goals produced by the application of a tactic $t$ to a goal $g$.
+omit them during the description of the proof search algorithm. We denote by 
+$t(g)$ the list of goals produced by the application of a tactic $t$ to a goal 
+$g$.
 
 \subsection{Contributions}
 This paper extends the work described in \cite{tgckju-lpar17}.
@@ -645,7 +646,7 @@ all descendants of $a_i$ including node extension failures.
 
 
 The exploration term is determined by the prior policy and the current policy.
-The current policy is calculate from the number of times a node $x$ has been
+The current policy is calculated from the number of times a node $x$ has been
 traversed during node selection, denoted $\mathit{Visit}(x)$.
 
 \[\mathit{Exploration}(a_i) =
