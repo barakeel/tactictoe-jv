@@ -183,56 +183,59 @@ shorter and punchier.}
 
 \todoi{Move part of the abstract to the introduction.}
 \begin{abstract}
-Formalization of mathematics in interactive theorem provers (ITPs) relies today on many proof automation methods.
-Some of these methods are general-purpose and with enough time they can prove any provable conjecture.
-Many formalized proof scripts however also take advantage of specialized rules and theory-based strategies.
-In the HOL4 ITP system, practically all of them are implemented as \emph{tactics}.
 
-Automated theorem provers (ATPs) rely on parameterizable general
-strategies. Sometimes, a strategy can be specialized for only one theory as in
-SMT solving. But it is difficult for an ATP to rely on rules tailored for a particular case.
-Indeed, this would require implementing many specific rules and more
-importantly figuring out in which cases they can be applied.
 
-We bridge this gap by implementing our tactical prover TacticToe on top
-of the HOL4 ITP.
-TacticToe first learns from many proof scripts
-the relevance of tactics in particular proof situations.
-This learned knowledge is then used in a Monte Carlo tree search algorithm that explores the most promising tactic-level proof paths.
-On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.4\%
-of the 7164 theorems in HOL4's standard library whereas
+
+
+We implement a tactical prover TacticToe on top of the HOL4 interactive theorem 
+prover. TacticToe learns from many human proofs which mathematical method is 
+useful in particular proof situations.
+This knowledge is then used in a Monte Carlo tree search algorithm that 
+explores the most promising tactic-level proof paths.
+On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.4\% of 
+7164 theorems in HOL4's standard library whereas
 Eprover solves 34.5\%. The success rate rises to 69.0\% by combining the
-results of both provers.
+results of \tactictoe and \eprover.
 \end{abstract}
 
 \tableofcontents
+
 \section{Introduction}
 Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight},
   \isabelle~\cite{isabelle}
   and \coq~\cite{coq-book} provide high-level parameterizable tactics for constructing proofs.
-  Such tactics typically analyze the current proof state (goal and
-  assumptions), then apply non-trivial proof transformations that get
-  expanded into many basic kernel-level inferences or large parts of a proof term.
-%\marginpar{not Coq}
-  In this work we develop a tactic-level automation procedure for the \holfour ITP
-  which guides the selection of tactics by learning from previous
-  proofs.  Instead of relying on translation to first-order automated
-  theorem provers (ATPs) as done by the hammer
-  systems~\cite{hammers4qed,tgck-cpp15}, our technique
-%\marginpar{too many cites?}
-%BlanchetteGKKU16,holyhammer,mizAR40
-  searches directly for sequences of tactic applications that lead to
-  an ITP proof, thus avoiding the translation and proof-reconstruction phases needed by the hammers.
-
-  To do this, we \emph{extract and record} tactic invocations from the ITP
+  Such tactics analyze the current proof state (goal and
+  assumptions) and apply non-trivial proof transformations.
+  Formalized proofs take advantage of different levels of automation: 
+  specialized rules, theory-based strategies and general purpose startegies. 
+  Thanks to the progress in proof 
+  automation, developers can delegate more and more complicated proof 
+  obligations to general purpose strategies. Those are implemented by automated 
+  theorem provers(ATPs) such as \eprover~\cite{eprover}. The communications 
+  between 
+  an ITP and ATPs is made possible by a ``hammer''  
+  system~\cite{hammers4qed,tgck-cpp15}. It acts as an interface by performing 
+  premise selection, translation and proof reconstruction.
+  Yet, ATPs are far from foolproof and more precise user-guidance, achieved 
+  by applying a particular sequence of specialized rules, is almost always 
+  necessary to develop a mathematical theory.
+  
+  In this work, we develop in the ITP \holfour a procedure to select suitable 
+  tactics depending on the current proof state by learning 
+  from previous proofs. Backed by this machine-learned guidance, our prover 
+  \tactictoe relies on Monte 
+  Carlo tree search~\cite{montecarlo} to find sequences of tactic applications 
+  leading to an ITP proof.
+  To this end, we \emph{extract and record} tactic invocations from the ITP
   proofs (Section~\ref{sec:recording}) and
   \emph{build efficient machine learning classifiers} based on such training
   examples (Section~\ref{s:prediction}).  The learned data serves as
   guidance for a \emph{Monte Carlo tree search} that explores different
   proof paths (Section~\ref{sec:proofsearch}). The result, if
   successful, is a verified human-level proof composed of \holfour
-  tactics.  The system is evaluated on a large set of theorems originating
+  tactics (Section~\ref{sec:proofdisplay}). The system is evaluated on a large 
+  set of theorems originating
   from \holfour (Section~\ref{s:experiments}).
 
 \subsection{The problem}
@@ -246,7 +249,7 @@ Each tactic performs a sound transformation of the proof state: essentially, it 
 This gives rise to a machine learning problem: can we learn a mapping from a given proof state to the next tactic (or sequence of tactics) that will productively advance the proof towards a solution?
 
 \paragraph{Goals and theorems.}
-A goal is represented as a \emph{sequent}.
+A goal (or proof state) is represented as a \emph{sequent}.
 A sequent is composed of a set of assumptions and a conclusion, all of which are higher-order logic formulas.
 When a goal is proven, it becomes a theorem.
 If the developer gives the theorem a name then we refer to it as a top-level theorem.
@@ -296,7 +299,7 @@ The additional contributions and their effect on our system are:
 matching constructions, opening of submodules are supported. The different
 recording steps (parsing, unfolding and replaying) are regrouped into a single
 \sml function.
-\item Monte Carlo tree search~\cite{montecarlo} (MCTS) replaces A* as our
+\item Monte Carlo tree search (MCTS) replaces A* as our
 search algorithm. The MCTS algorithm gives a more balanced feedback on
 the success of
 each proof step by
@@ -316,7 +319,7 @@ by asynchronous calls to \eprover to help \tactictoe during proof search.
 success rate on the standard library.
 \item First evaluation of \tactictoe success rate relative to
 the length of the original human proofs.
-\item Minimization and prettification of the generated proof improves user
+\item Minimization and prettification of the generated proof  facilitates user
 interaction.
 \end{itemize}
 
