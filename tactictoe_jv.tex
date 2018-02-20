@@ -1049,9 +1049,11 @@ $\mathit{Predictions}^{\mathit{tactic}}_{16}(g)$ to replace all the
 placeholders
 in $\hat{t}$.
 The type of theorem lists is a very common type in \holfour proofs and theorems contain
-enough information to be predicted accurately.
-We also have positive results with term abstraction and plan to include it soon
-in our default algorithm.
+enough information to be predicted accurately. 
+
+%We have positive results 
+%with term abstraction but they are not evaluated in 
+%Section~\ref{sec:evaluation}.
 
 \paragraph{Selection of Abstracted Tactics}
 As abstracted tactics do not appear in human proofs, we need to find a way to
@@ -1380,36 +1382,24 @@ simplification sets such as \texttt{arithmetic}, \texttt{list}
 and \texttt{f\_map}. Indeed, \tactictoe is able to recognize where and when to
 apply induction, a task at which ATPs are known to struggle with.
 
-%\subsection{Recent improvements}\todo{maybe remove this subsection}
-%The final results could be improved by a few percent by including the
-%following additional techniques that are already available.
-%The technique already discussed in Section~ would most likely improve the
-%results by 2-3 percent. Reducing the exploration coefficient from 4 to 2 would
-%also probably give a 3 percent increase in the number of proven theorems as
-%shown by a recent 1 in 10 evaluation on the full library.
-
-\paragraph{Self-learning}\todo{explain better or remove or move to future work}
+\paragraph{Reinforcement learning}
 All our feature vectors have been learned form human proofs. We now can now
 also add tactic-goal pairs that appears in final \tactictoe's proof. To prevent
 duplication of effort, orthogonalization of those
 tactics is essential to have a beneficial effect.
-Since recording and re-proving are intertwined, the additional data is
-available for the next proof search.
+Since recording and re-proving are intertwined during evaluation, the 
+additional data is available for the next proof search.
 The hope is that the algorithm will improve faster by learning from its own
 discovered proofs than from the human proof
 scripts~\cite{DBLP:conf/cade/Urban07}. Side experiments indicate that
-self-learning improves \tactictoe's success rate by less than one percent.
-
+this one shot reinforcement learning method increases \tactictoe's success rate 
+by half a percent.
 
 
 \subsection{Complexity of the proof search}
-
 \pgfplotscreateplotcyclelist{my black}{
 solid, mark repeat=100, mark phase=0, black!100\\
-dashed, mark repeat=100, mark phase=0, black!100\\
-}
-
-
+dashed, mark repeat=100, mark phase=0, black!100\\}
 
 \begin{figure}[h]
 \centering
