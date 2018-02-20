@@ -1095,7 +1095,7 @@ recorded and included in the training examples.
 For each theorem we first attempt to run the \tactictoe search with a time
 limit of 60 seconds before processing the original proof script.
 In this way, the fairness of the experiments is guaranteed by construction:
-only previously declared \sml variables (essentially tactics, theorems and 
+only previously declared \sml values (essentially tactics, theorems and 
 simpsets) are accessible to \tactictoe.
 
 \paragraph{Datasets: optimization and validation}
@@ -1343,7 +1343,7 @@ event has not yet occurred.
 More details on how a proof is extracted from the search tree is given in
 Section~\ref{sec:proofdisplay}.
 Comparatively, we achieve a reconstruction rate of 95 percent for \eprover,
-by calling \metis for 2.0 seconds with the set of theorems necessary for 
+by calling \metis for 2.0 seconds with the set of theorems used
 in \eprover's proof as argument.
 
 \begin{table}[]
@@ -1940,7 +1940,7 @@ tactic recording procedure, used to train our tactic prediction mechanism.
 \textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
 groups related proofs using clustering
 algorithms. It allows \coq users to inspire themselves from similar proofs and
-notice duplicated proofs. Comparatively, our predictions comes from a much more
+notice duplicated proofs. Comparatively, our predictions come from a much more
 detailed description of the target goal. \tactictoe can also organize the 
 predictions to produce verifiable proofs and is not restricted to user 
 advice.
