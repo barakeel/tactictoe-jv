@@ -957,17 +957,18 @@ number of different goals it is useful for.
 \begin{definition} (Goal subsumption)\\
 A goal subsumption $\le$ is a partial relation goals.
 Assuming we have a way to estimate the number steps required to solve a goal,
-a possibly useful subsumption definition could be: \todo{shorter or equal}
-\[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ has a shorter proof than }
+a possibly useful subsumption definition could be:
+\[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ has a proof with a length 
+shorter 
+or equal to the proof of }
 g_2\]
 By default, we choose a minimal subsumption defined by:
 \[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ is }\alpha\mbox{-equivalent
 to } g_2\]
 \end{definition}
-\todoi{@TG: Which of the two above?}
 
-
-We can naturally extend a goal subsumption to lists of goals.
+We can naturally extend any goal subsumption to a subsumption on
+lists of goals.
 \begin{definition} (Goal list subsumption)\\
 A goal list subsumption is an partial relation on lists of goals.
 Given two lists of goals $l_1$ and $l_2$, we can define it from goal
@@ -1078,10 +1079,9 @@ $t$ anymore.
 
 
 \section{Experimental Evaluation}\label{s:experiments}
-\todo{Josef: give the specification}
-Each re-proving experiment is performed on a single CPU of a server in Prague
-with the exception of the experiments
-relying on asynchronous \eprover calls that run on two CPUs.
+The execution of \tactictoe's main loop in each re-proving experiment is 
+performed on a single CPU. An additional CPU is needed for experiments relying 
+on asynchronous \eprover calls.
 
 
 \subsection{Methodology}
@@ -1093,22 +1093,19 @@ To achieve this scenario we re-prove all theorems during a modified build of
 As theorems are proved, their tactical proofs and their statements are
 recorded and included in the training examples.
 For each theorem we first attempt to run the \tactictoe search with a time
-limit of 60 seconds, before processing the original proof script.
-In this way, the fairness of the experiments is guaranteed by construction.
-Only previously declared \sml
-variables (essentially tactics, theorems and simpsets) are accessible.
-And for each theorem to be re-proven \tactictoe is only trained on previous
-proofs.
+limit of 60 seconds before processing the original proof script.
+In this way, the fairness of the experiments is guaranteed by construction:
+only previously declared \sml variables (essentially tactics, theorems and 
+simpsets) are accessible to \tactictoe.
 
-\todoi{rephrase to something more coherent}
 \paragraph{Datasets: optimization and validation}
-
 All top-level theorems from the standard library are considered with the
 exception of 440 hard problems (containing a \texttt{let} construction in their
 proof) and 1175 easy problems (build from \texttt{save\_thm} calls).
 Therefore, during the full-scale experiments, we evaluate 7164 theorems.
-We use every tenth theorem of the first third of the standard library of
-them for parameter optimization, which amounts to 273 theorems.
+We use every tenth theorem of the first third of the standard library for 
+parameter optimization, which amounts to 273 theorems.
+
 Although the evaluation of each set of parameters on its own is fair,
 the selection of the best strategy in Section~\ref{sec:tuning} should also be
 considered as a learning process. To ensure the global fairness, the final
@@ -1345,8 +1342,9 @@ way that changes the behavior of a tactic used in the final proof. Such an
 event has not yet occurred.
 More details on how a proof is extracted from the search tree is given in
 Section~\ref{sec:proofdisplay}.
-For \eprover, reconstruction rate varies between 95 and 99 percent, depending
-on the reconstruction method \cite{}\todo{CK}.
+Comparatively, we achieve a reconstruction rate of 95 percent for \eprover,
+by calling \metis for 2.0 seconds with the set of theorems necessary for 
+in \eprover's proof as argument.
 
 \begin{table}[]
 \centering
@@ -1391,9 +1389,9 @@ Since recording and re-proving are intertwined during evaluation, the
 additional data is available for the next proof search.
 The hope is that the algorithm will improve faster by learning from its own
 discovered proofs than from the human proof
-scripts~\cite{DBLP:conf/cade/Urban07}. Side experiments indicate that
+scripts~\cite{DBLP:conf/cade/Urban07}. Side experiments show that
 this one shot reinforcement learning method increases \tactictoe's success rate 
-by half a percent.
+by less than a percent.
 
 
 \subsection{Complexity of the proof search}
@@ -1428,10 +1426,12 @@ we can clearly deduce from the bump at 30 seconds that \eprover is using at
 least two strategies and probably more. Strategies are a useful method to
 fight the exponential decline in the number of newly proven theorems over
 time. Therefore, integrating strategy scheduling in \tactictoe could be
-something to be experimented with. Overall, we recommend using \tactictoe and
-\eprover with a 10 seconds timeout. It is possible also to run them with a
-longer time limit, but we advise to do so in parallel to avoid waiting time.
-\todo{its strange to ``advise'' in a paper?}
+something to be experimented with. 
+
+%Overall, a good compromise is to run \tactictoe and \eprover with a 10 seconds 
+%timeout. It is posso run them with a
+%longer time limit, but we do so in parallel to avoid waiting time.
+%\todo{its strange to ``advise'' in a paper?}
 
 \begin{figure}[h]
 \centering
@@ -1772,11 +1772,12 @@ also replace extended terms by their quoted version.
 All in all, if a prettified tactic $t_p$ has the same effect its original
 $t_o$, we replace $t_p$ by $t_o$ in the proof.\\
 
-The total effect on the readability of a proof script is depicted in
+The total effect of these minimization and prettification techniques 
+on the readability of a proof script is depicted in
 Example~\ref{ex:pretty}.
-\todo{run without prettification}
-\begin{example}\label{ex:pretty}\ \\
-Discovered proof script for the theorem \texttt{EVERY\_MAP}
+
+\begin{example}(Theorem \texttt{EVERY\_MAP})\label{ex:pretty}\\\
+Proof script before minimization and prettification:
 \begin{lstlisting}[language=SMLSmall]
 boolLib.REWRITE_TAC [DB.fetch "list" "EVERY_CONJ", DB.fetch "list" "EVERY_MEM",
   DB.fetch "list" "EVERY_EL", ldots ,  combinTheory.o_DEF] THEN
@@ -1786,14 +1787,14 @@ BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 11380*)l"] THENL
      DB.fetch "list" "MAP", DB.fetch "list" "CONS_11", boolLib.FORALL_AND_THM]]
 
 \end{lstlisting}
-Minimized and prettified proof script:
+Proof script after minimization and prettification:
 \begin{lstlisting}[language=SMLSmall]
 Induct_on `l` THENL
   [SRW_TAC [] [], ASM_SIMP_TAC (srw_ss ()) [DISJ_IMP_THM, FORALL_AND_THM]]
 \end{lstlisting}
 \end{example}
 
-\section{Case Study}\todo{comment on the case study}
+\section{Case Study}
 Since the proofs generated by \tactictoe are meant to be parts of a \holfour development, it interesting to compare their quality with the original human proofs.
 The quality of a proof in \holfour can be measured in terms of length, readability, maintainability and verification speed.
 We study these properties in three examples taken from our full-scale experiment.
@@ -1939,9 +1940,10 @@ tactic recording procedure, used to train our tactic prediction mechanism.
 \textsf{ML4PG}~\cite{DBLP:journals/corr/abs-1212-3618,DBLP:journals/mics/HerasK14}
 groups related proofs using clustering
 algorithms. It allows \coq users to inspire themselves from similar proofs and
-notice
-duplicated proofs. Comparatively, our predictions comes from a much more
-detailed description of the target goal.\todo{and can be used as an ATP}
+notice duplicated proofs. Comparatively, our predictions comes from a much more
+detailed description of the target goal. \tactictoe can also organize the 
+predictions to produce verifiable proofs and is not restricted to user 
+advice.
 %However, we simply create a single label for each tactic call whereas each of
 %its
 %arguments is treated independently in \textsf{ML4PG}.
@@ -1998,7 +2000,6 @@ program with regular tactics and combine them with tools such as
 \sledgehammer~\cite{sledgehammer10} or Nitpick~\cite{Nitpick10}.
 Selection of tactics from data collected in recorded proofs is in development
 but for now it is up to the user to come up with a good meta-tactic.
-
 
 Machine learning has also been used to advise the best library lemmas for new
 ITP goals.
