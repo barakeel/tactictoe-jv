@@ -179,12 +179,12 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
 \maketitle
 
 \begin{abstract}
-We implement a tactical prover TacticToe on top of the HOL4 interactive theorem 
-prover. TacticToe learns from human proofs which mathematical method is 
+We implement a tactical prover TacticToe on top of the HOL4 interactive theorem
+prover. TacticToe learns from human proofs which mathematical method is
 useful in a particular proof situation.
-This knowledge is then used in a Monte Carlo tree search algorithm that 
+This knowledge is then used in a Monte Carlo tree search algorithm that
 explores the most promising tactic-level proof paths.
-On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.4\% of 
+On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.4\% of
 7164 theorems in HOL4's standard library whereas
 Eprover solves 34.5\%. The success rate rises to 69.0\% by combining the
 results of TacticToe and Eprover.
@@ -197,36 +197,36 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \holfour~\cite{hol4}, \hollight~\cite{Harrison09hollight},
   \isabelle~\cite{isabelle}
   and \coq~\cite{coq-book} provide high-level parameterizable tactics for constructing proofs.
-  Such tactics analyze the current proof state (goal and
+  Tactics analyze the current proof state (goal and
   assumptions) and apply non-trivial proof transformations.
-  Formalized proofs take advantage of different levels of automation: 
-  specialized rules, theory-based strategies and general purpose startegies. 
-  Thanks to the progress in proof 
-  automation, developers can delegate more and more complicated proof 
-  obligations to general purpose strategies. Those are implemented by automated 
-  theorem provers(ATPs) such as \eprover~\cite{eprover}. The communications 
-  between 
-  an ITP and ATPs is made possible by a ``hammer''  
-  system~\cite{hammers4qed,tgck-cpp15}. It acts as an interface by performing 
+  Formalized proofs take advantage of different levels of automation:
+  specialized rules, theory-based strategies and general purpose startegies.
+  Thanks to progress in proof
+  automation, developers can delegate more and more complicated proof
+  obligations to general purpose strategies. Those are implemented by automated
+  theorem provers (ATPs) such as \eprover~\cite{eprover}. Communication
+  between
+  an ITP and ATPs is made possible by a ``hammer''
+  system~\cite{hammers4qed,tgck-cpp15}. It acts as an interface by performing
   premise selection, translation and proof reconstruction.
-  Yet, ATPs are far from foolproof and more precise user-guidance, achieved 
-  by applying a particular sequence of specialized rules, is almost always 
+  Yet, ATPs are far from foolproof and more precise user-guidance, achieved
+  by applying a particular sequence of specialized rules, is almost always
   necessary to develop a mathematical theory.
-  
-  In this work, we develop in the ITP \holfour a procedure to select suitable 
-  tactics depending on the current proof state by learning 
-  from previous proofs. Backed by this machine-learned guidance, our prover 
-  \tactictoe relies on Monte 
-  Carlo tree search~\cite{montecarlo} to find sequences of tactic applications 
+
+  In this work, we develop in the ITP \holfour a procedure to select suitable
+  tactics depending on the current proof state by learning
+  from previous proofs. Backed by this machine-learned guidance, our prover
+  \tactictoe relies on \emph{Monte
+  Carlo tree search}~\cite{montecarlo} to find sequences of tactic applications
   leading to an ITP proof.
   To this end, we \emph{extract and record} tactic invocations from the ITP
   proofs (Section~\ref{sec:recording}) and
   \emph{build efficient machine learning classifiers} based on such training
   examples (Section~\ref{s:prediction}).  The learned data serves as
-  guidance for a \emph{Monte Carlo tree search} that explores different
+  guidance for the Monte Carlo tree search that explores different
   proof paths (Section~\ref{sec:proofsearch}). The result, if
   successful, is a verified human-level proof composed of \holfour
-  tactics (Section~\ref{sec:proofdisplay}). The system is evaluated on a large 
+  tactics (Section~\ref{sec:proofdisplay}). We evalute the system on a large
   set of theorems originating
   from \holfour (Section~\ref{s:experiments}).
 
@@ -275,8 +275,8 @@ function on the empty list yields the originally goal sequent as a theorem.
 In this way, tactics implement the plumbing of backwards, goal-directed, proof
 construction.
 Because validation functions are only important to check the final proof, we
-omit them during the description of the proof search algorithm. We denote by 
-$t(g)$ the list of goals produced by the application of a tactic $t$ to a goal 
+omit them during the description of the proof search algorithm. We denote by
+$t(g)$ the list of goals produced by the application of a tactic $t$ to a goal
 $g$.
 
 \subsection{Contributions}
@@ -320,8 +320,8 @@ interaction.
 The application of a tactic to an initial conjecture produces a list of goals.
 Each of the created goals can in turn be the input to other tactics.
 Moreover, it is possible to try multiple tactics on the same goal.
-In order to keep track of the progress made so far from the initial conjecture 
-we want to solve, we organize goals and tactics into a graph with list of goals 
+In order to keep track of the progress made so far from the initial conjecture
+we want to solve, we organize goals and tactics into a graph with list of goals
 as nodes and tactics as edges (See Definition~\ref{def:stree}).
 
 In this section, we only give a description of the graph at a given
@@ -516,7 +516,7 @@ Section~\ref{sec:presel},\ref{sec:ortho} and \ref{sec:synthesis}.
 \paragraph{Tactics}
 To start with, we build a database of tactics consisting
 of tactic-goal pairs recorded from successful tactic applications in human
-proofs (recording will be discussed in 
+proofs (recording will be discussed in
 Section~\ref{sec:recording}).
 During proof search, the recorded goals will be reordered according to their
 similarity with a target goal $g$ (usually the first pending goal of a node).
@@ -586,7 +586,7 @@ resolution.
 
 \paragraph{Initialization}
 The input of the algorithm is a goal $g$ (also called conjecture) that we
-want to prove. Therefore the search tree starts with only one node containing 
+want to prove. Therefore the search tree starts with only one node containing
 the list of goals
 $[g]$.
 %Then, the MCTS algorithm alternates node selection steps and node extension
@@ -691,8 +691,8 @@ the search returns a minimized and
 prettified proof script (see Section~\ref{sec:proofdisplay}).
 \item It saturates, i.e., there are no tactics to be applied to any open goal.
 This occurs less than 10 times in the full-scale experiment.
-This happens only at the beginning of \holfour library, where the training data 
-has very few tactics. 
+This happens only at the beginning of \holfour library, where the training data
+has very few tactics.
 \item It exceeds a given time limit (default is set to 60 seconds).
 \end{itemize}
 
@@ -766,7 +766,7 @@ linear overhead on the number nodes as \metis does not create
 new goals.
 
 The integration of an external prover is also possible. For this purpose we experiment
-with 
+with
 \eprover~\cite{eprover}.
 Namely, we developed a tactic which expects a list of premises as an
 argument
@@ -902,8 +902,8 @@ the case for theorem dependencies.
 We do preselection also for lists of goals.
 To preselect a list of goals $l$ from our database of lists of goals, we
 consider the tactic input $g$ that was at the origin of the production of $l$
-during orthogonalization. The list $l$ is preselected if and only if $g$ 
-appears in the 500 preselected tactic-goal pairs. 
+during orthogonalization. The list $l$ is preselected if and only if $g$
+appears in the 500 preselected tactic-goal pairs.
 %This has the
 %desirable effect that negative and positive examples derived from the same
 %input goal are chosen or discarded together.
@@ -947,8 +947,8 @@ number of different goals it is useful for.
 A goal subsumption $\le$ is a partial relation goals.
 Assuming we have a way to estimate the number steps required to solve a goal,
 a possibly useful subsumption definition could be:
-\[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ has a proof with a length 
-shorter 
+\[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ has a proof with a length
+shorter
 or equal to the proof of }
 g_2\]
 By default, we choose a minimal subsumption defined by:
@@ -1039,10 +1039,10 @@ $\mathit{Predictions}^{\mathit{tactic}}_{16}(g)$ to replace all the
 placeholders
 in $\hat{t}$.
 The type of theorem lists is a very common type in \holfour proofs and theorems contain
-enough information to be predicted accurately. 
+enough information to be predicted accurately.
 
-%We have positive results 
-%with term abstraction but they are not evaluated in 
+%We have positive results
+%with term abstraction but they are not evaluated in
 %Section~\ref{sec:evaluation}.
 
 \paragraph{Selection of Abstracted Tactics}
@@ -1068,8 +1068,8 @@ $t$ anymore.
 
 
 \section{Experimental Evaluation}\label{s:experiments}
-The execution of \tactictoe's main loop in each re-proving experiment is 
-performed on a single CPU. An additional CPU is needed for experiments relying 
+The execution of \tactictoe's main loop in each re-proving experiment is
+performed on a single CPU. An additional CPU is needed for experiments relying
 on asynchronous \eprover calls.
 
 
@@ -1084,7 +1084,7 @@ recorded and included in the training examples.
 For each theorem we first attempt to run the \tactictoe search with a time
 limit of 60 seconds before processing the original proof script.
 In this way, the fairness of the experiments is guaranteed by construction:
-only previously declared \sml values (essentially tactics, theorems and 
+only previously declared \sml values (essentially tactics, theorems and
 simpsets) are accessible to \tactictoe.
 
 \paragraph{Datasets: optimization and validation}
@@ -1092,7 +1092,7 @@ All top-level theorems from the standard library are considered with the
 exception of 440 hard problems (containing a \texttt{let} construction in their
 proof) and 1175 easy problems (build from \texttt{save\_thm} calls).
 Therefore, during the full-scale experiments, we evaluate 7164 theorems.
-We use every tenth theorem of the first third of the standard library for 
+We use every tenth theorem of the first third of the standard library for
 parameter optimization, which amounts to 273 theorems.
 
 Although the evaluation of each set of parameters on its own is fair,
@@ -1104,16 +1104,16 @@ dataset which is about 30 times larger.
 \subsection{Tuning \tactictoe}\label{sec:tuning}
 
 We optimize \tactictoe by tuning parameters of six different techniques:
-the timeout of tactics, orthogonalization, abstraction, MCTS policy, MCTS 
-evaluation and ATP integration. During training, optional techniques such as 
+the timeout of tactics, orthogonalization, abstraction, MCTS policy, MCTS
+evaluation and ATP integration. During training, optional techniques such as
 orthogonalization may also be turned off completely.
-\tactictoe also includes other important techniques which are run with their 
-default parameters: feature extraction, prediction 
+\tactictoe also includes other important techniques which are run with their
+default parameters: feature extraction, prediction
 algorithms, number of premises for ATPs and MCTS evaluation radius (set by default to
 10).
-By choosing a set of parameters, we create a strategy for 
-\tactictoe that is evaluated on our training set of 273 theorems. And the 
-strategy with the highest number of re-proven theorems is selected for 
+By choosing a set of parameters, we create a strategy for
+\tactictoe that is evaluated on our training set of 273 theorems. And the
+strategy with the highest number of re-proven theorems is selected for
 a full scale evaluation.
 
 
@@ -1160,7 +1160,7 @@ ATP integration & none (default + best abstraction && 203\\
 parameters for \tactictoe on a training set of 273 theorems.}
 \end{table}
 
-In Table~\ref{tab:tuning}, the success rate of the different \tactictoe  
+In Table~\ref{tab:tuning}, the success rate of the different \tactictoe
 strategy is presented.
 The first four techniques are tested relative to the same baseline indicated in
 the table by the tag ``default''.  This default strategy relies on a tactic
@@ -1291,12 +1291,12 @@ All our feature vectors have been learned form human proofs. We now can now
 also add tactic-goal pairs that appears in final \tactictoe's proof. To prevent
 duplication of effort, orthogonalization of those
 tactics is essential to have a beneficial effect.
-Since recording and re-proving are intertwined during evaluation, the 
+Since recording and re-proving are intertwined during evaluation, the
 additional data is available for the next proof search.
 The hope is that the algorithm will improve faster by learning from its own
 discovered proofs than from the human proof
 scripts~\cite{DBLP:conf/cade/Urban07}. Side experiments show that
-this one shot reinforcement learning method increases \tactictoe's success rate 
+this one shot reinforcement learning method increases \tactictoe's success rate
 by less than a percent.
 
 
@@ -1332,9 +1332,9 @@ we can clearly deduce from the bump at 30 seconds that \eprover is using at
 least two strategies and probably more. Strategies are a useful method to
 fight the exponential decline in the number of newly proven theorems over
 time. Therefore, integrating strategy scheduling in \tactictoe could be
-something to be experimented with. 
+something to be experimented with.
 
-%Overall, a good compromise is to run \tactictoe and \eprover with a 10 seconds 
+%Overall, a good compromise is to run \tactictoe and \eprover with a 10 seconds
 %timeout. It is posso run them with a
 %longer time limit, but we do so in parallel to avoid waiting time.
 %\todo{its strange to ``advise'' in a paper?}
@@ -1678,7 +1678,7 @@ also replace extended terms by their quoted version.
 All in all, if a prettified tactic $t_p$ has the same effect its original
 $t_o$, we replace $t_p$ by $t_o$ in the proof.\\
 
-The total effect of these minimization and prettification techniques 
+The total effect of these minimization and prettification techniques
 on the readability of a proof script is depicted in
 Example~\ref{ex:pretty}.
 
@@ -1876,8 +1876,8 @@ tactics. Here, we demonstrate the competitiveness of our system against
 groups related proofs using clustering
 algorithms. It allows \coq users to inspire themselves from similar proofs and
 notice duplicated proofs. Comparatively, our predictions come from a much more
-detailed description of the target goal. \tactictoe can also organize the 
-predictions to produce verifiable proofs and is not restricted to user 
+detailed description of the target goal. \tactictoe can also organize the
+predictions to produce verifiable proofs and is not restricted to user
 advice.
 %However, we simply create a single label for each tactic call whereas each of
 %its
