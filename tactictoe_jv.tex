@@ -343,20 +343,17 @@ takes a goal and return the set of tactics already applied to this goal.
 \item $G$ is a total function from $\mathbb{A}$ to $\mathcal{P}(\mathbb{G})$.
 It takes a node and returns the list of goals of this node.
 \item $A$ is a partial function from $\mathbb{G} \times \mathbb{T}$ to
-$\mathbb{A}$. It takes a goal and a tactic and returns the node produced by the
-application of the tactic to the goal. Its support $\mathit{Support}(A)$ is
-defined as $\lbrace (g,t) \in \mathbb{G} \times \mathbb{T}\ |\ t \in T(g)
-\rbrace$. And if $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$. This
-means that the output $t(g)$ is exactly the list
-of goals contained in the node produced by
-$t$ from $g$.
+$\mathbb{A}$. Its support $\mathit{Support}(A)$ is 
+$\lbrace (g,t) \in \mathbb{G} \times \mathbb{T}\ |\ t \in T(g)
+\rbrace$. And if $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$. In 
+other words, the output $t(g)$ is exactly the list
+of goals contained in the node produced by $A$ from $(g,t)$.
+\item It is acyclic, i.e. a node cannot be a descendant (see 
+Definition~\ref{def:desc}) of itself.
+\item There is exactly one node with no parents. This root node contains 
+exactly one goal which is the initial goal (also called conjecture).
 \end{itemize}
 
-Acyclicity and the fact that there is exactly
-one root node containing only the initial goal are additional constraints to
-the search tree that are preserved during the
-application of the MCTS algorithm. That is why we call it a tree, although this
-is not specified in this definition.
 \end{definition}
 
 If no explicit order is given, we assume that the sets
@@ -513,8 +510,8 @@ We discuss below the specifics associated with the prediction of each kind of ob
 In particular, we present the dataset from which objects are selected and the
 purpose of the selection process. The similarity measure backing the
 predictions is described in Section~\ref{sec:features} and two methods for
-improving the quality of the predictions are presented in
-Section~\ref{sec:ortho} and Section~\ref{sec:synthesis}.
+improving the speed and quality of the predictions are presented in
+Section~\ref{sec:presel},\ref{sec:ortho} and \ref{sec:synthesis}.
 
 \paragraph{Tactics}
 To start with, we build a database of tactics consisting
@@ -846,7 +843,7 @@ large theorem is often a conjunction of theorems from the same domain.
 And if a conjunction contains a formula related to a problem, then the other
 conjuncts from the same domain may also help to solve it.
 
-\subsection{Preselection}\label{sec:dependencies}
+\section{Preselection}\label{sec:presel}
 
 In order to speed up the predictions during the search for a proof of a
 conjecture $c$, we preselect 500 tactic-goal pairs and 500 theorems and a
@@ -1204,95 +1201,6 @@ The main reason is that our predictor learning abilities is
 limited and we are using the provability of lists of goals for evaluation. A
 more accurate evaluation could be based on an estimation of the length of the
 proof required to close a list of goals.
-
-
-
-%\subsection{Increasing \tactictoe's knowledge}\label{sec:perfect_exp}
-%\todoi{decide to keep or not}
-%We investigate what are the limits of \tactictoe and what benefits additional
-%knowledge could provide. To this end, we will modify the set of features to
-%include features vectors that should not be known in a regular experiment. We
-%include some vectors from the recorded human proof and perform the proof
-%search
-%after the recording instead of before in all other experiments. This
-%experiment
-%is not fair and should only be compared to
-%experiments in the same settings.
-%
-%For clarity, we will name the set of feature vectors that can be recorded from
-%the current human proof $\mathbb{H}$ and the set of vectors recorded from
-%previous proofs $\mathbb{P}$ (consistent with previous notation?). We note
-%$\pi_1^1$ the projection on the
-%first component returning the label of a feature vector. And we define the
-%function $T$ that takes a tactic and return the list of its tokens.
-%
-%We will progressively add bigger and bigger
-%subset of $\mathbb{H}$ to $\mathbb{P}$ and observe the effect on the proof
-%search success rates.
-%
-%Here are the list of increasing non-trivial subsets of $\mathbb{H}$ we
-%consider:
-%\begin{align*}
-%\mathbb{F}_1 &= \lbrace (t,g) \in \mathbb{H}\ |\ t \in \pi_1^1(\mathbb{P})
-%   \rbrace \\
-%\mathbb{F}_2 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists
-%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \rbrace\\
-%\mathbb{F}_3 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists
-%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem} \rbrace\\
-%\mathbb{F}_4 &= \lbrace (t,g) \in \mathbb{H}\ |\ \forall x \in T(t).\ \exists
-%t'\in \pi_1^1(\mathbb{P}).\ x \in T(t') \vee x\ \mbox{is a theorem or a term}
-%\rbrace\\
-%\end{align*}
-%
-%
-%$\mathbb{F}_1$ is an approximation of what we could get if we had perfect
-%prediction for those tactics.
-%
-%\begin{table}[h]
-%\centering\ra{1.3}
-%\small
-%\begin{tabular}{lll}
-%\toprule
-% & Additional features & Solved \\
-%\midrule
-%$\emptyset$   & none & 119 (43.6\%) \\ %NONEv2
-%$\mathbb{F}_1$& tactic prediction & 121 (44.3\%) \\ %AFTERTACv2
-%$\mathbb{F}_2$& token recombination  & 137 (50.2\%) \\ %AFTERTOKENv2
-%$\mathbb{F}_3$& theorem prediction  & 207 (75.8\%) \\ %AFTERTHMTHMv2
-%$\mathbb{F}_4$& term prediction & 223 (81.7\%) \\ %AFTERALLv2
-%$\mathbb{H}$  & all & 239 (87.5\%) \\ %AFTERSMALLv2
-%% $AFTERv2$   & $\mathfrak{H}$ & 245 (89.7\%)  \\
-%\bottomrule
-%\end{tabular}
-%\caption{\label{tab:featue_param} Effect of augmenting \tactictoe's knowledge
-%with tactics from the proof of the tested theorem. The experiments was run
-%with
-%a time out of 5 seconds on an older version of \tactictoe, as can be seen in
-%the low success rate of thedefault strategy.}
-%\end{table}
-%
-%
-%
-%And we observe in Table~\ref{tab:featue_param} a
-%slight increase compared to the default \tactictoe. We then included all
-%vectors that contains tactics that can be rebuild from tokens of
-%tactics in our database.
-%Our search algorithm proved two proofs less that if it had perfect prediction
-%so it means that our prediction algorithm (policy) is doing a good  job at
-%least in this early settings where proofs are easy.
-%Suprisingly, being able to recombine tokens of tactics from the database is
-%barely sufficient to prove more than half of the theorems in this dataset. The
-%Therefore, additionally including in tactics theorems and terms that did not
-%appear in previous tactics is essential. Creating from scratch other arguments
-%may not help as much. This is why we restricted ourselves to predicting
-%arguments of theorem list type and the term type during tactic synthesis.
-%Finally our proof search algorithm sometimes fails even if it knows all the
-%tactic necessary. The two main reasons are that either a crucial tactic
-%exceeds its timeout or that the human proof is too deep to be rediscovered
-%(more than 10 steps long). In all those experiments orthogonalization is
-%performed with
-%radius 20.
-
 
 \subsection{Full-scale experiment}\label{sec:full_exp}
 
