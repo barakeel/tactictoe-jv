@@ -343,9 +343,9 @@ takes a goal and return the set of tactics already applied to this goal.
 \item $G$ is a total function from $\mathbb{A}$ to $\mathcal{P}(\mathbb{G})$.
 It takes a node and returns the list of goals of this node.
 \item $A$ is a partial function from $\mathbb{G} \times \mathbb{T}$ to
-$\mathbb{A}$. Its support $\mathit{Support}(A)$ is 
+$\mathbb{A}$. Its domain $\mathit{Domain}(A)$ is 
 $\lbrace (g,t) \in \mathbb{G} \times \mathbb{T}\ |\ t \in T(g)
-\rbrace$. And if $(g,t) \in \mathit{Support}(A)$, then $t(g) = G(A(g,t))$. In 
+\rbrace$. And if $(g,t) \in \mathit{Domain}(A)$, then $t(g) = G(A(g,t))$. In 
 other words, the output $t(g)$ is exactly the list
 of goals contained in the node produced by $A$ from $(g,t)$.
 \item It is acyclic, i.e. a node cannot be a strict descendant (see 
