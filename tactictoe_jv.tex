@@ -344,9 +344,8 @@ takes a goal and return the set of tactics already applied to this goal.
 It takes a node and returns the list of goals of this node.
 \item $A$ is a function that takes a pair $(g,t)\in \mathbb{G} \times 
 \mathbb{T}$ such as $t \in T(g)$ and 
-returns a node $A(t,g)$ such as $t(g) = G(A(g,t))$. In other words, the output 
-$t(g)$ is exactly the list of goals contained in the node produced by $A$ from 
-$(g,t)$.
+returns a node $A(g,t)$ such as $t(g) = G(A(g,t))$. In other words, the output 
+$t(g)$ is exactly the list of goals contained in $A(g,t)$.
 \item It is acyclic, i.e. a node cannot be a strict descendant (see 
 Definition~\ref{def:desc}) of itself.
 \item There is exactly one node with no parents. This root node contains 
