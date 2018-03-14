@@ -200,7 +200,7 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   Tactics analyze the current proof state (goal and
   assumptions) and apply non-trivial proof transformations.
   Formalized proofs take advantage of different levels of automation:
-  specialized rules, theory-based strategies and general purpose startegies.
+  specialized rules, theory-based strategies and general purpose strategies.
   Thanks to progress in proof
   automation, developers can delegate more and more complicated proof
   obligations to general purpose strategies. Those are implemented by automated
@@ -600,7 +600,7 @@ Through node extension steps the search tree grows and the number of paths to
 explore increases. To decide which node to extend next, an evolving value for
 each node is given in Definition~\ref{def:value}. The algorithm that performs
 node selection starts from the root of the search tree. From the current node,
-the function \texttt{CompareChildren} choses among the children of its open
+the function \texttt{CompareChildren} chooses among the children of its open
 goal the one with the highest value.
 
 If the highest children value is higher than the widening policy, then the
@@ -1163,7 +1163,7 @@ In Table~\ref{tab:tuning}, the success rate of the different \tactictoe
 strategy is presented.
 The first four techniques are tested relative to the same baseline indicated in
 the table by the tag ``default''.  This default strategy relies on a tactic
-time out of 0.05s, an orthogonalization radius of 20 and a policy coefficent of
+time out of 0.05s, an orthogonalization radius of 20 and a policy coefficient of
 0.5.
 The two last techniques are tested relative
 to a baseline consisting of the best set of parameters discovered so far and
@@ -1176,14 +1176,14 @@ each tactic can be increased from the 0.02 seconds used in \tactictoe's initial
 experiments~\cite{tgckju-lpar17} to 0.05
 seconds. Removing tactics with similar effect as performed by the
 orthogonalization process is only beneficial when running \tactictoe for short
-period of time. It seems that the alloted time allows a strategy
+period of time. It seems that the allotted time allows a strategy
 running without orthogonalization to catch up.
 It is best to predict a list of 16 theorems to instantiate arguments of type
 theorem list in tactics. At any rate, argument prediction for abstracted
 tactics is the technique that have the highest impact on the success of
 \tactictoe. Integration of ATPs being a specialization of this technique
 contributes significantly as well. Experiments involving \eprover, run the ATP
-using a separate proces asynchronously with a timeout of 5 seconds and 128 premises.
+using a separate process asynchronously with a timeout of 5 seconds and 128 premises.
 The fact that \metis outperforms \eprover in this setting is due to the fact
 that \metis is run with a very short timeout, allowing to close different part
 of search tree quickly. Because \metis is weaker that \tactictoe as an ATP, it
@@ -1642,7 +1642,7 @@ G(a) = g_1,\ldots,g_n\\
 \end{align*}
 
 The extracted proof script of $\mathfrak{T}$ is $P_{goal}(g_{root})$.
-We minimally improve it by subtituting \texttt{THENL} by \texttt{THEN} when the
+We minimally improve it by substituting \texttt{THENL} by \texttt{THEN} when the
 list of goals is a singleton and removing \texttt{THENL []} during the
 extraction phase.
 Further post-processing such as
@@ -1710,7 +1710,7 @@ The human formalizer recognized that it follows from two theorems.
 The relevance filtering of \tactictoe is not as powerful as that used in hammers
 and is therefore not able to find the \texttt{DIVIDES\_ANTISYM} property. The proof
 proceeds instead by rewriting the
-goal with the definitions then spliting the goal into multiple cases until the goal obligations are similar
+goal with the definitions then splitting the goal into multiple cases until the goal obligations are similar
 to \texttt{DIVIDES\_ANTISYM}. As expected, \tactictoe's proof
 also takes much longer to check.
 
