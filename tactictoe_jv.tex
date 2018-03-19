@@ -73,12 +73,12 @@
 % graphs
 \usetikzlibrary{arrows,shapes}
 \usetikzlibrary{trees,positioning,fit}
-\tikzstyle{block} = [rectangle, draw,% fill=blue!20,
-    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{block} = 
+  [rectangle, draw, 
+   minimum width=9em, text centered, rounded corners, minimum height=3.5em]
 \tikzstyle{line}=[draw]
-\tikzstyle{cloud} = [draw, ellipse,%fill=red!20,
-    node distance=3cm,
-    minimum height=2em]
+\tikzstyle{cloud} = 
+  [draw, text centered, ellipse, minimum height=3.5em, minimum width=9em]
 
 
 % graphs
@@ -219,20 +219,8 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   \tactictoe relies on \emph{Monte
   Carlo tree search}~\cite{montecarlo} to find sequences of tactic applications
   leading to an ITP proof.
-  To this end, we \emph{extract and record} tactic invocations from the ITP
-  proofs (Section~\ref{sec:recording}) and
-  \emph{build efficient machine learning classifiers} based on such training
-  examples (Section~\ref{s:prediction}).  The learned data serves as
-  guidance for the Monte Carlo tree search that explores different
-  proof paths (Section~\ref{sec:proofsearch}). The result, if
-  successful, is a verified human-level proof composed of \holfour
-  tactics (Section~\ref{sec:proofdisplay}). We evaluate the system on a large
-  set of theorems originating
-  from \holfour (Section~\ref{s:experiments}).
 
 \subsection{The problem}
-% How a user works with an ITP and how this gives rise to a machine learning problem.
-\todo{RK: this is just a first draft -- feel free to edit lots!}
 An ITP is a development environment for the construction of formal proofs in which it is possible, but not common, to write a proof as a sequence of applications of primitive inference rules.
 The common approach, however, is to use and devise high-level tools and automation that abstract over useful ways of producing proof pieces.
 A specific, prevalent instance of this approach is the use of \emph{tactics} for \emph{backward} or goal-directed proof.
@@ -316,6 +304,82 @@ interaction.
 \end{itemize}
 
 \todoi{graphic explaining how each part relate to each other}
+
+
+\subsection{Plan}
+
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[node distance = 1.9cm]
+  \node [] (aa) {\textbf{Learning}};
+  \node [cloud, below of=aa, node distance = 1cm] (a) {Formal library};
+  \node [block, below of=a] (b) {Proof recording};
+  \node [cloud, below of=b] (c) {Knowledge base}; 
+  \node [block, below of=c] (e) {Training loop};
+  \node [block, below of=e] (d) {Tactic predictors};   
+
+  \draw [-to,black,thick] (a) to (b);
+  \draw [-to,black,thick] (b.south) to (c.north);
+  \draw [-to,black,thick] (c) to [bend left]  (e);
+  \draw [-to,black,thick] (e) to [bend left]  (c);
+  \draw [-to,black,thick] (c.east) to [out=330,in=30] (d);
+
+  \node [right of=aa, node distance=6.2cm] (0) {\textbf{Proving}};
+  \node [cloud, below of=0, node distance = 1cm] (1) {Conjecture};
+  \node [cloud, below of=1, node distance = 1.7cm] (2) {Search tree};
+  \node [block, below of=2, node distance=1.3cm] (3) {Tactic policy};
+  \node [above of=2, xshift=-16mm, node distance = 0.9cm] (00) {MCTS proof 
+  search};
+  \node [block, below of=3, node distance = 1.3cm] (4) {Tactic evaluation};
+  \node [block, fit=(2) (3) (4)] (5) {};
+  \node [block, below of=4, node distance = 1.7cm] (6) {Proof minimization};
+  \node [cloud, below of=6, node distance = 1.6cm] (7) {Proof};
+  \draw [-to,black,thick] (1) to (5);
+  \draw [-to,black,thick] (5) to (6);
+  \draw [-to,black,thick] (6) to (7);
+  \draw [-to,black,thick] (d) to [out=0, in=180] (3);
+  \draw [-to,black,thick] (d) to [out=0, in=180] (4);
+  
+  
+\end{tikzpicture}
+\end{center}
+\label{fig:components}
+\caption{Relation between modules of the learning and proving tool chains.
+Functions are represented by rectangles and objects by ellipses.}
+\end{figure}
+
+The different components depicted in Fig~\ref{fig:components} give a 
+high-level overview of the techniques necessary to generate 
+tactic-level proofs by learning from recorded knowledge. From a formal library 
+of ITP proofs, we extract and record tactic invocations 
+in Section~\ref{sec:recording}. Based on such training examples, we
+  build efficient machine learning classifiers in Section~\ref{s:prediction}. 
+  At the basis of those predictions are 
+  similarity measures computed from syntactic features of mathematical formulas 
+  in Section~\ref{sec:features}.
+  Modification of the knowledge base performed by orthogonalization 
+  in Section~\ref{sec:ortho} and abstraction in Section~\ref{sec:synthesis}
+  improves the quality of the databases.
+  And the preselection method in Section~\ref{sec:presel} increases the speed 
+  of the prediction algorithm.
+  The learned predictors relying on this knowledge serves as
+  guidance for the proof search algorithm in Section~\ref{sec:proofsearch} 
+  which explores different proof paths in the proof tree in 
+  Section~\ref{sec:prelim}. 
+  The result, if
+  successful, is a verified human-level proof composed of \holfour
+  tactics minimized in Section~\ref{sec:proofdisplay}. And in 
+  Section~\ref{s:experiments}, we evaluate the system 
+  on a large set of theorems originating from \holfour.
+  And generated tactic-level proofs are analysed in 
+  Section~\ref{sec:case_study}.
+
+The section order does not follow the implementation. In this way, 
+we can give a description of the proof search algorithm sooner. This is 
+beneficial for the reader as it shows the essential for our work before 
+technical details on the prediction and recording algorithms. 
+
+
 
 \section{Search Tree}\label{sec:prelim}
 The application of a tactic to an initial conjecture produces a list of goals.
@@ -783,7 +847,7 @@ avoids slowing down \tactictoe's search loop. The number of asynchronous calls
 to external provers that can be executed at the same time is limited by the
 number of cores available to the user.
 
-\section{Feature Extraction}\label{sec:features}
+\section{Feature Extraction and Similarity Measure}\label{sec:features}
 %We explain the construction of the similarity measure by which relevant
 %objects are predicted
 
@@ -808,7 +872,6 @@ different tag to elements of each set. The feature of a goal (respectively theor
 are the union of all these tagged features. From
 that, we can construct features for a list of goals by computing the union of the features of each goal in the list.
 
-\subsection{Similarity}\label{sec:predictions}
 We estimate the similarity (or co-distance) between two objects $o_1$ and $o_2$
 through their respective feature sets $f_1$ and $f_2$.
 The estimation is based on the frequency of the features in the intersection of
@@ -1699,7 +1762,7 @@ Induct_on `l` THENL
 \end{lstlisting}
 \end{example}
 
-\section{Case Study}
+\section{Case Study}\label{sec:case_study}
 Since the proofs generated by \tactictoe are meant to be parts of a \holfour development, it interesting to compare their quality with the original human proofs.
 The quality of a proof in \holfour can be measured in terms of length, readability, maintainability and verification speed.
 We study these properties in three examples taken from our full-scale experiment.
