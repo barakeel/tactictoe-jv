@@ -299,12 +299,9 @@ by asynchronous calls to \eprover to help \tactictoe during proof search.
 success rate on the standard library.
 \item First evaluation of \tactictoe success rate relative to
 the length of the original human proofs.
-\item Minimization and prettification of the generated proof  facilitates user
+\item Minimization and embellishment of the generated proof  facilitates user
 interaction.
 \end{itemize}
-
-\todoi{graphic explaining how each part relate to each other}
-
 
 \subsection{Plan}
 
@@ -355,16 +352,18 @@ of ITP proofs, we extract and record tactic invocations
 in Section~\ref{sec:recording}. Based on such training examples, we
   build efficient machine learning classifiers in Section~\ref{s:prediction}. 
   At the basis of those predictions are 
-  similarity measures computed from syntactic features of mathematical formulas 
-  in Section~\ref{sec:features}.
+  similarity measures computed in Section~\ref{sec:features} from syntactic 
+  features of mathematical formulas .
   Modification of the knowledge base performed by orthogonalization 
   in Section~\ref{sec:ortho} and abstraction in Section~\ref{sec:synthesis}
   improves the quality of the databases.
-  And the preselection method in Section~\ref{sec:presel} increases the speed 
+  And the preselection method described in Section~\ref{sec:presel} increases 
+  the speed 
   of the prediction algorithm.
   The learned predictors relying on this knowledge serves as
-  guidance for the proof search algorithm in Section~\ref{sec:proofsearch} 
-  which explores different proof paths in the proof tree in 
+  guidance for the proof search algorithm presented in 
+  Section~\ref{sec:proofsearch} 
+  which explores different proof paths in the proof tree defined in 
   Section~\ref{sec:prelim}. 
   The result, if
   successful, is a verified human-level proof composed of \holfour
@@ -1686,7 +1685,7 @@ input goal.
 
 
 
-\section{Proof Presentation}\label{sec:proofdisplay}
+\section{Minimization and Embellishment}\label{sec:proofdisplay}
 
 When \tactictoe finds a proof of an initial goal, it returns a search tree
 $\mathfrak{T}$ where the root node containing the initial goal is solved.
@@ -1736,8 +1735,8 @@ in the final proof. This process is repeated for each element of $l$.
 This is a generalization of the simplest method used for minimizing a list of
 theorems in ``hammers'' \cite{hammers4qed}.
 
-\paragraph{Prettification}
-Without prettification, the returned tactic is barely readable as it contains
+\paragraph{Embellishment}
+Without embellishment, the returned tactic is barely readable as it contains
 information to guarantees that each \sml subterm is interpreted in the way in
 any context. Since we return the proof at a point where the \sml interpreter is
 in a specific state, we can strip unnecessary information, such as
@@ -1747,12 +1746,12 @@ also replace extended terms by their quoted version.
 All in all, if a prettified tactic $t_p$ has the same effect its original
 $t_o$, we replace $t_p$ by $t_o$ in the proof.\\
 
-The total effect of these minimization and prettification techniques
+The total effect of these minimization and embellishment techniques
 on the readability of a proof script is depicted in
 Example~\ref{ex:pretty}.
 
 \begin{example}(Theorem \texttt{EVERY\_MAP})\label{ex:pretty}\\\
-Proof script before minimization and prettification:
+Before minimization and embellishment:
 \begin{lstlisting}[language=SMLSmall]
 boolLib.REWRITE_TAC [DB.fetch "list" "EVERY_CONJ", DB.fetch "list" "EVERY_MEM",
   DB.fetch "list" "EVERY_EL", ldots ,  combinTheory.o_DEF] THEN
@@ -1762,7 +1761,7 @@ BasicProvers.Induct_on [HolKernel.QUOTE " (*#loc 1 11380*)l"] THENL
      DB.fetch "list" "MAP", DB.fetch "list" "CONS_11", boolLib.FORALL_AND_THM]]
 
 \end{lstlisting}
-Proof script after minimization and prettification:
+After minimization and embellishment:
 \begin{lstlisting}[language=SMLSmall]
 Induct_on `l` THENL
   [SRW_TAC [] [], ASM_SIMP_TAC (srw_ss ()) [DISJ_IMP_THM, FORALL_AND_THM]]
