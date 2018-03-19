@@ -200,7 +200,7 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   Tactics analyze the current proof state (goal and
   assumptions) and apply non-trivial proof transformations.
   Formalized proofs take advantage of different levels of automation:
-  specialized rules, theory-based strategies and general purpose startegies.
+  specialized rules, theory-based strategies and general purpose strategies.
   Thanks to progress in proof
   automation, developers can delegate more and more complicated proof
   obligations to general purpose strategies. Those are implemented by automated
@@ -664,7 +664,7 @@ Through node extension steps the search tree grows and the number of paths to
 explore increases. To decide which node to extend next, an evolving value for
 each node is given in Definition~\ref{def:value}. The algorithm that performs
 node selection starts from the root of the search tree. From the current node,
-the function \texttt{CompareChildren} choses among the children of its open
+the function \texttt{CompareChildren} chooses among the children of its open
 goal the one with the highest value.
 
 If the highest children value is higher than the widening policy, then the
@@ -993,7 +993,7 @@ We now give a formal definition of the concepts of subsumption and coverage
 that are required for expressing the orthogonalization algorithm.
 
 \begin{definition} (Coverage)\\
-Let $\mathfrak{T}$ be the database of tactic-goal pairs. We can define the
+Let $\mathfrak{T}$ be the database of tactic-goal pairs. We define the
 coverage $\textit{\mbox{Coverage}}(t)$ of a tactic $t$ by the number of times
 this tactic
 appears in
@@ -1006,14 +1006,16 @@ number of different goals it is useful for.
 
 
 \begin{definition} (Goal subsumption)\\
-A goal subsumption $\le$ is a partial relation goals.
-Assuming we have a way to estimate the number steps required to solve a goal,
-a possibly useful subsumption definition could be:
+A goal subsumption $\le$ is a partial relation on goals.
+Assuming we have a way to estimate the number of steps required to solve a goal,
+a % possibly 
+general and useful subsumption definition is for example:
+% could be:
 \[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ has a proof with a length
 shorter
 or equal to the proof of }
 g_2\]
-By default, we choose a minimal subsumption defined by:
+By default, we however choose for efficiency reasons a minimal subsumption defined by:
 \[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ is }\alpha\mbox{-equivalent
 to } g_2\]
 \end{definition}
@@ -1021,10 +1023,12 @@ to } g_2\]
 We can naturally extend any goal subsumption to a subsumption on
 lists of goals.
 \begin{definition} (Goal list subsumption)\\
-A goal list subsumption is an partial relation on lists of goals.
-Given two lists of goals $l_1$ and $l_2$, we can define it from goal
+A goal list subsumption is a partial relation on lists of goals.
+Given two lists of goals $l_1$ and $l_2$, we define it from the goal
 subsumption $\le$ by:
-\[l_1 \le l_2  \Leftrightarrow_{def} \forall g_2 \in l_2.\ \exists g_1 \in l_1.\
+%\[l_1 \le l_2  \Leftrightarrow_{def} \forall g_2 \in l_2.\ \exists g_1 \in l_1.\
+%g_1 \le g_2\]
+\[l_1 \le l_2  \Leftrightarrow_{def} \forall g_1 \in l_1.\ \exists g_2 \in l_2.\
 g_1 \le g_2\]
 \end{definition}
 
@@ -1035,7 +1039,7 @@ tactic $t_2$ on a goal $g$, denoted $\le_g$, when:
 
  \[t_1 \le_g t_2 \Leftrightarrow_{def} t_1(g) \le t_2(g)\]
 
-If one of the tactic is failing then $t_1$ and $t_2$ are not comparable through
+If one of the tactics is failing then $t_1$ and $t_2$ are not comparable through
 this relation.
 Given the default subsumption on goals, $t_1$ subsumes $t_2$ on $g$ if and only
 if $t_1(g)$ is a subset (modulo $\alpha$-equivalence) of $t_2(g)$.
@@ -1051,11 +1055,12 @@ expressed by the formula:
 \textit{\mbox{Coverage}}(x)\
 |\ x \le_g t\rbrace\]
 
-All in all, a database build with the orthogonalization process contains
+% All in all, 
+A database built with the orthogonalization process hus contains
 $(\mathbb{O}(t,g),g)$ instead of $(t,g)$.
 
 \section{Abstraction}\label{sec:synthesis}
-One of the major weakness of the previous version of \tactictoe was that
+One of the major weaknesses of the previous version of \tactictoe was that
 it could not create its own tactics. Indeed, sometimes no previous tactic is
 adapted for a certain goal and creating a new tactic is necessary.
 %Experiments in section, show how different degrees of tactic synthesis could
@@ -1064,7 +1069,8 @@ In this section we present a way to create tactics with different arguments
 by abstracting them and re-instantiating them using a predictor for that kind
 of argument. In the spirit of the orthogonalization method, we will try to
 create tactics that are more general but have the same effect as the
-ungeneralized one. The generalized tactics are typically slower that their
+% ungeneralized 
+original one. The generalized tactics are typically slower that their
 original variants, but the added flexibility is worthwhile in practice. Moreover,
 since we impose a timeout on each tactic (0.05 seconds by default), very slow
 tactics fail and thus are not selected.
@@ -1226,7 +1232,7 @@ In Table~\ref{tab:tuning}, the success rate of the different \tactictoe
 strategy is presented.
 The first four techniques are tested relative to the same baseline indicated in
 the table by the tag ``default''.  This default strategy relies on a tactic
-time out of 0.05s, an orthogonalization radius of 20 and a policy coefficent of
+time out of 0.05s, an orthogonalization radius of 20 and a policy coefficient of
 0.5.
 The two last techniques are tested relative
 to a baseline consisting of the best set of parameters discovered so far and
@@ -1239,14 +1245,14 @@ each tactic can be increased from the 0.02 seconds used in \tactictoe's initial
 experiments~\cite{tgckju-lpar17} to 0.05
 seconds. Removing tactics with similar effect as performed by the
 orthogonalization process is only beneficial when running \tactictoe for short
-period of time. It seems that the alloted time allows a strategy
+period of time. It seems that the allotted time allows a strategy
 running without orthogonalization to catch up.
 It is best to predict a list of 16 theorems to instantiate arguments of type
 theorem list in tactics. At any rate, argument prediction for abstracted
 tactics is the technique that have the highest impact on the success of
 \tactictoe. Integration of ATPs being a specialization of this technique
 contributes significantly as well. Experiments involving \eprover, run the ATP
-using a separate proces asynchronously with a timeout of 5 seconds and 128 premises.
+using a separate process asynchronously with a timeout of 5 seconds and 128 premises.
 The fact that \metis outperforms \eprover in this setting is due to the fact
 that \metis is run with a very short timeout, allowing to close different part
 of search tree quickly. Because \metis is weaker that \tactictoe as an ATP, it
@@ -1305,7 +1311,7 @@ been optimized and rely on a wide range of strategies.
 \paragraph{Reconstruction}
 Tactic proofs produced by \tactictoe during this experiment are all verifiable
 in \holfour. By the design of the proof search, reconstruction of \tactictoe
-proof succeeds, unless one of the tactic modifies the state of \holfour in a
+proof succeeds, unless one of the tactics modifies the state of \holfour in a
 way that changes the behavior of a tactic used in the final proof. This has not
 occurred a single time in our experiments.
 More details on how a proof is extracted from the search tree is given in
@@ -1350,7 +1356,7 @@ apply induction, a task at which ATPs are known to struggle with.
 
 \paragraph{Reinforcement learning}
 All our feature vectors have been learned form human proofs. We now can now
-also add tactic-goal pairs that appears in final \tactictoe's proof. To prevent
+also add tactic-goal pairs that appears in \tactictoe's final proof. To prevent
 duplication of effort, orthogonalization of those
 tactics is essential to have a beneficial effect.
 Since recording and re-proving are intertwined during evaluation, the
@@ -1439,8 +1445,9 @@ In order to appreciate the difficulty of the evaluation set from a human
 perspective, the length distribution of human proofs in the
 validation set is shown in Figure~\ref{fig:distrib}.  It is clear from the
 graph that most of the human proofs are short. The proofs found by \tactictoe
-follows a similar
-distribution. This means that if \tactictoe finds a proof, there is about a 50
+follow a similar
+distribution. % This means that 
+If \tactictoe finds a proof, there is about a 50
 percent chance that it will be shorter than what a human would come up with.
 
 
@@ -1466,8 +1473,8 @@ original proof until length 20.}
 \end{figure}
 
 In Figure~\ref{fig:percentage}, we regroup the human proofs by their length to
-see how well \tactictoe and \eprover performs on increased level of
-difficulties. As expected, the longer the original proof is, the harder it is
+see how well \tactictoe and \eprover cope with increased levels of
+difficulty. As expected, the longer the original proof is, the harder it is
 for \tactictoe and \eprover to re-prove the theorem on their own.
 The performance of \tactictoe is compelling with more than half of the theorems
 that required a proof of length six being reproven. It is also consistently
@@ -1510,14 +1517,14 @@ proof scripts generated by \tactictoe. In this way, the further development of
 It is difficult (probably impossible) to transfer \sml values
 between theories, since they are not run in the same \holfour session. In contrast,
 \sml code can be exported and imported.
-\item To produce a tactic value form a code is easy in \sml, which can be
-achieved by using a reference to a tactic and update it with the function
+\item To produce a tactic value from a code is easy in \sml, which can be
+achieved by using a reference to a tactic and updating it with the function
 \texttt{use}.
 \end{itemize}
 
 In order to transfer our tactic knowledge between theories, we want to be able
-to re-use the code of a tactic recorded in one theory in an
-other. We also would like to make sure that the code is interpretable and that
+to re-use the code of a tactic recorded in one theory in another. 
+We also would like to make sure that the code is interpretable and that
 its interpretation does not change in the other theory.
 
 Even when developing one theory, the context is continually changing:
@@ -1705,7 +1712,7 @@ G(a) = g_1,\ldots,g_n\\
 \end{align*}
 
 The extracted proof script of $\mathfrak{T}$ is $P_{goal}(g_{root})$.
-We minimally improve it by subtituting \texttt{THENL} by \texttt{THEN} when the
+We minimally improve it by substituting \texttt{THENL} by \texttt{THEN} when the
 list of goals is a singleton and removing \texttt{THENL []} during the
 extraction phase.
 Further post-processing such as
@@ -1773,7 +1780,7 @@ The human formalizer recognized that it follows from two theorems.
 The relevance filtering of \tactictoe is not as powerful as that used in hammers
 and is therefore not able to find the \texttt{DIVIDES\_ANTISYM} property. The proof
 proceeds instead by rewriting the
-goal with the definitions then spliting the goal into multiple cases until the goal obligations are similar
+goal with the definitions then splitting the goal into multiple cases until the goal obligations are similar
 to \texttt{DIVIDES\_ANTISYM}. As expected, \tactictoe's proof
 also takes much longer to check.
 
@@ -2027,8 +2034,10 @@ steps.
 We would like to thank Lasse Blaauwbroek and Yutaka Nagashima for their 
 insightful comments which
 contributed to improve the quality of this paper. This work has been supported
-by the ERC Consolidator grant no.\ 649043 \textit{AI4REASON} and ERC starting
-grant no.\ 714034 \textit{SMART}.
+by the ERC Consolidator grant no.\ 649043 \textit{AI4REASON}, the ERC starting
+grant no.\ 714034 \textit{SMART}, the Czech 
+project AI \& Reasoning CZ.02.1.01/0.0/0.0/15\_003/0000466 and the 
+European Regional Development Fund.
 
 \bibliographystyle{plain}
 \bibliography{biblio}
