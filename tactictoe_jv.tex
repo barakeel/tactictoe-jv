@@ -47,7 +47,7 @@
 \def\coq{\textsf{Coq}\xspace}
 \def\ocaml{\textsf{OCaml}\xspace}
 \def\vampire{\textsf{Vampire}\xspace}
-\def\eprover{\textsf{E-prover}\xspace}
+\def\eprover{\textsf{Eprover}\xspace}
 \def\zthree{\textsf{z3}\xspace}
 
 \def\sml{\textsf{SML}\xspace}
@@ -186,11 +186,9 @@ This knowledge is then used by a Monte Carlo tree search algorithm to
 explore the most promising tactic-level proof paths.
 On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.4\% of
 7164 theorems in HOL4's standard library whereas
-Eprover solves 34.5\%. The success rate rises to 69.0\% by combining the
-results of TacticToe and Eprover.
+Eprover with auto-schedule solves 34.5\%. The success rate rises to 69.0\% by 
+combining the results of TacticToe and Eprover.
 \end{abstract}
-
-\tableofcontents
 
 \section{Introduction}
 Many of the state-of-the-art interactive theorem provers (ITPs) such as
@@ -230,9 +228,11 @@ This gives rise to a machine learning problem: can we learn a mapping from a giv
 
 \paragraph{Goals and theorems.}
 A goal (or proof state) is represented as a \emph{sequent}.
-A sequent is composed of a set of assumptions and a conclusion, all of which are higher-order logic formulas.
+A sequent is composed of a set of assumptions and a conclusion, all of which 
+are higher-order logic formulas~\cite{gordon01hol}.
 When a goal is proven, it becomes a theorem.
-If the developer gives the theorem a name then we refer to it as a top-level theorem.
+If the developer gives the theorem a name then we refer to it as a 
+\textit{top-level} theorem.
 
 \paragraph{Theories and script files.}
 Formal developments in \holfour are organized into named theories, which are
@@ -255,14 +255,17 @@ own tactics or combinations thereof.
 Considering concrete implementation details now, a \emph{tactic} is a function
 that takes a goal (or proof obligation) and returns a list of goals (subgoals
 of the original goal) together
-with a validation function.
-Calling the validation function on a list of \emph{theorems}, corresponding to
+with a \textit{validation function}.
+Calling the validation function on a list of \emph{theorems}, 
+corresponding to
 the list of subgoals, results in a theorem corresponding to the original goal.
-For example, if the list of subgoals is empty, then calling the validation
+For example, if the list of subgoals is empty, then calling the 
+validation
 function on the empty list yields the originally goal sequent as a theorem.
 In this way, tactics implement the plumbing of backwards, goal-directed, proof
 construction.
-Because validation functions are only important to check the final proof, we
+Because validation functions are only important to check the final 
+proof, we
 omit them during the description of the proof search algorithm. We denote by
 $t(g)$ the list of goals produced by the application of a tactic $t$ to a goal
 $g$.
@@ -272,35 +275,40 @@ This paper extends the work described in \cite{tgckju-lpar17}.
 There we proposed the idea of a tactic-based prover based on supervised
 learning guidance. And we achieved a 39\% success rate on theorems of the
 \holfour standard library by running \tactictoe with a 5 seconds timeout.
-The additional contributions and their effect on our system are:
+The contributions of this extension and their effect on our system are:
 
 \begin{itemize}
-\item Proof recording at the tactic level is made more precise. Pattern
+\item Proof recording at the tactic level is made more precise in 
+Section~\ref{sec:recording}. Pattern
 matching constructions, opening of submodules are supported. The different
 recording steps (parsing, unfolding and replaying) are regrouped into a single
 \sml function.
 \item Monte Carlo tree search (MCTS) replaces A* as our
-search algorithm. The MCTS algorithm gives a more balanced feedback on
+search algorithm in Section~\ref{sec:proofsearch}. The MCTS algorithm gives a 
+more balanced feedback on
 the success of
 each proof step by
 comparing subtrees of the search tree instead of leafs. The policy and
 evaluation are learned
 through supervised learning.
-\item Proof guidance required by MCTS is given by predictors for
+\item Proof guidance required by MCTS is given by predictors presented in 
+Section~\ref{s:prediction} for
 three kinds of objects: tactics, theorems and lists of goals.
 \item The orthogonalization process that eliminates redundant tactics is
-described in a precise manner.
-\item A tactic abstraction mechanism is introduced. It enables us to create
+described in a precise manner in Section~\ref{sec:ortho}.
+\item A tactic abstraction mechanism is introduced in 
+Section~\ref{sec:synthesis}. It enables us to create
 more general and flexible tactics where tactic arguments are dynamically
 predicted.
 \item The internal ATP \metis is complemented
-by asynchronous calls to \eprover to help \tactictoe during proof search.
+by asynchronous calls to \eprover in Section~\ref{sec:atp} to help \tactictoe 
+during proof search.
 \item Evaluation of \tactictoe with a 60 seconds timeout achieving a 66\%
-success rate on the standard library.
-\item First evaluation of \tactictoe success rate relative to
-the length of the original human proofs.
-\item Minimization and embellishment of the generated proof  facilitates user
-interaction.
+success rate on the standard library. And detailed comparisons between 
+\tactictoe and \eprover on the different type of problems are reported in 
+Section~\ref{s:experiments}.
+\item Minimization and embellishment of the discovered proof facilitates user
+interaction in Section~\ref{sec:proofdisplay}.
 \end{itemize}
 
 \subsection{Plan}
@@ -340,9 +348,9 @@ interaction.
   
 \end{tikzpicture}
 \end{center}
-\label{fig:components}
-\caption{Relation between modules of the learning and proving tool chains.
-Functions are represented by rectangles and objects by ellipses.}
+\caption{\label{fig:components}Relation between modules of the learning and 
+proving tool chains. Functions are represented by rectangles and objects by 
+ellipses.}
 \end{figure}
 
 The different components depicted in Fig~\ref{fig:components} give a 
@@ -352,8 +360,8 @@ of ITP proofs, we extract and record tactic invocations
 in Section~\ref{sec:recording}. Based on such training examples, we
   build efficient machine learning classifiers in Section~\ref{s:prediction}. 
   At the basis of those predictions are 
-  similarity measures computed in Section~\ref{sec:features} from syntactic 
-  features of mathematical formulas .
+  similarity measures computed from syntactic features of mathematical formulas 
+  .
   Modification of the knowledge base performed by orthogonalization 
   in Section~\ref{sec:ortho} and abstraction in Section~\ref{sec:synthesis}
   improves the quality of the databases.
@@ -370,14 +378,13 @@ in Section~\ref{sec:recording}. Based on such training examples, we
   tactics minimized in Section~\ref{sec:proofdisplay}. And in 
   Section~\ref{s:experiments}, we evaluate the system 
   on a large set of theorems originating from \holfour.
-  And generated tactic-level proofs are analysed in 
+  The generated proofs are compared with human proofs in 
   Section~\ref{sec:case_study}.
 
 The section order does not follow the implementation. In this way, 
-we can give a description of the proof search algorithm sooner. This is 
+we can give a description of the proof search algorithm sooner. This order is 
 beneficial for the reader as it shows the essential for our work before 
 technical details on the prediction and recording algorithms. 
-
 
 
 \section{Search Tree}\label{sec:prelim}
@@ -385,14 +392,14 @@ The application of a tactic to an initial conjecture produces a list of goals.
 Each of the created goals can in turn be the input to other tactics.
 Moreover, it is possible to try multiple tactics on the same goal.
 In order to keep track of the progress made so far from the initial conjecture
-we want to solve, we organize goals and tactics into a graph with list of goals
+we want to solve, we organize goals and tactics into a graph with lists of goals
 as nodes and tactics as edges (See Definition~\ref{def:stree}).
 
 In this section, we only give a description of the graph at a given
 moment of the search after a certain amount of tactic applications.
-Exploration of the tree is directed by the MCTS algorithm in
+Construction of the tree is done by the MCTS algorithm in
 Section~\ref{sec:proofsearch}, which is guided by prediction algorithms
-presented in Section~\ref{sec:predictions}.
+presented in Section~\ref{s:prediction}.
 
 
 \begin{definition}\label{def:stree}(search tree)\\
@@ -401,7 +408,8 @@ $(\mathbb{T},\mathbb{G},\mathbb{A},T,G,A)$
 that respects the following conditions:
 \begin{itemize}
 \item $\mathbb{T}$ is a set of tactics, $\mathbb{G}$ is a set of goals
- and $\mathbb{A}$ is a set of nodes representing lists of goals.
+ and $\mathbb{A}$ is a set of nodes representing lists of goals. All objects 
+ are tagged with their position in the tree (see Figure~\ref{fig:choice}).
 \item $T$ is a function from $\mathbb{G}$ to $\mathcal{P}(\mathbb{T})$. It
 takes a goal and return the set of tactics already applied to this goal.
 \item $G$ is a function from $\mathbb{A}$ to $\mathcal{P}(\mathbb{G})$.
@@ -420,9 +428,9 @@ exactly one goal which is the initial goal (also called conjecture).
 
 If no explicit order is given, we assume that the sets
 $\mathbb{T},\mathbb{G},\mathbb{A}$ are equipped with an
-arbitrary order. In Figure~\ref{fig:choice}, a part of the a search tree is
-depicted, with goals represented by circles, nodes by rectangles and tactics by
-arrows.
+arbitrary \textit{total order}. In Figure~\ref{fig:choice}, a part of the a 
+search tree is depicted, with goals represented by circles, nodes by rectangles 
+and tactics by arrows.
 
 
 \begin{figure}{}
@@ -462,10 +470,10 @@ arrows.
 \draw[-to,dotted,thick] (0) to node[xshift=15](t2){$t_m$} (3b);
 \end{tikzpicture}
 \end{center}
-\caption{A node of a search tree $a_0$, the list of goals $g_0 \ldots g_n$ it
+\caption{\label{fig:choice}A node of a search tree $a_0$, the list of goals 
+$g_0 \ldots g_n$ it
 contains and the nodes $a_1 \ldots a_m$ derived from the application of the
 tactics $t_1 \ldots t_m$ to $g_i$.}
-\label{fig:choice}
 \end{figure}
 
 
@@ -476,8 +484,8 @@ what a solved goal and solved node are by mutual recursion on the number of
 steps it takes to solve a goal and a node.
 \begin{definition}\label{def:solved}(solved goal, solved nodes, open goal,
 pending goal)\\
-The set of solved nodes $\mathbb{A}^\infty$ and
-the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
+The set of \textit{solved nodes} $\mathbb{A}^*$ and
+the set of \textit{solved goals} $\mathbb{G}^*$ are defined inductively by:
 
 \begin{align*}
 \mathbb{A}^{0} &=_{def}
@@ -488,13 +496,15 @@ the set of solved goals $\mathbb{G}^\infty$ are defined inductively by:
 \forall g \in G(a).\ g \in \mathbb{G}^{n} \rbrace\\
 \mathbb{G}^{n+1} &=_{def} \lbrace g \in \mathbb{G}\ |\
 \exists t \in T(g).\ A(g,t) \in \mathbb{A}^{n+1} \rbrace \\
-\mathbb{A}^\infty &=_{def} \bigcup_{n \in \mathbb{N}} \mathbb{A}^n \ \ \ \ \
-\mathbb{G}^\infty =_{def} \bigcup_{n \in \mathbb{N}} \mathbb{G}^n\\
+\mathbb{A}^* &=_{def} \bigcup_{n \in \mathbb{N}} \mathbb{A}^n \ \ \ \ \
+\mathbb{G}^* =_{def} \bigcup_{n \in \mathbb{N}} \mathbb{G}^n\\
 \end{align*}
 
-We call a goal (respectively node) unsolved if it is not in the set of solved
+We call a goal (respectively node) \textit{unsolved} if it is not in the set of 
+solved
 goals (respectively nodes).
-The open goal of a node is the first unsolved goal of this node according to
+The \textit{open goal} of a node is the first unsolved goal of this node 
+according to
 some preset order. The other unsolved nodes are called pending nodes.
 If a node is unsolved, then it contains a unique open goal.
 During MCTS exploration, we do not explore pending goals of an unsolved node
@@ -509,13 +519,13 @@ In Definition~\ref{def:desc}, we define relations between goals
 and nodes in terms of parenthood.
 
 \begin{definition}\label{def:desc}(children, descendant, ancestors)\\
-The children of a goal $g$ is a set of nodes defined by:
+The \textit{children of a goal} $g$ is a set of nodes defined by:
 \[\mathit{Children}(g) = \lbrace A(g,t)\in \mathbb{A}\ |\ t \in T(g) \rbrace\]
 
-By extension, we define the children of a node $a$ by:
+By extension, we define the \textit{children of a node} $a$ by:
 \[\mathit{Children}(a) = \bigcup_{g \in G(a)} \mathit{Children}(g) \]
 
-The descendants of $a$ by:
+The \textit{descendants of a node} $a$ by:
 \begin{align*}
 \mathit{Descendant}^{0}(a) &=_{def} \lbrace a \rbrace \\
 \mathit{Descendant}^{n+1}(a) &=_{def} \bigcup_{a' \in \mathit{Descendant}^{n}(a)}
@@ -523,10 +533,9 @@ The descendants of $a$ by:
 \mathit{Descendant}(a) &=_{def} \bigcup_{n \in \mathbb{N}} \mathit{Descendant}^n(a)\\
 \end{align*}
 
-And the ancestors of $a$ by:
+And the \textit{ancestors of a node} $a$ by:
 \[\mathit{Ancestors}(a) =_{def} \lbrace b \in \mathbb{A} \ | \ a \in
 Descendant(b) \rbrace\]
-
 \end{definition}
 
 
@@ -534,15 +543,16 @@ In Definition~\ref{def:prod}, we decide if a tactic is productive based on its
 contribution to the search tree.
 
 \begin{definition}\label{def:prod} (productive tactic)
-The application of a tactic on an open goal is called productive if and only if
+The application of a tactic $t$ on an open goal $g$ is called 
+\textit{productive} if and only if
 all the following conditions are satisfied:
 \begin{itemize}
 \item It does not fail or timeout. To prevent tactics from looping, we
 interrupt tactics after a short amount of time (0.05 seconds).
 \item It does not loop, i.e., its output does not contain any goals that appear
 in the ancestor of the node of the current goal.
-\item It is not a parallel step, i.e., its output is not a superset
-of a list of goals produced from the same goal.
+\item It is not a parallel step, i.e., there does not exist $t'$ in $T(g)$ 
+such as $t'(g) \subseteq t(g)$.
 \end{itemize}
 
 The third point of the definition is a partial attempt at preventing confluent
@@ -562,8 +572,8 @@ predictions per second, while maintaining very high prediction quality~\cite{fem
 We rely on this supervised machine learning algorithm to predict three
 different kinds of objects:
  tactics, theorems and lists of goals. The number of predicted objects $k$ is
- called the \emph{prediction radius}. For a goal $g$, we note
-$\mathit{Predictions}^{\mathit{tactic}}_k (g)$ (respectively
+ called the \emph{prediction radius}. For a goal $g$, we denote
+by $\mathit{Predictions}^{\mathit{tactic}}_k (g)$ (respectively
 $\mathit{Predictions}^{\mathit{theorem}}_k (g)$
 and $\mathit{Predictions}^{\mathit{goal\_list}}_k (g)$) the $k$ tactics
 (respectively theorems and lists of goals) selected by our prediction algorithm.
@@ -582,7 +592,7 @@ proofs (recording will be discussed in
 Section~\ref{sec:recording}).
 During proof search, the recorded goals will be reordered according to their
 similarity with a target goal $g$ (usually the first pending goal of a node).
-The recorded pairs induce an
+The recorded pairs and their similarity to $g$ induce an
 order on tactics. The intuition is that tactics which have been successful on
 goals similar to $g$ should be tried first, since they are more likely to lead
 to a proof.
@@ -603,14 +613,75 @@ The same algorithm selects suitable premises for ATPs integrated with
 \tactictoe (see Section~\ref{sec:atp}).
 
 \paragraph{Lists of Goals as Output of Tactics}
-A dataset of tactic outputs is compiled during orthogonalization.
-This set is separated into positive and negative examples (see
+A dataset of tactic outputs is compiled during orthogonalization (see 
+Section~\ref{sec:ortho}).
+Some elements of this set will be considered positive examples (see 
 Section~\ref{sec:evaluation}).
-List of goals that are a subset of the result of a recorded tactic on a
-target goal are considered positive. During proof search, given a list of
+Lists of goals that are a subset or equal to the result of a recorded tactic on 
+a target goal are considered positive because if a set of goals is solvable 
+then a subset of it is too. During proof search, given a list of
 goals $l$ created by a tactic, we select a set of lists of goals that are most
 similar to $l$. The ratio of positive examples in the selection gives us a
 prior evaluation for MCTS.
+
+\subsection{Feature Extraction and Similarity Measures}\label{sec:features}
+
+We predict tactics through their associated goals. So, the features
+for each kind of object can be extracted from (different representations of)
+mathematical formulas. We start by describing features for \holfour terms. From
+there, we extend the extraction mechanism
+to goals, theorems and lists of goals. Duplicated features are always removed
+so that each object has an associated set of features.
+
+Here are the different kinds of feature we extract from terms:
+\begin{itemize}
+\item names of constants, including the logical operators,
+\item type constructors present in the types of constants and variables,
+\item subterms with all variables replaced by a single placeholder $V$,
+\item names of the variables.
+\end{itemize}
+Goals (respectively theorems) are represented by pairs consisting of a list of
+terms (assumptions) and a term (conclusion). We distinguish between
+features of the assumptions and features of the conclusion by adding a
+different tag to elements of each set. The feature of a goal (respectively 
+theorem)
+are the union of all these tagged features. From
+that, we can construct features for a list of goals by computing the union of 
+the features of each goal in the list.
+
+We estimate the similarity (or co-distance) between two objects $o_1$ and $o_2$
+through their respective feature sets $f_1$ and $f_2$.
+The estimation is based on the frequency of the features in the intersection of
+$f_1$ and $f_2$. A good rule of thumb is that the rarer the shared features
+are, the more similar two goals should be. The relative rarity of each feature
+can be estimated by calculating its TF-IDF weight~\cite{Jones72astatistical}.
+We additionally raise these weighs to the sixth power giving
+even more importance
+to rare features. This modification was found experimentally optimal in
+\cite{ckju-pxtp13}.
+
+The first co-distance $sim_1$ sums the weight of all shared
+features to compute the total score.
+In a second co-distance $sim_2$, we additionally take
+the total number of features into account, to reduce the seemingly unfair
+advantage of big
+feature sets in the first scoring function.
+\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap
+<f_1}{\text{tfidf}(f)^{6}}}\]
+\[sim_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_0 \cap
+f_1}{\text{tfidf}(f)^{6}}}}
+{ln (e + \mathit{card} f_0 + \mathit{card} f_1)}\]
+
+In our setting, making predictions for an object $o$ consists of sorting a set
+of objects by their similarity to $o$. We use $sim_1$ for tactics and theorems
+and $sim_2$ for lists of goals. The reason why $sim_1$ is used for
+predicting tactics is that tactics effective on a large goal $g$ are often also
+suitable for a goal made of sub-formulas of $g$. The same monotonicity
+heuristic can justify the use of $sim_1$ for theorems. Indeed, in practice a
+large theorem is often a conjunction of theorems from the same domain.
+And if a conjunction contains a formula related to a problem, then the other
+conjuncts from the same domain may also help to solve it.
+
 
 \section{Proof Search}\label{sec:proofsearch}
 
@@ -626,11 +697,11 @@ learned through direct supervised learning for the policy and via the data
 accumulated during orthogonalization for the evaluation. Therefore, this MCTS
 algorithm does not need to rely on roll outs for evaluation. The
 policy and evaluation are estimated by the simple supervised k-NN algorithm
-here instead of neural networks trained through reinforcement learning in
-AlphaGo Zero~\cite{silver2017mastering}.
+here instead of neural networks trained through reinforcement learning
+as e.g. in AlphaGo Zero~\cite{silver2017mastering}.
 A characteristic of the MCTS algorithm is that it offers a good trade-off
 between exploitation and exploration. This means that the algorithm searches
-deeper more promising branches and leaves enough time for the exploration
+deeper the more promising branches and leaves enough time for the exploration
 of less likely alternatives.
 
 
@@ -666,7 +737,8 @@ node selection starts from the root of the search tree. From the current node,
 the function \texttt{CompareChildren} chooses among the children of its open
 goal the one with the highest value.
 
-If the highest children value is higher than the widening policy, then the
+If the highest children value is higher than the \textit{widening policy} (see 
+Section~\ref{sec:policy}), then the
 selected child
 becomes the current node, otherwise the final result of node selection is the
 current node. The node selection algorithm can be written as the following
@@ -689,7 +761,7 @@ is determined by:
 \[\mathit{Value}(a_i) = \mathit{CurEvaluation}(a_i) + c_{exploration} *
 \mathit{Exploration}(a_i)\]
 
-The number $\mathit{Failure}(a_i)$ is the amount of failures that occurred
+The number $\mathit{Failure}(a_i)$ is the number of failures that occurred
 during node extension from descendants of $a_i$ .
 The current evaluation $CurEvaluation(a_i)$ is the average evaluation of
 all descendants of $a_i$ including node extension failures.
@@ -707,7 +779,7 @@ traversed during node selection, denoted $\mathit{Visit}(x)$.
 \frac{\mathit{PriorPolicy}(a_i)}{\mathit{CurPolicy}(a_i)}\]
 
 \[\mathit{CurPolicy}(a_i) = \frac{1 +
-\mathit{Visit}(a_i))}{\sqrt{\mathit{Visit}(p))}}\]
+\mathit{Visit}(a_i)}{\sqrt{\mathit{Visit}(p)}}\]
 The policy is approximately the  percentage of time a node was visited. The
 square root skews this probability to favor even more exploration of nodes with
 few visits.
@@ -845,64 +917,6 @@ computationally expensive, they are run in parallel and asynchronously. This
 avoids slowing down \tactictoe's search loop. The number of asynchronous calls
 to external provers that can be executed at the same time is limited by the
 number of cores available to the user.
-
-\section{Feature Extraction and Similarity Measure}\label{sec:features}
-%We explain the construction of the similarity measure by which relevant
-%objects are predicted
-
-We predict tactics through their associated goals. So, the features
-for each kind of object can be extracted from (different representations of)
-mathematical formulas. We start by describing features for \holfour terms. From
-there, we extend the extraction mechanism
-to goals, theorems and lists of goals. Duplicated features are always removed
-so that each object has an associated set of features.
-
-Here are the different kinds of feature we extract from terms:
-\begin{itemize}
-\item names of constants, including the logical operators,
-\item type constructors present in the types of constants and variables,
-\item subterms with all variables replaced by a single placeholder $V$,
-\item names of the variables.
-\end{itemize}
-Goals (respectively theorems) are represented by pairs consisting of a list of
-terms (assumptions) and a term (conclusion). We distinguish between
-features of the assumptions and features of the conclusion by adding a
-different tag to elements of each set. The feature of a goal (respectively theorem)
-are the union of all these tagged features. From
-that, we can construct features for a list of goals by computing the union of the features of each goal in the list.
-
-We estimate the similarity (or co-distance) between two objects $o_1$ and $o_2$
-through their respective feature sets $f_1$ and $f_2$.
-The estimation is based on the frequency of the features in the intersection of
-$f_1$ and $f_2$. A good rule of thumb is that the rarer the shared features
-are, the more similar two goals should be. The relative rarity of each feature
-can be estimated by calculating its TF-IDF weight~\cite{Jones72astatistical}.
-We additionally raise these weighs to the sixth power giving
-even more importance
-to rare features. This modification was found experimentally optimal in
-\cite{ckju-pxtp13}.
-
-The first co-distance $sim_1$ sums the weight of all shared
-features to compute the total score.
-In a second co-distance $sim_2$, we additionally take
-the total number of features into account, to reduce the seemingly unfair
-advantage of big
-feature sets in the first scoring function.
-\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap
-<f_1}{\text{tfidf}(f)^{6}}}\]
-\[sim_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_0 \cap
-f_1}{\text{tfidf}(f)^{6}}}}
-{ln (e + \mathit{card} f_0 + \mathit{card} f_1)}\]
-
-In our setting, making predictions for an object $o$ consists of sorting a set
-of objects by their similarity to $o$. We use $sim_1$ for tactics and theorems
-and $sim_2$ for lists of goals. The reason why $sim_1$ is used for
-predicting tactics is that tactics effective on a large goal $g$ are often also
-suitable for a goal made of sub-formulas of $g$. The same monotonicity
-heuristic can justify the use of $sim_1$ for theorems. Indeed, in practice a
-large theorem is often a conjunction of theorems from the same domain.
-And if a conjunction contains a formula related to a problem, then the other
-conjuncts from the same domain may also help to solve it.
 
 \section{Preselection}\label{sec:presel}
 
@@ -1295,8 +1309,9 @@ and priority calls to \metis with a timeout of 0.1 seconds.
    Total  & 4946 (69.0\%)\\
 \bottomrule
 \end{tabular}
-\caption{Evaluation on 7164 top-level theorems of the \holfour standard library
-\label{tab:_param}}
+\caption{\label{tab:_param} Evaluation on 7164 top-level theorems of the 
+\holfour standard library
+}
 \end{table}
 
 The results shows that \tactictoe is able to prove almost twice as many
@@ -1335,7 +1350,7 @@ in \eprover's proof as argument.
 \eprover & 24.1 & 26.5 & 15.8 & 24.7 \\
 \bottomrule
 \end{tabular}
-\caption{\label{theories}Percentage (\%) of re-proved theorems in the theories
+\caption{\label{theories} Percentage (\%) of re-proved theorems in the theories
 \texttt{arithmetic}, \texttt{real}, \texttt{complex}, \texttt{measure},
 \texttt{probability}, \texttt{list}, \texttt{sorting} and \texttt{finite\_map}.
 }
