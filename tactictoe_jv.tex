@@ -47,7 +47,7 @@
 \def\coq{\textsf{Coq}\xspace}
 \def\ocaml{\textsf{OCaml}\xspace}
 \def\vampire{\textsf{Vampire}\xspace}
-\def\eprover{\textsf{Eprover}\xspace}
+\def\eprover{\textsf{E~prover}\xspace}
 \def\zthree{\textsf{z3}\xspace}
 
 \def\sml{\textsf{SML}\xspace}
@@ -187,7 +187,7 @@ explore the most promising tactic-level proof paths.
 On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.4\% of
 7164 theorems in HOL4's standard library whereas
 Eprover with auto-schedule solves 34.5\%. The success rate rises to 69.0\% by 
-combining the results of TacticToe and Eprover.
+combining the results of TacticToe and E~prover.
 \end{abstract}
 
 \section{Introduction}
@@ -219,12 +219,22 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   leading to an ITP proof.
 
 \subsection{The problem}
-An ITP is a development environment for the construction of formal proofs in which it is possible, but not common, to write a proof as a sequence of applications of primitive inference rules.
-The common approach, however, is to use and devise high-level tools and automation that abstract over useful ways of producing proof pieces.
-A specific, prevalent instance of this approach is the use of \emph{tactics} for \emph{backward} or goal-directed proof.
-Here, the ITP user operates on a proof state, initially the desired conjecture, and applies tactics that transform the proof state until it is solved (or until giving up).
-Each tactic performs a sound transformation of the proof state: essentially, it promises that if the resulting proof state can be solved, then so can the starting one.
-This gives rise to a machine learning problem: can we learn a mapping from a given proof state to the next tactic (or sequence of tactics) that will productively advance the proof towards a solution?
+An ITP is a development environment for the construction of formal proofs in 
+which it is possible, but not common, to write a proof as a sequence of 
+applications of primitive inference rules.
+The common approach, however, is to use and devise high-level tools and 
+automation that abstract over useful ways of producing proof pieces.
+A specific, prevalent instance of this approach is the use of \emph{tactics} 
+for \emph{backward} or goal-directed proof.
+Here, the ITP user operates on a proof state, initially the desired conjecture, 
+and applies tactics that transform the proof state until it is solved (or until 
+giving up).
+Each tactic performs a sound transformation of the proof state: essentially, it 
+promises that if the resulting proof state can be solved, then so can the 
+starting one.
+This gives rise to a machine learning problem: can we learn a mapping from a 
+given proof state to the next tactic (or sequence of tactics) that will 
+productively advance the proof towards a solution?
 
 \paragraph{Goals and theorems.}
 A goal (or proof state) is represented as a \emph{sequent}.
@@ -617,9 +627,7 @@ A dataset of tactic outputs is compiled during orthogonalization (see
 Section~\ref{sec:ortho}).
 Some elements of this set will be considered positive examples (see 
 Section~\ref{sec:evaluation}).
-Lists of goals that are a subset or equal to the result of a recorded tactic on 
-a target goal are considered positive because if a set of goals is solvable 
-then a subset of it is too. During proof search, given a list of
+During proof search, given a list of
 goals $l$ created by a tactic, we select a set of lists of goals that are most
 similar to $l$. The ratio of positive examples in the selection gives us a
 prior evaluation for MCTS.
@@ -655,10 +663,11 @@ The estimation is based on the frequency of the features in the intersection of
 $f_1$ and $f_2$. A good rule of thumb is that the rarer the shared features
 are, the more similar two goals should be. The relative rarity of each feature
 can be estimated by calculating its TF-IDF weight~\cite{Jones72astatistical}.
-We additionally raise these weighs to the sixth power giving
+We additionally raise these weights to the sixth power giving
 even more importance
 to rare features. This modification was found experimentally optimal in
-\cite{ckju-pxtp13}.
+\cite{ckju-pxtp13}. \todoi {Cezary: Josef says sixth power is not in this 
+citation}.
 
 The first co-distance $sim_1$ sums the weight of all shared
 features to compute the total score.
@@ -666,8 +675,8 @@ In a second co-distance $sim_2$, we additionally take
 the total number of features into account, to reduce the seemingly unfair
 advantage of big
 feature sets in the first scoring function.
-\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap
-<f_1}{\text{tfidf}(f)^{6}}}\]
+\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap 
+f_1}{\text{tfidf}(f)^{6}}}\]
 \[sim_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_0 \cap
 f_1}{\text{tfidf}(f)^{6}}}}
 {ln (e + \mathit{card} f_0 + \mathit{card} f_1)}\]
@@ -825,7 +834,8 @@ the search returns a minimized and
 prettified proof script (see Section~\ref{sec:proofdisplay}).
 \item It saturates, i.e., there are no tactics to be applied to any open goal.
 This occurs less than 10 times in the full-scale experiment.
-This happens only at the beginning of \holfour library, where the training data
+This happens only at the beginning of the \holfour library, where the training 
+data
 has very few tactics.
 \item It exceeds a given time limit (default is set to 60 seconds).
 \end{itemize}
@@ -861,13 +871,14 @@ widening policy on the parent $p$ for its open goal $g$ to be:
 \paragraph{Prior evaluation}\label{sec:evaluation}
 
 We now concentrate on the definition of a reasonable evaluation function for the
-output of tactics. Theoretically, a list of goals is interesting if short proofs
-are possible each the goals in the list, and the lengths of the proofs can be
-estimated from previous proof searches. However, this
+output of tactics. Theoretically, a list of goals is interesting if we can find 
+a short proof for it. We could estimate the length of a proof from previous 
+proof searches. However, this
 approach generates too much data and slows down the proof search. So, we only
-collect outputs of tactics tested during orthogonalization. We
-declare a list of goals $l$ to be positive if it is has been produced by the
-winner of an orthogonalization competition.
+collect outputs of tactics tested during orthogonalization (see 
+Section~\ref{sec:ortho}). We
+declare a list of goals $l$ to be \textit{positive} if it is has been produced 
+by the winner of an orthogonalization competition.
 The set of positive examples in
 $\mathit{Predictions}^{\mathit{goal\_list}}_k(l)$ is denoted
 $\mathit{Positive}^{\mathit{goal\_list}}_k(l)$.
@@ -889,7 +900,8 @@ power of tactics, we would like to combine the \tactictoe search with
 general purpose provers such as the ones found in \holyhammer for
 \holfour~\cite{tgck-cpp15}.
 
-\holfour already integrates a superposition-based prover \metis for this purpose. It is already
+\holfour already integrates a superposition-based prover \metis~\cite{metis} 
+for this purpose. It is already
 recognized by the tactic selection mechanism in \tactictoe and its
 premises can be predicted dynamically when in an abstracted form. Nevertheless,
 we think that the performance of \tactictoe can be boosted by giving the ATP
@@ -913,7 +925,9 @@ proof scripts. For external ATPs, we use an even higher timeout (5 seconds) and
 a larger number of predicted premises (128 for \eprover) and also try them
 first on open
 goals. Since calls to ATPs are
-computationally expensive, they are run in parallel and asynchronously. This
+computationally expensive, they are run in parallel and asynchronously. To 
+update the MCTS values, the 
+result of each thread is back-propagated in the tree after completion. This
 avoids slowing down \tactictoe's search loop. The number of asynchronous calls
 to external provers that can be executed at the same time is limited by the
 number of cores available to the user.
@@ -949,22 +963,22 @@ of object.
 
 \begin{definition}(Dependencies of a tactic-goal pair)\\
 Let $\mathfrak{F}$ be the set of recorded tactic-goal pairs.
-The dependencies $D_\infty$ of a tactic-goal pair $(t_0,g_0)$ are
+The dependencies $D^*$ of a tactic-goal pair $(t_0,g_0)$ are
 inductively defined by:
 
 \begin{align*}
 D_0 &=_{def} \lbrace (t_0,g_0) \rbrace \\
 D_{n+1} &=_{def} D_n \cup \lbrace (t,g)\in \mathfrak{F}\  |\ \exists
 (t',g') \in D_n.\ g \in t'(g') \rbrace  \\
-D_\infty &=_{def} \bigcup_{i \in \mathbb{N}} D_i\\
+D^* &=_{def} \bigcup_{i \in \mathbb{N}} D_i\\
 \end{align*}
 \end{definition}
 
 
 \begin{definition}(Dependencies of a theorem)\\
-Let $\mathfrak{T}$ be the set of recorded theorems.
+Let $\mathfrak{R}$ be the set of recorded theorems.
 The dependencies of a theorem $t$ are the set of top-level theorems in
-$\mathfrak{T}$ appearing in the proof of $t$. These dependencies are
+$\mathfrak{R}$ appearing in the proof of $t$. These dependencies are
 recorded by tracking the use of top-level theorems through the inference
 kernel~\cite{tgck-cpp15}.
 \end{definition}
@@ -1054,8 +1068,8 @@ tactic $t_2$ on a goal $g$, denoted $\le_g$, when:
 
 If one of the tactics is failing then $t_1$ and $t_2$ are not comparable through
 this relation.
-Given the default subsumption on goals, $t_1$ subsumes $t_2$ on $g$ if and only
-if $t_1(g)$ is a subset (modulo $\alpha$-equivalence) of $t_2(g)$.
+%Given the default subsumption on goals, $t_1$ subsumes $t_2$ on $g$ if and only
+%if $t_1(g)$ is a subset (modulo $\alpha$-equivalence) of $t_2(g)$.
 \end{definition}
 
 Finally, the winning tactic of the orthogonalization competition can be
@@ -1069,7 +1083,7 @@ expressed by the formula:
 |\ x \le_g t\rbrace\]
 
 % All in all, 
-A database built with the orthogonalization process hus contains
+A database built with the orthogonalization process thus contains
 $(\mathbb{O}(t,g),g)$ instead of $(t,g)$.
 
 \section{Abstraction}\label{sec:synthesis}
@@ -1093,8 +1107,9 @@ The first step is to abstract arguments of tactics by replacing them by a
 placeholder, creating a tactic with an unspecified argument.
 Suppose we have a recorded tactic $t$. Since $t$ is a \sml code tree, we can
 try to abstract any of the
-\sml subterms. Let $u$ be a \sml subterm of $t$, and $h$ a placeholder in $u$, we
-can substitute $u$ by $h$ to create an abstracted tactic.
+\sml subterms. Let $u$ be a \sml subterm of $t$, and $h$ a variable (playing 
+the role of a placeholder), we
+can replace $u$ by $h$ to create an abstracted tactic.
 We denote this intermediate tactic $t[h/u]$. By repeating the
 process, multiple
 arguments may be abstracted in the same tactic. Ultimately, the more
@@ -1108,7 +1123,7 @@ type theorem list in $t$.
 An abstracted tactic is not immediately applicable to a goal, since it contains
 unspecified arguments. To apply an abstracted tactic $\hat{t}$, we first need
 to
-instantiate the placeholders inside $\hat{t}$. Because it is difficult to
+instantiate the placeholders $h$ inside $\hat{t}$. Because it is difficult to
 build a general predictor effective on each type of argument, we manually
 design different argument predictors for each type. Those predictors are
 given a goal $g$ as input and return the best predicted argument for this
@@ -1179,7 +1194,7 @@ parameter optimization, which amounts to 273 theorems.
 Although the evaluation of each set of parameters on its own is fair,
 the selection of the best strategy in Section~\ref{sec:tuning} should also be
 considered as a learning process. To ensure the global fairness, the final
-experiments in Section~\ref{sec:full_exp} runs the best strategy on the full
+experiment in Section~\ref{sec:full_exp} runs the best strategy on the full
 dataset which is about 30 times larger.
 
 \subsection{Tuning \tactictoe}\label{sec:tuning}
@@ -1327,7 +1342,8 @@ Tactic proofs produced by \tactictoe during this experiment are all verifiable
 in \holfour. By the design of the proof search, reconstruction of \tactictoe
 proof succeeds, unless one of the tactics modifies the state of \holfour in a
 way that changes the behavior of a tactic used in the final proof. This has not
-occurred a single time in our experiments.
+occurred a single time in our experiments. And a tactical proof generated by 
+\tactictoe during the final experiment takes on average 0.37 seconds to replay.
 More details on how a proof is extracted from the search tree is given in
 Section~\ref{sec:proofdisplay}.
 Comparatively, we achieve a reconstruction rate of 95 percent for \eprover,
@@ -1370,7 +1386,8 @@ apply induction, a task at which ATPs are known to struggle with.
 
 \paragraph{Reinforcement learning}
 All our feature vectors have been learned form human proofs. We now can now
-also add tactic-goal pairs that appears in \tactictoe's final proof. To prevent
+also add tactic-goal pairs that appears in the last proof of \tactictoe. To 
+prevent
 duplication of effort, orthogonalization of those
 tactics is essential to have a beneficial effect.
 Since recording and re-proving are intertwined during evaluation, the
@@ -1460,7 +1477,7 @@ perspective, the length distribution of human proofs in the
 validation set is shown in Figure~\ref{fig:distrib}.  It is clear from the
 graph that most of the human proofs are short. The proofs found by \tactictoe
 follow a similar
-distribution. % This means that 
+distribution.
 If \tactictoe finds a proof, there is about a 50
 percent chance that it will be shorter than what a human would come up with.
 
@@ -1486,9 +1503,10 @@ length of the
 original proof until length 20.}
 \end{figure}
 
-In Figure~\ref{fig:percentage}, we regroup the human proofs by their length to
-see how well \tactictoe and \eprover cope with increased levels of
-difficulty. As expected, the longer the original proof is, the harder it is
+In Figure~\ref{fig:percentage}, we regroup problems by the length of their 
+human proof to measure how well \tactictoe and \eprover cope with increasing 
+levels 
+of difficulty. As expected, the longer the original proof is, the harder it is
 for \tactictoe and \eprover to re-prove the theorem on their own.
 The performance of \tactictoe is compelling with more than half of the theorems
 that required a proof of length six being reproven. It is also consistently
@@ -1552,9 +1570,9 @@ We call this process \emph{globalization}. The result is a standalone \sml code
 executable in any \holfour theory.  In the absence of side effects, it is
 interpreted in the same way across theories.
 Therefore, we can guarantee that the behavior of recorded stateless tactics
-does not change. And because an update on a stateful tactic
-generally increases its strength, our prediction algorithm based on past
-examples is still reasonably effective in this case.
+does not change. Even with some stateful tactics, the prediction algorithm is  
+effective because most updates on the state of \holfour increase the 
+strength of stateful tactics.
 
 \subsection{Implementation}
 We describe in more detail our implementation of the recording algorithm. It
@@ -1619,8 +1637,8 @@ not. The local identifier \texttt{LIST\_INDUCT\_TAC} is replaced by its
 definition which happens to contain two global identifiers.
 The previous paragraph describes the globalization for all identifiers except
 local theorems.  We do not replace a local
-theorem by its definition because we want to avoid unfolding tactic proofs into
-other tactic proofs.
+theorem by its tactic proof (which its \sml definition) because we want to 
+avoid unfolding proofs inside other proofs.
 If the theorem is stored in the \holfour database available across \holfour
 developments, we can obtain the theorem value by calling \texttt{DB.fetch}.
 Otherwise the globalization process fails and the local theorem identifier is
