@@ -666,12 +666,7 @@ are, the more similar two goals should be. The relative rarity of each feature
 can be estimated by calculating its TF-IDF weight~\cite{Jones72astatistical}.
 We additionally raise these weights to the sixth power giving
 even more importance
-to rare features. The second and third authors found this modification 
-experimentally 
-optimal~\cite{ckju-pxtp13}. \todoi {Cezary: Josef says sixth 
-power is not 
-in this 
-citation}.
+to rare features~\cite{BlanchetteGKKU16}.
 
 The first similarity measure $sim_1$ sums the weight of all shared
 features to compute the total score.
@@ -2013,18 +2008,20 @@ advice.
 %two approaches by predicting from the goal and from the original tactic
 %arguments is more difficult but is likely to produce more suitable lemmas.
 %
-Proof patching: \cite{RingerYLG18}
-\todoi{Cezary; comment on proof patching or remove the citation.}
+Proof Patching \cite{RingerYLG18} is an approach that attempts to learn the
+proof changes necessary for a modification of a prover library or system. The
+approach is hard to apply for new proofs. On the other had, \tactictoe could also
+try to learn from different versions of the prover library.
 
-\todoi{Cezary; add ltac and eisbach or remove PSL if you think it is not worth 
-mentionning.}
-A similar effort for stronger automation is performed in \isabelle. Nagashima
-developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the
-user to
-program with regular tactics and combine them with tools such as
-\sledgehammer.
-Selection of tactics from data collected in recorded proofs is in development
-but for now it is up to the user to come up with a good meta-tactic.
+% \todoi{Cezary; add ltac and eisbach or remove PSL if you think it is not worth 
+% mentionning.}
+% A similar effort for stronger automation is performed in \isabelle. Nagashima
+% developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the
+% user to
+% program with regular tactics and combine them with tools such as
+% \sledgehammer.
+% Selection of tactics from data collected in recorded proofs is in development
+% but for now it is up to the user to come up with a good meta-tactic.
 
 Machine learning has also been used to advise the best library lemmas for new
 ITP goals.
