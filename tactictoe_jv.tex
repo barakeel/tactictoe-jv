@@ -73,11 +73,11 @@
 % graphs
 \usetikzlibrary{arrows,shapes}
 \usetikzlibrary{trees,positioning,fit}
-\tikzstyle{block} = 
-  [rectangle, draw, 
+\tikzstyle{block} =
+  [rectangle, draw,
    minimum width=9em, text centered, rounded corners, minimum height=3.5em]
 \tikzstyle{line}=[draw]
-\tikzstyle{cloud} = 
+\tikzstyle{cloud} =
   [draw, text centered, ellipse, minimum height=3.5em, minimum width=9em]
 
 
@@ -186,7 +186,7 @@ This knowledge is then used by a Monte Carlo tree search algorithm to
 explore the most promising tactic-level proof paths.
 On a single CPU, with a time limit of 60 seconds, TacticToe proves 66.4\% of
 7164 theorems in HOL4's standard library whereas
-Eprover with auto-schedule solves 34.5\%. The success rate rises to 69.0\% by 
+Eprover with auto-schedule solves 34.5\%. The success rate rises to 69.0\% by
 combining the results of TacticToe and E~prover.
 \end{abstract}
 
@@ -197,7 +197,7 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   and \coq~\cite{coq-book} provide high-level parameterizable tactics for constructing proofs.
   Tactics analyze the current proof state (goal and
   assumptions) and apply non-trivial proof transformations.
-  Formalized proofs take advantage of different levels of automation which are 
+  Formalized proofs take advantage of different levels of automation which are
   in increasing order of generality:
   specialized rules, theory-based strategies and general purpose strategies.
   Thanks to progress in proof
@@ -216,34 +216,34 @@ Many of the state-of-the-art interactive theorem provers (ITPs) such as
   tactics depending on the current proof state by learning
   from previous proofs. Backed by this machine-learned guidance, our prover
   \tactictoe executes a \emph{Monte
-  Carlo tree search}~\cite{montecarlo} algorithm to find sequences of tactic 
+  Carlo tree search}~\cite{montecarlo} algorithm to find sequences of tactic
   applications
   leading to an ITP proof.
 
 \subsection{The problem}
-An ITP is a development environment for the construction of formal proofs in 
-which it is possible to write a proof as a sequence of 
-applications of primitive inference rules. This approach is not preferred 
-by developers because proving a valuable theorem requires in general more than 
-thousand primitive inferences.
-The common approach, however, is to use and devise high-level tools and 
+An ITP is a development environment for the construction of formal proofs in
+which it is possible to write a proof as a sequence of
+applications of primitive inference rules. This approach is not preferred
+by developers because proving a valuable theorem requires often many
+thousands of primitive inferences.
+The preferred approach is to use and devise high-level tools and
 automation that abstract over useful ways of producing proof pieces.
-A specific, prevalent instance of this approach is the use of \emph{tactics} 
+A specific, prevalent instance of this approach is the use of \emph{tactics}
 for \emph{backward} or goal-directed proof.
-Here, the ITP user operates on a proof state, initially the desired conjecture, 
+Here, the ITP user operates on a proof state, initially the desired conjecture,
 and applies tactics that transform the proof state until it is solved.
-Each tactic performs a sound transformation of the proof state: essentially, it 
-promises that if the resulting proof state can be solved, then so can the 
-starting one. This gives rise to a machine learning problem: can we learn a 
-mapping from a given proof state to the next tactic (or sequence of tactics) 
+Each tactic performs a sound transformation of the proof state: essentially, it
+promises that if the resulting proof state can be solved, then so can the
+initial one. This gives rise to a machine learning problem: can we learn a
+mapping from a given proof state to the next tactic (or sequence of tactics)
 that will productively advance the proof towards a solution?
 
 \paragraph{Goals and theorems.}
 A goal (or proof state) is represented as a \emph{sequent}.
-A sequent is composed of a set of assumptions and a conclusion, all of which 
+A sequent is composed of a set of assumptions and a conclusion, all of which
 are higher-order logic formulas~\cite{gordon01hol}.
 When a goal is proven, it becomes a theorem.
-And when the developer has given the theorem a name, we refer to it as a 
+And when the developer has given the theorem a name, we refer to it as a
 \textit{top-level} theorem.
 
 \paragraph{Theories and script files.}
@@ -268,62 +268,60 @@ A \emph{tactic} is a function
 that takes a goal (or proof obligation) and returns a list of goals (subgoals
 of the original goal) together
 with a \textit{validation function}.
-Calling the validation function on a list of \emph{theorems}, 
+Calling the validation function on a list of \emph{theorems},
 corresponding to
 the list of subgoals, results in a theorem corresponding to the original goal.
-For example, if the list of subgoals is empty, then calling the 
+For example, if the list of subgoals is empty, then calling the
 validation
-function on the empty list yields the originally goal sequent as a theorem.
+function on the empty list yields the original goal sequent as a theorem.
 In this way, tactics implement the plumbing of goal-directed proof
 construction, transforming the conjecture by reasoning in a backward manner.
-Since validation functions are only important to check the final 
+Since validation functions are only important to check the final
 proof, we
 omit them during the description of the proof search algorithm. We denote by
 $t(g)$ the list of goals produced by the application of a tactic $t$ to a goal
 $g$.
 
 \subsection{Contributions}
-This paper extends the work described in our previous work~\cite{tgckju-lpar17}.
-There we proposed the idea of a tactic-based prover based on supervised
-learning guidance. And we achieved a 39\% success rate on theorems of the
-\holfour standard library by running \tactictoe with a 5 seconds timeout.
+This paper extends work described previously~\cite{tgckju-lpar17}, in which
+we proposed the idea of a tactic-based prover based on supervised
+learning guidance. We achieved a 39\% success rate on theorems of the
+\holfour standard library by running \tactictoe with a 5 second timeout.
 The contributions of this paper and their effect on our system are:
 
 \begin{itemize}
-\item Proof recording at the tactic level is made more precise in 
-Section~\ref{sec:recording}. Pattern
-matching constructions, opening of submodules are supported. 
+\item Proof recording at the tactic level is made more precise
+  (Section~\ref{sec:recording}). We now support pattern
+matching constructions and opening SML modules.
 %The different
 %recording steps (parsing, unfolding and replaying) are regrouped into a single
 %\sml function.
 \item Monte Carlo tree search (MCTS) replaces A* as our
-search algorithm in Section~\ref{sec:proofsearch}. The MCTS algorithm gives a 
+  search algorithm (Section~\ref{sec:proofsearch}). The MCTS algorithm gives
 more balanced feedback on
 the success of
 each proof step by
-comparing subtrees of the search tree instead of leafs. The policy and
+comparing subtrees of the search tree instead of leaves. The policy and
 evaluation are learned
 through supervised learning.
-\item Proof guidance required by MCTS is given by prediction algorithms 
-through supervised learning (see 
-Section~\ref{s:prediction}).
-These predictors are implemented for three kind of objects: tactics, 
+\item Proof guidance required by MCTS is given by prediction algorithms
+through supervised learning (Section~\ref{s:prediction}).
+These predictors are implemented for three kind of objects: tactics,
 theorems and lists of goals.
-\item The orthogonalization process that eliminates redundant tactics is
-described in a precise manner in Section~\ref{sec:ortho}.
-\item A tactic abstraction mechanism is introduced in 
-Section~\ref{sec:synthesis}. It enables us to create
-more general and flexible tactics where tactic arguments are dynamically
-predicted.
+\item We introduce an orthogonalization process that eliminates redundant tactics (Section~\ref{sec:ortho}).
+\item We introduce a tactic abstraction mechanism
+  (Section~\ref{sec:synthesis}), which enables us to create
+more general and flexible tactics by dynamically
+predicting tactic arguments.
 \item The internal ATP \metis is complemented
-by asynchronous calls to \eprover in Section~\ref{sec:atp} to help \tactictoe 
+  by asynchronous calls to \eprover (Section~\ref{sec:atp}) to help \tactictoe
 during proof search.
 \item Evaluation of \tactictoe with a 60 seconds timeout achieves a 66\%
-success rate on the standard library. And comparisons between 
-\tactictoe and \eprover on different type of problems are reported in 
+success rate on the standard library. Comparisons between
+\tactictoe and \eprover on different type of problems are reported in
 Section~\ref{s:experiments}.
 \item Minimization and embellishment of the discovered proof facilitates user
-interaction in Section~\ref{sec:proofdisplay}.
+  interaction (Section~\ref{sec:proofdisplay}).
 \end{itemize}
 
 \subsection{Plan}
@@ -334,9 +332,9 @@ interaction in Section~\ref{sec:proofdisplay}.
   \node [] (aa) {\textbf{Learning}};
   \node [cloud, below of=aa, node distance = 1cm] (a) {Formal library};
   \node [block, below of=a] (b) {Proof recording};
-  \node [cloud, below of=b] (c) {Knowledge base}; 
+  \node [cloud, below of=b] (c) {Knowledge base};
   \node [block, below of=c] (e) {Training loop};
-  \node [block, below of=e] (d) {Tactic predictors};   
+  \node [block, below of=e] (d) {Tactic predictors};
 
   \draw [-to,black,thick] (a) to (b);
   \draw [-to,black,thick] (b.south) to (c.north);
@@ -348,7 +346,7 @@ interaction in Section~\ref{sec:proofdisplay}.
   \node [cloud, below of=0, node distance = 1cm] (1) {Conjecture};
   \node [cloud, below of=1, node distance = 1.7cm] (2) {Search tree};
   \node [block, below of=2, node distance=1.3cm] (3) {Tactic policy};
-  \node [above of=2, xshift=-16mm, node distance = 0.9cm] (00) {MCTS proof 
+  \node [above of=2, xshift=-16mm, node distance = 0.9cm] (00) {MCTS proof
   search};
   \node [block, below of=3, node distance = 1.3cm] (4) {Tactic evaluation};
   \node [block, fit=(2) (3) (4)] (5) {};
@@ -359,44 +357,45 @@ interaction in Section~\ref{sec:proofdisplay}.
   \draw [-to,black,thick] (6) to (7);
   \draw [-to,black,thick] (d) to [out=0, in=180] (3);
   \draw [-to,black,thick] (d) to [out=0, in=180] (4);
-  
-  
+
+
 \end{tikzpicture}
 \end{center}
-\caption{\label{fig:components}Relation between modules of the learning and 
-proving tool chains. Functions are represented by rectangles and objects by 
+\caption{\label{fig:components}Relation between modules of the learning and
+proving toolchains. Functions are represented by rectangles and objects by
 ellipses.}
 \end{figure}
 
-The different components depicted in Figure~\ref{fig:components} give a 
-high-level overview of the techniques necessary to generate 
-tactic-level proofs by learning from recorded knowledge. From a formal library 
-of ITP proofs, we extract and record tactic invocations 
-in Section~\ref{sec:recording}. Based on such training examples, we
-  build efficient machine learning classifiers in Section~\ref{s:prediction}.
-  Modification of the knowledge base (shown as the training loop in 
+The different components depicted in Figure~\ref{fig:components} give a
+high-level overview of the techniques necessary to generate
+tactic-level proofs by learning from recorded knowledge. From a formal library
+of ITP proofs, we extract and record tactic invocations
+(Section~\ref{sec:recording}). Based on such training examples, we
+  build efficient machine learning classifiers (Section~\ref{s:prediction}).
+  We then modify the knowledge base (shown as the training loop in
   Figure~\ref{fig:components})
-  achieved by orthogonalization in Section~\ref{sec:ortho} and completed by 
-  an abstraction technique in Section~\ref{sec:synthesis}
-  improves the quality of the predictions.
-  And the preselection method described in Section~\ref{sec:presel} increases 
+  using orthogonalization (Section~\ref{sec:ortho}) and
+  an abstraction technique (Section~\ref{sec:synthesis})
+  to improve the quality of the predictions.
+  Additionally, the preselection method described in Section~\ref{sec:presel} increases
   the speed of the prediction algorithm.
-  The learned predictors relying on this knowledge guide the proof search 
+  The learned predictors relying on this knowledge guide the proof search
   algorithm presented in Section~\ref{sec:proofsearch}.
-  The search algorithm explores different proof paths in the proof tree which 
-  is defined in Section~\ref{sec:prelim}. 
+  The search algorithm explores different proof paths in the proof tree, which
+  is defined in Section~\ref{sec:prelim}.
   The result, if
   successful, is a verified human-level proof composed of \holfour
-  tactics minimized in Section~\ref{sec:proofdisplay}. And in 
-  Section~\ref{s:experiments}, we evaluate the system 
+  tactics, minimized according to Section~\ref{sec:proofdisplay}.
+  In
+  Section~\ref{s:experiments}, we evaluate the system
   on a large set of theorems originating from \holfour.
-  The generated proofs are compared with human proofs in 
+  The generated proofs are compared with human proofs in
   Section~\ref{sec:case_study}.
 
-The section order does not follow the implementation to give a description of 
-the proof search algorithm sooner. This order is 
-beneficial for the reader as it shows the essential of our work before 
-technical details on the prediction and recording algorithms. 
+The section order does not follow the implementation, because we have prioritized giving a description of
+the proof search algorithm early on. We hope this order
+benefits the reader by showing the essence of our work before
+the technical details of the prediction and recording algorithms.
 
 
 \section{Search Tree}\label{sec:prelim}
@@ -410,7 +409,7 @@ as nodes and tactics as edges (See Definition~\ref{def:stree}).
 In this section, we only give a description of the graph at a given
 moment of the search after a certain amount of tactic applications.
 Construction of the tree is done by the MCTS algorithm in
-Section~\ref{sec:proofsearch}. The MCTS algorithm is guided by prediction 
+Section~\ref{sec:proofsearch}. The MCTS algorithm is guided by prediction
 algorithms presented in Section~\ref{s:prediction}.
 
 
@@ -420,19 +419,19 @@ $(\mathbb{T},\mathbb{G},\mathbb{A},T,G,A)$
 that respects the following conditions:
 \begin{itemize}
 \item $\mathbb{T}$ is a set of tactics, $\mathbb{G}$ is a set of goals
- and $\mathbb{A}$ is a set of nodes representing lists of goals. All objects 
+ and $\mathbb{A}$ is a set of nodes representing lists of goals. All objects
  are tagged with their position in the tree (see Figure~\ref{fig:choice}).
 \item $T$ is a function from $\mathbb{G}$ to $\mathcal{P}(\mathbb{T})$. It
 takes a goal and return the set of tactics already applied to this goal.
 \item $G$ is a function from $\mathbb{A}$ to $\mathcal{P}(\mathbb{G})$.
 It takes a node and returns the list of goals of this node.
-\item $A$ is a function that takes a pair $(g,t)\in \mathbb{G} \times 
-\mathbb{T}$ such as $t \in T(g)$ and 
-returns a node $A(g,t)$ such as $t(g) = G(A(g,t))$. In other words, the output 
+\item $A$ is a function that takes a pair $(g,t)\in \mathbb{G} \times
+\mathbb{T}$ such as $t \in T(g)$ and
+returns a node $A(g,t)$ such as $t(g) = G(A(g,t))$. In other words, the output
 $t(g)$ is exactly the list of goals contained in $A(g,t)$.
-\item It is acyclic, i.e. a node cannot be a strict descendant (see 
+\item It is acyclic, i.e. a node cannot be a strict descendant (see
 Definition~\ref{def:desc}) of itself.
-\item There is exactly one node with no parents. This root node contains 
+\item There is exactly one node with no parents. This root node contains
 exactly one goal which is the initial goal (also called conjecture).
 \end{itemize}
 
@@ -440,8 +439,8 @@ exactly one goal which is the initial goal (also called conjecture).
 
 If no explicit order is given, we assume that the sets
 $\mathbb{T},\mathbb{G},\mathbb{A}$ are equipped with an
-arbitrary \textit{total order}. In Figure~\ref{fig:choice}, a part of the a 
-search tree is depicted. Goals, nodes and tactics are represented 
+arbitrary \textit{total order}. In Figure~\ref{fig:choice}, a part of the a
+search tree is depicted. Goals, nodes and tactics are represented
 respectively by circles, rectangles and arrows.
 
 \begin{figure}{}
@@ -481,7 +480,7 @@ respectively by circles, rectangles and arrows.
 \draw[-to,dotted,thick] (0) to node[xshift=15](t2){$t_m$} (3b);
 \end{tikzpicture}
 \end{center}
-\caption{\label{fig:choice}A node of a search tree $a_0$, the list of goals 
+\caption{\label{fig:choice}A node of a search tree $a_0$, the list of goals
 $g_0 \ldots g_n$ it
 contains and the nodes $a_1 \ldots a_m$ derived from the application of the
 tactics $t_1 \ldots t_m$ to $g_i$.}
@@ -511,10 +510,10 @@ the set of \textit{solved goals} $\mathbb{G}^*$ are defined inductively by:
 \mathbb{G}^* =_{def} \bigcup_{n \in \mathbb{N}} \mathbb{G}^n\\
 \end{align*}
 
-We call a goal \textit{unsolved} if it is not in the set 
-of solved goals. Similarly, we call a node \textit{unsolved} if it does not 
+We call a goal \textit{unsolved} if it is not in the set
+of solved goals. Similarly, we call a node \textit{unsolved} if it does not
 belong to the set of solved nodes.
-The \textit{open goal} of a node is the first unsolved goal of this node 
+The \textit{open goal} of a node is the first unsolved goal of this node
 according to
 some preset order. The other unsolved nodes are called \textit{pending nodes}.
 If a node is unsolved, then it contains a unique open goal.
@@ -554,7 +553,7 @@ In Definition~\ref{def:prod}, we decide if a tactic is productive based on its
 contribution to the search tree.
 
 \begin{definition}\label{def:prod} (productive tactic)
-The application of a tactic $t$ on an open goal $g$ is called 
+The application of a tactic $t$ on an open goal $g$ is called
 \textit{productive} if and only if
 all the following conditions are satisfied:
 \begin{itemize}
@@ -562,7 +561,7 @@ all the following conditions are satisfied:
 interrupt tactics after a short amount of time (0.05 seconds).
 \item It does not loop, i.e., its output does not contain any goals that appear
 in the ancestor of the node of the current goal.
-\item It is not a redundant step, i.e., there does not exist $t'$ in $T(g)$ 
+\item It is not a redundant step, i.e., there does not exist $t'$ in $T(g)$
 such as $t'(g) \subseteq t(g)$.
 \end{itemize}
 
@@ -580,8 +579,8 @@ automation in hammer systems~\cite{BlanchetteGKKU16}. In \tactictoe we use the
 distance-weighted \emph{$k$ nearest-neighbour} classifier~\cite{DudaniS76}
 adapted for lemma selection~\cite{ckju-pxtp13}. It allows for hundreds of
 predictions per second, while maintaining very high prediction quality~\cite{femalecop}.
-We rely on this supervised machine learning algorithm to predict objects of 
-three kinds: tactics, theorems and lists of goals. The number of predicted 
+We rely on this supervised machine learning algorithm to predict objects of
+three kinds: tactics, theorems and lists of goals. The number of predicted
 objects $k$ is
  called the \emph{prediction radius}. For a goal $g$, we denote
 by $\mathit{Predictions}^{\mathit{tactic}}_k (g)$ (respectively
@@ -624,9 +623,9 @@ The same algorithm selects suitable premises for ATPs integrated with
 \tactictoe (see Section~\ref{sec:atp}).
 
 \paragraph{Lists of Goals as Output of Tactics}
-We compile a dataset of tactic outputs during orthogonalization (see 
+We compile a dataset of tactic outputs during orthogonalization (see
 Section~\ref{sec:ortho}).
-Some elements of this set will be considered positive examples (see 
+Some elements of this set will be considered positive examples (see
 Section~\ref{sec:evaluation}).
 During proof search, given a list of
 goals $l$ created by a tactic, we select a set of lists of goals that are most
@@ -652,10 +651,10 @@ Here are the kinds of features we extract from terms:
 Goals (respectively theorems) are represented by pairs consisting of a list of
 terms (assumptions) and a term (conclusion). We distinguish between
 features of the assumptions and features of the conclusion by adding a
-different tag to elements of each set. The feature of a goal (respectively 
+different tag to elements of each set. The feature of a goal (respectively
 theorem)
 are the union of all these tagged features. From
-that, we can construct features for a list of goals by computing the union of 
+that, we can construct features for a list of goals by computing the union of
 the features of each goal in the list.
 
 We estimate the similarity between two objects $o_1$ and $o_2$
@@ -674,7 +673,7 @@ In a second similarity measure $sim_2$, we additionally take
 the total number of features into account, to reduce the seemingly unfair
 advantage of big
 feature sets in the first scoring function.
-\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap 
+\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap
 f_1}{\text{tfidf}(f)^{6}}}\]
 \[sim_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_0 \cap
 f_1}{\text{tfidf}(f)^{6}}}}
@@ -693,9 +692,9 @@ conjuncts from the same domain may also help to solve it.
 
 \section{Proof Search}\label{sec:proofsearch}
 
-Our prediction algorithms are not always accurate. 
+Our prediction algorithms are not always accurate.
 Therefore, a selected tactic may
-fail, proceed in the wrong direction or even loop. 
+fail, proceed in the wrong direction or even loop.
 For that reason, predictions need to be accompanied by a
 proof search mechanism that allows for backtracking and
 can choose which proof tree to extend next and in which direction.
@@ -712,12 +711,12 @@ deeper the more promising branches and leaves enough time for the exploration
 of less likely alternatives.
 
 \begin{remark}
-Neural networks trained through reinforcement learning can be 
-very effective for approximating the policy and evaluation as demonstrated in 
-.e.g. AlphaGo Zero~\cite{silver2017mastering}. 
-But training neural networks is 
-computationally expensive and has not yet been 
-proven effective in our context. That is why we chose a simpler machine 
+Neural networks trained through reinforcement learning can be
+very effective for approximating the policy and evaluation as demonstrated in
+.e.g. AlphaGo Zero~\cite{silver2017mastering}.
+But training neural networks is
+computationally expensive and has not yet been
+proven effective in our context. That is why we chose a simpler machine
 learning model for our project.
 \end{remark}
 
@@ -727,10 +726,10 @@ the prior policy \texttt{PriorPolicy} and prior evaluation
 
 \subsection{Proof exploration}
 
-The proof search starts by creating a search tree during initialization. 
-The search tree then evolves by the repetitive applications of MCTS steps. A 
-step in the main loop of MCTS consists of three parts: node selection, node 
-extension, and backpropagation. And the decision to stop the loop is taken 
+The proof search starts by creating a search tree during initialization.
+The search tree then evolves by the repetitive applications of MCTS steps. A
+step in the main loop of MCTS consists of three parts: node selection, node
+extension, and backpropagation. And the decision to stop the loop is taken
 by the resolution module.
 
 \paragraph{Initialization}
@@ -749,17 +748,17 @@ $[g]$.
 Through node extension steps the search tree grows and the number of paths to
 explore increases. To decide which node to extend next, the MCTS algorithm
 computes for each node a value (see Definition~\ref{def:value}) that changes
-after each MCTS step. 
+after each MCTS step.
 The algorithm that performs
 node selection starts from the root of the search tree. From the current node,
-the function \texttt{CompareChildren} chooses the child node with the highest 
+the function \texttt{CompareChildren} chooses the child node with the highest
 value among the children of its open goal.
 
-If the highest children value is higher than the \textit{widening policy} (see 
+If the highest children value is higher than the \textit{widening policy} (see
 Section~\ref{sec:policy}), then the
 selected child
 becomes the current node, otherwise the final result of node selection is the
-current node. The following pseudo-code illustrates our node selection 
+current node. The following pseudo-code illustrates our node selection
 algorithm:
 
 \begin{lstlisting}[language=SMLSmall]
@@ -798,9 +797,9 @@ traversed during node selection, denoted $\mathit{Visit}(x)$.
 
 \[\mathit{CurPolicy}(a_i) = \frac{1 +
 \mathit{Visit}(a_i)}{\sqrt{\mathit{Visit}(p)}}\]
-The policy can be seen as a skewed percentage of the number of times a node was 
+The policy can be seen as a skewed percentage of the number of times a node was
 visited. The square root favors exploration of nodes with
-few visits. The coefficient $c_{exploration}$ is experimentally determined and 
+few visits. The coefficient $c_{exploration}$ is experimentally determined and
 adjusts the trade-off between exploitation and exploration.
 \end{definition}
 
@@ -810,8 +809,8 @@ If $a$ is a solved node or the descendant of a solved node, then extending $a$
 would not be productive and the algorithm reports a failure for this MCTS step.
 If $a$ is not solved, it applies the best untested tactic $t$ on the open
 goal $g$ of this
-node according to the prediction order for $g$. 
-If no such tactic exists or if $t$ is not productive, the algorithm returns a 
+node according to the prediction order for $g$.
+If no such tactic exists or if $t$ is not productive, the algorithm returns a
 failure.
 If node extension succeeds, a new node containing $t(g)$ is added to the
 children of $a$.
@@ -840,8 +839,8 @@ the search returns a minimized and
 prettified proof script (see Section~\ref{sec:proofdisplay}).
 \item It saturates, i.e., there are no tactics to be applied to any open goal.
 This occurs less than 0.1 percent of the time in the full-scale experiment.
-And this happens only at the beginning of the \holfour library, where the 
-training 
+And this happens only at the beginning of the \holfour library, where the
+training
 data
 has very few tactics.
 \item It exceeds a given time limit (default is set to 60 seconds).
@@ -849,10 +848,10 @@ has very few tactics.
 
 \subsection{Supervised learning guidance}
 Our MCTS algorithm relies on the guidance of two supervised learning methods.
-The prior policy estimates the probability of success of a tactic $t$ on a 
-goal $g$ and associate it with the potential children that would be created by 
-the 
-application of $t$ to $g$. The prior evaluation judges if a branch is fruitful 
+The prior policy estimates the probability of success of a tactic $t$ on a
+goal $g$ and associate it with the potential children that would be created by
+the
+application of $t$ to $g$. The prior evaluation judges if a branch is fruitful
 by analyzing tactic
 outputs. Both priors influence the rates at which branches of the search tree
 are explored.
@@ -864,7 +863,7 @@ to estimate the probability with which each tactic should be tried.
 Let $\mathfrak{T}$ be a search tree after a number of MCTS steps.
 Let $p$ be a selected node in $\mathfrak{T}$ and $g$ its open goal. We order
 the list of $n$ productive tactics already
-applied to $g$ by their similarity score. We note the resulting list 
+applied to $g$ by their similarity score. We note the resulting list
 $t_0,\ldots,t_{n-1}$.
 Let $c_{policy}$ be a constant heuristic optimized during our experiments.
 We calculate the prior policy of a child $a_i$ produced by the tactic
@@ -880,15 +879,15 @@ widening policy on the parent $p$ for its open goal $g$ to be:
 \paragraph{Prior evaluation}\label{sec:evaluation}
 
 We now concentrate on the definition of a reasonable evaluation function for the
-output of tactics. Intuitively, a list of goals is worth exploring further if 
-we believe there exists a short proof for it. We could estimate the likelihood 
-of finding such a proof from 
-previous proof searches. However, extracting lists of goals from all proof 
-attempts creates too much data which slows down the prediction algorithm. 
+output of tactics. Intuitively, a list of goals is worth exploring further if
+we believe there exists a short proof for it. We could estimate the likelihood
+of finding such a proof from
+previous proof searches. However, extracting lists of goals from all proof
+attempts creates too much data which slows down the prediction algorithm.
 So, we only
-collect outputs of tactics tested during orthogonalization (see 
+collect outputs of tactics tested during orthogonalization (see
 Section~\ref{sec:ortho}). We
-declare a list of goals $l$ to be \textit{positive} if it has been produced 
+declare a list of goals $l$ to be \textit{positive} if it has been produced
 by the winner of an orthogonalization competition.
 The set of positive examples in
 $\mathit{Predictions}^{\mathit{goal\_list}}_k(l)$ is denoted
@@ -911,25 +910,25 @@ power of tactics, we combine the \tactictoe search with
 general purpose provers such as the ones found in \holyhammer for
 \holfour~\cite{tgck-cpp15}.
 
-\holfour already integrates a superposition-based prover \metis~\cite{metis} 
+\holfour already integrates a superposition-based prover \metis~\cite{metis}
 for this purpose. It is already
-recognized by the tactic selection mechanism in \tactictoe and thanks to 
+recognized by the tactic selection mechanism in \tactictoe and thanks to
 abstraction, its
 premises can be predicted dynamically. Nevertheless,
 we think that the performance of \tactictoe can be boosted by giving the ATP
-\metis a special status among tactics. This arrangement consists of always 
+\metis a special status among tactics. This arrangement consists of always
 predicting
 premises for \metis, giving it a slightly higher timeout and
 trying it first on each open goal. Since \metis does not create
-new goals, these modifications only induce an overhead that increases linearly 
+new goals, these modifications only induce an overhead that increases linearly
 with the number of nodes.
 
-In the following, we present the implementation of asynchronous calls to 
-\eprover~\cite{eprover} during \tactictoe's proof search. 
+In the following, we present the implementation of asynchronous calls to
+\eprover~\cite{eprover} during \tactictoe's proof search.
 Other external ATPs can be integrated with \tactictoe in a similar manner.
 
 First, we develop a tactic which expects a list of premises as an
-argument and calls \eprover on the goal together with the premises translated 
+argument and calls \eprover on the goal together with the premises translated
 to a first-order problem. If \eprover
 succeeds on the problem, the premises used in the external proof are used to
 reconstruct the proof inside \holfour with \metis. Giving a special status
@@ -937,8 +936,8 @@ to \eprover is essential as \eprover calls do not appear in human
 proof scripts. Here, we use an even higher timeout (5 seconds) and
 a larger number of predicted premises (128). We also try \eprover
 first every time a new goal is created. Since calls to \eprover are
-computationally expensive, they are run in parallel and asynchronously. To 
-update the MCTS values, the 
+computationally expensive, they are run in parallel and asynchronously. To
+update the MCTS values, the
 result of each thread is back-propagated in the tree after completion. This
 avoids slowing down \tactictoe's search loop. The number of asynchronous calls
 to \eprover that can be executed at the same time is limited by the
@@ -1042,7 +1041,7 @@ number of different goals it is useful for.
 \begin{definition} (Goal subsumption)\\
 A goal subsumption $\le$ is a partial relation on goals.
 Assuming we have a way to estimate the number of steps required to solve a goal,
-a % possibly 
+a % possibly
 general and useful subsumption definition is for example:
 % could be:
 \[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ has a proof with a length
@@ -1089,7 +1088,7 @@ expressed by the formula:
 \textit{\mbox{Coverage}}(x)\
 |\ x \le_g t\rbrace\]
 
-% All in all, 
+% All in all,
 A database built with the orthogonalization process thus contains
 $(\mathbb{O}(t,g),g)$ instead of $(t,g)$.
 
@@ -1103,7 +1102,7 @@ In this section we present a way to create tactics with different arguments
 by abstracting them and re-instantiating them using a predictor for that kind
 of argument. In the spirit of the orthogonalization method, we will try to
 create tactics that are more general but have the same effect as the
-% ungeneralized 
+% ungeneralized
 original one. The generalized tactics are typically slower that their
 original variants, but the added flexibility is worthwhile in practice. Moreover,
 since we impose a timeout on each tactic (0.05 seconds by default), very slow
@@ -1114,7 +1113,7 @@ The first step is to abstract arguments of tactics by replacing them by a
 placeholder, creating a tactic with an unspecified argument.
 Suppose we have a recorded tactic $t$. Since $t$ is a \sml code tree, we can
 try to abstract any of the
-\sml subterms. Let $u$ be a \sml subterm of $t$, and $h$ a variable (playing 
+\sml subterms. Let $u$ be a \sml subterm of $t$, and $h$ a variable (playing
 the role of a placeholder), we
 can replace $u$ by $h$ to create an abstracted tactic.
 We denote this intermediate tactic $t[h/u]$. By repeating the
@@ -1331,7 +1330,7 @@ and priority calls to \metis with a timeout of 0.1 seconds.
    Total  & 4946 (69.0\%)\\
 \bottomrule
 \end{tabular}
-\caption{\label{tab:_param} Evaluation on 7164 top-level theorems of the 
+\caption{\label{tab:_param} Evaluation on 7164 top-level theorems of the
 \holfour standard library
 }
 \end{table}
@@ -1349,7 +1348,7 @@ Tactic proofs produced by \tactictoe during this experiment are all verifiable
 in \holfour. By the design of the proof search, reconstruction of \tactictoe
 proof succeeds, unless one of the tactics modifies the state of \holfour in a
 way that changes the behavior of a tactic used in the final proof. This has not
-occurred a single time in our experiments. And a tactical proof generated by 
+occurred a single time in our experiments. And a tactical proof generated by
 \tactictoe during the final experiment takes on average 0.37 seconds to replay.
 More details on how a proof is extracted from the search tree is given in
 Section~\ref{sec:proofdisplay}.
@@ -1393,7 +1392,7 @@ apply induction, a task at which ATPs are known to struggle with.
 
 \paragraph{Reinforcement learning}
 All our feature vectors have been learned form human proofs. We now can now
-also add tactic-goal pairs that appears in the last proof of \tactictoe. To 
+also add tactic-goal pairs that appears in the last proof of \tactictoe. To
 prevent
 duplication of effort, orthogonalization of those
 tactics is essential to have a beneficial effect.
@@ -1510,9 +1509,9 @@ length of the
 original proof until length 20.}
 \end{figure}
 
-In Figure~\ref{fig:percentage}, we regroup problems by the length of their 
-human proof to measure how well \tactictoe and \eprover cope with increasing 
-levels 
+In Figure~\ref{fig:percentage}, we regroup problems by the length of their
+human proof to measure how well \tactictoe and \eprover cope with increasing
+levels
 of difficulty. As expected, the longer the original proof is, the harder it is
 for \tactictoe and \eprover to re-prove the theorem on their own.
 The performance of \tactictoe is compelling with more than half of the theorems
@@ -1562,7 +1561,7 @@ achieved by using a reference to a tactic and updating it with the function
 \end{itemize}
 
 In order to transfer our tactic knowledge between theories, we want to be able
-to re-use the code of a tactic recorded in one theory in another. 
+to re-use the code of a tactic recorded in one theory in another.
 We also would like to make sure that the code is interpretable and that
 its interpretation does not change in the other theory.
 
@@ -1577,8 +1576,8 @@ We call this process \emph{globalization}. The result is a standalone \sml code
 executable in any \holfour theory.  In the absence of side effects, it is
 interpreted in the same way across theories.
 Therefore, we can guarantee that the behavior of recorded stateless tactics
-does not change. Even with some stateful tactics, the prediction algorithm is  
-effective because most updates on the state of \holfour increase the 
+does not change. Even with some stateful tactics, the prediction algorithm is
+effective because most updates on the state of \holfour increase the
 strength of stateful tactics.
 
 \subsection{Implementation}
@@ -1644,7 +1643,7 @@ not. The local identifier \texttt{LIST\_INDUCT\_TAC} is replaced by its
 definition which happens to contain two global identifiers.
 The previous paragraph describes the globalization for all identifiers except
 local theorems.  We do not replace a local
-theorem by its tactic proof (which its \sml definition) because we want to 
+theorem by its tactic proof (which its \sml definition) because we want to
 avoid unfolding proofs inside other proofs.
 If the theorem is stored in the \holfour database available across \holfour
 developments, we can obtain the theorem value by calling \texttt{DB.fetch}.
@@ -2013,7 +2012,7 @@ proof changes necessary for a modification of a prover library or system. The
 approach is hard to apply for new proofs. Following this idea, \tactictoe 
 could also try to learn from different versions of the prover library.
 
-% \todoi{Cezary; add ltac and eisbach or remove PSL if you think it is not worth 
+% \todoi{Cezary; add ltac and eisbach or remove PSL if you think it is not worth
 % mentionning.}
 % A similar effort for stronger automation is performed in \isabelle. Nagashima
 % developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the
@@ -2074,12 +2073,12 @@ problems which require long proofs by decomposing it into multiple easier
 steps.
 
 \paragraph{Acknowledgments}\label{sect:acks}
-We would like to thank Lasse Blaauwbroek and Yutaka Nagashima for their 
+We would like to thank Lasse Blaauwbroek and Yutaka Nagashima for their
 insightful comments which
 contributed to improve the quality of this paper. This work has been supported
 by the ERC Consolidator grant no.\ 649043 \textit{AI4REASON}, the ERC starting
-grant no.\ 714034 \textit{SMART}, the Czech 
-project AI \& Reasoning CZ.02.1.01/0.0/0.0/15\_003/0000466 and the 
+grant no.\ 714034 \textit{SMART}, the Czech
+project AI \& Reasoning CZ.02.1.01/0.0/0.0/15\_003/0000466 and the
 European Regional Development Fund.
 
 \bibliographystyle{plain}
