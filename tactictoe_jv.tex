@@ -373,21 +373,18 @@ high-level overview of the techniques necessary to generate
 tactic-level proofs by learning from recorded knowledge. From a formal library 
 of ITP proofs, we extract and record tactic invocations 
 in Section~\ref{sec:recording}. Based on such training examples, we
-  build efficient machine learning classifiers in Section~\ref{s:prediction}. 
-  At the basis of those predictions are 
-  similarity measures computed from syntactic features of mathematical formulas 
-  .
-  Modification of the knowledge base performed by orthogonalization 
-  in Section~\ref{sec:ortho} and abstraction in Section~\ref{sec:synthesis}
-  improves the quality of the databases.
+  build efficient machine learning classifiers in Section~\ref{s:prediction}.
+  Modification of the knowledge base, shown as the training loop in 
+  Fig~\ref{fig:components} and
+  achieved by orthogonalization in Section~\ref{sec:ortho} and completed by 
+  an abstraction technique in Section~\ref{sec:synthesis},
+  improves the quality of the predictions.
   And the preselection method described in Section~\ref{sec:presel} increases 
-  the speed 
-  of the prediction algorithm.
-  The learned predictors relying on this knowledge serves as
-  guidance for the proof search algorithm presented in 
-  Section~\ref{sec:proofsearch} 
-  which explores different proof paths in the proof tree defined in 
-  Section~\ref{sec:prelim}. 
+  the speed of the prediction algorithm.
+  The learned predictors relying on this knowledge guide the proof search 
+  algorithm presented in Section~\ref{sec:proofsearch}.
+  The search algorithm explores different proof paths in the proof tree which 
+  is defined in Section~\ref{sec:prelim}. 
   The result, if
   successful, is a verified human-level proof composed of \holfour
   tactics minimized in Section~\ref{sec:proofdisplay}. And in 
@@ -396,9 +393,9 @@ in Section~\ref{sec:recording}. Based on such training examples, we
   The generated proofs are compared with human proofs in 
   Section~\ref{sec:case_study}.
 
-The section order does not follow the implementation. In this way, 
-we can give a description of the proof search algorithm sooner. This order is 
-beneficial for the reader as it shows the essential for our work before 
+The section order does not follow the implementation to give a description of 
+the proof search algorithm sooner. This order is 
+beneficial for the reader as it shows the essential of our work before 
 technical details on the prediction and recording algorithms. 
 
 
