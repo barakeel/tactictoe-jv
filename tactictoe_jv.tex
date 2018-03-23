@@ -536,15 +536,15 @@ By extension, we define the \textit{children of a node} $a$ by:
 
 The \textit{descendants of a node} $a$ by:
 \begin{align*}
-\mathit{Descendant}^{0}(a) &=_{\mathrm{def}} \lbrace a \rbrace \\
-\mathit{Descendant}^{n+1}(a) &=_{\mathrm{def}} \bigcup_{a' \in \mathit{Descendant}^{n}(a)}
+\mathit{Descendants}^{0}(a) &=_{\mathrm{def}} \lbrace a \rbrace \\
+\mathit{Descendants}^{n+1}(a) &=_{\mathrm{def}} \bigcup_{a' \in \mathit{Descendants}^{n}(a)}
 \mathit{Children}(a') \\
-\mathit{Descendant}(a) &=_{\mathrm{def}} \bigcup_{n \in \mathbb{N}} \mathit{Descendant}^n(a)\\
+\mathit{Descendants}(a) &=_{\mathrm{def}} \bigcup_{n \in \mathbb{N}} \mathit{Descendants}^n(a)\\
 \end{align*}
 
 And the \textit{ancestors of a node} $a$ by:
 \[\mathit{Ancestors}(a) =_{\mathrm{def}} \lbrace b \in \mathbb{A} \ | \ a \in
-Descendant(b) \rbrace\]
+Descendants(b) \rbrace\]
 \end{definition}
 
 
@@ -600,7 +600,7 @@ of tactic-goal pairs recorded from successful tactic applications in human
 proofs (recording will be discussed in
 Section~\ref{sec:recording}).
 During proof search, the recorded goals will be reordered according to their
-similarity with a target goal $g$ (usually the first pending goal of a node).
+similarity with a target goal $g$ (usually the open goal of a node).
 The recorded pairs and their similarity to $g$ induce an
 order on tactics. Intuitively, tactics which have been successful on
 goals similar to $g$ should be tried first. Indeed, they are more likely to lead
@@ -780,8 +780,8 @@ The current evaluation $CurEvaluation(a_i)$ is the average evaluation of
 all descendants of $a_i$ including node extension failures.
 
 \[\mathit{CurEvaluation}(a_i) =
-  \sum_{a' \in \mathit{Descendant}(a_i)} \frac{\mathit{PriorEvaluation}(a')}
-  {|\mathit{Descendant}(a_i)| + \mathit{Failure}(a_i)}\]
+  \sum_{a' \in \mathit{Descendants}(a_i)} \frac{\mathit{PriorEvaluation}(a')}
+  {|\mathit{Descendants}(a_i)| + \mathit{Failure}(a_i)}\]
 
 where the number $\mathit{Failure}(a_i)$ is the number of failures that occurred
 during node extension from descendants of $a_i$ .
