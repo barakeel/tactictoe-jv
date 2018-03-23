@@ -402,12 +402,11 @@ the technical details of the prediction and recording algorithms.
 The application of a tactic to an initial conjecture produces a list of goals.
 Each of the created goals can in turn be the input to other tactics.
 Moreover, it is possible to try multiple tactics on the same goal.
-In order to keep track of the progress made so far from the initial conjecture
-we want to solve, we organize goals and tactics into a graph with lists of goals
+In order to keep track of progress made from the initial conjecture, we organize goals and tactics into a graph with lists of goals
 as nodes and tactics as edges (See Definition~\ref{def:stree}).
 
 In this section, we only give a description of the graph at a given
-moment of the search after a certain amount of tactic applications.
+moment of the search, after some number of tactic applications.
 Construction of the tree is done by the MCTS algorithm in
 Section~\ref{sec:proofsearch}. The MCTS algorithm is guided by prediction
 algorithms presented in Section~\ref{s:prediction}.
@@ -427,20 +426,20 @@ takes a goal and return the set of tactics already applied to this goal.
 It takes a node and returns the list of goals of this node.
 \item $A$ is a function that takes a pair $(g,t)\in \mathbb{G} \times
 \mathbb{T}$ such as $t \in T(g)$ and
-returns a node $A(g,t)$ such as $t(g) = G(A(g,t))$. In other words, the output
+returns a node $A(g,t)$ such that $t(g) = G(A(g,t))$. In other words, the output
 $t(g)$ is exactly the list of goals contained in $A(g,t)$.
-\item It is acyclic, i.e. a node cannot be a strict descendant (see
+\item It is acyclic, i.e., a node cannot be a strict descendant (see
 Definition~\ref{def:desc}) of itself.
 \item There is exactly one node with no parents. This root node contains
-exactly one goal which is the initial goal (also called conjecture).
+exactly one goal which is the initial goal (conjecture).
 \end{itemize}
 
 \end{definition}
 
 If no explicit order is given, we assume that the sets
 $\mathbb{T},\mathbb{G},\mathbb{A}$ are equipped with an
-arbitrary \textit{total order}. In Figure~\ref{fig:choice}, a part of the a
-search tree is depicted. Goals, nodes and tactics are represented
+arbitrary \textit{total order}. Figure~\ref{fig:choice} depicts part of a
+search tree. Goals, nodes and tactics are represented
 respectively by circles, rectangles and arrows.
 
 \begin{figure}{}
@@ -489,7 +488,7 @@ tactics $t_1 \ldots t_m$ to $g_i$.}
 
 In the following, properties are defined in the context of a
 search tree $\mathfrak{T}$. In Definition~\ref{def:solved}, we specify
-different status for a goal: open, pending or solved. There, we define
+different states for a goal: open, pending or solved. There, we define
 what a solved goal and solved node are by mutual recursion on the number of
 steps it takes to solve a goal and a node.
 \begin{definition}\label{def:solved}(solved goal, solved nodes, open goal,
@@ -498,16 +497,16 @@ The set of \textit{solved nodes} $\mathbb{A}^*$ and
 the set of \textit{solved goals} $\mathbb{G}^*$ are defined inductively by:
 
 \begin{align*}
-\mathbb{A}^{0} &=_{def}
+\mathbb{A}^{0} &=_{\mathrm{def}}
 \lbrace a \in \mathbb{A}\ |\ G(a) = \emptyset \rbrace \\
-\mathbb{G}^{0} &=_{def} \lbrace g \in \mathbb{G}\ |\
+\mathbb{G}^{0} &=_{\mathrm{def}} \lbrace g \in \mathbb{G}\ |\
 \exists t \in T(g).\ A(g,t) \in \mathbb{A}^{0} \rbrace\\
-\mathbb{A}^{n+1} &=_{def} \lbrace a \in \mathbb{A}\ |\
+\mathbb{A}^{n+1} &=_{\mathrm{def}} \lbrace a \in \mathbb{A}\ |\
 \forall g \in G(a).\ g \in \mathbb{G}^{n} \rbrace\\
-\mathbb{G}^{n+1} &=_{def} \lbrace g \in \mathbb{G}\ |\
+\mathbb{G}^{n+1} &=_{\mathrm{def}} \lbrace g \in \mathbb{G}\ |\
 \exists t \in T(g).\ A(g,t) \in \mathbb{A}^{n+1} \rbrace \\
-\mathbb{A}^* &=_{def} \bigcup_{n \in \mathbb{N}} \mathbb{A}^n \ \ \ \ \
-\mathbb{G}^* =_{def} \bigcup_{n \in \mathbb{N}} \mathbb{G}^n\\
+\mathbb{A}^* &=_{\mathrm{def}} \bigcup_{n \in \mathbb{N}} \mathbb{A}^n \ \ \ \ \
+\mathbb{G}^* =_{\mathrm{def}} \bigcup_{n \in \mathbb{N}} \mathbb{G}^n\\
 \end{align*}
 
 We call a goal \textit{unsolved} if it is not in the set
@@ -537,14 +536,14 @@ By extension, we define the \textit{children of a node} $a$ by:
 
 The \textit{descendants of a node} $a$ by:
 \begin{align*}
-\mathit{Descendant}^{0}(a) &=_{def} \lbrace a \rbrace \\
-\mathit{Descendant}^{n+1}(a) &=_{def} \bigcup_{a' \in \mathit{Descendant}^{n}(a)}
+\mathit{Descendant}^{0}(a) &=_{\mathrm{def}} \lbrace a \rbrace \\
+\mathit{Descendant}^{n+1}(a) &=_{\mathrm{def}} \bigcup_{a' \in \mathit{Descendant}^{n}(a)}
 \mathit{Children}(a') \\
-\mathit{Descendant}(a) &=_{def} \bigcup_{n \in \mathbb{N}} \mathit{Descendant}^n(a)\\
+\mathit{Descendant}(a) &=_{\mathrm{def}} \bigcup_{n \in \mathbb{N}} \mathit{Descendant}^n(a)\\
 \end{align*}
 
 And the \textit{ancestors of a node} $a$ by:
-\[\mathit{Ancestors}(a) =_{def} \lbrace b \in \mathbb{A} \ | \ a \in
+\[\mathit{Ancestors}(a) =_{\mathrm{def}} \lbrace b \in \mathbb{A} \ | \ a \in
 Descendant(b) \rbrace\]
 \end{definition}
 
@@ -774,14 +773,14 @@ return CurrentNode;
 \begin{definition}\label{def:value}(Value)\\
 The value of the $i^{th}$ child $a_i$ of the open goal of a parent node $p$
 is determined by:
-\[\mathit{Value}(a_i) = \mathit{CurEvaluation}(a_i) + c_{exploration} *
+  \[\mathit{Value}(a_i) = \mathit{CurEvaluation}(a_i) + c_{\mathit{exploration}} *
 \mathit{Exploration}(a_i)\]
 
 The current evaluation $CurEvaluation(a_i)$ is the average evaluation of
 all descendants of $a_i$ including node extension failures.
 
 \[\mathit{CurEvaluation}(a_i) =
-  \sum_{a' \in Descendant(a_i)} \frac{\mathit{PriorEvaluation}(a')} {card\
+  \sum_{a' \in \mathit{Descendant}(a_i)} \frac{\mathit{PriorEvaluation}(a')} {card\
   \mathit{Descendant}(a_i) + \mathit{Failure}(a_i)}\]
 
 where the number $\mathit{Failure}(a_i)$ is the number of failures that occurred
@@ -977,10 +976,10 @@ The dependencies $D^*$ of a tactic-goal pair $(t_0,g_0)$ are
 inductively defined by:
 
 \begin{align*}
-D_0 &=_{def} \lbrace (t_0,g_0) \rbrace \\
-D_{n+1} &=_{def} D_n \cup \lbrace (t,g)\in \mathfrak{F}\  |\ \exists
+D_0 &=_{\mathrm{def}} \lbrace (t_0,g_0) \rbrace \\
+D_{n+1} &=_{\mathrm{def}} D_n \cup \lbrace (t,g)\in \mathfrak{F}\  |\ \exists
 (t',g') \in D_n.\ g \in t'(g') \rbrace  \\
-D^* &=_{def} \bigcup_{i \in \mathbb{N}} D_i\\
+D^* &=_{\mathrm{def}} \bigcup_{i \in \mathbb{N}} D_i\\
 \end{align*}
 \end{definition}
 
@@ -1030,7 +1029,7 @@ coverage $\textit{\mbox{Coverage}}(t)$ of a tactic $t$ by the number of times
 this tactic
 appears in
 $\mathfrak{T}$. Expressing this in a formula, we get:
-  \[\textit{\mbox{Coverage}}(t) =_{def} card\ \lbrace g\ |\ (t,g) \in
+\[\textit{\mbox{Coverage}}(t) =_{\mathrm{def}} card\ \lbrace g\ |\ (t,g) \in
   \mathfrak{T} \rbrace \]
 Intuitively, this notion estimates how general a tactic is by counting the
 number of different goals it is useful for.
@@ -1043,12 +1042,12 @@ Assuming we have a way to estimate the number of steps required to solve a goal,
 a % possibly
 general and useful subsumption definition is for example:
 % could be:
-\[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ has a proof with a length
+\[g_1 \le g_2  \Leftrightarrow_{\mathrm{def}} g_1 \mbox{ has a proof with a length
 shorter
 or equal to the proof of }
 g_2\]
 By default, we however choose for efficiency reasons a minimal subsumption defined by:
-\[g_1 \le g_2  \Leftrightarrow_{def} g_1 \mbox{ is }\alpha\mbox{-equivalent
+\[g_1 \le g_2  \Leftrightarrow_{\mathrm{def}} g_1 \mbox{ is }\alpha\mbox{-equivalent
 to } g_2\]
 \end{definition}
 
@@ -1058,9 +1057,9 @@ lists of goals.
 A goal list subsumption is a partial relation on lists of goals.
 Given two lists of goals $l_1$ and $l_2$, we define it from the goal
 subsumption $\le$ by:
-%\[l_1 \le l_2  \Leftrightarrow_{def} \forall g_2 \in l_2.\ \exists g_1 \in l_1.\
+%\[l_1 \le l_2  \Leftrightarrow_{\mathrm{def}} \forall g_2 \in l_2.\ \exists g_1 \in l_1.\
 %g_1 \le g_2\]
-\[l_1 \le l_2  \Leftrightarrow_{def} \forall g_1 \in l_1.\ \exists g_2 \in l_2.\
+\[l_1 \le l_2  \Leftrightarrow_{\mathrm{def}} \forall g_1 \in l_1.\ \exists g_2 \in l_2.\
 g_1 \le g_2\]
 \end{definition}
 
@@ -1069,7 +1068,7 @@ This allows us to define subsumption for tactics.
 Given two non-failing tactics $t_1$ and $t_2$ on $g$, a tactic $t_1$ subsumes a
 tactic $t_2$ on a goal $g$, denoted $\le_g$, when:
 
- \[t_1 \le_g t_2 \Leftrightarrow_{def} t_1(g) \le t_2(g)\]
+\[t_1 \le_g t_2 \Leftrightarrow_{\mathrm{def}} t_1(g) \le t_2(g)\]
 
 If one of the tactics is failing then $t_1$ and $t_2$ are not comparable through
 this relation.
@@ -1743,8 +1742,8 @@ recursion on goals and nodes of $\mathfrak{T}$ by the respective function
 $P_{goal}$ and $P_{node}$:
 
 \begin{align*}
-P_{goal}(g) &=_{def} T_{sol}(g)\ \texttt{THENL}\ P_{node}(A(g,T_{sol}(g)))\\
-P_{node}(a) &=_{def} [P_{goal}(g_1),\ldots,P_{goal}(g_n)]\ \ \ \text{with}\
+P_{goal}(g) &=_{\mathrm{def}} T_{sol}(g)\ \texttt{THENL}\ P_{node}(A(g,T_{sol}(g)))\\
+P_{node}(a) &=_{\mathrm{def}} [P_{goal}(g_1),\ldots,P_{goal}(g_n)]\ \ \ \text{with}\
 G(a) = g_1,\ldots,g_n\\
 \end{align*}
 
@@ -2008,7 +2007,7 @@ advice.
 %
 Proof patching \cite{RingerYLG18} is an approach that attempts to learn the
 proof changes necessary for a modification of a prover library or system. The
-approach is hard to apply for new proofs. Following this idea, \tactictoe 
+approach is hard to apply for new proofs. Following this idea, \tactictoe
 could also try to learn from different versions of the prover library.
 
 % \todoi{Cezary; add ltac and eisbach or remove PSL if you think it is not worth
