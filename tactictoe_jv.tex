@@ -665,24 +665,24 @@ We additionally raise these weights to the sixth power giving
 even more importance
 to rare features~\cite{BlanchetteGKKU16}.
 
-The first similarity measure $sim_1$ sums the weight of all shared
+The first similarity measure $\mathit{sim}_1$ sums the weight of all shared
 features to compute the total score.
-In a second similarity measure $sim_2$, we additionally take
+In a second similarity measure $\mathit{sim}_2$, we additionally take
 the total number of features into account, to reduce the seemingly unfair
 advantage of big
 feature sets in the first scoring function.
-\[sim_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap
-f_1}{\text{tfidf}(f)^{6}}}\]
-\[sim_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_0 \cap
-f_1}{\text{tfidf}(f)^{6}}}}
-{ln (e + \mathit{card} f_0 + \mathit{card} f_1)}\]
+\[\mathit{sim}_1 (o_1, o_2) = {\sum\nolimits_{\,f \in f_0 \cap
+f_1}{\mathrm{tf\_idf}(f)^{6}}}\]
+\[\mathit{sim}_2 (o_1, o_2) = \frac{{\sum\nolimits_{\,f \in f_0 \cap
+f_1}{\mathrm{tf\_idf}(f)^{6}}}}
+{ln (e + |f_0| + |f_1|)}\]
 
 In our setting, making predictions for an object $o$ consists of sorting a set
-of objects by their similarity to $o$. We use $sim_1$ for tactics and theorems
-and $sim_2$ for lists of goals. The reason why $sim_1$ is used for
+of objects by their similarity to $o$. We use $\mathit{sim}_1$ for tactics and theorems
+and $\mathit{sim}_2$ for lists of goals. The reason why $\mathit{sim}_1$ is used for
 predicting tactics is that tactics effective on a large goal $g$ are often also
 suitable for a goal made of sub-formulas of $g$. The same monotonicity
-heuristic can justify the use of $sim_1$ for theorems. Indeed, in practice a
+heuristic can justify the use of $\mathit{sim}_1$ for theorems. Indeed, in practice a
 large theorem is often a conjunction of theorems from the same domain.
 And if a conjunction contains a formula related to a problem, then the other
 conjuncts from the same domain may also help to solve it.
@@ -1029,8 +1029,8 @@ coverage $\textit{\mbox{Coverage}}(t)$ of a tactic $t$ by the number of times
 this tactic
 appears in
 $\mathfrak{T}$. Expressing this in a formula, we get:
-\[\textit{\mbox{Coverage}}(t) =_{\mathrm{def}} card\ \lbrace g\ |\ (t,g) \in
-  \mathfrak{T} \rbrace \]
+\[\textit{\mbox{Coverage}}(t) =_{\mathrm{def}} |\lbrace g\ |\ (t,g) \in
+  \mathfrak{T} \rbrace| \]
 Intuitively, this notion estimates how general a tactic is by counting the
 number of different goals it is useful for.
 \end{definition}
