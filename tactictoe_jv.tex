@@ -596,7 +596,7 @@ Section~\ref{sec:presel},\ref{sec:ortho} and \ref{sec:synthesis}.
 
 \paragraph{Tactics}
 To start with, we build a database of tactics consisting
-of tactic-goal pairs recorded from successful tactic applications in human
+of goal-tactic pairs recorded from successful tactic applications in human
 proofs (recording will be discussed in
 Section~\ref{sec:recording}).
 During proof search, the recorded goals will be reordered according to their
@@ -944,8 +944,8 @@ number of cores available to the user.
 \section{Preselection}\label{sec:presel}
 
 In order to speed up the predictions during the search for a proof of a
-conjecture $c$, we preselect 500 tactic-goal pairs and 500 theorems and a
-larger number of lists of goals induced by the selection of tactic-goal pairs.
+conjecture $c$, we preselect 500 goal-tactic pairs and 500 theorems and a
+larger number of lists of goals induced by the selection of goal-tactic pairs.
 Preselected objects are the only objects available to \tactictoe's search
 algorithm for proving $c$.
 
@@ -953,7 +953,7 @@ algorithm for proving $c$.
 %each open goal creating the prior policy of our MCTS algorithm (see
 %Section~\ref{sec:policy}).
 
-The first idea is to select tactic-goal pairs and theorems by their similarity
+The first idea is to select goal-tactic pairs and theorems by their similarity
 with $c$ (i.e. $\mathit{Predictions}^{\mathit{tactic}}_{500} (c)$ and
 $\mathit{Predictions}^{\mathit{theorem}}_{500} (c)$).
 However, this selection may not be adapted at later stages of
@@ -970,9 +970,9 @@ highest dependency score are preselected in each dataset.
 We now give a mathematical definition of the dependency relation for each kind
 of object.
 
-\begin{definition}(Dependencies of a tactic-goal pair)\\
-Let $\mathfrak{F}$ be the set of recorded tactic-goal pairs.
-The dependencies $D^*$ of a tactic-goal pair $(t_0,g_0)$ are
+\begin{definition}(Dependencies of a goal-tactic pair)\\
+Let $\mathfrak{F}$ be the set of recorded goal-tactic pairs.
+The dependencies $D^*$ of a goal-tactic pair $(t_0,g_0)$ are
 inductively defined by:
 
 \begin{align*}
@@ -996,7 +996,7 @@ We do preselection also for lists of goals.
 To preselect a list of goals $l$ from our database of lists of goals, we
 consider the tactic input $g$ that was at the origin of the production of $l$
 during orthogonalization. The list $l$ is preselected if and only if $g$
-appears in the 500 preselected tactic-goal pairs.
+appears in the 500 preselected goal-tactic pairs.
 %This has the
 %desirable effect that negative and positive examples derived from the same
 %input goal are chosen or discarded together.
@@ -1006,16 +1006,16 @@ Different tactics may transform a single goal in the same way. Exploring such
 equivalent paths
 is undesirable, as it leads to inefficiency in automated proof search.
 To solve this problem, we modify the construction of the tactics database.
-Each time a new tactic-goal pair $(t,g)$ is extracted from a tactic proof and
+Each time a new goal-tactic pair $(t,g)$ is extracted from a tactic proof and
 about to be recorded, we consider if there does not already exist a better
 tactic for $g$ in our database. To this end, we organize a competition between
 the
-$k$ closest tactic-goal pairs $\mathit{Predictions}^{\mathit{tactic}}_k(g)$.
+$k$ closest goal-tactic pairs $\mathit{Predictions}^{\mathit{tactic}}_k(g)$.
 In our experiments,
 the default orthogonalization radius is $k=20$.
 The winner is the tactic that subsumes (see Definition~\ref{def:tacsub}) the
 original tactic on $g$ and that
-appears in the largest number of tactic-goal pairs in the database.
+appears in the largest number of goal-tactic pairs in the database.
 The winning tactic $w$ is then associated with $g$, producing the pair $(w,g)$
 and is stored in the database instead of the original pair $(t,g)$.
 As a result, already successful tactics with a large coverage are preferred,
@@ -1024,7 +1024,7 @@ We now give a formal definition of the concepts of subsumption and coverage
 that are required for expressing the orthogonalization algorithm.
 
 \begin{definition} (Coverage)\\
-Let $\mathfrak{T}$ be the database of tactic-goal pairs. We define the
+Let $\mathfrak{T}$ be the database of goal-tactic pairs. We define the
 coverage $\textit{\mbox{Coverage}}(t)$ of a tactic $t$ by the number of times
 this tactic
 appears in
@@ -1390,7 +1390,7 @@ apply induction, a task at which ATPs are known to struggle with.
 
 \paragraph{Reinforcement learning}
 All our feature vectors have been learned form human proofs. We now can now
-also add tactic-goal pairs that appears in the last proof of \tactictoe. To
+also add goal-tactic pairs that appears in the last proof of \tactictoe. To
 prevent
 duplication of effort, orthogonalization of those
 tactics is essential to have a beneficial effect.
@@ -1581,7 +1581,7 @@ strength of stateful tactics.
 \subsection{Implementation}
 We describe in more detail our implementation of the recording algorithm. It
 consists of 4 phases: proof script extraction, proof script globalization,
-tactic unit wrapping, and creation of tactic-goal pairs.
+tactic unit wrapping, and creation of goal-tactic pairs.
 
 Because of the large number of \sml constructions, we only describe the effect
 of these steps on a running example that contains selected parts of the theory
@@ -1712,7 +1712,7 @@ fun R stac goal = (save (stac,goal); tactic_of_sml stac goal)
 \end{lstlisting}
 \end{example}
 
-The function \texttt{save} writes the tactic-goal pair to disk increasing the
+The function \texttt{save} writes the goal-tactic pair to disk increasing the
 number of entries in our database of tactics. The function
 \texttt{tactic\_of\_sml} interprets the \sml code \texttt{stac}. The tactic is
 then applied to the input goal to replicate the original behavior.
