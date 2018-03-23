@@ -780,8 +780,8 @@ The current evaluation $CurEvaluation(a_i)$ is the average evaluation of
 all descendants of $a_i$ including node extension failures.
 
 \[\mathit{CurEvaluation}(a_i) =
-  \sum_{a' \in \mathit{Descendant}(a_i)} \frac{\mathit{PriorEvaluation}(a')} {card\
-  \mathit{Descendant}(a_i) + \mathit{Failure}(a_i)}\]
+  \sum_{a' \in \mathit{Descendant}(a_i)} \frac{\mathit{PriorEvaluation}(a')}
+  {|\mathit{Descendant}(a_i)| + \mathit{Failure}(a_i)}\]
 
 where the number $\mathit{Failure}(a_i)$ is the number of failures that occurred
 during node extension from descendants of $a_i$ .
@@ -797,7 +797,7 @@ traversed during node selection, denoted $\mathit{Visit}(x)$.
 \mathit{Visit}(a_i)}{\sqrt{\mathit{Visit}(p)}}\]
 The policy can be seen as a skewed percentage of the number of times a node was
 visited. The square root favors exploration of nodes with
-few visits. The coefficient $c_{exploration}$ is experimentally determined and
+  few visits. The coefficient $c_{\mathit{exploration}}$ is experimentally determined and
 adjusts the trade-off between exploitation and exploration.
 \end{definition}
 
@@ -841,7 +841,7 @@ And this happens only at the beginning of the \holfour library, where the
 training
 data
 has very few tactics.
-\item It exceeds a given time limit (default is set to 60 seconds).
+\item It exceeds a given time limit (60 seconds by default).
 \end{itemize}
 
 \subsection{Supervised learning guidance}
@@ -863,15 +863,15 @@ Let $p$ be a selected node in $\mathfrak{T}$ and $g$ its open goal. We order
 the list of $n$ productive tactics already
 applied to $g$ by their similarity score. We note the resulting list
 $t_0,\ldots,t_{n-1}$.
-Let $c_{policy}$ be a constant heuristic optimized during our experiments.
+Let $c_{\mathit{policy}}$ be a constant heuristic optimized during our experiments.
 We calculate the prior policy of a child $a_i$ produced by the tactic
 $t_i$ by:
-\[PriorPolicy(a_i) = (1 - c_{policy})^{i} * c_{policy}\]
+\[\mathit{PriorPolicy}(a_i) = (1 - c_{\mathit{policy}})^{i} * c_{\mathit{policy}}\]
 
 In order to include the possibly of trying more tactics on $g$ we define the
 widening policy on the parent $p$ for its open goal $g$ to be:
 
-\[WideningPolicy(p) = (1 - c_{policy})^{n} * c_{policy}\]
+\[\mathit{WideningPolicy}(p) = (1 - c_{\mathit{policy}})^{n} * c_{\mathit{policy}}\]
 
 
 \paragraph{Prior evaluation}\label{sec:evaluation}
@@ -895,7 +895,7 @@ And we evaluate a node $a$ through the list of goals $G(a)$ it
 contains using the prior evaluation function:
 \begin{align*}
 \mathit{PriorEvaluation}_k (a) &=
-  \frac{card\ \mathit{Positive}^{\mathit{goal\_list}}_k(G(a)}{k}\\
+  \frac{|\mathit{Positive}^{\mathit{goal\_list}}_k(G(a))|}{k}\\
 \end{align*}
 
 
