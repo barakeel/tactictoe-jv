@@ -175,6 +175,7 @@ Josef Urban \at Czech Technical University, Prague\\\url{josef.urban@gmail.com}
    {``}{\hspace{-.5mm}`\hspace{-1mm}`}1%
   }
 \lstset{language=SML}
+
 \begin{document}
 \maketitle
 
@@ -447,26 +448,26 @@ respectively by circles, rectangles and arrows.
 \begin{center}
 \begin{tikzpicture}[node distance=0.7cm]
 \node [tcircle] (0) {$g_i$};
-\node [right of=0] (0r) {.\ .\ .};
+\node [right of=0] (0r) {...};
 \node [tcircle,right of=0r] (0rr) {$g_n$};
-\node [left of=0] (0l) {.\ .\ .};
+\node [left of=0] (0l) {...};
 \node [tcircle,left of=0l] (0ll) {$g_0$};
 \node [draw,fit=(0rr) (0ll)] (0b) {};
 \node [left of=0ll] {$a_0$};
-\node [above of=0,node distance=2cm] (2) {.\ .\ .};
+\node [above of=0,node distance=2cm] (2) {...};
 \node [left of=2, tcircle] (2l) {$\phantom{g_3}$};
 \node [tcircle,right of=2] (2r) {$\phantom{g_3}$};
 \node [draw, fit=(2l) (2r)] (2b) {};
 \node [left of=2l] {$a_j$};
 
 \node [tcircle, left of=2l, node distance=3cm] (1r) {$\phantom{g_3}$};
-\node [left of=1r] (1) {.\ .\ .};
+\node [left of=1r] (1) {...};
 \node [tcircle, left of=1] (1l) {$\phantom{g_3}$};
 \node [draw, fit=(1l) (1r)] (1b) {};
 \node [left of=1l] {$a_1$};
 
 \node [right of=2r,node distance=3cm] (3l) {$\phantom{g_3}$};
-\node [right of=3l] (3) {\phantom{.\ .\ .}};
+\node [right of=3l] (3) {\phantom{...}};
 \node [right of=3] (3r) {$\phantom{g_3}$};
 \node [fit=(3l) (3r)] (3b) {};
 
@@ -1727,10 +1728,7 @@ After all modified theories are rebuilt, each call to a wrapped tactic in a
 tactic proof is recorded as a pair containing its globalized code and its
 input goal.
 
-
-
 \section{Minimization and Embellishment}\label{sec:proofdisplay}
-
 When \tactictoe finds a proof of an initial goal, it returns a search tree
 $\mathfrak{T}$ where the root node containing the initial goal is solved.
 In order to transform this search tree into a tactic proof, we need to extract
