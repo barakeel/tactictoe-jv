@@ -399,8 +399,10 @@ ldots
 \end{lstlisting}
 An order on goals induces an order on tactics.
 
+\vspace{10mm}
 
-Goal appearing during proof search:
+
+New goal appearing during proof search:
 \begin{lstlisting}[language=SMLSmall]
 LENGTH (MAP f l) = LENGTH l
 \end{lstlisting}
@@ -657,8 +659,10 @@ Dependency: Appear in the same proof.
 
 
 \begin{frame}{Re-proving: results}
-Evaluation is "fair". (not totally if you ask Freek)\\
-Only previous proofs are available for training.
+Evaluation is "fair". (not totally if you ask Freek)\\\ \ 
+Only previous proofs are available for training.\\\ \
+\tactictoe does not call external provers.\\
+
 
 \begin{center}
 \begin{tabular}{lcc}
@@ -674,7 +678,51 @@ Only previous proofs are available for training.
 \end{center}
 \end{frame}
 
-\begin{frame}{Re-proving: number of proofs found in less that x seconds}
+\begin{frame}{Re-proving: proofs of size x}
+\pgfplotscreateplotcyclelist{my black}{
+solid, red!100\\
+solid, blue!100\\
+dashed, red!100\\
+dashed, blue!100\\
+}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+  legend style={anchor=north east, at={(0.9,0.9)}},
+  width=0.3*\textwidth,
+  height=0.7*\textwidth,
+  ymin=0, ymax=2000,
+  xmin=0, xmax=15,
+  xtick={},
+  ytick={},
+  cycle list name=my black]
+\addplot table[x=length, y=proofs] {data/original_proof_length};
+\addplot table[x=length, y=proofs] {data/cakeml_original_proof_length};
+\addplot table[x=length, y=proofs] {data/tactictoe_proof_length};
+\addplot table[x=length, y=proofs] {data/cakeml_proof_length};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+  legend style={anchor=north east, at={(0.9,0.9)}},
+  width=0.7*\textwidth,
+  height=0.7*\textwidth,
+  ymin=0, ymax=100,
+  xmin=15, xmax=50,
+  xtick={},
+  ytick={},
+  cycle list name=my black]
+\addplot table[x=length, y=proofs] {data/original_proof_length};
+\addplot table[x=length, y=proofs] {data/cakeml_original_proof_length};
+\addplot table[x=length, y=proofs] {data/tactictoe_proof_length};
+\addplot table[x=length, y=proofs] {data/cakeml_proof_length};
+\legend{\holfour,\cakeml,\tactictoe in \holfour,\tactictoe in \cakeml}
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+
+\begin{frame}{Re-proving: \holfour proofs found in less than x 
+seconds}
 \pgfplotscreateplotcyclelist{my black}{
 solid, mark repeat=100, mark phase=0, black!100\\
 dashed, mark repeat=100, mark phase=0, black!100\\}
@@ -696,43 +744,8 @@ dashed, mark repeat=100, mark phase=0, black!100\\}
 \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Re-proving: number of human proofs of size x}
-\pgfplotscreateplotcyclelist{my black}{
-solid, mark repeat=100, mark phase=0, red!100\\
-solid, mark repeat=100, mark phase=0, blue!100\\}
 
-\begin{tikzpicture}[scale=1]
-\begin{axis}[
-  legend style={anchor=north east, at={(0.9,0.9)}},
-  width=0.3*\textwidth,
-  height=0.7*\textwidth,
-  ymin=0, ymax=2000,
-  xmin=0, xmax=15,
-  xtick={},
-  ytick={},
-  cycle list name=my black]
-\addplot table[x=length, y=proofs] {data/original_proof_length};
-\addplot table[x=length, y=proofs] {data/cakeml_original_proof_length};
-\end{axis}
-\end{tikzpicture}
-\begin{tikzpicture}[scale=1]
-\begin{axis}[
-  legend style={anchor=north east, at={(0.9,0.9)}},
-  width=0.6*\textwidth,
-  height=0.7*\textwidth,
-  ymin=0, ymax=100,
-  xmin=15, xmax=50,
-  xtick={},
-  ytick={},
-  cycle list name=my black]
-\addplot table[x=length, y=proofs] {data/original_proof_length};
-\addplot table[x=length, y=proofs] {data/cakeml_original_proof_length};
-\legend{\holfour,\cakeml}
-\end{axis}
-\end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Re-proving: percentage of proof of size x solved}
+\begin{frame}{Re-proving: percentage of solved \holfour proof of size x }
 \pgfplotscreateplotcyclelist{my black}{
 solid, mark repeat=100, mark phase=0, black!100\\
 dashed, mark repeat=100, mark phase=0, black!100\\}
@@ -826,7 +839,7 @@ Advantages over ATPs (\eprover) for ITP (\holfour) users:
 \begin{itemize}
 \item Includes domain specific automation found in the ITP.
 \item Generated proofs are human-level proofs.\\
-\item No reconstruction needed.\\
+\item No translation or reconstruction needed.\\
 \end{itemize}
 
 
