@@ -663,9 +663,9 @@ Only previous proofs are available for training.
 \begin{center}
 \begin{tabular}{lcc}
 \toprule
-  & 7164 \holfour theorems (60s) & 3329 \cakeml theorems (15s)\\
+  & \holfour: 7164, 60s & \cakeml: 3329, 15s\\
 \midrule
-   \eprover   & 2472 (34.5\%) & \phantom{0000 } 20.0\%?\\
+   \eprover   & 2472 (34.5\%) & \\
    \tactictoe & 4760 (66.4\%) & 1161 (34.9\%)\\
 \midrule
    Total  & 4946 (69.0\%) & \\
@@ -701,20 +701,33 @@ dashed, mark repeat=100, mark phase=0, black!100\\}
 solid, mark repeat=100, mark phase=0, red!100\\
 solid, mark repeat=100, mark phase=0, blue!100\\}
 
-add cakeml
-\centering
 \begin{tikzpicture}[scale=1]
 \begin{axis}[
   legend style={anchor=north east, at={(0.9,0.9)}},
-  width=\textwidth,
+  width=0.3*\textwidth,
   height=0.7*\textwidth,
   ymin=0, ymax=2000,
-  xmin=0, xmax=20,
+  xmin=0, xmax=15,
   xtick={},
   ytick={},
   cycle list name=my black]
-\addplot table[x=length, y=proofs] {data/tactictoe_proof_length};
-\legend{\holfour}
+\addplot table[x=length, y=proofs] {data/original_proof_length};
+\addplot table[x=length, y=proofs] {data/cakeml_original_proof_length};
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+  legend style={anchor=north east, at={(0.9,0.9)}},
+  width=0.6*\textwidth,
+  height=0.7*\textwidth,
+  ymin=0, ymax=100,
+  xmin=15, xmax=50,
+  xtick={},
+  ytick={},
+  cycle list name=my black]
+\addplot table[x=length, y=proofs] {data/original_proof_length};
+\addplot table[x=length, y=proofs] {data/cakeml_original_proof_length};
+\legend{\holfour,\cakeml}
 \end{axis}
 \end{tikzpicture}
 \end{frame}
