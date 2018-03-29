@@ -1,0 +1,39 @@
+Input:
+  HOL term of type bool, (constname |-> arity)
+
+  HOL terms:
+    ty := Tyvar string | Tyop (ty list)
+    tm := Var string ty | Const string ty | Comb tm tm | Abs string ty tm
+
+Output:
+  FOL prop
+
+  FOL terms:
+    prop := True | False | And prop prop | Or prop prop | Implies prop prop | Iff prop prop | Not prop
+          | Forall (vname list) prop | Exists (vname list) prop
+          | Atom pname term
+    term := Var vname | App fname (term list)
+
+Processing steps:
+
+Beta and eta reduction (HOL -> HOL)
+
+Remove ?!, RES_FORALL, RES_EXISTS, RES_SELECT?, COND
+
+Lambda lifting (HOL -> HOL)
+  - for each abstraction (except ! and ?), replace it with a fresh function name and add a
+    hypothesis (implication) defining it
+
+Remove complex propositions as arguments (HOL -> HOL)
+  - replace non-variable propositions with lifted fresh Boolean variables
+
+Fix arities (HOL -> HOL)
+  - For every constant, ensure it is applied to the correct arity
+  - use binary LET constant: LET f x = f x
+
+Translate to FOL
+  - use a first-order function S to add types
+  - use first-order predicate P to lift Boolean variables
+  - add TRUTH, FALSITY, and BOOL_CASES axioms (to deal with Boolean variables)
+  - add function extensionality for LET axiom
+
