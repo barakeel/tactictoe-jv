@@ -368,37 +368,20 @@ ellipses.}
 \end{figure}
 
 The different components depicted in Figure~\ref{fig:components} give a
-high-level overview of the techniques necessary to generate
-tactic-level proofs by learning from recorded knowledge. From a formal library
-of ITP proofs, we extract and record tactic invocations
-(Section~\ref{sec:recording}). Based on such training examples, we
-  build efficient machine learning classifiers (Section~\ref{s:prediction}).
-  We then modify the knowledge base (shown as the training loop in
-  Figure~\ref{fig:components})
-  using orthogonalization (Section~\ref{sec:ortho}) and
-  an abstraction technique (Section~\ref{sec:synthesis})
-  to improve the quality of the predictions.
-  Additionally, the preselection method described in Section~\ref{sec:presel} increases
-  the speed of the prediction algorithm.
-  The learned predictors relying on this knowledge guide the proof search
-  algorithm presented in Section~\ref{sec:proofsearch}.
-  The search algorithm explores different proof paths in the proof tree, which
-  is defined in Section~\ref{sec:prelim}.
-  The result, if
-  successful, is a verified human-level proof composed of \holfour
-  tactics, minimized according to Section~\ref{sec:proofdisplay}.
-  In
-  Section~\ref{s:experiments}, we evaluate the system
-  on a large set of theorems originating from \holfour.
-  The generated proofs are compared with human proofs in
-  Section~\ref{sec:case_study}.
+high-level overview of TacticToe and our approach to generating tactic-level proofs by learning from recorded knowledge.
+On one side, we have the learning aspect of TacticToe whose purpose is to produce a high quality function to predict a tactic given a goal state.
+Tactic prediction uses a knowledge base that is gleaned, in the first place, from human-written proofs.
+On the other side, we have the proving aspect of TacticToe, which uses tactic prediction to guide a proof search algorithm in the context of a given conjecture.
 
-The section order does not follow the implementation, because we have
-prioritized giving a description of
-the proof search algorithm early on. We hope this order
-benefits the reader by showing the essence of our work before
-the technical details of the prediction and recording algorithms.
+This paper is organized firstly around the proving aspect:
+We define the proof search tree (Section~\ref{sec:prelim}), explain the essence of our approach to learning to predict tactics (Section~\ref{s:prediction}), and then present the prediction-guided proof search algorithm (Section~\ref{sec:proofsearch}).
+We also describe our preselection method (Section~\ref{sec:presel}) for speeding up prediction during search.
+Afterwards, we delve into some details of the learning aspect of TacticToe:
+We describe approaches to improving the knowledge base that supports prediction (orthogonalization in Section~\ref{sec:ortho} and abstraction in Section~\ref{sec:synthesis}), and describe how we build the knowledge base in the first place by extracting and recording tactic invocations from a library of human-written proofs
+(Section~\ref{sec:recording}).
 
+In Section~\ref{s:experiments}, we present an evaluation of TacticToe on a large set of theorems originating from \holfour.
+Finally, we present a feature of TacticToe that makes it more suitable for use by human provers, namely, minimization and prettification (Section~\ref{sec:proofdisplay}) and compare TacticToe's generated proofs to human proofs (Section~\ref{sec:case_study}).
 
 \section{Search Tree}\label{sec:prelim}
 The application of a tactic to an initial conjecture produces a list of goals.
@@ -592,9 +575,9 @@ and $\mathit{Predictions}^{\mathit{goal\_list}}_k (g)$) the $k$ tactics
 We discuss below the specifics associated with the prediction of each kind of object.
 In particular, we present the dataset from which objects are selected and the
 purpose of the selection process. The similarity measure backing the
-predictions is described in Section~\ref{sec:features} and two methods for
+predictions is described in Section~\ref{sec:features} and three methods for
 improving the speed and quality of the predictions are presented in
-Section~\ref{sec:presel},\ref{sec:ortho} and \ref{sec:synthesis}.
+Sections~\ref{sec:presel}, \ref{sec:ortho} and \ref{sec:synthesis}.
 
 \paragraph{Tactics}
 To start with, we build a database of tactics consisting
