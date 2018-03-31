@@ -56,6 +56,8 @@
 \def\sledgehammer{\textsf{Sledgehammer}\xspace}
 \def\mizAR{\textsf{MizAR}\xspace}
 
+\def\ltac{\textsf{Ltac}\xspace}
+
 \def\metis{\textsf{Metis}\xspace}
 \def\leancop{\textsf{leanCoP}\xspace}
 \def\tactictoe{\textsf{TacticToe}\xspace}
@@ -1925,7 +1927,7 @@ search. Our work is also related to previous approaches that use machine
 learning to select premises for the ATP systems and guide ATP proof search
 internally.
 
-For \hollight, the Tactician tool~\cite{DBLP:conf/sefm/Adams15}
+In \hollight, the Tactician tool~\cite{DBLP:conf/sefm/Adams15}
 can transform a packed tactical proof into a series of interactive tactic
 calls. Its principal application
 was so far refactoring the library and teaching common proof techniques to new
@@ -1995,15 +1997,28 @@ proof changes necessary for a modification of a prover library or system. The
 approach is hard to apply for new proofs. Following this idea, \tactictoe
 could also try to learn from different versions of the prover library.
 
-% \todoi{Cezary; add ltac and eisbach or remove PSL if you think it is not worth
-% mentionning.}
-% A similar effort for stronger automation is performed in \isabelle. Nagashima
-% developed a proof strategy language PSL~\cite{NagashimaK17psl} which allows the
-% user to
-% program with regular tactics and combine them with tools such as
-% \sledgehammer.
-% Selection of tactics from data collected in recorded proofs is in development
-% but for now it is up to the user to come up with a good meta-tactic.
+
+It is important to consider the strength of the language used for building 
+proofs and proof procedures when designing a system such as \tactictoe.
+In \isabelle, the language {\textsf{Eisbach}\xspace}~\cite{eisbach} was created 
+on top of the standard tactic language by giving access to constructors of the 
+tactic language to the end-user. The language 
+{\textsf{PSL}\xspace}~\cite{NagashimaK17psl} was also developed. It can combine 
+regular tactics and tools such as \sledgehammer.
+In \coq, the \ltac~\cite{ltac} meta language was designed to enrich the 
+tactic combinators of the \coq language. It adds functionalities such as 
+recursors and matching operators for terms and proof contexts.
+In \holfour, the strength of \sml as a proof strategy 
+language has been demonstrated by the implementation of complex proof 
+procedures such as \metis. 
+
+%Comparatively, in \holfour, new tactics can be written by end-users in the 
+%implementation 
+%language \sml. Therefore, the design of a meta language was 
+%not necessary as every proof method is a \sml function. 
+%Using this language, the authors 
+%created a default search strategy ``try-hard'' that includes calls to 
+%\sledgehammer, and that outperforms \sledgehammer.
 
 Machine learning has also been used to advise the best library lemmas for new
 ITP goals.
@@ -2011,7 +2026,8 @@ This can be done either in an interactive way, when the user completes the
 proof based on the recommended lemmas, as in the Mizar proof advisor
 \textsc{MizAR}~\cite{Urb04-MPTP0,mizAR40}, or attempted fully automatically, where such lemma
 selection is handed over to the ATP component of a \emph{hammer}
-system, as in the hammers for \holfour~\cite{tgck-cpp15}, \hollight~\cite{holyhammer} and \isabelle~\cite{BlanchetteGKKU16}.
+system, as in the hammers for \holfour~\cite{tgck-cpp15}, 
+\hollight~\cite{holyhammer} and \isabelle~\cite{BlanchetteGKKU16}.
 
 Internal learning-based selection of tactical steps inside an ITP is analogous
 to internal learning-based selection of clausal steps inside ATPs such as
