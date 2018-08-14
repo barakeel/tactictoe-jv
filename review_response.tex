@@ -3,10 +3,10 @@
 \MakeOuterQuote{"}
 
 %opening
-\title{Response for SCSS-JSC submission 2}
-\subtitle{Aligning Concepts across Proof Assistant
-Libraries}
-\author{Thibault Gauthier \and Cezary Kaliszyk}
+\title{Response for JAR submission}
+\subtitle{TacticToe: Learning to Prove with Tactics}
+\author{\mbox{Thibault Gauthier} \and \mbox{Cezary Kaliszyk} \and \mbox{Josef
+		Urban} \and \mbox{Ramana Kumar} \and \mbox{Michael Norrish}}
 
 \usepackage{blindtext} 
 \usepackage{framed}
@@ -20,268 +20,68 @@ Libraries}
 \maketitle
 
 We thank the reviewers for the valuable comments and questions. We have 
-attempted to correct all
-the issues suggested in the reviews and we give further answers to the 
-questions raised in this response letter.
+attempted to correct all the issues suggested in the reviews and we give 
+further answers to the questions raised in this response letter.
 
 \section*{Reviewer 1}
 
 \begin{leftbar}
-My main concern about the paper is related to the usability by people that are 
-not the authors of the paper. In several places of the paper, the authors 
-indicate that some steps of the alignment process are carried out manually, but 
-this is not completely clear; so, the authors should clarify this point in 
-order to know which steps are conducted manually and which steps are automated. 
-Moreover, the output results are huge plain text file, and exploring them is 
-really time-consuming (as indicated previously, the authors have already done 
-this, but it might be difficult to the same by other users in a different 
-context). In addition, the output results must be manually analysed by the user.
-
-Related to the previous point, the authors provide the final data obtained in 
-their
-experiments; however, they do not provide the programs that they have used. 
-Hence, it is not possible to reproduce the authors' results or use their 
-algorithms in different libraries and contexts.
+No data is provided to help other researchers reproduce this experiment.  I 
+consider this is a flaw of the paper.  I think the paper should be improved in 
+the direction of making the experiment reproducible by other researchers, as 
+much as possible. The paper provides numerical evaluation of its results, 
+mostly in the form of 
+percentage of success under a given timeout.   I would also be interesting to 
+know how much it takes to re-run the whole process of learning and then using 
+for the complete database.
 \end{leftbar}
-
-
-We have now provided the source code of all the experiments performed together 
-with instructions how to rerun them
-to ease the repeatability and reusability of our project.
-
-When it comes to the section on human advice, the purpose is to allow the user 
-to intervene in the decision process,
-which could allow the algorithms to continue with more precise matches. Indeed, 
-such a hybrid method is very
-time consuming and was not evaluated in its full extent.
-Except for the logical mappings, all presented matches were automatically 
-derived.
-We have now explained this in more detail in Section 5.4.
-
-\begin{leftbar}Another issue that arose me when reading the paper were some of 
-the applications of this work: translating results and conjecturing new 
-theorems. Since the alignment of concepts is based on the quantity (and 
-quality) of shared properties, how many results do you need to prove in order 
-to discover the alignment of concepts? This is probably one drawback of your 
-work: the need of big libraries (it is probably not a problem using the already 
-developed libraries, but it might be a problem when creating a new library).
-\end{leftbar}
-
-Indeed, the proposed approach would not work well with small proof libraries.
-However, given the bridges we constructed between all the considered libraries, 
-a relatively small development may
-map to specific structures in other libraries and allow the import of related 
-theorems.
-
-\begin{leftbar}Another point is whether you have noticed that some matchings 
-are missed.
-I mean, two concepts that were intended to represent the same mathematical 
-object, but that are not matched. I guess that you do not have an automatic way 
-of discovering those missing matches.
-\end{leftbar}
-
-The only proposed method of discovering such missing matches that our algorithm 
-supports is through transitive matches.
-We have now added some comments about it in section 4.6.
-
-\begin{leftbar}It is a bit strange that you have not included the alignments in 
-the same ITP, have you tried that experiment? Have you discovered something 
-interesting? As an idea for the future, you could create some kind of alert 
-system that inform the user about the matching of concepts in the libraries of 
-the ITP to avoid duplications.
-\end{leftbar}
-
-We have tried experiments within a single ITP library. For curated libraries 
-where no exact duplicates
-occur (like the 6 libraries we consider) the alignments found are often 
-concepts that are dual. These
-include union and intersection of sets in Mizar, or addition and substraction 
-in HOL libraries or
-closely related concepts like lipschitzian and continuous.
-
-In a work related to your question (presented at CICM Work in Progress last 
-year), we tried to find the most likely substitutions (which mappings
-should be applied together) and create a large number of conjectured formulas. 
-Only 5 percent of them can be reproved. However they have not been too useful 
-for current automation methods. This is now also shortly discussed in the paper.
-
-\begin{leftbar}I wonder if you could define some threshold to differentiate the 
-optimal matches, approximate matches and singular matches.
-\end{leftbar}
-
-Our current method is statistical, therefore the thresholds are estimates 
-learned from previous library alignments.
-We could also try to prove equivalence (modulo other mappings) of two similar 
-concept but this would most of the times fail even for optimal matches because 
-of minor differences in the definitions.
-
-\begin{leftbar}
-From my point of view, a graph presenting the workflow that is followed in your 
-work to
-align concepts might be useful for the reader.
-\end{leftbar}
-We included a graph together with clarifications to the overview of the 
-procedure in Section 1.5.
 
 \section*{Reviewer 2}
 
-\subsection*{COMMENTS ABOUT THE RELEVANCE OF THE PROBLEM}
+\begin{leftbar}
+The only reservation I have with the paper is that it is not clear to me 
+whether and how the proof tool is able to generate two commonly-used tactics. 
+Firstly,
+generating witnesses to existential goals using "EXISTS_TAC tm". If these 
+tactics are out of scope for the proof tool, then are all goals containing 
+existential
+quantifiers impossible for the tool to prove? Secondly, reducing a goal using 
+an implication theorem using "MATCH_MP_TAC th". Often such implication theorems 
+are
+highly specific to a single theory or even theorem, so how can tactics like 
+this be effectively learned? In my opinion the paper would be improved by a 
+brief
+discussion on how these tactics could be learned, either in the present or a 
+future system.
+\end{leftbar}
+
+A paragraph about predicting arrguments for these commonly used tactics has 
+been added. more later
+
+\section*{Reviewer 3}
 
 \begin{leftbar}
-Automatically generating alignments is an important practical precondition to 
-tackle the harder task of transferring knowledge between mathematical libraries 
-at the shallow level, i.e. by translating a constant to the corresponding 
-constant in the other library (avoiding to obtain two related but not 
-identified notions). The problem seems therefore of primary importance.
+The TacticToe system seems to particularly shine on inductive proofs over
+recursive data structures, as the authors themselves note. It seems
+therefore that the main place it wins over standard automated provers is
+that it can recognize when and how to perform proof by induction. This
+suggests that it may be less effective in other domains (e.g. where one has
+to synthesize non-obvious witness terms) but also suggests to me that the
+authors should also be comparing with the extensive literature on the
+automation of inductive proof, e.g. Boyer-Moore, Bundy and "Proof
+Planning", "inductionless induction" in rewriting, and the concrete
+realizations in HOL family theorem provers by Boulton and Papapanagiotou.
 
-However, the authors tackle the problem of aligning existing libraries from 
-scratch. This needs to be done only once and forall and the automatically found 
-result can be throughly corrected and improved by humans. After it is done, the 
-most significant scenario, becomes the one where an author is starting a new 
-formalization and he needs to pull in results from other libraries on the same 
-constants he is interested in. This scenario is rather different for a series 
-of reasons: 1) at the beginning of the new development there are usually only a 
-small number of theorems proved and this makes it harder to find correct 
-alignments; 2) the algorithm to automatically find alignments could be 
-restricted to a subset of the system libraries that are already known to be 
-potentially interesting.
-
-I would like to hear from the authors what are their expectations on the 
-behaviour of their algorithm on the new scenario. Maybe they could also run 
-some benchmarks to receive a first impression, e.g. by showing how the matches 
-improve when re-running the algorithm after adding one by one the lemmas in one 
-theory.
+The authors might also say a bit more about how much of this is specific to
+HOL4, and how much would change if one wanted to implement something
+similar in another prover either with a similar (HOL Light, Isabelle/HOL)
+or different (ACL2, Coq, PVS) logic. While the authors give quite an
+explicit discussion of the method, I did not see a link to the actual code.
+Is this available?
 \end{leftbar}
 
-The proposed scenario is indeed quite different, and like the reviewer 
-suggests, it would not work very well because of the first reason.
-The only way to cope with it would be to automatically explore the theory 
-before the alignment algorithm would be strong enough to discover new theorems 
-by itself. As for the second reason why the proposed scenario is different, the 
-restriction could be automatically found by a first pass of the alignment
-algorithm.
- 
-Unfortunately for a number of the considered libraries no theory exploration 
-mechanisms exist so far. Developing such mechanisms would in particular require 
-powerful general purpose automation, which also has been limited in some of the 
-systems. We completely agree that combining the presented work with theory 
-exploration would be a very interesting line of work, but it would also be a 
-large endeavor and has not been considered so far.
+More details for the re
 
 
-\subsection*{COMMENTS ABOUT THE TECHNICAL SOLUTION}
-\begin{leftbar}All the choices the authors took seem reasonable. Of course, it 
-is possible to think about totally different techniques to automatically 
-identify alignments, for example borrowing other tools from AI and machine 
-learning. However, being the first to address the problem at this scale, I 
-believe they found a great compromise between simpliciy and efficiency. I will 
-add later specific minor comments.
 
-However, one remark I want to do now is that the kind of alignments the authors 
-want to find should be directly related to the normalization they apply. For 
-example, imagine that the authors want to align binary real division from HOL 
-to ternary real division in some Coq libraries. Normalization should somehow 
-``normalize away'' the proof argument in order to hope to match properties up 
-to alpha-conversion. I can easily come up with other similar examples where 
-aligning the library of a constructive, predicative type theory with that of an 
-higher order logic requires to be more aggressive in the generalization process 
-that produces properties. In previsous papers co-authored by the same authors 
-certain classes of alignments were identified. I would have liked to see an 
-explanation of normalization that is linked directly to those kind of 
-alignments.
-\end{leftbar}
-
-Indeed, the manually constructed logical mappings are a weakness of our 
-procedure.
-However we have been able to find the logical mappings rather quickly, and they 
-do not need to be extended as proof libraries grow.
-It is true that for an algorithm to discover the logical mappings, the actual 
-mappings would need to be more flexible.
-In this respect, a possible extension of the algorithm could be to allow 
-different parts of the term tree to be conceptualized.
-However, we expect that the additional flexibility would reduce precision. We 
-have included some discussion of this when considering
-subterm conceptualizations.
-
-\subsection*{COMMENTS ABOUT THE EVALUATION METHODOLOGY}
-
-\begin{leftbar}
-The evaluation of the technique is probably the weakest part of the paper and 
-the one that suggests further future improvements. In particular, the algorithm 
-only uses positive pre-existing knowledge in order to identify the alignments 
-and complex heuristics to try to single out promising alignments and 
-dependencies between the alignments. Finally, the responsibility of checking 
-the quality of the alignments is totally left to the user.
-
-A significant improvement would be to try to use automatic techniques to verify 
-the quality of the alignments based on the generation of new knowledge, both 
-positive and negative. For example, suppose that the system detect a possible 
-alignment between concept A and B because A and B share a certain number of 
-properties with a good score. In order to evaluate the alignment, the system 
-could take for example all the properties on A that are not present for B and 
-try to conjecture them to hold for B as well. Once the conjecture is done, 
-automatic proof checkers and counterexample generators could be used to prove 
-or disprove the conjecture. Even if they fail, the conjectures could often 
-still be tested on a certain number of randomly generated tests. For example, 
-it should not be hard to automatically understand that the alignment between 
-natural and integer numbers is not optimal.
-\end{leftbar}
-
-This is a very good idea. There are three reasons why we have not been able to 
-do this.
-First, we do not have powerful enough general-purpose automation for all the 
-provers considered.
-Second, it is difficult to evaluate a match on its own. It makes little sense 
-to map addition to multiplication but not 0 and 1 at the same time. Therefore 
-we would need to consider and evaluate structural alignments consisting of a 
-coherent set of matches.
-Finally, given the number of matches evaluating each match using many  
-automated reasoning experiments would be would be prohibitively time-consuming.
-
-The closest to what the reviewer suggests and is currently possible has been 
-considered by us in the CICM Work in Progress paper:
-focusing on certain structural alignments one can evaluate the newly generated 
-conjectures in some of the provers. The results
-have been however much weaker than with other applications presented here. This 
-is discussed in Section 1.5 and Section 5.
-
-\begin{leftbar}
-Coming to non optimal alignments, I would like to understand if the score 
-computed by the algorithms is informative or not on the usefulness of the 
-alignment. For example, aligning natural numbers with lists is quite useful 
-because a natural number is a degenerate case of list (a list of elements of 
-the unit type) and every theorem over lists induces a (possibly trivialized) 
-theorem on natural numbers. Another example is aligning natural numbers with 
-integers: even if the alignment is non optimal, the alignment becomes optimal 
-(or almost so) if restricted to subsets of the two types (natural vs positive 
-integers). Most other alignments, instead, are really likely to be completely 
-useless.
-\end{leftbar}
-
-The scores are representative of the number and quality of the property shared 
-by the two constants. So for a particular
-pair of provers, the actual value of the score is indeed informative about the 
-quality of the alignment, and the best
-evidence of this are the actual correct alignments being found despite 
-thousands of concepts present.
-
-
-\begin{leftbar}
-Did you ask a mathematician expert in the field what he thinks about the 
-conjecture?
-\end{leftbar}
-We did not ask any expert mathematicians in the domain, instead relying of our 
-own limited knowledge of the field to make those conjectures about the 
-dynamical system.
-We tried to prove those conjectures but failed a bit short so we did some 
-empirical evaluation at dimension 2 confirming our intuition that the fix point 
-we reach is the only stable fix point.
-
-\begin{leftbar}
-Minor comments
-\end{leftbar}
-We added examples describing the normalization, typing levels and logical 
-mappings.
-We also gave the patterns representing the most frequent properties, and 
-commented on the effect of the coherence constraints on the conev
 \end{document}

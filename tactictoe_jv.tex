@@ -688,11 +688,16 @@ Our search algorithm is a Monte Carlo tree search~\cite{montecarlo} algorithm
 that relies on a prior evaluation function and a prior policy function. Those 
 priors are learned through direct supervised learning for the policy and via 
 the data accumulated during orthogonalization for the evaluation. The
-policy and evaluation are estimated by the simple supervised k-NN algorithm.
-A characteristic of the MCTS algorithm is that it offers a good trade-off
-between exploitation and exploration. This means that the algorithm searches
-deeper the more promising branches and leaves enough time for the exploration
-of less likely alternatives.
+prior policy and evaluation are estimated by the simple supervised k-NN 
+algorithm. We call them priors because these function are known a priori before 
+starting the proof search. In contrast, we define later in this section a 
+current policy and a current evaluation which are continuously updated by the 
+MCTS algorithm during proof search through a feedback mechanism. A 
+characteristic of the MCTS 
+algorithm is that it offers a good 
+trade-off between exploitation and exploration. This means that the algorithm 
+searches deeper the more promising branches and leaves enough time for the 
+exploration of less likely alternatives.
 
 \begin{remark}
 Neural networks trained through reinforcement learning can be
@@ -833,7 +838,7 @@ has very few tactics.
 \subsection{Supervised learning guidance}
 Our MCTS algorithm relies on the guidance of two supervised learning methods.
 The prior policy estimates the probability of success of a tactic $t$ on a
-goal $g$ and associate it with the potential children that would be created by
+goal $g$ and associates it with the potential children that would be created by
 the
 application of $t$ to $g$. The prior evaluation judges if a branch is fruitful
 by analyzing tactic
@@ -1479,7 +1484,7 @@ Thanks to the larger search time available in this experiment, the timeout for
 each tactic can be increased from the 0.02 seconds used in \tactictoe's initial
 experiments~\cite{tgckju-lpar17} to 0.05
 seconds. Removing tactics with similar effect as performed by the
-orthogonalization process is only beneficial when running \tactictoe for short
+orthogonalization process is only beneficial when running \tactictoe for a short
 period of time. It seems that the allotted time allows a strategy
 running without orthogonalization to catch up. Yet, side experiments show
 that orthogonalization becomes relevant again when we add additional
@@ -1768,8 +1773,9 @@ theorems in ``hammers'' \cite{hammers4qed}.
 
 \paragraph{Embellishment}
 Without embellishment, the returned tactic is barely readable as it contains
-information to guarantees that each \sml subterm is interpreted in the way in
-any context. Since we return the proof at a point where the \sml interpreter is
+information to guarantee that each \sml subterm is interpreted in the same way 
+in any context. Since we return the proof at a point where the \sml interpreter 
+is
 in a specific state, we can strip unnecessary information, such as
 module prefixes. If possible, we group all local declarations in the
 proof under a single \texttt{let} binding at the start of the proof. We
