@@ -1106,7 +1106,7 @@ original variants, but the added flexibility is worthwhile in practice. Moreover
 since we impose a timeout on each tactic (0.05 seconds by default), very slow
 tactics fail and thus are not selected.
 
-\paragraph{Abstraction of Tactic Arguments}
+\subsection{Abstraction of Tactic Arguments}
 The first step is to abstract arguments of tactics by replacing them by a
 placeholder, creating a tactic with an unspecified argument.
 Suppose we have a recorded tactic $t$. Since $t$ is a \sml code tree, we can
@@ -1123,7 +1123,7 @@ harder and harder to predict suitable arguments. In our experiments, we create
 one abstraction $\hat{t}$ for each tactic $t$ by abstracting all subterms of
 type theorem list in $t$.
 
-\paragraph{Instantiation of an Abstracted Tactic}
+\subsection{Instantiation of an Abstracted Tactic}
 An abstracted tactic is not immediately applicable to a goal, since it contains
 unspecified arguments. To apply an abstracted tactic $\hat{t}$, we first need
 to
@@ -1131,21 +1131,64 @@ instantiate the placeholders $h$ inside $\hat{t}$. Because it is difficult to
 build a general predictor effective on each type of argument, we manually
 design different argument predictors for each type. Those predictors are
 given a goal $g$ as input and return the best predicted argument for this
-goal.
+goal. We discuss here specific algorithm for instantiating three common types 
+of arguments: theorem list, theorem, term.
+
+
+\paragraph{Theorem List}
+A typical example for
+
 
 Our default algorithm relies on argument predictions for theorems with a
 radius of 16. It uses the produced list
 $\mathit{Predictions}^{\mathit{tactic}}_{16}(g)$ to replace all the
 placeholders
 in $\hat{t}$.
-The type of theorem lists is a very common type in \holfour proofs and theorems contain
-enough information to be predicted accurately.
+The type of theorem lists is a very common type in \holfour proofs and theorems 
+contain enough information to be predicted accurately.
+We are helped by the fact that the order of theorems rarely matters in this 
+type of tactics and
+
+\paragraph{Theorem}
+
+
+
+
+
+\paragraph{Term}
+
+We re-use the scheme describe previously for changing the prediction of one 
+argument into the prediction of a list of arguments.
+The only things that changes is that we have to design a special predictor for 
+terms. In this context we think that the predictions should come from the list 
+of subterms present in the goal as a first approximation. So all algorithm will 
+try
+
+Term synthesis and instantiation is vast problem for higher-order theorems 
+provers such as Satallax and inductive programming Hipsec.
+
+
+
+
+
+
+
+
+Side experiments with independent term argument predictions 
+shows that trying to instantiate the tactic with subterms from the goal improve 
+the success rate by another 4 percent. 
+Nevertheless, in the evaluation presented in this paper, the 
+abstraction/instantiation 
+method is evaluated only for list of 
+theorems, tactics with other type of arguments were predicted with their 
+original arguments.
+
 
 %We have positive results
 %with term abstraction but they are not evaluated in
 %Section~\ref{sec:evaluation}.
 
-\paragraph{Selection of Abstracted Tactics}
+\subsection{Selection of Abstracted Tactics}
 As abstracted tactics do not appear in human proofs, we need to find a way to
 predict them so that they can contribute to the \tactictoe proof search.
 A straightforward idea is to try $\hat{t}$ before $t$ during the proof search.
@@ -1412,8 +1455,9 @@ dataset which is about 30 times larger.
 \paragraph{Reproducibility}
 The \tactictoe project is part of the \holfour distribution 
 which can be downloaded at \url{https://github.com/HOL-Theorem-Prover/HOL}.
-The \tactictoe modules can be found in the directory
-\url{HOL/src/tactictoe}. The README explains how to launch the recording 
+\tactictoe modules can be found in the directory
+\url{HOL/src/tactictoe}. The \url{README} file explains how to launch the 
+recording 
 process (which includes learning techniques such as orthogonalization),
 use \tactictoe interactively and run a re-proving experiments on a theory. The 
 recording process takes less than eight hours. An upper bound for 

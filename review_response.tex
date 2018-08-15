@@ -36,11 +36,11 @@ know how much it takes to re-run the whole process of learning and then using
 for the complete database.
 \end{leftbar}
 
-
-
-
-
-
+A paragraph was added in the methodology subsection where we talk about the 
+reproducibility of our results. We mention that TacticToe is part of the HOL4 
+(development) distribution and give the location of its directory.
+The time it would take to re-do the final experiment independently is about 3 
+days on a single CPU.
 
 \section*{Reviewer 2}
 
@@ -53,8 +53,7 @@ tactics are out of scope for the proof tool, then are all goals containing
 existential
 quantifiers impossible for the tool to prove? Secondly, reducing a goal using 
 an implication theorem using \texttt{MATCH\_MP\_TAC thm}. Often such 
-implication 
-theorems 
+implication theorems 
 are
 highly specific to a single theory or even theorem, so how can tactics like 
 this be effectively learned? In my opinion the paper would be improved by a 
@@ -63,8 +62,11 @@ discussion on how these tactics could be learned, either in the present or a
 future system.
 \end{leftbar}
 
-A paragraph about predicting arrguments for these commonly used tactics has 
-been added. more later
+The is able to predict this tactics with arguments fixed. We also tested a way 
+to predict the arguments independently taking account that our predictor is 
+hardly accurate by being able to try multiple arguments.
+
+
 
 \section*{Reviewer 3}
 
