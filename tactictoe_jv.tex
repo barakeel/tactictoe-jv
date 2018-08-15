@@ -1409,8 +1409,23 @@ considered as a learning process. To ensure the global fairness, the final
 experiment in Section~\ref{sec:full_exp} runs the best strategy on the full
 dataset which is about 30 times larger.
 
-\subsection{Tuning \tactictoe}\label{sec:tuning}
+\paragraph{Reproducibility}
+The \tactictoe project is part of the \holfour distribution 
+which can be downloaded at \url{https://github.com/HOL-Theorem-Prover/HOL}.
+The \tactictoe modules can be found in the directory
+\url{HOL/src/tactictoe}. The README explains how to launch the recording 
+process (which includes learning techniques such as orthogonalization),
+use \tactictoe interactively and run a re-proving experiments on a theory. The 
+recording process takes less than eight hours. An upper bound for 
+the time necessary for the final experiment can be given by the formula:
+\[\mathit{number\ of\ theorems} \times \mathit{timeout} = 7164 \times 60\ 
+\mathit{seconds} = 
+4.975\ \mathit{days}\] which translate in practice
+to about $2.5\ \mathit{days}$ because successful searches stop before reaching 
+the timeout. And finally, by running this experiment on 20 cores, we cut down 
+the actual total time requirement to a few hours. 
 
+\subsection{Tuning \tactictoe}\label{sec:tuning}
 We optimize \tactictoe by tuning parameters of six different techniques:
 the timeout of tactics, orthogonalization, abstraction, MCTS policy, MCTS
 evaluation and ATP integration. During training, optional techniques such as

@@ -31,22 +31,30 @@ consider this is a flaw of the paper.  I think the paper should be improved in
 the direction of making the experiment reproducible by other researchers, as 
 much as possible. The paper provides numerical evaluation of its results, 
 mostly in the form of 
-percentage of success under a given timeout.   I would also be interesting to 
+percentage of success under a given timeout. I would also be interesting to 
 know how much it takes to re-run the whole process of learning and then using 
 for the complete database.
 \end{leftbar}
+
+
+
+
+
+
 
 \section*{Reviewer 2}
 
 \begin{leftbar}
 The only reservation I have with the paper is that it is not clear to me 
 whether and how the proof tool is able to generate two commonly-used tactics. 
-Firstly,
-generating witnesses to existential goals using "EXISTS_TAC tm". If these 
+Firstly, generating witnesses to existential goals using \texttt{EXISTS\_TAC 
+tm}. If these 
 tactics are out of scope for the proof tool, then are all goals containing 
 existential
 quantifiers impossible for the tool to prove? Secondly, reducing a goal using 
-an implication theorem using "MATCH_MP_TAC th". Often such implication theorems 
+an implication theorem using \texttt{MATCH\_MP\_TAC thm}. Often such 
+implication 
+theorems 
 are
 highly specific to a single theory or even theorem, so how can tactics like 
 this be effectively learned? In my opinion the paper would be improved by a 
