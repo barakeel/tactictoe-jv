@@ -1146,7 +1146,8 @@ property:
 are ignored. For \texttt{REWRITE\_TAC}, loops are generally avoided because 
 most equations appears with only one orientation in the database of theorems.
 \item The order of theorems in the list does not influence the final result and 
-thus we can consider the list to be a set in our algorithm.
+thus we can consider the list to be a set in our algorithm. This is 
+particularly true for the first-order theorem prover \texttt{METIS\_TAC}.
 \end{itemize}
 
 Since our predictor is not perfectly accurate and the presented tactics are 
@@ -1156,20 +1157,28 @@ Our default predictor for list of theorems selects 16 theorems from the
 database of theorems $\mathbb{D}_{\mathit{theorem}}$. It uses the produced list
 $\mathit{Predictions}^{\mathit{theorem}}_{16}(g)= [thm1,\ldots,thm16]$ to 
 replace the
-placeholders in $\hat{t}$. The instantiation of the first abstracted is thus
-\texttt{REWRITE\_TAC [thm1,...,thm16]}.
+placeholders in $\hat{t}$. Thus, the instantiation of the first construction 
+would be \texttt{REWRITE\_TAC [thm1,...,thm16]}.
 
 \paragraph{Theorem}
-Instantiating a single theorem is much harder than a list of theorems. Indeed,
-the predictions needs to be very precise for the tactic to be effective.
-For example, the tactic MPTAC only works if the theorem is an instance
-of the precondition. The best option would be to have a train a theorem 
-predictor that can adapt its predictions to the given tactic. However, this 
-would require a stronger machine learning model than nearest neighbor algorithm.
-Therefore, in order to mitigate the gap in the quality of the predictions, we 
-propose to create a tactic that tries instantiations until one succeeds. (i.e 
-by succeeding we mean produces a list of goal that does not contain the 
-original goal)
+To instantiate a single theorem correctly is much harder than finding a 
+superset of theorems. The following examples with placeholder \texttt{thm} 
+illustrate this point:
+  \texttt{MATCH\_MP\_TAC thm}, \texttt{INDUCT\_THEN thm ASSUME\_TAC}
+  
+Here, the two examples accepts only very specific kind of theorems: the theorem 
+argument should match the precondition of the goal for \texttt{MATCH\_MP\_TAC} 
+and an induction principle should be given to \texttt{INDUCT\_THEN}.
+The likelihood of finding such theorem is low, thus given the list of 
+predictions $\mathit{Predictions}^{\mathit{theorem}}_{16}(g)= 
+[thm1,\ldots,thm16]$, we create 16 instantiated tactics and try them in the 
+order given by the predictor, and we return the result of the first successful 
+tactic and produces new goals. For readers familiar with \holfour tacticals, we 
+give the single new tactic that can be created using this procedure on the 
+first example:  
+  \texttt{CHANGED\_TAC (MATCH\_MP\_TAC thm1) ORELSE ... ORELSE CHANGED\_TAC 
+  (MATCH\_MP\_TAC thm16)}.
+
 
 \paragraph{Term}
 We re-use the scheme describe previously for changing the prediction of one 
@@ -1187,9 +1196,10 @@ show that trying to instantiate the tactic with subterms
 from the goal improve the success rate by another 4 percent. 
 However, in the evaluation presented in this paper, the 
 abstraction/instantiation method is evaluated only for the type of theorem list.
-Moreover, the current argument predictions are only affected by the given goal, 
-and we believe it would be beneficial to have more flexible predictors that can 
-adapt to their predictions to the abstracted tactic.
+Moreover, the current argument predictions are only influenced by the input 
+goal, 
+and we believe that in the future it would be beneficial to have more flexible 
+predictors that can adapt their predictions to each abstracted tactic.
 
 \subsection{Selection of Abstracted Tactics}
 As abstracted tactics do not appear in human proofs, we need to find a way to
