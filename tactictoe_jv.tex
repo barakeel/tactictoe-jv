@@ -1119,44 +1119,59 @@ process, multiple
 arguments may be abstracted in the same tactic. Ultimately, the more
 abstractions are performed the more general a tactic is, as many tactics
 become instances of the same abstracted tactic. As a consequence, it becomes
-harder and harder to predict suitable arguments. In our experiments, we create
-one abstraction $\hat{t}$ for each tactic $t$ by abstracting all subterms of
-type theorem list in $t$.
+harder and harder to predict suitable arguments.
 
 \subsection{Instantiation of an Abstracted Tactic}
 An abstracted tactic is not immediately applicable to a goal, since it contains
 unspecified arguments. To apply an abstracted tactic $\hat{t}$, we first need
-to
-instantiate the placeholders $h$ inside $\hat{t}$. Because it is difficult to
+to instantiate the placeholders $h$ inside $\hat{t}$. Because it is difficult to
 build a general predictor effective on each type of argument, we manually
 design different argument predictors for each type. Those predictors are
 given a goal $g$ as input and return the best predicted argument for this
 goal. We discuss here specific algorithm for instantiating three common types 
-of arguments: theorem list, theorem, term.
-
+of arguments: theorem list, theorem, term. Creating predictors for other types 
+is harder as they lack the structure that is present in mathematical 
+formulas.
 
 \paragraph{Theorem List}
-A typical example for
+The type of theorem lists is the most commonly used type in \holfour proofs.
+Here are two examples of such constructions with placeholder 
+\texttt{[thm\_list]}: \texttt{REWRITE\_TAC [thm\_list]},  \texttt{METIS\_TAC 
+[thm\_list]}.
 
+In general, the list of arguments in such tactics respect the two following 
+property:
+\begin{itemize}
+\item Additional theorems do not cause the tactic to fail and useless theorems 
+are ignored. For \texttt{REWRITE\_TAC}, loops are generally avoided because 
+most equations appears with only one orientation in the database of theorems.
+\item The order of theorems in the list does not influence the final result and 
+thus we can consider the list to be a set in our algorithm.
+\end{itemize}
 
-Our default algorithm relies on argument predictions for theorems with a
-radius of 16. It uses the produced list
-$\mathit{Predictions}^{\mathit{tactic}}_{16}(g)$ to replace all the
-placeholders
-in $\hat{t}$.
-The type of theorem lists is a very common type in \holfour proofs and theorems 
-contain enough information to be predicted accurately.
-We are helped by the fact that the order of theorems rarely matters in this 
-type of tactics and
+Since our predictor is not perfectly accurate and the presented tactics are 
+robust, we select a list of theorems usually longer that the original one to 
+instantiate these tactics.
+Our default predictor for list of theorems selects 16 theorems from the 
+database of theorems $\mathbb{D}_{\mathit{theorem}}$. It uses the produced list
+$\mathit{Predictions}^{\mathit{theorem}}_{16}(g)= [thm1,\ldots,thm16]$ to 
+replace the
+placeholders in $\hat{t}$. The instantiation of the first abstracted is thus
+\texttt{REWRITE\_TAC [thm1,...,thm16]}.
 
 \paragraph{Theorem}
-
-
-
-
+Instantiating a single theorem is much harder than a list of theorems. Indeed,
+the predictions needs to be very precise for the tactic to be effective.
+For example, the tactic MPTAC only works if the theorem is an instance
+of the precondition. The best option would be to have a train a theorem 
+predictor that can adapt its predictions to the given tactic. However, this 
+would require a stronger machine learning model than nearest neighbor algorithm.
+Therefore, in order to mitigate the gap in the quality of the predictions, we 
+propose to create a tactic that tries instantiations until one succeeds. (i.e 
+by succeeding we mean produces a list of goal that does not contain the 
+original goal)
 
 \paragraph{Term}
-
 We re-use the scheme describe previously for changing the prediction of one 
 argument into the prediction of a list of arguments.
 The only things that changes is that we have to design a special predictor for 
@@ -1164,29 +1179,17 @@ terms. In this context we think that the predictions should come from the list
 of subterms present in the goal as a first approximation. So all algorithm will 
 try
 
-Term synthesis and instantiation is vast problem for higher-order theorems 
-provers such as Satallax and inductive programming Hipsec.
 
 
 
-
-
-
-
-
-Side experiments with independent term argument predictions 
-shows that trying to instantiate the tactic with subterms from the goal improve 
-the success rate by another 4 percent. 
-Nevertheless, in the evaluation presented in this paper, the 
-abstraction/instantiation 
-method is evaluated only for list of 
-theorems, tactics with other type of arguments were predicted with their 
-original arguments.
-
-
-%We have positive results
-%with term abstraction but they are not evaluated in
-%Section~\ref{sec:evaluation}.
+Side experiments with term argument predictions 
+show that trying to instantiate the tactic with subterms 
+from the goal improve the success rate by another 4 percent. 
+However, in the evaluation presented in this paper, the 
+abstraction/instantiation method is evaluated only for the type of theorem list.
+Moreover, the current argument predictions are only affected by the given goal, 
+and we believe it would be beneficial to have more flexible predictors that can 
+adapt to their predictions to the abstracted tactic.
 
 \subsection{Selection of Abstracted Tactics}
 As abstracted tactics do not appear in human proofs, we need to find a way to
