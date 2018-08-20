@@ -1176,7 +1176,8 @@ order given by the predictor, and we return the result of the first successful
 tactic and produces new goals. With a modified version of 
 the tactical \texttt{ORELSE} that fails if the tactic 
 did not have any effect, we
-can write for the first example a single new tactic encoding this procedure: 
+can write for the first example a single new tactic that implements this 
+procedure: 
   \[\texttt{MATCH\_MP\_TAC thm1 ORELSE ... ORELSE MATCH\_MP\_TAC thm16}\]
 
 
@@ -1187,19 +1188,22 @@ tactics that uses term
 arguments with placeholders \texttt{term} and \texttt{thm}: 
   \[\texttt{EXISTS\_TAC term},\ \texttt{SPEC\_THEN term STRUCT\_CASES\_TAC 
   thm}\]
-Finding a witness to instantiate an existential formula is difficult because it 
-is likely that this witness may not have been proposed before and there is no 
+Finding a witness to instantiate an existential formula is challenging because 
+it is likely that this witness may not have been proposed before and there is 
+no 
 general rule on how to generate it. Instantiating 
 the term argument in the second tactic is easier because the expected term is a 
-variable of the goal. That is why we think that the first step toward term 
-prediction is to select subterms of the goal ordered by their similarity with 
-the term argument appearing in the original tactic. 
-Side experiments using a tactic that tries the 16 closest subterms 
-$[term1,\ldots,term16]$ to the goal with the procedure described in the 
-previous paragraph 
-shows that this simple term predictor improves the success rate of 
-\tactictoe by another 4 percent. The tactic derived from the abstraction
-\texttt{EXISTS\_TAC term} in this experiment is:
+variable of the goal. That is why we think that the first step 
+toward term argument prediction is to select subterms of the goal ordered by 
+their similarity with the term argument appearing in the original tactic. 
+Side experiments, using a tactic that tries the 16 closest subterms 
+$[term1,\ldots,term16]$ to the goal with the trial and error procedure 
+described in the previous paragraph, shows that this simple term predictor 
+improves the success 
+rate of 
+\tactictoe by another four percent. With the modified 
+\texttt{ORELSE} tactical, the tactic derived from the abstraction
+\texttt{EXISTS\_TAC term} in this experiment can be written as:
    \[\texttt{EXISTS\_TAC term1 ORELSE ... ORELSE EXISTS\_TAC term16}\]
     
 In the future, with stronger machine learning models, we should be able to 
