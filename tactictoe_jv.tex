@@ -1171,35 +1171,56 @@ argument should match the precondition of the goal for \texttt{MATCH\_MP\_TAC}
 and an induction principle should be given to \texttt{INDUCT\_THEN}.
 The likelihood of finding such theorem is low, thus given the list of 
 predictions $\mathit{Predictions}^{\mathit{theorem}}_{16}(g)= 
-[thm1,\ldots,thm16]$, we create 16 instantiated tactics and try them in the 
+[thm1,\ldots,thm16]$, we create 16 instantiations and try them in the 
 order given by the predictor, and we return the result of the first successful 
-tactic and produces new goals. For readers familiar with \holfour tacticals, we 
-give the single new tactic that can be created using this procedure on the 
-first example:  
-  \texttt{CHANGED\_TAC (MATCH\_MP\_TAC thm1) ORELSE ... ORELSE CHANGED\_TAC 
-  (MATCH\_MP\_TAC thm16)}.
+tactic and produces new goals. With a modified version of 
+the tactical \texttt{ORELSE} that fails if the tactic 
+did not have any effect, we
+can write for the first example a single new tactic encoding this procedure: 
+  \[\texttt{MATCH\_MP\_TAC thm1 ORELSE ... ORELSE MATCH\_MP\_TAC thm16}\]
 
 
 \paragraph{Term}
-We re-use the scheme describe previously for changing the prediction of one 
-argument into the prediction of a list of arguments.
-The only things that changes is that we have to design a special predictor for 
-terms. In this context we think that the predictions should come from the list 
-of subterms present in the goal as a first approximation. So all algorithm will 
-try
+Some proofs requires to instantiate a tactic argument by a term. Here are two 
+abstracted 
+tactics that uses term 
+arguments with placeholders \texttt{term} and \texttt{thm}: 
+  \[\texttt{EXISTS\_TAC term},\ \texttt{SPEC\_THEN term STRUCT\_CASES\_TAC 
+  thm}\]
+Finding a witness to instantiate an existential formula is difficult because it 
+is likely that this witness may not have been proposed before and there is no 
+general rule on how to generate it. Instantiating 
+the term argument in the second tactic is easier because the expected term is a 
+variable of the goal. That is why we think that the first step toward term 
+prediction is to select subterms of the goal ordered by their similarity with 
+the term argument appearing in the original tactic. 
+Side experiments using a tactic that tries the 16 closest subterms 
+$[term1,\ldots,term16]$ to the goal with the procedure described in the 
+previous paragraph 
+shows that this simple term predictor improves the success rate of 
+\tactictoe by another 4 percent. The tactic derived from the abstraction
+\texttt{EXISTS\_TAC term} in this experiment is:
+   \[\texttt{EXISTS\_TAC term1 ORELSE ... ORELSE EXISTS\_TAC term16}\]
+    
+In the future, with stronger machine learning models, we should be able to 
+select the right term from larger sets of terms including:
+\begin{itemize}
+ \item subterms of the goal (already implemented),
+ \item terms appearing as arguments of the abstracted tactic,
+ \item tactic sub-expressions of type term and their subterms,
+ \item subterms of theorems from the database $\mathbb{D}_{\mathit{theorem}}$,
+ \item terms created by term synthesis techniques.
+\end{itemize}
 
-
-
-
-Side experiments with term argument predictions 
-show that trying to instantiate the tactic with subterms 
-from the goal improve the success rate by another 4 percent. 
-However, in the evaluation presented in this paper, the 
-abstraction/instantiation method is evaluated only for the type of theorem list.
-Moreover, the current argument predictions are only influenced by the input 
-goal, 
-and we believe that in the future it would be beneficial to have more flexible 
-predictors that can adapt their predictions to each abstracted tactic.
+\begin{remark} (Limitations)
+In the experiments presented in Section~\ref{sec:evaluation}, the 
+abstraction/instantiation method is evaluated only for the type ``theorem 
+list''.
+Another issue is that the argument predictions are only influenced by the input 
+goal. But we believe that it would be beneficial to have
+more flexible predictors that can adapt their selection to the abstracted 
+tactic they procure instantiations for.
+\end{remark}
 
 \subsection{Selection of Abstracted Tactics}
 As abstracted tactics do not appear in human proofs, we need to find a way to
