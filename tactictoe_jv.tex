@@ -2085,13 +2085,26 @@ predictions to produce verifiable proofs and is not restricted to user
 advice.
 
 A closely related approach is proof planning that was firstly describe in 
-~\cite{}. Proof planning is a meta approach to tactics constructing more and 
+~\cite{proofplan}. ~\cite{oyster}
+The philosophy of proof planning is to create (automatically or not) a few 
+tactics can prove a wide range of theorems. In this respect, if you consider 
+MCTS to be a proof plan then we have produced one general tactic that learns 
+from examples and has a large success rate.
+But proof planning is also concerned with tactic synthesis where new proof 
+plans (tactics in \holfour) may be discovered automatically from examples.
+From this point of view, \tactictoe does not look at proof patterns to infer 
+new tactics and creates new tactics only by abstracting arguments. Therefore, 
+it would be interesting to see how including tactic synthesis or even 
+human-designed proof plans (such as rippling~\cite{rippling}) in the database 
+of tactics $\mathbb{D}_{\mathit{tactic}}$.
+Proof planning is a meta approach to tactics constructing more and 
 more general tactics by sharing common proof patterns between different tactics.
 Comparatively, our approach tries to automate the construction of proof plans 
 by letting MCTS policy decide which tactics is the best in each situation. Our 
 approach can be thought as one general proof plan only guided by previous human 
 proofs. 
-From another angle, if we think of proof plans as ``domain'' specific tactics 
+From another angle, if we think of proof plans as clever more general specific 
+tactics (like inductionless induction\cite{})
 our approach does not try to synthetize proof plan automatically but just 
 re-use them if they already exists.
 
