@@ -2083,6 +2083,19 @@ notice duplicated proofs. Comparatively, our predictions come from a much more
 detailed description of the target goal. \tactictoe can also organize the
 predictions to produce verifiable proofs and is not restricted to user
 advice.
+
+A closely related approach is proof planning that was firstly describe in 
+~\cite{}. Proof planning is a meta approach to tactics constructing more and 
+more general tactics by sharing common proof patterns between different tactics.
+Comparatively, our approach tries to automate the construction of proof plans 
+by letting MCTS policy decide which tactics is the best in each situation. Our 
+approach can be thought as one general proof plan only guided by previous human 
+proofs. 
+From another angle, if we think of proof plans as ``domain'' specific tactics 
+our approach does not try to synthetize proof plan automatically but just 
+re-use them if they already exists.
+
+
 %However, we simply create a single label for each tactic call whereas each of
 %its
 %arguments is treated independently in \textsf{ML4PG}.
@@ -2109,7 +2122,6 @@ proof changes necessary for a modification of a prover library or system. The
 approach is hard to apply for new proofs. Following this idea, \tactictoe
 could also try to learn from different versions of the prover library.
 
-
 It is important to consider the strength of the language used for building 
 proofs and proof procedures when designing a system such as \tactictoe. Indeed, 
 such system will be re-using those procedures.
@@ -2124,15 +2136,9 @@ recursors and matching operators for terms and proof contexts.
 In \holfour, the strength of \sml as a proof strategy 
 language has been demonstrated by the implementation of complex proof 
 procedures such as \metis. 
-% TODO: Add a sentence about try-hard
 
-%Comparatively, in \holfour, new tactics can be written by end-users in the 
-%implementation 
-%language \sml. Therefore, the design of a meta language was 
-%not necessary as every proof method is a \sml function. 
-%Using this language, the authors 
-%created a default search strategy ``try-hard'' that includes calls to 
-%\sledgehammer, and that outperforms \sledgehammer.
+
+
 
 Machine learning has also been used to advise the best library lemmas for new
 ITP goals.
