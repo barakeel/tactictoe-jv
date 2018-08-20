@@ -1508,6 +1508,26 @@ the timeout. And finally, by running this experiment on 20 cores, we cut down
 the actual total time requirement to a few hours. 
 
 \paragraph{Portability}
+Although \tactictoe is designed for \holfour, the ideas presented could be 
+ported to another ITP. We highlight here the major modules of \tactictoe  some 
+of the hurdles that developers might encounter during their re-implementation 
+for another ITP:
+\begin{itemize}
+	\item A recording mechanism that can extract context-independent tactics 
+	and the goal they were trying to solve. In our implementation, few tactics 
+	are stateful and they usually become more powerful over time.
+	\item Efficient tactics:
+	\item Efficient predictors
+	\item Efficient search: 
+	 the MCTS algorithm should be re-implemented in the language of the 
+	ITP, because better integration improves the efficiency of the algorithm.
+	
+\end{itemize} 
+
+
+
+
+
 
 
 \subsection{Tuning \tactictoe}\label{sec:tuning}
