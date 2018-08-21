@@ -2079,7 +2079,6 @@ for common sequences of tactics for a specific library.
 This means that in order to propose the next tactic, only the previously
 called tactics
 are considered.
-%intuition tells us that it should not be the main factor
 Our algorithm, on the other hand, relies mainly on the characteristics of the
 current goal
 to decide
@@ -2108,7 +2107,11 @@ predictions to produce verifiable proofs and is not restricted to user
 advice.
 
 A closely related approach is proof planning that was firstly describe in 
-~\cite{proofplan}. ~\cite{oyster}
+~\cite{DBLP:conf/cade/Bundy88}. 
+Proof planners have been implemented to facilitate interactive theorem proving 
+development in Oyster~\cite{DBLP:conf/cade/BundyHHS90},  
+Omega~\cite{DBLP:conf/cade/BenzmullerCFFHKKKMMSSS97} and 
+\isabelle~\cite{DBLP:conf/cade/DixonF03}.
 The philosophy of proof planning is to create (automatically or not) a few 
 tactics can prove a wide range of theorems. In this respect, if you consider 
 MCTS to be a proof plan then we have produced one general tactic that learns 
@@ -2118,7 +2121,7 @@ plans (tactics in \holfour) may be discovered automatically from examples.
 From this point of view, \tactictoe does not look at proof patterns to infer 
 new tactics and creates new tactics only by abstracting arguments. Therefore, 
 it would be interesting to see how including tactic synthesis or even 
-human-designed proof plans (such as rippling~\cite{rippling}) in the database 
+human-designed proof plans in the database 
 of tactics $\mathbb{D}_{\mathit{tactic}}$.
 Proof planning is a meta approach to tactics constructing more and 
 more general tactics by sharing common proof patterns between different tactics.
@@ -2126,33 +2129,9 @@ Comparatively, our approach tries to automate the construction of proof plans
 by letting MCTS policy decide which tactics is the best in each situation. Our 
 approach can be thought as one general proof plan only guided by previous human 
 proofs. 
-From another angle, if we think of proof plans as clever more general specific 
-tactics (like inductionless induction\cite{})
 our approach does not try to synthetize proof plan automatically but just 
 re-use them if they already exists.
 
-
-%However, we simply create a single label for each tactic call whereas each of
-%its
-%arguments is treated independently in \textsf{ML4PG}.
-%Our choice is motivated by the k-NN algorithm already used in
-%\holyhammer for the a of theorems.
-%, which can be easly adapted to the selection of tactics but would be improved
-%by a
-%version that can learn to predict tactics and their arguments independently.
-
-
-%A recent improvement on this system~\cite{}\todo{Cezary: could not remember
-%the
-%reference that you gave me here i think it was CICM 2017} includes the
-%possibility to
-%substitute theorems appearing in tactics by ones belonging to the same
-%cluster.
-%In this work, we are also able to predict theorems appearing as arguments of
-%tactics but we rely only on information from the current goal. Combining the
-%two approaches by predicting from the goal and from the original tactic
-%arguments is more difficult but is likely to produce more suitable lemmas.
-%
 Proof patching \cite{RingerYLG18} is an approach that attempts to learn the
 proof changes necessary for a modification of a prover library or system. The
 approach is hard to apply for new proofs. Following this idea, \tactictoe
@@ -2172,9 +2151,6 @@ recursors and matching operators for terms and proof contexts.
 In \holfour, the strength of \sml as a proof strategy 
 language has been demonstrated by the implementation of complex proof 
 procedures such as \metis. 
-
-
-
 
 Machine learning has also been used to advise the best library lemmas for new
 ITP goals.
