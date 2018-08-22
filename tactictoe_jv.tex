@@ -1455,7 +1455,6 @@ After all modified theories are rebuilt, each call to a wrapped tactic in a
 tactic proof is recorded as a pair containing its globalized code and its
 input goal.
 
-
 \section{Experimental Evaluation}\label{s:experiments}
 The execution of \tactictoe's main loop in each re-proving experiment is
 performed on a single CPU. An additional CPU is needed for experiments relying
@@ -1505,30 +1504,30 @@ the time necessary for the final experiment can be given by the formula:
 4.975\ \mathit{days}\] which translate in practice
 to about $2.5\ \mathit{days}$ because successful searches stop before reaching 
 the timeout. And finally, by running this experiment on 20 cores, we cut down 
-the actual total time requirement to a few hours. 
+the actual total time requirement to a few hours.
 
 \paragraph{Portability}
-Although \tactictoe is designed for \holfour, the ideas presented could be 
-ported to another ITP. We highlight here the major modules of \tactictoe  some 
-of the hurdles that developers might encounter during their re-implementation 
-for another ITP:
-\begin{itemize}
-	\item A recording mechanism that can extract context-independent tactics 
-	and the goal they were trying to solve. In our implementation, few tactics 
-	are stateful and they usually become more powerful over time.
-	\item Efficient tactics:
-	\item Efficient predictors
-	\item Efficient search: 
-	 the MCTS algorithm should be re-implemented in the language of the 
-	ITP, because better integration improves the efficiency of the algorithm.
-	
-\end{itemize} 
-
-
-
-
-
-
+Although \tactictoe is designed for \holfour, the \tactictoe modules 
+implemented in this paper could be ported to another ITP. In order to 
+facilitate this work, we give
+ideas on how to adapt the major components of \tactictoe in the context of 
+another ITP and warn about some of the issues that could arise during this work.
+First, the recording mechanism requires the ability to parse and manipulate 
+proof scripts and include the possibility to define and recognize what a tactic 
+is. In \holfour, \sml is our proof scripts language, so this was achieved by 
+parsing the \sml programming language. In other ITPs, this task may be 
+facilitated by the fact that proof scripts are written with a specifically 
+designed language so the ability to modify syntax trees of proof scripts may 
+already be available. Another issue that can negatively impact the quality of 
+the recorded data is the fact that the effect of the tactics may depend on the 
+state of the ITP (i.e. flags), which rarely happens in \holfour. If the 
+behavior of a tactic drastically changes under different context, then the part 
+of the context that affects it should become part of the tactic.
+Porting the other modules (abstraction, orthogonalization, predictors and MCTS 
+search) should be quite straightforward. Provided that application of 
+tactics and the computation of predictions is fast enough (in the order of 
+10 milliseconds each), the MCTS algorithm should explore enough of the tactic 
+space to be a valuable tool for theorem proving.
 
 \subsection{Tuning \tactictoe}\label{sec:tuning}
 We optimize \tactictoe by tuning parameters of six different techniques:
