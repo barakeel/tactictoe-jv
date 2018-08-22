@@ -36,11 +36,12 @@ know how much it takes to re-run the whole process of learning and then using
 for the complete database.
 \end{leftbar}
 
-A paragraph was added in the methodology subsection where we talk about the 
-reproducibility of our results. We mention that TacticToe is part of the HOL4 
-(development) distribution and give the location of its directory.
-The time it would take to re-do the final experiment independently is about 3 
-days on a single CPU.
+A paragraph on ``Reproducibility'' was added to the Subsection ``Methodology''. 
+There, 
+we talk about the 
+reproducibility of our results with information about the availability of our 
+source code (part of the HOL4 standard distribution) and the 
+time it takes to reproduce the results (learning and evaluation). 
 
 \section*{Reviewer 2}
 
@@ -62,11 +63,17 @@ discussion on how these tactics could be learned, either in the present or a
 future system.
 \end{leftbar}
 
-The is able to predict this tactics with arguments fixed. We also tested a way 
-to predict the arguments independently taking account that our predictor is 
-hardly accurate by being able to try multiple arguments.
-
-
+The current version of TacticToe cannot synthetize non-obvious 
+witness, unless it leverages some clever 
+tactics to perform this task. In practice, the number of theorems containing 
+an existential quantifiers is significant (about 10 percent) but they are 
+specialized tactics that can solve problems containing existentials (e.g. 
+linear arithmetic). It is true that as TacticToe improves this weakness 
+may become more palatable and methods coming from proof planning, inductive 
+theorem proving or even machine learning in general, could be integrated.
+Possible solutions of the problems of predicting exact arguments are now 
+proposed in Section ``Abstraction''. And we give examples for the two most 
+common type of arguments appearing in HOL4 tactics (terms and theorems).
 
 \section*{Reviewer 3}
 
@@ -90,10 +97,14 @@ explicit discussion of the method, I did not see a link to the actual code.
 Is this available?
 \end{leftbar}
 
-2) Comparison
-1) Portability paragraph added in the methodology subsection.
-
-
-
-
+A paragraph on Proof Planning was added in the Section ``Related Work'' 
+comparing aspects of proof planning to our work: proof automation, tactic 
+generalization and tactic synthesis. Term synthesis limitations are
+addressed in our reply to Reviewer 2.
+The TacticToe framework is mostly dependent on the proof script language of the 
+prover and not its logical foundation. Indeed, tactics can be seen as an 
+interface between the user and the logical foundations. We now added a 
+paragraph on ``Portability'' in the Subsection ``Methodology'', where we 
+discuss how to port our work to a different ITP. The source code is part of the 
+standard HOL4 distribution and a link is provided in the same subsection.
 \end{document}
