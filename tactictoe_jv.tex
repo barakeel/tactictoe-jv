@@ -1166,7 +1166,7 @@ superset of theorems. The following examples with placeholder \texttt{thm}
 illustrate this point:
   \texttt{MATCH\_MP\_TAC thm}, \texttt{INDUCT\_THEN thm ASSUME\_TAC}
   
-Here, the two examples accepts only very specific kind of theorems: the theorem 
+Here, the two examples accept only very specific kind of theorems: the theorem 
 argument should match the precondition of the goal for \texttt{MATCH\_MP\_TAC} 
 and an induction principle should be given to \texttt{INDUCT\_THEN}.
 The likelihood of finding such theorem is low, thus given the list of 
@@ -1182,9 +1182,9 @@ procedure:
 
 
 \paragraph{Term}
-Some proofs requires to instantiate a tactic argument by a term. Here are two 
+Some proofs require to instantiate a tactic argument by a term. Here are two 
 abstracted 
-tactics that uses term 
+tactics that use term 
 arguments with placeholders \texttt{term} and \texttt{thm}: 
   \[\texttt{EXISTS\_TAC term},\ \texttt{SPEC\_THEN term STRUCT\_CASES\_TAC 
   thm}\]
@@ -1196,9 +1196,9 @@ the term argument in the second tactic is easier because the expected term is a
 variable of the goal. That is why we think that the first step 
 toward term argument prediction is to select subterms of the goal ordered by 
 their similarity with the term argument appearing in the original tactic. 
-Side experiments, using a tactic that tries the 16 closest subterms 
+Additional experiments, using a tactic that tries the 16 closest subterms 
 $[term1,\ldots,term16]$ to the goal with the trial and error procedure 
-described in the previous paragraph, shows that this simple term predictor 
+described in the previous paragraph, show that this simple term predictor 
 improves the success 
 rate of 
 \tactictoe by another four percent. With the modified 
