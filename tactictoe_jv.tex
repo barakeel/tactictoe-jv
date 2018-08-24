@@ -1221,7 +1221,8 @@ In the experiments presented in Section~\ref{sec:evaluation}, the
 abstraction/instantiation method is evaluated only for the type ``theorem 
 list''.
 Another issue is that the argument predictions are only influenced by the input 
-goal. But we believe that it would be beneficial to have
+goal. % But 
+We believe that it would be beneficial to have
 more flexible predictors that can adapt their selection to the abstracted 
 tactic they procure instantiations for.
 \end{remark}
@@ -2103,7 +2104,7 @@ detailed description of the target goal. \tactictoe can also organize the
 predictions to produce verifiable proofs and is not restricted to user
 advice.
 
-A closely related approach is proof planning that was firstly describe in 
+A closely related approach is proof planning that was first described in 
 ~\cite{DBLP:conf/cade/Bundy88}. Proof planners have been implemented to 
 facilitate interactive theorem proving 
 development in Oyster~\cite{DBLP:conf/cade/BundyHHS90},  
@@ -2114,12 +2115,16 @@ returns the appropriate tactic for this goal. From this point of view,
 \tactictoe is a general proof plan that learns to apply the right tactic from 
 examples and possess a backtracking mechanism given by the MCTS algorithm.
 The philosophy of proof planning is also to create a few 
-tactics can prove a wide range of theorems. In this respect, if we omit the 
-abstraction technique, \tactictoe is not synthesizing any tactic but simply 
-selecting them out of large tactic set. In the end, proof planning methodology 
-may become necessary for improving \tactictoe as it provides a way to generate 
-tactic applicable to a 
-large range of formulas. And more general tactics are usually easier to predict 
+tactics that can prove a wide range of theorems. % In this respect,  if we omit 
+Apart from the 
+abstraction technique, \tactictoe is not yet synthesizing any tactics but simply 
+selecting them out of a large tactic set. This may become necessary in the future, 
+using a variety of statistical/symbolic learning methods.
+% In the end, proof planning methodology 
+% may become necessary for improving \tactictoe as it provides a way to generate 
+% tactic applicable to a 
+% large range of formulas. 
+More general tactics are usually easier to predict 
 accurately by machine learning models as they are associated with more 
 (successful) examples in our database.
 
