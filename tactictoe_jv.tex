@@ -1191,7 +1191,7 @@ arguments with placeholders \texttt{term} and \texttt{thm}:
 Finding a witness to instantiate an existential formula is challenging because 
 it is likely that this witness may not have been proposed before and there is 
 no 
-general rule on how to generate it. Instantiating 
+general rule to generate it. Instantiating 
 the term argument in the second tactic is easier because the expected term is a 
 variable of the goal. That is why we think that the first step 
 toward term argument prediction is to select subterms of the goal ordered by 
@@ -2072,7 +2072,7 @@ tactic recording procedure, used to train our tactic prediction mechanism.
 \textsf{SEPIA}~\cite{DBLP:conf/cade/GransdenWR15} can
 generate
 proof scripts from previous \coq proof examples.
-Its strength lies in the ability to produce likely sequences
+Its strength lies in the ability to produce probable sequences
 of tactics for solving domain specific goals. It operates by creating a model
 for common sequences of tactics for a specific library.
 This means that in order to propose the next tactic, only the previously
@@ -2114,7 +2114,7 @@ Omega~\cite{DBLP:conf/cade/BenzmullerCFFHKKKMMSSS97} and
 A proof plan can be seen as a program that given a goal 
 returns the appropriate tactic for this goal. From this point of view, 
 \tactictoe is a general proof plan that learns to apply the right tactic from 
-examples and possess a backtracking mechanism given by the MCTS algorithm.
+examples and has a backtracking mechanism given by the MCTS algorithm.
 The philosophy of proof planning is also to create a few 
 tactics that can prove a wide range of theorems. % In this respect,  if we omit 
 Apart from the 
@@ -2152,11 +2152,10 @@ procedures such as \metis.
 Machine learning has also been used to advise the best library lemmas for new
 ITP goals.
 This can be done either in an interactive way, when the user completes the
-proof based on the recommended lemmas, as in the Mizar proof advisor
-\textsc{MizAR}~\cite{Urb04-MPTP0,mizAR40}, or attempted fully automatically, where such lemma
+proof based on the recommended lemmas, as in the Mizar Proof Advisor~\cite{Urb04-MPTP0}, or attempted fully automatically, where such lemma
 selection is handed over to the ATP component of a \emph{hammer}
 system, as in the hammers for \holfour~\cite{tgck-cpp15}, 
-\hollight~\cite{holyhammer} and \isabelle~\cite{BlanchetteGKKU16}.
+\hollight~\cite{holyhammer}, \isabelle~\cite{BlanchetteGKKU16} and \mizar~\cite{UrbanRS13,mizAR40}.
 
 Internal learning-based selection of tactical steps inside an ITP is analogous
 to internal learning-based selection of clausal steps inside ATPs such as
