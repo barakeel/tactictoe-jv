@@ -1491,21 +1491,22 @@ experiment in Section~\ref{sec:full_exp} runs the best strategy on the full
 dataset which is about 30 times larger.
 
 \paragraph{Reproducibility}
-The \tactictoe project is part of the \holfour distribution 
+The \tactictoe project is a part of the \holfour distribution 
 which can be downloaded at \url{https://github.com/HOL-Theorem-Prover/HOL}.
-\tactictoe modules can be found in the directory
+The \tactictoe modules can be found in the directory
 \url{HOL/src/tactictoe}. The \url{README} file explains how to launch the 
 recording 
 process (which includes learning techniques such as orthogonalization),
-use \tactictoe interactively and run a re-proving experiments on a theory. The 
-recording process takes less than eight hours. An upper bound for 
+use \tactictoe interactively and run re-proving experiments on a theory. The 
+recording process takes less than eight hours for the \holfour standard library. An upper bound for 
 the time necessary for the final experiment can be given by the formula:
 \[\mathit{number\ of\ theorems} \times \mathit{timeout} = 7164 \times 60\ 
 \mathit{seconds} = 
-4.975\ \mathit{days}\] which translate in practice
-to about $2.5\ \mathit{days}$ because successful searches stop before reaching 
-the timeout. And finally, by running this experiment on 20 cores, we cut down 
-the actual total time requirement to a few hours.
+4.975\ \mathit{days}\] 
+This in practice translates 
+to about $2.5\ \mathit{days}$, because successful searches stop before reaching 
+the timeout. Finally, by running this experiment on 20 cores, we reduce
+the actual wall clock time to several hours.
 
 \paragraph{Portability}
 Although \tactictoe is designed for \holfour, the \tactictoe modules 
